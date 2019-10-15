@@ -12,22 +12,22 @@ class ResponseMetadata:
 class RelayCreateRequest:
     metadata: RequestMetadata 
 
-    relay: Relay 
+    node: Node 
 
 class RelayCreateResponse:
     metadata: ResponseMetadata 
 
-    relay: Relay 
+    node: Node 
 
 class RelayUpdateRequest:
     metadata: RequestMetadata 
 
-    relay: Relay 
+    node: Node 
 
 class RelayUpdateResponse:
     metadata: ResponseMetadata 
 
-    relay: Relay 
+    node: Node 
 
 class RelayDeleteRequest:
     metadata: RequestMetadata 
@@ -43,7 +43,7 @@ class RelayListRequest:
 class RelayListResponse:
     metadata: ResponseMetadata 
 
-    relays: Relay 
+    nodes: Node 
 
 class RelayGetRequest:
     metadata: RequestMetadata 
@@ -53,15 +53,25 @@ class RelayGetRequest:
 class RelayGetResponse:
     metadata: ResponseMetadata 
 
-    relay: Relay 
+    node: Node 
 
 class ErrorDetail:
     message: string 
-# Relay is a domain object. 
-class Relay:
+# Node is a domain object. 
+class Node:
     id: string # id is the unique ID for this relay. 
 
+    relay: Relay 
+
+    gateway: Gateway 
+
+class Relay:
     name: string # name is the human readable unique name for this relay. 
+
+class Gateway:
+    name: string # name is the human readable unique name for this relay. 
+
+    listen_address: string # listen_address represents the network address to which nodes should dial to. 
 
 
 class Relays:
@@ -73,7 +83,7 @@ class Relays:
     def create(self, reqeust: RelayCreateRequest):
         """Create adds a new relay, and returns the new relay""" 
         # TODO: implement this
-        # Host: http://app.strongdm.com/
+        # Host: app.strongdm.com
         # BasePath: 
         # Dial to /v1/relays by POST
         # Body: *
@@ -83,9 +93,9 @@ class Relays:
     def update(self, reqeust: RelayUpdateRequest):
         """Update modifies an existing relay""" 
         # TODO: implement this
-        # Host: http://app.strongdm.com/
+        # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays/{relay.id} by POST
+        # Dial to /v1/relays/{node.id} by POST
         # Body: *
         # ResponseBody: 
         return RelayUpdateResponse()
@@ -93,7 +103,7 @@ class Relays:
     def delete(self, reqeust: RelayDeleteRequest):
         """Delete removes an existing relay""" 
         # TODO: implement this
-        # Host: http://app.strongdm.com/
+        # Host: app.strongdm.com
         # BasePath: 
         # Dial to /v1/relays/{id} by DELETE
         # Body: 
@@ -103,7 +113,7 @@ class Relays:
     def list(self, reqeust: RelayListRequest):
         """List returns all existing relays""" 
         # TODO: implement this
-        # Host: http://app.strongdm.com/
+        # Host: app.strongdm.com
         # BasePath: 
         # Dial to /v1/relays by GET
         # Body: 
@@ -113,18 +123,12 @@ class Relays:
     def get(self, reqeust: RelayGetRequest):
         """Get finds a sandwich by id""" 
         # TODO: implement this
-        # Host: http://app.strongdm.com/
+        # Host: app.strongdm.com
         # BasePath: 
         # Dial to /v1/relays/{id} by GET
         # Body: 
         # ResponseBody: 
         return RelayGetResponse()
-    
-class Relays2:
-    """This is relay2 service""" 
-    def __init__(self):
-        # TODO: initialize something
-    
     
 
 
