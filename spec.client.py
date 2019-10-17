@@ -9,48 +9,48 @@ class ResponseMetadata:
 
     affected: int64 
 
-class RelayCreateRequest:
+class NodeCreateRequest:
     metadata: RequestMetadata 
 
     node: Node 
 
-class RelayCreateResponse:
+class NodeCreateResponse:
     metadata: ResponseMetadata 
 
     node: Node 
 
-class RelayUpdateRequest:
+class NodeUpdateRequest:
     metadata: RequestMetadata 
 
     node: Node 
 
-class RelayUpdateResponse:
+class NodeUpdateResponse:
     metadata: ResponseMetadata 
 
     node: Node 
 
-class RelayDeleteRequest:
+class NodeDeleteRequest:
     metadata: RequestMetadata 
 
     id: string 
 
-class RelayDeleteResponse:
+class NodeDeleteResponse:
     metadata: ResponseMetadata 
 
-class RelayListRequest:
+class NodeListRequest:
     metadata: RequestMetadata 
 
-class RelayListResponse:
+class NodeListResponse:
     metadata: ResponseMetadata 
 
     nodes: Node 
 
-class RelayGetRequest:
+class NodeGetRequest:
     metadata: RequestMetadata 
 
     id: string 
 
-class RelayGetResponse:
+class NodeGetResponse:
     metadata: ResponseMetadata 
 
     node: Node 
@@ -73,62 +73,65 @@ class Gateway:
 
     listen_address: string # listen_address represents the network address to which nodes should dial to. 
 
+    bind_address: string # bind_address represents the local network address to which the gateway
+ must try to bind itself. 
 
-class Relays:
-    """Relays service""" 
+
+class Nodes:
+    """Nodes service""" 
     def __init__(self):
         # TODO: initialize something
     
     
-    def create(self, reqeust: RelayCreateRequest):
-        """Create adds a new relay, and returns the new relay""" 
+    def create(self, reqeust: NodeCreateRequest):
+        """Create adds a new nodes, and returns the newly created node.""" 
         # TODO: implement this
         # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays by POST
+        # Dial to /v1/nodes by POST
         # Body: *
         # ResponseBody: 
-        return RelayCreateResponse()
+        return NodeCreateResponse()
     
-    def update(self, reqeust: RelayUpdateRequest):
-        """Update modifies an existing relay""" 
+    def update(self, reqeust: NodeUpdateRequest):
+        """Update modifies an existing node""" 
         # TODO: implement this
         # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays/{node.id} by POST
+        # Dial to /v1/nodes/{node.id} by POST
         # Body: *
         # ResponseBody: 
-        return RelayUpdateResponse()
+        return NodeUpdateResponse()
     
-    def delete(self, reqeust: RelayDeleteRequest):
-        """Delete removes an existing relay""" 
+    def delete(self, reqeust: NodeDeleteRequest):
+        """Delete removes an existing node""" 
         # TODO: implement this
         # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays/{id} by DELETE
+        # Dial to /v1/nodes/{id} by DELETE
         # Body: 
         # ResponseBody: 
-        return RelayDeleteResponse()
+        return NodeDeleteResponse()
     
-    def list(self, reqeust: RelayListRequest):
-        """List returns all existing relays""" 
+    def list(self, reqeust: NodeListRequest):
+        """List returns all existing nodes""" 
         # TODO: implement this
         # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays by GET
+        # Dial to /v1/nodes by GET
         # Body: 
         # ResponseBody: 
-        return RelayListResponse()
+        return NodeListResponse()
     
-    def get(self, reqeust: RelayGetRequest):
-        """Get finds a sandwich by id""" 
+    def get(self, reqeust: NodeGetRequest):
+        """Get finds a node by id""" 
         # TODO: implement this
         # Host: app.strongdm.com
         # BasePath: 
-        # Dial to /v1/relays/{id} by GET
+        # Dial to /v1/nodes/{id} by GET
         # Body: 
         # ResponseBody: 
-        return RelayGetResponse()
+        return NodeGetResponse()
     
 
 
