@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\222A\215\002\022\260\001\n\034gRPC/JSON Gateway Tech Spike\022;an exploration of how it feels to use the gRPC JSON gateway\"N\n\022gRPC-Gateway spike\022\"https://www.strongdm.com/docs/api/\032\024support@strongdm.com2\0031.0\032\020app.strongdm.comrF\n!Learn more about the strongDM API\022!https://www.strongdm.com/docs/api'),
-  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\tB\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
+  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1f\n\x0fRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"F\n\x10ResponseMetadata\x12\x11\n\tnext_page\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x03 \x01(\x03\x42\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -58,7 +58,85 @@ _ERRORDETAIL = _descriptor.Descriptor(
   serialized_end=94,
 )
 
+
+_REQUESTMETADATA = _descriptor.Descriptor(
+  name='RequestMetadata',
+  full_name='v1.RequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='page', full_name='v1.RequestMetadata.page', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=96,
+  serialized_end=127,
+)
+
+
+_RESPONSEMETADATA = _descriptor.Descriptor(
+  name='ResponseMetadata',
+  full_name='v1.ResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='next_page', full_name='v1.ResponseMetadata.next_page', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='found', full_name='v1.ResponseMetadata.found', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='affected', full_name='v1.ResponseMetadata.affected', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=129,
+  serialized_end=199,
+)
+
 DESCRIPTOR.message_types_by_name['ErrorDetail'] = _ERRORDETAIL
+DESCRIPTOR.message_types_by_name['RequestMetadata'] = _REQUESTMETADATA
+DESCRIPTOR.message_types_by_name['ResponseMetadata'] = _RESPONSEMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ErrorDetail = _reflection.GeneratedProtocolMessageType('ErrorDetail', (_message.Message,), {
@@ -67,6 +145,20 @@ ErrorDetail = _reflection.GeneratedProtocolMessageType('ErrorDetail', (_message.
   # @@protoc_insertion_point(class_scope:v1.ErrorDetail)
   })
 _sym_db.RegisterMessage(ErrorDetail)
+
+RequestMetadata = _reflection.GeneratedProtocolMessageType('RequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _REQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.RequestMetadata)
+  })
+_sym_db.RegisterMessage(RequestMetadata)
+
+ResponseMetadata = _reflection.GeneratedProtocolMessageType('ResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _RESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ResponseMetadata)
+  })
+_sym_db.RegisterMessage(ResponseMetadata)
 
 
 DESCRIPTOR._options = None

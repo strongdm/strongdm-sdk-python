@@ -5,7 +5,8 @@ import nodes_pb2 as nodes__pb2
 
 
 class NodesStub(object):
-  """Nodes service
+  """Nodes are proxies in strongDM responsible to communicate with servers
+  (relays) and clients (gateways).
   """
 
   def __init__(self, channel):
@@ -52,53 +53,54 @@ class NodesStub(object):
 
 
 class NodesServicer(object):
-  """Nodes service
+  """Nodes are proxies in strongDM responsible to communicate with servers
+  (relays) and clients (gateways).
   """
 
   def Create(self, request, context):
-    """Create creates new nodes and returns them.
+    """Create registers a new node.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Get(self, request, context):
-    """Get reads one node by ID
+    """Get reads one node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    """Update patches a node by ID
+    """Update patches a node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    """Delete removes a node by ID
+    """Delete removes a node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """List is a batched Get call
+    """List is a batched Get call.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def BatchUpdate(self, request, context):
-    """BatchUpdate is a batched Update call
+    """BatchUpdate is a batched Update call.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def BatchDelete(self, request, context):
-    """BatchDelete is a batched Delete call
+    """BatchDelete is a batched Delete call.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
