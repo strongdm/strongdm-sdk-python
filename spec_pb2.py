@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\222A\215\002\022\260\001\n\034gRPC/JSON Gateway Tech Spike\022;an exploration of how it feels to use the gRPC JSON gateway\"N\n\022gRPC-Gateway spike\022\"https://www.strongdm.com/docs/api/\032\024support@strongdm.com2\0031.0\032\020app.strongdm.comrF\n!Learn more about the strongDM API\022!https://www.strongdm.com/docs/api'),
-  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1f\n\x0fRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"F\n\x10ResponseMetadata\x12\x11\n\tnext_page\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x03 \x01(\x03\x42\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
+  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x15\x43reateRequestMetadata\"*\n\x16\x43reateResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x14\n\x12GetRequestMetadata\"$\n\x13GetResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\"\x17\n\x15UpdateRequestMetadata\"*\n\x16UpdateResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x17\n\x15\x44\x65leteRequestMetadata\"*\n\x16\x44\x65leteResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x1c\n\x1a\x42\x61tchUpdateRequestMetadata\">\n\x1b\x42\x61tchUpdateResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\"\x1c\n\x1a\x42\x61tchDeleteRequestMetadata\">\n\x1b\x42\x61tchDeleteResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\"#\n\x13ListRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"8\n\x14ListResponseMetadata\x12\x11\n\tnext_page\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x42\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -59,20 +59,13 @@ _ERRORDETAIL = _descriptor.Descriptor(
 )
 
 
-_REQUESTMETADATA = _descriptor.Descriptor(
-  name='RequestMetadata',
-  full_name='v1.RequestMetadata',
+_CREATEREQUESTMETADATA = _descriptor.Descriptor(
+  name='CreateRequestMetadata',
+  full_name='v1.CreateRequestMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='page', full_name='v1.RequestMetadata.page', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -86,34 +79,20 @@ _REQUESTMETADATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=96,
-  serialized_end=127,
+  serialized_end=119,
 )
 
 
-_RESPONSEMETADATA = _descriptor.Descriptor(
-  name='ResponseMetadata',
-  full_name='v1.ResponseMetadata',
+_CREATERESPONSEMETADATA = _descriptor.Descriptor(
+  name='CreateResponseMetadata',
+  full_name='v1.CreateResponseMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='next_page', full_name='v1.ResponseMetadata.next_page', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='found', full_name='v1.ResponseMetadata.found', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='affected', full_name='v1.ResponseMetadata.affected', index=2,
-      number=3, type=3, cpp_type=2, label=1,
+      name='affected', full_name='v1.CreateResponseMetadata.affected', index=0,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -130,13 +109,383 @@ _RESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=199,
+  serialized_start=121,
+  serialized_end=163,
+)
+
+
+_GETREQUESTMETADATA = _descriptor.Descriptor(
+  name='GetRequestMetadata',
+  full_name='v1.GetRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=165,
+  serialized_end=185,
+)
+
+
+_GETRESPONSEMETADATA = _descriptor.Descriptor(
+  name='GetResponseMetadata',
+  full_name='v1.GetResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='found', full_name='v1.GetResponseMetadata.found', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=187,
+  serialized_end=223,
+)
+
+
+_UPDATEREQUESTMETADATA = _descriptor.Descriptor(
+  name='UpdateRequestMetadata',
+  full_name='v1.UpdateRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=225,
+  serialized_end=248,
+)
+
+
+_UPDATERESPONSEMETADATA = _descriptor.Descriptor(
+  name='UpdateResponseMetadata',
+  full_name='v1.UpdateResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='affected', full_name='v1.UpdateResponseMetadata.affected', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=250,
+  serialized_end=292,
+)
+
+
+_DELETEREQUESTMETADATA = _descriptor.Descriptor(
+  name='DeleteRequestMetadata',
+  full_name='v1.DeleteRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=294,
+  serialized_end=317,
+)
+
+
+_DELETERESPONSEMETADATA = _descriptor.Descriptor(
+  name='DeleteResponseMetadata',
+  full_name='v1.DeleteResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='affected', full_name='v1.DeleteResponseMetadata.affected', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=319,
+  serialized_end=361,
+)
+
+
+_BATCHUPDATEREQUESTMETADATA = _descriptor.Descriptor(
+  name='BatchUpdateRequestMetadata',
+  full_name='v1.BatchUpdateRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=363,
+  serialized_end=391,
+)
+
+
+_BATCHUPDATERESPONSEMETADATA = _descriptor.Descriptor(
+  name='BatchUpdateResponseMetadata',
+  full_name='v1.BatchUpdateResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='found', full_name='v1.BatchUpdateResponseMetadata.found', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='affected', full_name='v1.BatchUpdateResponseMetadata.affected', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=393,
+  serialized_end=455,
+)
+
+
+_BATCHDELETEREQUESTMETADATA = _descriptor.Descriptor(
+  name='BatchDeleteRequestMetadata',
+  full_name='v1.BatchDeleteRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=457,
+  serialized_end=485,
+)
+
+
+_BATCHDELETERESPONSEMETADATA = _descriptor.Descriptor(
+  name='BatchDeleteResponseMetadata',
+  full_name='v1.BatchDeleteResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='found', full_name='v1.BatchDeleteResponseMetadata.found', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='affected', full_name='v1.BatchDeleteResponseMetadata.affected', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=487,
+  serialized_end=549,
+)
+
+
+_LISTREQUESTMETADATA = _descriptor.Descriptor(
+  name='ListRequestMetadata',
+  full_name='v1.ListRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='page', full_name='v1.ListRequestMetadata.page', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=551,
+  serialized_end=586,
+)
+
+
+_LISTRESPONSEMETADATA = _descriptor.Descriptor(
+  name='ListResponseMetadata',
+  full_name='v1.ListResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='next_page', full_name='v1.ListResponseMetadata.next_page', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='found', full_name='v1.ListResponseMetadata.found', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=588,
+  serialized_end=644,
 )
 
 DESCRIPTOR.message_types_by_name['ErrorDetail'] = _ERRORDETAIL
-DESCRIPTOR.message_types_by_name['RequestMetadata'] = _REQUESTMETADATA
-DESCRIPTOR.message_types_by_name['ResponseMetadata'] = _RESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['CreateRequestMetadata'] = _CREATEREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['CreateResponseMetadata'] = _CREATERESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['GetRequestMetadata'] = _GETREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['GetResponseMetadata'] = _GETRESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['UpdateRequestMetadata'] = _UPDATEREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['UpdateResponseMetadata'] = _UPDATERESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['DeleteRequestMetadata'] = _DELETEREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['DeleteResponseMetadata'] = _DELETERESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['BatchUpdateRequestMetadata'] = _BATCHUPDATEREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['BatchUpdateResponseMetadata'] = _BATCHUPDATERESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['BatchDeleteRequestMetadata'] = _BATCHDELETEREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['BatchDeleteResponseMetadata'] = _BATCHDELETERESPONSEMETADATA
+DESCRIPTOR.message_types_by_name['ListRequestMetadata'] = _LISTREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['ListResponseMetadata'] = _LISTRESPONSEMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ErrorDetail = _reflection.GeneratedProtocolMessageType('ErrorDetail', (_message.Message,), {
@@ -146,19 +495,103 @@ ErrorDetail = _reflection.GeneratedProtocolMessageType('ErrorDetail', (_message.
   })
 _sym_db.RegisterMessage(ErrorDetail)
 
-RequestMetadata = _reflection.GeneratedProtocolMessageType('RequestMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _REQUESTMETADATA,
+CreateRequestMetadata = _reflection.GeneratedProtocolMessageType('CreateRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEREQUESTMETADATA,
   '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.RequestMetadata)
+  # @@protoc_insertion_point(class_scope:v1.CreateRequestMetadata)
   })
-_sym_db.RegisterMessage(RequestMetadata)
+_sym_db.RegisterMessage(CreateRequestMetadata)
 
-ResponseMetadata = _reflection.GeneratedProtocolMessageType('ResponseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _RESPONSEMETADATA,
+CreateResponseMetadata = _reflection.GeneratedProtocolMessageType('CreateResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _CREATERESPONSEMETADATA,
   '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.ResponseMetadata)
+  # @@protoc_insertion_point(class_scope:v1.CreateResponseMetadata)
   })
-_sym_db.RegisterMessage(ResponseMetadata)
+_sym_db.RegisterMessage(CreateResponseMetadata)
+
+GetRequestMetadata = _reflection.GeneratedProtocolMessageType('GetRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _GETREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GetRequestMetadata)
+  })
+_sym_db.RegisterMessage(GetRequestMetadata)
+
+GetResponseMetadata = _reflection.GeneratedProtocolMessageType('GetResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _GETRESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GetResponseMetadata)
+  })
+_sym_db.RegisterMessage(GetResponseMetadata)
+
+UpdateRequestMetadata = _reflection.GeneratedProtocolMessageType('UpdateRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.UpdateRequestMetadata)
+  })
+_sym_db.RegisterMessage(UpdateRequestMetadata)
+
+UpdateResponseMetadata = _reflection.GeneratedProtocolMessageType('UpdateResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATERESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.UpdateResponseMetadata)
+  })
+_sym_db.RegisterMessage(UpdateResponseMetadata)
+
+DeleteRequestMetadata = _reflection.GeneratedProtocolMessageType('DeleteRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.DeleteRequestMetadata)
+  })
+_sym_db.RegisterMessage(DeleteRequestMetadata)
+
+DeleteResponseMetadata = _reflection.GeneratedProtocolMessageType('DeleteResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _DELETERESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.DeleteResponseMetadata)
+  })
+_sym_db.RegisterMessage(DeleteResponseMetadata)
+
+BatchUpdateRequestMetadata = _reflection.GeneratedProtocolMessageType('BatchUpdateRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _BATCHUPDATEREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.BatchUpdateRequestMetadata)
+  })
+_sym_db.RegisterMessage(BatchUpdateRequestMetadata)
+
+BatchUpdateResponseMetadata = _reflection.GeneratedProtocolMessageType('BatchUpdateResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _BATCHUPDATERESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.BatchUpdateResponseMetadata)
+  })
+_sym_db.RegisterMessage(BatchUpdateResponseMetadata)
+
+BatchDeleteRequestMetadata = _reflection.GeneratedProtocolMessageType('BatchDeleteRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _BATCHDELETEREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.BatchDeleteRequestMetadata)
+  })
+_sym_db.RegisterMessage(BatchDeleteRequestMetadata)
+
+BatchDeleteResponseMetadata = _reflection.GeneratedProtocolMessageType('BatchDeleteResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _BATCHDELETERESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.BatchDeleteResponseMetadata)
+  })
+_sym_db.RegisterMessage(BatchDeleteResponseMetadata)
+
+ListRequestMetadata = _reflection.GeneratedProtocolMessageType('ListRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _LISTREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ListRequestMetadata)
+  })
+_sym_db.RegisterMessage(ListRequestMetadata)
+
+ListResponseMetadata = _reflection.GeneratedProtocolMessageType('ListResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _LISTRESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ListResponseMetadata)
+  })
+_sym_db.RegisterMessage(ListResponseMetadata)
 
 
 DESCRIPTOR._options = None
