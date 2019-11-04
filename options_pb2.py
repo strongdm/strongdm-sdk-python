@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"U\n\x0c\x46ieldOptions\x12\x0e\n\x04name\x18\xb4\xbev \x01(\t\x12\x16\n\x0csql_nullable\x18\xb5\xbev \x01(\x08\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\";\n\x0eMessageOptions\x12\x14\n\nmodel_name\x18\xb4\xbev \x01(\t\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\"$\n\x0cOneofOptions\x12\x14\n\nmodel_name\x18\x84\xbfv \x01(\t:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptionsb\x06proto3')
+  serialized_pb=_b('\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"i\n\x0c\x46ieldOptions\x12\x0e\n\x04name\x18\xb4\xbev \x01(\t\x12\x16\n\x0csql_nullable\x18\xb5\xbev \x01(\x08\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\";\n\x0eMessageOptions\x12\x14\n\nmodel_name\x18\xb4\xbev \x01(\t\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\"$\n\x0cOneofOptions\x12\x14\n\nmodel_name\x18\x84\xbfv \x01(\t:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptionsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -80,6 +80,13 @@ _FIELDOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='iterable', full_name='v1.FieldOptions.iterable', index=3,
+      number=1941303, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -93,7 +100,7 @@ _FIELDOPTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=55,
-  serialized_end=140,
+  serialized_end=160,
 )
 
 
@@ -130,8 +137,8 @@ _MESSAGEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=142,
-  serialized_end=201,
+  serialized_start=162,
+  serialized_end=221,
 )
 
 
@@ -161,8 +168,8 @@ _ONEOFOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=239,
+  serialized_start=223,
+  serialized_end=259,
 )
 
 DESCRIPTOR.message_types_by_name['FieldOptions'] = _FIELDOPTIONS

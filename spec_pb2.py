@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+import options_pb2 as options__pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
 
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\222A\215\002\022\260\001\n\034gRPC/JSON Gateway Tech Spike\022;an exploration of how it feels to use the gRPC JSON gateway\"N\n\022gRPC-Gateway spike\022\"https://www.strongdm.com/docs/api/\032\024support@strongdm.com2\0031.0\032\020app.strongdm.comrF\n!Learn more about the strongDM API\022!https://www.strongdm.com/docs/api'),
-  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x15\x43reateRequestMetadata\"*\n\x16\x43reateResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x14\n\x12GetRequestMetadata\"$\n\x13GetResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\"\x17\n\x15UpdateRequestMetadata\"*\n\x16UpdateResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x17\n\x15\x44\x65leteRequestMetadata\"*\n\x16\x44\x65leteResponseMetadata\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\"\x1c\n\x1a\x42\x61tchUpdateRequestMetadata\">\n\x1b\x42\x61tchUpdateResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\"\x1c\n\x1a\x42\x61tchDeleteRequestMetadata\">\n\x1b\x42\x61tchDeleteResponseMetadata\x12\r\n\x05\x66ound\x18\x01 \x01(\x03\x12\x10\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\"#\n\x13ListRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"8\n\x14ListResponseMetadata\x12\x11\n\tnext_page\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x42\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
+  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a,protoc-gen-swagger/options/annotations.proto\"\x1e\n\x0b\x45rrorDetail\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x15\x43reateRequestMetadata\"B\n\x16\x43reateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"<\n\x13GetResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"B\n\x16UpdateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"B\n\x16\x44\x65leteResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x1c\n\x1a\x42\x61tchUpdateRequestMetadata\"b\n\x1b\x42\x61tchUpdateResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x1c\n\x1a\x42\x61tchDeleteRequestMetadata\"b\n\x1b\x42\x61tchDeleteResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"#\n\x13ListRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"\\\n\x14ListResponseMetadata\x12\x1d\n\tnext_page\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05\x66ound\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x91\x02\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
   ,
-  dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[options__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -54,8 +55,8 @@ _ERRORDETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=64,
-  serialized_end=94,
+  serialized_start=79,
+  serialized_end=109,
 )
 
 
@@ -78,8 +79,8 @@ _CREATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=96,
-  serialized_end=119,
+  serialized_start=111,
+  serialized_end=134,
 )
 
 
@@ -96,21 +97,21 @@ _CREATERESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=121,
-  serialized_end=163,
+  serialized_start=136,
+  serialized_end=202,
 )
 
 
@@ -133,8 +134,8 @@ _GETREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=165,
-  serialized_end=185,
+  serialized_start=204,
+  serialized_end=224,
 )
 
 
@@ -151,21 +152,21 @@ _GETRESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=223,
+  serialized_start=226,
+  serialized_end=286,
 )
 
 
@@ -188,8 +189,8 @@ _UPDATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=225,
-  serialized_end=248,
+  serialized_start=288,
+  serialized_end=311,
 )
 
 
@@ -206,21 +207,21 @@ _UPDATERESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=292,
+  serialized_start=313,
+  serialized_end=379,
 )
 
 
@@ -243,8 +244,8 @@ _DELETEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=294,
-  serialized_end=317,
+  serialized_start=381,
+  serialized_end=404,
 )
 
 
@@ -261,21 +262,21 @@ _DELETERESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=361,
+  serialized_start=406,
+  serialized_end=472,
 )
 
 
@@ -298,8 +299,8 @@ _BATCHUPDATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=391,
+  serialized_start=474,
+  serialized_end=502,
 )
 
 
@@ -316,28 +317,28 @@ _BATCHUPDATERESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='affected', full_name='v1.BatchUpdateResponseMetadata.affected', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=393,
-  serialized_end=455,
+  serialized_start=504,
+  serialized_end=602,
 )
 
 
@@ -360,8 +361,8 @@ _BATCHDELETEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=457,
-  serialized_end=485,
+  serialized_start=604,
+  serialized_end=632,
 )
 
 
@@ -378,28 +379,28 @@ _BATCHDELETERESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='affected', full_name='v1.BatchDeleteResponseMetadata.affected', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=487,
-  serialized_end=549,
+  serialized_start=634,
+  serialized_end=732,
 )
 
 
@@ -429,8 +430,8 @@ _LISTREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=551,
-  serialized_end=586,
+  serialized_start=734,
+  serialized_end=769,
 )
 
 
@@ -447,28 +448,28 @@ _LISTRESPONSEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='found', full_name='v1.ListResponseMetadata.found', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=588,
-  serialized_end=644,
+  serialized_start=771,
+  serialized_end=863,
 )
 
 DESCRIPTOR.message_types_by_name['ErrorDetail'] = _ERRORDETAIL
@@ -595,4 +596,21 @@ _sym_db.RegisterMessage(ListResponseMetadata)
 
 
 DESCRIPTOR._options = None
+_CREATERESPONSEMETADATA.fields_by_name['affected']._options = None
+_CREATERESPONSEMETADATA._options = None
+_GETRESPONSEMETADATA.fields_by_name['found']._options = None
+_GETRESPONSEMETADATA._options = None
+_UPDATERESPONSEMETADATA.fields_by_name['affected']._options = None
+_UPDATERESPONSEMETADATA._options = None
+_DELETERESPONSEMETADATA.fields_by_name['affected']._options = None
+_DELETERESPONSEMETADATA._options = None
+_BATCHUPDATERESPONSEMETADATA.fields_by_name['found']._options = None
+_BATCHUPDATERESPONSEMETADATA.fields_by_name['affected']._options = None
+_BATCHUPDATERESPONSEMETADATA._options = None
+_BATCHDELETERESPONSEMETADATA.fields_by_name['found']._options = None
+_BATCHDELETERESPONSEMETADATA.fields_by_name['affected']._options = None
+_BATCHDELETERESPONSEMETADATA._options = None
+_LISTRESPONSEMETADATA.fields_by_name['next_page']._options = None
+_LISTRESPONSEMETADATA.fields_by_name['found']._options = None
+_LISTRESPONSEMETADATA._options = None
 # @@protoc_insertion_point(module_scope)
