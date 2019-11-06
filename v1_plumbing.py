@@ -1,4 +1,10 @@
+import grpc
+import google.rpc as rpc
+from google.rpc import status_pb2
+import v1_errors as errors
 from nodes_pb2 import *
+from spec_pb2 import *
+
 import v1_models as models
 
 def create_response_metadata_to_porcelain(plumbing):
@@ -419,3 +425,69 @@ def repeated_token_to_plumbing(porcelains):
 
 def repeated_token_to_porcelain(plumbings):
     return [token_to_porcelain(plumbing) for plumbing in plumbings]
+
+def is_status_detail(x):
+    # Return True if a metadata is a grpc-status-details
+    if (hasattr(x, 'key') and (hasattr(x, 'value')) and x.key.startswith('grpc-status-details')):
+        return True
+    return False
+
+def get_status_metadata(err):
+    # Extracts error details from a grpc.RpcError.
+    # Returns a status object and a list of details.
+    metadata = err.trailing_metadata()
+  
+    # get only metadata relevant to status details
+    status_md = [x for x in metadata if is_status_detail(x)]
+    if status_md:
+        for md in status_md:
+            st = status_pb2.Status()
+            # there should be exactly one status for every RpcError
+            # so MergeFromString should at worst append more details
+            # but never override st.message and st.code in every loop
+            st.MergeFromString(md.value)
+  
+    return st
+
+def error_to_porcelain(err):
+    if not isinstance(err, grpc.RpcError):
+        return Error(str(err))
+
+    status = get_status_metadata(err)
+    for detail in status.details:
+        # AlreadyExistsError is used when an entity already exists in the system
+        if detail.Is(AlreadyExistsError.DESCRIPTOR):
+            plumbing = AlreadyExistsError()
+            detail.Unpack(plumbing)
+            return errors.AlreadyExistsError(status.message, plumbing.entities)
+        # NotFoundError is used when an entity does not exist in the system
+        if detail.Is(NotFoundError.DESCRIPTOR):
+            plumbing = NotFoundError()
+            detail.Unpack(plumbing)
+            return errors.NotFoundError(status.message, plumbing.entities)
+        # BadRequestError identifies a bad request sent by the client
+        if detail.Is(BadRequestError.DESCRIPTOR):
+            plumbing = BadRequestError()
+            detail.Unpack(plumbing)
+            return errors.BadRequestError(status.message)
+        # AuthenticationError is used to specify an authentication failure condition
+        if detail.Is(AuthenticationError.DESCRIPTOR):
+            plumbing = AuthenticationError()
+            detail.Unpack(plumbing)
+            return errors.AuthenticationError(status.message)
+        # PermissionError is used to specify a permissions violation
+        if detail.Is(PermissionError.DESCRIPTOR):
+            plumbing = PermissionError()
+            detail.Unpack(plumbing)
+            return errors.PermissionError(status.message, plumbing.permission, plumbing.entities)
+        # InternalError is used to specify an internal system error
+        if detail.Is(InternalError.DESCRIPTOR):
+            plumbing = InternalError()
+            detail.Unpack(plumbing)
+            return errors.InternalError(status.message)
+        # RateLimitError is used for rate limit excess condition
+        if detail.Is(RateLimitError.DESCRIPTOR):
+            plumbing = RateLimitError()
+            detail.Unpack(plumbing)
+            return errors.RateLimitError(status.message)
+    return RPCError(status.message, err.code())

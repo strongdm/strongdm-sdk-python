@@ -17,12 +17,10 @@ class Nodes:
     def create(self, nodes):
         req = NodeCreateRequest()
         req.nodes.extend(plumbing.repeated_node_to_plumbing(nodes))
-
-        # begin
-        plumbing_response = self.stub.Create(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.Create(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(plumbing_response.meta)
         resp.nodes = plumbing.repeated_node_to_porcelain(plumbing_response.nodes)
@@ -33,12 +31,10 @@ class Nodes:
     def get(self, id):
         req = NodeGetRequest()
         req.id = id
-
-        # begin
-        plumbing_response = self.stub.Get(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.Get(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
@@ -49,12 +45,10 @@ class Nodes:
         req = NodeUpdateRequest()
         req.id = id
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
-
-        # begin
-        plumbing_response = self.stub.Update(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.Update(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
@@ -64,12 +58,10 @@ class Nodes:
     def delete(self, id):
         req = NodeDeleteRequest()
         req.id = id
-
-        # begin
-        plumbing_response = self.stub.Delete(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.Delete(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(plumbing_response.meta)
         return resp
@@ -82,7 +74,10 @@ class Nodes:
         resp = models.NodeListResponse()
         def generator(svc, req):
             while True:
-                plumbing_response = svc.stub.List(req)
+                try:
+                    plumbing_response = svc.stub.List(req)
+                except Exception as e:
+                    raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.nodes:
                     
                     yield plumbing.node_to_porcelain(plumbing_item)
@@ -96,12 +91,10 @@ class Nodes:
     def batch_update(self, nodes):
         req = NodeBatchUpdateRequest()
         req.nodes.extend(plumbing.repeated_node_to_plumbing(nodes))
-
-        # begin
-        plumbing_response = self.stub.BatchUpdate(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.BatchUpdate(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeBatchUpdateResponse()
         resp.meta = plumbing.batch_update_response_metadata_to_porcelain(plumbing_response.meta)
         resp.nodes = plumbing.repeated_node_to_porcelain(plumbing_response.nodes)
@@ -111,12 +104,10 @@ class Nodes:
     def batch_delete(self, ids):
         req = NodeBatchDeleteRequest()
         req.ids.extend(ids)
-
-        # begin
-        plumbing_response = self.stub.BatchDelete(req)
-        #rescue => exception
-        #    raise Plumbing::error_to_porcelain(exception)
-        #end
+        try:
+            plumbing_response = self.stub.BatchDelete(req)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeBatchDeleteResponse()
         resp.meta = plumbing.batch_delete_response_metadata_to_porcelain(plumbing_response.meta)
         return resp
