@@ -1,11 +1,11 @@
 import grpc
 import google.rpc as rpc
 from google.rpc import status_pb2
-import v1_errors as errors
+import errors as errors
 from nodes_pb2 import *
 from spec_pb2 import *
 
-import v1_models as models
+import models
 
 def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()

@@ -1,6 +1,6 @@
 import grpc
-import v1_svc as svc
-import v1_plumbing as plumbing
+import svc
+import plumbing
 
 class Client:
     def __init__(self, addr):

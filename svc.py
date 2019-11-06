@@ -1,6 +1,6 @@
 import grpc
-import v1_plumbing as plumbing
-import v1_models as models
+import plumbing
+import models
 
 from nodes_pb2 import *
 from nodes_pb2_grpc import *
