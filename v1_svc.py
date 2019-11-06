@@ -4,6 +4,7 @@ import v1_models as models
 
 from nodes_pb2 import *
 from nodes_pb2_grpc import *
+from spec_pb2 import *
 
 
 # Nodes are proxies in strongDM responsible to communicate with servers
@@ -75,9 +76,21 @@ class Nodes:
     
     # List is a batched Get call.
     def list(self, filter):
-        # TODO
-        pass
-            
+        req = NodeListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        req.filter = filter
+        resp = models.NodeListResponse()
+        def generator(svc, req):
+            while True:
+                plumbing_response = svc.stub.List(req)
+                for plumbing_item in plumbing_response.nodes:
+                    
+                    yield plumbing.node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_page == '':
+                    break
+                req.meta.page = plumbing_response.meta.next_page
+        resp.nodes = generator(self, req)
+        return resp
     
     # BatchUpdate is a batched Update call.
     def batch_update(self, nodes):
