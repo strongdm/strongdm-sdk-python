@@ -48,7 +48,7 @@ class Nodes:
     def update(self, id, node):
         req = NodeUpdateRequest()
         req.id = id
-        req.node = plumbing.node_to_plumbing(node)
+        req.node.CopyFrom(plumbing.node_to_plumbing(node))
 
         # begin
         plumbing_response = self.stub.Update(req)
