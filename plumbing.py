@@ -1,11 +1,11 @@
 import grpc
 import google.rpc as rpc
 from google.rpc import status_pb2
-import errors
-from options_pb2 import *
-from spec_pb2 import *
-from nodes_pb2 import *
-import models
+from . import errors
+from . import models
+from .options_pb2 import *
+from .spec_pb2 import *
+from .nodes_pb2 import *
 
 def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()
@@ -439,6 +439,7 @@ def get_status_metadata(err):
   
     # get only metadata relevant to status details
     status_md = [x for x in metadata if is_status_detail(x)]
+    st = None
     if status_md:
         for md in status_md:
             st = status_pb2.Status()
@@ -451,9 +452,11 @@ def get_status_metadata(err):
 
 def error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
-        return Error(str(err))
+        return errors.Error(str(err))
 
     status = get_status_metadata(err)
+    if status is None:
+        return errors.Error(str(err))
     for detail in status.details:
         # AlreadyExistsError is used when an entity already exists in the system
         if detail.Is(AlreadyExistsError.DESCRIPTOR):
@@ -490,4 +493,4 @@ def error_to_porcelain(err):
             plumbing = RateLimitError()
             detail.Unpack(plumbing)
             return errors.RateLimitError(status.message)
-    return RPCError(status.message, err.code())
+    return errors.RPCError(status.message, err.code())
