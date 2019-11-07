@@ -2,9 +2,12 @@ import grpc
 import plumbing
 import models
 
+from options_pb2 import *
+from options_pb2_grpc import *
+from spec_pb2 import *
+from spec_pb2_grpc import *
 from nodes_pb2 import *
 from nodes_pb2_grpc import *
-from spec_pb2 import *
 
 
 # Nodes are proxies in strongDM responsible to communicate with servers
