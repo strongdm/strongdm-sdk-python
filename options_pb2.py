@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='options.proto',
   package='v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"i\n\x0c\x46ieldOptions\x12\x0e\n\x04name\x18\xb4\xbev \x01(\t\x12\x16\n\x0csql_nullable\x18\xb5\xbev \x01(\x08\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\"L\n\x0eMessageOptions\x12\x14\n\nmodel_name\x18\xb4\xbev \x01(\t\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x08\"$\n\x0cOneofOptions\x12\x14\n\nmodel_name\x18\x84\xbfv \x01(\t:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptionsb\x06proto3')
+  serialized_options=_b('\n\034com.strongdm.api.v1.plumbing'),
+  serialized_pb=_b('\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"i\n\x0c\x46ieldOptions\x12\x0e\n\x04name\x18\xb4\xbev \x01(\t\x12\x16\n\x0csql_nullable\x18\xb5\xbev \x01(\x08\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\"L\n\x0eMessageOptions\x12\x14\n\nmodel_name\x18\xb4\xbev \x01(\t\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x08\"$\n\x0cOneofOptions\x12\x14\n\nmodel_name\x18\x84\xbfv \x01(\t:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptionsB\x1e\n\x1c\x63om.strongdm.api.v1.plumbingb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -215,4 +215,5 @@ google_dot_protobuf_dot_descriptor__pb2.MessageOptions.RegisterExtension(message
 oneof_options.message_type = _ONEOFOPTIONS
 google_dot_protobuf_dot_descriptor__pb2.OneofOptions.RegisterExtension(oneof_options)
 
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)
