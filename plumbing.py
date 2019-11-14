@@ -19,7 +19,6 @@ def create_response_metadata_to_plumbing(porcelain):
     if porcelain.affected != None:
         
         plumbing.affected = porcelain.affected
-        
     return plumbing
 
 def repeated_create_response_metadata_to_plumbing(porcelains):
@@ -39,7 +38,6 @@ def get_response_metadata_to_plumbing(porcelain):
     if porcelain.found != None:
         
         plumbing.found = porcelain.found
-        
     return plumbing
 
 def repeated_get_response_metadata_to_plumbing(porcelains):
@@ -59,7 +57,6 @@ def update_response_metadata_to_plumbing(porcelain):
     if porcelain.affected != None:
         
         plumbing.affected = porcelain.affected
-        
     return plumbing
 
 def repeated_update_response_metadata_to_plumbing(porcelains):
@@ -79,7 +76,6 @@ def delete_response_metadata_to_plumbing(porcelain):
     if porcelain.affected != None:
         
         plumbing.affected = porcelain.affected
-        
     return plumbing
 
 def repeated_delete_response_metadata_to_plumbing(porcelains):
@@ -226,11 +222,9 @@ def relay_to_plumbing(porcelain):
     if porcelain.id != None:
         
         plumbing.id = porcelain.id
-        
     if porcelain.name != None:
         
         plumbing.name = porcelain.name
-        
     return plumbing
 
 def repeated_relay_to_plumbing(porcelains):
@@ -256,19 +250,15 @@ def gateway_to_plumbing(porcelain):
     if porcelain.id != None:
         
         plumbing.id = porcelain.id
-        
     if porcelain.name != None:
         
         plumbing.name = porcelain.name
-        
     if porcelain.listen_address != None:
         
         plumbing.listen_address = porcelain.listen_address
-        
     if porcelain.bind_address != None:
         
         plumbing.bind_address = porcelain.bind_address
-        
     return plumbing
 
 def repeated_gateway_to_plumbing(porcelains):
@@ -290,11 +280,9 @@ def token_to_plumbing(porcelain):
     if porcelain.id != None:
         
         plumbing.id = porcelain.id
-        
     if porcelain.token != None:
         
         plumbing.token = porcelain.token
-        
     return plumbing
 
 def repeated_token_to_plumbing(porcelains):
@@ -410,7 +398,7 @@ def role_to_porcelain(plumbing):
     
     porcelain.composite = plumbing.composite
     
-    porcelain.roles = role_to_porcelain(plumbing.roles)
+    porcelain.roles = repeated_role_to_porcelain(plumbing.roles)
     return porcelain
 
 def role_to_plumbing(porcelain):
@@ -418,18 +406,15 @@ def role_to_plumbing(porcelain):
     if porcelain.id != None:
         
         plumbing.id = porcelain.id
-        
     if porcelain.name != None:
         
         plumbing.name = porcelain.name
-        
     if porcelain.composite != None:
         
         plumbing.composite = porcelain.composite
-        
     if porcelain.roles != None:
         
-        plumbing.roles = role_to_plumbing(porcelain.roles)
+        plumbing.roles = repeated_role_to_plumbing(porcelain.roles)
         
     return plumbing
 
@@ -449,7 +434,7 @@ def get_status_metadata(err):
     # Extracts error details from a grpc.RpcError.
     # Returns a status object and a list of details.
     metadata = err.trailing_metadata()
-  
+
     # get only metadata relevant to status details
     status_md = [x for x in metadata if is_status_detail(x)]
     st = None
@@ -460,7 +445,7 @@ def get_status_metadata(err):
             # so MergeFromString should at worst append more details
             # but never override st.message and st.code in every loop
             st.MergeFromString(md.value)
-  
+
     return st
 
 def error_to_porcelain(err):
