@@ -7,5 +7,6 @@ class Client:
         try:
             channel = grpc.insecure_channel(addr)
             self.nodes = svc.Nodes(channel)
+            self.roles = svc.Roles(channel)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e

@@ -25,28 +25,14 @@ class DeleteResponseMetadata:
     def __init__(self):
         self.affected = None
 
-# BatchUpdateResponseMetadata
-class BatchUpdateResponseMetadata:
-    __slots__ = ['found', 'affected']
-    def __init__(self):
-        self.found = None
-        self.affected = None
-
-# BatchDeleteResponseMetadata
-class BatchDeleteResponseMetadata:
-    __slots__ = ['found', 'affected']
-    def __init__(self):
-        self.found = None
-        self.affected = None
-
 # NodeCreateResponse reports how the nodes were created in the system. It can
 # communicate partial successes or failures.
 class NodeCreateResponse:
-    __slots__ = ['meta', 'nodes', 'tokens']
+    __slots__ = ['meta', 'node', 'token']
     def __init__(self):
         self.meta = None
-        self.nodes = None
-        self.tokens = None
+        self.node = None
+        self.token = None
 
 # NodeGetResponse returns a requested node.
 class NodeGetResponse:
@@ -65,28 +51,6 @@ class NodeUpdateResponse:
 
 # NodeDeleteResponse returns information about a node that was deleted.
 class NodeDeleteResponse:
-    __slots__ = ['meta']
-    def __init__(self):
-        self.meta = None
-
-# NodeListResponse returns a list of nodes that meet the criteria of a
-# NodeListRequest.
-class NodeListResponse:
-    __slots__ = ['nodes']
-    def __init__(self):
-        self.nodes = None
-
-# NodeBatchUpdateResponse returns a list of nodes updated via
-# NodeBatchUpdateRequest.
-class NodeBatchUpdateResponse:
-    __slots__ = ['meta', 'nodes']
-    def __init__(self):
-        self.meta = None
-        self.nodes = None
-
-# NodeBatchDeleteResponse returns information about nodes deleted via a
-# NodeBatchDeleteRequest.
-class NodeBatchDeleteResponse:
     __slots__ = ['meta']
     def __init__(self):
         self.meta = None
@@ -113,3 +77,41 @@ class Token:
     def __init__(self):
         self.id = None
         self.token = None
+
+# RoleCreateResponse reports how the Roles were created in the system. It can
+# communicate partial successes or failures.
+class RoleCreateResponse:
+    __slots__ = ['meta', 'role']
+    def __init__(self):
+        self.meta = None
+        self.role = None
+
+# RoleGetResponse returns a requested Role.
+class RoleGetResponse:
+    __slots__ = ['meta', 'role']
+    def __init__(self):
+        self.meta = None
+        self.role = None
+
+# RoleUpdateResponse returns the fields of a Role after it has been updated by
+# a RoleUpdateRequest.
+class RoleUpdateResponse:
+    __slots__ = ['meta', 'role']
+    def __init__(self):
+        self.meta = None
+        self.role = None
+
+# RoleDeleteResponse returns information about a Role that was deleted.
+class RoleDeleteResponse:
+    __slots__ = ['meta']
+    def __init__(self):
+        self.meta = None
+
+# Role is a domain object --
+class Role:
+    __slots__ = ['id', 'name', 'composite', 'roles']
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.composite = None
+        self.roles = None

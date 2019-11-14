@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbing\222A\215\002\022\260\001\n\034gRPC/JSON Gateway Tech Spike\022;an exploration of how it feels to use the gRPC JSON gateway\"N\n\022gRPC-Gateway spike\022\"https://www.strongdm.com/docs/api/\032\024support@strongdm.com2\0031.0\032\020app.strongdm.comrF\n!Learn more about the strongDM API\022!https://www.strongdm.com/docs/api'),
-  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a,protoc-gen-swagger/options/annotations.proto\"b\n\x12\x41lreadyExistsError\x12)\n\x08\x65ntities\x18\x01 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x01\"X\n\rNotFoundError\x12)\n\x08\x65ntities\x18\x01 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x01\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x01\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x01\"\x8b\x01\n\x0fPermissionError\x12-\n\npermission\x18\x01 \x01(\tB\x19\xf2\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nPermission\xb0\xf3\xb3\x07\x01\x12)\n\x08\x65ntities\x18\x02 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x01\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\x01\"/\n\x0eRateLimitError:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x01\"\x17\n\x15\x43reateRequestMetadata\"B\n\x16\x43reateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"<\n\x13GetResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"B\n\x16UpdateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"B\n\x16\x44\x65leteResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x1c\n\x1a\x42\x61tchUpdateRequestMetadata\"b\n\x1b\x42\x61tchUpdateResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x1c\n\x1a\x42\x61tchDeleteRequestMetadata\"b\n\x1b\x42\x61tchDeleteResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"#\n\x13ListRequestMetadata\x12\x0c\n\x04page\x18\x01 \x01(\t\"8\n\x14ListResponseMetadata\x12\x11\n\tnext_page\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x42\xaf\x02\n\x1c\x63om.strongdm.api.v1.plumbing\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
+  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a,protoc-gen-swagger/options/annotations.proto\"b\n\x12\x41lreadyExistsError\x12)\n\x08\x65ntities\x18\x01 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x01\"X\n\rNotFoundError\x12)\n\x08\x65ntities\x18\x01 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x01\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x01\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x01\"\x8b\x01\n\x0fPermissionError\x12-\n\npermission\x18\x01 \x01(\tB\x19\xf2\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nPermission\xb0\xf3\xb3\x07\x01\x12)\n\x08\x65ntities\x18\x02 \x03(\tB\x17\xf2\xf8\xb3\x07\x12\xa2\xf3\xb3\x07\x08\x45ntities\xb0\xf3\xb3\x07\x01:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x01\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\x01\"/\n\x0eRateLimitError:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x01\"\x17\n\x15\x43reateRequestMetadata\"B\n\x16\x43reateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"<\n\x13GetResponseMetadata\x12\x19\n\x05\x66ound\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"B\n\x16UpdateResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"B\n\x16\x44\x65leteResponseMetadata\x12\x1c\n\x08\x61\x66\x66\x65\x63ted\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"B\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05\x66ound\x18\x02 \x01(\x03\x42\xaf\x02\n\x1c\x63om.strongdm.api.v1.plumbing\x92\x41\x8d\x02\x12\xb0\x01\n\x1cgRPC/JSON Gateway Tech Spike\x12;an exploration of how it feels to use the gRPC JSON gateway\"N\n\x12gRPC-Gateway spike\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pp.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
   ,
   dependencies=[options__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -445,130 +445,6 @@ _DELETERESPONSEMETADATA = _descriptor.Descriptor(
 )
 
 
-_BATCHUPDATEREQUESTMETADATA = _descriptor.Descriptor(
-  name='BatchUpdateRequestMetadata',
-  full_name='v1.BatchUpdateRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=980,
-  serialized_end=1008,
-)
-
-
-_BATCHUPDATERESPONSEMETADATA = _descriptor.Descriptor(
-  name='BatchUpdateResponseMetadata',
-  full_name='v1.BatchUpdateResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='found', full_name='v1.BatchUpdateResponseMetadata.found', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='affected', full_name='v1.BatchUpdateResponseMetadata.affected', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1010,
-  serialized_end=1108,
-)
-
-
-_BATCHDELETEREQUESTMETADATA = _descriptor.Descriptor(
-  name='BatchDeleteRequestMetadata',
-  full_name='v1.BatchDeleteRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1110,
-  serialized_end=1138,
-)
-
-
-_BATCHDELETERESPONSEMETADATA = _descriptor.Descriptor(
-  name='BatchDeleteResponseMetadata',
-  full_name='v1.BatchDeleteResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='found', full_name='v1.BatchDeleteResponseMetadata.found', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='affected', full_name='v1.BatchDeleteResponseMetadata.affected', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1140,
-  serialized_end=1238,
-)
-
-
 _LISTREQUESTMETADATA = _descriptor.Descriptor(
   name='ListRequestMetadata',
   full_name='v1.ListRequestMetadata',
@@ -577,9 +453,23 @@ _LISTREQUESTMETADATA = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='page', full_name='v1.ListRequestMetadata.page', index=0,
+      name='cursor', full_name='v1.ListRequestMetadata.cursor', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page', full_name='v1.ListRequestMetadata.page', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='v1.ListRequestMetadata.limit', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -595,8 +485,8 @@ _LISTREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1240,
-  serialized_end=1275,
+  serialized_start=980,
+  serialized_end=1046,
 )
 
 
@@ -608,7 +498,7 @@ _LISTRESPONSEMETADATA = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='next_page', full_name='v1.ListResponseMetadata.next_page', index=0,
+      name='next_cursor', full_name='v1.ListResponseMetadata.next_cursor', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -633,8 +523,8 @@ _LISTRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1277,
-  serialized_end=1333,
+  serialized_start=1048,
+  serialized_end=1106,
 )
 
 DESCRIPTOR.message_types_by_name['AlreadyExistsError'] = _ALREADYEXISTSERROR
@@ -652,10 +542,6 @@ DESCRIPTOR.message_types_by_name['UpdateRequestMetadata'] = _UPDATEREQUESTMETADA
 DESCRIPTOR.message_types_by_name['UpdateResponseMetadata'] = _UPDATERESPONSEMETADATA
 DESCRIPTOR.message_types_by_name['DeleteRequestMetadata'] = _DELETEREQUESTMETADATA
 DESCRIPTOR.message_types_by_name['DeleteResponseMetadata'] = _DELETERESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['BatchUpdateRequestMetadata'] = _BATCHUPDATEREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['BatchUpdateResponseMetadata'] = _BATCHUPDATERESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['BatchDeleteRequestMetadata'] = _BATCHDELETEREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['BatchDeleteResponseMetadata'] = _BATCHDELETERESPONSEMETADATA
 DESCRIPTOR.message_types_by_name['ListRequestMetadata'] = _LISTREQUESTMETADATA
 DESCRIPTOR.message_types_by_name['ListResponseMetadata'] = _LISTRESPONSEMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -765,34 +651,6 @@ DeleteResponseMetadata = _reflection.GeneratedProtocolMessageType('DeleteRespons
   })
 _sym_db.RegisterMessage(DeleteResponseMetadata)
 
-BatchUpdateRequestMetadata = _reflection.GeneratedProtocolMessageType('BatchUpdateRequestMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _BATCHUPDATEREQUESTMETADATA,
-  '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.BatchUpdateRequestMetadata)
-  })
-_sym_db.RegisterMessage(BatchUpdateRequestMetadata)
-
-BatchUpdateResponseMetadata = _reflection.GeneratedProtocolMessageType('BatchUpdateResponseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _BATCHUPDATERESPONSEMETADATA,
-  '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.BatchUpdateResponseMetadata)
-  })
-_sym_db.RegisterMessage(BatchUpdateResponseMetadata)
-
-BatchDeleteRequestMetadata = _reflection.GeneratedProtocolMessageType('BatchDeleteRequestMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _BATCHDELETEREQUESTMETADATA,
-  '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.BatchDeleteRequestMetadata)
-  })
-_sym_db.RegisterMessage(BatchDeleteRequestMetadata)
-
-BatchDeleteResponseMetadata = _reflection.GeneratedProtocolMessageType('BatchDeleteResponseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _BATCHDELETERESPONSEMETADATA,
-  '__module__' : 'spec_pb2'
-  # @@protoc_insertion_point(class_scope:v1.BatchDeleteResponseMetadata)
-  })
-_sym_db.RegisterMessage(BatchDeleteResponseMetadata)
-
 ListRequestMetadata = _reflection.GeneratedProtocolMessageType('ListRequestMetadata', (_message.Message,), {
   'DESCRIPTOR' : _LISTREQUESTMETADATA,
   '__module__' : 'spec_pb2'
@@ -828,10 +686,4 @@ _UPDATERESPONSEMETADATA.fields_by_name['affected']._options = None
 _UPDATERESPONSEMETADATA._options = None
 _DELETERESPONSEMETADATA.fields_by_name['affected']._options = None
 _DELETERESPONSEMETADATA._options = None
-_BATCHUPDATERESPONSEMETADATA.fields_by_name['found']._options = None
-_BATCHUPDATERESPONSEMETADATA.fields_by_name['affected']._options = None
-_BATCHUPDATERESPONSEMETADATA._options = None
-_BATCHDELETERESPONSEMETADATA.fields_by_name['found']._options = None
-_BATCHDELETERESPONSEMETADATA.fields_by_name['affected']._options = None
-_BATCHDELETERESPONSEMETADATA._options = None
 # @@protoc_insertion_point(module_scope)

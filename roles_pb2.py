@@ -23,8 +23,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='roles.proto',
   package='v1',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=_b('\n\x0broles.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"a\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"{\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"t\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"z\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"V\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"p\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12(\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xb8\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"k\n\x16RoleBatchUpdateRequest\x12,\n\x04meta\x18\x01 \x01(\x0b\x32\x1e.v1.BatchUpdateRequestMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x85\x01\n\x17RoleBatchUpdateResponse\x12\x39\n\x04meta\x18\x01 \x01(\x0b\x32\x1f.v1.BatchUpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x16RoleBatchDeleteRequest\x12,\n\x04meta\x18\x01 \x01(\x0b\x32\x1e.v1.BatchDeleteRequestMetadata\x12\x17\n\x03ids\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"`\n\x17RoleBatchDeleteResponse\x12\x39\n\x04meta\x18\x01 \x01(\x0b\x32\x1f.v1.BatchDeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xef\x01\n\x04Role\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\x12+\n\tcomposite\x18\x03 \x01(\x08\x42\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tComposite\xb0\xf3\xb3\x07\x01:x\xfa\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Role\xa8\xf3\xb3\x07\x01\x92\x41\x62*:\n\x07\x41 Role.\x12/https://www.strongdm.com/docs/api/entities#Role2$\x12\"{ \"id\": \"7\", \"name\": \"happy-goat\"}2\x9b\x05\n\x05Roles\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/roles:\x01*\x92\x41U\"S\n\x18Learn how to make a Role\x12\x37https://www.strongdm.com/docs/api/services/Roles#Create\x12\x46\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/roles/{id}\x12R\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/roles/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/roles/{id}\x12\x44\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/roles\x12\\\n\x0b\x42\x61tchUpdate\x12\x1a.v1.RoleBatchUpdateRequest\x1a\x1b.v1.RoleBatchUpdateResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x1a\t/v1/roles:\x01*\x12Y\n\x0b\x42\x61tchDelete\x12\x1a.v1.RoleBatchDeleteRequest\x1a\x1b.v1.RoleBatchDeleteResponse\"\x11\x82\xd3\xe4\x93\x02\x0b*\t/v1/rolesb\x06proto3')
+  serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\rRolesPlumbing'),
+  serialized_pb=_b('\n\x0broles.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"`\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"z\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"t\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"z\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"V\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"_\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\"\x95\x02\n\x04Role\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\x12+\n\tcomposite\x18\x03 \x01(\x08\x42\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tComposite\xb0\xf3\xb3\x07\x01\x12-\n\x05roles\x18\x04 \x03(\x0b\x32\x08.v1.RoleB\x14\xf2\xf8\xb3\x07\x0f\xa2\xf3\xb3\x07\x05Roles\xb0\xf3\xb3\x07\x01:o\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x92\x41\x62*:\n\x07\x41 Role.\x12/https://www.strongdm.com/docs/api/entities#Role2$\x12\"{ \"id\": \"7\", \"name\": \"happy-goat\"}2\xf2\x03\n\x05Roles\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/roles:\x01*\x92\x41U\"S\n\x18Learn how to make a Role\x12\x37https://www.strongdm.com/docs/api/services/Roles#Create\x12\x46\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/roles/{id}\x12R\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/roles/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/roles/{id}\x12\x44\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/roles\x1a\x0e\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04RoleB-\n\x1c\x63om.strongdm.api.v1.plumbingB\rRolesPlumbingb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -46,9 +46,9 @@ _ROLECREATEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='v1.RoleCreateRequest.roles', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='role', full_name='v1.RoleCreateRequest.role', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
@@ -65,7 +65,7 @@ _ROLECREATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=122,
-  serialized_end=219,
+  serialized_end=218,
 )
 
 
@@ -84,9 +84,9 @@ _ROLECREATERESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='v1.RoleCreateResponse.roles', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='role', full_name='v1.RoleCreateResponse.role', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
@@ -102,8 +102,8 @@ _ROLECREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=221,
-  serialized_end=344,
+  serialized_start=220,
+  serialized_end=342,
 )
 
 
@@ -140,8 +140,8 @@ _ROLEGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=424,
+  serialized_start=344,
+  serialized_end=422,
 )
 
 
@@ -178,8 +178,8 @@ _ROLEGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=542,
+  serialized_start=424,
+  serialized_end=540,
 )
 
 
@@ -223,8 +223,8 @@ _ROLEUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=544,
-  serialized_end=664,
+  serialized_start=542,
+  serialized_end=662,
 )
 
 
@@ -261,8 +261,8 @@ _ROLEUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=666,
-  serialized_end=788,
+  serialized_start=664,
+  serialized_end=786,
 )
 
 
@@ -299,8 +299,8 @@ _ROLEDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=790,
-  serialized_end=874,
+  serialized_start=788,
+  serialized_end=872,
 )
 
 
@@ -330,8 +330,8 @@ _ROLEDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=962,
+  serialized_start=874,
+  serialized_end=960,
 )
 
 
@@ -368,8 +368,8 @@ _ROLELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=964,
-  serialized_end=1048,
+  serialized_start=962,
+  serialized_end=1046,
 )
 
 
@@ -393,45 +393,7 @@ _ROLELISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\n\260\363\263\007\001\270\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1050,
-  serialized_end=1162,
-)
-
-
-_ROLEBATCHUPDATEREQUEST = _descriptor.Descriptor(
-  name='RoleBatchUpdateRequest',
-  full_name='v1.RoleBatchUpdateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.RoleBatchUpdateRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='roles', full_name='v1.RoleBatchUpdateRequest.roles', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\270\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -444,115 +406,8 @@ _ROLEBATCHUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1271,
-)
-
-
-_ROLEBATCHUPDATERESPONSE = _descriptor.Descriptor(
-  name='RoleBatchUpdateResponse',
-  full_name='v1.RoleBatchUpdateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.RoleBatchUpdateResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='roles', full_name='v1.RoleBatchUpdateResponse.roles', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1274,
-  serialized_end=1407,
-)
-
-
-_ROLEBATCHDELETEREQUEST = _descriptor.Descriptor(
-  name='RoleBatchDeleteRequest',
-  full_name='v1.RoleBatchDeleteRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.RoleBatchDeleteRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ids', full_name='v1.RoleBatchDeleteRequest.ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1409,
-  serialized_end=1504,
-)
-
-
-_ROLEBATCHDELETERESPONSE = _descriptor.Descriptor(
-  name='RoleBatchDeleteResponse',
-  full_name='v1.RoleBatchDeleteResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.RoleBatchDeleteResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1506,
-  serialized_end=1602,
+  serialized_start=1048,
+  serialized_end=1143,
 )
 
 
@@ -584,26 +439,33 @@ _ROLE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\023\242\363\263\007\tComposite\260\363\263\007\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='roles', full_name='v1.Role.roles', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\362\370\263\007\017\242\363\263\007\005Roles\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\016\242\363\263\007\004Role\250\363\263\007\001\222Ab*:\n\007A Role.\022/https://www.strongdm.com/docs/api/entities#Role2$\022\"{ \"id\": \"7\", \"name\": \"happy-goat\"}'),
+  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001\222Ab*:\n\007A Role.\022/https://www.strongdm.com/docs/api/entities#Role2$\022\"{ \"id\": \"7\", \"name\": \"happy-goat\"}'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=1844,
+  serialized_start=1146,
+  serialized_end=1423,
 )
 
 _ROLECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
-_ROLECREATEREQUEST.fields_by_name['roles'].message_type = _ROLE
+_ROLECREATEREQUEST.fields_by_name['role'].message_type = _ROLE
 _ROLECREATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
-_ROLECREATERESPONSE.fields_by_name['roles'].message_type = _ROLE
+_ROLECREATERESPONSE.fields_by_name['role'].message_type = _ROLE
 _ROLEGETREQUEST.fields_by_name['meta'].message_type = spec__pb2._GETREQUESTMETADATA
 _ROLEGETRESPONSE.fields_by_name['meta'].message_type = spec__pb2._GETRESPONSEMETADATA
 _ROLEGETRESPONSE.fields_by_name['role'].message_type = _ROLE
@@ -616,12 +478,7 @@ _ROLEDELETERESPONSE.fields_by_name['meta'].message_type = spec__pb2._DELETERESPO
 _ROLELISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMETADATA
 _ROLELISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
 _ROLELISTRESPONSE.fields_by_name['roles'].message_type = _ROLE
-_ROLEBATCHUPDATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._BATCHUPDATEREQUESTMETADATA
-_ROLEBATCHUPDATEREQUEST.fields_by_name['roles'].message_type = _ROLE
-_ROLEBATCHUPDATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._BATCHUPDATERESPONSEMETADATA
-_ROLEBATCHUPDATERESPONSE.fields_by_name['roles'].message_type = _ROLE
-_ROLEBATCHDELETEREQUEST.fields_by_name['meta'].message_type = spec__pb2._BATCHDELETEREQUESTMETADATA
-_ROLEBATCHDELETERESPONSE.fields_by_name['meta'].message_type = spec__pb2._BATCHDELETERESPONSEMETADATA
+_ROLE.fields_by_name['roles'].message_type = _ROLE
 DESCRIPTOR.message_types_by_name['RoleCreateRequest'] = _ROLECREATEREQUEST
 DESCRIPTOR.message_types_by_name['RoleCreateResponse'] = _ROLECREATERESPONSE
 DESCRIPTOR.message_types_by_name['RoleGetRequest'] = _ROLEGETREQUEST
@@ -632,10 +489,6 @@ DESCRIPTOR.message_types_by_name['RoleDeleteRequest'] = _ROLEDELETEREQUEST
 DESCRIPTOR.message_types_by_name['RoleDeleteResponse'] = _ROLEDELETERESPONSE
 DESCRIPTOR.message_types_by_name['RoleListRequest'] = _ROLELISTREQUEST
 DESCRIPTOR.message_types_by_name['RoleListResponse'] = _ROLELISTRESPONSE
-DESCRIPTOR.message_types_by_name['RoleBatchUpdateRequest'] = _ROLEBATCHUPDATEREQUEST
-DESCRIPTOR.message_types_by_name['RoleBatchUpdateResponse'] = _ROLEBATCHUPDATERESPONSE
-DESCRIPTOR.message_types_by_name['RoleBatchDeleteRequest'] = _ROLEBATCHDELETEREQUEST
-DESCRIPTOR.message_types_by_name['RoleBatchDeleteResponse'] = _ROLEBATCHDELETERESPONSE
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -709,34 +562,6 @@ RoleListResponse = _reflection.GeneratedProtocolMessageType('RoleListResponse', 
   })
 _sym_db.RegisterMessage(RoleListResponse)
 
-RoleBatchUpdateRequest = _reflection.GeneratedProtocolMessageType('RoleBatchUpdateRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ROLEBATCHUPDATEREQUEST,
-  '__module__' : 'roles_pb2'
-  # @@protoc_insertion_point(class_scope:v1.RoleBatchUpdateRequest)
-  })
-_sym_db.RegisterMessage(RoleBatchUpdateRequest)
-
-RoleBatchUpdateResponse = _reflection.GeneratedProtocolMessageType('RoleBatchUpdateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ROLEBATCHUPDATERESPONSE,
-  '__module__' : 'roles_pb2'
-  # @@protoc_insertion_point(class_scope:v1.RoleBatchUpdateResponse)
-  })
-_sym_db.RegisterMessage(RoleBatchUpdateResponse)
-
-RoleBatchDeleteRequest = _reflection.GeneratedProtocolMessageType('RoleBatchDeleteRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ROLEBATCHDELETEREQUEST,
-  '__module__' : 'roles_pb2'
-  # @@protoc_insertion_point(class_scope:v1.RoleBatchDeleteRequest)
-  })
-_sym_db.RegisterMessage(RoleBatchDeleteRequest)
-
-RoleBatchDeleteResponse = _reflection.GeneratedProtocolMessageType('RoleBatchDeleteResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ROLEBATCHDELETERESPONSE,
-  '__module__' : 'roles_pb2'
-  # @@protoc_insertion_point(class_scope:v1.RoleBatchDeleteResponse)
-  })
-_sym_db.RegisterMessage(RoleBatchDeleteResponse)
-
 Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
   'DESCRIPTOR' : _ROLE,
   '__module__' : 'roles_pb2'
@@ -745,9 +570,10 @@ Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
 _sym_db.RegisterMessage(Role)
 
 
-_ROLECREATEREQUEST.fields_by_name['roles']._options = None
+DESCRIPTOR._options = None
+_ROLECREATEREQUEST.fields_by_name['role']._options = None
 _ROLECREATERESPONSE.fields_by_name['meta']._options = None
-_ROLECREATERESPONSE.fields_by_name['roles']._options = None
+_ROLECREATERESPONSE.fields_by_name['role']._options = None
 _ROLECREATERESPONSE._options = None
 _ROLEGETREQUEST.fields_by_name['id']._options = None
 _ROLEGETRESPONSE.fields_by_name['meta']._options = None
@@ -763,17 +589,10 @@ _ROLEDELETERESPONSE.fields_by_name['meta']._options = None
 _ROLEDELETERESPONSE._options = None
 _ROLELISTREQUEST.fields_by_name['filter']._options = None
 _ROLELISTRESPONSE.fields_by_name['roles']._options = None
-_ROLELISTRESPONSE._options = None
-_ROLEBATCHUPDATEREQUEST.fields_by_name['roles']._options = None
-_ROLEBATCHUPDATERESPONSE.fields_by_name['meta']._options = None
-_ROLEBATCHUPDATERESPONSE.fields_by_name['roles']._options = None
-_ROLEBATCHUPDATERESPONSE._options = None
-_ROLEBATCHDELETEREQUEST.fields_by_name['ids']._options = None
-_ROLEBATCHDELETERESPONSE.fields_by_name['meta']._options = None
-_ROLEBATCHDELETERESPONSE._options = None
 _ROLE.fields_by_name['id']._options = None
 _ROLE.fields_by_name['name']._options = None
 _ROLE.fields_by_name['composite']._options = None
+_ROLE.fields_by_name['roles']._options = None
 _ROLE._options = None
 
 _ROLES = _descriptor.ServiceDescriptor(
@@ -781,9 +600,9 @@ _ROLES = _descriptor.ServiceDescriptor(
   full_name='v1.Roles',
   file=DESCRIPTOR,
   index=0,
-  serialized_options=None,
-  serialized_start=1847,
-  serialized_end=2514,
+  serialized_options=_b('\312\371\263\007\t\302\371\263\007\004Role'),
+  serialized_start=1426,
+  serialized_end=1924,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -829,24 +648,6 @@ _ROLES = _descriptor.ServiceDescriptor(
     input_type=_ROLELISTREQUEST,
     output_type=_ROLELISTRESPONSE,
     serialized_options=_b('\202\323\344\223\002\013\022\t/v1/roles'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='BatchUpdate',
-    full_name='v1.Roles.BatchUpdate',
-    index=5,
-    containing_service=None,
-    input_type=_ROLEBATCHUPDATEREQUEST,
-    output_type=_ROLEBATCHUPDATERESPONSE,
-    serialized_options=_b('\202\323\344\223\002\016\032\t/v1/roles:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='BatchDelete',
-    full_name='v1.Roles.BatchDelete',
-    index=6,
-    containing_service=None,
-    input_type=_ROLEBATCHDELETEREQUEST,
-    output_type=_ROLEBATCHDELETERESPONSE,
-    serialized_options=_b('\202\323\344\223\002\013*\t/v1/roles'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_ROLES)

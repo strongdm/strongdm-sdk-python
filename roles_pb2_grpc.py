@@ -39,16 +39,6 @@ class RolesStub(object):
         request_serializer=roles__pb2.RoleListRequest.SerializeToString,
         response_deserializer=roles__pb2.RoleListResponse.FromString,
         )
-    self.BatchUpdate = channel.unary_unary(
-        '/v1.Roles/BatchUpdate',
-        request_serializer=roles__pb2.RoleBatchUpdateRequest.SerializeToString,
-        response_deserializer=roles__pb2.RoleBatchUpdateResponse.FromString,
-        )
-    self.BatchDelete = channel.unary_unary(
-        '/v1.Roles/BatchDelete',
-        request_serializer=roles__pb2.RoleBatchDeleteRequest.SerializeToString,
-        response_deserializer=roles__pb2.RoleBatchDeleteResponse.FromString,
-        )
 
 
 class RolesServicer(object):
@@ -90,20 +80,6 @@ class RolesServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def BatchUpdate(self, request, context):
-    """BatchUpdate is a batched Update call.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def BatchDelete(self, request, context):
-    """BatchDelete is a batched Delete call.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
 
 def add_RolesServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -131,16 +107,6 @@ def add_RolesServicer_to_server(servicer, server):
           servicer.List,
           request_deserializer=roles__pb2.RoleListRequest.FromString,
           response_serializer=roles__pb2.RoleListResponse.SerializeToString,
-      ),
-      'BatchUpdate': grpc.unary_unary_rpc_method_handler(
-          servicer.BatchUpdate,
-          request_deserializer=roles__pb2.RoleBatchUpdateRequest.FromString,
-          response_serializer=roles__pb2.RoleBatchUpdateResponse.SerializeToString,
-      ),
-      'BatchDelete': grpc.unary_unary_rpc_method_handler(
-          servicer.BatchDelete,
-          request_deserializer=roles__pb2.RoleBatchDeleteRequest.FromString,
-          response_serializer=roles__pb2.RoleBatchDeleteResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -40,16 +40,6 @@ class NodesStub(object):
         request_serializer=nodes__pb2.NodeListRequest.SerializeToString,
         response_deserializer=nodes__pb2.NodeListResponse.FromString,
         )
-    self.BatchUpdate = channel.unary_unary(
-        '/v1.Nodes/BatchUpdate',
-        request_serializer=nodes__pb2.NodeBatchUpdateRequest.SerializeToString,
-        response_deserializer=nodes__pb2.NodeBatchUpdateResponse.FromString,
-        )
-    self.BatchDelete = channel.unary_unary(
-        '/v1.Nodes/BatchDelete',
-        request_serializer=nodes__pb2.NodeBatchDeleteRequest.SerializeToString,
-        response_deserializer=nodes__pb2.NodeBatchDeleteResponse.FromString,
-        )
 
 
 class NodesServicer(object):
@@ -92,20 +82,6 @@ class NodesServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def BatchUpdate(self, request, context):
-    """BatchUpdate is a batched Update call.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def BatchDelete(self, request, context):
-    """BatchDelete is a batched Delete call.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
 
 def add_NodesServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -133,16 +109,6 @@ def add_NodesServicer_to_server(servicer, server):
           servicer.List,
           request_deserializer=nodes__pb2.NodeListRequest.FromString,
           response_serializer=nodes__pb2.NodeListResponse.SerializeToString,
-      ),
-      'BatchUpdate': grpc.unary_unary_rpc_method_handler(
-          servicer.BatchUpdate,
-          request_deserializer=nodes__pb2.NodeBatchUpdateRequest.FromString,
-          response_serializer=nodes__pb2.NodeBatchUpdateResponse.SerializeToString,
-      ),
-      'BatchDelete': grpc.unary_unary_rpc_method_handler(
-          servicer.BatchDelete,
-          request_deserializer=nodes__pb2.NodeBatchDeleteRequest.FromString,
-          response_serializer=nodes__pb2.NodeBatchDeleteResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

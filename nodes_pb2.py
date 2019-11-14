@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\rNodesPlumbing'),
-  serialized_pb=_b('\n\x0bnodes.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"a\n\x11NodeCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12#\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x01\n\x12NodeCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x06tokens\x18\x03 \x03(\x0b\x32\t.v1.TokenB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eNodeGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"t\n\x0fNodeGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x11NodeUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x03 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"z\n\x12NodeUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11NodeDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"V\n\x12NodeDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fNodeListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"p\n\x10NodeListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12(\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xb8\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"k\n\x16NodeBatchUpdateRequest\x12,\n\x04meta\x18\x01 \x01(\x0b\x32\x1e.v1.BatchUpdateRequestMetadata\x12#\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x85\x01\n\x17NodeBatchUpdateResponse\x12\x39\n\x04meta\x18\x01 \x01(\x0b\x32\x1f.v1.BatchUpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x16NodeBatchDeleteRequest\x12,\n\x04meta\x18\x01 \x01(\x0b\x32\x1e.v1.BatchDeleteRequestMetadata\x12\x17\n\x03ids\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"`\n\x17NodeBatchDeleteResponse\x12\x39\n\x04meta\x18\x01 \x01(\x0b\x32\x1f.v1.BatchDeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xcb\x01\n\x04Node\x12\x1a\n\x05relay\x18\x01 \x01(\x0b\x32\t.v1.RelayH\x00\x12\x1e\n\x07gateway\x18\x02 \x01(\x0b\x32\x0b.v1.GatewayH\x00:o\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x92\x41\x62*:\n\x07\x41 node.\x12/https://www.strongdm.com/docs/api/entities#Node2$\x12\"{ \"id\": \"7\", \"name\": \"happy-goat\"}B\x16\n\x04node\x12\x0e\xaa\xf8\xb3\x07\t\xa2\xf8\xb3\x07\x04Node\"^\n\x05Relay\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01:\x13\xfa\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Node\xa8\xf3\xb3\x07\x01\"\xcc\x01\n\x07Gateway\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\x12\x36\n\x0elisten_address\x18\x03 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\nListenAddr\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01\x12\x32\n\x0c\x62ind_address\x18\x04 \x01(\tB\x1c\xf2\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\x08\x42indAddr\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01:\x13\xfa\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Node\xa8\xf3\xb3\x07\x01\"F\n\x05Token\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\x9b\x05\n\x05Nodes\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.NodeCreateRequest\x1a\x16.v1.NodeCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/nodes:\x01*\x92\x41U\"S\n\x18Learn how to make a Node\x12\x37https://www.strongdm.com/docs/api/services/Nodes#Create\x12\x46\n\x03Get\x12\x12.v1.NodeGetRequest\x1a\x13.v1.NodeGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/nodes/{id}\x12R\n\x06Update\x12\x15.v1.NodeUpdateRequest\x1a\x16.v1.NodeUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/nodes/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.NodeDeleteRequest\x1a\x16.v1.NodeDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/nodes/{id}\x12\x44\n\x04List\x12\x13.v1.NodeListRequest\x1a\x14.v1.NodeListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/nodes\x12\\\n\x0b\x42\x61tchUpdate\x12\x1a.v1.NodeBatchUpdateRequest\x1a\x1b.v1.NodeBatchUpdateResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x1a\t/v1/nodes:\x01*\x12Y\n\x0b\x42\x61tchDelete\x12\x1a.v1.NodeBatchDeleteRequest\x1a\x1b.v1.NodeBatchDeleteResponse\"\x11\x82\xd3\xe4\x93\x02\x0b*\t/v1/nodesB-\n\x1c\x63om.strongdm.api.v1.plumbingB\rNodesPlumbingb\x06proto3')
+  serialized_pb=_b('\n\x0bnodes.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"`\n\x11NodeCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa0\x01\n\x12NodeCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x05token\x18\x03 \x01(\x0b\x32\t.v1.TokenB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eNodeGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"t\n\x0fNodeGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x11NodeUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x03 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"z\n\x12NodeUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x02 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11NodeDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"V\n\x12NodeDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fNodeListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"_\n\x10NodeListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05nodes\x18\x02 \x03(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\"\xcb\x01\n\x04Node\x12\x1a\n\x05relay\x18\x01 \x01(\x0b\x32\t.v1.RelayH\x00\x12\x1e\n\x07gateway\x18\x02 \x01(\x0b\x32\x0b.v1.GatewayH\x00:o\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x92\x41\x62*:\n\x07\x41 node.\x12/https://www.strongdm.com/docs/api/entities#Node2$\x12\"{ \"id\": \"7\", \"name\": \"happy-goat\"}B\x16\n\x04node\x12\x0e\xaa\xf8\xb3\x07\t\xa2\xf8\xb3\x07\x04Node\"^\n\x05Relay\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01:\x13\xfa\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Node\xa8\xf3\xb3\x07\x01\"\xcc\x01\n\x07Gateway\x12\x1d\n\x02id\x18\x01 \x01(\tB\x11\xf2\xf8\xb3\x07\x0c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\x12!\n\x04name\x18\x02 \x01(\tB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\x12\x36\n\x0elisten_address\x18\x03 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\nListenAddr\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01\x12\x32\n\x0c\x62ind_address\x18\x04 \x01(\tB\x1c\xf2\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\x08\x42indAddr\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01:\x13\xfa\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Node\xa8\xf3\xb3\x07\x01\"F\n\x05Token\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xf2\x03\n\x05Nodes\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.NodeCreateRequest\x1a\x16.v1.NodeCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/nodes:\x01*\x92\x41U\"S\n\x18Learn how to make a Node\x12\x37https://www.strongdm.com/docs/api/services/Nodes#Create\x12\x46\n\x03Get\x12\x12.v1.NodeGetRequest\x1a\x13.v1.NodeGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/nodes/{id}\x12R\n\x06Update\x12\x15.v1.NodeUpdateRequest\x1a\x16.v1.NodeUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/nodes/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.NodeDeleteRequest\x1a\x16.v1.NodeDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/nodes/{id}\x12\x44\n\x04List\x12\x13.v1.NodeListRequest\x1a\x14.v1.NodeListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/nodes\x1a\x0e\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04NodeB-\n\x1c\x63om.strongdm.api.v1.plumbingB\rNodesPlumbingb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -46,9 +46,9 @@ _NODECREATEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nodes', full_name='v1.NodeCreateRequest.nodes', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='node', full_name='v1.NodeCreateRequest.node', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
@@ -65,7 +65,7 @@ _NODECREATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=122,
-  serialized_end=219,
+  serialized_end=218,
 )
 
 
@@ -84,16 +84,16 @@ _NODECREATERESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nodes', full_name='v1.NodeCreateResponse.nodes', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='node', full_name='v1.NodeCreateResponse.node', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tokens', full_name='v1.NodeCreateResponse.tokens', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='token', full_name='v1.NodeCreateResponse.token', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
@@ -109,8 +109,8 @@ _NODECREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=384,
+  serialized_start=221,
+  serialized_end=381,
 )
 
 
@@ -147,8 +147,8 @@ _NODEGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=386,
-  serialized_end=464,
+  serialized_start=383,
+  serialized_end=461,
 )
 
 
@@ -185,8 +185,8 @@ _NODEGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=466,
-  serialized_end=582,
+  serialized_start=463,
+  serialized_end=579,
 )
 
 
@@ -230,8 +230,8 @@ _NODEUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=584,
-  serialized_end=704,
+  serialized_start=581,
+  serialized_end=701,
 )
 
 
@@ -268,8 +268,8 @@ _NODEUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=706,
-  serialized_end=828,
+  serialized_start=703,
+  serialized_end=825,
 )
 
 
@@ -306,8 +306,8 @@ _NODEDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=830,
-  serialized_end=914,
+  serialized_start=827,
+  serialized_end=911,
 )
 
 
@@ -337,8 +337,8 @@ _NODEDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=916,
-  serialized_end=1002,
+  serialized_start=913,
+  serialized_end=999,
 )
 
 
@@ -375,8 +375,8 @@ _NODELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1004,
-  serialized_end=1088,
+  serialized_start=1001,
+  serialized_end=1085,
 )
 
 
@@ -400,45 +400,7 @@ _NODELISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\n\260\363\263\007\001\270\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1090,
-  serialized_end=1202,
-)
-
-
-_NODEBATCHUPDATEREQUEST = _descriptor.Descriptor(
-  name='NodeBatchUpdateRequest',
-  full_name='v1.NodeBatchUpdateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.NodeBatchUpdateRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nodes', full_name='v1.NodeBatchUpdateRequest.nodes', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\270\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -451,115 +413,8 @@ _NODEBATCHUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1204,
-  serialized_end=1311,
-)
-
-
-_NODEBATCHUPDATERESPONSE = _descriptor.Descriptor(
-  name='NodeBatchUpdateResponse',
-  full_name='v1.NodeBatchUpdateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.NodeBatchUpdateResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nodes', full_name='v1.NodeBatchUpdateResponse.nodes', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1314,
-  serialized_end=1447,
-)
-
-
-_NODEBATCHDELETEREQUEST = _descriptor.Descriptor(
-  name='NodeBatchDeleteRequest',
-  full_name='v1.NodeBatchDeleteRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.NodeBatchDeleteRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ids', full_name='v1.NodeBatchDeleteRequest.ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1449,
-  serialized_end=1544,
-)
-
-
-_NODEBATCHDELETERESPONSE = _descriptor.Descriptor(
-  name='NodeBatchDeleteResponse',
-  full_name='v1.NodeBatchDeleteResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.NodeBatchDeleteResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1546,
-  serialized_end=1642,
+  serialized_start=1087,
+  serialized_end=1182,
 )
 
 
@@ -599,8 +454,8 @@ _NODE = _descriptor.Descriptor(
       name='node', full_name='v1.Node.node',
       index=0, containing_type=None, fields=[], serialized_options=_b('\252\370\263\007\t\242\370\263\007\004Node')),
   ],
-  serialized_start=1645,
-  serialized_end=1848,
+  serialized_start=1185,
+  serialized_end=1388,
 )
 
 
@@ -637,8 +492,8 @@ _RELAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1850,
-  serialized_end=1944,
+  serialized_start=1390,
+  serialized_end=1484,
 )
 
 
@@ -689,8 +544,8 @@ _GATEWAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1947,
-  serialized_end=2151,
+  serialized_start=1487,
+  serialized_end=1691,
 )
 
 
@@ -727,15 +582,15 @@ _TOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2153,
-  serialized_end=2223,
+  serialized_start=1693,
+  serialized_end=1763,
 )
 
 _NODECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
-_NODECREATEREQUEST.fields_by_name['nodes'].message_type = _NODE
+_NODECREATEREQUEST.fields_by_name['node'].message_type = _NODE
 _NODECREATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
-_NODECREATERESPONSE.fields_by_name['nodes'].message_type = _NODE
-_NODECREATERESPONSE.fields_by_name['tokens'].message_type = _TOKEN
+_NODECREATERESPONSE.fields_by_name['node'].message_type = _NODE
+_NODECREATERESPONSE.fields_by_name['token'].message_type = _TOKEN
 _NODEGETREQUEST.fields_by_name['meta'].message_type = spec__pb2._GETREQUESTMETADATA
 _NODEGETRESPONSE.fields_by_name['meta'].message_type = spec__pb2._GETRESPONSEMETADATA
 _NODEGETRESPONSE.fields_by_name['node'].message_type = _NODE
@@ -748,12 +603,6 @@ _NODEDELETERESPONSE.fields_by_name['meta'].message_type = spec__pb2._DELETERESPO
 _NODELISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMETADATA
 _NODELISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
 _NODELISTRESPONSE.fields_by_name['nodes'].message_type = _NODE
-_NODEBATCHUPDATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._BATCHUPDATEREQUESTMETADATA
-_NODEBATCHUPDATEREQUEST.fields_by_name['nodes'].message_type = _NODE
-_NODEBATCHUPDATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._BATCHUPDATERESPONSEMETADATA
-_NODEBATCHUPDATERESPONSE.fields_by_name['nodes'].message_type = _NODE
-_NODEBATCHDELETEREQUEST.fields_by_name['meta'].message_type = spec__pb2._BATCHDELETEREQUESTMETADATA
-_NODEBATCHDELETERESPONSE.fields_by_name['meta'].message_type = spec__pb2._BATCHDELETERESPONSEMETADATA
 _NODE.fields_by_name['relay'].message_type = _RELAY
 _NODE.fields_by_name['gateway'].message_type = _GATEWAY
 _NODE.oneofs_by_name['node'].fields.append(
@@ -772,10 +621,6 @@ DESCRIPTOR.message_types_by_name['NodeDeleteRequest'] = _NODEDELETEREQUEST
 DESCRIPTOR.message_types_by_name['NodeDeleteResponse'] = _NODEDELETERESPONSE
 DESCRIPTOR.message_types_by_name['NodeListRequest'] = _NODELISTREQUEST
 DESCRIPTOR.message_types_by_name['NodeListResponse'] = _NODELISTRESPONSE
-DESCRIPTOR.message_types_by_name['NodeBatchUpdateRequest'] = _NODEBATCHUPDATEREQUEST
-DESCRIPTOR.message_types_by_name['NodeBatchUpdateResponse'] = _NODEBATCHUPDATERESPONSE
-DESCRIPTOR.message_types_by_name['NodeBatchDeleteRequest'] = _NODEBATCHDELETEREQUEST
-DESCRIPTOR.message_types_by_name['NodeBatchDeleteResponse'] = _NODEBATCHDELETERESPONSE
 DESCRIPTOR.message_types_by_name['Node'] = _NODE
 DESCRIPTOR.message_types_by_name['Relay'] = _RELAY
 DESCRIPTOR.message_types_by_name['Gateway'] = _GATEWAY
@@ -852,34 +697,6 @@ NodeListResponse = _reflection.GeneratedProtocolMessageType('NodeListResponse', 
   })
 _sym_db.RegisterMessage(NodeListResponse)
 
-NodeBatchUpdateRequest = _reflection.GeneratedProtocolMessageType('NodeBatchUpdateRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NODEBATCHUPDATEREQUEST,
-  '__module__' : 'nodes_pb2'
-  # @@protoc_insertion_point(class_scope:v1.NodeBatchUpdateRequest)
-  })
-_sym_db.RegisterMessage(NodeBatchUpdateRequest)
-
-NodeBatchUpdateResponse = _reflection.GeneratedProtocolMessageType('NodeBatchUpdateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NODEBATCHUPDATERESPONSE,
-  '__module__' : 'nodes_pb2'
-  # @@protoc_insertion_point(class_scope:v1.NodeBatchUpdateResponse)
-  })
-_sym_db.RegisterMessage(NodeBatchUpdateResponse)
-
-NodeBatchDeleteRequest = _reflection.GeneratedProtocolMessageType('NodeBatchDeleteRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NODEBATCHDELETEREQUEST,
-  '__module__' : 'nodes_pb2'
-  # @@protoc_insertion_point(class_scope:v1.NodeBatchDeleteRequest)
-  })
-_sym_db.RegisterMessage(NodeBatchDeleteRequest)
-
-NodeBatchDeleteResponse = _reflection.GeneratedProtocolMessageType('NodeBatchDeleteResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NODEBATCHDELETERESPONSE,
-  '__module__' : 'nodes_pb2'
-  # @@protoc_insertion_point(class_scope:v1.NodeBatchDeleteResponse)
-  })
-_sym_db.RegisterMessage(NodeBatchDeleteResponse)
-
 Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), {
   'DESCRIPTOR' : _NODE,
   '__module__' : 'nodes_pb2'
@@ -910,10 +727,10 @@ _sym_db.RegisterMessage(Token)
 
 
 DESCRIPTOR._options = None
-_NODECREATEREQUEST.fields_by_name['nodes']._options = None
+_NODECREATEREQUEST.fields_by_name['node']._options = None
 _NODECREATERESPONSE.fields_by_name['meta']._options = None
-_NODECREATERESPONSE.fields_by_name['nodes']._options = None
-_NODECREATERESPONSE.fields_by_name['tokens']._options = None
+_NODECREATERESPONSE.fields_by_name['node']._options = None
+_NODECREATERESPONSE.fields_by_name['token']._options = None
 _NODECREATERESPONSE._options = None
 _NODEGETREQUEST.fields_by_name['id']._options = None
 _NODEGETRESPONSE.fields_by_name['meta']._options = None
@@ -929,14 +746,6 @@ _NODEDELETERESPONSE.fields_by_name['meta']._options = None
 _NODEDELETERESPONSE._options = None
 _NODELISTREQUEST.fields_by_name['filter']._options = None
 _NODELISTRESPONSE.fields_by_name['nodes']._options = None
-_NODELISTRESPONSE._options = None
-_NODEBATCHUPDATEREQUEST.fields_by_name['nodes']._options = None
-_NODEBATCHUPDATERESPONSE.fields_by_name['meta']._options = None
-_NODEBATCHUPDATERESPONSE.fields_by_name['nodes']._options = None
-_NODEBATCHUPDATERESPONSE._options = None
-_NODEBATCHDELETEREQUEST.fields_by_name['ids']._options = None
-_NODEBATCHDELETERESPONSE.fields_by_name['meta']._options = None
-_NODEBATCHDELETERESPONSE._options = None
 _NODE.oneofs_by_name['node']._options = None
 _NODE._options = None
 _RELAY.fields_by_name['id']._options = None
@@ -956,9 +765,9 @@ _NODES = _descriptor.ServiceDescriptor(
   full_name='v1.Nodes',
   file=DESCRIPTOR,
   index=0,
-  serialized_options=None,
-  serialized_start=2226,
-  serialized_end=2893,
+  serialized_options=_b('\312\371\263\007\t\302\371\263\007\004Node'),
+  serialized_start=1766,
+  serialized_end=2264,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1004,24 +813,6 @@ _NODES = _descriptor.ServiceDescriptor(
     input_type=_NODELISTREQUEST,
     output_type=_NODELISTRESPONSE,
     serialized_options=_b('\202\323\344\223\002\013\022\t/v1/nodes'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='BatchUpdate',
-    full_name='v1.Nodes.BatchUpdate',
-    index=5,
-    containing_service=None,
-    input_type=_NODEBATCHUPDATEREQUEST,
-    output_type=_NODEBATCHUPDATERESPONSE,
-    serialized_options=_b('\202\323\344\223\002\016\032\t/v1/nodes:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='BatchDelete',
-    full_name='v1.Nodes.BatchDelete',
-    index=6,
-    containing_service=None,
-    input_type=_NODEBATCHDELETEREQUEST,
-    output_type=_NODEBATCHDELETERESPONSE,
-    serialized_options=_b('\202\323\344\223\002\013*\t/v1/nodes'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NODES)

@@ -6,6 +6,7 @@ from . import models
 from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
+from .roles_pb2 import *
 
 def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()
@@ -87,66 +88,14 @@ def repeated_delete_response_metadata_to_plumbing(porcelains):
 def repeated_delete_response_metadata_to_porcelain(plumbings):
     return [delete_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
 
-def batch_update_response_metadata_to_porcelain(plumbing):
-    porcelain = models.BatchUpdateResponseMetadata()
-    
-    porcelain.found = plumbing.found
-    
-    porcelain.affected = plumbing.affected
-    return porcelain
-
-def batch_update_response_metadata_to_plumbing(porcelain):
-    plumbing = BatchUpdateResponseMetadata()
-    if porcelain.found != None:
-        
-        plumbing.found = porcelain.found
-        
-    if porcelain.affected != None:
-        
-        plumbing.affected = porcelain.affected
-        
-    return plumbing
-
-def repeated_batch_update_response_metadata_to_plumbing(porcelains):
-    return [batch_update_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_batch_update_response_metadata_to_porcelain(plumbings):
-    return [batch_update_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
-
-def batch_delete_response_metadata_to_porcelain(plumbing):
-    porcelain = models.BatchDeleteResponseMetadata()
-    
-    porcelain.found = plumbing.found
-    
-    porcelain.affected = plumbing.affected
-    return porcelain
-
-def batch_delete_response_metadata_to_plumbing(porcelain):
-    plumbing = BatchDeleteResponseMetadata()
-    if porcelain.found != None:
-        
-        plumbing.found = porcelain.found
-        
-    if porcelain.affected != None:
-        
-        plumbing.affected = porcelain.affected
-        
-    return plumbing
-
-def repeated_batch_delete_response_metadata_to_plumbing(porcelains):
-    return [batch_delete_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_batch_delete_response_metadata_to_porcelain(plumbings):
-    return [batch_delete_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
-
 def node_create_response_to_porcelain(plumbing):
     porcelain = models.NodeCreateResponse()
     
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     
-    porcelain.nodes = node_to_porcelain(plumbing.nodes)
+    porcelain.node = node_to_porcelain(plumbing.node)
     
-    porcelain.tokens = token_to_porcelain(plumbing.tokens)
+    porcelain.token = token_to_porcelain(plumbing.token)
     return porcelain
 
 def node_create_response_to_plumbing(porcelain):
@@ -155,13 +104,13 @@ def node_create_response_to_plumbing(porcelain):
         
         plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
         
-    if porcelain.nodes != None:
+    if porcelain.node != None:
         
-        plumbing.nodes = node_to_plumbing(porcelain.nodes)
+        plumbing.node = node_to_plumbing(porcelain.node)
         
-    if porcelain.tokens != None:
+    if porcelain.token != None:
         
-        plumbing.tokens = token_to_plumbing(porcelain.tokens)
+        plumbing.token = token_to_plumbing(porcelain.token)
         
     return plumbing
 
@@ -242,78 +191,6 @@ def repeated_node_delete_response_to_plumbing(porcelains):
 
 def repeated_node_delete_response_to_porcelain(plumbings):
     return [node_delete_response_to_porcelain(plumbing) for plumbing in plumbings]
-
-def node_list_response_to_porcelain(plumbing):
-    porcelain = models.NodeListResponse()
-    
-    porcelain.meta = list_response_metadata_to_porcelain(plumbing.meta)
-    
-    porcelain.nodes = node_to_porcelain(plumbing.nodes)
-    return porcelain
-
-def node_list_response_to_plumbing(porcelain):
-    plumbing = NodeListResponse()
-    if porcelain.meta != None:
-        
-        plumbing.meta = list_response_metadata_to_plumbing(porcelain.meta)
-        
-    if porcelain.nodes != None:
-        
-        plumbing.nodes = node_to_plumbing(porcelain.nodes)
-        
-    return plumbing
-
-def repeated_node_list_response_to_plumbing(porcelains):
-    return [node_list_response_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_node_list_response_to_porcelain(plumbings):
-    return [node_list_response_to_porcelain(plumbing) for plumbing in plumbings]
-
-def node_batch_update_response_to_porcelain(plumbing):
-    porcelain = models.NodeBatchUpdateResponse()
-    
-    porcelain.meta = batch_update_response_metadata_to_porcelain(plumbing.meta)
-    
-    porcelain.nodes = node_to_porcelain(plumbing.nodes)
-    return porcelain
-
-def node_batch_update_response_to_plumbing(porcelain):
-    plumbing = NodeBatchUpdateResponse()
-    if porcelain.meta != None:
-        
-        plumbing.meta = batch_update_response_metadata_to_plumbing(porcelain.meta)
-        
-    if porcelain.nodes != None:
-        
-        plumbing.nodes = node_to_plumbing(porcelain.nodes)
-        
-    return plumbing
-
-def repeated_node_batch_update_response_to_plumbing(porcelains):
-    return [node_batch_update_response_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_node_batch_update_response_to_porcelain(plumbings):
-    return [node_batch_update_response_to_porcelain(plumbing) for plumbing in plumbings]
-
-def node_batch_delete_response_to_porcelain(plumbing):
-    porcelain = models.NodeBatchDeleteResponse()
-    
-    porcelain.meta = batch_delete_response_metadata_to_porcelain(plumbing.meta)
-    return porcelain
-
-def node_batch_delete_response_to_plumbing(porcelain):
-    plumbing = NodeBatchDeleteResponse()
-    if porcelain.meta != None:
-        
-        plumbing.meta = batch_delete_response_metadata_to_plumbing(porcelain.meta)
-        
-    return plumbing
-
-def repeated_node_batch_delete_response_to_plumbing(porcelains):
-    return [node_batch_delete_response_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_node_batch_delete_response_to_porcelain(plumbings):
-    return [node_batch_delete_response_to_porcelain(plumbing) for plumbing in plumbings]
 
 def node_to_plumbing(porcelain):
     plumbing = Node()
@@ -425,6 +302,142 @@ def repeated_token_to_plumbing(porcelains):
 
 def repeated_token_to_porcelain(plumbings):
     return [token_to_porcelain(plumbing) for plumbing in plumbings]
+
+def role_create_response_to_porcelain(plumbing):
+    porcelain = models.RoleCreateResponse()
+    
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+    
+    porcelain.role = role_to_porcelain(plumbing.role)
+    return porcelain
+
+def role_create_response_to_plumbing(porcelain):
+    plumbing = RoleCreateResponse()
+    if porcelain.meta != None:
+        
+        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        
+    if porcelain.role != None:
+        
+        plumbing.role = role_to_plumbing(porcelain.role)
+        
+    return plumbing
+
+def repeated_role_create_response_to_plumbing(porcelains):
+    return [role_create_response_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_role_create_response_to_porcelain(plumbings):
+    return [role_create_response_to_porcelain(plumbing) for plumbing in plumbings]
+
+def role_get_response_to_porcelain(plumbing):
+    porcelain = models.RoleGetResponse()
+    
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+    
+    porcelain.role = role_to_porcelain(plumbing.role)
+    return porcelain
+
+def role_get_response_to_plumbing(porcelain):
+    plumbing = RoleGetResponse()
+    if porcelain.meta != None:
+        
+        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        
+    if porcelain.role != None:
+        
+        plumbing.role = role_to_plumbing(porcelain.role)
+        
+    return plumbing
+
+def repeated_role_get_response_to_plumbing(porcelains):
+    return [role_get_response_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_role_get_response_to_porcelain(plumbings):
+    return [role_get_response_to_porcelain(plumbing) for plumbing in plumbings]
+
+def role_update_response_to_porcelain(plumbing):
+    porcelain = models.RoleUpdateResponse()
+    
+    porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
+    
+    porcelain.role = role_to_porcelain(plumbing.role)
+    return porcelain
+
+def role_update_response_to_plumbing(porcelain):
+    plumbing = RoleUpdateResponse()
+    if porcelain.meta != None:
+        
+        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+        
+    if porcelain.role != None:
+        
+        plumbing.role = role_to_plumbing(porcelain.role)
+        
+    return plumbing
+
+def repeated_role_update_response_to_plumbing(porcelains):
+    return [role_update_response_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_role_update_response_to_porcelain(plumbings):
+    return [role_update_response_to_porcelain(plumbing) for plumbing in plumbings]
+
+def role_delete_response_to_porcelain(plumbing):
+    porcelain = models.RoleDeleteResponse()
+    
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+    return porcelain
+
+def role_delete_response_to_plumbing(porcelain):
+    plumbing = RoleDeleteResponse()
+    if porcelain.meta != None:
+        
+        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        
+    return plumbing
+
+def repeated_role_delete_response_to_plumbing(porcelains):
+    return [role_delete_response_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_role_delete_response_to_porcelain(plumbings):
+    return [role_delete_response_to_porcelain(plumbing) for plumbing in plumbings]
+
+def role_to_porcelain(plumbing):
+    porcelain = models.Role()
+    
+    porcelain.id = plumbing.id
+    
+    porcelain.name = plumbing.name
+    
+    porcelain.composite = plumbing.composite
+    
+    porcelain.roles = role_to_porcelain(plumbing.roles)
+    return porcelain
+
+def role_to_plumbing(porcelain):
+    plumbing = Role()
+    if porcelain.id != None:
+        
+        plumbing.id = porcelain.id
+        
+    if porcelain.name != None:
+        
+        plumbing.name = porcelain.name
+        
+    if porcelain.composite != None:
+        
+        plumbing.composite = porcelain.composite
+        
+    if porcelain.roles != None:
+        
+        plumbing.roles = role_to_plumbing(porcelain.roles)
+        
+    return plumbing
+
+def repeated_role_to_plumbing(porcelains):
+    return [role_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_role_to_porcelain(plumbings):
+    return [role_to_porcelain(plumbing) for plumbing in plumbings]
 
 def is_status_detail(x):
     # Return True if a metadata is a grpc-status-details
