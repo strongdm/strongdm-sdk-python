@@ -15,15 +15,16 @@ from .roles_pb2_grpc import *
 # Nodes are proxies in strongDM responsible to communicate with servers
 # (relays) and clients (gateways).
 class Nodes:
-    def __init__(self, channel):
+    def __init__(self, channel, api_key):
         self.stub = NodesStub(channel)
+        self.api_key = api_key
     
     # Create registers a new node.
     def create(self, node):
         req = NodeCreateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Create(req)
+            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeCreateResponse()
@@ -37,7 +38,7 @@ class Nodes:
         req = NodeGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req)
+            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeGetResponse()
@@ -51,7 +52,7 @@ class Nodes:
         req.id = id
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Update(req)
+            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeUpdateResponse()
@@ -64,7 +65,7 @@ class Nodes:
         req = NodeDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req)
+            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeDeleteResponse()
@@ -80,7 +81,7 @@ class Nodes:
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req)
+                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.api_key)])
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.nodes:
@@ -94,15 +95,16 @@ class Nodes:
 
 # Roles are
 class Roles:
-    def __init__(self, channel):
+    def __init__(self, channel, api_key):
         self.stub = RolesStub(channel)
+        self.api_key = api_key
     
     # Create registers a new role.
     def create(self, role):
         req = RoleCreateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Create(req)
+            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleCreateResponse()
@@ -115,7 +117,7 @@ class Roles:
         req = RoleGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req)
+            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleGetResponse()
@@ -129,7 +131,7 @@ class Roles:
         req.id = id
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Update(req)
+            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleUpdateResponse()
@@ -142,7 +144,7 @@ class Roles:
         req = RoleDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req)
+            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.api_key)])
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleDeleteResponse()
@@ -158,7 +160,7 @@ class Roles:
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req)
+                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.api_key)])
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.roles:
