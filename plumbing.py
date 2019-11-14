@@ -414,7 +414,8 @@ def role_to_plumbing(porcelain):
         plumbing.composite = porcelain.composite
     if porcelain.roles != None:
         
-        plumbing.roles = repeated_role_to_plumbing(porcelain.roles)
+        del plumbing.roles[:]
+        plumbing.roles.extend(repeated_role_to_plumbing(porcelain.roles))
         
     return plumbing
 
