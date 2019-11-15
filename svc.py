@@ -47,9 +47,8 @@ class Nodes:
         return resp
     
     # Update patches a node by ID.
-    def update(self, id, node):
+    def update(self, node):
         req = NodeUpdateRequest()
-        req.id = id
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
             plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])
@@ -126,9 +125,8 @@ class Roles:
         return resp
     
     # Update patches a Role by ID.
-    def update(self, id, role):
+    def update(self, role):
         req = RoleUpdateRequest()
-        req.id = id
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
             plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])

@@ -10,15 +10,10 @@ from .roles_pb2 import *
 
 def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()
-    
-    porcelain.affected = plumbing.affected
     return porcelain
 
 def create_response_metadata_to_plumbing(porcelain):
     plumbing = CreateResponseMetadata()
-    if porcelain.affected != None:
-        
-        plumbing.affected = porcelain.affected
     return plumbing
 
 def repeated_create_response_metadata_to_plumbing(porcelains):
@@ -29,15 +24,10 @@ def repeated_create_response_metadata_to_porcelain(plumbings):
 
 def get_response_metadata_to_porcelain(plumbing):
     porcelain = models.GetResponseMetadata()
-    
-    porcelain.found = plumbing.found
     return porcelain
 
 def get_response_metadata_to_plumbing(porcelain):
     plumbing = GetResponseMetadata()
-    if porcelain.found != None:
-        
-        plumbing.found = porcelain.found
     return plumbing
 
 def repeated_get_response_metadata_to_plumbing(porcelains):
@@ -48,15 +38,10 @@ def repeated_get_response_metadata_to_porcelain(plumbings):
 
 def update_response_metadata_to_porcelain(plumbing):
     porcelain = models.UpdateResponseMetadata()
-    
-    porcelain.affected = plumbing.affected
     return porcelain
 
 def update_response_metadata_to_plumbing(porcelain):
     plumbing = UpdateResponseMetadata()
-    if porcelain.affected != None:
-        
-        plumbing.affected = porcelain.affected
     return plumbing
 
 def repeated_update_response_metadata_to_plumbing(porcelains):
@@ -67,15 +52,10 @@ def repeated_update_response_metadata_to_porcelain(plumbings):
 
 def delete_response_metadata_to_porcelain(plumbing):
     porcelain = models.DeleteResponseMetadata()
-    
-    porcelain.affected = plumbing.affected
     return porcelain
 
 def delete_response_metadata_to_plumbing(porcelain):
     plumbing = DeleteResponseMetadata()
-    if porcelain.affected != None:
-        
-        plumbing.affected = porcelain.affected
     return plumbing
 
 def repeated_delete_response_metadata_to_plumbing(porcelains):

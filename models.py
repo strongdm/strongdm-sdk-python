@@ -3,27 +3,27 @@ import collections
 
 # CreateResponseMetadata
 class CreateResponseMetadata:
-    __slots__ = ['affected']
+    __slots__ = []
     def __init__(self):
-        self.affected = None
+        pass
 
 # GetResponseMetadata
 class GetResponseMetadata:
-    __slots__ = ['found']
+    __slots__ = []
     def __init__(self):
-        self.found = None
+        pass
 
 # UpdateResponseMetadata
 class UpdateResponseMetadata:
-    __slots__ = ['affected']
+    __slots__ = []
     def __init__(self):
-        self.affected = None
+        pass
 
 # DeleteResponseMetadata
 class DeleteResponseMetadata:
-    __slots__ = ['affected']
+    __slots__ = []
     def __init__(self):
-        self.affected = None
+        pass
 
 # NodeCreateResponse reports how the nodes were created in the system. It can
 # communicate partial successes or failures.
