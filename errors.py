@@ -25,10 +25,8 @@ class AuthenticationError(Error):
 
 # PermissionError is used to specify a permissions violation
 class PermissionError(Error):
-    def __init__(self, msg, permission, entities):
+    def __init__(self, msg):
         self.msg = msg
-        self.permission = permission
-        self.entities = entities
 
 # InternalError is used to specify an internal system error
 class InternalError(Error):

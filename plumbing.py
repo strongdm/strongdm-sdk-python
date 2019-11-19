@@ -461,7 +461,7 @@ def error_to_porcelain(err):
         if detail.Is(PermissionError.DESCRIPTOR):
             plumbing = PermissionError()
             detail.Unpack(plumbing)
-            return errors.PermissionError(status.message, plumbing.permission, plumbing.entities)
+            return errors.PermissionError(status.message)
         # InternalError is used to specify an internal system error
         if detail.Is(InternalError.DESCRIPTOR):
             plumbing = InternalError()
