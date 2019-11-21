@@ -1,25 +1,25 @@
 import collections
 
 
-# CreateResponseMetadata
+# CreateResponseMetadata is reserved for future use.
 class CreateResponseMetadata:
     __slots__ = []
     def __init__(self):
         pass
 
-# GetResponseMetadata
+# GetResponseMetadata is reserved for future use.
 class GetResponseMetadata:
     __slots__ = []
     def __init__(self):
         pass
 
-# UpdateResponseMetadata
+# UpdateResponseMetadata is reserved for future use.
 class UpdateResponseMetadata:
     __slots__ = []
     def __init__(self):
         pass
 
-# DeleteResponseMetadata
+# DeleteResponseMetadata is reserved for future use.
 class DeleteResponseMetadata:
     __slots__ = []
     def __init__(self):
@@ -107,11 +107,12 @@ class RoleDeleteResponse:
     def __init__(self):
         self.meta = None
 
-# Role is a domain object --
+# A Role grants users access to a set of resources. Composite roles have no
+# resource associations of their own, but instead grant access to the combined
+# resources of their child roles.
 class Role:
-    __slots__ = ['id', 'name', 'composite', 'roles']
+    __slots__ = ['id', 'name', 'composite']
     def __init__(self):
         self.id = None
         self.name = None
         self.composite = None
-        self.roles = None

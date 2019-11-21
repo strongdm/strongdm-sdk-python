@@ -5,7 +5,11 @@ import roles_pb2 as roles__pb2
 
 
 class RolesStub(object):
-  """Roles are
+  """Roles are tools for controlling user access to resources. Each role holds a
+  list of resources which they grant access to. Composite roles are a special
+  type of role which have no resource associations of their own, but instead
+  grant access to the combined resources associated with a set of child roles.
+  Each user can be a member of one role or composite role.
   """
 
   def __init__(self, channel):
@@ -42,7 +46,11 @@ class RolesStub(object):
 
 
 class RolesServicer(object):
-  """Roles are
+  """Roles are tools for controlling user access to resources. Each role holds a
+  list of resources which they grant access to. Composite roles are a special
+  type of role which have no resource associations of their own, but instead
+  grant access to the combined resources associated with a set of child roles.
+  Each user can be a member of one role or composite role.
   """
 
   def Create(self, request, context):
@@ -74,7 +82,7 @@ class RolesServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """List is a batched Get call.
+    """List gets a list of Roles matching a given set of criteria.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

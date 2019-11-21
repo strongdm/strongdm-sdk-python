@@ -75,7 +75,6 @@ class Nodes:
     def list(self, filter):
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        req.meta.limit = 25
         req.filter = filter
         def generator(svc, req):
             while True:
@@ -92,7 +91,11 @@ class Nodes:
         return generator(self, req)
     
 
-# Roles are
+# Roles are tools for controlling user access to resources. Each role holds a
+# list of resources which they grant access to. Composite roles are a special
+# type of role which have no resource associations of their own, but instead
+# grant access to the combined resources associated with a set of child roles.
+# Each user can be a member of one role or composite role.
 class Roles:
     def __init__(self, channel, api_key):
         self.stub = RolesStub(channel)
@@ -149,11 +152,10 @@ class Roles:
         resp.meta = plumbing.delete_response_metadata_to_porcelain(plumbing_response.meta)
         return resp
     
-    # List is a batched Get call.
+    # List gets a list of Roles matching a given set of criteria.
     def list(self, filter):
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        req.meta.limit = 25
         req.filter = filter
         def generator(svc, req):
             while True:
