@@ -15,30 +15,30 @@ from .roles_pb2_grpc import *
 # Nodes are proxies in strongDM responsible to communicate with servers
 # (relays) and clients (gateways).
 class Nodes:
-    def __init__(self, channel, api_key):
+    def __init__(self, channel, client):
+        self.parent = client
         self.stub = NodesStub(channel)
-        self.api_key = api_key
     
     # Create registers a new node.
-    def create(self, node):
+    def create(self, node, timeout=None):
         req = NodeCreateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
-        resp.token = plumbing.token_to_porcelain(plumbing_response.token)
+        resp.token = plumbing_response.token
         return resp
     
     # Get reads one node by ID.
-    def get(self, id):
+    def get(self, id, timeout=None):
         req = NodeGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeGetResponse()
@@ -47,11 +47,11 @@ class Nodes:
         return resp
     
     # Update patches a node by ID.
-    def update(self, node):
+    def update(self, node, timeout=None):
         req = NodeUpdateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeUpdateResponse()
@@ -60,11 +60,11 @@ class Nodes:
         return resp
     
     # Delete removes a node by ID.
-    def delete(self, id):
+    def delete(self, id, timeout=None):
         req = NodeDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeDeleteResponse()
@@ -72,14 +72,17 @@ class Nodes:
         return resp
     
     # List is a batched Get call.
-    def list(self, filter):
+    def list(self, filter, timeout=None):
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
         req.filter = filter
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.api_key)])
+                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.parent.api_key)], timeout=timeout)
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.nodes:
@@ -97,16 +100,16 @@ class Nodes:
 # grant access to the combined resources associated with a set of child roles.
 # Each user can be a member of one role or composite role.
 class Roles:
-    def __init__(self, channel, api_key):
+    def __init__(self, channel, client):
+        self.parent = client
         self.stub = RolesStub(channel)
-        self.api_key = api_key
     
     # Create registers a new role.
-    def create(self, role):
+    def create(self, role, timeout=None):
         req = RoleCreateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Create(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleCreateResponse()
@@ -115,11 +118,11 @@ class Roles:
         return resp
     
     # Get reads one role by ID.
-    def get(self, id):
+    def get(self, id, timeout=None):
         req = RoleGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Get(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleGetResponse()
@@ -128,11 +131,11 @@ class Roles:
         return resp
     
     # Update patches a Role by ID.
-    def update(self, role):
+    def update(self, role, timeout=None):
         req = RoleUpdateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Update(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleUpdateResponse()
@@ -141,11 +144,11 @@ class Roles:
         return resp
     
     # Delete removes a Role by ID.
-    def delete(self, id):
+    def delete(self, id, timeout=None):
         req = RoleDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.api_key)])
+            plumbing_response = self.stub.Delete(req, metadata=[('authorization', self.parent.api_key)], timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleDeleteResponse()
@@ -153,14 +156,17 @@ class Roles:
         return resp
     
     # List gets a list of Roles matching a given set of criteria.
-    def list(self, filter):
+    def list(self, filter, timeout=None):
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
         req.filter = filter
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.api_key)])
+                    plumbing_response = svc.stub.List(req, metadata=[('authorization', svc.parent.api_key)], timeout=timeout)
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.roles:

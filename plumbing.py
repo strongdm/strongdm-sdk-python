@@ -71,7 +71,7 @@ def node_create_response_to_porcelain(plumbing):
     
     porcelain.node = node_to_porcelain(plumbing.node)
     
-    porcelain.token = token_to_porcelain(plumbing.token)
+    porcelain.token = plumbing.token
     return porcelain
 
 def node_create_response_to_plumbing(porcelain):
@@ -86,8 +86,7 @@ def node_create_response_to_plumbing(porcelain):
         
     if porcelain.token != None:
         
-        plumbing.token = token_to_plumbing(porcelain.token)
-        
+        plumbing.token = porcelain.token
     return plumbing
 
 def repeated_node_create_response_to_plumbing(porcelains):
@@ -247,30 +246,6 @@ def repeated_gateway_to_plumbing(porcelains):
 def repeated_gateway_to_porcelain(plumbings):
     return [gateway_to_porcelain(plumbing) for plumbing in plumbings]
 
-def token_to_porcelain(plumbing):
-    porcelain = models.Token()
-    
-    porcelain.id = plumbing.id
-    
-    porcelain.token = plumbing.token
-    return porcelain
-
-def token_to_plumbing(porcelain):
-    plumbing = Token()
-    if porcelain.id != None:
-        
-        plumbing.id = porcelain.id
-    if porcelain.token != None:
-        
-        plumbing.token = porcelain.token
-    return plumbing
-
-def repeated_token_to_plumbing(porcelains):
-    return [token_to_plumbing(porcelain) for porcelain in porcelains]
-
-def repeated_token_to_porcelain(plumbings):
-    return [token_to_porcelain(plumbing) for plumbing in plumbings]
-
 def role_create_response_to_porcelain(plumbing):
     porcelain = models.RoleCreateResponse()
     
@@ -425,21 +400,24 @@ def get_status_metadata(err):
 def error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
         return errors.Error(str(err))
-
+    if err.code().name == 'DEADLINE_EXCEEDED':
+        code, name = err.code().value
+        return errors.TimeoutError(name, code)
     status = get_status_metadata(err)
     if status is None:
-        return errors.Error(str(err))
+        code, name = err.code().value
+        return errors.RPCError(name, code)
     for detail in status.details:
         # AlreadyExistsError is used when an entity already exists in the system
         if detail.Is(AlreadyExistsError.DESCRIPTOR):
             plumbing = AlreadyExistsError()
             detail.Unpack(plumbing)
-            return errors.AlreadyExistsError(status.message, plumbing.entities)
+            return errors.AlreadyExistsError(status.message, plumbing.entity)
         # NotFoundError is used when an entity does not exist in the system
         if detail.Is(NotFoundError.DESCRIPTOR):
             plumbing = NotFoundError()
             detail.Unpack(plumbing)
-            return errors.NotFoundError(status.message, plumbing.entities)
+            return errors.NotFoundError(status.message, plumbing.entity)
         # BadRequestError identifies a bad request sent by the client
         if detail.Is(BadRequestError.DESCRIPTOR):
             plumbing = BadRequestError()
@@ -465,4 +443,5 @@ def error_to_porcelain(err):
             plumbing = RateLimitError()
             detail.Unpack(plumbing)
             return errors.RateLimitError(status.message)
-    return errors.RPCError(status.message, err.code())
+    code = err.code().value[0]
+    return errors.RPCError(status.message, code)

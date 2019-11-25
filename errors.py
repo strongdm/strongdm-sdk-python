@@ -3,15 +3,15 @@ class Error(Exception):
 
 # AlreadyExistsError is used when an entity already exists in the system
 class AlreadyExistsError(Error):
-    def __init__(self, msg, entities):
+    def __init__(self, msg, entity):
         self.msg = msg
-        self.entities = entities
+        self.entity = entity
 
 # NotFoundError is used when an entity does not exist in the system
 class NotFoundError(Error):
-    def __init__(self, msg, entities):
+    def __init__(self, msg, entity):
         self.msg = msg
-        self.entities = entities
+        self.entity = entity
 
 # BadRequestError identifies a bad request sent by the client
 class BadRequestError(Error):
@@ -40,6 +40,9 @@ class RateLimitError(Error):
 
 # RPCError is a generic RPC error
 class RPCError(Error):
-    def __init__(msg, code):
+    def __init__(self, msg, code):
         self.msg = msg
         self.code = code
+
+class TimeoutError(RPCError):
+    pass

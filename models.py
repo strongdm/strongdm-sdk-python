@@ -71,13 +71,6 @@ class Gateway:
         self.listen_address = None
         self.bind_address = None
 
-# Token holds the bearer token used to start up nodes.
-class Token:
-    __slots__ = ['id', 'token']
-    def __init__(self):
-        self.id = None
-        self.token = None
-
 # RoleCreateResponse reports how the Roles were created in the system. It can
 # communicate partial successes or failures.
 class RoleCreateResponse:
