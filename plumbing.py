@@ -194,6 +194,8 @@ def relay_to_porcelain(plumbing):
     porcelain.id = plumbing.id
     
     porcelain.name = plumbing.name
+    
+    porcelain.state = plumbing.state
     return porcelain
 
 def relay_to_plumbing(porcelain):
@@ -204,6 +206,9 @@ def relay_to_plumbing(porcelain):
     if porcelain.name != None:
         
         plumbing.name = porcelain.name
+    if porcelain.state != None:
+        
+        plumbing.state = porcelain.state
     return plumbing
 
 def repeated_relay_to_plumbing(porcelains):
@@ -219,6 +224,8 @@ def gateway_to_porcelain(plumbing):
     
     porcelain.name = plumbing.name
     
+    porcelain.state = plumbing.state
+    
     porcelain.listen_address = plumbing.listen_address
     
     porcelain.bind_address = plumbing.bind_address
@@ -232,6 +239,9 @@ def gateway_to_plumbing(porcelain):
     if porcelain.name != None:
         
         plumbing.name = porcelain.name
+    if porcelain.state != None:
+        
+        plumbing.state = porcelain.state
     if porcelain.listen_address != None:
         
         plumbing.listen_address = porcelain.listen_address

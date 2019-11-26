@@ -2,7 +2,9 @@ import grpc
 from . import svc
 from . import plumbing
 
+# Client is a strongDM API client.
 class Client:
+    # Creates a new strongDM API client. The `addr` parameter expects a hostname/port tuple.
     def __init__(self, addr, api_key):
         self.api_key = api_key
         try:

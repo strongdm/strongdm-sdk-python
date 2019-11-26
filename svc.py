@@ -12,14 +12,15 @@ from .roles_pb2 import *
 from .roles_pb2_grpc import *
 
 
-# Nodes are proxies in strongDM responsible to communicate with servers
-# (relays) and clients (gateways).
+# Nodes are proxies in the strongDM network. They come in two flavors: relays,
+# which communicate with resources, and gateways, which communicate with
+# clients.
 class Nodes:
     def __init__(self, channel, client):
         self.parent = client
         self.stub = NodesStub(channel)
     
-    # Create registers a new node.
+    # Create registers a new Node.
     def create(self, node, timeout=None):
         req = NodeCreateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
@@ -33,7 +34,7 @@ class Nodes:
         resp.token = plumbing_response.token
         return resp
     
-    # Get reads one node by ID.
+    # Get reads one Node by ID.
     def get(self, id, timeout=None):
         req = NodeGetRequest()
         req.id = id
@@ -46,7 +47,7 @@ class Nodes:
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
         return resp
     
-    # Update patches a node by ID.
+    # Update patches a Node by ID.
     def update(self, node, timeout=None):
         req = NodeUpdateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
@@ -59,7 +60,7 @@ class Nodes:
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
         return resp
     
-    # Delete removes a node by ID.
+    # Delete removes a Node by ID.
     def delete(self, id, timeout=None):
         req = NodeDeleteRequest()
         req.id = id
@@ -71,7 +72,7 @@ class Nodes:
         resp.meta = plumbing.delete_response_metadata_to_porcelain(plumbing_response.meta)
         return resp
     
-    # List is a batched Get call.
+    # List gets a list of Nodes matching a given set of criteria.
     def list(self, filter, timeout=None):
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
@@ -94,17 +95,17 @@ class Nodes:
         return generator(self, req)
     
 
-# Roles are tools for controlling user access to resources. Each role holds a
+# Roles are tools for controlling user access to resources. Each Role holds a
 # list of resources which they grant access to. Composite roles are a special
-# type of role which have no resource associations of their own, but instead
+# type of Role which have no resource associations of their own, but instead
 # grant access to the combined resources associated with a set of child roles.
-# Each user can be a member of one role or composite role.
+# Each user can be a member of one Role or composite role.
 class Roles:
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RolesStub(channel)
     
-    # Create registers a new role.
+    # Create registers a new Role.
     def create(self, role, timeout=None):
         req = RoleCreateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
@@ -117,7 +118,7 @@ class Roles:
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
         return resp
     
-    # Get reads one role by ID.
+    # Get reads one Role by ID.
     def get(self, id, timeout=None):
         req = RoleGetRequest()
         req.id = id

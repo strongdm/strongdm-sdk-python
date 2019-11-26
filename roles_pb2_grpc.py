@@ -5,11 +5,11 @@ import roles_pb2 as roles__pb2
 
 
 class RolesStub(object):
-  """Roles are tools for controlling user access to resources. Each role holds a
+  """Roles are tools for controlling user access to resources. Each Role holds a
   list of resources which they grant access to. Composite roles are a special
-  type of role which have no resource associations of their own, but instead
+  type of Role which have no resource associations of their own, but instead
   grant access to the combined resources associated with a set of child roles.
-  Each user can be a member of one role or composite role.
+  Each user can be a member of one Role or composite role.
   """
 
   def __init__(self, channel):
@@ -46,22 +46,22 @@ class RolesStub(object):
 
 
 class RolesServicer(object):
-  """Roles are tools for controlling user access to resources. Each role holds a
+  """Roles are tools for controlling user access to resources. Each Role holds a
   list of resources which they grant access to. Composite roles are a special
-  type of role which have no resource associations of their own, but instead
+  type of Role which have no resource associations of their own, but instead
   grant access to the combined resources associated with a set of child roles.
-  Each user can be a member of one role or composite role.
+  Each user can be a member of one Role or composite role.
   """
 
   def Create(self, request, context):
-    """Create registers a new role.
+    """Create registers a new Role.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Get(self, request, context):
-    """Get reads one role by ID.
+    """Get reads one Role by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

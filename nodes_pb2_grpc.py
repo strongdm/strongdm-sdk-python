@@ -5,8 +5,9 @@ import nodes_pb2 as nodes__pb2
 
 
 class NodesStub(object):
-  """Nodes are proxies in strongDM responsible to communicate with servers
-  (relays) and clients (gateways).
+  """Nodes are proxies in the strongDM network. They come in two flavors: relays,
+  which communicate with resources, and gateways, which communicate with
+  clients.
   """
 
   def __init__(self, channel):
@@ -43,40 +44,41 @@ class NodesStub(object):
 
 
 class NodesServicer(object):
-  """Nodes are proxies in strongDM responsible to communicate with servers
-  (relays) and clients (gateways).
+  """Nodes are proxies in the strongDM network. They come in two flavors: relays,
+  which communicate with resources, and gateways, which communicate with
+  clients.
   """
 
   def Create(self, request, context):
-    """Create registers a new node.
+    """Create registers a new Node.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Get(self, request, context):
-    """Get reads one node by ID.
+    """Get reads one Node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    """Update patches a node by ID.
+    """Update patches a Node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    """Delete removes a node by ID.
+    """Delete removes a Node by ID.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """List is a batched Get call.
+    """List gets a list of Nodes matching a given set of criteria.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
