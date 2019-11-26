@@ -409,10 +409,10 @@ def get_status_metadata(err):
 
 def error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
-        return errors.Error(str(err))
+        return errors.RPCError(str(err), 2) // Unknown
     if err.code().name == 'DEADLINE_EXCEEDED':
         code, name = err.code().value
-        return errors.TimeoutError(name, code)
+        return errors.TimeoutError()
     status = get_status_metadata(err)
     if status is None:
         code, name = err.code().value

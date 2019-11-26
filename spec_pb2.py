@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbing\222A\321\001\022u\n\010StrongDM\022\036The infrastructure access API.\"D\n\010StrongDM\022\"https://www.strongdm.com/docs/api/\032\024support@strongdm.com2\0031.0\032\020api.strongdm.comrF\n!Learn more about the strongDM API\022!https://www.strongdm.com/docs/api'),
-  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a,protoc-gen-swagger/options/annotations.proto\"^\n\x12\x41lreadyExistsError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x01\"T\n\rNotFoundError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x01\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x01\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x01\"1\n\x0fPermissionError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x01\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\x01\"/\n\x0eRateLimitError:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x01\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"B\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\x42\xf3\x01\n\x1c\x63om.strongdm.api.v1.plumbing\x92\x41\xd1\x01\x12u\n\x08StrongDM\x12\x1eThe infrastructure access API.\"D\n\x08StrongDM\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pi.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
+  serialized_pb=_b('\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a,protoc-gen-swagger/options/annotations.proto\"^\n\x12\x41lreadyExistsError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x06\"T\n\rNotFoundError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x05\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x03\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x10\"1\n\x0fPermissionError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x07\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\r\"/\n\x0eRateLimitError:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"B\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\x42\xf3\x01\n\x1c\x63om.strongdm.api.v1.plumbing\x92\x41\xd1\x01\x12u\n\x08StrongDM\x12\x1eThe infrastructure access API.\"D\n\x08StrongDM\x12\"https://www.strongdm.com/docs/api/\x1a\x14support@strongdm.com2\x03\x31.0\x1a\x10\x61pi.strongdm.comrF\n!Learn more about the strongDM API\x12!https://www.strongdm.com/docs/apib\x06proto3')
   ,
   dependencies=[options__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -49,7 +49,7 @@ _ALREADYEXISTSERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\034\242\363\263\007\022AlreadyExistsError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\034\242\363\263\007\022AlreadyExistsError\260\363\263\007\006'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -80,7 +80,7 @@ _NOTFOUNDERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\027\242\363\263\007\rNotFoundError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\027\242\363\263\007\rNotFoundError\260\363\263\007\005'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -104,7 +104,7 @@ _BADREQUESTERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\031\242\363\263\007\017BadRequestError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\031\242\363\263\007\017BadRequestError\260\363\263\007\003'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -128,7 +128,7 @@ _AUTHENTICATIONERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\035\242\363\263\007\023AuthenticationError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\035\242\363\263\007\023AuthenticationError\260\363\263\007\020'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -152,7 +152,7 @@ _PERMISSIONERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\031\242\363\263\007\017PermissionError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\031\242\363\263\007\017PermissionError\260\363\263\007\007'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -176,7 +176,7 @@ _INTERNALERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\027\242\363\263\007\rInternalError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\027\242\363\263\007\rInternalError\260\363\263\007\r'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -200,7 +200,7 @@ _RATELIMITERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007\030\242\363\263\007\016RateLimitError\260\363\263\007\001'),
+  serialized_options=_b('\372\370\263\007\030\242\363\263\007\016RateLimitError\260\363\263\007\010'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
