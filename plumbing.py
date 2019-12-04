@@ -64,6 +64,41 @@ def repeated_delete_response_metadata_to_plumbing(porcelains):
 def repeated_delete_response_metadata_to_porcelain(plumbings):
     return [delete_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
 
+def rate_limit_metadata_to_porcelain(plumbing):
+    porcelain = models.RateLimitMetadata()
+    
+    porcelain.limit = plumbing.limit
+    
+    porcelain.remaining = plumbing.remaining
+    
+    porcelain.reset_at = google.protobuf._timestamp_to_porcelain(plumbing.reset_at)
+    
+    porcelain.bucket = plumbing.bucket
+    return porcelain
+
+def rate_limit_metadata_to_plumbing(porcelain):
+    plumbing = RateLimitMetadata()
+    if porcelain.limit != None:
+        
+        plumbing.limit = porcelain.limit
+    if porcelain.remaining != None:
+        
+        plumbing.remaining = porcelain.remaining
+    if porcelain.reset_at != None:
+        
+        plumbing.reset_at = google.protobuf._timestamp_to_plumbing(porcelain.reset_at)
+        
+    if porcelain.bucket != None:
+        
+        plumbing.bucket = porcelain.bucket
+    return plumbing
+
+def repeated_rate_limit_metadata_to_plumbing(porcelains):
+    return [rate_limit_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+
+def repeated_rate_limit_metadata_to_porcelain(plumbings):
+    return [rate_limit_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+
 def node_create_response_to_porcelain(plumbing):
     porcelain = models.NodeCreateResponse()
     

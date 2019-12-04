@@ -33,51 +33,68 @@ class DeleteResponseMetadata:
     def __repr__(self):
         return '<sdm.DeleteResponseMetadata>'.format()
 
+# RateLimitMetadata contains information about remaining requests avaialable
+# to the user over some timeframe.
+class RateLimitMetadata:
+    __slots__ = []
+    def __init__(self):
+        pass
+    def __repr__(self):
+        return '<sdm.RateLimitMetadata>'.format()
+
 # NodeCreateResponse reports how the Nodes were created in the system.
 # meta: Reserved for future use.
 # node: The created Node.
 # token: The auth token generated for the Node. The Node will use this token to
 # authenticate with the strongDM API.
+# rate_limit: Rate limit information.
 class NodeCreateResponse:
-    __slots__ = ['meta', 'node', 'token']
+    __slots__ = ['meta', 'node', 'token', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.node = None
         self.token = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.NodeCreateResponse meta: {0} node: {1} token: {2}>'.format(repr(self.meta), repr(self.node), repr(self.token))
+        return '<sdm.NodeCreateResponse meta: {0} node: {1} token: {2} rate_limit: {3}>'.format(repr(self.meta), repr(self.node), repr(self.token), repr(self.rate_limit))
 
 # NodeGetResponse returns a requested Node.
 # meta: Reserved for future use.
 # node: The requested Node.
+# rate_limit: Rate limit information.
 class NodeGetResponse:
-    __slots__ = ['meta', 'node']
+    __slots__ = ['meta', 'node', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.node = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.NodeGetResponse meta: {0} node: {1}>'.format(repr(self.meta), repr(self.node))
+        return '<sdm.NodeGetResponse meta: {0} node: {1} rate_limit: {2}>'.format(repr(self.meta), repr(self.node), repr(self.rate_limit))
 
 # NodeUpdateResponse returns the fields of a Node after it has been updated by
 # a NodeUpdateRequest.
 # meta: Reserved for future use.
 # node: The updated Node.
+# rate_limit: Rate limit information.
 class NodeUpdateResponse:
-    __slots__ = ['meta', 'node']
+    __slots__ = ['meta', 'node', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.node = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.NodeUpdateResponse meta: {0} node: {1}>'.format(repr(self.meta), repr(self.node))
+        return '<sdm.NodeUpdateResponse meta: {0} node: {1} rate_limit: {2}>'.format(repr(self.meta), repr(self.node), repr(self.rate_limit))
 
 # NodeDeleteResponse returns information about a Node that was deleted.
 # meta: Reserved for future use.
+# rate_limit: Rate limit information.
 class NodeDeleteResponse:
-    __slots__ = ['meta']
+    __slots__ = ['meta', 'rate_limit']
     def __init__(self):
         self.meta = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.NodeDeleteResponse meta: {0}>'.format(repr(self.meta))
+        return '<sdm.NodeDeleteResponse meta: {0} rate_limit: {1}>'.format(repr(self.meta), repr(self.rate_limit))
 
 # Relay represents a StrongDM CLI installation running in relay mode.
 # id: Unique identifier of the Relay.
@@ -115,45 +132,53 @@ class Gateway:
 # communicate partial successes or failures.
 # meta: Reserved for future use.
 # role: The created Role.
+# rate_limit: Rate limit information.
 class RoleCreateResponse:
-    __slots__ = ['meta', 'role']
+    __slots__ = ['meta', 'role', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.role = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.RoleCreateResponse meta: {0} role: {1}>'.format(repr(self.meta), repr(self.role))
+        return '<sdm.RoleCreateResponse meta: {0} role: {1} rate_limit: {2}>'.format(repr(self.meta), repr(self.role), repr(self.rate_limit))
 
 # RoleGetResponse returns a requested Role.
 # meta: Reserved for future use.
 # role: The requested Role.
+# rate_limit: Rate limit information.
 class RoleGetResponse:
-    __slots__ = ['meta', 'role']
+    __slots__ = ['meta', 'role', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.role = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.RoleGetResponse meta: {0} role: {1}>'.format(repr(self.meta), repr(self.role))
+        return '<sdm.RoleGetResponse meta: {0} role: {1} rate_limit: {2}>'.format(repr(self.meta), repr(self.role), repr(self.rate_limit))
 
 # RoleUpdateResponse returns the fields of a Role after it has been updated by
 # a RoleUpdateRequest.
 # meta: Reserved for future use.
 # role: The updated Role.
+# rate_limit: Rate limit information.
 class RoleUpdateResponse:
-    __slots__ = ['meta', 'role']
+    __slots__ = ['meta', 'role', 'rate_limit']
     def __init__(self):
         self.meta = None
         self.role = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.RoleUpdateResponse meta: {0} role: {1}>'.format(repr(self.meta), repr(self.role))
+        return '<sdm.RoleUpdateResponse meta: {0} role: {1} rate_limit: {2}>'.format(repr(self.meta), repr(self.role), repr(self.rate_limit))
 
 # RoleDeleteResponse returns information about a Role that was deleted.
 # meta: Reserved for future use.
+# rate_limit: Rate limit information.
 class RoleDeleteResponse:
-    __slots__ = ['meta']
+    __slots__ = ['meta', 'rate_limit']
     def __init__(self):
         self.meta = None
+        self.rate_limit = None
     def __repr__(self):
-        return '<sdm.RoleDeleteResponse meta: {0}>'.format(repr(self.meta))
+        return '<sdm.RoleDeleteResponse meta: {0} rate_limit: {1}>'.format(repr(self.meta), repr(self.rate_limit))
 
 # A Role grants users access to a set of resources. Composite roles have no
 # resource associations of their own, but instead grant access to the combined

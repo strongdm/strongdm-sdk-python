@@ -32,6 +32,7 @@ class Nodes:
         resp.meta = plumbing.create_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
         resp.token = plumbing_response.token
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Get reads one Node by ID.
@@ -45,6 +46,7 @@ class Nodes:
         resp = models.NodeGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Update patches a Node by ID.
@@ -58,6 +60,7 @@ class Nodes:
         resp = models.NodeUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Delete removes a Node by ID.
@@ -70,6 +73,7 @@ class Nodes:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # List gets a list of Nodes matching a given set of criteria.
@@ -116,6 +120,7 @@ class Roles:
         resp = models.RoleCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Get reads one Role by ID.
@@ -129,6 +134,7 @@ class Roles:
         resp = models.RoleGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Update patches a Role by ID.
@@ -142,6 +148,7 @@ class Roles:
         resp = models.RoleUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # Delete removes a Role by ID.
@@ -154,6 +161,7 @@ class Roles:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(plumbing_response.rate_limit)
         return resp
     
     # List gets a list of Roles matching a given set of criteria.
