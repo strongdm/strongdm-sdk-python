@@ -71,7 +71,7 @@ def rate_limit_metadata_to_porcelain(plumbing):
     
     porcelain.remaining = plumbing.remaining
     
-    porcelain.reset_at = google.protobuf._timestamp_to_porcelain(plumbing.reset_at)
+    porcelain.reset_at = timestamp._timestamp_to_porcelain(plumbing.reset_at)
     
     porcelain.bucket = plumbing.bucket
     return porcelain
@@ -86,7 +86,7 @@ def rate_limit_metadata_to_plumbing(porcelain):
         plumbing.remaining = porcelain.remaining
     if porcelain.reset_at != None:
         
-        plumbing.reset_at = google.protobuf._timestamp_to_plumbing(porcelain.reset_at)
+        plumbing.reset_at = timestamp._timestamp_to_plumbing(porcelain.reset_at)
         
     if porcelain.bucket != None:
         

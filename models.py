@@ -35,12 +35,21 @@ class DeleteResponseMetadata:
 
 # RateLimitMetadata contains information about remaining requests avaialable
 # to the user over some timeframe.
+# limit: How many total requests the user/token is authorized to make before being
+# rate limited.
+# remaining: How many remaining requests out of the limit are still avaialable.
+# reset_at: The time when remaining will be reset to limit.
+# bucket: The bucket this user/token is associated with, which may be shared between
+# multiple users/tokens.
 class RateLimitMetadata:
-    __slots__ = []
+    __slots__ = ['limit', 'remaining', 'reset_at', 'bucket']
     def __init__(self):
-        pass
+        self.limit = None
+        self.remaining = None
+        self.reset_at = None
+        self.bucket = None
     def __repr__(self):
-        return '<sdm.RateLimitMetadata>'.format()
+        return '<sdm.RateLimitMetadata limit: {0} remaining: {1} reset_at: {2} bucket: {3}>'.format(repr(self.limit), repr(self.remaining), repr(self.reset_at), repr(self.bucket))
 
 # NodeCreateResponse reports how the Nodes were created in the system.
 # meta: Reserved for future use.
