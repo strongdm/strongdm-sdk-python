@@ -3,6 +3,7 @@ import google.rpc as rpc
 from google.rpc import status_pb2
 from . import errors
 from . import models
+from . import timestamp
 from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
