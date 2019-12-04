@@ -3,16 +3,19 @@ import google.rpc as rpc
 from google.rpc import status_pb2
 from . import errors
 from . import models
-from . import timestamp
+from google.protobuf.timestamp_pb2 import Timestamp
+import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
 from .roles_pb2 import *
 def timestamp_to_porcelain(t):
-    return t
+    return t.ToDatetime()
 
 def timestamp_to_plumbing(t):
-    return t
+    res = Timestamp()
+    res.FromDatetime(t)
+    return res
 
 
 def create_response_metadata_to_porcelain(plumbing):
