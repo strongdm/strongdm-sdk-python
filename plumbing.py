@@ -8,6 +8,12 @@ from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
 from .roles_pb2 import *
+def timestamp_to_porcelain(t):
+    return t
+
+def timestamp_to_plumbing(t):
+    return t
+
 
 def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()
@@ -72,7 +78,7 @@ def rate_limit_metadata_to_porcelain(plumbing):
     
     porcelain.remaining = plumbing.remaining
     
-    porcelain.reset_at = timestamp._timestamp_to_porcelain(plumbing.reset_at)
+    porcelain.reset_at = timestamp_to_porcelain(plumbing.reset_at)
     
     porcelain.bucket = plumbing.bucket
     return porcelain
@@ -87,7 +93,7 @@ def rate_limit_metadata_to_plumbing(porcelain):
         plumbing.remaining = porcelain.remaining
     if porcelain.reset_at != None:
         
-        plumbing.reset_at = timestamp._timestamp_to_plumbing(porcelain.reset_at)
+        plumbing.reset_at = timestamp_to_plumbing(porcelain.reset_at)
         
     if porcelain.bucket != None:
         
