@@ -38,8 +38,9 @@ class InternalError(RPCError):
 
 # RateLimitError is used for rate limit excess condition
 class RateLimitError(RPCError):
-    def __init__(self, msg):
+    def __init__(self, msg, rate_limit):
         super().__init__(msg, 8)
+        self.rate_limit = rate_limit
 
 
 class TimeoutError(RPCError):

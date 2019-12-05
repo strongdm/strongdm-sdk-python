@@ -545,6 +545,6 @@ def error_to_porcelain(err):
         if detail.Is(RateLimitError.DESCRIPTOR):
             plumbing = RateLimitError()
             detail.Unpack(plumbing)
-            return errors.RateLimitError(status.message)
+            return errors.RateLimitError(status.message, rate_limit_metadata_to_porcelain(plumbing.rate_limit))
     code = err.code().value[0]
     return errors.RPCError(status.message, code)
