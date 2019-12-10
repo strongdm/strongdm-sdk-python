@@ -9,8 +9,11 @@ from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
 from .roles_pb2 import *
+
+
 def timestamp_to_porcelain(t):
     return t.ToDatetime()
+
 
 def timestamp_to_plumbing(t):
     res = Timestamp()
@@ -22,219 +25,304 @@ def create_response_metadata_to_porcelain(plumbing):
     porcelain = models.CreateResponseMetadata()
     return porcelain
 
+
 def create_response_metadata_to_plumbing(porcelain):
     plumbing = CreateResponseMetadata()
     return plumbing
 
+
 def repeated_create_response_metadata_to_plumbing(porcelains):
-    return [create_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        create_response_metadata_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
 
 def repeated_create_response_metadata_to_porcelain(plumbings):
-    return [create_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        create_response_metadata_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
 
 def get_response_metadata_to_porcelain(plumbing):
     porcelain = models.GetResponseMetadata()
     return porcelain
 
+
 def get_response_metadata_to_plumbing(porcelain):
     plumbing = GetResponseMetadata()
     return plumbing
 
+
 def repeated_get_response_metadata_to_plumbing(porcelains):
-    return [get_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        get_response_metadata_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
 
 def repeated_get_response_metadata_to_porcelain(plumbings):
-    return [get_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        get_response_metadata_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def update_response_metadata_to_porcelain(plumbing):
     porcelain = models.UpdateResponseMetadata()
     return porcelain
 
+
 def update_response_metadata_to_plumbing(porcelain):
     plumbing = UpdateResponseMetadata()
     return plumbing
 
+
 def repeated_update_response_metadata_to_plumbing(porcelains):
-    return [update_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        update_response_metadata_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
 
 def repeated_update_response_metadata_to_porcelain(plumbings):
-    return [update_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        update_response_metadata_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
 
 def delete_response_metadata_to_porcelain(plumbing):
     porcelain = models.DeleteResponseMetadata()
     return porcelain
 
+
 def delete_response_metadata_to_plumbing(porcelain):
     plumbing = DeleteResponseMetadata()
     return plumbing
 
+
 def repeated_delete_response_metadata_to_plumbing(porcelains):
-    return [delete_response_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        delete_response_metadata_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
 
 def repeated_delete_response_metadata_to_porcelain(plumbings):
-    return [delete_response_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        delete_response_metadata_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
 
 def rate_limit_metadata_to_porcelain(plumbing):
     porcelain = models.RateLimitMetadata()
-    
+
     porcelain.limit = plumbing.limit
-    
+
     porcelain.remaining = plumbing.remaining
-    
+
     porcelain.reset_at = timestamp_to_porcelain(plumbing.reset_at)
-    
+
     porcelain.bucket = plumbing.bucket
     return porcelain
+
 
 def rate_limit_metadata_to_plumbing(porcelain):
     plumbing = RateLimitMetadata()
     if porcelain.limit != None:
-        
+
         plumbing.limit = porcelain.limit
     if porcelain.remaining != None:
-        
+
         plumbing.remaining = porcelain.remaining
     if porcelain.reset_at != None:
-        
+
         plumbing.reset_at = timestamp_to_plumbing(porcelain.reset_at)
-        
+
     if porcelain.bucket != None:
-        
+
         plumbing.bucket = porcelain.bucket
     return plumbing
 
+
 def repeated_rate_limit_metadata_to_plumbing(porcelains):
-    return [rate_limit_metadata_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        rate_limit_metadata_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_rate_limit_metadata_to_porcelain(plumbings):
-    return [rate_limit_metadata_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        rate_limit_metadata_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def node_create_response_to_porcelain(plumbing):
     porcelain = models.NodeCreateResponse()
-    
+
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.node = node_to_porcelain(plumbing.node)
-    
+
     porcelain.token = plumbing.token
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def node_create_response_to_plumbing(porcelain):
     plumbing = NodeCreateResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.node != None:
-        
+
         plumbing.node = node_to_plumbing(porcelain.node)
-        
+
     if porcelain.token != None:
-        
+
         plumbing.token = porcelain.token
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_node_create_response_to_plumbing(porcelains):
-    return [node_create_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        node_create_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_node_create_response_to_porcelain(plumbings):
-    return [node_create_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        node_create_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def node_get_response_to_porcelain(plumbing):
     porcelain = models.NodeGetResponse()
-    
+
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.node = node_to_porcelain(plumbing.node)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def node_get_response_to_plumbing(porcelain):
     plumbing = NodeGetResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.node != None:
-        
+
         plumbing.node = node_to_plumbing(porcelain.node)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_node_get_response_to_plumbing(porcelains):
-    return [node_get_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        node_get_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_node_get_response_to_porcelain(plumbings):
     return [node_get_response_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def node_update_response_to_porcelain(plumbing):
     porcelain = models.NodeUpdateResponse()
-    
+
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.node = node_to_porcelain(plumbing.node)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def node_update_response_to_plumbing(porcelain):
     plumbing = NodeUpdateResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.node != None:
-        
+
         plumbing.node = node_to_plumbing(porcelain.node)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_node_update_response_to_plumbing(porcelains):
-    return [node_update_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        node_update_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_node_update_response_to_porcelain(plumbings):
-    return [node_update_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        node_update_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def node_delete_response_to_porcelain(plumbing):
     porcelain = models.NodeDeleteResponse()
-    
+
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def node_delete_response_to_plumbing(porcelain):
     plumbing = NodeDeleteResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_node_delete_response_to_plumbing(porcelains):
-    return [node_delete_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        node_delete_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_node_delete_response_to_porcelain(plumbings):
-    return [node_delete_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        node_delete_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def node_to_plumbing(porcelain):
     plumbing = Node()
@@ -244,6 +332,7 @@ def node_to_plumbing(porcelain):
         plumbing.gateway.CopyFrom(gateway_to_plumbing(porcelain))
     return plumbing
 
+
 def node_to_porcelain(plumbing):
     if plumbing.relay != None:
         return relay_to_porcelain(plumbing.relay)
@@ -251,236 +340,291 @@ def node_to_porcelain(plumbing):
         return gateway_to_porcelain(plumbing.gateway)
     return None
 
+
 def repeated_node_to_plumbing(porcelains):
     return [node_to_plumbing(porcelain) for porcelain in porcelains]
+
 
 def repeated_node_to_porcelain(plumbings):
     return [node_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def relay_to_porcelain(plumbing):
     porcelain = models.Relay()
-    
+
     porcelain.id = plumbing.id
-    
+
     porcelain.name = plumbing.name
-    
+
     porcelain.state = plumbing.state
     return porcelain
+
 
 def relay_to_plumbing(porcelain):
     plumbing = Relay()
     if porcelain.id != None:
-        
+
         plumbing.id = porcelain.id
     if porcelain.name != None:
-        
+
         plumbing.name = porcelain.name
     if porcelain.state != None:
-        
+
         plumbing.state = porcelain.state
     return plumbing
+
 
 def repeated_relay_to_plumbing(porcelains):
     return [relay_to_plumbing(porcelain) for porcelain in porcelains]
 
+
 def repeated_relay_to_porcelain(plumbings):
     return [relay_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def gateway_to_porcelain(plumbing):
     porcelain = models.Gateway()
-    
+
     porcelain.id = plumbing.id
-    
+
     porcelain.name = plumbing.name
-    
+
     porcelain.state = plumbing.state
-    
+
     porcelain.listen_address = plumbing.listen_address
-    
+
     porcelain.bind_address = plumbing.bind_address
     return porcelain
+
 
 def gateway_to_plumbing(porcelain):
     plumbing = Gateway()
     if porcelain.id != None:
-        
+
         plumbing.id = porcelain.id
     if porcelain.name != None:
-        
+
         plumbing.name = porcelain.name
     if porcelain.state != None:
-        
+
         plumbing.state = porcelain.state
     if porcelain.listen_address != None:
-        
+
         plumbing.listen_address = porcelain.listen_address
     if porcelain.bind_address != None:
-        
+
         plumbing.bind_address = porcelain.bind_address
     return plumbing
+
 
 def repeated_gateway_to_plumbing(porcelains):
     return [gateway_to_plumbing(porcelain) for porcelain in porcelains]
 
+
 def repeated_gateway_to_porcelain(plumbings):
     return [gateway_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def role_create_response_to_porcelain(plumbing):
     porcelain = models.RoleCreateResponse()
-    
+
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.role = role_to_porcelain(plumbing.role)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def role_create_response_to_plumbing(porcelain):
     plumbing = RoleCreateResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.role != None:
-        
+
         plumbing.role = role_to_plumbing(porcelain.role)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_role_create_response_to_plumbing(porcelains):
-    return [role_create_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        role_create_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_role_create_response_to_porcelain(plumbings):
-    return [role_create_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        role_create_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def role_get_response_to_porcelain(plumbing):
     porcelain = models.RoleGetResponse()
-    
+
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.role = role_to_porcelain(plumbing.role)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def role_get_response_to_plumbing(porcelain):
     plumbing = RoleGetResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.role != None:
-        
+
         plumbing.role = role_to_plumbing(porcelain.role)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_role_get_response_to_plumbing(porcelains):
-    return [role_get_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        role_get_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_role_get_response_to_porcelain(plumbings):
     return [role_get_response_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def role_update_response_to_porcelain(plumbing):
     porcelain = models.RoleUpdateResponse()
-    
+
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
-    
+
     porcelain.role = role_to_porcelain(plumbing.role)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def role_update_response_to_plumbing(porcelain):
     plumbing = RoleUpdateResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.role != None:
-        
+
         plumbing.role = role_to_plumbing(porcelain.role)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_role_update_response_to_plumbing(porcelains):
-    return [role_update_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        role_update_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_role_update_response_to_porcelain(plumbings):
-    return [role_update_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        role_update_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def role_delete_response_to_porcelain(plumbing):
     porcelain = models.RoleDeleteResponse()
-    
+
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
-    
-    porcelain.rate_limit = rate_limit_metadata_to_porcelain(plumbing.rate_limit)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
     return porcelain
+
 
 def role_delete_response_to_plumbing(porcelain):
     plumbing = RoleDeleteResponse()
     if porcelain.meta != None:
-        
+
         plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
-        
+
     if porcelain.rate_limit != None:
-        
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(porcelain.rate_limit)
-        
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
     return plumbing
 
+
 def repeated_role_delete_response_to_plumbing(porcelains):
-    return [role_delete_response_to_plumbing(porcelain) for porcelain in porcelains]
+    return [
+        role_delete_response_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
 
 def repeated_role_delete_response_to_porcelain(plumbings):
-    return [role_delete_response_to_porcelain(plumbing) for plumbing in plumbings]
+    return [
+        role_delete_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
 
 def role_to_porcelain(plumbing):
     porcelain = models.Role()
-    
+
     porcelain.id = plumbing.id
-    
+
     porcelain.name = plumbing.name
-    
+
     porcelain.composite = plumbing.composite
     return porcelain
+
 
 def role_to_plumbing(porcelain):
     plumbing = Role()
     if porcelain.id != None:
-        
+
         plumbing.id = porcelain.id
     if porcelain.name != None:
-        
+
         plumbing.name = porcelain.name
     if porcelain.composite != None:
-        
+
         plumbing.composite = porcelain.composite
     return plumbing
+
 
 def repeated_role_to_plumbing(porcelains):
     return [role_to_plumbing(porcelain) for porcelain in porcelains]
 
+
 def repeated_role_to_porcelain(plumbings):
     return [role_to_porcelain(plumbing) for plumbing in plumbings]
 
+
 def is_status_detail(x):
     # Return True if a metadata is a grpc-status-details
-    if (hasattr(x, 'key') and (hasattr(x, 'value')) and x.key.startswith('grpc-status-details')):
+    if (hasattr(x, 'key') and (hasattr(x, 'value'))
+            and x.key.startswith('grpc-status-details')):
         return True
     return False
+
 
 def get_status_metadata(err):
     # Extracts error details from a grpc.RpcError.
@@ -500,9 +644,10 @@ def get_status_metadata(err):
 
     return st
 
+
 def error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
-        return errors.RPCError(str(err), 2) # Unknown
+        return errors.RPCError(str(err), 2)  # Unknown
     # get_status_metadata fails for deadline exceeded
     if err.code().name == 'DEADLINE_EXCEEDED':
         return errors.TimeoutError()
@@ -523,7 +668,9 @@ def error_to_porcelain(err):
             if detail.Is(RateLimitMetadata.DESCRIPTOR):
                 rate_limit = RateLimitMetadata()
                 detail.Unpack(rate_limit)
-                return errors.RateLimitError(status.message, rate_limit_metadata_to_porcelain(rate_limit))
+                return errors.RateLimitError(
+                    status.message,
+                    rate_limit_metadata_to_porcelain(rate_limit))
     elif err.code() == grpc.StatusCode.INTERNAL:
         return errors.InternalError(status.message)
     elif err.code() == grpc.StatusCode.UNAUTHENTICATED:

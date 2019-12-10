@@ -2,6 +2,7 @@ import grpc
 from . import svc
 from . import plumbing
 
+
 # Client is a strongDM API client.
 class Client:
     # Creates a new strongDM API client. The `addr` parameter expects a hostname/port tuple.
