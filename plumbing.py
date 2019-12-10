@@ -502,49 +502,33 @@ def get_status_metadata(err):
 
 def error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
-        return errors.RPCError(str(err), 2) // Unknown
+        return errors.RPCError(str(err), 2) # Unknown
+    # get_status_metadata fails for deadline exceeded
     if err.code().name == 'DEADLINE_EXCEEDED':
-        code, name = err.code().value
         return errors.TimeoutError()
     status = get_status_metadata(err)
     if status is None:
         code, name = err.code().value
         return errors.RPCError(name, code)
-    for detail in status.details:
-        # AlreadyExistsError is used when an entity already exists in the system
-        if detail.Is(AlreadyExistsError.DESCRIPTOR):
-            plumbing = AlreadyExistsError()
-            detail.Unpack(plumbing)
-            return errors.AlreadyExistsError(status.message, plumbing.entity)
-        # NotFoundError is used when an entity does not exist in the system
-        if detail.Is(NotFoundError.DESCRIPTOR):
-            plumbing = NotFoundError()
-            detail.Unpack(plumbing)
-            return errors.NotFoundError(status.message, plumbing.entity)
-        # BadRequestError identifies a bad request sent by the client
-        if detail.Is(BadRequestError.DESCRIPTOR):
-            plumbing = BadRequestError()
-            detail.Unpack(plumbing)
-            return errors.BadRequestError(status.message)
-        # AuthenticationError is used to specify an authentication failure condition
-        if detail.Is(AuthenticationError.DESCRIPTOR):
-            plumbing = AuthenticationError()
-            detail.Unpack(plumbing)
-            return errors.AuthenticationError(status.message)
-        # PermissionError is used to specify a permissions violation
-        if detail.Is(PermissionError.DESCRIPTOR):
-            plumbing = PermissionError()
-            detail.Unpack(plumbing)
-            return errors.PermissionError(status.message)
-        # InternalError is used to specify an internal system error
-        if detail.Is(InternalError.DESCRIPTOR):
-            plumbing = InternalError()
-            detail.Unpack(plumbing)
-            return errors.InternalError(status.message)
-        # RateLimitError is used for rate limit excess condition
-        if detail.Is(RateLimitError.DESCRIPTOR):
-            plumbing = RateLimitError()
-            detail.Unpack(plumbing)
-            return errors.RateLimitError(status.message, rate_limit_metadata_to_porcelain(plumbing.rate_limit))
+    if err.code() == grpc.StatusCode.INVALID_ARGUMENT:
+        return errors.BadRequestError(status.message)
+    elif err.code() == grpc.StatusCode.NOT_FOUND:
+        return errors.NotFoundError(status.message)
+    elif err.code() == grpc.StatusCode.ALREADY_EXISTS:
+        return errors.AlreadyExistsError(status.message)
+    elif err.code() == grpc.StatusCode.PERMISSION_DENIED:
+        return errors.PermissionError(status.message)
+    elif err.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
+        for detail in status.details:
+            if detail.Is(RateLimitMetadata.DESCRIPTOR):
+                rate_limit = RateLimitMetadata()
+                detail.Unpack(rate_limit)
+                return errors.RateLimitError(status.message, rate_limit_metadata_to_porcelain(rate_limit))
+        return errors.RateLimitError(status.message, None)
+    elif err.code() == grpc.StatusCode.INTERNAL:
+        return errors.InternalError(status.message)
+    elif err.code() == grpc.StatusCode.UNAUTHENTICATED:
+        return errors.AuthenticationError(status.message)
+
     code = err.code().value[0]
     return errors.RPCError(status.message, code)
