@@ -524,7 +524,6 @@ def error_to_porcelain(err):
                 rate_limit = RateLimitMetadata()
                 detail.Unpack(rate_limit)
                 return errors.RateLimitError(status.message, rate_limit_metadata_to_porcelain(rate_limit))
-        return errors.RateLimitError(status.message, None)
     elif err.code() == grpc.StatusCode.INTERNAL:
         return errors.InternalError(status.message)
     elif err.code() == grpc.StatusCode.UNAUTHENTICATED:
