@@ -27,12 +27,10 @@ class Nodes:
         req = NodeCreateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Create(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Create(
+                req,
+                metadata=self.parent.get_metadata('Nodes.Create', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeCreateResponse()
@@ -49,10 +47,10 @@ class Nodes:
         req = NodeGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req,
-                                              metadata=[('authorization',
-                                                         self.parent.api_key)],
-                                              timeout=timeout)
+            plumbing_response = self.stub.Get(
+                req,
+                metadata=self.parent.get_metadata('Nodes.Get', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeGetResponse()
@@ -68,12 +66,10 @@ class Nodes:
         req = NodeUpdateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
         try:
-            plumbing_response = self.stub.Update(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Update(
+                req,
+                metadata=self.parent.get_metadata('Nodes.Update', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeUpdateResponse()
@@ -89,12 +85,10 @@ class Nodes:
         req = NodeDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Delete(
+                req,
+                metadata=self.parent.get_metadata('Nodes.Delete', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.NodeDeleteResponse()
@@ -116,12 +110,10 @@ class Nodes:
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req,
-                                                      metadata=[
-                                                          ('authorization',
-                                                           svc.parent.api_key)
-                                                      ],
-                                                      timeout=timeout)
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Nodes.List', req),
+                        timeout=timeout)
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.nodes:
@@ -248,12 +240,10 @@ class Roles:
         req = RoleCreateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Create(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Create(
+                req,
+                metadata=self.parent.get_metadata('Roles.Create', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleCreateResponse()
@@ -269,10 +259,10 @@ class Roles:
         req = RoleGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req,
-                                              metadata=[('authorization',
-                                                         self.parent.api_key)],
-                                              timeout=timeout)
+            plumbing_response = self.stub.Get(
+                req,
+                metadata=self.parent.get_metadata('Roles.Get', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleGetResponse()
@@ -288,12 +278,10 @@ class Roles:
         req = RoleUpdateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
         try:
-            plumbing_response = self.stub.Update(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Update(
+                req,
+                metadata=self.parent.get_metadata('Roles.Update', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleUpdateResponse()
@@ -309,12 +297,10 @@ class Roles:
         req = RoleDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Delete(
+                req,
+                metadata=self.parent.get_metadata('Roles.Delete', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleDeleteResponse()
@@ -336,12 +322,10 @@ class Roles:
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req,
-                                                      metadata=[
-                                                          ('authorization',
-                                                           svc.parent.api_key)
-                                                      ],
-                                                      timeout=timeout)
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Roles.List', req),
+                        timeout=timeout)
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.roles:
