@@ -8,6 +8,8 @@ from .spec_pb2 import *
 from .spec_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .role_attachments_pb2 import *
+from .role_attachments_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
 
@@ -125,6 +127,105 @@ class Nodes:
                 for plumbing_item in plumbing_response.nodes:
 
                     yield plumbing.node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class RoleAttachments:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RoleAttachmentsStub(channel)
+
+    # Create registers a new RoleAttachment.
+    def create(self, role_attachment, timeout=None):
+        req = RoleAttachmentCreateRequest()
+        req.role_attachment.CopyFrom(
+            plumbing.role_attachment_to_plumbing(role_attachment))
+        try:
+            plumbing_response = self.stub.Create(req,
+                                                 metadata=[
+                                                     ('authorization',
+                                                      self.parent.api_key)
+                                                 ],
+                                                 timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.RoleAttachmentCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.role_attachment = plumbing.role_attachment_to_porcelain(
+            plumbing_response.role_attachment)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one RoleAttachment by ID.
+    def get(self, id, timeout=None):
+        req = RoleAttachmentGetRequest()
+        req.id = id
+        try:
+            plumbing_response = self.stub.Get(req,
+                                              metadata=[('authorization',
+                                                         self.parent.api_key)],
+                                              timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.RoleAttachmentGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.role_attachment = plumbing.role_attachment_to_porcelain(
+            plumbing_response.role_attachment)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes an RoleAttachment by ID.
+    def delete(self, id, timeout=None):
+        req = RoleAttachmentDeleteRequest()
+        req.id = id
+        try:
+            plumbing_response = self.stub.Delete(req,
+                                                 metadata=[
+                                                     ('authorization',
+                                                      self.parent.api_key)
+                                                 ],
+                                                 timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.RoleAttachmentDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of RoleAttachments matching a given set of criteria.
+    def list(self, filter, composite_role_id, timeout=None):
+        req = RoleAttachmentListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        req.filter = filter
+        req.composite_role_id = composite_role_id
+
+        def generator(svc, req):
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(req,
+                                                      metadata=[
+                                                          ('authorization',
+                                                           svc.parent.api_key)
+                                                      ],
+                                                      timeout=timeout)
+                except Exception as e:
+                    raise plumbing.error_to_porcelain(e) from e
+                for plumbing_item in plumbing_response.role_attachments:
+
+                    yield plumbing.role_attachment_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

@@ -180,6 +180,72 @@ class Gateway:
             repr(self.listen_address), repr(self.bind_address))
 
 
+# RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
+# meta: Reserved for future use.
+# role_attachment: The created RoleAttachment.
+# rate_limit: Rate limit information.
+class RoleAttachmentCreateResponse:
+    __slots__ = ['meta', 'role_attachment', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.role_attachment = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.RoleAttachmentCreateResponse meta: {0} role_attachment: {1} rate_limit: {2}>'.format(
+            repr(self.meta), repr(self.role_attachment), repr(self.rate_limit))
+
+
+# RoleAttachmentGetResponse returns a requested RoleAttachment.
+# meta: Reserved for future use.
+# role_attachment: The requested RoleAttachment.
+# rate_limit: Rate limit information.
+class RoleAttachmentGetResponse:
+    __slots__ = ['meta', 'role_attachment', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.role_attachment = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.RoleAttachmentGetResponse meta: {0} role_attachment: {1} rate_limit: {2}>'.format(
+            repr(self.meta), repr(self.role_attachment), repr(self.rate_limit))
+
+
+# RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class RoleAttachmentDeleteResponse:
+    __slots__ = ['meta', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.RoleAttachmentDeleteResponse meta: {0} rate_limit: {1}>'.format(
+            repr(self.meta), repr(self.rate_limit))
+
+
+# id: Unique identifier of the RoleAttachment.
+# composite_role_id:
+# attached_role_id:
+class RoleAttachment:
+    __slots__ = ['id', 'composite_role_id', 'attached_role_id']
+
+    def __init__(self):
+        self.id = None
+        self.composite_role_id = None
+        self.attached_role_id = None
+
+    def __repr__(self):
+        return '<sdm.RoleAttachment id: {0} composite_role_id: {1} attached_role_id: {2}>'.format(
+            repr(self.id), repr(self.composite_role_id),
+            repr(self.attached_role_id))
+
+
 # RoleCreateResponse reports how the Roles were created in the system. It can
 # communicate partial successes or failures.
 # meta: Reserved for future use.

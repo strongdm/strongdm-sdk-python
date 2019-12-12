@@ -8,6 +8,7 @@ import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
+from .role_attachments_pb2 import *
 from .roles_pb2 import *
 
 
@@ -423,6 +424,169 @@ def repeated_gateway_to_plumbing(porcelains):
 
 def repeated_gateway_to_porcelain(plumbings):
     return [gateway_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def role_attachment_create_response_to_porcelain(plumbing):
+    porcelain = models.RoleAttachmentCreateResponse()
+
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.role_attachment = role_attachment_to_porcelain(
+        plumbing.role_attachment)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_attachment_create_response_to_plumbing(porcelain):
+    plumbing = RoleAttachmentCreateResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.role_attachment != None:
+
+        plumbing.role_attachment = role_attachment_to_plumbing(
+            porcelain.role_attachment)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_role_attachment_create_response_to_plumbing(porcelains):
+    return [
+        role_attachment_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_attachment_create_response_to_porcelain(plumbings):
+    return [
+        role_attachment_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_attachment_get_response_to_porcelain(plumbing):
+    porcelain = models.RoleAttachmentGetResponse()
+
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.role_attachment = role_attachment_to_porcelain(
+        plumbing.role_attachment)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_attachment_get_response_to_plumbing(porcelain):
+    plumbing = RoleAttachmentGetResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.role_attachment != None:
+
+        plumbing.role_attachment = role_attachment_to_plumbing(
+            porcelain.role_attachment)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_role_attachment_get_response_to_plumbing(porcelains):
+    return [
+        role_attachment_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_attachment_get_response_to_porcelain(plumbings):
+    return [
+        role_attachment_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_attachment_delete_response_to_porcelain(plumbing):
+    porcelain = models.RoleAttachmentDeleteResponse()
+
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_attachment_delete_response_to_plumbing(porcelain):
+    plumbing = RoleAttachmentDeleteResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_role_attachment_delete_response_to_plumbing(porcelains):
+    return [
+        role_attachment_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_attachment_delete_response_to_porcelain(plumbings):
+    return [
+        role_attachment_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_attachment_to_porcelain(plumbing):
+    porcelain = models.RoleAttachment()
+
+    porcelain.id = plumbing.id
+
+    porcelain.composite_role_id = plumbing.composite_role_id
+
+    porcelain.attached_role_id = plumbing.attached_role_id
+    return porcelain
+
+
+def role_attachment_to_plumbing(porcelain):
+    plumbing = RoleAttachment()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.composite_role_id != None:
+
+        plumbing.composite_role_id = porcelain.composite_role_id
+    if porcelain.attached_role_id != None:
+
+        plumbing.attached_role_id = porcelain.attached_role_id
+    return plumbing
+
+
+def repeated_role_attachment_to_plumbing(porcelains):
+    return [role_attachment_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_role_attachment_to_porcelain(plumbings):
+    return [role_attachment_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def role_create_response_to_porcelain(plumbing):

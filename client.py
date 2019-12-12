@@ -14,6 +14,7 @@ class Client:
                 creds = grpc.ssl_channel_credentials()
                 channel = grpc.secure_channel(addr, creds)
             self.nodes = svc.Nodes(channel, self)
+            self.role_attachments = svc.RoleAttachments(channel, self)
             self.roles = svc.Roles(channel, self)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
