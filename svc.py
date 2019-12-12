@@ -137,12 +137,11 @@ class RoleAttachments:
         req.role_attachment.CopyFrom(
             plumbing.role_attachment_to_plumbing(role_attachment))
         try:
-            plumbing_response = self.stub.Create(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Create(
+                req,
+                metadata=self.parent.get_metadata('RoleAttachments.Create',
+                                                  req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleAttachmentCreateResponse()
@@ -159,10 +158,10 @@ class RoleAttachments:
         req = RoleAttachmentGetRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Get(req,
-                                              metadata=[('authorization',
-                                                         self.parent.api_key)],
-                                              timeout=timeout)
+            plumbing_response = self.stub.Get(
+                req,
+                metadata=self.parent.get_metadata('RoleAttachments.Get', req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleAttachmentGetResponse()
@@ -179,12 +178,11 @@ class RoleAttachments:
         req = RoleAttachmentDeleteRequest()
         req.id = id
         try:
-            plumbing_response = self.stub.Delete(req,
-                                                 metadata=[
-                                                     ('authorization',
-                                                      self.parent.api_key)
-                                                 ],
-                                                 timeout=timeout)
+            plumbing_response = self.stub.Delete(
+                req,
+                metadata=self.parent.get_metadata('RoleAttachments.Delete',
+                                                  req),
+                timeout=timeout)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         resp = models.RoleAttachmentDeleteResponse()
@@ -207,12 +205,11 @@ class RoleAttachments:
         def generator(svc, req):
             while True:
                 try:
-                    plumbing_response = svc.stub.List(req,
-                                                      metadata=[
-                                                          ('authorization',
-                                                           svc.parent.api_key)
-                                                      ],
-                                                      timeout=timeout)
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RoleAttachments.List', req),
+                        timeout=timeout)
                 except Exception as e:
                     raise plumbing.error_to_porcelain(e) from e
                 for plumbing_item in plumbing_response.role_attachments:
