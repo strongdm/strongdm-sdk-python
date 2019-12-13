@@ -193,14 +193,13 @@ class RoleAttachments:
         return resp
 
     # List gets a list of RoleAttachments matching a given set of criteria.
-    def list(self, filter, composite_role_id, timeout=None):
+    def list(self, filter, timeout=None):
         req = RoleAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
         req.filter = filter
-        req.composite_role_id = composite_role_id
 
         def generator(svc, req):
             while True:
