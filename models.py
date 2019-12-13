@@ -229,9 +229,11 @@ class RoleAttachmentDeleteResponse:
             repr(self.meta), repr(self.rate_limit))
 
 
+# A RoleAttachment connects a composite role to another role, granting members
+# of the composite role the permissions granted to the attached role.
 # id: Unique identifier of the RoleAttachment.
-# composite_role_id:
-# attached_role_id:
+# composite_role_id: The id of the composite role of this RoleAttachment.
+# attached_role_id: The id of the attached role of this RoleAttachment.
 class RoleAttachment:
     __slots__ = ['id', 'composite_role_id', 'attached_role_id']
 

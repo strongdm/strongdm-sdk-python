@@ -5,9 +5,11 @@ import role_attachments_pb2 as role__attachments__pb2
 
 
 class RoleAttachmentsStub(object):
-    # missing associated documentation comment in .proto file
-    pass
-
+    """RoleAttachments represent relationships between composite roles and the roles
+  that make up those composite roles. When a composite role is attached to another
+  role, the permissions granted to members of the composite role are augmented to
+  include the permissions granted to members of the attached role. 
+  """
     def __init__(self, channel):
         """Constructor.
 
@@ -45,9 +47,11 @@ class RoleAttachmentsStub(object):
 
 
 class RoleAttachmentsServicer(object):
-    # missing associated documentation comment in .proto file
-    pass
-
+    """RoleAttachments represent relationships between composite roles and the roles
+  that make up those composite roles. When a composite role is attached to another
+  role, the permissions granted to members of the composite role are augmented to
+  include the permissions granted to members of the attached role. 
+  """
     def Create(self, request, context):
         """Create registers a new RoleAttachment.
     """
@@ -63,7 +67,7 @@ class RoleAttachmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete removes an RoleAttachment by ID.
+        """Delete removes a RoleAttachment by ID.
     """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

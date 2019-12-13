@@ -126,6 +126,10 @@ class Nodes:
         return generator(self, req)
 
 
+# RoleAttachments represent relationships between composite roles and the roles
+# that make up those composite roles. When a composite role is attached to another
+# role, the permissions granted to members of the composite role are augmented to
+# include the permissions granted to members of the attached role.
 class RoleAttachments:
     def __init__(self, channel, client):
         self.parent = client
@@ -173,7 +177,7 @@ class RoleAttachments:
             plumbing_response.rate_limit)
         return resp
 
-    # Delete removes an RoleAttachment by ID.
+    # Delete removes a RoleAttachment by ID.
     def delete(self, id, timeout=None):
         req = RoleAttachmentDeleteRequest()
         req.id = id
