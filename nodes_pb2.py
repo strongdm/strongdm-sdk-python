@@ -15,8 +15,8 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
-import options_pb2 as options__pb2
-import spec_pb2 as spec__pb2
+from . import options_pb2 as options__pb2
+from . import spec_pb2 as spec__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
     name='nodes.proto',
