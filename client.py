@@ -36,8 +36,8 @@ class Client:
             return hmac.new(key, msg=msg_byte_string,
                             digestmod=hashlib.sha256).digest()
 
-        current_date = datetime.datetime.now().strftime('%Y-%m-%d')
-        signing_key = hmac_digest(self.api_secret, current_date.encode())
+        current_utc_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+        signing_key = hmac_digest(self.api_secret, current_utc_date.encode())
         signing_key = hmac_digest(signing_key, b'sdm_api_v1')
 
         hash = hashlib.sha256()
