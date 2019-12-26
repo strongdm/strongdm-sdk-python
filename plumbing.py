@@ -6,8 +6,10 @@ from . import models
 from google.protobuf.timestamp_pb2 import Timestamp
 import datetime
 from .options_pb2 import *
+from .drivers_pb2 import *
 from .spec_pb2 import *
 from .nodes_pb2 import *
+from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .roles_pb2 import *
 
@@ -20,6 +22,65 @@ def timestamp_to_plumbing(t):
     res = Timestamp()
     res.FromDatetime(t)
     return res
+
+
+def driver_to_plumbing(porcelain):
+    plumbing = Driver()
+    if isinstance(porcelain, models.Mysql):
+        plumbing.mysql.CopyFrom(mysql_to_plumbing(porcelain))
+    return plumbing
+
+
+def driver_to_porcelain(plumbing):
+    if plumbing.mysql != None:
+        return mysql_to_porcelain(plumbing.mysql)
+    return None
+
+
+def repeated_driver_to_plumbing(porcelains):
+    return [driver_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_driver_to_porcelain(plumbings):
+    return [driver_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def mysql_to_porcelain(plumbing):
+    porcelain = models.Mysql()
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def mysql_to_plumbing(porcelain):
+    plumbing = Mysql()
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_mysql_to_plumbing(porcelains):
+    return [mysql_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_mysql_to_porcelain(plumbings):
+    return [mysql_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def create_response_metadata_to_porcelain(plumbing):
@@ -424,6 +485,219 @@ def repeated_gateway_to_plumbing(porcelains):
 
 def repeated_gateway_to_porcelain(plumbings):
     return [gateway_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def resource_create_response_to_porcelain(plumbing):
+    porcelain = models.ResourceCreateResponse()
+
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.resource = resource_to_porcelain(plumbing.resource)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def resource_create_response_to_plumbing(porcelain):
+    plumbing = ResourceCreateResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.resource != None:
+
+        plumbing.resource = resource_to_plumbing(porcelain.resource)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_resource_create_response_to_plumbing(porcelains):
+    return [
+        resource_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_resource_create_response_to_porcelain(plumbings):
+    return [
+        resource_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def resource_get_response_to_porcelain(plumbing):
+    porcelain = models.ResourceGetResponse()
+
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.resource = resource_to_porcelain(plumbing.resource)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def resource_get_response_to_plumbing(porcelain):
+    plumbing = ResourceGetResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.resource != None:
+
+        plumbing.resource = resource_to_plumbing(porcelain.resource)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_resource_get_response_to_plumbing(porcelains):
+    return [
+        resource_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_resource_get_response_to_porcelain(plumbings):
+    return [
+        resource_get_response_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def resource_update_response_to_porcelain(plumbing):
+    porcelain = models.ResourceUpdateResponse()
+
+    porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.resource = resource_to_porcelain(plumbing.resource)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def resource_update_response_to_plumbing(porcelain):
+    plumbing = ResourceUpdateResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.resource != None:
+
+        plumbing.resource = resource_to_plumbing(porcelain.resource)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_resource_update_response_to_plumbing(porcelains):
+    return [
+        resource_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_resource_update_response_to_porcelain(plumbings):
+    return [
+        resource_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def resource_delete_response_to_porcelain(plumbing):
+    porcelain = models.ResourceDeleteResponse()
+
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def resource_delete_response_to_plumbing(porcelain):
+    plumbing = ResourceDeleteResponse()
+    if porcelain.meta != None:
+
+        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+
+    if porcelain.rate_limit != None:
+
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+
+    return plumbing
+
+
+def repeated_resource_delete_response_to_plumbing(porcelains):
+    return [
+        resource_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_resource_delete_response_to_porcelain(plumbings):
+    return [
+        resource_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def resource_to_porcelain(plumbing):
+    porcelain = models.Resource()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.driver = driver_to_porcelain(plumbing.driver)
+    return porcelain
+
+
+def resource_to_plumbing(porcelain):
+    plumbing = Resource()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.driver != None:
+
+        plumbing.driver = driver_to_plumbing(porcelain.driver)
+
+    return plumbing
+
+
+def repeated_resource_to_plumbing(porcelains):
+    return [resource_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_resource_to_porcelain(plumbings):
+    return [resource_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def role_attachment_create_response_to_porcelain(plumbing):

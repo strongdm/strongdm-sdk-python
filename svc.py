@@ -4,10 +4,14 @@ from . import models
 
 from .options_pb2 import *
 from .options_pb2_grpc import *
+from .drivers_pb2 import *
+from .drivers_pb2_grpc import *
 from .spec_pb2 import *
 from .spec_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .resources_pb2 import *
+from .resources_pb2_grpc import *
 from .role_attachments_pb2 import *
 from .role_attachments_pb2_grpc import *
 from .roles_pb2 import *
@@ -119,6 +123,118 @@ class Nodes:
                 for plumbing_item in plumbing_response.nodes:
 
                     yield plumbing.node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Resources:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ResourcesStub(channel)
+
+    # Create registers a new Resource.
+    def create(self, driver, timeout=None):
+        req = ResourceCreateRequest()
+        req.driver.CopyFrom(plumbing.driver_to_plumbing(driver))
+        try:
+            plumbing_response = self.stub.Create(
+                req,
+                metadata=self.parent.get_metadata('Resources.Create', req),
+                timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.ResourceCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.resource = plumbing.resource_to_porcelain(
+            plumbing_response.resource)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one Resource by ID.
+    def get(self, id, timeout=None):
+        req = ResourceGetRequest()
+        req.id = id
+        try:
+            plumbing_response = self.stub.Get(
+                req,
+                metadata=self.parent.get_metadata('Resources.Get', req),
+                timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.ResourceGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.resource = plumbing.resource_to_porcelain(
+            plumbing_response.resource)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Update patches a Resource by ID.
+    def update(self, resource, timeout=None):
+        req = ResourceUpdateRequest()
+        req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
+        try:
+            plumbing_response = self.stub.Update(
+                req,
+                metadata=self.parent.get_metadata('Resources.Update', req),
+                timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.ResourceUpdateResponse()
+        resp.meta = plumbing.update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.resource = plumbing.resource_to_porcelain(
+            plumbing_response.resource)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes a Resource by ID.
+    def delete(self, id, timeout=None):
+        req = ResourceDeleteRequest()
+        req.id = id
+        try:
+            plumbing_response = self.stub.Delete(
+                req,
+                metadata=self.parent.get_metadata('Resources.Delete', req),
+                timeout=timeout)
+        except Exception as e:
+            raise plumbing.error_to_porcelain(e) from e
+        resp = models.ResourceDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of Resources matching a given set of criteria.
+    def list(self, filter, timeout=None):
+        req = ResourceListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        req.filter = filter
+
+        def generator(svc, req):
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'Resources.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    raise plumbing.error_to_porcelain(e) from e
+                for plumbing_item in plumbing_response.resources:
+
+                    yield plumbing.resource_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

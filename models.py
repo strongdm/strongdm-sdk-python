@@ -1,6 +1,25 @@
 import collections
 
 
+# username:
+# password:
+# database:
+# port:
+class Mysql:
+    __slots__ = ['username', 'password', 'database', 'port']
+
+    def __init__(self):
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Mysql username: {0} password: {1} database: {2} port: {3}>'.format(
+            repr(self.username), repr(self.password), repr(self.database),
+            repr(self.port))
+
+
 # CreateResponseMetadata is reserved for future use.
 class CreateResponseMetadata:
     __slots__ = []
@@ -178,6 +197,97 @@ class Gateway:
         return '<sdm.Gateway id: {0} name: {1} state: {2} listen_address: {3} bind_address: {4}>'.format(
             repr(self.id), repr(self.name), repr(self.state),
             repr(self.listen_address), repr(self.bind_address))
+
+
+# ResourceCreateResponse reports how the Resources were created in the system.
+# meta: Reserved for future use.
+# resource: The created Resource.
+# rate_limit: Rate limit information.
+class ResourceCreateResponse:
+    __slots__ = ['meta', 'resource', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.resource = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.ResourceCreateResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
+            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+
+
+# ResourceGetResponse returns a requested Resource.
+# meta: Reserved for future use.
+# resource: The requested Resource.
+# rate_limit: Rate limit information.
+class ResourceGetResponse:
+    __slots__ = ['meta', 'resource', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.resource = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.ResourceGetResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
+            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+
+
+# ResourceUpdateResponse returns the fields of a Resource after it has been updated by
+# a ResourceUpdateRequest.
+# meta: Reserved for future use.
+# resource: The updated Resource.
+# rate_limit: Rate limit information.
+class ResourceUpdateResponse:
+    __slots__ = ['meta', 'resource', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.resource = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.ResourceUpdateResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
+            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+
+
+# ResourceDeleteResponse returns information about a Resource that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class ResourceDeleteResponse:
+    __slots__ = ['meta', 'rate_limit']
+
+    def __init__(self):
+        self.meta = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.ResourceDeleteResponse meta: {0} rate_limit: {1}>'.format(
+            repr(self.meta), repr(self.rate_limit))
+
+
+# A Resource is a proxy in the strongDM network. They come in two flavors: relays,
+# which communicate with resources, and gateways, which communicate with
+# clients.
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# driver: Fields for connecting to the resource.
+class Resource:
+    __slots__ = ['id', 'name', 'port_override', 'healthy', 'driver']
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
+        self.driver = None
+
+    def __repr__(self):
+        return '<sdm.Resource id: {0} name: {1} port_override: {2} healthy: {3} driver: {4}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.driver))
 
 
 # RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
