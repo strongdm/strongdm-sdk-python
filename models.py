@@ -1,6 +1,35 @@
 import collections
 
 
+# url:
+# healthcheck_path:
+# username:
+# password:
+# headers_blacklist:
+# default_path:
+# subdomain:
+class HTTPBasicAuth:
+    __slots__ = [
+        'url', 'healthcheck_path', 'username', 'password', 'headers_blacklist',
+        'default_path', 'subdomain'
+    ]
+
+    def __init__(self):
+        self.url = None
+        self.healthcheck_path = None
+        self.username = None
+        self.password = None
+        self.headers_blacklist = None
+        self.default_path = None
+        self.subdomain = None
+
+    def __repr__(self):
+        return '<sdm.HTTPBasicAuth url: {0} healthcheck_path: {1} username: {2} password: {3} headers_blacklist: {4} default_path: {5} subdomain: {6}>'.format(
+            repr(self.url), repr(self.healthcheck_path), repr(self.username),
+            repr(self.password), repr(self.headers_blacklist),
+            repr(self.default_path), repr(self.subdomain))
+
+
 # hostname:
 # username:
 # password:

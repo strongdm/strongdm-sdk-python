@@ -26,6 +26,9 @@ def timestamp_to_plumbing(t):
 
 def driver_to_plumbing(porcelain):
     plumbing = Driver()
+    if isinstance(porcelain, models.HttpBasicAuth):
+        plumbing.http_basic_auth.CopyFrom(
+            http_basic_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.Mysql):
         plumbing.mysql.CopyFrom(mysql_to_plumbing(porcelain))
     if isinstance(porcelain, models.AuroraMysql):
@@ -42,6 +45,8 @@ def driver_to_plumbing(porcelain):
 
 
 def driver_to_porcelain(plumbing):
+    if plumbing.http_basic_auth != None:
+        return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
     if plumbing.mysql != None:
         return mysql_to_porcelain(plumbing.mysql)
     if plumbing.aurora_mysql != None:
@@ -63,6 +68,59 @@ def repeated_driver_to_plumbing(porcelains):
 
 def repeated_driver_to_porcelain(plumbings):
     return [driver_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def http_basic_auth_to_porcelain(plumbing):
+    porcelain = models.HTTPBasicAuth()
+
+    porcelain.url = plumbing.url
+
+    porcelain.healthcheck_path = plumbing.healthcheck_path
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.headers_blacklist = plumbing.headers_blacklist
+
+    porcelain.default_path = plumbing.default_path
+
+    porcelain.subdomain = plumbing.subdomain
+    return porcelain
+
+
+def http_basic_auth_to_plumbing(porcelain):
+    plumbing = HTTPBasicAuth()
+    if porcelain.url != None:
+
+        plumbing.url = porcelain.url
+    if porcelain.healthcheck_path != None:
+
+        plumbing.healthcheck_path = porcelain.healthcheck_path
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.headers_blacklist != None:
+
+        plumbing.headers_blacklist = porcelain.headers_blacklist
+    if porcelain.default_path != None:
+
+        plumbing.default_path = porcelain.default_path
+    if porcelain.subdomain != None:
+
+        plumbing.subdomain = porcelain.subdomain
+    return plumbing
+
+
+def repeated_http_basic_auth_to_plumbing(porcelains):
+    return [http_basic_auth_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_http_basic_auth_to_porcelain(plumbings):
+    return [http_basic_auth_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def mysql_to_porcelain(plumbing):
