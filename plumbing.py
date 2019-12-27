@@ -28,6 +28,14 @@ def driver_to_plumbing(porcelain):
     plumbing = Driver()
     if isinstance(porcelain, models.Mysql):
         plumbing.mysql.CopyFrom(mysql_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AuroraMysql):
+        plumbing.aurora_mysql.CopyFrom(aurora_mysql_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Clustrix):
+        plumbing.clustrix.CopyFrom(clustrix_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Maria):
+        plumbing.maria.CopyFrom(maria_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Memsql):
+        plumbing.memsql.CopyFrom(memsql_to_plumbing(porcelain))
     if isinstance(porcelain, models.Athena):
         plumbing.athena.CopyFrom(athena_to_plumbing(porcelain))
     return plumbing
@@ -36,6 +44,14 @@ def driver_to_plumbing(porcelain):
 def driver_to_porcelain(plumbing):
     if plumbing.mysql != None:
         return mysql_to_porcelain(plumbing.mysql)
+    if plumbing.aurora_mysql != None:
+        return aurora_mysql_to_porcelain(plumbing.aurora_mysql)
+    if plumbing.clustrix != None:
+        return clustrix_to_porcelain(plumbing.clustrix)
+    if plumbing.maria != None:
+        return maria_to_porcelain(plumbing.maria)
+    if plumbing.memsql != None:
+        return memsql_to_porcelain(plumbing.memsql)
     if plumbing.athena != None:
         return athena_to_porcelain(plumbing.athena)
     return None
@@ -90,6 +106,178 @@ def repeated_mysql_to_plumbing(porcelains):
 
 def repeated_mysql_to_porcelain(plumbings):
     return [mysql_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def aurora_mysql_to_porcelain(plumbing):
+    porcelain = models.AuroraMysql()
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def aurora_mysql_to_plumbing(porcelain):
+    plumbing = AuroraMysql()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_aurora_mysql_to_plumbing(porcelains):
+    return [aurora_mysql_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_aurora_mysql_to_porcelain(plumbings):
+    return [aurora_mysql_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def clustrix_to_porcelain(plumbing):
+    porcelain = models.Clustrix()
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def clustrix_to_plumbing(porcelain):
+    plumbing = Clustrix()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_clustrix_to_plumbing(porcelains):
+    return [clustrix_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_clustrix_to_porcelain(plumbings):
+    return [clustrix_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def maria_to_porcelain(plumbing):
+    porcelain = models.Maria()
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def maria_to_plumbing(porcelain):
+    plumbing = Maria()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_maria_to_plumbing(porcelains):
+    return [maria_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_maria_to_porcelain(plumbings):
+    return [maria_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def memsql_to_porcelain(plumbing):
+    porcelain = models.Memsql()
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def memsql_to_plumbing(porcelain):
+    plumbing = Memsql()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_memsql_to_plumbing(porcelains):
+    return [memsql_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_memsql_to_porcelain(plumbings):
+    return [memsql_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def athena_to_porcelain(plumbing):

@@ -23,6 +23,90 @@ class Mysql:
 
 
 # hostname:
+# username:
+# password:
+# database:
+# port:
+class AuroraMysql:
+    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+
+    def __init__(self):
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.AuroraMysql hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
+            repr(self.hostname), repr(self.username), repr(self.password),
+            repr(self.database), repr(self.port))
+
+
+# hostname:
+# username:
+# password:
+# database:
+# port:
+class Clustrix:
+    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+
+    def __init__(self):
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Clustrix hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
+            repr(self.hostname), repr(self.username), repr(self.password),
+            repr(self.database), repr(self.port))
+
+
+# hostname:
+# username:
+# password:
+# database:
+# port:
+class Maria:
+    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+
+    def __init__(self):
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Maria hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
+            repr(self.hostname), repr(self.username), repr(self.password),
+            repr(self.database), repr(self.port))
+
+
+# hostname:
+# username:
+# password:
+# database:
+# port:
+class Memsql:
+    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+
+    def __init__(self):
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Memsql hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
+            repr(self.hostname), repr(self.username), repr(self.password),
+            repr(self.database), repr(self.port))
+
+
+# hostname:
 # access_key:
 # secretAccessKey:
 # region:

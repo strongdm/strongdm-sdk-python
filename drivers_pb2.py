@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
     serialized_pb=_b(
-        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"X\n\x06\x44river\x12\x1a\n\x05mysql\x18\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12\x1c\n\x06\x61thena\x18\x02 \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xa5\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06\x41thena\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
+        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"\xdd\x01\n\x06\x44river\x12\x1a\n\x05mysql\x18\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12\'\n\x0c\x61urora_mysql\x18\x02 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12 \n\x08\x63lustrix\x18\x03 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1a\n\x05maria\x18\x04 \x01(\x0b\x32\t.v1.MariaH\x00\x12\x1c\n\x06memsql\x18\x05 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1c\n\x06\x61thena\x18\x06 \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xa5\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xab\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa8\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa5\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa6\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06\x41thena\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
     ),
     dependencies=[
         options__pb2.DESCRIPTOR,
@@ -51,10 +51,74 @@ _DRIVER = _descriptor.Descriptor(
                                     extension_scope=None,
                                     serialized_options=None,
                                     file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(name='athena',
-                                    full_name='v1.Driver.athena',
+        _descriptor.FieldDescriptor(name='aurora_mysql',
+                                    full_name='v1.Driver.aurora_mysql',
                                     index=1,
                                     number=2,
+                                    type=11,
+                                    cpp_type=10,
+                                    label=1,
+                                    has_default_value=False,
+                                    default_value=None,
+                                    message_type=None,
+                                    enum_type=None,
+                                    containing_type=None,
+                                    is_extension=False,
+                                    extension_scope=None,
+                                    serialized_options=None,
+                                    file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(name='clustrix',
+                                    full_name='v1.Driver.clustrix',
+                                    index=2,
+                                    number=3,
+                                    type=11,
+                                    cpp_type=10,
+                                    label=1,
+                                    has_default_value=False,
+                                    default_value=None,
+                                    message_type=None,
+                                    enum_type=None,
+                                    containing_type=None,
+                                    is_extension=False,
+                                    extension_scope=None,
+                                    serialized_options=None,
+                                    file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(name='maria',
+                                    full_name='v1.Driver.maria',
+                                    index=3,
+                                    number=4,
+                                    type=11,
+                                    cpp_type=10,
+                                    label=1,
+                                    has_default_value=False,
+                                    default_value=None,
+                                    message_type=None,
+                                    enum_type=None,
+                                    containing_type=None,
+                                    is_extension=False,
+                                    extension_scope=None,
+                                    serialized_options=None,
+                                    file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(name='memsql',
+                                    full_name='v1.Driver.memsql',
+                                    index=4,
+                                    number=5,
+                                    type=11,
+                                    cpp_type=10,
+                                    label=1,
+                                    has_default_value=False,
+                                    default_value=None,
+                                    message_type=None,
+                                    enum_type=None,
+                                    containing_type=None,
+                                    is_extension=False,
+                                    extension_scope=None,
+                                    serialized_options=None,
+                                    file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(name='athena',
+                                    full_name='v1.Driver.athena',
+                                    index=5,
+                                    number=6,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -82,8 +146,8 @@ _DRIVER = _descriptor.Descriptor(
                                     containing_type=None,
                                     fields=[]),
     ],
-    serialized_start=36,
-    serialized_end=124,
+    serialized_start=37,
+    serialized_end=258,
 )
 
 _MYSQL = _descriptor.Descriptor(
@@ -187,8 +251,428 @@ _MYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=127,
-    serialized_end=292,
+    serialized_start=261,
+    serialized_end=426,
+)
+
+_AURORAMYSQL = _descriptor.Descriptor(
+    name='AuroraMysql',
+    full_name='v1.AuroraMysql',
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name='hostname',
+            full_name='v1.AuroraMysql.hostname',
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='username',
+            full_name='v1.AuroraMysql.username',
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='password',
+            full_name='v1.AuroraMysql.password',
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='database',
+            full_name='v1.AuroraMysql.database',
+            index=3,
+            number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port',
+            full_name='v1.AuroraMysql.port',
+            index=4,
+            number=5,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
+    is_extendable=False,
+    syntax='proto3',
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=429,
+    serialized_end=600,
+)
+
+_CLUSTRIX = _descriptor.Descriptor(
+    name='Clustrix',
+    full_name='v1.Clustrix',
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name='hostname',
+            full_name='v1.Clustrix.hostname',
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='username',
+            full_name='v1.Clustrix.username',
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='password',
+            full_name='v1.Clustrix.password',
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='database',
+            full_name='v1.Clustrix.database',
+            index=3,
+            number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port',
+            full_name='v1.Clustrix.port',
+            index=4,
+            number=5,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
+    is_extendable=False,
+    syntax='proto3',
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=603,
+    serialized_end=771,
+)
+
+_MARIA = _descriptor.Descriptor(
+    name='Maria',
+    full_name='v1.Maria',
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name='hostname',
+            full_name='v1.Maria.hostname',
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='username',
+            full_name='v1.Maria.username',
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='password',
+            full_name='v1.Maria.password',
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='database',
+            full_name='v1.Maria.database',
+            index=3,
+            number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port',
+            full_name='v1.Maria.port',
+            index=4,
+            number=5,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
+    is_extendable=False,
+    syntax='proto3',
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=774,
+    serialized_end=939,
+)
+
+_MEMSQL = _descriptor.Descriptor(
+    name='Memsql',
+    full_name='v1.Memsql',
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name='hostname',
+            full_name='v1.Memsql.hostname',
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='username',
+            full_name='v1.Memsql.username',
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='password',
+            full_name='v1.Memsql.password',
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='database',
+            full_name='v1.Memsql.database',
+            index=3,
+            number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port',
+            full_name='v1.Memsql.port',
+            index=4,
+            number=5,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
+    is_extendable=False,
+    syntax='proto3',
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=942,
+    serialized_end=1108,
 )
 
 _ATHENA = _descriptor.Descriptor(
@@ -292,14 +776,33 @@ _ATHENA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=295,
-    serialized_end=470,
+    serialized_start=1111,
+    serialized_end=1286,
 )
 
 _DRIVER.fields_by_name['mysql'].message_type = _MYSQL
+_DRIVER.fields_by_name['aurora_mysql'].message_type = _AURORAMYSQL
+_DRIVER.fields_by_name['clustrix'].message_type = _CLUSTRIX
+_DRIVER.fields_by_name['maria'].message_type = _MARIA
+_DRIVER.fields_by_name['memsql'].message_type = _MEMSQL
 _DRIVER.fields_by_name['athena'].message_type = _ATHENA
 _DRIVER.oneofs_by_name['driver'].fields.append(_DRIVER.fields_by_name['mysql'])
 _DRIVER.fields_by_name['mysql'].containing_oneof = _DRIVER.oneofs_by_name[
+    'driver']
+_DRIVER.oneofs_by_name['driver'].fields.append(
+    _DRIVER.fields_by_name['aurora_mysql'])
+_DRIVER.fields_by_name[
+    'aurora_mysql'].containing_oneof = _DRIVER.oneofs_by_name['driver']
+_DRIVER.oneofs_by_name['driver'].fields.append(
+    _DRIVER.fields_by_name['clustrix'])
+_DRIVER.fields_by_name['clustrix'].containing_oneof = _DRIVER.oneofs_by_name[
+    'driver']
+_DRIVER.oneofs_by_name['driver'].fields.append(_DRIVER.fields_by_name['maria'])
+_DRIVER.fields_by_name['maria'].containing_oneof = _DRIVER.oneofs_by_name[
+    'driver']
+_DRIVER.oneofs_by_name['driver'].fields.append(
+    _DRIVER.fields_by_name['memsql'])
+_DRIVER.fields_by_name['memsql'].containing_oneof = _DRIVER.oneofs_by_name[
     'driver']
 _DRIVER.oneofs_by_name['driver'].fields.append(
     _DRIVER.fields_by_name['athena'])
@@ -307,6 +810,10 @@ _DRIVER.fields_by_name['athena'].containing_oneof = _DRIVER.oneofs_by_name[
     'driver']
 DESCRIPTOR.message_types_by_name['Driver'] = _DRIVER
 DESCRIPTOR.message_types_by_name['Mysql'] = _MYSQL
+DESCRIPTOR.message_types_by_name['AuroraMysql'] = _AURORAMYSQL
+DESCRIPTOR.message_types_by_name['Clustrix'] = _CLUSTRIX
+DESCRIPTOR.message_types_by_name['Maria'] = _MARIA
+DESCRIPTOR.message_types_by_name['Memsql'] = _MEMSQL
 DESCRIPTOR.message_types_by_name['Athena'] = _ATHENA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -330,6 +837,46 @@ Mysql = _reflection.GeneratedProtocolMessageType(
     })
 _sym_db.RegisterMessage(Mysql)
 
+AuroraMysql = _reflection.GeneratedProtocolMessageType(
+    'AuroraMysql',
+    (_message.Message, ),
+    {
+        'DESCRIPTOR': _AURORAMYSQL,
+        '__module__': 'drivers_pb2'
+        # @@protoc_insertion_point(class_scope:v1.AuroraMysql)
+    })
+_sym_db.RegisterMessage(AuroraMysql)
+
+Clustrix = _reflection.GeneratedProtocolMessageType(
+    'Clustrix',
+    (_message.Message, ),
+    {
+        'DESCRIPTOR': _CLUSTRIX,
+        '__module__': 'drivers_pb2'
+        # @@protoc_insertion_point(class_scope:v1.Clustrix)
+    })
+_sym_db.RegisterMessage(Clustrix)
+
+Maria = _reflection.GeneratedProtocolMessageType(
+    'Maria',
+    (_message.Message, ),
+    {
+        'DESCRIPTOR': _MARIA,
+        '__module__': 'drivers_pb2'
+        # @@protoc_insertion_point(class_scope:v1.Maria)
+    })
+_sym_db.RegisterMessage(Maria)
+
+Memsql = _reflection.GeneratedProtocolMessageType(
+    'Memsql',
+    (_message.Message, ),
+    {
+        'DESCRIPTOR': _MEMSQL,
+        '__module__': 'drivers_pb2'
+        # @@protoc_insertion_point(class_scope:v1.Memsql)
+    })
+_sym_db.RegisterMessage(Memsql)
+
 Athena = _reflection.GeneratedProtocolMessageType(
     'Athena',
     (_message.Message, ),
@@ -348,6 +895,30 @@ _MYSQL.fields_by_name['password']._options = None
 _MYSQL.fields_by_name['database']._options = None
 _MYSQL.fields_by_name['port']._options = None
 _MYSQL._options = None
+_AURORAMYSQL.fields_by_name['hostname']._options = None
+_AURORAMYSQL.fields_by_name['username']._options = None
+_AURORAMYSQL.fields_by_name['password']._options = None
+_AURORAMYSQL.fields_by_name['database']._options = None
+_AURORAMYSQL.fields_by_name['port']._options = None
+_AURORAMYSQL._options = None
+_CLUSTRIX.fields_by_name['hostname']._options = None
+_CLUSTRIX.fields_by_name['username']._options = None
+_CLUSTRIX.fields_by_name['password']._options = None
+_CLUSTRIX.fields_by_name['database']._options = None
+_CLUSTRIX.fields_by_name['port']._options = None
+_CLUSTRIX._options = None
+_MARIA.fields_by_name['hostname']._options = None
+_MARIA.fields_by_name['username']._options = None
+_MARIA.fields_by_name['password']._options = None
+_MARIA.fields_by_name['database']._options = None
+_MARIA.fields_by_name['port']._options = None
+_MARIA._options = None
+_MEMSQL.fields_by_name['hostname']._options = None
+_MEMSQL.fields_by_name['username']._options = None
+_MEMSQL.fields_by_name['password']._options = None
+_MEMSQL.fields_by_name['database']._options = None
+_MEMSQL.fields_by_name['port']._options = None
+_MEMSQL._options = None
 _ATHENA.fields_by_name['hostname']._options = None
 _ATHENA.fields_by_name['access_key']._options = None
 _ATHENA.fields_by_name['secretAccessKey']._options = None
