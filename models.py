@@ -106,27 +106,23 @@ class Memsql:
             repr(self.database), repr(self.port))
 
 
-# hostname:
 # access_key:
 # secretAccessKey:
 # region:
 # output:
 class Athena:
-    __slots__ = [
-        'hostname', 'access_key', 'secret_access_key', 'region', 'output'
-    ]
+    __slots__ = ['access_key', 'secret_access_key', 'region', 'output']
 
     def __init__(self):
-        self.hostname = None
         self.access_key = None
         self.secret_access_key = None
         self.region = None
         self.output = None
 
     def __repr__(self):
-        return '<sdm.Athena hostname: {0} access_key: {1} secret_access_key: {2} region: {3} output: {4}>'.format(
-            repr(self.hostname), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.region), repr(self.output))
+        return '<sdm.Athena access_key: {0} secret_access_key: {1} region: {2} output: {3}>'.format(
+            repr(self.access_key), repr(self.secret_access_key),
+            repr(self.region), repr(self.output))
 
 
 # CreateResponseMetadata is reserved for future use.

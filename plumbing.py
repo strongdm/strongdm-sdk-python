@@ -283,8 +283,6 @@ def repeated_memsql_to_porcelain(plumbings):
 def athena_to_porcelain(plumbing):
     porcelain = models.Athena()
 
-    porcelain.hostname = plumbing.hostname
-
     porcelain.access_key = plumbing.access_key
 
     porcelain.secretAccessKey = plumbing.secretAccessKey
@@ -297,9 +295,6 @@ def athena_to_porcelain(plumbing):
 
 def athena_to_plumbing(porcelain):
     plumbing = Athena()
-    if porcelain.hostname != None:
-
-        plumbing.hostname = porcelain.hostname
     if porcelain.access_key != None:
 
         plumbing.access_key = porcelain.access_key

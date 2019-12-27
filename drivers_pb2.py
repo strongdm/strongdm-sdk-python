@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
     serialized_pb=_b(
-        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"\xdd\x01\n\x06\x44river\x12\x1a\n\x05mysql\x18\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12\'\n\x0c\x61urora_mysql\x18\x02 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12 \n\x08\x63lustrix\x18\x03 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1a\n\x05maria\x18\x04 \x01(\x0b\x32\t.v1.MariaH\x00\x12\x1c\n\x06memsql\x18\x05 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1c\n\x06\x61thena\x18\x06 \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xa5\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xab\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa8\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa5\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa6\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06\x41thena\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
+        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"\xf3\x01\n\x06\x44river\x12\x1e\n\x05mysql\x18\xc3\x80\x94\xb8\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12*\n\x0c\x61urora_mysql\x18\xed\xa2\xdc\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12$\n\x08\x63lustrix\x18\x94\xa9\xee\xfd\x01 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1e\n\x05maria\x18\x94\xdd\xa6\xde\x01 \x01(\x0b\x32\t.v1.MariaH\x00\x12 \n\x06memsql\x18\xad\xb9\xdf\x80\x01 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1f\n\x06\x61thena\x18\x88\x86\xa1) \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xa5\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xab\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa8\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa5\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa6\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x91\x01\n\x06\x41thena\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
     ),
     dependencies=[
         options__pb2.DESCRIPTOR,
@@ -38,7 +38,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='mysql',
                                     full_name='v1.Driver.mysql',
                                     index=0,
-                                    number=1,
+                                    number=386203715,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -54,7 +54,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='aurora_mysql',
                                     full_name='v1.Driver.aurora_mysql',
                                     index=1,
-                                    number=2,
+                                    number=18289005,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -70,7 +70,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='clustrix',
                                     full_name='v1.Driver.clustrix',
                                     index=2,
-                                    number=3,
+                                    number=532386964,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -86,7 +86,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='maria',
                                     full_name='v1.Driver.maria',
                                     index=3,
-                                    number=4,
+                                    number=466202260,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -102,7 +102,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='memsql',
                                     full_name='v1.Driver.memsql',
                                     index=4,
-                                    number=5,
+                                    number=269999277,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -118,7 +118,7 @@ _DRIVER = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(name='athena',
                                     full_name='v1.Driver.athena',
                                     index=5,
-                                    number=6,
+                                    number=86524680,
                                     type=11,
                                     cpp_type=10,
                                     label=1,
@@ -147,7 +147,7 @@ _DRIVER = _descriptor.Descriptor(
                                     fields=[]),
     ],
     serialized_start=37,
-    serialized_end=258,
+    serialized_end=280,
 )
 
 _MYSQL = _descriptor.Descriptor(
@@ -251,8 +251,8 @@ _MYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=261,
-    serialized_end=426,
+    serialized_start=283,
+    serialized_end=448,
 )
 
 _AURORAMYSQL = _descriptor.Descriptor(
@@ -356,8 +356,8 @@ _AURORAMYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=429,
-    serialized_end=600,
+    serialized_start=451,
+    serialized_end=622,
 )
 
 _CLUSTRIX = _descriptor.Descriptor(
@@ -461,8 +461,8 @@ _CLUSTRIX = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=603,
-    serialized_end=771,
+    serialized_start=625,
+    serialized_end=793,
 )
 
 _MARIA = _descriptor.Descriptor(
@@ -566,8 +566,8 @@ _MARIA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=774,
-    serialized_end=939,
+    serialized_start=796,
+    serialized_end=961,
 )
 
 _MEMSQL = _descriptor.Descriptor(
@@ -671,8 +671,8 @@ _MEMSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=942,
-    serialized_end=1108,
+    serialized_start=964,
+    serialized_end=1130,
 )
 
 _ATHENA = _descriptor.Descriptor(
@@ -683,8 +683,8 @@ _ATHENA = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
-            name='hostname',
-            full_name='v1.Athena.hostname',
+            name='access_key',
+            full_name='v1.Athena.access_key',
             index=0,
             number=1,
             type=9,
@@ -700,8 +700,8 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='access_key',
-            full_name='v1.Athena.access_key',
+            name='secretAccessKey',
+            full_name='v1.Athena.secretAccessKey',
             index=1,
             number=2,
             type=9,
@@ -717,8 +717,8 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='secretAccessKey',
-            full_name='v1.Athena.secretAccessKey',
+            name='region',
+            full_name='v1.Athena.region',
             index=2,
             number=3,
             type=9,
@@ -734,27 +734,10 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='region',
-            full_name='v1.Athena.region',
-            index=3,
-            number=4,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=_b("").decode('utf-8'),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
-            file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(
             name='output',
             full_name='v1.Athena.output',
-            index=4,
-            number=5,
+            index=3,
+            number=4,
             type=9,
             cpp_type=9,
             label=1,
@@ -776,8 +759,8 @@ _ATHENA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1111,
-    serialized_end=1286,
+    serialized_start=1133,
+    serialized_end=1278,
 )
 
 _DRIVER.fields_by_name['mysql'].message_type = _MYSQL
@@ -919,7 +902,6 @@ _MEMSQL.fields_by_name['password']._options = None
 _MEMSQL.fields_by_name['database']._options = None
 _MEMSQL.fields_by_name['port']._options = None
 _MEMSQL._options = None
-_ATHENA.fields_by_name['hostname']._options = None
 _ATHENA.fields_by_name['access_key']._options = None
 _ATHENA.fields_by_name['secretAccessKey']._options = None
 _ATHENA.fields_by_name['region']._options = None
