@@ -29,6 +29,10 @@ def driver_to_plumbing(porcelain):
     if isinstance(porcelain, models.HttpBasicAuth):
         plumbing.http_basic_auth.CopyFrom(
             http_basic_auth_to_plumbing(porcelain))
+    if isinstance(porcelain, models.HttpNoAuth):
+        plumbing.http_no_auth.CopyFrom(http_no_auth_to_plumbing(porcelain))
+    if isinstance(porcelain, models.HttpAuth):
+        plumbing.http_auth.CopyFrom(http_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.Mysql):
         plumbing.mysql.CopyFrom(mysql_to_plumbing(porcelain))
     if isinstance(porcelain, models.AuroraMysql):
@@ -47,6 +51,10 @@ def driver_to_plumbing(porcelain):
 def driver_to_porcelain(plumbing):
     if plumbing.http_basic_auth != None:
         return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
+    if plumbing.http_no_auth != None:
+        return http_no_auth_to_porcelain(plumbing.http_no_auth)
+    if plumbing.http_auth != None:
+        return http_auth_to_porcelain(plumbing.http_auth)
     if plumbing.mysql != None:
         return mysql_to_porcelain(plumbing.mysql)
     if plumbing.aurora_mysql != None:
@@ -121,6 +129,97 @@ def repeated_http_basic_auth_to_plumbing(porcelains):
 
 def repeated_http_basic_auth_to_porcelain(plumbings):
     return [http_basic_auth_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def http_no_auth_to_porcelain(plumbing):
+    porcelain = models.HTTPNoAuth()
+
+    porcelain.url = plumbing.url
+
+    porcelain.healthcheck_path = plumbing.healthcheck_path
+
+    porcelain.headers_blacklist = plumbing.headers_blacklist
+
+    porcelain.default_path = plumbing.default_path
+
+    porcelain.subdomain = plumbing.subdomain
+    return porcelain
+
+
+def http_no_auth_to_plumbing(porcelain):
+    plumbing = HTTPNoAuth()
+    if porcelain.url != None:
+
+        plumbing.url = porcelain.url
+    if porcelain.healthcheck_path != None:
+
+        plumbing.healthcheck_path = porcelain.healthcheck_path
+    if porcelain.headers_blacklist != None:
+
+        plumbing.headers_blacklist = porcelain.headers_blacklist
+    if porcelain.default_path != None:
+
+        plumbing.default_path = porcelain.default_path
+    if porcelain.subdomain != None:
+
+        plumbing.subdomain = porcelain.subdomain
+    return plumbing
+
+
+def repeated_http_no_auth_to_plumbing(porcelains):
+    return [http_no_auth_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_http_no_auth_to_porcelain(plumbings):
+    return [http_no_auth_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def http_auth_to_porcelain(plumbing):
+    porcelain = models.HTTPAuth()
+
+    porcelain.url = plumbing.url
+
+    porcelain.healthcheck_path = plumbing.healthcheck_path
+
+    porcelain.auth_header = plumbing.auth_header
+
+    porcelain.headers_blacklist = plumbing.headers_blacklist
+
+    porcelain.default_path = plumbing.default_path
+
+    porcelain.subdomain = plumbing.subdomain
+    return porcelain
+
+
+def http_auth_to_plumbing(porcelain):
+    plumbing = HTTPAuth()
+    if porcelain.url != None:
+
+        plumbing.url = porcelain.url
+    if porcelain.healthcheck_path != None:
+
+        plumbing.healthcheck_path = porcelain.healthcheck_path
+    if porcelain.auth_header != None:
+
+        plumbing.auth_header = porcelain.auth_header
+    if porcelain.headers_blacklist != None:
+
+        plumbing.headers_blacklist = porcelain.headers_blacklist
+    if porcelain.default_path != None:
+
+        plumbing.default_path = porcelain.default_path
+    if porcelain.subdomain != None:
+
+        plumbing.subdomain = porcelain.subdomain
+    return plumbing
+
+
+def repeated_http_auth_to_plumbing(porcelains):
+    return [http_auth_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_http_auth_to_porcelain(plumbings):
+    return [http_auth_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def mysql_to_porcelain(plumbing):

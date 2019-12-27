@@ -30,6 +30,58 @@ class HTTPBasicAuth:
             repr(self.default_path), repr(self.subdomain))
 
 
+# url:
+# healthcheck_path:
+# headers_blacklist:
+# default_path:
+# subdomain:
+class HTTPNoAuth:
+    __slots__ = [
+        'url', 'healthcheck_path', 'headers_blacklist', 'default_path',
+        'subdomain'
+    ]
+
+    def __init__(self):
+        self.url = None
+        self.healthcheck_path = None
+        self.headers_blacklist = None
+        self.default_path = None
+        self.subdomain = None
+
+    def __repr__(self):
+        return '<sdm.HTTPNoAuth url: {0} healthcheck_path: {1} headers_blacklist: {2} default_path: {3} subdomain: {4}>'.format(
+            repr(self.url), repr(self.healthcheck_path),
+            repr(self.headers_blacklist), repr(self.default_path),
+            repr(self.subdomain))
+
+
+# url:
+# healthcheck_path:
+# auth_header:
+# headers_blacklist:
+# default_path:
+# subdomain:
+class HTTPAuth:
+    __slots__ = [
+        'url', 'healthcheck_path', 'auth_header', 'headers_blacklist',
+        'default_path', 'subdomain'
+    ]
+
+    def __init__(self):
+        self.url = None
+        self.healthcheck_path = None
+        self.auth_header = None
+        self.headers_blacklist = None
+        self.default_path = None
+        self.subdomain = None
+
+    def __repr__(self):
+        return '<sdm.HTTPAuth url: {0} healthcheck_path: {1} auth_header: {2} headers_blacklist: {3} default_path: {4} subdomain: {5}>'.format(
+            repr(self.url), repr(self.healthcheck_path),
+            repr(self.auth_header), repr(self.headers_blacklist),
+            repr(self.default_path), repr(self.subdomain))
+
+
 # hostname:
 # username:
 # password:
