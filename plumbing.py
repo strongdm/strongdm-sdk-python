@@ -52,6 +52,8 @@ def repeated_driver_to_porcelain(plumbings):
 def mysql_to_porcelain(plumbing):
     porcelain = models.Mysql()
 
+    porcelain.hostname = plumbing.hostname
+
     porcelain.username = plumbing.username
 
     porcelain.password = plumbing.password
@@ -64,6 +66,9 @@ def mysql_to_porcelain(plumbing):
 
 def mysql_to_plumbing(porcelain):
     plumbing = Mysql()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
     if porcelain.username != None:
 
         plumbing.username = porcelain.username
@@ -90,6 +95,8 @@ def repeated_mysql_to_porcelain(plumbings):
 def athena_to_porcelain(plumbing):
     porcelain = models.Athena()
 
+    porcelain.hostname = plumbing.hostname
+
     porcelain.access_key = plumbing.access_key
 
     porcelain.secretAccessKey = plumbing.secretAccessKey
@@ -102,6 +109,9 @@ def athena_to_porcelain(plumbing):
 
 def athena_to_plumbing(porcelain):
     plumbing = Athena()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
     if porcelain.access_key != None:
 
         plumbing.access_key = porcelain.access_key

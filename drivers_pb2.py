@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
     serialized_pb=_b(
-        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"X\n\x06\x44river\x12\x1a\n\x05mysql\x18\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12\x1c\n\x06\x61thena\x18\x02 \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\x87\x01\n\x05Mysql\x12\x1c\n\x08username\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x91\x01\n\x06\x41thena\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
+        '\n\rdrivers.proto\x12\x02v1\x1a\roptions.proto\"X\n\x06\x44river\x12\x1a\n\x05mysql\x18\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12\x1c\n\x06\x61thena\x18\x02 \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xa5\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04port\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06\x41thena\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0fsecretAccessKey\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06output\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
     ),
     dependencies=[
         options__pb2.DESCRIPTOR,
@@ -94,8 +94,8 @@ _MYSQL = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
-            name='username',
-            full_name='v1.Mysql.username',
+            name='hostname',
+            full_name='v1.Mysql.hostname',
             index=0,
             number=1,
             type=9,
@@ -111,8 +111,8 @@ _MYSQL = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='password',
-            full_name='v1.Mysql.password',
+            name='username',
+            full_name='v1.Mysql.username',
             index=1,
             number=2,
             type=9,
@@ -128,8 +128,8 @@ _MYSQL = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='database',
-            full_name='v1.Mysql.database',
+            name='password',
+            full_name='v1.Mysql.password',
             index=2,
             number=3,
             type=9,
@@ -145,10 +145,27 @@ _MYSQL = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='port',
-            full_name='v1.Mysql.port',
+            name='database',
+            full_name='v1.Mysql.database',
             index=3,
             number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port',
+            full_name='v1.Mysql.port',
+            index=4,
+            number=5,
             type=5,
             cpp_type=1,
             label=1,
@@ -171,7 +188,7 @@ _MYSQL = _descriptor.Descriptor(
     extension_ranges=[],
     oneofs=[],
     serialized_start=127,
-    serialized_end=262,
+    serialized_end=292,
 )
 
 _ATHENA = _descriptor.Descriptor(
@@ -182,8 +199,8 @@ _ATHENA = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
-            name='access_key',
-            full_name='v1.Athena.access_key',
+            name='hostname',
+            full_name='v1.Athena.hostname',
             index=0,
             number=1,
             type=9,
@@ -199,8 +216,8 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='secretAccessKey',
-            full_name='v1.Athena.secretAccessKey',
+            name='access_key',
+            full_name='v1.Athena.access_key',
             index=1,
             number=2,
             type=9,
@@ -216,8 +233,8 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='region',
-            full_name='v1.Athena.region',
+            name='secretAccessKey',
+            full_name='v1.Athena.secretAccessKey',
             index=2,
             number=3,
             type=9,
@@ -233,10 +250,27 @@ _ATHENA = _descriptor.Descriptor(
             serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
             file=DESCRIPTOR),
         _descriptor.FieldDescriptor(
-            name='output',
-            full_name='v1.Athena.output',
+            name='region',
+            full_name='v1.Athena.region',
             index=3,
             number=4,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='output',
+            full_name='v1.Athena.output',
+            index=4,
+            number=5,
             type=9,
             cpp_type=9,
             label=1,
@@ -258,8 +292,8 @@ _ATHENA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=265,
-    serialized_end=410,
+    serialized_start=295,
+    serialized_end=470,
 )
 
 _DRIVER.fields_by_name['mysql'].message_type = _MYSQL
@@ -308,11 +342,13 @@ _sym_db.RegisterMessage(Athena)
 
 DESCRIPTOR._options = None
 _DRIVER._options = None
+_MYSQL.fields_by_name['hostname']._options = None
 _MYSQL.fields_by_name['username']._options = None
 _MYSQL.fields_by_name['password']._options = None
 _MYSQL.fields_by_name['database']._options = None
 _MYSQL.fields_by_name['port']._options = None
 _MYSQL._options = None
+_ATHENA.fields_by_name['hostname']._options = None
 _ATHENA.fields_by_name['access_key']._options = None
 _ATHENA.fields_by_name['secretAccessKey']._options = None
 _ATHENA.fields_by_name['region']._options = None
