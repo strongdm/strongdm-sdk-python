@@ -28,12 +28,16 @@ def driver_to_plumbing(porcelain):
     plumbing = Driver()
     if isinstance(porcelain, models.Mysql):
         plumbing.mysql.CopyFrom(mysql_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Athena):
+        plumbing.athena.CopyFrom(athena_to_plumbing(porcelain))
     return plumbing
 
 
 def driver_to_porcelain(plumbing):
     if plumbing.mysql != None:
         return mysql_to_porcelain(plumbing.mysql)
+    if plumbing.athena != None:
+        return athena_to_porcelain(plumbing.athena)
     return None
 
 
@@ -81,6 +85,44 @@ def repeated_mysql_to_plumbing(porcelains):
 
 def repeated_mysql_to_porcelain(plumbings):
     return [mysql_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def athena_to_porcelain(plumbing):
+    porcelain = models.Athena()
+
+    porcelain.access_key = plumbing.access_key
+
+    porcelain.secretAccessKey = plumbing.secretAccessKey
+
+    porcelain.region = plumbing.region
+
+    porcelain.output = plumbing.output
+    return porcelain
+
+
+def athena_to_plumbing(porcelain):
+    plumbing = Athena()
+    if porcelain.access_key != None:
+
+        plumbing.access_key = porcelain.access_key
+    if porcelain.secretAccessKey != None:
+
+        plumbing.secretAccessKey = porcelain.secretAccessKey
+    if porcelain.region != None:
+
+        plumbing.region = porcelain.region
+    if porcelain.output != None:
+
+        plumbing.output = porcelain.output
+    return plumbing
+
+
+def repeated_athena_to_plumbing(porcelains):
+    return [athena_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_athena_to_porcelain(plumbings):
+    return [athena_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def create_response_metadata_to_porcelain(plumbing):

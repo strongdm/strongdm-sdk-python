@@ -136,9 +136,9 @@ class Resources:
         self.stub = ResourcesStub(channel)
 
     # Create registers a new Resource.
-    def create(self, driver, timeout=None):
+    def create(self, resource, timeout=None):
         req = ResourceCreateRequest()
-        req.driver.CopyFrom(plumbing.driver_to_plumbing(driver))
+        req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
         try:
             plumbing_response = self.stub.Create(
                 req,
