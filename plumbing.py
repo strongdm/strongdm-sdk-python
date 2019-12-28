@@ -26,6 +26,10 @@ def timestamp_to_plumbing(t):
 
 def driver_to_plumbing(porcelain):
     plumbing = Driver()
+    if isinstance(porcelain, models.Kubernetes):
+        plumbing.kubernetes.CopyFrom(kubernetes_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AmazonEks):
+        plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.HttpBasicAuth):
         plumbing.http_basic_auth.CopyFrom(
             http_basic_auth_to_plumbing(porcelain))
@@ -49,6 +53,10 @@ def driver_to_plumbing(porcelain):
 
 
 def driver_to_porcelain(plumbing):
+    if plumbing.kubernetes != None:
+        return kubernetes_to_porcelain(plumbing.kubernetes)
+    if plumbing.amazon_eks != None:
+        return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.http_basic_auth != None:
         return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
     if plumbing.http_no_auth != None:
@@ -76,6 +84,97 @@ def repeated_driver_to_plumbing(porcelains):
 
 def repeated_driver_to_porcelain(plumbings):
     return [driver_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def kubernetes_to_porcelain(plumbing):
+    porcelain = models.Kubernetes()
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.port = plumbing.port
+
+    porcelain.certificate_authority = plumbing.certificate_authority
+
+    porcelain.client_certificate = plumbing.client_certificate
+
+    porcelain.client_key = plumbing.client_key
+    return porcelain
+
+
+def kubernetes_to_plumbing(porcelain):
+    plumbing = Kubernetes()
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.certificate_authority != None:
+
+        plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.client_certificate != None:
+
+        plumbing.client_certificate = porcelain.client_certificate
+    if porcelain.client_key != None:
+
+        plumbing.client_key = porcelain.client_key
+    return plumbing
+
+
+def repeated_kubernetes_to_plumbing(porcelains):
+    return [kubernetes_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_kubernetes_to_porcelain(plumbings):
+    return [kubernetes_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def amazon_eks_to_porcelain(plumbing):
+    porcelain = models.AmazonEKS()
+
+    porcelain.endpoint = plumbing.endpoint
+
+    porcelain.access_key = plumbing.access_key
+
+    porcelain.secret_access_key = plumbing.secret_access_key
+
+    porcelain.certificate_authority = plumbing.certificate_authority
+
+    porcelain.region = plumbing.region
+
+    porcelain.cluster_name = plumbing.cluster_name
+    return porcelain
+
+
+def amazon_eks_to_plumbing(porcelain):
+    plumbing = AmazonEKS()
+    if porcelain.endpoint != None:
+
+        plumbing.endpoint = porcelain.endpoint
+    if porcelain.access_key != None:
+
+        plumbing.access_key = porcelain.access_key
+    if porcelain.secret_access_key != None:
+
+        plumbing.secret_access_key = porcelain.secret_access_key
+    if porcelain.certificate_authority != None:
+
+        plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.region != None:
+
+        plumbing.region = porcelain.region
+    if porcelain.cluster_name != None:
+
+        plumbing.cluster_name = porcelain.cluster_name
+    return plumbing
+
+
+def repeated_amazon_eks_to_plumbing(porcelains):
+    return [amazon_eks_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_amazon_eks_to_porcelain(plumbings):
+    return [amazon_eks_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def http_basic_auth_to_porcelain(plumbing):
@@ -442,7 +541,7 @@ def athena_to_porcelain(plumbing):
 
     porcelain.access_key = plumbing.access_key
 
-    porcelain.secretAccessKey = plumbing.secretAccessKey
+    porcelain.secret_access_key = plumbing.secret_access_key
 
     porcelain.region = plumbing.region
 
@@ -455,9 +554,9 @@ def athena_to_plumbing(porcelain):
     if porcelain.access_key != None:
 
         plumbing.access_key = porcelain.access_key
-    if porcelain.secretAccessKey != None:
+    if porcelain.secret_access_key != None:
 
-        plumbing.secretAccessKey = porcelain.secretAccessKey
+        plumbing.secret_access_key = porcelain.secret_access_key
     if porcelain.region != None:
 
         plumbing.region = porcelain.region

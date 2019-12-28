@@ -1,6 +1,58 @@
 import collections
 
 
+# hostname:
+# port:
+# certificate_authority:
+# client_certificate:
+# client_key:
+class Kubernetes:
+    __slots__ = [
+        'hostname', 'port', 'certificate_authority', 'client_certificate',
+        'client_key'
+    ]
+
+    def __init__(self):
+        self.hostname = None
+        self.port = None
+        self.certificate_authority = None
+        self.client_certificate = None
+        self.client_key = None
+
+    def __repr__(self):
+        return '<sdm.Kubernetes hostname: {0} port: {1} certificate_authority: {2} client_certificate: {3} client_key: {4}>'.format(
+            repr(self.hostname), repr(self.port),
+            repr(self.certificate_authority), repr(self.client_certificate),
+            repr(self.client_key))
+
+
+# endpoint:
+# access_key:
+# secret_access_key:
+# certificate_authority:
+# region:
+# cluster_name:
+class AmazonEKS:
+    __slots__ = [
+        'endpoint', 'access_key', 'secret_access_key', 'certificate_authority',
+        'region', 'cluster_name'
+    ]
+
+    def __init__(self):
+        self.endpoint = None
+        self.access_key = None
+        self.secret_access_key = None
+        self.certificate_authority = None
+        self.region = None
+        self.cluster_name = None
+
+    def __repr__(self):
+        return '<sdm.AmazonEKS endpoint: {0} access_key: {1} secret_access_key: {2} certificate_authority: {3} region: {4} cluster_name: {5}>'.format(
+            repr(self.endpoint), repr(self.access_key),
+            repr(self.secret_access_key), repr(self.certificate_authority),
+            repr(self.region), repr(self.cluster_name))
+
+
 # url:
 # healthcheck_path:
 # username:
@@ -188,7 +240,7 @@ class Memsql:
 
 
 # access_key:
-# secretAccessKey:
+# secret_access_key:
 # region:
 # output:
 class Athena:
