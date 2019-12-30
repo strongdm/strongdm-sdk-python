@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\021ResourcesPlumbing'),
     serialized_pb=_b(
-        '\n\x0fresources.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x01\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb7\x01\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x01\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x91\x01\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x01\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb5\x01\n\x08Resource\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04name\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rport_override\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x07healthy\x18\x04 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12&\n\x06\x64river\x18\x05 \x01(\x0b\x32\n.v1.DriverB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xdd\x03\n\tResources\x12Y\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/resources:\x01*\x12R\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/resources/{id}\x12^\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/resources/{id}:\x01*\x12[\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/resources/{id}\x12P\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/resources\x1a\x12\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08ResourceB1\n\x1c\x63om.strongdm.api.v1.plumbingB\x11ResourcesPlumbingb\x06proto3'
+        '\n\x0fresources.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x01\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb7\x01\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x01\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x91\x01\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x01\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x32\xdd\x03\n\tResources\x12Y\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/resources:\x01*\x12R\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/resources/{id}\x12^\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/resources/{id}:\x01*\x12[\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/resources/{id}\x12P\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/resources\x1a\x12\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08ResourceB1\n\x1c\x63om.strongdm.api.v1.plumbingB\x11ResourcesPlumbingb\x06proto3'
     ),
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -654,133 +654,32 @@ _RESOURCELISTRESPONSE = _descriptor.Descriptor(
     serialized_end=1518,
 )
 
-_RESOURCE = _descriptor.Descriptor(
-    name='Resource',
-    full_name='v1.Resource',
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name='id',
-            full_name='v1.Resource.id',
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=_b("").decode('utf-8'),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
-            file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(
-            name='name',
-            full_name='v1.Resource.name',
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=_b("").decode('utf-8'),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
-            file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(
-            name='port_override',
-            full_name='v1.Resource.port_override',
-            index=2,
-            number=3,
-            type=5,
-            cpp_type=1,
-            label=1,
-            has_default_value=False,
-            default_value=0,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
-            file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(
-            name='healthy',
-            full_name='v1.Resource.healthy',
-            index=3,
-            number=4,
-            type=8,
-            cpp_type=7,
-            label=1,
-            has_default_value=False,
-            default_value=False,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b(
-                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
-            file=DESCRIPTOR),
-        _descriptor.FieldDescriptor(
-            name='driver',
-            full_name='v1.Resource.driver',
-            index=4,
-            number=5,
-            type=11,
-            cpp_type=10,
-            label=1,
-            has_default_value=False,
-            default_value=None,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
-            file=DESCRIPTOR),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-    is_extendable=False,
-    syntax='proto3',
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=1521,
-    serialized_end=1702,
-)
-
 _RESOURCECREATEREQUEST.fields_by_name[
     'meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
-_RESOURCECREATEREQUEST.fields_by_name['resource'].message_type = _RESOURCE
+_RESOURCECREATEREQUEST.fields_by_name[
+    'resource'].message_type = drivers__pb2._RESOURCE
 _RESOURCECREATERESPONSE.fields_by_name[
     'meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
-_RESOURCECREATERESPONSE.fields_by_name['resource'].message_type = _RESOURCE
+_RESOURCECREATERESPONSE.fields_by_name[
+    'resource'].message_type = drivers__pb2._RESOURCE
 _RESOURCECREATERESPONSE.fields_by_name[
     'rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
 _RESOURCEGETREQUEST.fields_by_name[
     'meta'].message_type = spec__pb2._GETREQUESTMETADATA
 _RESOURCEGETRESPONSE.fields_by_name[
     'meta'].message_type = spec__pb2._GETRESPONSEMETADATA
-_RESOURCEGETRESPONSE.fields_by_name['resource'].message_type = _RESOURCE
+_RESOURCEGETRESPONSE.fields_by_name[
+    'resource'].message_type = drivers__pb2._RESOURCE
 _RESOURCEGETRESPONSE.fields_by_name[
     'rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
 _RESOURCEUPDATEREQUEST.fields_by_name[
     'meta'].message_type = spec__pb2._UPDATEREQUESTMETADATA
-_RESOURCEUPDATEREQUEST.fields_by_name['resource'].message_type = _RESOURCE
+_RESOURCEUPDATEREQUEST.fields_by_name[
+    'resource'].message_type = drivers__pb2._RESOURCE
 _RESOURCEUPDATERESPONSE.fields_by_name[
     'meta'].message_type = spec__pb2._UPDATERESPONSEMETADATA
-_RESOURCEUPDATERESPONSE.fields_by_name['resource'].message_type = _RESOURCE
+_RESOURCEUPDATERESPONSE.fields_by_name[
+    'resource'].message_type = drivers__pb2._RESOURCE
 _RESOURCEUPDATERESPONSE.fields_by_name[
     'rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
 _RESOURCEDELETEREQUEST.fields_by_name[
@@ -793,10 +692,10 @@ _RESOURCELISTREQUEST.fields_by_name[
     'meta'].message_type = spec__pb2._LISTREQUESTMETADATA
 _RESOURCELISTRESPONSE.fields_by_name[
     'meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
-_RESOURCELISTRESPONSE.fields_by_name['resources'].message_type = _RESOURCE
+_RESOURCELISTRESPONSE.fields_by_name[
+    'resources'].message_type = drivers__pb2._RESOURCE
 _RESOURCELISTRESPONSE.fields_by_name[
     'rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_RESOURCE.fields_by_name['driver'].message_type = drivers__pb2._DRIVER
 DESCRIPTOR.message_types_by_name[
     'ResourceCreateRequest'] = _RESOURCECREATEREQUEST
 DESCRIPTOR.message_types_by_name[
@@ -814,7 +713,6 @@ DESCRIPTOR.message_types_by_name[
 DESCRIPTOR.message_types_by_name['ResourceListRequest'] = _RESOURCELISTREQUEST
 DESCRIPTOR.message_types_by_name[
     'ResourceListResponse'] = _RESOURCELISTRESPONSE
-DESCRIPTOR.message_types_by_name['Resource'] = _RESOURCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ResourceCreateRequest = _reflection.GeneratedProtocolMessageType(
@@ -917,16 +815,6 @@ ResourceListResponse = _reflection.GeneratedProtocolMessageType(
     })
 _sym_db.RegisterMessage(ResourceListResponse)
 
-Resource = _reflection.GeneratedProtocolMessageType(
-    'Resource',
-    (_message.Message, ),
-    {
-        'DESCRIPTOR': _RESOURCE,
-        '__module__': 'resources_pb2'
-        # @@protoc_insertion_point(class_scope:v1.Resource)
-    })
-_sym_db.RegisterMessage(Resource)
-
 DESCRIPTOR._options = None
 _RESOURCECREATEREQUEST.fields_by_name['resource']._options = None
 _RESOURCECREATERESPONSE.fields_by_name['meta']._options = None
@@ -950,12 +838,6 @@ _RESOURCEDELETERESPONSE._options = None
 _RESOURCELISTREQUEST.fields_by_name['filter']._options = None
 _RESOURCELISTRESPONSE.fields_by_name['resources']._options = None
 _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._options = None
-_RESOURCE.fields_by_name['id']._options = None
-_RESOURCE.fields_by_name['name']._options = None
-_RESOURCE.fields_by_name['port_override']._options = None
-_RESOURCE.fields_by_name['healthy']._options = None
-_RESOURCE.fields_by_name['driver']._options = None
-_RESOURCE._options = None
 
 _RESOURCES = _descriptor.ServiceDescriptor(
     name='Resources',
@@ -963,8 +845,8 @@ _RESOURCES = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=_b('\312\371\263\007\r\302\371\263\007\010Resource'),
-    serialized_start=1705,
-    serialized_end=2182,
+    serialized_start=1521,
+    serialized_end=1998,
     methods=[
         _descriptor.MethodDescriptor(
             name='Create',

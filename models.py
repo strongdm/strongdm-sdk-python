@@ -1,6 +1,10 @@
 import collections
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # port:
 # certificate_authority:
@@ -8,11 +12,15 @@ import collections
 # client_key:
 class Kubernetes:
     __slots__ = [
-        'hostname', 'port', 'certificate_authority', 'client_certificate',
-        'client_key'
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'port',
+        'certificate_authority', 'client_certificate', 'client_key'
     ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.port = None
         self.certificate_authority = None
@@ -20,12 +28,17 @@ class Kubernetes:
         self.client_key = None
 
     def __repr__(self):
-        return '<sdm.Kubernetes hostname: {0} port: {1} certificate_authority: {2} client_certificate: {3} client_key: {4}>'.format(
-            repr(self.hostname), repr(self.port),
+        return '<sdm.Kubernetes id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} port: {5} certificate_authority: {6} client_certificate: {7} client_key: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.port),
             repr(self.certificate_authority), repr(self.client_certificate),
             repr(self.client_key))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # access_key:
 # secret_access_key:
@@ -34,11 +47,15 @@ class Kubernetes:
 # cluster_name:
 class AmazonEKS:
     __slots__ = [
-        'endpoint', 'access_key', 'secret_access_key', 'certificate_authority',
-        'region', 'cluster_name'
+        'id', 'name', 'port_override', 'healthy', 'endpoint', 'access_key',
+        'secret_access_key', 'certificate_authority', 'region', 'cluster_name'
     ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.endpoint = None
         self.access_key = None
         self.secret_access_key = None
@@ -47,29 +64,46 @@ class AmazonEKS:
         self.cluster_name = None
 
     def __repr__(self):
-        return '<sdm.AmazonEKS endpoint: {0} access_key: {1} secret_access_key: {2} certificate_authority: {3} region: {4} cluster_name: {5}>'.format(
-            repr(self.endpoint), repr(self.access_key),
+        return '<sdm.AmazonEKS id: {0} name: {1} port_override: {2} healthy: {3} endpoint: {4} access_key: {5} secret_access_key: {6} certificate_authority: {7} region: {8} cluster_name: {9}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.endpoint), repr(self.access_key),
             repr(self.secret_access_key), repr(self.certificate_authority),
             repr(self.region), repr(self.cluster_name))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # certificate_authority:
 # service_account_key:
 class GoogleGKE:
-    __slots__ = ['endpoint', 'certificate_authority', 'service_account_key']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'endpoint',
+        'certificate_authority', 'service_account_key'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.endpoint = None
         self.certificate_authority = None
         self.service_account_key = None
 
     def __repr__(self):
-        return '<sdm.GoogleGKE endpoint: {0} certificate_authority: {1} service_account_key: {2}>'.format(
-            repr(self.endpoint), repr(self.certificate_authority),
-            repr(self.service_account_key))
+        return '<sdm.GoogleGKE id: {0} name: {1} port_override: {2} healthy: {3} endpoint: {4} certificate_authority: {5} service_account_key: {6}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.endpoint),
+            repr(self.certificate_authority), repr(self.service_account_key))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # url:
 # healthcheck_path:
 # username:
@@ -79,11 +113,16 @@ class GoogleGKE:
 # subdomain:
 class HTTPBasicAuth:
     __slots__ = [
-        'url', 'healthcheck_path', 'username', 'password', 'headers_blacklist',
-        'default_path', 'subdomain'
+        'id', 'name', 'port_override', 'healthy', 'url', 'healthcheck_path',
+        'username', 'password', 'headers_blacklist', 'default_path',
+        'subdomain'
     ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.url = None
         self.healthcheck_path = None
         self.username = None
@@ -93,12 +132,18 @@ class HTTPBasicAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPBasicAuth url: {0} healthcheck_path: {1} username: {2} password: {3} headers_blacklist: {4} default_path: {5} subdomain: {6}>'.format(
-            repr(self.url), repr(self.healthcheck_path), repr(self.username),
-            repr(self.password), repr(self.headers_blacklist),
-            repr(self.default_path), repr(self.subdomain))
+        return '<sdm.HTTPBasicAuth id: {0} name: {1} port_override: {2} healthy: {3} url: {4} healthcheck_path: {5} username: {6} password: {7} headers_blacklist: {8} default_path: {9} subdomain: {10}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.url), repr(self.healthcheck_path),
+            repr(self.username), repr(self.password),
+            repr(self.headers_blacklist), repr(self.default_path),
+            repr(self.subdomain))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # url:
 # healthcheck_path:
 # headers_blacklist:
@@ -106,11 +151,15 @@ class HTTPBasicAuth:
 # subdomain:
 class HTTPNoAuth:
     __slots__ = [
-        'url', 'healthcheck_path', 'headers_blacklist', 'default_path',
-        'subdomain'
+        'id', 'name', 'port_override', 'healthy', 'url', 'healthcheck_path',
+        'headers_blacklist', 'default_path', 'subdomain'
     ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.url = None
         self.healthcheck_path = None
         self.headers_blacklist = None
@@ -118,12 +167,17 @@ class HTTPNoAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPNoAuth url: {0} healthcheck_path: {1} headers_blacklist: {2} default_path: {3} subdomain: {4}>'.format(
-            repr(self.url), repr(self.healthcheck_path),
+        return '<sdm.HTTPNoAuth id: {0} name: {1} port_override: {2} healthy: {3} url: {4} healthcheck_path: {5} headers_blacklist: {6} default_path: {7} subdomain: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.url), repr(self.healthcheck_path),
             repr(self.headers_blacklist), repr(self.default_path),
             repr(self.subdomain))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # url:
 # healthcheck_path:
 # auth_header:
@@ -132,11 +186,15 @@ class HTTPNoAuth:
 # subdomain:
 class HTTPAuth:
     __slots__ = [
-        'url', 'healthcheck_path', 'auth_header', 'headers_blacklist',
-        'default_path', 'subdomain'
+        'id', 'name', 'port_override', 'healthy', 'url', 'healthcheck_path',
+        'auth_header', 'headers_blacklist', 'default_path', 'subdomain'
     ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.url = None
         self.healthcheck_path = None
         self.auth_header = None
@@ -145,21 +203,33 @@ class HTTPAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPAuth url: {0} healthcheck_path: {1} auth_header: {2} headers_blacklist: {3} default_path: {4} subdomain: {5}>'.format(
-            repr(self.url), repr(self.healthcheck_path),
+        return '<sdm.HTTPAuth id: {0} name: {1} port_override: {2} healthy: {3} url: {4} healthcheck_path: {5} auth_header: {6} headers_blacklist: {7} default_path: {8} subdomain: {9}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.url), repr(self.healthcheck_path),
             repr(self.auth_header), repr(self.headers_blacklist),
             repr(self.default_path), repr(self.subdomain))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # password:
 # database:
 # port:
 class Mysql:
-    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'password', 'database', 'port'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.username = None
         self.password = None
@@ -167,20 +237,32 @@ class Mysql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Mysql hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port))
+        return '<sdm.Mysql id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} password: {6} database: {7} port: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.password), repr(self.database), repr(self.port))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # password:
 # database:
 # port:
 class AuroraMysql:
-    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'password', 'database', 'port'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.username = None
         self.password = None
@@ -188,20 +270,32 @@ class AuroraMysql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.AuroraMysql hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port))
+        return '<sdm.AuroraMysql id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} password: {6} database: {7} port: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.password), repr(self.database), repr(self.port))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # password:
 # database:
 # port:
 class Clustrix:
-    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'password', 'database', 'port'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.username = None
         self.password = None
@@ -209,20 +303,32 @@ class Clustrix:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Clustrix hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port))
+        return '<sdm.Clustrix id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} password: {6} database: {7} port: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.password), repr(self.database), repr(self.port))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # password:
 # database:
 # port:
 class Maria:
-    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'password', 'database', 'port'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.username = None
         self.password = None
@@ -230,20 +336,32 @@ class Maria:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Maria hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port))
+        return '<sdm.Maria id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} password: {6} database: {7} port: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.password), repr(self.database), repr(self.port))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # password:
 # database:
 # port:
 class Memsql:
-    __slots__ = ['hostname', 'username', 'password', 'database', 'port']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'password', 'database', 'port'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.hostname = None
         self.username = None
         self.password = None
@@ -251,28 +369,41 @@ class Memsql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Memsql hostname: {0} username: {1} password: {2} database: {3} port: {4}>'.format(
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port))
+        return '<sdm.Memsql id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} password: {6} database: {7} port: {8}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.password), repr(self.database), repr(self.port))
 
 
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # access_key:
 # secret_access_key:
 # region:
 # output:
 class Athena:
-    __slots__ = ['access_key', 'secret_access_key', 'region', 'output']
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'access_key',
+        'secret_access_key', 'region', 'output'
+    ]
 
     def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
         self.access_key = None
         self.secret_access_key = None
         self.region = None
         self.output = None
 
     def __repr__(self):
-        return '<sdm.Athena access_key: {0} secret_access_key: {1} region: {2} output: {3}>'.format(
-            repr(self.access_key), repr(self.secret_access_key),
-            repr(self.region), repr(self.output))
+        return '<sdm.Athena id: {0} name: {1} port_override: {2} healthy: {3} access_key: {4} secret_access_key: {5} region: {6} output: {7}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.access_key),
+            repr(self.secret_access_key), repr(self.region), repr(self.output))
 
 
 # CreateResponseMetadata is reserved for future use.
@@ -519,31 +650,6 @@ class ResourceDeleteResponse:
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse meta: {0} rate_limit: {1}>'.format(
             repr(self.meta), repr(self.rate_limit))
-
-
-# A Resource is a proxy in the strongDM network. They come in two flavors: relays,
-# which communicate with resources, and gateways, which communicate with
-# clients.
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# port_override: Port number override.
-# TODO: should this be a part of the Driver since it does not apply to HTTP resources?
-# healthy: True if the datasource is reachable and the credentials are valid.
-# driver: Fields for connecting to the resource.
-class Resource:
-    __slots__ = ['id', 'name', 'port_override', 'healthy', 'driver']
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.port_override = None
-        self.healthy = None
-        self.driver = None
-
-    def __repr__(self):
-        return '<sdm.Resource id: {0} name: {1} port_override: {2} healthy: {3} driver: {4}>'.format(
-            repr(self.id), repr(self.name), repr(self.port_override),
-            repr(self.healthy), repr(self.driver))
 
 
 # RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.

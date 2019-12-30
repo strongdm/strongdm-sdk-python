@@ -23,22 +23,22 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
     serialized_pb=_b(
-        '\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\"\xf0\x03\n\x06\x44river\x12\'\n\nkubernetes\x18\x94\xd7\xaen \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12&\n\namazon_eks\x18\xf0\xa5\x81\x45 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12&\n\ngoogle_gke\x18\x95\xae\x91\x42 \x01(\x0b\x32\r.v1.GoogleGKEH\x00\x12\x30\n\x0fhttp_basic_auth\x18\x8c\xaa\xe3\xd5\x01 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12*\n\x0chttp_no_auth\x18\x9d\xaa\xe5\xcf\x01 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12$\n\thttp_auth\x18\xee\xc2\x82k \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12\x1e\n\x05mysql\x18\xc3\x80\x94\xb8\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12*\n\x0c\x61urora_mysql\x18\xed\xa2\xdc\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12$\n\x08\x63lustrix\x18\x94\xa9\xee\xfd\x01 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1e\n\x05maria\x18\x94\xdd\xa6\xde\x01 \x01(\x0b\x32\t.v1.MariaH\x00\x12 \n\x06memsql\x18\xad\xb9\xdf\x80\x01 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1f\n\x06\x61thena\x18\x88\x86\xa1) \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xcb\x01\n\nKubernetes\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x04port\x18\x02 \x01(\x05\x42\x12\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x05:\x03\x34\x34\x33\x12)\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x63lient_certificate\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nclient_key\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe5\x01\n\tAmazonEKS\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x63luster_name\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x89\x01\n\tGoogleGKE\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\'\n\x13service_account_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x83\x02\n\rHTTPBasicAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x07 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc4\x01\n\nHTTPNoAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x05 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe3\x01\n\x08HTTPAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x61uth_header\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x06 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb4\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb1\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa1\x01\n\x06\x41thena\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x06region\x18\x03 \x01(\tB\x18\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x0b:\tus-east-1\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
+        '\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\"\xf4\x03\n\x08Resource\x12\'\n\nkubernetes\x18\x94\xd7\xaen \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12&\n\namazon_eks\x18\xf0\xa5\x81\x45 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12&\n\ngoogle_gke\x18\x95\xae\x91\x42 \x01(\x0b\x32\r.v1.GoogleGKEH\x00\x12\x30\n\x0fhttp_basic_auth\x18\x8c\xaa\xe3\xd5\x01 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12*\n\x0chttp_no_auth\x18\x9d\xaa\xe5\xcf\x01 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12$\n\thttp_auth\x18\xee\xc2\x82k \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12\x1e\n\x05mysql\x18\xc3\x80\x94\xb8\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12*\n\x0c\x61urora_mysql\x18\xed\xa2\xdc\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12$\n\x08\x63lustrix\x18\x94\xa9\xee\xfd\x01 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1e\n\x05maria\x18\x94\xdd\xa6\xde\x01 \x01(\x0b\x32\t.v1.MariaH\x00\x12 \n\x06memsql\x18\xad\xb9\xdf\x80\x01 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1f\n\x06\x61thena\x18\x88\x86\xa1) \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\n\n\x08resource\"\xca\x02\n\nKubernetes\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x04port\x18\x02 \x01(\x05\x42\x12\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x05:\x03\x34\x34\x33\x12)\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x63lient_certificate\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nclient_key\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe4\x02\n\tAmazonEKS\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x63luster_name\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x88\x02\n\tGoogleGKE\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\'\n\x13service_account_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x03\n\rHTTPBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x07 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc3\x02\n\nHTTPNoAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x05 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe2\x02\n\x08HTTPAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x61uth_header\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x06 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x02\n\x05Mysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb3\x02\n\x0b\x41uroraMysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb0\x02\n\x08\x43lustrix\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x02\n\x05Maria\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x02\n\x06Memsql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa0\x02\n\x06\x41thena\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x04name\x18\x81\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\rport_override\x18\x82\x80\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x83\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x06region\x18\x03 \x01(\tB\x18\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x0b:\tus-east-1\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
     ),
     dependencies=[
         protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,
         options__pb2.DESCRIPTOR,
     ])
 
-_DRIVER = _descriptor.Descriptor(
-    name='Driver',
-    full_name='v1.Driver',
+_RESOURCE = _descriptor.Descriptor(
+    name='Resource',
+    full_name='v1.Resource',
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(name='kubernetes',
-                                    full_name='v1.Driver.kubernetes',
+                                    full_name='v1.Resource.kubernetes',
                                     index=0,
                                     number=231451540,
                                     type=11,
@@ -54,7 +54,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='amazon_eks',
-                                    full_name='v1.Driver.amazon_eks',
+                                    full_name='v1.Resource.amazon_eks',
                                     index=1,
                                     number=144724720,
                                     type=11,
@@ -70,7 +70,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='google_gke',
-                                    full_name='v1.Driver.google_gke',
+                                    full_name='v1.Resource.google_gke',
                                     index=2,
                                     number=138696469,
                                     type=11,
@@ -86,7 +86,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_basic_auth',
-                                    full_name='v1.Driver.http_basic_auth',
+                                    full_name='v1.Resource.http_basic_auth',
                                     index=3,
                                     number=448320780,
                                     type=11,
@@ -102,7 +102,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_no_auth',
-                                    full_name='v1.Driver.http_no_auth',
+                                    full_name='v1.Resource.http_no_auth',
                                     index=4,
                                     number=435770653,
                                     type=11,
@@ -118,7 +118,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_auth',
-                                    full_name='v1.Driver.http_auth',
+                                    full_name='v1.Resource.http_auth',
                                     index=5,
                                     number=224436590,
                                     type=11,
@@ -134,7 +134,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='mysql',
-                                    full_name='v1.Driver.mysql',
+                                    full_name='v1.Resource.mysql',
                                     index=6,
                                     number=386203715,
                                     type=11,
@@ -150,7 +150,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='aurora_mysql',
-                                    full_name='v1.Driver.aurora_mysql',
+                                    full_name='v1.Resource.aurora_mysql',
                                     index=7,
                                     number=18289005,
                                     type=11,
@@ -166,7 +166,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='clustrix',
-                                    full_name='v1.Driver.clustrix',
+                                    full_name='v1.Resource.clustrix',
                                     index=8,
                                     number=532386964,
                                     type=11,
@@ -182,7 +182,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='maria',
-                                    full_name='v1.Driver.maria',
+                                    full_name='v1.Resource.maria',
                                     index=9,
                                     number=466202260,
                                     type=11,
@@ -198,7 +198,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='memsql',
-                                    full_name='v1.Driver.memsql',
+                                    full_name='v1.Resource.memsql',
                                     index=10,
                                     number=269999277,
                                     type=11,
@@ -214,7 +214,7 @@ _DRIVER = _descriptor.Descriptor(
                                     serialized_options=None,
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='athena',
-                                    full_name='v1.Driver.athena',
+                                    full_name='v1.Resource.athena',
                                     index=11,
                                     number=86524680,
                                     type=11,
@@ -238,14 +238,14 @@ _DRIVER = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[
-        _descriptor.OneofDescriptor(name='driver',
-                                    full_name='v1.Driver.driver',
+        _descriptor.OneofDescriptor(name='resource',
+                                    full_name='v1.Resource.resource',
                                     index=0,
                                     containing_type=None,
                                     fields=[]),
     ],
     serialized_start=83,
-    serialized_end=579,
+    serialized_end=583,
 )
 
 _KUBERNETES = _descriptor.Descriptor(
@@ -256,9 +256,78 @@ _KUBERNETES = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Kubernetes.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Kubernetes.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Kubernetes.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Kubernetes.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.Kubernetes.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -275,7 +344,7 @@ _KUBERNETES = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.Kubernetes.port',
-            index=1,
+            index=5,
             number=2,
             type=5,
             cpp_type=1,
@@ -293,7 +362,7 @@ _KUBERNETES = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='certificate_authority',
             full_name='v1.Kubernetes.certificate_authority',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -310,7 +379,7 @@ _KUBERNETES = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='client_certificate',
             full_name='v1.Kubernetes.client_certificate',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -327,7 +396,7 @@ _KUBERNETES = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='client_key',
             full_name='v1.Kubernetes.client_key',
-            index=4,
+            index=8,
             number=5,
             type=9,
             cpp_type=9,
@@ -350,8 +419,8 @@ _KUBERNETES = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=582,
-    serialized_end=785,
+    serialized_start=586,
+    serialized_end=916,
 )
 
 _AMAZONEKS = _descriptor.Descriptor(
@@ -362,9 +431,78 @@ _AMAZONEKS = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.AmazonEKS.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.AmazonEKS.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.AmazonEKS.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.AmazonEKS.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='endpoint',
             full_name='v1.AmazonEKS.endpoint',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -381,7 +519,7 @@ _AMAZONEKS = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='access_key',
             full_name='v1.AmazonEKS.access_key',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -398,7 +536,7 @@ _AMAZONEKS = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='secret_access_key',
             full_name='v1.AmazonEKS.secret_access_key',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -415,7 +553,7 @@ _AMAZONEKS = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='certificate_authority',
             full_name='v1.AmazonEKS.certificate_authority',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -432,7 +570,7 @@ _AMAZONEKS = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='region',
             full_name='v1.AmazonEKS.region',
-            index=4,
+            index=8,
             number=5,
             type=9,
             cpp_type=9,
@@ -449,7 +587,7 @@ _AMAZONEKS = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='cluster_name',
             full_name='v1.AmazonEKS.cluster_name',
-            index=5,
+            index=9,
             number=6,
             type=9,
             cpp_type=9,
@@ -472,8 +610,8 @@ _AMAZONEKS = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=788,
-    serialized_end=1017,
+    serialized_start=919,
+    serialized_end=1275,
 )
 
 _GOOGLEGKE = _descriptor.Descriptor(
@@ -484,9 +622,78 @@ _GOOGLEGKE = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.GoogleGKE.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.GoogleGKE.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.GoogleGKE.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.GoogleGKE.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='endpoint',
             full_name='v1.GoogleGKE.endpoint',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -503,7 +710,7 @@ _GOOGLEGKE = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='certificate_authority',
             full_name='v1.GoogleGKE.certificate_authority',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -520,7 +727,7 @@ _GOOGLEGKE = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='service_account_key',
             full_name='v1.GoogleGKE.service_account_key',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -543,8 +750,8 @@ _GOOGLEGKE = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1020,
-    serialized_end=1157,
+    serialized_start=1278,
+    serialized_end=1542,
 )
 
 _HTTPBASICAUTH = _descriptor.Descriptor(
@@ -555,9 +762,78 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.HTTPBasicAuth.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.HTTPBasicAuth.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.HTTPBasicAuth.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.HTTPBasicAuth.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='url',
             full_name='v1.HTTPBasicAuth.url',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -574,7 +850,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='healthcheck_path',
             full_name='v1.HTTPBasicAuth.healthcheck_path',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -591,7 +867,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.HTTPBasicAuth.username',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -608,7 +884,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.HTTPBasicAuth.password',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -625,7 +901,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='headers_blacklist',
             full_name='v1.HTTPBasicAuth.headers_blacklist',
-            index=4,
+            index=8,
             number=5,
             type=9,
             cpp_type=9,
@@ -642,7 +918,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='default_path',
             full_name='v1.HTTPBasicAuth.default_path',
-            index=5,
+            index=9,
             number=6,
             type=9,
             cpp_type=9,
@@ -659,7 +935,7 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='subdomain',
             full_name='v1.HTTPBasicAuth.subdomain',
-            index=6,
+            index=10,
             number=7,
             type=9,
             cpp_type=9,
@@ -683,8 +959,8 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1160,
-    serialized_end=1419,
+    serialized_start=1545,
+    serialized_end=1931,
 )
 
 _HTTPNOAUTH = _descriptor.Descriptor(
@@ -695,9 +971,78 @@ _HTTPNOAUTH = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.HTTPNoAuth.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.HTTPNoAuth.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.HTTPNoAuth.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.HTTPNoAuth.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='url',
             full_name='v1.HTTPNoAuth.url',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -714,7 +1059,7 @@ _HTTPNOAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='healthcheck_path',
             full_name='v1.HTTPNoAuth.healthcheck_path',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -731,7 +1076,7 @@ _HTTPNOAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='headers_blacklist',
             full_name='v1.HTTPNoAuth.headers_blacklist',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -748,7 +1093,7 @@ _HTTPNOAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='default_path',
             full_name='v1.HTTPNoAuth.default_path',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -765,7 +1110,7 @@ _HTTPNOAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='subdomain',
             full_name='v1.HTTPNoAuth.subdomain',
-            index=4,
+            index=8,
             number=5,
             type=9,
             cpp_type=9,
@@ -789,8 +1134,8 @@ _HTTPNOAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1422,
-    serialized_end=1618,
+    serialized_start=1934,
+    serialized_end=2257,
 )
 
 _HTTPAUTH = _descriptor.Descriptor(
@@ -801,9 +1146,78 @@ _HTTPAUTH = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.HTTPAuth.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.HTTPAuth.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.HTTPAuth.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.HTTPAuth.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='url',
             full_name='v1.HTTPAuth.url',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -820,7 +1234,7 @@ _HTTPAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='healthcheck_path',
             full_name='v1.HTTPAuth.healthcheck_path',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -837,7 +1251,7 @@ _HTTPAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='auth_header',
             full_name='v1.HTTPAuth.auth_header',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -854,7 +1268,7 @@ _HTTPAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='headers_blacklist',
             full_name='v1.HTTPAuth.headers_blacklist',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -871,7 +1285,7 @@ _HTTPAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='default_path',
             full_name='v1.HTTPAuth.default_path',
-            index=4,
+            index=8,
             number=5,
             type=9,
             cpp_type=9,
@@ -888,7 +1302,7 @@ _HTTPAUTH = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='subdomain',
             full_name='v1.HTTPAuth.subdomain',
-            index=5,
+            index=9,
             number=6,
             type=9,
             cpp_type=9,
@@ -912,8 +1326,8 @@ _HTTPAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1621,
-    serialized_end=1848,
+    serialized_start=2260,
+    serialized_end=2614,
 )
 
 _MYSQL = _descriptor.Descriptor(
@@ -924,9 +1338,78 @@ _MYSQL = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Mysql.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Mysql.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Mysql.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Mysql.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.Mysql.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -943,7 +1426,7 @@ _MYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.Mysql.username',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -960,7 +1443,7 @@ _MYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.Mysql.password',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -977,7 +1460,7 @@ _MYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='database',
             full_name='v1.Mysql.database',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -994,7 +1477,7 @@ _MYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.Mysql.port',
-            index=4,
+            index=8,
             number=5,
             type=5,
             cpp_type=1,
@@ -1018,8 +1501,8 @@ _MYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1851,
-    serialized_end=2025,
+    serialized_start=2617,
+    serialized_end=2918,
 )
 
 _AURORAMYSQL = _descriptor.Descriptor(
@@ -1030,9 +1513,78 @@ _AURORAMYSQL = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.AuroraMysql.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.AuroraMysql.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.AuroraMysql.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.AuroraMysql.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.AuroraMysql.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -1049,7 +1601,7 @@ _AURORAMYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.AuroraMysql.username',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -1066,7 +1618,7 @@ _AURORAMYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.AuroraMysql.password',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -1083,7 +1635,7 @@ _AURORAMYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='database',
             full_name='v1.AuroraMysql.database',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -1100,7 +1652,7 @@ _AURORAMYSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.AuroraMysql.port',
-            index=4,
+            index=8,
             number=5,
             type=5,
             cpp_type=1,
@@ -1124,8 +1676,8 @@ _AURORAMYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2028,
-    serialized_end=2208,
+    serialized_start=2921,
+    serialized_end=3228,
 )
 
 _CLUSTRIX = _descriptor.Descriptor(
@@ -1136,9 +1688,78 @@ _CLUSTRIX = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Clustrix.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Clustrix.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Clustrix.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Clustrix.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.Clustrix.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -1155,7 +1776,7 @@ _CLUSTRIX = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.Clustrix.username',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -1172,7 +1793,7 @@ _CLUSTRIX = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.Clustrix.password',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -1189,7 +1810,7 @@ _CLUSTRIX = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='database',
             full_name='v1.Clustrix.database',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -1206,7 +1827,7 @@ _CLUSTRIX = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.Clustrix.port',
-            index=4,
+            index=8,
             number=5,
             type=5,
             cpp_type=1,
@@ -1230,8 +1851,8 @@ _CLUSTRIX = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2211,
-    serialized_end=2388,
+    serialized_start=3231,
+    serialized_end=3535,
 )
 
 _MARIA = _descriptor.Descriptor(
@@ -1242,9 +1863,78 @@ _MARIA = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Maria.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Maria.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Maria.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Maria.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.Maria.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -1261,7 +1951,7 @@ _MARIA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.Maria.username',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -1278,7 +1968,7 @@ _MARIA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.Maria.password',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -1295,7 +1985,7 @@ _MARIA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='database',
             full_name='v1.Maria.database',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -1312,7 +2002,7 @@ _MARIA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.Maria.port',
-            index=4,
+            index=8,
             number=5,
             type=5,
             cpp_type=1,
@@ -1336,8 +2026,8 @@ _MARIA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2391,
-    serialized_end=2565,
+    serialized_start=3538,
+    serialized_end=3839,
 )
 
 _MEMSQL = _descriptor.Descriptor(
@@ -1348,9 +2038,78 @@ _MEMSQL = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Memsql.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Memsql.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Memsql.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Memsql.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='hostname',
             full_name='v1.Memsql.hostname',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -1367,7 +2126,7 @@ _MEMSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='username',
             full_name='v1.Memsql.username',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -1384,7 +2143,7 @@ _MEMSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='password',
             full_name='v1.Memsql.password',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -1401,7 +2160,7 @@ _MEMSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='database',
             full_name='v1.Memsql.database',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -1418,7 +2177,7 @@ _MEMSQL = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='port',
             full_name='v1.Memsql.port',
-            index=4,
+            index=8,
             number=5,
             type=5,
             cpp_type=1,
@@ -1442,8 +2201,8 @@ _MEMSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2568,
-    serialized_end=2743,
+    serialized_start=3842,
+    serialized_end=4144,
 )
 
 _ATHENA = _descriptor.Descriptor(
@@ -1454,9 +2213,78 @@ _ATHENA = _descriptor.Descriptor(
     containing_type=None,
     fields=[
         _descriptor.FieldDescriptor(
+            name='id',
+            full_name='v1.Athena.id',
+            index=0,
+            number=32768,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='name',
+            full_name='v1.Athena.name',
+            index=1,
+            number=32769,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='port_override',
+            full_name='v1.Athena.port_override',
+            index=2,
+            number=32770,
+            type=5,
+            cpp_type=1,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='healthy',
+            full_name='v1.Athena.healthy',
+            index=3,
+            number=32771,
+            type=8,
+            cpp_type=7,
+            label=1,
+            has_default_value=False,
+            default_value=False,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b(
+                '\362\370\263\007\005\260\363\263\007\001\222A\002@\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
             name='access_key',
             full_name='v1.Athena.access_key',
-            index=0,
+            index=4,
             number=1,
             type=9,
             cpp_type=9,
@@ -1473,7 +2301,7 @@ _ATHENA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='secret_access_key',
             full_name='v1.Athena.secret_access_key',
-            index=1,
+            index=5,
             number=2,
             type=9,
             cpp_type=9,
@@ -1490,7 +2318,7 @@ _ATHENA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='region',
             full_name='v1.Athena.region',
-            index=2,
+            index=6,
             number=3,
             type=9,
             cpp_type=9,
@@ -1509,7 +2337,7 @@ _ATHENA = _descriptor.Descriptor(
         _descriptor.FieldDescriptor(
             name='output',
             full_name='v1.Athena.output',
-            index=3,
+            index=7,
             number=4,
             type=9,
             cpp_type=9,
@@ -1532,69 +2360,71 @@ _ATHENA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2746,
-    serialized_end=2907,
+    serialized_start=4147,
+    serialized_end=4435,
 )
 
-_DRIVER.fields_by_name['kubernetes'].message_type = _KUBERNETES
-_DRIVER.fields_by_name['amazon_eks'].message_type = _AMAZONEKS
-_DRIVER.fields_by_name['google_gke'].message_type = _GOOGLEGKE
-_DRIVER.fields_by_name['http_basic_auth'].message_type = _HTTPBASICAUTH
-_DRIVER.fields_by_name['http_no_auth'].message_type = _HTTPNOAUTH
-_DRIVER.fields_by_name['http_auth'].message_type = _HTTPAUTH
-_DRIVER.fields_by_name['mysql'].message_type = _MYSQL
-_DRIVER.fields_by_name['aurora_mysql'].message_type = _AURORAMYSQL
-_DRIVER.fields_by_name['clustrix'].message_type = _CLUSTRIX
-_DRIVER.fields_by_name['maria'].message_type = _MARIA
-_DRIVER.fields_by_name['memsql'].message_type = _MEMSQL
-_DRIVER.fields_by_name['athena'].message_type = _ATHENA
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['kubernetes'])
-_DRIVER.fields_by_name['kubernetes'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['amazon_eks'])
-_DRIVER.fields_by_name['amazon_eks'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['google_gke'])
-_DRIVER.fields_by_name['google_gke'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['http_basic_auth'])
-_DRIVER.fields_by_name[
-    'http_basic_auth'].containing_oneof = _DRIVER.oneofs_by_name['driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['http_no_auth'])
-_DRIVER.fields_by_name[
-    'http_no_auth'].containing_oneof = _DRIVER.oneofs_by_name['driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['http_auth'])
-_DRIVER.fields_by_name['http_auth'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(_DRIVER.fields_by_name['mysql'])
-_DRIVER.fields_by_name['mysql'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['aurora_mysql'])
-_DRIVER.fields_by_name[
-    'aurora_mysql'].containing_oneof = _DRIVER.oneofs_by_name['driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['clustrix'])
-_DRIVER.fields_by_name['clustrix'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(_DRIVER.fields_by_name['maria'])
-_DRIVER.fields_by_name['maria'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['memsql'])
-_DRIVER.fields_by_name['memsql'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-_DRIVER.oneofs_by_name['driver'].fields.append(
-    _DRIVER.fields_by_name['athena'])
-_DRIVER.fields_by_name['athena'].containing_oneof = _DRIVER.oneofs_by_name[
-    'driver']
-DESCRIPTOR.message_types_by_name['Driver'] = _DRIVER
+_RESOURCE.fields_by_name['kubernetes'].message_type = _KUBERNETES
+_RESOURCE.fields_by_name['amazon_eks'].message_type = _AMAZONEKS
+_RESOURCE.fields_by_name['google_gke'].message_type = _GOOGLEGKE
+_RESOURCE.fields_by_name['http_basic_auth'].message_type = _HTTPBASICAUTH
+_RESOURCE.fields_by_name['http_no_auth'].message_type = _HTTPNOAUTH
+_RESOURCE.fields_by_name['http_auth'].message_type = _HTTPAUTH
+_RESOURCE.fields_by_name['mysql'].message_type = _MYSQL
+_RESOURCE.fields_by_name['aurora_mysql'].message_type = _AURORAMYSQL
+_RESOURCE.fields_by_name['clustrix'].message_type = _CLUSTRIX
+_RESOURCE.fields_by_name['maria'].message_type = _MARIA
+_RESOURCE.fields_by_name['memsql'].message_type = _MEMSQL
+_RESOURCE.fields_by_name['athena'].message_type = _ATHENA
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['kubernetes'])
+_RESOURCE.fields_by_name[
+    'kubernetes'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['amazon_eks'])
+_RESOURCE.fields_by_name[
+    'amazon_eks'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['google_gke'])
+_RESOURCE.fields_by_name[
+    'google_gke'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['http_basic_auth'])
+_RESOURCE.fields_by_name[
+    'http_basic_auth'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['http_no_auth'])
+_RESOURCE.fields_by_name[
+    'http_no_auth'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['http_auth'])
+_RESOURCE.fields_by_name[
+    'http_auth'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['mysql'])
+_RESOURCE.fields_by_name['mysql'].containing_oneof = _RESOURCE.oneofs_by_name[
+    'resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['aurora_mysql'])
+_RESOURCE.fields_by_name[
+    'aurora_mysql'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['clustrix'])
+_RESOURCE.fields_by_name[
+    'clustrix'].containing_oneof = _RESOURCE.oneofs_by_name['resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['maria'])
+_RESOURCE.fields_by_name['maria'].containing_oneof = _RESOURCE.oneofs_by_name[
+    'resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['memsql'])
+_RESOURCE.fields_by_name['memsql'].containing_oneof = _RESOURCE.oneofs_by_name[
+    'resource']
+_RESOURCE.oneofs_by_name['resource'].fields.append(
+    _RESOURCE.fields_by_name['athena'])
+_RESOURCE.fields_by_name['athena'].containing_oneof = _RESOURCE.oneofs_by_name[
+    'resource']
+DESCRIPTOR.message_types_by_name['Resource'] = _RESOURCE
 DESCRIPTOR.message_types_by_name['Kubernetes'] = _KUBERNETES
 DESCRIPTOR.message_types_by_name['AmazonEKS'] = _AMAZONEKS
 DESCRIPTOR.message_types_by_name['GoogleGKE'] = _GOOGLEGKE
@@ -1609,15 +2439,15 @@ DESCRIPTOR.message_types_by_name['Memsql'] = _MEMSQL
 DESCRIPTOR.message_types_by_name['Athena'] = _ATHENA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Driver = _reflection.GeneratedProtocolMessageType(
-    'Driver',
+Resource = _reflection.GeneratedProtocolMessageType(
+    'Resource',
     (_message.Message, ),
     {
-        'DESCRIPTOR': _DRIVER,
+        'DESCRIPTOR': _RESOURCE,
         '__module__': 'drivers_pb2'
-        # @@protoc_insertion_point(class_scope:v1.Driver)
+        # @@protoc_insertion_point(class_scope:v1.Resource)
     })
-_sym_db.RegisterMessage(Driver)
+_sym_db.RegisterMessage(Resource)
 
 Kubernetes = _reflection.GeneratedProtocolMessageType(
     'Kubernetes',
@@ -1740,13 +2570,21 @@ Athena = _reflection.GeneratedProtocolMessageType(
 _sym_db.RegisterMessage(Athena)
 
 DESCRIPTOR._options = None
-_DRIVER._options = None
+_RESOURCE._options = None
+_KUBERNETES.fields_by_name['id']._options = None
+_KUBERNETES.fields_by_name['name']._options = None
+_KUBERNETES.fields_by_name['port_override']._options = None
+_KUBERNETES.fields_by_name['healthy']._options = None
 _KUBERNETES.fields_by_name['hostname']._options = None
 _KUBERNETES.fields_by_name['port']._options = None
 _KUBERNETES.fields_by_name['certificate_authority']._options = None
 _KUBERNETES.fields_by_name['client_certificate']._options = None
 _KUBERNETES.fields_by_name['client_key']._options = None
 _KUBERNETES._options = None
+_AMAZONEKS.fields_by_name['id']._options = None
+_AMAZONEKS.fields_by_name['name']._options = None
+_AMAZONEKS.fields_by_name['port_override']._options = None
+_AMAZONEKS.fields_by_name['healthy']._options = None
 _AMAZONEKS.fields_by_name['endpoint']._options = None
 _AMAZONEKS.fields_by_name['access_key']._options = None
 _AMAZONEKS.fields_by_name['secret_access_key']._options = None
@@ -1754,10 +2592,18 @@ _AMAZONEKS.fields_by_name['certificate_authority']._options = None
 _AMAZONEKS.fields_by_name['region']._options = None
 _AMAZONEKS.fields_by_name['cluster_name']._options = None
 _AMAZONEKS._options = None
+_GOOGLEGKE.fields_by_name['id']._options = None
+_GOOGLEGKE.fields_by_name['name']._options = None
+_GOOGLEGKE.fields_by_name['port_override']._options = None
+_GOOGLEGKE.fields_by_name['healthy']._options = None
 _GOOGLEGKE.fields_by_name['endpoint']._options = None
 _GOOGLEGKE.fields_by_name['certificate_authority']._options = None
 _GOOGLEGKE.fields_by_name['service_account_key']._options = None
 _GOOGLEGKE._options = None
+_HTTPBASICAUTH.fields_by_name['id']._options = None
+_HTTPBASICAUTH.fields_by_name['name']._options = None
+_HTTPBASICAUTH.fields_by_name['port_override']._options = None
+_HTTPBASICAUTH.fields_by_name['healthy']._options = None
 _HTTPBASICAUTH.fields_by_name['url']._options = None
 _HTTPBASICAUTH.fields_by_name['healthcheck_path']._options = None
 _HTTPBASICAUTH.fields_by_name['username']._options = None
@@ -1766,12 +2612,20 @@ _HTTPBASICAUTH.fields_by_name['headers_blacklist']._options = None
 _HTTPBASICAUTH.fields_by_name['default_path']._options = None
 _HTTPBASICAUTH.fields_by_name['subdomain']._options = None
 _HTTPBASICAUTH._options = None
+_HTTPNOAUTH.fields_by_name['id']._options = None
+_HTTPNOAUTH.fields_by_name['name']._options = None
+_HTTPNOAUTH.fields_by_name['port_override']._options = None
+_HTTPNOAUTH.fields_by_name['healthy']._options = None
 _HTTPNOAUTH.fields_by_name['url']._options = None
 _HTTPNOAUTH.fields_by_name['healthcheck_path']._options = None
 _HTTPNOAUTH.fields_by_name['headers_blacklist']._options = None
 _HTTPNOAUTH.fields_by_name['default_path']._options = None
 _HTTPNOAUTH.fields_by_name['subdomain']._options = None
 _HTTPNOAUTH._options = None
+_HTTPAUTH.fields_by_name['id']._options = None
+_HTTPAUTH.fields_by_name['name']._options = None
+_HTTPAUTH.fields_by_name['port_override']._options = None
+_HTTPAUTH.fields_by_name['healthy']._options = None
 _HTTPAUTH.fields_by_name['url']._options = None
 _HTTPAUTH.fields_by_name['healthcheck_path']._options = None
 _HTTPAUTH.fields_by_name['auth_header']._options = None
@@ -1779,36 +2633,60 @@ _HTTPAUTH.fields_by_name['headers_blacklist']._options = None
 _HTTPAUTH.fields_by_name['default_path']._options = None
 _HTTPAUTH.fields_by_name['subdomain']._options = None
 _HTTPAUTH._options = None
+_MYSQL.fields_by_name['id']._options = None
+_MYSQL.fields_by_name['name']._options = None
+_MYSQL.fields_by_name['port_override']._options = None
+_MYSQL.fields_by_name['healthy']._options = None
 _MYSQL.fields_by_name['hostname']._options = None
 _MYSQL.fields_by_name['username']._options = None
 _MYSQL.fields_by_name['password']._options = None
 _MYSQL.fields_by_name['database']._options = None
 _MYSQL.fields_by_name['port']._options = None
 _MYSQL._options = None
+_AURORAMYSQL.fields_by_name['id']._options = None
+_AURORAMYSQL.fields_by_name['name']._options = None
+_AURORAMYSQL.fields_by_name['port_override']._options = None
+_AURORAMYSQL.fields_by_name['healthy']._options = None
 _AURORAMYSQL.fields_by_name['hostname']._options = None
 _AURORAMYSQL.fields_by_name['username']._options = None
 _AURORAMYSQL.fields_by_name['password']._options = None
 _AURORAMYSQL.fields_by_name['database']._options = None
 _AURORAMYSQL.fields_by_name['port']._options = None
 _AURORAMYSQL._options = None
+_CLUSTRIX.fields_by_name['id']._options = None
+_CLUSTRIX.fields_by_name['name']._options = None
+_CLUSTRIX.fields_by_name['port_override']._options = None
+_CLUSTRIX.fields_by_name['healthy']._options = None
 _CLUSTRIX.fields_by_name['hostname']._options = None
 _CLUSTRIX.fields_by_name['username']._options = None
 _CLUSTRIX.fields_by_name['password']._options = None
 _CLUSTRIX.fields_by_name['database']._options = None
 _CLUSTRIX.fields_by_name['port']._options = None
 _CLUSTRIX._options = None
+_MARIA.fields_by_name['id']._options = None
+_MARIA.fields_by_name['name']._options = None
+_MARIA.fields_by_name['port_override']._options = None
+_MARIA.fields_by_name['healthy']._options = None
 _MARIA.fields_by_name['hostname']._options = None
 _MARIA.fields_by_name['username']._options = None
 _MARIA.fields_by_name['password']._options = None
 _MARIA.fields_by_name['database']._options = None
 _MARIA.fields_by_name['port']._options = None
 _MARIA._options = None
+_MEMSQL.fields_by_name['id']._options = None
+_MEMSQL.fields_by_name['name']._options = None
+_MEMSQL.fields_by_name['port_override']._options = None
+_MEMSQL.fields_by_name['healthy']._options = None
 _MEMSQL.fields_by_name['hostname']._options = None
 _MEMSQL.fields_by_name['username']._options = None
 _MEMSQL.fields_by_name['password']._options = None
 _MEMSQL.fields_by_name['database']._options = None
 _MEMSQL.fields_by_name['port']._options = None
 _MEMSQL._options = None
+_ATHENA.fields_by_name['id']._options = None
+_ATHENA.fields_by_name['name']._options = None
+_ATHENA.fields_by_name['port_override']._options = None
+_ATHENA.fields_by_name['healthy']._options = None
 _ATHENA.fields_by_name['access_key']._options = None
 _ATHENA.fields_by_name['secret_access_key']._options = None
 _ATHENA.fields_by_name['region']._options = None
