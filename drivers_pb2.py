@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     serialized_options=_b(
         '\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
     serialized_pb=_b(
-        '\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\"\xc8\x03\n\x06\x44river\x12\'\n\nkubernetes\x18\x94\xd7\xaen \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12&\n\namazon_eks\x18\xf0\xa5\x81\x45 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12\x30\n\x0fhttp_basic_auth\x18\x8c\xaa\xe3\xd5\x01 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12*\n\x0chttp_no_auth\x18\x9d\xaa\xe5\xcf\x01 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12$\n\thttp_auth\x18\xee\xc2\x82k \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12\x1e\n\x05mysql\x18\xc3\x80\x94\xb8\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12*\n\x0c\x61urora_mysql\x18\xed\xa2\xdc\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12$\n\x08\x63lustrix\x18\x94\xa9\xee\xfd\x01 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1e\n\x05maria\x18\x94\xdd\xa6\xde\x01 \x01(\x0b\x32\t.v1.MariaH\x00\x12 \n\x06memsql\x18\xad\xb9\xdf\x80\x01 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1f\n\x06\x61thena\x18\x88\x86\xa1) \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xcb\x01\n\nKubernetes\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x04port\x18\x02 \x01(\x05\x42\x12\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x05:\x03\x34\x34\x33\x12)\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x63lient_certificate\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nclient_key\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe5\x01\n\tAmazonEKS\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x63luster_name\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x83\x02\n\rHTTPBasicAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x07 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc4\x01\n\nHTTPNoAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x05 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe3\x01\n\x08HTTPAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x61uth_header\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x06 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb4\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb1\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa1\x01\n\x06\x41thena\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x06region\x18\x03 \x01(\tB\x18\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x0b:\tus-east-1\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
+        '\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\"\xf0\x03\n\x06\x44river\x12\'\n\nkubernetes\x18\x94\xd7\xaen \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12&\n\namazon_eks\x18\xf0\xa5\x81\x45 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12&\n\ngoogle_gke\x18\x95\xae\x91\x42 \x01(\x0b\x32\r.v1.GoogleGKEH\x00\x12\x30\n\x0fhttp_basic_auth\x18\x8c\xaa\xe3\xd5\x01 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12*\n\x0chttp_no_auth\x18\x9d\xaa\xe5\xcf\x01 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12$\n\thttp_auth\x18\xee\xc2\x82k \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12\x1e\n\x05mysql\x18\xc3\x80\x94\xb8\x01 \x01(\x0b\x32\t.v1.MysqlH\x00\x12*\n\x0c\x61urora_mysql\x18\xed\xa2\xdc\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12$\n\x08\x63lustrix\x18\x94\xa9\xee\xfd\x01 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1e\n\x05maria\x18\x94\xdd\xa6\xde\x01 \x01(\x0b\x32\t.v1.MariaH\x00\x12 \n\x06memsql\x18\xad\xb9\xdf\x80\x01 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1f\n\x06\x61thena\x18\x88\x86\xa1) \x01(\x0b\x32\n.v1.AthenaH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x08\n\x06\x64river\"\xcb\x01\n\nKubernetes\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x04port\x18\x02 \x01(\x05\x42\x12\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x05:\x03\x34\x34\x33\x12)\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x63lient_certificate\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nclient_key\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe5\x01\n\tAmazonEKS\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccess_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06region\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x63luster_name\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x89\x01\n\tGoogleGKE\x12\x1c\n\x08\x65ndpoint\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x65rtificate_authority\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\'\n\x13service_account_key\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x83\x02\n\rHTTPBasicAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x07 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc4\x01\n\nHTTPNoAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x05 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xe3\x01\n\x08HTTPAuth\x12\x17\n\x03url\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10healthcheck_path\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x61uth_header\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11headers_blacklist\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\tsubdomain\x18\x06 \x01(\tB\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Mysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb4\x01\n\x0b\x41uroraMysql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb1\x01\n\x08\x43lustrix\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x01\n\x05Maria\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x01\n\x06Memsql\x12\x1c\n\x08hostname\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08username\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08password\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64\x61tabase\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04port\x18\x05 \x01(\x05\x42\x13\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x06:\x04\x33\x33\x30\x36:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa1\x01\n\x06\x41thena\x12\x1e\n\naccess_key\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11secret_access_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x06region\x18\x03 \x01(\tB\x18\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x0b:\tus-east-1\x12\x1a\n\x06output\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3'
     ),
     dependencies=[
         protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,
@@ -69,9 +69,25 @@ _DRIVER = _descriptor.Descriptor(
                                     extension_scope=None,
                                     serialized_options=None,
                                     file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(name='google_gke',
+                                    full_name='v1.Driver.google_gke',
+                                    index=2,
+                                    number=138696469,
+                                    type=11,
+                                    cpp_type=10,
+                                    label=1,
+                                    has_default_value=False,
+                                    default_value=None,
+                                    message_type=None,
+                                    enum_type=None,
+                                    containing_type=None,
+                                    is_extension=False,
+                                    extension_scope=None,
+                                    serialized_options=None,
+                                    file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_basic_auth',
                                     full_name='v1.Driver.http_basic_auth',
-                                    index=2,
+                                    index=3,
                                     number=448320780,
                                     type=11,
                                     cpp_type=10,
@@ -87,7 +103,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_no_auth',
                                     full_name='v1.Driver.http_no_auth',
-                                    index=3,
+                                    index=4,
                                     number=435770653,
                                     type=11,
                                     cpp_type=10,
@@ -103,7 +119,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='http_auth',
                                     full_name='v1.Driver.http_auth',
-                                    index=4,
+                                    index=5,
                                     number=224436590,
                                     type=11,
                                     cpp_type=10,
@@ -119,7 +135,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='mysql',
                                     full_name='v1.Driver.mysql',
-                                    index=5,
+                                    index=6,
                                     number=386203715,
                                     type=11,
                                     cpp_type=10,
@@ -135,7 +151,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='aurora_mysql',
                                     full_name='v1.Driver.aurora_mysql',
-                                    index=6,
+                                    index=7,
                                     number=18289005,
                                     type=11,
                                     cpp_type=10,
@@ -151,7 +167,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='clustrix',
                                     full_name='v1.Driver.clustrix',
-                                    index=7,
+                                    index=8,
                                     number=532386964,
                                     type=11,
                                     cpp_type=10,
@@ -167,7 +183,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='maria',
                                     full_name='v1.Driver.maria',
-                                    index=8,
+                                    index=9,
                                     number=466202260,
                                     type=11,
                                     cpp_type=10,
@@ -183,7 +199,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='memsql',
                                     full_name='v1.Driver.memsql',
-                                    index=9,
+                                    index=10,
                                     number=269999277,
                                     type=11,
                                     cpp_type=10,
@@ -199,7 +215,7 @@ _DRIVER = _descriptor.Descriptor(
                                     file=DESCRIPTOR),
         _descriptor.FieldDescriptor(name='athena',
                                     full_name='v1.Driver.athena',
-                                    index=10,
+                                    index=11,
                                     number=86524680,
                                     type=11,
                                     cpp_type=10,
@@ -229,7 +245,7 @@ _DRIVER = _descriptor.Descriptor(
                                     fields=[]),
     ],
     serialized_start=83,
-    serialized_end=539,
+    serialized_end=579,
 )
 
 _KUBERNETES = _descriptor.Descriptor(
@@ -334,8 +350,8 @@ _KUBERNETES = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=542,
-    serialized_end=745,
+    serialized_start=582,
+    serialized_end=785,
 )
 
 _AMAZONEKS = _descriptor.Descriptor(
@@ -456,8 +472,79 @@ _AMAZONEKS = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=748,
-    serialized_end=977,
+    serialized_start=788,
+    serialized_end=1017,
+)
+
+_GOOGLEGKE = _descriptor.Descriptor(
+    name='GoogleGKE',
+    full_name='v1.GoogleGKE',
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name='endpoint',
+            full_name='v1.GoogleGKE.endpoint',
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='certificate_authority',
+            full_name='v1.GoogleGKE.certificate_authority',
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+        _descriptor.FieldDescriptor(
+            name='service_account_key',
+            full_name='v1.GoogleGKE.service_account_key',
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=_b("").decode('utf-8'),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'),
+            file=DESCRIPTOR),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
+    is_extendable=False,
+    syntax='proto3',
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=1020,
+    serialized_end=1157,
 )
 
 _HTTPBASICAUTH = _descriptor.Descriptor(
@@ -596,8 +683,8 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=980,
-    serialized_end=1239,
+    serialized_start=1160,
+    serialized_end=1419,
 )
 
 _HTTPNOAUTH = _descriptor.Descriptor(
@@ -702,8 +789,8 @@ _HTTPNOAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1242,
-    serialized_end=1438,
+    serialized_start=1422,
+    serialized_end=1618,
 )
 
 _HTTPAUTH = _descriptor.Descriptor(
@@ -825,8 +912,8 @@ _HTTPAUTH = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1441,
-    serialized_end=1668,
+    serialized_start=1621,
+    serialized_end=1848,
 )
 
 _MYSQL = _descriptor.Descriptor(
@@ -931,8 +1018,8 @@ _MYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1671,
-    serialized_end=1845,
+    serialized_start=1851,
+    serialized_end=2025,
 )
 
 _AURORAMYSQL = _descriptor.Descriptor(
@@ -1037,8 +1124,8 @@ _AURORAMYSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=1848,
-    serialized_end=2028,
+    serialized_start=2028,
+    serialized_end=2208,
 )
 
 _CLUSTRIX = _descriptor.Descriptor(
@@ -1143,8 +1230,8 @@ _CLUSTRIX = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2031,
-    serialized_end=2208,
+    serialized_start=2211,
+    serialized_end=2388,
 )
 
 _MARIA = _descriptor.Descriptor(
@@ -1249,8 +1336,8 @@ _MARIA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2211,
-    serialized_end=2385,
+    serialized_start=2391,
+    serialized_end=2565,
 )
 
 _MEMSQL = _descriptor.Descriptor(
@@ -1355,8 +1442,8 @@ _MEMSQL = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2388,
-    serialized_end=2563,
+    serialized_start=2568,
+    serialized_end=2743,
 )
 
 _ATHENA = _descriptor.Descriptor(
@@ -1445,12 +1532,13 @@ _ATHENA = _descriptor.Descriptor(
     syntax='proto3',
     extension_ranges=[],
     oneofs=[],
-    serialized_start=2566,
-    serialized_end=2727,
+    serialized_start=2746,
+    serialized_end=2907,
 )
 
 _DRIVER.fields_by_name['kubernetes'].message_type = _KUBERNETES
 _DRIVER.fields_by_name['amazon_eks'].message_type = _AMAZONEKS
+_DRIVER.fields_by_name['google_gke'].message_type = _GOOGLEGKE
 _DRIVER.fields_by_name['http_basic_auth'].message_type = _HTTPBASICAUTH
 _DRIVER.fields_by_name['http_no_auth'].message_type = _HTTPNOAUTH
 _DRIVER.fields_by_name['http_auth'].message_type = _HTTPAUTH
@@ -1467,6 +1555,10 @@ _DRIVER.fields_by_name['kubernetes'].containing_oneof = _DRIVER.oneofs_by_name[
 _DRIVER.oneofs_by_name['driver'].fields.append(
     _DRIVER.fields_by_name['amazon_eks'])
 _DRIVER.fields_by_name['amazon_eks'].containing_oneof = _DRIVER.oneofs_by_name[
+    'driver']
+_DRIVER.oneofs_by_name['driver'].fields.append(
+    _DRIVER.fields_by_name['google_gke'])
+_DRIVER.fields_by_name['google_gke'].containing_oneof = _DRIVER.oneofs_by_name[
     'driver']
 _DRIVER.oneofs_by_name['driver'].fields.append(
     _DRIVER.fields_by_name['http_basic_auth'])
@@ -1505,6 +1597,7 @@ _DRIVER.fields_by_name['athena'].containing_oneof = _DRIVER.oneofs_by_name[
 DESCRIPTOR.message_types_by_name['Driver'] = _DRIVER
 DESCRIPTOR.message_types_by_name['Kubernetes'] = _KUBERNETES
 DESCRIPTOR.message_types_by_name['AmazonEKS'] = _AMAZONEKS
+DESCRIPTOR.message_types_by_name['GoogleGKE'] = _GOOGLEGKE
 DESCRIPTOR.message_types_by_name['HTTPBasicAuth'] = _HTTPBASICAUTH
 DESCRIPTOR.message_types_by_name['HTTPNoAuth'] = _HTTPNOAUTH
 DESCRIPTOR.message_types_by_name['HTTPAuth'] = _HTTPAUTH
@@ -1545,6 +1638,16 @@ AmazonEKS = _reflection.GeneratedProtocolMessageType(
         # @@protoc_insertion_point(class_scope:v1.AmazonEKS)
     })
 _sym_db.RegisterMessage(AmazonEKS)
+
+GoogleGKE = _reflection.GeneratedProtocolMessageType(
+    'GoogleGKE',
+    (_message.Message, ),
+    {
+        'DESCRIPTOR': _GOOGLEGKE,
+        '__module__': 'drivers_pb2'
+        # @@protoc_insertion_point(class_scope:v1.GoogleGKE)
+    })
+_sym_db.RegisterMessage(GoogleGKE)
 
 HTTPBasicAuth = _reflection.GeneratedProtocolMessageType(
     'HTTPBasicAuth',
@@ -1651,6 +1754,10 @@ _AMAZONEKS.fields_by_name['certificate_authority']._options = None
 _AMAZONEKS.fields_by_name['region']._options = None
 _AMAZONEKS.fields_by_name['cluster_name']._options = None
 _AMAZONEKS._options = None
+_GOOGLEGKE.fields_by_name['endpoint']._options = None
+_GOOGLEGKE.fields_by_name['certificate_authority']._options = None
+_GOOGLEGKE.fields_by_name['service_account_key']._options = None
+_GOOGLEGKE._options = None
 _HTTPBASICAUTH.fields_by_name['url']._options = None
 _HTTPBASICAUTH.fields_by_name['healthcheck_path']._options = None
 _HTTPBASICAUTH.fields_by_name['username']._options = None

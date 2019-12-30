@@ -53,6 +53,23 @@ class AmazonEKS:
             repr(self.region), repr(self.cluster_name))
 
 
+# endpoint:
+# certificate_authority:
+# service_account_key:
+class GoogleGKE:
+    __slots__ = ['endpoint', 'certificate_authority', 'service_account_key']
+
+    def __init__(self):
+        self.endpoint = None
+        self.certificate_authority = None
+        self.service_account_key = None
+
+    def __repr__(self):
+        return '<sdm.GoogleGKE endpoint: {0} certificate_authority: {1} service_account_key: {2}>'.format(
+            repr(self.endpoint), repr(self.certificate_authority),
+            repr(self.service_account_key))
+
+
 # url:
 # healthcheck_path:
 # username:
@@ -510,6 +527,7 @@ class ResourceDeleteResponse:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # port_override: Port number override.
+# TODO: should this be a part of the Driver since it does not apply to HTTP resources?
 # healthy: True if the datasource is reachable and the credentials are valid.
 # driver: Fields for connecting to the resource.
 class Resource:

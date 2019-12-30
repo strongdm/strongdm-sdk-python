@@ -30,6 +30,8 @@ def driver_to_plumbing(porcelain):
         plumbing.kubernetes.CopyFrom(kubernetes_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEks):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GoogleGke):
+        plumbing.google_gke.CopyFrom(google_gke_to_plumbing(porcelain))
     if isinstance(porcelain, models.HttpBasicAuth):
         plumbing.http_basic_auth.CopyFrom(
             http_basic_auth_to_plumbing(porcelain))
@@ -57,6 +59,8 @@ def driver_to_porcelain(plumbing):
         return kubernetes_to_porcelain(plumbing.kubernetes)
     if plumbing.amazon_eks != None:
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
+    if plumbing.google_gke != None:
+        return google_gke_to_porcelain(plumbing.google_gke)
     if plumbing.http_basic_auth != None:
         return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
     if plumbing.http_no_auth != None:
@@ -175,6 +179,39 @@ def repeated_amazon_eks_to_plumbing(porcelains):
 
 def repeated_amazon_eks_to_porcelain(plumbings):
     return [amazon_eks_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def google_gke_to_porcelain(plumbing):
+    porcelain = models.GoogleGKE()
+
+    porcelain.endpoint = plumbing.endpoint
+
+    porcelain.certificate_authority = plumbing.certificate_authority
+
+    porcelain.service_account_key = plumbing.service_account_key
+    return porcelain
+
+
+def google_gke_to_plumbing(porcelain):
+    plumbing = GoogleGKE()
+    if porcelain.endpoint != None:
+
+        plumbing.endpoint = porcelain.endpoint
+    if porcelain.certificate_authority != None:
+
+        plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.service_account_key != None:
+
+        plumbing.service_account_key = porcelain.service_account_key
+    return plumbing
+
+
+def repeated_google_gke_to_plumbing(porcelains):
+    return [google_gke_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_google_gke_to_porcelain(plumbings):
+    return [google_gke_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def http_basic_auth_to_porcelain(plumbing):
