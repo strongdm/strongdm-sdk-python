@@ -252,9 +252,15 @@ def kubernetes_to_porcelain(plumbing):
 
     porcelain.certificate_authority = plumbing.certificate_authority
 
+    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
+
     porcelain.client_certificate = plumbing.client_certificate
 
+    porcelain.client_certificate_filename = plumbing.client_certificate_filename
+
     porcelain.client_key = plumbing.client_key
+
+    porcelain.client_key_filename = plumbing.client_key_filename
     return porcelain
 
 
@@ -278,12 +284,21 @@ def kubernetes_to_plumbing(porcelain):
     if porcelain.certificate_authority != None:
 
         plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.certificate_authority_filename != None:
+
+        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
     if porcelain.client_certificate != None:
 
         plumbing.client_certificate = porcelain.client_certificate
+    if porcelain.client_certificate_filename != None:
+
+        plumbing.client_certificate_filename = porcelain.client_certificate_filename
     if porcelain.client_key != None:
 
         plumbing.client_key = porcelain.client_key
+    if porcelain.client_key_filename != None:
+
+        plumbing.client_key_filename = porcelain.client_key_filename
     return plumbing
 
 
@@ -314,9 +329,15 @@ def kubernetes_basic_auth_to_porcelain(plumbing):
 
     porcelain.certificate_authority = plumbing.certificate_authority
 
+    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
+
     porcelain.client_certificate = plumbing.client_certificate
 
+    porcelain.client_certificate_filename = plumbing.client_certificate_filename
+
     porcelain.client_key = plumbing.client_key
+
+    porcelain.client_key_filename = plumbing.client_key_filename
     return porcelain
 
 
@@ -346,12 +367,21 @@ def kubernetes_basic_auth_to_plumbing(porcelain):
     if porcelain.certificate_authority != None:
 
         plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.certificate_authority_filename != None:
+
+        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
     if porcelain.client_certificate != None:
 
         plumbing.client_certificate = porcelain.client_certificate
+    if porcelain.client_certificate_filename != None:
+
+        plumbing.client_certificate_filename = porcelain.client_certificate_filename
     if porcelain.client_key != None:
 
         plumbing.client_key = porcelain.client_key
+    if porcelain.client_key_filename != None:
+
+        plumbing.client_key_filename = porcelain.client_key_filename
     return plumbing
 
 
@@ -385,6 +415,8 @@ def amazon_eks_to_porcelain(plumbing):
 
     porcelain.certificate_authority = plumbing.certificate_authority
 
+    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
+
     porcelain.region = plumbing.region
 
     porcelain.cluster_name = plumbing.cluster_name
@@ -414,6 +446,9 @@ def amazon_eks_to_plumbing(porcelain):
     if porcelain.certificate_authority != None:
 
         plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.certificate_authority_filename != None:
+
+        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
     if porcelain.region != None:
 
         plumbing.region = porcelain.region
@@ -444,7 +479,11 @@ def google_gke_to_porcelain(plumbing):
 
     porcelain.certificate_authority = plumbing.certificate_authority
 
+    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
+
     porcelain.service_account_key = plumbing.service_account_key
+
+    porcelain.service_account_key_filename = plumbing.service_account_key_filename
     return porcelain
 
 
@@ -465,9 +504,15 @@ def google_gke_to_plumbing(porcelain):
     if porcelain.certificate_authority != None:
 
         plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.certificate_authority_filename != None:
+
+        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
     if porcelain.service_account_key != None:
 
         plumbing.service_account_key = porcelain.service_account_key
+    if porcelain.service_account_key_filename != None:
+
+        plumbing.service_account_key_filename = porcelain.service_account_key_filename
     return plumbing
 
 

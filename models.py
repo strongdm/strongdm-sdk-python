@@ -67,12 +67,16 @@ class ElasticacheRedis:
 # hostname:
 # port:
 # certificate_authority:
+# certificate_authority_filename:
 # client_certificate:
+# client_certificate_filename:
 # client_key:
+# client_key_filename:
 class Kubernetes:
     __slots__ = [
         'id', 'name', 'healthy', 'hostname', 'port', 'certificate_authority',
-        'client_certificate', 'client_key'
+        'certificate_authority_filename', 'client_certificate',
+        'client_certificate_filename', 'client_key', 'client_key_filename'
     ]
 
     def __init__(self):
@@ -82,15 +86,21 @@ class Kubernetes:
         self.hostname = None
         self.port = None
         self.certificate_authority = None
+        self.certificate_authority_filename = None
         self.client_certificate = None
+        self.client_certificate_filename = None
         self.client_key = None
+        self.client_key_filename = None
 
     def __repr__(self):
-        return '<sdm.Kubernetes id: {0} name: {1} healthy: {2} hostname: {3} port: {4} certificate_authority: {5} client_certificate: {6} client_key: {7}>'.format(
+        return '<sdm.Kubernetes id: {0} name: {1} healthy: {2} hostname: {3} port: {4} certificate_authority: {5} certificate_authority_filename: {6} client_certificate: {7} client_certificate_filename: {8} client_key: {9} client_key_filename: {10}>'.format(
             repr(self.id), repr(self.name), repr(self.healthy),
             repr(self.hostname), repr(self.port),
-            repr(self.certificate_authority), repr(self.client_certificate),
-            repr(self.client_key))
+            repr(self.certificate_authority),
+            repr(self.certificate_authority_filename),
+            repr(self.client_certificate),
+            repr(self.client_certificate_filename), repr(self.client_key),
+            repr(self.client_key_filename))
 
 
 # id: Unique identifier of the Resource.
@@ -101,12 +111,17 @@ class Kubernetes:
 # username:
 # password:
 # certificate_authority:
+# certificate_authority_filename:
 # client_certificate:
+# client_certificate_filename:
 # client_key:
+# client_key_filename:
 class KubernetesBasicAuth:
     __slots__ = [
         'id', 'name', 'healthy', 'hostname', 'port', 'username', 'password',
-        'certificate_authority', 'client_certificate', 'client_key'
+        'certificate_authority', 'certificate_authority_filename',
+        'client_certificate', 'client_certificate_filename', 'client_key',
+        'client_key_filename'
     ]
 
     def __init__(self):
@@ -118,15 +133,21 @@ class KubernetesBasicAuth:
         self.username = None
         self.password = None
         self.certificate_authority = None
+        self.certificate_authority_filename = None
         self.client_certificate = None
+        self.client_certificate_filename = None
         self.client_key = None
+        self.client_key_filename = None
 
     def __repr__(self):
-        return '<sdm.KubernetesBasicAuth id: {0} name: {1} healthy: {2} hostname: {3} port: {4} username: {5} password: {6} certificate_authority: {7} client_certificate: {8} client_key: {9}>'.format(
+        return '<sdm.KubernetesBasicAuth id: {0} name: {1} healthy: {2} hostname: {3} port: {4} username: {5} password: {6} certificate_authority: {7} certificate_authority_filename: {8} client_certificate: {9} client_certificate_filename: {10} client_key: {11} client_key_filename: {12}>'.format(
             repr(self.id), repr(self.name), repr(self.healthy),
             repr(self.hostname), repr(self.port), repr(self.username),
             repr(self.password), repr(self.certificate_authority),
-            repr(self.client_certificate), repr(self.client_key))
+            repr(self.certificate_authority_filename),
+            repr(self.client_certificate),
+            repr(self.client_certificate_filename), repr(self.client_key),
+            repr(self.client_key_filename))
 
 
 # id: Unique identifier of the Resource.
@@ -136,12 +157,14 @@ class KubernetesBasicAuth:
 # access_key:
 # secret_access_key:
 # certificate_authority:
+# certificate_authority_filename:
 # region:
 # cluster_name:
 class AmazonEKS:
     __slots__ = [
         'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'certificate_authority', 'region', 'cluster_name'
+        'certificate_authority', 'certificate_authority_filename', 'region',
+        'cluster_name'
     ]
 
     def __init__(self):
@@ -152,15 +175,17 @@ class AmazonEKS:
         self.access_key = None
         self.secret_access_key = None
         self.certificate_authority = None
+        self.certificate_authority_filename = None
         self.region = None
         self.cluster_name = None
 
     def __repr__(self):
-        return '<sdm.AmazonEKS id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} certificate_authority: {6} region: {7} cluster_name: {8}>'.format(
+        return '<sdm.AmazonEKS id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} certificate_authority: {6} certificate_authority_filename: {7} region: {8} cluster_name: {9}>'.format(
             repr(self.id), repr(self.name), repr(self.healthy),
             repr(self.endpoint), repr(self.access_key),
             repr(self.secret_access_key), repr(self.certificate_authority),
-            repr(self.region), repr(self.cluster_name))
+            repr(self.certificate_authority_filename), repr(self.region),
+            repr(self.cluster_name))
 
 
 # id: Unique identifier of the Resource.
@@ -168,11 +193,14 @@ class AmazonEKS:
 # healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # certificate_authority:
+# certificate_authority_filename:
 # service_account_key:
+# service_account_key_filename:
 class GoogleGKE:
     __slots__ = [
         'id', 'name', 'healthy', 'endpoint', 'certificate_authority',
-        'service_account_key'
+        'certificate_authority_filename', 'service_account_key',
+        'service_account_key_filename'
     ]
 
     def __init__(self):
@@ -181,13 +209,17 @@ class GoogleGKE:
         self.healthy = None
         self.endpoint = None
         self.certificate_authority = None
+        self.certificate_authority_filename = None
         self.service_account_key = None
+        self.service_account_key_filename = None
 
     def __repr__(self):
-        return '<sdm.GoogleGKE id: {0} name: {1} healthy: {2} endpoint: {3} certificate_authority: {4} service_account_key: {5}>'.format(
+        return '<sdm.GoogleGKE id: {0} name: {1} healthy: {2} endpoint: {3} certificate_authority: {4} certificate_authority_filename: {5} service_account_key: {6} service_account_key_filename: {7}>'.format(
             repr(self.id), repr(self.name), repr(self.healthy),
             repr(self.endpoint), repr(self.certificate_authority),
-            repr(self.service_account_key))
+            repr(self.certificate_authority_filename),
+            repr(self.service_account_key),
+            repr(self.service_account_key_filename))
 
 
 # id: Unique identifier of the Resource.
