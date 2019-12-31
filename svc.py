@@ -30,13 +30,21 @@ class Nodes:
     def create(self, node, timeout=None):
         req = NodeCreateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
-        try:
-            plumbing_response = self.stub.Create(
-                req,
-                metadata=self.parent.get_metadata('Nodes.Create', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Nodes.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.NodeCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -50,13 +58,21 @@ class Nodes:
     def get(self, id, timeout=None):
         req = NodeGetRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Get(
-                req,
-                metadata=self.parent.get_metadata('Nodes.Get', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Nodes.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.NodeGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -69,13 +85,21 @@ class Nodes:
     def update(self, node, timeout=None):
         req = NodeUpdateRequest()
         req.node.CopyFrom(plumbing.node_to_plumbing(node))
-        try:
-            plumbing_response = self.stub.Update(
-                req,
-                metadata=self.parent.get_metadata('Nodes.Update', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Nodes.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.NodeUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -88,13 +112,21 @@ class Nodes:
     def delete(self, id, timeout=None):
         req = NodeDeleteRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Delete(
-                req,
-                metadata=self.parent.get_metadata('Nodes.Delete', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Nodes.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.NodeDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -103,15 +135,16 @@ class Nodes:
         return resp
 
     # List gets a list of Nodes matching a given set of criteria.
-    def list(self, filter, timeout=None):
+    def list(self, filter, *args, timeout=None):
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
-        req.filter = filter
+        req.filter = plumbing.quote_filter_args(filter, *args)
 
         def generator(svc, req):
+            tries = 0
             while True:
                 try:
                     plumbing_response = svc.stub.List(
@@ -119,7 +152,12 @@ class Nodes:
                         metadata=svc.parent.get_metadata('Nodes.List', req),
                         timeout=timeout)
                 except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
                     raise plumbing.error_to_porcelain(e) from e
+                tries = 0
                 for plumbing_item in plumbing_response.nodes:
 
                     yield plumbing.node_to_porcelain(plumbing_item)
@@ -139,13 +177,21 @@ class Resources:
     def create(self, resource, timeout=None):
         req = ResourceCreateRequest()
         req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
-        try:
-            plumbing_response = self.stub.Create(
-                req,
-                metadata=self.parent.get_metadata('Resources.Create', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Resources.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.ResourceCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -159,13 +205,21 @@ class Resources:
     def get(self, id, timeout=None):
         req = ResourceGetRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Get(
-                req,
-                metadata=self.parent.get_metadata('Resources.Get', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Resources.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.ResourceGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -179,13 +233,21 @@ class Resources:
     def update(self, resource, timeout=None):
         req = ResourceUpdateRequest()
         req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
-        try:
-            plumbing_response = self.stub.Update(
-                req,
-                metadata=self.parent.get_metadata('Resources.Update', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Resources.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.ResourceUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -199,13 +261,21 @@ class Resources:
     def delete(self, id, timeout=None):
         req = ResourceDeleteRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Delete(
-                req,
-                metadata=self.parent.get_metadata('Resources.Delete', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Resources.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.ResourceDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -214,15 +284,16 @@ class Resources:
         return resp
 
     # List gets a list of Resources matching a given set of criteria.
-    def list(self, filter, timeout=None):
+    def list(self, filter, *args, timeout=None):
         req = ResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
-        req.filter = filter
+        req.filter = plumbing.quote_filter_args(filter, *args)
 
         def generator(svc, req):
+            tries = 0
             while True:
                 try:
                     plumbing_response = svc.stub.List(
@@ -231,7 +302,12 @@ class Resources:
                             'Resources.List', req),
                         timeout=timeout)
                 except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
                     raise plumbing.error_to_porcelain(e) from e
+                tries = 0
                 for plumbing_item in plumbing_response.resources:
 
                     yield plumbing.resource_to_porcelain(plumbing_item)
@@ -256,14 +332,22 @@ class RoleAttachments:
         req = RoleAttachmentCreateRequest()
         req.role_attachment.CopyFrom(
             plumbing.role_attachment_to_plumbing(role_attachment))
-        try:
-            plumbing_response = self.stub.Create(
-                req,
-                metadata=self.parent.get_metadata('RoleAttachments.Create',
-                                                  req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('RoleAttachments.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleAttachmentCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -277,13 +361,22 @@ class RoleAttachments:
     def get(self, id, timeout=None):
         req = RoleAttachmentGetRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Get(
-                req,
-                metadata=self.parent.get_metadata('RoleAttachments.Get', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('RoleAttachments.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleAttachmentGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -297,14 +390,22 @@ class RoleAttachments:
     def delete(self, id, timeout=None):
         req = RoleAttachmentDeleteRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Delete(
-                req,
-                metadata=self.parent.get_metadata('RoleAttachments.Delete',
-                                                  req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('RoleAttachments.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleAttachmentDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -313,15 +414,16 @@ class RoleAttachments:
         return resp
 
     # List gets a list of RoleAttachments matching a given set of criteria.
-    def list(self, filter, timeout=None):
+    def list(self, filter, *args, timeout=None):
         req = RoleAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
-        req.filter = filter
+        req.filter = plumbing.quote_filter_args(filter, *args)
 
         def generator(svc, req):
+            tries = 0
             while True:
                 try:
                     plumbing_response = svc.stub.List(
@@ -330,7 +432,12 @@ class RoleAttachments:
                             'RoleAttachments.List', req),
                         timeout=timeout)
                 except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
                     raise plumbing.error_to_porcelain(e) from e
+                tries = 0
                 for plumbing_item in plumbing_response.role_attachments:
 
                     yield plumbing.role_attachment_to_porcelain(plumbing_item)
@@ -355,13 +462,21 @@ class Roles:
     def create(self, role, timeout=None):
         req = RoleCreateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
-        try:
-            plumbing_response = self.stub.Create(
-                req,
-                metadata=self.parent.get_metadata('Roles.Create', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -374,13 +489,21 @@ class Roles:
     def get(self, id, timeout=None):
         req = RoleGetRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Get(
-                req,
-                metadata=self.parent.get_metadata('Roles.Get', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -393,13 +516,21 @@ class Roles:
     def update(self, role, timeout=None):
         req = RoleUpdateRequest()
         req.role.CopyFrom(plumbing.role_to_plumbing(role))
-        try:
-            plumbing_response = self.stub.Update(
-                req,
-                metadata=self.parent.get_metadata('Roles.Update', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -412,13 +543,21 @@ class Roles:
     def delete(self, id, timeout=None):
         req = RoleDeleteRequest()
         req.id = id
-        try:
-            plumbing_response = self.stub.Delete(
-                req,
-                metadata=self.parent.get_metadata('Roles.Delete', req),
-                timeout=timeout)
-        except Exception as e:
-            raise plumbing.error_to_porcelain(e) from e
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
         resp = models.RoleDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
@@ -427,15 +566,16 @@ class Roles:
         return resp
 
     # List gets a list of Roles matching a given set of criteria.
-    def list(self, filter, timeout=None):
+    def list(self, filter, *args, timeout=None):
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
-        req.filter = filter
+        req.filter = plumbing.quote_filter_args(filter, *args)
 
         def generator(svc, req):
+            tries = 0
             while True:
                 try:
                     plumbing_response = svc.stub.List(
@@ -443,7 +583,12 @@ class Roles:
                         metadata=svc.parent.get_metadata('Roles.List', req),
                         timeout=timeout)
                 except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
                     raise plumbing.error_to_porcelain(e) from e
+                tries = 0
                 for plumbing_item in plumbing_response.roles:
 
                     yield plumbing.role_to_porcelain(plumbing_item)

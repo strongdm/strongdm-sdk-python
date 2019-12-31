@@ -1,5 +1,6 @@
 import grpc
 import google.rpc as rpc
+import json
 from google.rpc import status_pb2
 from . import errors
 from . import models
@@ -12,6 +13,20 @@ from .nodes_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .roles_pb2 import *
+
+
+def quote_filter_args(filter, *args):
+    parts = filter.split("?")
+    if len(parts) != len(args) + 1:
+        raise errors.BadRequestError("incorrect number of replacements")
+    b = ""
+    for i, v in enumerate(parts):
+        b += v
+        if i < len(args):
+            s = str(args[i])
+            s = json.dumps(s)
+            b += s
+    return b
 
 
 def timestamp_to_porcelain(t):

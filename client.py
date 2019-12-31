@@ -1,10 +1,18 @@
 import grpc
 import hmac
+import random
 import hashlib
 import base64
 import datetime
+import time
 from . import svc
 from . import plumbing
+
+# These defaults are taken from AWS. Customization of these values
+# is a future step in the API.
+DEFAULT_MAX_RETRIES = 3
+DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
+DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 
 
 # Client is a strongDM API client.
@@ -13,6 +21,9 @@ class Client:
     def __init__(self, addr, api_access_key, api_secret):
         self.api_access_key = api_access_key
         self.api_secret = base64.b64decode(api_secret)
+        self.max_retries = DEFAULT_MAX_RETRIES
+        self.base_retry_delay = DEFAULT_BASE_RETRY_DELAY
+        self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
 
         try:
             channel = grpc.insecure_channel(addr)
@@ -48,3 +59,18 @@ class Client:
         hash.update(request_bytes)
 
         return base64.b64encode(hmac_digest(signing_key, hash.digest()))
+
+    def jitterSleep(self, iter):
+        dur_max = self.base_retry_delay * 2**iter
+        if (dur_max > self.max_retry_delay):
+            dur_max = self.max_retry_delay
+        # get a value between 0 and max
+        dur = random.random() * dur_max
+        time.sleep(dur)
+
+    def shouldRetry(self, iter, err):
+        if (iter >= self.max_retries - 1):
+            return False
+        if not isinstance(err, grpc.RpcError):
+            return True
+        return err.code() == grpc.StatusCode.INTERNAL
