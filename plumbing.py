@@ -33,6 +33,9 @@ def resource_to_plumbing(porcelain):
             elasticache_redis_to_plumbing(porcelain))
     if isinstance(porcelain, models.Kubernetes):
         plumbing.kubernetes.CopyFrom(kubernetes_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesBasicAuth):
+        plumbing.kubernetes_basic_auth.CopyFrom(
+            kubernetes_basic_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEks):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGke):
@@ -68,6 +71,9 @@ def resource_to_porcelain(plumbing):
         return elasticache_redis_to_porcelain(plumbing.elasticache_redis)
     if plumbing.kubernetes != None:
         return kubernetes_to_porcelain(plumbing.kubernetes)
+    if plumbing.kubernetes_basic_auth != None:
+        return kubernetes_basic_auth_to_porcelain(
+            plumbing.kubernetes_basic_auth)
     if plumbing.amazon_eks != None:
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.google_gke != None:
@@ -110,11 +116,11 @@ def redis_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.password = plumbing.password
 
@@ -130,15 +136,15 @@ def redis_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
     if porcelain.hostname != None:
 
         plumbing.hostname = porcelain.hostname
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.password != None:
 
         plumbing.password = porcelain.password
@@ -163,11 +169,11 @@ def elasticache_redis_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.password = plumbing.password
 
@@ -185,15 +191,15 @@ def elasticache_redis_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
     if porcelain.hostname != None:
 
         plumbing.hostname = porcelain.hostname
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.password != None:
 
         plumbing.password = porcelain.password
@@ -223,8 +229,6 @@ def kubernetes_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -247,9 +251,6 @@ def kubernetes_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -279,14 +280,85 @@ def repeated_kubernetes_to_porcelain(plumbings):
     return [kubernetes_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def kubernetes_basic_auth_to_porcelain(plumbing):
+    porcelain = models.KubernetesBasicAuth()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.port = plumbing.port
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.certificate_authority = plumbing.certificate_authority
+
+    porcelain.client_certificate = plumbing.client_certificate
+
+    porcelain.client_key = plumbing.client_key
+    return porcelain
+
+
+def kubernetes_basic_auth_to_plumbing(porcelain):
+    plumbing = KubernetesBasicAuth()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.certificate_authority != None:
+
+        plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.client_certificate != None:
+
+        plumbing.client_certificate = porcelain.client_certificate
+    if porcelain.client_key != None:
+
+        plumbing.client_key = porcelain.client_key
+    return plumbing
+
+
+def repeated_kubernetes_basic_auth_to_plumbing(porcelains):
+    return [
+        kubernetes_basic_auth_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_kubernetes_basic_auth_to_porcelain(plumbings):
+    return [
+        kubernetes_basic_auth_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def amazon_eks_to_porcelain(plumbing):
     porcelain = models.AmazonEKS()
 
     porcelain.id = plumbing.id
 
     porcelain.name = plumbing.name
-
-    porcelain.port_override = plumbing.port_override
 
     porcelain.healthy = plumbing.healthy
 
@@ -312,9 +384,6 @@ def amazon_eks_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -354,8 +423,6 @@ def google_gke_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.endpoint = plumbing.endpoint
@@ -374,9 +441,6 @@ def google_gke_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -407,8 +471,6 @@ def ssh_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -429,9 +491,6 @@ def ssh_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -465,8 +524,6 @@ def http_basic_auth_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.url = plumbing.url
@@ -493,9 +550,6 @@ def http_basic_auth_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -538,8 +592,6 @@ def http_no_auth_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.url = plumbing.url
@@ -562,9 +614,6 @@ def http_no_auth_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -601,8 +650,6 @@ def http_auth_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.url = plumbing.url
@@ -627,9 +674,6 @@ def http_auth_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -669,8 +713,6 @@ def mysql_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -680,6 +722,8 @@ def mysql_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
     return porcelain
@@ -693,9 +737,6 @@ def mysql_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -711,6 +752,9 @@ def mysql_to_plumbing(porcelain):
     if porcelain.database != None:
 
         plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -732,8 +776,6 @@ def aurora_mysql_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -743,6 +785,8 @@ def aurora_mysql_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
     return porcelain
@@ -756,9 +800,6 @@ def aurora_mysql_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -774,6 +815,9 @@ def aurora_mysql_to_plumbing(porcelain):
     if porcelain.database != None:
 
         plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -795,8 +839,6 @@ def clustrix_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -806,6 +848,8 @@ def clustrix_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
     return porcelain
@@ -819,9 +863,6 @@ def clustrix_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -837,6 +878,9 @@ def clustrix_to_plumbing(porcelain):
     if porcelain.database != None:
 
         plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -858,8 +902,6 @@ def maria_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -869,6 +911,8 @@ def maria_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
     return porcelain
@@ -882,9 +926,6 @@ def maria_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -900,6 +941,9 @@ def maria_to_plumbing(porcelain):
     if porcelain.database != None:
 
         plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -921,8 +965,6 @@ def memsql_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.hostname = plumbing.hostname
@@ -932,6 +974,8 @@ def memsql_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
     return porcelain
@@ -945,9 +989,6 @@ def memsql_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -963,6 +1004,9 @@ def memsql_to_plumbing(porcelain):
     if porcelain.database != None:
 
         plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -984,17 +1028,17 @@ def athena_to_porcelain(plumbing):
 
     porcelain.name = plumbing.name
 
-    porcelain.port_override = plumbing.port_override
-
     porcelain.healthy = plumbing.healthy
 
     porcelain.access_key = plumbing.access_key
 
     porcelain.secret_access_key = plumbing.secret_access_key
 
-    porcelain.region = plumbing.region
-
     porcelain.output = plumbing.output
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.region = plumbing.region
     return porcelain
 
 
@@ -1006,9 +1050,6 @@ def athena_to_plumbing(porcelain):
     if porcelain.name != None:
 
         plumbing.name = porcelain.name
-    if porcelain.port_override != None:
-
-        plumbing.port_override = porcelain.port_override
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
@@ -1018,12 +1059,15 @@ def athena_to_plumbing(porcelain):
     if porcelain.secret_access_key != None:
 
         plumbing.secret_access_key = porcelain.secret_access_key
-    if porcelain.region != None:
-
-        plumbing.region = porcelain.region
     if porcelain.output != None:
 
         plumbing.output = porcelain.output
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.region != None:
+
+        plumbing.region = porcelain.region
     return plumbing
 
 
