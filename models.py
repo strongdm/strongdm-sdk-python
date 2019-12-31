@@ -104,6 +104,37 @@ class GoogleGKE:
 # name: Unique human-readable name of the Resource.
 # port_override: Port number override.
 # healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# port:
+# public_key:
+class SSH:
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'username',
+        'port', 'public_key'
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.port = None
+        self.public_key = None
+
+    def __repr__(self):
+        return '<sdm.SSH id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} username: {5} port: {6} public_key: {7}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.username),
+            repr(self.port), repr(self.public_key))
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # url:
 # healthcheck_path:
 # username:

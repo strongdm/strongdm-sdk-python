@@ -32,6 +32,8 @@ def resource_to_plumbing(porcelain):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGke):
         plumbing.google_gke.CopyFrom(google_gke_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Ssh):
+        plumbing.ssh.CopyFrom(ssh_to_plumbing(porcelain))
     if isinstance(porcelain, models.HttpBasicAuth):
         plumbing.http_basic_auth.CopyFrom(
             http_basic_auth_to_plumbing(porcelain))
@@ -61,6 +63,8 @@ def resource_to_porcelain(plumbing):
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.google_gke != None:
         return google_gke_to_porcelain(plumbing.google_gke)
+    if plumbing.ssh != None:
+        return ssh_to_porcelain(plumbing.ssh)
     if plumbing.http_basic_auth != None:
         return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
     if plumbing.http_no_auth != None:
@@ -272,6 +276,64 @@ def repeated_google_gke_to_plumbing(porcelains):
 
 def repeated_google_gke_to_porcelain(plumbings):
     return [google_gke_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def ssh_to_porcelain(plumbing):
+    porcelain = models.SSH()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.port = plumbing.port
+
+    porcelain.public_key = plumbing.public_key
+    return porcelain
+
+
+def ssh_to_plumbing(porcelain):
+    plumbing = SSH()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.public_key != None:
+
+        plumbing.public_key = porcelain.public_key
+    return plumbing
+
+
+def repeated_ssh_to_plumbing(porcelains):
+    return [ssh_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_ssh_to_porcelain(plumbings):
+    return [ssh_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def http_basic_auth_to_porcelain(plumbing):
