@@ -26,6 +26,11 @@ def timestamp_to_plumbing(t):
 
 def resource_to_plumbing(porcelain):
     plumbing = Resource()
+    if isinstance(porcelain, models.Redis):
+        plumbing.redis.CopyFrom(redis_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ElasticacheRedis):
+        plumbing.elasticache_redis.CopyFrom(
+            elasticache_redis_to_plumbing(porcelain))
     if isinstance(porcelain, models.Kubernetes):
         plumbing.kubernetes.CopyFrom(kubernetes_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEks):
@@ -57,6 +62,10 @@ def resource_to_plumbing(porcelain):
 
 
 def resource_to_porcelain(plumbing):
+    if plumbing.redis != None:
+        return redis_to_porcelain(plumbing.redis)
+    if plumbing.elasticache_redis != None:
+        return elasticache_redis_to_porcelain(plumbing.elasticache_redis)
     if plumbing.kubernetes != None:
         return kubernetes_to_porcelain(plumbing.kubernetes)
     if plumbing.amazon_eks != None:
@@ -92,6 +101,119 @@ def repeated_resource_to_plumbing(porcelains):
 
 def repeated_resource_to_porcelain(plumbings):
     return [resource_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def redis_to_porcelain(plumbing):
+    porcelain = models.Redis()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def redis_to_plumbing(porcelain):
+    plumbing = Redis()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_redis_to_plumbing(porcelains):
+    return [redis_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_redis_to_porcelain(plumbings):
+    return [redis_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def elasticache_redis_to_porcelain(plumbing):
+    porcelain = models.ElasticacheRedis()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+
+    porcelain.tls_required = plumbing.tls_required
+    return porcelain
+
+
+def elasticache_redis_to_plumbing(porcelain):
+    plumbing = ElasticacheRedis()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
+    return plumbing
+
+
+def repeated_elasticache_redis_to_plumbing(porcelains):
+    return [
+        elasticache_redis_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def repeated_elasticache_redis_to_porcelain(plumbings):
+    return [elasticache_redis_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def kubernetes_to_porcelain(plumbing):

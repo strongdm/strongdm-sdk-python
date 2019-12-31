@@ -6,6 +6,66 @@ import collections
 # port_override: Port number override.
 # healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
+# password:
+# port:
+class Redis:
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'password',
+        'port'
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
+        self.hostname = None
+        self.password = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Redis id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} password: {5} port: {6}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.password),
+            repr(self.port))
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# password:
+# port:
+# tls_required:
+class ElasticacheRedis:
+    __slots__ = [
+        'id', 'name', 'port_override', 'healthy', 'hostname', 'password',
+        'port', 'tls_required'
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.port_override = None
+        self.healthy = None
+        self.hostname = None
+        self.password = None
+        self.port = None
+        self.tls_required = None
+
+    def __repr__(self):
+        return '<sdm.ElasticacheRedis id: {0} name: {1} port_override: {2} healthy: {3} hostname: {4} password: {5} port: {6} tls_required: {7}>'.format(
+            repr(self.id), repr(self.name), repr(self.port_override),
+            repr(self.healthy), repr(self.hostname), repr(self.password),
+            repr(self.port), repr(self.tls_required))
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# port_override: Port number override.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
 # port:
 # certificate_authority:
 # client_certificate:
