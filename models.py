@@ -11,8 +11,14 @@ import collections
 # port_override:
 class AmazonES:
     __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'region', 'port_override'
+        'id',
+        'name',
+        'healthy',
+        'endpoint',
+        'access_key',
+        'secret_access_key',
+        'region',
+        'port_override',
     ]
 
     def __init__(self):
@@ -26,11 +32,16 @@ class AmazonES:
         self.port_override = None
 
     def __repr__(self):
-        return '<sdm.AmazonES id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} region: {6} port_override: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.region),
-            repr(self.port_override))
+        return '<sdm.AmazonES ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'endpoint: ' + repr(self.endpoint) + \
+            'access_key: ' + repr(self.access_key) + \
+            'secret_access_key: ' + repr(self.secret_access_key) + \
+            'region: ' + repr(self.region) + \
+            'port_override: ' + repr(self.port_override) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -44,8 +55,15 @@ class AmazonES:
 # tls_required:
 class Elastic:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port', 'tls_required'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'port_override',
+        'port',
+        'tls_required',
     ]
 
     def __init__(self):
@@ -60,10 +78,17 @@ class Elastic:
         self.tls_required = None
 
     def __repr__(self):
-        return '<sdm.Elastic id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7} tls_required: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port), repr(self.tls_required))
+        return '<sdm.Elastic ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -370,8 +395,14 @@ class GoogleGKE:
 # port_override:
 class DynamoDB:
     __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'region', 'port_override'
+        'id',
+        'name',
+        'healthy',
+        'endpoint',
+        'access_key',
+        'secret_access_key',
+        'region',
+        'port_override',
     ]
 
     def __init__(self):
@@ -385,11 +416,16 @@ class DynamoDB:
         self.port_override = None
 
     def __repr__(self):
-        return '<sdm.DynamoDB id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} region: {6} port_override: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.region),
-            repr(self.port_override))
+        return '<sdm.DynamoDB ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'endpoint: ' + repr(self.endpoint) + \
+            'access_key: ' + repr(self.access_key) + \
+            'secret_access_key: ' + repr(self.secret_access_key) + \
+            'region: ' + repr(self.region) + \
+            'port_override: ' + repr(self.port_override) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -402,8 +438,14 @@ class DynamoDB:
 # port:
 class RDP:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -417,10 +459,16 @@ class RDP:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.RDP id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port))
+        return '<sdm.RDP ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -433,8 +481,14 @@ class RDP:
 # username:
 class BigQuery:
     __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'private_key', 'project',
-        'port_override', 'username'
+        'id',
+        'name',
+        'healthy',
+        'endpoint',
+        'private_key',
+        'project',
+        'port_override',
+        'username',
     ]
 
     def __init__(self):
@@ -448,10 +502,16 @@ class BigQuery:
         self.username = None
 
     def __repr__(self):
-        return '<sdm.BigQuery id: {0} name: {1} healthy: {2} endpoint: {3} private_key: {4} project: {5} port_override: {6} username: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.private_key), repr(self.project),
-            repr(self.port_override), repr(self.username))
+        return '<sdm.BigQuery ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'endpoint: ' + repr(self.endpoint) + \
+            'private_key: ' + repr(self.private_key) + \
+            'project: ' + repr(self.project) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -461,7 +521,14 @@ class BigQuery:
 # port_override:
 # port:
 class Memcached:
-    __slots__ = ['id', 'name', 'healthy', 'hostname', 'port_override', 'port']
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port_override',
+        'port',
+    ]
 
     def __init__(self):
         self.id = None
@@ -472,9 +539,14 @@ class Memcached:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Memcached id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} port: {5}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.port))
+        return '<sdm.Memcached ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -668,8 +740,15 @@ class HTTPAuth:
 # tls_required:
 class Cassandra:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port', 'tls_required'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'port_override',
+        'port',
+        'tls_required',
     ]
 
     def __init__(self):
@@ -684,10 +763,17 @@ class Cassandra:
         self.tls_required = None
 
     def __repr__(self):
-        return '<sdm.Cassandra id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7} tls_required: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port), repr(self.tls_required))
+        return '<sdm.Cassandra ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -935,8 +1021,14 @@ class Memsql:
 # port:
 class DruID:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port_override', 'username',
-        'password', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port_override',
+        'username',
+        'password',
+        'port',
     ]
 
     def __init__(self):
@@ -950,10 +1042,16 @@ class DruID:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.DruID id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} username: {5} password: {6} port: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.username),
-            repr(self.password), repr(self.port))
+        return '<sdm.DruID ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
