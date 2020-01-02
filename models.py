@@ -4,71 +4,6 @@ import collections
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
-# access_key:
-# secret_access_key:
-# region:
-# port_override:
-class AmazonES:
-    __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'region', 'port_override'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.endpoint = None
-        self.access_key = None
-        self.secret_access_key = None
-        self.region = None
-        self.port_override = None
-
-    def __repr__(self):
-        return '<sdm.AmazonES id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} region: {6} port_override: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.region),
-            repr(self.port_override))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
-# tls_required:
-class Elastic:
-    __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port', 'tls_required'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
-        self.tls_required = None
-
-    def __repr__(self):
-        return '<sdm.Elastic id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7} tls_required: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port), repr(self.tls_required))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # port_override:
 # password:
@@ -290,123 +225,6 @@ class GoogleGKE:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
-# access_key:
-# secret_access_key:
-# region:
-# port_override:
-class DynamoDB:
-    __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'region', 'port_override'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.endpoint = None
-        self.access_key = None
-        self.secret_access_key = None
-        self.region = None
-        self.port_override = None
-
-    def __repr__(self):
-        return '<sdm.DynamoDB id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} region: {6} port_override: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.region),
-            repr(self.port_override))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
-class RDP:
-    __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
-
-    def __repr__(self):
-        return '<sdm.RDP id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
-# private_key:
-# project:
-# port_override:
-# username:
-class BigQuery:
-    __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'private_key', 'project',
-        'port_override', 'username'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.endpoint = None
-        self.private_key = None
-        self.project = None
-        self.port_override = None
-        self.username = None
-
-    def __repr__(self):
-        return '<sdm.BigQuery id: {0} name: {1} healthy: {2} endpoint: {3} private_key: {4} project: {5} port_override: {6} username: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.private_key), repr(self.project),
-            repr(self.port_override), repr(self.username))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# port:
-class Memcached:
-    __slots__ = ['id', 'name', 'healthy', 'hostname', 'port_override', 'port']
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.port = None
-
-    def __repr__(self):
-        return '<sdm.Memcached id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} port: {5}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.port))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # username:
 # port:
@@ -531,39 +349,6 @@ class HTTPAuth:
             repr(self.healthcheck_path), repr(self.auth_header),
             repr(self.headers_blacklist), repr(self.default_path),
             repr(self.subdomain))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
-# tls_required:
-class Cassandra:
-    __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'port_override', 'port', 'tls_required'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
-        self.tls_required = None
-
-    def __repr__(self):
-        return '<sdm.Cassandra id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} port_override: {6} port: {7} tls_required: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.port_override), repr(self.port), repr(self.tls_required))
 
 
 # id: Unique identifier of the Resource.
@@ -729,37 +514,6 @@ class Memsql:
             repr(self.id), repr(self.name), repr(self.healthy),
             repr(self.hostname), repr(self.username), repr(self.password),
             repr(self.database), repr(self.port_override), repr(self.port))
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# username:
-# password:
-# port:
-class DruID:
-    __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port_override', 'username',
-        'password', 'port'
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-
-    def __repr__(self):
-        return '<sdm.DruID id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} username: {5} password: {6} port: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.username),
-            repr(self.password), repr(self.port))
 
 
 # id: Unique identifier of the Resource.
