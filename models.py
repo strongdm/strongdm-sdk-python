@@ -10,8 +10,13 @@ import collections
 # port:
 class Redis:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port_override', 'password',
-        'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port_override',
+        'password',
+        'port',
     ]
 
     def __init__(self):
@@ -24,10 +29,15 @@ class Redis:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Redis id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} password: {5} port: {6}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.password),
-            repr(self.port))
+        return '<sdm.Redis ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port_override: ' + repr(self.port_override) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -40,8 +50,14 @@ class Redis:
 # tls_required:
 class ElasticacheRedis:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port_override', 'password',
-        'port', 'tls_required'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port_override',
+        'password',
+        'port',
+        'tls_required',
     ]
 
     def __init__(self):
@@ -55,10 +71,16 @@ class ElasticacheRedis:
         self.tls_required = None
 
     def __repr__(self):
-        return '<sdm.ElasticacheRedis id: {0} name: {1} healthy: {2} hostname: {3} port_override: {4} password: {5} port: {6} tls_required: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port_override), repr(self.password),
-            repr(self.port), repr(self.tls_required))
+        return '<sdm.ElasticacheRedis ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port_override: ' + repr(self.port_override) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -74,9 +96,17 @@ class ElasticacheRedis:
 # client_key_filename:
 class Kubernetes:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port', 'certificate_authority',
-        'certificate_authority_filename', 'client_certificate',
-        'client_certificate_filename', 'client_key', 'client_key_filename'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'certificate_authority',
+        'certificate_authority_filename',
+        'client_certificate',
+        'client_certificate_filename',
+        'client_key',
+        'client_key_filename',
     ]
 
     def __init__(self):
@@ -93,14 +123,19 @@ class Kubernetes:
         self.client_key_filename = None
 
     def __repr__(self):
-        return '<sdm.Kubernetes id: {0} name: {1} healthy: {2} hostname: {3} port: {4} certificate_authority: {5} certificate_authority_filename: {6} client_certificate: {7} client_certificate_filename: {8} client_key: {9} client_key_filename: {10}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port),
-            repr(self.certificate_authority),
-            repr(self.certificate_authority_filename),
-            repr(self.client_certificate),
-            repr(self.client_certificate_filename), repr(self.client_key),
-            repr(self.client_key_filename))
+        return '<sdm.Kubernetes ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port: ' + repr(self.port) + \
+            'certificate_authority: ' + repr(self.certificate_authority) + \
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
+            'client_certificate: ' + repr(self.client_certificate) + \
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + \
+            'client_key: ' + repr(self.client_key) + \
+            'client_key_filename: ' + repr(self.client_key_filename) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -118,10 +153,19 @@ class Kubernetes:
 # client_key_filename:
 class KubernetesBasicAuth:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'port', 'username', 'password',
-        'certificate_authority', 'certificate_authority_filename',
-        'client_certificate', 'client_certificate_filename', 'client_key',
-        'client_key_filename'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'username',
+        'password',
+        'certificate_authority',
+        'certificate_authority_filename',
+        'client_certificate',
+        'client_certificate_filename',
+        'client_key',
+        'client_key_filename',
     ]
 
     def __init__(self):
@@ -140,14 +184,21 @@ class KubernetesBasicAuth:
         self.client_key_filename = None
 
     def __repr__(self):
-        return '<sdm.KubernetesBasicAuth id: {0} name: {1} healthy: {2} hostname: {3} port: {4} username: {5} password: {6} certificate_authority: {7} certificate_authority_filename: {8} client_certificate: {9} client_certificate_filename: {10} client_key: {11} client_key_filename: {12}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.port), repr(self.username),
-            repr(self.password), repr(self.certificate_authority),
-            repr(self.certificate_authority_filename),
-            repr(self.client_certificate),
-            repr(self.client_certificate_filename), repr(self.client_key),
-            repr(self.client_key_filename))
+        return '<sdm.KubernetesBasicAuth ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port: ' + repr(self.port) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'certificate_authority: ' + repr(self.certificate_authority) + \
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
+            'client_certificate: ' + repr(self.client_certificate) + \
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + \
+            'client_key: ' + repr(self.client_key) + \
+            'client_key_filename: ' + repr(self.client_key_filename) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -162,9 +213,16 @@ class KubernetesBasicAuth:
 # cluster_name:
 class AmazonEKS:
     __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'access_key', 'secret_access_key',
-        'certificate_authority', 'certificate_authority_filename', 'region',
-        'cluster_name'
+        'id',
+        'name',
+        'healthy',
+        'endpoint',
+        'access_key',
+        'secret_access_key',
+        'certificate_authority',
+        'certificate_authority_filename',
+        'region',
+        'cluster_name',
     ]
 
     def __init__(self):
@@ -180,12 +238,18 @@ class AmazonEKS:
         self.cluster_name = None
 
     def __repr__(self):
-        return '<sdm.AmazonEKS id: {0} name: {1} healthy: {2} endpoint: {3} access_key: {4} secret_access_key: {5} certificate_authority: {6} certificate_authority_filename: {7} region: {8} cluster_name: {9}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.access_key),
-            repr(self.secret_access_key), repr(self.certificate_authority),
-            repr(self.certificate_authority_filename), repr(self.region),
-            repr(self.cluster_name))
+        return '<sdm.AmazonEKS ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'endpoint: ' + repr(self.endpoint) + \
+            'access_key: ' + repr(self.access_key) + \
+            'secret_access_key: ' + repr(self.secret_access_key) + \
+            'certificate_authority: ' + repr(self.certificate_authority) + \
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
+            'region: ' + repr(self.region) + \
+            'cluster_name: ' + repr(self.cluster_name) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -198,9 +262,14 @@ class AmazonEKS:
 # service_account_key_filename:
 class GoogleGKE:
     __slots__ = [
-        'id', 'name', 'healthy', 'endpoint', 'certificate_authority',
-        'certificate_authority_filename', 'service_account_key',
-        'service_account_key_filename'
+        'id',
+        'name',
+        'healthy',
+        'endpoint',
+        'certificate_authority',
+        'certificate_authority_filename',
+        'service_account_key',
+        'service_account_key_filename',
     ]
 
     def __init__(self):
@@ -214,12 +283,16 @@ class GoogleGKE:
         self.service_account_key_filename = None
 
     def __repr__(self):
-        return '<sdm.GoogleGKE id: {0} name: {1} healthy: {2} endpoint: {3} certificate_authority: {4} certificate_authority_filename: {5} service_account_key: {6} service_account_key_filename: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.endpoint), repr(self.certificate_authority),
-            repr(self.certificate_authority_filename),
-            repr(self.service_account_key),
-            repr(self.service_account_key_filename))
+        return '<sdm.GoogleGKE ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'endpoint: ' + repr(self.endpoint) + \
+            'certificate_authority: ' + repr(self.certificate_authority) + \
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
+            'service_account_key: ' + repr(self.service_account_key) + \
+            'service_account_key_filename: ' + repr(self.service_account_key_filename) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -231,7 +304,13 @@ class GoogleGKE:
 # public_key:
 class SSH:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'port', 'public_key'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'port',
+        'public_key',
     ]
 
     def __init__(self):
@@ -244,10 +323,15 @@ class SSH:
         self.public_key = None
 
     def __repr__(self):
-        return '<sdm.SSH id: {0} name: {1} healthy: {2} hostname: {3} username: {4} port: {5} public_key: {6}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.port),
-            repr(self.public_key))
+        return '<sdm.SSH ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'port: ' + repr(self.port) + \
+            'public_key: ' + repr(self.public_key) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -262,8 +346,16 @@ class SSH:
 # subdomain:
 class HTTPBasicAuth:
     __slots__ = [
-        'id', 'name', 'healthy', 'url', 'healthcheck_path', 'username',
-        'password', 'headers_blacklist', 'default_path', 'subdomain'
+        'id',
+        'name',
+        'healthy',
+        'url',
+        'healthcheck_path',
+        'username',
+        'password',
+        'headers_blacklist',
+        'default_path',
+        'subdomain',
     ]
 
     def __init__(self):
@@ -279,11 +371,18 @@ class HTTPBasicAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPBasicAuth id: {0} name: {1} healthy: {2} url: {3} healthcheck_path: {4} username: {5} password: {6} headers_blacklist: {7} default_path: {8} subdomain: {9}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy), repr(self.url),
-            repr(self.healthcheck_path), repr(self.username),
-            repr(self.password), repr(self.headers_blacklist),
-            repr(self.default_path), repr(self.subdomain))
+        return '<sdm.HTTPBasicAuth ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'url: ' + repr(self.url) + \
+            'healthcheck_path: ' + repr(self.healthcheck_path) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'headers_blacklist: ' + repr(self.headers_blacklist) + \
+            'default_path: ' + repr(self.default_path) + \
+            'subdomain: ' + repr(self.subdomain) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -296,8 +395,14 @@ class HTTPBasicAuth:
 # subdomain:
 class HTTPNoAuth:
     __slots__ = [
-        'id', 'name', 'healthy', 'url', 'healthcheck_path',
-        'headers_blacklist', 'default_path', 'subdomain'
+        'id',
+        'name',
+        'healthy',
+        'url',
+        'healthcheck_path',
+        'headers_blacklist',
+        'default_path',
+        'subdomain',
     ]
 
     def __init__(self):
@@ -311,10 +416,16 @@ class HTTPNoAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPNoAuth id: {0} name: {1} healthy: {2} url: {3} healthcheck_path: {4} headers_blacklist: {5} default_path: {6} subdomain: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy), repr(self.url),
-            repr(self.healthcheck_path), repr(self.headers_blacklist),
-            repr(self.default_path), repr(self.subdomain))
+        return '<sdm.HTTPNoAuth ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'url: ' + repr(self.url) + \
+            'healthcheck_path: ' + repr(self.healthcheck_path) + \
+            'headers_blacklist: ' + repr(self.headers_blacklist) + \
+            'default_path: ' + repr(self.default_path) + \
+            'subdomain: ' + repr(self.subdomain) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -328,8 +439,15 @@ class HTTPNoAuth:
 # subdomain:
 class HTTPAuth:
     __slots__ = [
-        'id', 'name', 'healthy', 'url', 'healthcheck_path', 'auth_header',
-        'headers_blacklist', 'default_path', 'subdomain'
+        'id',
+        'name',
+        'healthy',
+        'url',
+        'healthcheck_path',
+        'auth_header',
+        'headers_blacklist',
+        'default_path',
+        'subdomain',
     ]
 
     def __init__(self):
@@ -344,11 +462,17 @@ class HTTPAuth:
         self.subdomain = None
 
     def __repr__(self):
-        return '<sdm.HTTPAuth id: {0} name: {1} healthy: {2} url: {3} healthcheck_path: {4} auth_header: {5} headers_blacklist: {6} default_path: {7} subdomain: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy), repr(self.url),
-            repr(self.healthcheck_path), repr(self.auth_header),
-            repr(self.headers_blacklist), repr(self.default_path),
-            repr(self.subdomain))
+        return '<sdm.HTTPAuth ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'url: ' + repr(self.url) + \
+            'healthcheck_path: ' + repr(self.healthcheck_path) + \
+            'auth_header: ' + repr(self.auth_header) + \
+            'headers_blacklist: ' + repr(self.headers_blacklist) + \
+            'default_path: ' + repr(self.default_path) + \
+            'subdomain: ' + repr(self.subdomain) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -362,8 +486,15 @@ class HTTPAuth:
 # port:
 class Mysql:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'database', 'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -378,10 +509,17 @@ class Mysql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Mysql id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} database: {6} port_override: {7} port: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port_override), repr(self.port))
+        return '<sdm.Mysql ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -395,8 +533,15 @@ class Mysql:
 # port:
 class AuroraMysql:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'database', 'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -411,10 +556,17 @@ class AuroraMysql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.AuroraMysql id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} database: {6} port_override: {7} port: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port_override), repr(self.port))
+        return '<sdm.AuroraMysql ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -428,8 +580,15 @@ class AuroraMysql:
 # port:
 class Clustrix:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'database', 'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -444,10 +603,17 @@ class Clustrix:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Clustrix id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} database: {6} port_override: {7} port: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port_override), repr(self.port))
+        return '<sdm.Clustrix ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -461,8 +627,15 @@ class Clustrix:
 # port:
 class Maria:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'database', 'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -477,10 +650,17 @@ class Maria:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Maria id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} database: {6} port_override: {7} port: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port_override), repr(self.port))
+        return '<sdm.Maria ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -494,8 +674,15 @@ class Maria:
 # port:
 class Memsql:
     __slots__ = [
-        'id', 'name', 'healthy', 'hostname', 'username', 'password',
-        'database', 'port_override', 'port'
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
     ]
 
     def __init__(self):
@@ -510,10 +697,17 @@ class Memsql:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.Memsql id: {0} name: {1} healthy: {2} hostname: {3} username: {4} password: {5} database: {6} port_override: {7} port: {8}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.hostname), repr(self.username), repr(self.password),
-            repr(self.database), repr(self.port_override), repr(self.port))
+        return '<sdm.Memsql ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
 
 
 # id: Unique identifier of the Resource.
@@ -526,8 +720,14 @@ class Memsql:
 # region:
 class Athena:
     __slots__ = [
-        'id', 'name', 'healthy', 'access_key', 'secret_access_key', 'output',
-        'port_override', 'region'
+        'id',
+        'name',
+        'healthy',
+        'access_key',
+        'secret_access_key',
+        'output',
+        'port_override',
+        'region',
     ]
 
     def __init__(self):
@@ -541,10 +741,16 @@ class Athena:
         self.region = None
 
     def __repr__(self):
-        return '<sdm.Athena id: {0} name: {1} healthy: {2} access_key: {3} secret_access_key: {4} output: {5} port_override: {6} region: {7}>'.format(
-            repr(self.id), repr(self.name), repr(self.healthy),
-            repr(self.access_key), repr(self.secret_access_key),
-            repr(self.output), repr(self.port_override), repr(self.region))
+        return '<sdm.Athena ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'access_key: ' + repr(self.access_key) + \
+            'secret_access_key: ' + repr(self.secret_access_key) + \
+            'output: ' + repr(self.output) + \
+            'port_override: ' + repr(self.port_override) + \
+            'region: ' + repr(self.region) + \
+            '>'
 
 
 # CreateResponseMetadata is reserved for future use.
@@ -555,7 +761,8 @@ class CreateResponseMetadata:
         pass
 
     def __repr__(self):
-        return '<sdm.CreateResponseMetadata>'.format()
+        return '<sdm.CreateResponseMetadata ' + \
+            '>'
 
 
 # GetResponseMetadata is reserved for future use.
@@ -566,7 +773,8 @@ class GetResponseMetadata:
         pass
 
     def __repr__(self):
-        return '<sdm.GetResponseMetadata>'.format()
+        return '<sdm.GetResponseMetadata ' + \
+            '>'
 
 
 # UpdateResponseMetadata is reserved for future use.
@@ -577,7 +785,8 @@ class UpdateResponseMetadata:
         pass
 
     def __repr__(self):
-        return '<sdm.UpdateResponseMetadata>'.format()
+        return '<sdm.UpdateResponseMetadata ' + \
+            '>'
 
 
 # DeleteResponseMetadata is reserved for future use.
@@ -588,7 +797,8 @@ class DeleteResponseMetadata:
         pass
 
     def __repr__(self):
-        return '<sdm.DeleteResponseMetadata>'.format()
+        return '<sdm.DeleteResponseMetadata ' + \
+            '>'
 
 
 # RateLimitMetadata contains information about remaining requests avaialable
@@ -600,7 +810,12 @@ class DeleteResponseMetadata:
 # bucket: The bucket this user/token is associated with, which may be shared between
 # multiple users/tokens.
 class RateLimitMetadata:
-    __slots__ = ['limit', 'remaining', 'reset_at', 'bucket']
+    __slots__ = [
+        'limit',
+        'remaining',
+        'reset_at',
+        'bucket',
+    ]
 
     def __init__(self):
         self.limit = None
@@ -609,9 +824,12 @@ class RateLimitMetadata:
         self.bucket = None
 
     def __repr__(self):
-        return '<sdm.RateLimitMetadata limit: {0} remaining: {1} reset_at: {2} bucket: {3}>'.format(
-            repr(self.limit), repr(self.remaining), repr(self.reset_at),
-            repr(self.bucket))
+        return '<sdm.RateLimitMetadata ' + \
+            'limit: ' + repr(self.limit) + \
+            'remaining: ' + repr(self.remaining) + \
+            'reset_at: ' + repr(self.reset_at) + \
+            'bucket: ' + repr(self.bucket) + \
+            '>'
 
 
 # NodeCreateResponse reports how the Nodes were created in the system.
@@ -621,7 +839,12 @@ class RateLimitMetadata:
 # authenticate with the strongDM API.
 # rate_limit: Rate limit information.
 class NodeCreateResponse:
-    __slots__ = ['meta', 'node', 'token', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'node',
+        'token',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -630,9 +853,12 @@ class NodeCreateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.NodeCreateResponse meta: {0} node: {1} token: {2} rate_limit: {3}>'.format(
-            repr(self.meta), repr(self.node), repr(self.token),
-            repr(self.rate_limit))
+        return '<sdm.NodeCreateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'node: ' + repr(self.node) + \
+            'token: ' + repr(self.token) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # NodeGetResponse returns a requested Node.
@@ -640,7 +866,11 @@ class NodeCreateResponse:
 # node: The requested Node.
 # rate_limit: Rate limit information.
 class NodeGetResponse:
-    __slots__ = ['meta', 'node', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'node',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -648,8 +878,11 @@ class NodeGetResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.NodeGetResponse meta: {0} node: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.node), repr(self.rate_limit))
+        return '<sdm.NodeGetResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'node: ' + repr(self.node) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # NodeUpdateResponse returns the fields of a Node after it has been updated by
@@ -658,7 +891,11 @@ class NodeGetResponse:
 # node: The updated Node.
 # rate_limit: Rate limit information.
 class NodeUpdateResponse:
-    __slots__ = ['meta', 'node', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'node',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -666,23 +903,31 @@ class NodeUpdateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.NodeUpdateResponse meta: {0} node: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.node), repr(self.rate_limit))
+        return '<sdm.NodeUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'node: ' + repr(self.node) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # NodeDeleteResponse returns information about a Node that was deleted.
 # meta: Reserved for future use.
 # rate_limit: Rate limit information.
 class NodeDeleteResponse:
-    __slots__ = ['meta', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.NodeDeleteResponse meta: {0} rate_limit: {1}>'.format(
-            repr(self.meta), repr(self.rate_limit))
+        return '<sdm.NodeDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # Relay represents a StrongDM CLI installation running in relay mode.
@@ -691,7 +936,11 @@ class NodeDeleteResponse:
 # state: The current state of the relay. One of: "new", "verifying_restart",
 # "restarting", "started", "stopped", "dead", "unknown",
 class Relay:
-    __slots__ = ['id', 'name', 'state']
+    __slots__ = [
+        'id',
+        'name',
+        'state',
+    ]
 
     def __init__(self):
         self.id = None
@@ -699,8 +948,11 @@ class Relay:
         self.state = None
 
     def __repr__(self):
-        return '<sdm.Relay id: {0} name: {1} state: {2}>'.format(
-            repr(self.id), repr(self.name), repr(self.state))
+        return '<sdm.Relay ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'state: ' + repr(self.state) + \
+            '>'
 
 
 # Gateway represents a StrongDM CLI installation running in gateway mode.
@@ -711,7 +963,13 @@ class Relay:
 # listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
 # bind_address: The hostname/port tuple which the gateway daemon will bind to.
 class Gateway:
-    __slots__ = ['id', 'name', 'state', 'listen_address', 'bind_address']
+    __slots__ = [
+        'id',
+        'name',
+        'state',
+        'listen_address',
+        'bind_address',
+    ]
 
     def __init__(self):
         self.id = None
@@ -721,9 +979,13 @@ class Gateway:
         self.bind_address = None
 
     def __repr__(self):
-        return '<sdm.Gateway id: {0} name: {1} state: {2} listen_address: {3} bind_address: {4}>'.format(
-            repr(self.id), repr(self.name), repr(self.state),
-            repr(self.listen_address), repr(self.bind_address))
+        return '<sdm.Gateway ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'state: ' + repr(self.state) + \
+            'listen_address: ' + repr(self.listen_address) + \
+            'bind_address: ' + repr(self.bind_address) + \
+            '>'
 
 
 # ResourceCreateResponse reports how the Resources were created in the system.
@@ -731,7 +993,11 @@ class Gateway:
 # resource: The created Resource.
 # rate_limit: Rate limit information.
 class ResourceCreateResponse:
-    __slots__ = ['meta', 'resource', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'resource',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -739,8 +1005,11 @@ class ResourceCreateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.ResourceCreateResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+        return '<sdm.ResourceCreateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'resource: ' + repr(self.resource) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # ResourceGetResponse returns a requested Resource.
@@ -748,7 +1017,11 @@ class ResourceCreateResponse:
 # resource: The requested Resource.
 # rate_limit: Rate limit information.
 class ResourceGetResponse:
-    __slots__ = ['meta', 'resource', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'resource',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -756,8 +1029,11 @@ class ResourceGetResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.ResourceGetResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+        return '<sdm.ResourceGetResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'resource: ' + repr(self.resource) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # ResourceUpdateResponse returns the fields of a Resource after it has been updated by
@@ -766,7 +1042,11 @@ class ResourceGetResponse:
 # resource: The updated Resource.
 # rate_limit: Rate limit information.
 class ResourceUpdateResponse:
-    __slots__ = ['meta', 'resource', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'resource',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -774,23 +1054,31 @@ class ResourceUpdateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.ResourceUpdateResponse meta: {0} resource: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.resource), repr(self.rate_limit))
+        return '<sdm.ResourceUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'resource: ' + repr(self.resource) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # ResourceDeleteResponse returns information about a Resource that was deleted.
 # meta: Reserved for future use.
 # rate_limit: Rate limit information.
 class ResourceDeleteResponse:
-    __slots__ = ['meta', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.ResourceDeleteResponse meta: {0} rate_limit: {1}>'.format(
-            repr(self.meta), repr(self.rate_limit))
+        return '<sdm.ResourceDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
@@ -798,7 +1086,11 @@ class ResourceDeleteResponse:
 # role_attachment: The created RoleAttachment.
 # rate_limit: Rate limit information.
 class RoleAttachmentCreateResponse:
-    __slots__ = ['meta', 'role_attachment', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'role_attachment',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -806,8 +1098,11 @@ class RoleAttachmentCreateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleAttachmentCreateResponse meta: {0} role_attachment: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.role_attachment), repr(self.rate_limit))
+        return '<sdm.RoleAttachmentCreateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'role_attachment: ' + repr(self.role_attachment) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleAttachmentGetResponse returns a requested RoleAttachment.
@@ -815,7 +1110,11 @@ class RoleAttachmentCreateResponse:
 # role_attachment: The requested RoleAttachment.
 # rate_limit: Rate limit information.
 class RoleAttachmentGetResponse:
-    __slots__ = ['meta', 'role_attachment', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'role_attachment',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -823,23 +1122,31 @@ class RoleAttachmentGetResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleAttachmentGetResponse meta: {0} role_attachment: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.role_attachment), repr(self.rate_limit))
+        return '<sdm.RoleAttachmentGetResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'role_attachment: ' + repr(self.role_attachment) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
 # meta: Reserved for future use.
 # rate_limit: Rate limit information.
 class RoleAttachmentDeleteResponse:
-    __slots__ = ['meta', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleAttachmentDeleteResponse meta: {0} rate_limit: {1}>'.format(
-            repr(self.meta), repr(self.rate_limit))
+        return '<sdm.RoleAttachmentDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # A RoleAttachment connects a composite role to another role, granting members
@@ -848,7 +1155,11 @@ class RoleAttachmentDeleteResponse:
 # composite_role_id: The id of the composite role of this RoleAttachment.
 # attached_role_id: The id of the attached role of this RoleAttachment.
 class RoleAttachment:
-    __slots__ = ['id', 'composite_role_id', 'attached_role_id']
+    __slots__ = [
+        'id',
+        'composite_role_id',
+        'attached_role_id',
+    ]
 
     def __init__(self):
         self.id = None
@@ -856,9 +1167,11 @@ class RoleAttachment:
         self.attached_role_id = None
 
     def __repr__(self):
-        return '<sdm.RoleAttachment id: {0} composite_role_id: {1} attached_role_id: {2}>'.format(
-            repr(self.id), repr(self.composite_role_id),
-            repr(self.attached_role_id))
+        return '<sdm.RoleAttachment ' + \
+            'id: ' + repr(self.id) + \
+            'composite_role_id: ' + repr(self.composite_role_id) + \
+            'attached_role_id: ' + repr(self.attached_role_id) + \
+            '>'
 
 
 # RoleCreateResponse reports how the Roles were created in the system. It can
@@ -867,7 +1180,11 @@ class RoleAttachment:
 # role: The created Role.
 # rate_limit: Rate limit information.
 class RoleCreateResponse:
-    __slots__ = ['meta', 'role', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'role',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -875,8 +1192,11 @@ class RoleCreateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleCreateResponse meta: {0} role: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.role), repr(self.rate_limit))
+        return '<sdm.RoleCreateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'role: ' + repr(self.role) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleGetResponse returns a requested Role.
@@ -884,7 +1204,11 @@ class RoleCreateResponse:
 # role: The requested Role.
 # rate_limit: Rate limit information.
 class RoleGetResponse:
-    __slots__ = ['meta', 'role', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'role',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -892,8 +1216,11 @@ class RoleGetResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleGetResponse meta: {0} role: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.role), repr(self.rate_limit))
+        return '<sdm.RoleGetResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'role: ' + repr(self.role) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleUpdateResponse returns the fields of a Role after it has been updated by
@@ -902,7 +1229,11 @@ class RoleGetResponse:
 # role: The updated Role.
 # rate_limit: Rate limit information.
 class RoleUpdateResponse:
-    __slots__ = ['meta', 'role', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'role',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
@@ -910,23 +1241,31 @@ class RoleUpdateResponse:
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleUpdateResponse meta: {0} role: {1} rate_limit: {2}>'.format(
-            repr(self.meta), repr(self.role), repr(self.rate_limit))
+        return '<sdm.RoleUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'role: ' + repr(self.role) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # RoleDeleteResponse returns information about a Role that was deleted.
 # meta: Reserved for future use.
 # rate_limit: Rate limit information.
 class RoleDeleteResponse:
-    __slots__ = ['meta', 'rate_limit']
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
 
     def __init__(self):
         self.meta = None
         self.rate_limit = None
 
     def __repr__(self):
-        return '<sdm.RoleDeleteResponse meta: {0} rate_limit: {1}>'.format(
-            repr(self.meta), repr(self.rate_limit))
+        return '<sdm.RoleDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + \
+            'rate_limit: ' + repr(self.rate_limit) + \
+            '>'
 
 
 # A Role grants users access to a set of resources. Composite roles have no
@@ -936,7 +1275,11 @@ class RoleDeleteResponse:
 # name: Unique human-readable name of the Role.
 # composite: True if the Role is a composite role.
 class Role:
-    __slots__ = ['id', 'name', 'composite']
+    __slots__ = [
+        'id',
+        'name',
+        'composite',
+    ]
 
     def __init__(self):
         self.id = None
@@ -944,5 +1287,8 @@ class Role:
         self.composite = None
 
     def __repr__(self):
-        return '<sdm.Role id: {0} name: {1} composite: {2}>'.format(
-            repr(self.id), repr(self.name), repr(self.composite))
+        return '<sdm.Role ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'composite: ' + repr(self.composite) + \
+            '>'
