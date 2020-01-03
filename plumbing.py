@@ -113,8 +113,12 @@ def resource_to_plumbing(porcelain):
         plumbing.druid.CopyFrom(druid_to_plumbing(porcelain))
     if isinstance(porcelain, models.SqlServer):
         plumbing.sql_server.CopyFrom(sql_server_to_plumbing(porcelain))
-    if isinstance(porcelain, models.MongoHybrID):
-        plumbing.mongo_hybrid.CopyFrom(mongo_hybrid_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoLegacyHost):
+        plumbing.mongo_legacy_host.CopyFrom(
+            mongo_legacy_host_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoLegacyReplicaset):
+        plumbing.mongo_legacy_replicaset.CopyFrom(
+            mongo_legacy_replicaset_to_plumbing(porcelain))
     if isinstance(porcelain, models.MongoHost):
         plumbing.mongo_host.CopyFrom(mongo_host_to_plumbing(porcelain))
     if isinstance(porcelain, models.MongoReplicaSet):
@@ -195,8 +199,11 @@ def resource_to_porcelain(plumbing):
         return druid_to_porcelain(plumbing.druid)
     if plumbing.sql_server != None:
         return sql_server_to_porcelain(plumbing.sql_server)
-    if plumbing.mongo_hybrid != None:
-        return mongo_hybrid_to_porcelain(plumbing.mongo_hybrid)
+    if plumbing.mongo_legacy_host != None:
+        return mongo_legacy_host_to_porcelain(plumbing.mongo_legacy_host)
+    if plumbing.mongo_legacy_replicaset != None:
+        return mongo_legacy_replicaset_to_porcelain(
+            plumbing.mongo_legacy_replicaset)
     if plumbing.mongo_host != None:
         return mongo_host_to_porcelain(plumbing.mongo_host)
     if plumbing.mongo_replica_set != None:
@@ -283,6 +290,10 @@ def presto_to_porcelain(plumbing):
 
     porcelain.hostname = plumbing.hostname
 
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
     porcelain.port_override = plumbing.port_override
 
     porcelain.port = plumbing.port
@@ -307,6 +318,12 @@ def presto_to_plumbing(porcelain):
     if porcelain.hostname != None:
 
         plumbing.hostname = porcelain.hostname
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
     if porcelain.port_override != None:
 
         plumbing.port_override = porcelain.port_override
@@ -397,13 +414,13 @@ def amazon_es_to_porcelain(plumbing):
 
     porcelain.healthy = plumbing.healthy
 
-    porcelain.endpoint = plumbing.endpoint
-
-    porcelain.access_key = plumbing.access_key
+    porcelain.region = plumbing.region
 
     porcelain.secret_access_key = plumbing.secret_access_key
 
-    porcelain.region = plumbing.region
+    porcelain.endpoint = plumbing.endpoint
+
+    porcelain.access_key = plumbing.access_key
 
     porcelain.port_override = plumbing.port_override
     return porcelain
@@ -420,18 +437,18 @@ def amazon_es_to_plumbing(porcelain):
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
+    if porcelain.region != None:
+
+        plumbing.region = porcelain.region
+    if porcelain.secret_access_key != None:
+
+        plumbing.secret_access_key = porcelain.secret_access_key
     if porcelain.endpoint != None:
 
         plumbing.endpoint = porcelain.endpoint
     if porcelain.access_key != None:
 
         plumbing.access_key = porcelain.access_key
-    if porcelain.secret_access_key != None:
-
-        plumbing.secret_access_key = porcelain.secret_access_key
-    if porcelain.region != None:
-
-        plumbing.region = porcelain.region
     if porcelain.port_override != None:
 
         plumbing.port_override = porcelain.port_override
@@ -711,18 +728,6 @@ def kubernetes_basic_auth_to_porcelain(plumbing):
     porcelain.username = plumbing.username
 
     porcelain.password = plumbing.password
-
-    porcelain.certificate_authority = plumbing.certificate_authority
-
-    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
-
-    porcelain.client_certificate = plumbing.client_certificate
-
-    porcelain.client_certificate_filename = plumbing.client_certificate_filename
-
-    porcelain.client_key = plumbing.client_key
-
-    porcelain.client_key_filename = plumbing.client_key_filename
     return porcelain
 
 
@@ -749,24 +754,6 @@ def kubernetes_basic_auth_to_plumbing(porcelain):
     if porcelain.password != None:
 
         plumbing.password = porcelain.password
-    if porcelain.certificate_authority != None:
-
-        plumbing.certificate_authority = porcelain.certificate_authority
-    if porcelain.certificate_authority_filename != None:
-
-        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
-    if porcelain.client_certificate != None:
-
-        plumbing.client_certificate = porcelain.client_certificate
-    if porcelain.client_certificate_filename != None:
-
-        plumbing.client_certificate_filename = porcelain.client_certificate_filename
-    if porcelain.client_key != None:
-
-        plumbing.client_key = porcelain.client_key
-    if porcelain.client_key_filename != None:
-
-        plumbing.client_key_filename = porcelain.client_key_filename
     return plumbing
 
 
@@ -986,13 +973,13 @@ def dynamo_db_to_porcelain(plumbing):
 
     porcelain.healthy = plumbing.healthy
 
-    porcelain.endpoint = plumbing.endpoint
-
     porcelain.access_key = plumbing.access_key
 
     porcelain.secret_access_key = plumbing.secret_access_key
 
     porcelain.region = plumbing.region
+
+    porcelain.endpoint = plumbing.endpoint
 
     porcelain.port_override = plumbing.port_override
     return porcelain
@@ -1009,9 +996,6 @@ def dynamo_db_to_plumbing(porcelain):
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
-    if porcelain.endpoint != None:
-
-        plumbing.endpoint = porcelain.endpoint
     if porcelain.access_key != None:
 
         plumbing.access_key = porcelain.access_key
@@ -1021,6 +1005,9 @@ def dynamo_db_to_plumbing(porcelain):
     if porcelain.region != None:
 
         plumbing.region = porcelain.region
+    if porcelain.endpoint != None:
+
+        plumbing.endpoint = porcelain.endpoint
     if porcelain.port_override != None:
 
         plumbing.port_override = porcelain.port_override
@@ -1102,13 +1089,13 @@ def big_query_to_porcelain(plumbing):
 
     porcelain.healthy = plumbing.healthy
 
-    porcelain.endpoint = plumbing.endpoint
-
     porcelain.private_key = plumbing.private_key
 
     porcelain.project = plumbing.project
 
     porcelain.port_override = plumbing.port_override
+
+    porcelain.endpoint = plumbing.endpoint
 
     porcelain.username = plumbing.username
     return porcelain
@@ -1125,9 +1112,6 @@ def big_query_to_plumbing(porcelain):
     if porcelain.healthy != None:
 
         plumbing.healthy = porcelain.healthy
-    if porcelain.endpoint != None:
-
-        plumbing.endpoint = porcelain.endpoint
     if porcelain.private_key != None:
 
         plumbing.private_key = porcelain.private_key
@@ -1137,6 +1121,9 @@ def big_query_to_plumbing(porcelain):
     if porcelain.port_override != None:
 
         plumbing.port_override = porcelain.port_override
+    if porcelain.endpoint != None:
+
+        plumbing.endpoint = porcelain.endpoint
     if porcelain.username != None:
 
         plumbing.username = porcelain.username
@@ -2299,6 +2286,8 @@ def sql_server_to_porcelain(plumbing):
 
     porcelain.port_override = plumbing.port_override
 
+    porcelain.schema = plumbing.schema
+
     porcelain.port = plumbing.port
 
     porcelain.override_database = plumbing.override_database
@@ -2331,6 +2320,9 @@ def sql_server_to_plumbing(porcelain):
     if porcelain.port_override != None:
 
         plumbing.port_override = porcelain.port_override
+    if porcelain.schema != None:
+
+        plumbing.schema = porcelain.schema
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
@@ -2348,8 +2340,8 @@ def repeated_sql_server_to_porcelain(plumbings):
     return [sql_server_to_porcelain(plumbing) for plumbing in plumbings]
 
 
-def mongo_hybrid_to_porcelain(plumbing):
-    porcelain = models.MongoHybrid()
+def mongo_legacy_host_to_porcelain(plumbing):
+    porcelain = models.MongoLegacyHost()
 
     porcelain.id = plumbing.id
 
@@ -2372,11 +2364,13 @@ def mongo_hybrid_to_porcelain(plumbing):
     porcelain.replica_set = plumbing.replica_set
 
     porcelain.connect_to_replica = plumbing.connect_to_replica
+
+    porcelain.tls_required = plumbing.tls_required
     return porcelain
 
 
-def mongo_hybrid_to_plumbing(porcelain):
-    plumbing = MongoHybrid()
+def mongo_legacy_host_to_plumbing(porcelain):
+    plumbing = MongoLegacyHost()
     if porcelain.id != None:
 
         plumbing.id = porcelain.id
@@ -2410,15 +2404,104 @@ def mongo_hybrid_to_plumbing(porcelain):
     if porcelain.connect_to_replica != None:
 
         plumbing.connect_to_replica = porcelain.connect_to_replica
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
     return plumbing
 
 
-def repeated_mongo_hybrid_to_plumbing(porcelains):
-    return [mongo_hybrid_to_plumbing(porcelain) for porcelain in porcelains]
+def repeated_mongo_legacy_host_to_plumbing(porcelains):
+    return [
+        mongo_legacy_host_to_plumbing(porcelain) for porcelain in porcelains
+    ]
 
 
-def repeated_mongo_hybrid_to_porcelain(plumbings):
-    return [mongo_hybrid_to_porcelain(plumbing) for plumbing in plumbings]
+def repeated_mongo_legacy_host_to_porcelain(plumbings):
+    return [mongo_legacy_host_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def mongo_legacy_replicaset_to_porcelain(plumbing):
+    porcelain = models.MongoLegacyReplicaset()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.auth_database = plumbing.auth_database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+
+    porcelain.replica_set = plumbing.replica_set
+
+    porcelain.connect_to_replica = plumbing.connect_to_replica
+
+    porcelain.tls_required = plumbing.tls_required
+    return porcelain
+
+
+def mongo_legacy_replicaset_to_plumbing(porcelain):
+    plumbing = MongoLegacyReplicaset()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.auth_database != None:
+
+        plumbing.auth_database = porcelain.auth_database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.replica_set != None:
+
+        plumbing.replica_set = porcelain.replica_set
+    if porcelain.connect_to_replica != None:
+
+        plumbing.connect_to_replica = porcelain.connect_to_replica
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
+    return plumbing
+
+
+def repeated_mongo_legacy_replicaset_to_plumbing(porcelains):
+    return [
+        mongo_legacy_replicaset_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_mongo_legacy_replicaset_to_porcelain(plumbings):
+    return [
+        mongo_legacy_replicaset_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def mongo_host_to_porcelain(plumbing):
@@ -2441,6 +2524,10 @@ def mongo_host_to_porcelain(plumbing):
     porcelain.password = plumbing.password
 
     porcelain.port = plumbing.port
+
+    porcelain.schema = plumbing.schema
+
+    porcelain.tls_required = plumbing.tls_required
     return porcelain
 
 
@@ -2473,6 +2560,12 @@ def mongo_host_to_plumbing(porcelain):
     if porcelain.port != None:
 
         plumbing.port = porcelain.port
+    if porcelain.schema != None:
+
+        plumbing.schema = porcelain.schema
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
     return plumbing
 
 
@@ -2508,6 +2601,8 @@ def mongo_replica_set_to_porcelain(plumbing):
     porcelain.replica_set = plumbing.replica_set
 
     porcelain.connect_to_replica = plumbing.connect_to_replica
+
+    porcelain.tls_required = plumbing.tls_required
     return porcelain
 
 
@@ -2546,6 +2641,9 @@ def mongo_replica_set_to_plumbing(porcelain):
     if porcelain.connect_to_replica != None:
 
         plumbing.connect_to_replica = porcelain.connect_to_replica
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
     return plumbing
 
 

@@ -48,6 +48,8 @@ class Sybase:
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
+# password:
+# database:
 # port_override:
 # port:
 # username:
@@ -58,6 +60,8 @@ class Presto:
         'name',
         'healthy',
         'hostname',
+        'password',
+        'database',
         'port_override',
         'port',
         'username',
@@ -69,6 +73,8 @@ class Presto:
         self.name = None
         self.healthy = None
         self.hostname = None
+        self.password = None
+        self.database = None
         self.port_override = None
         self.port = None
         self.username = None
@@ -80,6 +86,8 @@ class Presto:
             'name: ' + repr(self.name) + \
             'healthy: ' + repr(self.healthy) + \
             'hostname: ' + repr(self.hostname) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
             'port_override: ' + repr(self.port_override) + \
             'port: ' + repr(self.port) + \
             'username: ' + repr(self.username) + \
@@ -133,20 +141,20 @@ class Teradata:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
+# region:
+# secret_access_key:
 # endpoint:
 # access_key:
-# secret_access_key:
-# region:
 # port_override:
 class AmazonES:
     __slots__ = [
         'id',
         'name',
         'healthy',
+        'region',
+        'secret_access_key',
         'endpoint',
         'access_key',
-        'secret_access_key',
-        'region',
         'port_override',
     ]
 
@@ -154,10 +162,10 @@ class AmazonES:
         self.id = None
         self.name = None
         self.healthy = None
+        self.region = None
+        self.secret_access_key = None
         self.endpoint = None
         self.access_key = None
-        self.secret_access_key = None
-        self.region = None
         self.port_override = None
 
     def __repr__(self):
@@ -165,10 +173,10 @@ class AmazonES:
             'id: ' + repr(self.id) + \
             'name: ' + repr(self.name) + \
             'healthy: ' + repr(self.healthy) + \
+            'region: ' + repr(self.region) + \
+            'secret_access_key: ' + repr(self.secret_access_key) + \
             'endpoint: ' + repr(self.endpoint) + \
             'access_key: ' + repr(self.access_key) + \
-            'secret_access_key: ' + repr(self.secret_access_key) + \
-            'region: ' + repr(self.region) + \
             'port_override: ' + repr(self.port_override) + \
             '>'
 
@@ -364,12 +372,6 @@ class Kubernetes:
 # port:
 # username:
 # password:
-# certificate_authority:
-# certificate_authority_filename:
-# client_certificate:
-# client_certificate_filename:
-# client_key:
-# client_key_filename:
 class KubernetesBasicAuth:
     __slots__ = [
         'id',
@@ -379,12 +381,6 @@ class KubernetesBasicAuth:
         'port',
         'username',
         'password',
-        'certificate_authority',
-        'certificate_authority_filename',
-        'client_certificate',
-        'client_certificate_filename',
-        'client_key',
-        'client_key_filename',
     ]
 
     def __init__(self):
@@ -395,12 +391,6 @@ class KubernetesBasicAuth:
         self.port = None
         self.username = None
         self.password = None
-        self.certificate_authority = None
-        self.certificate_authority_filename = None
-        self.client_certificate = None
-        self.client_certificate_filename = None
-        self.client_key = None
-        self.client_key_filename = None
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -411,12 +401,6 @@ class KubernetesBasicAuth:
             'port: ' + repr(self.port) + \
             'username: ' + repr(self.username) + \
             'password: ' + repr(self.password) + \
-            'certificate_authority: ' + repr(self.certificate_authority) + \
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
-            'client_certificate: ' + repr(self.client_certificate) + \
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + \
-            'client_key: ' + repr(self.client_key) + \
-            'client_key_filename: ' + repr(self.client_key_filename) + \
             '>'
 
 
@@ -568,20 +552,20 @@ class Oracle:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
 # access_key:
 # secret_access_key:
 # region:
+# endpoint:
 # port_override:
 class DynamoDB:
     __slots__ = [
         'id',
         'name',
         'healthy',
-        'endpoint',
         'access_key',
         'secret_access_key',
         'region',
+        'endpoint',
         'port_override',
     ]
 
@@ -589,10 +573,10 @@ class DynamoDB:
         self.id = None
         self.name = None
         self.healthy = None
-        self.endpoint = None
         self.access_key = None
         self.secret_access_key = None
         self.region = None
+        self.endpoint = None
         self.port_override = None
 
     def __repr__(self):
@@ -600,10 +584,10 @@ class DynamoDB:
             'id: ' + repr(self.id) + \
             'name: ' + repr(self.name) + \
             'healthy: ' + repr(self.healthy) + \
-            'endpoint: ' + repr(self.endpoint) + \
             'access_key: ' + repr(self.access_key) + \
             'secret_access_key: ' + repr(self.secret_access_key) + \
             'region: ' + repr(self.region) + \
+            'endpoint: ' + repr(self.endpoint) + \
             'port_override: ' + repr(self.port_override) + \
             '>'
 
@@ -654,20 +638,20 @@ class RDP:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
 # private_key:
 # project:
 # port_override:
+# endpoint:
 # username:
 class BigQuery:
     __slots__ = [
         'id',
         'name',
         'healthy',
-        'endpoint',
         'private_key',
         'project',
         'port_override',
+        'endpoint',
         'username',
     ]
 
@@ -675,10 +659,10 @@ class BigQuery:
         self.id = None
         self.name = None
         self.healthy = None
-        self.endpoint = None
         self.private_key = None
         self.project = None
         self.port_override = None
+        self.endpoint = None
         self.username = None
 
     def __repr__(self):
@@ -686,10 +670,10 @@ class BigQuery:
             'id: ' + repr(self.id) + \
             'name: ' + repr(self.name) + \
             'healthy: ' + repr(self.healthy) + \
-            'endpoint: ' + repr(self.endpoint) + \
             'private_key: ' + repr(self.private_key) + \
             'project: ' + repr(self.project) + \
             'port_override: ' + repr(self.port_override) + \
+            'endpoint: ' + repr(self.endpoint) + \
             'username: ' + repr(self.username) + \
             '>'
 
@@ -1544,6 +1528,7 @@ class DruID:
 # password:
 # database:
 # port_override:
+# schema:
 # port:
 # override_database:
 class SQLServer:
@@ -1556,6 +1541,7 @@ class SQLServer:
         'password',
         'database',
         'port_override',
+        'schema',
         'port',
         'override_database',
     ]
@@ -1569,6 +1555,7 @@ class SQLServer:
         self.password = None
         self.database = None
         self.port_override = None
+        self.schema = None
         self.port = None
         self.override_database = None
 
@@ -1582,6 +1569,7 @@ class SQLServer:
             'password: ' + repr(self.password) + \
             'database: ' + repr(self.database) + \
             'port_override: ' + repr(self.port_override) + \
+            'schema: ' + repr(self.schema) + \
             'port: ' + repr(self.port) + \
             'override_database: ' + repr(self.override_database) + \
             '>'
@@ -1598,7 +1586,8 @@ class SQLServer:
 # port:
 # replica_set:
 # connect_to_replica:
-class MongoHybrID:
+# tls_required:
+class MongoLegacyHost:
     __slots__ = [
         'id',
         'name',
@@ -1611,6 +1600,7 @@ class MongoHybrID:
         'port',
         'replica_set',
         'connect_to_replica',
+        'tls_required',
     ]
 
     def __init__(self):
@@ -1625,9 +1615,10 @@ class MongoHybrID:
         self.port = None
         self.replica_set = None
         self.connect_to_replica = None
+        self.tls_required = None
 
     def __repr__(self):
-        return '<sdm.MongoHybrID ' + \
+        return '<sdm.MongoLegacyHost ' + \
             'id: ' + repr(self.id) + \
             'name: ' + repr(self.name) + \
             'healthy: ' + repr(self.healthy) + \
@@ -1639,53 +1630,7 @@ class MongoHybrID:
             'port: ' + repr(self.port) + \
             'replica_set: ' + repr(self.replica_set) + \
             'connect_to_replica: ' + repr(self.connect_to_replica) + \
-            '>'
-
-
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# auth_database:
-# port_override:
-# username:
-# password:
-# port:
-class MongoHost:
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'hostname',
-        'auth_database',
-        'port_override',
-        'username',
-        'password',
-        'port',
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.auth_database = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-
-    def __repr__(self):
-        return '<sdm.MongoHost ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'auth_database: ' + repr(self.auth_database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
+            'tls_required: ' + repr(self.tls_required) + \
             '>'
 
 
@@ -1700,7 +1645,8 @@ class MongoHost:
 # port:
 # replica_set:
 # connect_to_replica:
-class MongoReplicaSet:
+# tls_required:
+class MongoLegacyReplicaset:
     __slots__ = [
         'id',
         'name',
@@ -1713,6 +1659,7 @@ class MongoReplicaSet:
         'port',
         'replica_set',
         'connect_to_replica',
+        'tls_required',
     ]
 
     def __init__(self):
@@ -1727,6 +1674,121 @@ class MongoReplicaSet:
         self.port = None
         self.replica_set = None
         self.connect_to_replica = None
+        self.tls_required = None
+
+    def __repr__(self):
+        return '<sdm.MongoLegacyReplicaset ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'auth_database: ' + repr(self.auth_database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            'replica_set: ' + repr(self.replica_set) + \
+            'connect_to_replica: ' + repr(self.connect_to_replica) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# auth_database:
+# port_override:
+# username:
+# password:
+# port:
+# schema:
+# tls_required:
+class MongoHost:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'auth_database',
+        'port_override',
+        'username',
+        'password',
+        'port',
+        'schema',
+        'tls_required',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.auth_database = None
+        self.port_override = None
+        self.username = None
+        self.password = None
+        self.port = None
+        self.schema = None
+        self.tls_required = None
+
+    def __repr__(self):
+        return '<sdm.MongoHost ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'auth_database: ' + repr(self.auth_database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            'schema: ' + repr(self.schema) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# auth_database:
+# port_override:
+# username:
+# password:
+# port:
+# replica_set:
+# connect_to_replica:
+# tls_required:
+class MongoReplicaSet:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'auth_database',
+        'port_override',
+        'username',
+        'password',
+        'port',
+        'replica_set',
+        'connect_to_replica',
+        'tls_required',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.auth_database = None
+        self.port_override = None
+        self.username = None
+        self.password = None
+        self.port = None
+        self.replica_set = None
+        self.connect_to_replica = None
+        self.tls_required = None
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
@@ -1741,6 +1803,7 @@ class MongoReplicaSet:
             'port: ' + repr(self.port) + \
             'replica_set: ' + repr(self.replica_set) + \
             'connect_to_replica: ' + repr(self.connect_to_replica) + \
+            'tls_required: ' + repr(self.tls_required) + \
             '>'
 
 
