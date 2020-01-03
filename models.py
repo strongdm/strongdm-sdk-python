@@ -4,6 +4,135 @@ import collections
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# port_override:
+# port:
+# password:
+class Sybase:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'port_override',
+        'port',
+        'password',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.port_override = None
+        self.port = None
+        self.password = None
+
+    def __repr__(self):
+        return '<sdm.Sybase ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'password: ' + repr(self.password) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# port_override:
+# port:
+# username:
+# tls_required:
+class Presto:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port_override',
+        'port',
+        'username',
+        'tls_required',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.port_override = None
+        self.port = None
+        self.username = None
+        self.tls_required = None
+
+    def __repr__(self):
+        return '<sdm.Presto ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'username: ' + repr(self.username) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# port_override:
+# port:
+class Teradata:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'port_override',
+        'port',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.port_override = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.Teradata ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # access_key:
 # secret_access_key:
@@ -388,6 +517,57 @@ class GoogleGKE:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port:
+# port_override:
+# tls_required:
+class Oracle:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port',
+        'port_override',
+        'tls_required',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port = None
+        self.port_override = None
+        self.tls_required = None
+
+    def __repr__(self):
+        return '<sdm.Oracle ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port: ' + repr(self.port) + \
+            'port_override: ' + repr(self.port_override) + \
+            'tls_required: ' + repr(self.tls_required) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # access_key:
 # secret_access_key:
@@ -518,6 +698,53 @@ class BigQuery:
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
+# username:
+# password:
+# database:
+# schema:
+# port_override:
+class Snowflake:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'schema',
+        'port_override',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.schema = None
+        self.port_override = None
+
+    def __repr__(self):
+        return '<sdm.Snowflake ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'schema: ' + repr(self.schema) + \
+            'port_override: ' + repr(self.port_override) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
 # port_override:
 # port:
 class Memcached:
@@ -546,6 +773,261 @@ class Memcached:
             'hostname: ' + repr(self.hostname) + \
             'port_override: ' + repr(self.port_override) + \
             'port: ' + repr(self.port) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class Postgres:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.Postgres ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class AuroraPostgres:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.AuroraPostgres ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class Greenplum:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.Greenplum ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class Cockroach:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.Cockroach ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class Redshift:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.Redshift ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
             '>'
 
 
@@ -1051,6 +1533,214 @@ class DruID:
             'username: ' + repr(self.username) + \
             'password: ' + repr(self.password) + \
             'port: ' + repr(self.port) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# password:
+# database:
+# port_override:
+# port:
+# override_database:
+class SQLServer:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+        'override_database',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.username = None
+        self.password = None
+        self.database = None
+        self.port_override = None
+        self.port = None
+        self.override_database = None
+
+    def __repr__(self):
+        return '<sdm.SQLServer ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'database: ' + repr(self.database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'port: ' + repr(self.port) + \
+            'override_database: ' + repr(self.override_database) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# auth_database:
+# port_override:
+# username:
+# password:
+# port:
+# replica_set:
+# connect_to_replica:
+class MongoHybrID:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'auth_database',
+        'port_override',
+        'username',
+        'password',
+        'port',
+        'replica_set',
+        'connect_to_replica',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.auth_database = None
+        self.port_override = None
+        self.username = None
+        self.password = None
+        self.port = None
+        self.replica_set = None
+        self.connect_to_replica = None
+
+    def __repr__(self):
+        return '<sdm.MongoHybrID ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'auth_database: ' + repr(self.auth_database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            'replica_set: ' + repr(self.replica_set) + \
+            'connect_to_replica: ' + repr(self.connect_to_replica) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# auth_database:
+# port_override:
+# username:
+# password:
+# port:
+class MongoHost:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'auth_database',
+        'port_override',
+        'username',
+        'password',
+        'port',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.auth_database = None
+        self.port_override = None
+        self.username = None
+        self.password = None
+        self.port = None
+
+    def __repr__(self):
+        return '<sdm.MongoHost ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'auth_database: ' + repr(self.auth_database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# auth_database:
+# port_override:
+# username:
+# password:
+# port:
+# replica_set:
+# connect_to_replica:
+class MongoReplicaSet:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'auth_database',
+        'port_override',
+        'username',
+        'password',
+        'port',
+        'replica_set',
+        'connect_to_replica',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.auth_database = None
+        self.port_override = None
+        self.username = None
+        self.password = None
+        self.port = None
+        self.replica_set = None
+        self.connect_to_replica = None
+
+    def __repr__(self):
+        return '<sdm.MongoReplicaSet ' + \
+            'id: ' + repr(self.id) + \
+            'name: ' + repr(self.name) + \
+            'healthy: ' + repr(self.healthy) + \
+            'hostname: ' + repr(self.hostname) + \
+            'auth_database: ' + repr(self.auth_database) + \
+            'port_override: ' + repr(self.port_override) + \
+            'username: ' + repr(self.username) + \
+            'password: ' + repr(self.password) + \
+            'port: ' + repr(self.port) + \
+            'replica_set: ' + repr(self.replica_set) + \
+            'connect_to_replica: ' + repr(self.connect_to_replica) + \
             '>'
 
 

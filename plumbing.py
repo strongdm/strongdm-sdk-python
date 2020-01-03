@@ -41,6 +41,12 @@ def timestamp_to_plumbing(t):
 
 def resource_to_plumbing(porcelain):
     plumbing = Resource()
+    if isinstance(porcelain, models.Sybase):
+        plumbing.sybase.CopyFrom(sybase_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Presto):
+        plumbing.presto.CopyFrom(presto_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Teradata):
+        plumbing.teradata.CopyFrom(teradata_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEs):
         plumbing.amazon_es.CopyFrom(amazon_es_to_plumbing(porcelain))
     if isinstance(porcelain, models.Elastic):
@@ -59,14 +65,29 @@ def resource_to_plumbing(porcelain):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGke):
         plumbing.google_gke.CopyFrom(google_gke_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Oracle):
+        plumbing.oracle.CopyFrom(oracle_to_plumbing(porcelain))
     if isinstance(porcelain, models.DynamoDb):
         plumbing.dynamo_db.CopyFrom(dynamo_db_to_plumbing(porcelain))
     if isinstance(porcelain, models.Rdp):
         plumbing.rdp.CopyFrom(rdp_to_plumbing(porcelain))
     if isinstance(porcelain, models.BigQuery):
         plumbing.big_query.CopyFrom(big_query_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Snowflake):
+        plumbing.snowflake.CopyFrom(snowflake_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(memcached_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Postgres):
+        plumbing.postgres.CopyFrom(postgres_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AuroraPostgres):
+        plumbing.aurora_postgres.CopyFrom(
+            aurora_postgres_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Greenplum):
+        plumbing.greenplum.CopyFrom(greenplum_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Cockroach):
+        plumbing.cockroach.CopyFrom(cockroach_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Redshift):
+        plumbing.redshift.CopyFrom(redshift_to_plumbing(porcelain))
     if isinstance(porcelain, models.Ssh):
         plumbing.ssh.CopyFrom(ssh_to_plumbing(porcelain))
     if isinstance(porcelain, models.HttpBasicAuth):
@@ -90,12 +111,27 @@ def resource_to_plumbing(porcelain):
         plumbing.memsql.CopyFrom(memsql_to_plumbing(porcelain))
     if isinstance(porcelain, models.DruID):
         plumbing.druid.CopyFrom(druid_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SqlServer):
+        plumbing.sql_server.CopyFrom(sql_server_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoHybrID):
+        plumbing.mongo_hybrid.CopyFrom(mongo_hybrid_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoHost):
+        plumbing.mongo_host.CopyFrom(mongo_host_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoReplicaSet):
+        plumbing.mongo_replica_set.CopyFrom(
+            mongo_replica_set_to_plumbing(porcelain))
     if isinstance(porcelain, models.Athena):
         plumbing.athena.CopyFrom(athena_to_plumbing(porcelain))
     return plumbing
 
 
 def resource_to_porcelain(plumbing):
+    if plumbing.sybase != None:
+        return sybase_to_porcelain(plumbing.sybase)
+    if plumbing.presto != None:
+        return presto_to_porcelain(plumbing.presto)
+    if plumbing.teradata != None:
+        return teradata_to_porcelain(plumbing.teradata)
     if plumbing.amazon_es != None:
         return amazon_es_to_porcelain(plumbing.amazon_es)
     if plumbing.elastic != None:
@@ -113,14 +149,28 @@ def resource_to_porcelain(plumbing):
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.google_gke != None:
         return google_gke_to_porcelain(plumbing.google_gke)
+    if plumbing.oracle != None:
+        return oracle_to_porcelain(plumbing.oracle)
     if plumbing.dynamo_db != None:
         return dynamo_db_to_porcelain(plumbing.dynamo_db)
     if plumbing.rdp != None:
         return rdp_to_porcelain(plumbing.rdp)
     if plumbing.big_query != None:
         return big_query_to_porcelain(plumbing.big_query)
+    if plumbing.snowflake != None:
+        return snowflake_to_porcelain(plumbing.snowflake)
     if plumbing.memcached != None:
         return memcached_to_porcelain(plumbing.memcached)
+    if plumbing.postgres != None:
+        return postgres_to_porcelain(plumbing.postgres)
+    if plumbing.aurora_postgres != None:
+        return aurora_postgres_to_porcelain(plumbing.aurora_postgres)
+    if plumbing.greenplum != None:
+        return greenplum_to_porcelain(plumbing.greenplum)
+    if plumbing.cockroach != None:
+        return cockroach_to_porcelain(plumbing.cockroach)
+    if plumbing.redshift != None:
+        return redshift_to_porcelain(plumbing.redshift)
     if plumbing.ssh != None:
         return ssh_to_porcelain(plumbing.ssh)
     if plumbing.http_basic_auth != None:
@@ -143,6 +193,14 @@ def resource_to_porcelain(plumbing):
         return memsql_to_porcelain(plumbing.memsql)
     if plumbing.druid != None:
         return druid_to_porcelain(plumbing.druid)
+    if plumbing.sql_server != None:
+        return sql_server_to_porcelain(plumbing.sql_server)
+    if plumbing.mongo_hybrid != None:
+        return mongo_hybrid_to_porcelain(plumbing.mongo_hybrid)
+    if plumbing.mongo_host != None:
+        return mongo_host_to_porcelain(plumbing.mongo_host)
+    if plumbing.mongo_replica_set != None:
+        return mongo_replica_set_to_porcelain(plumbing.mongo_replica_set)
     if plumbing.athena != None:
         return athena_to_porcelain(plumbing.athena)
     return None
@@ -154,6 +212,180 @@ def repeated_resource_to_plumbing(porcelains):
 
 def repeated_resource_to_porcelain(plumbings):
     return [resource_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def sybase_to_porcelain(plumbing):
+    porcelain = models.Sybase()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.password = plumbing.password
+    return porcelain
+
+
+def sybase_to_plumbing(porcelain):
+    plumbing = Sybase()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    return plumbing
+
+
+def repeated_sybase_to_plumbing(porcelains):
+    return [sybase_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_sybase_to_porcelain(plumbings):
+    return [sybase_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def presto_to_porcelain(plumbing):
+    porcelain = models.Presto()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.username = plumbing.username
+
+    porcelain.tls_required = plumbing.tls_required
+    return porcelain
+
+
+def presto_to_plumbing(porcelain):
+    plumbing = Presto()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
+    return plumbing
+
+
+def repeated_presto_to_plumbing(porcelains):
+    return [presto_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_presto_to_porcelain(plumbings):
+    return [presto_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def teradata_to_porcelain(plumbing):
+    porcelain = models.Teradata()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def teradata_to_plumbing(porcelain):
+    plumbing = Teradata()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_teradata_to_plumbing(porcelains):
+    return [teradata_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_teradata_to_porcelain(plumbings):
+    return [teradata_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def amazon_es_to_porcelain(plumbing):
@@ -677,6 +909,74 @@ def repeated_google_gke_to_porcelain(plumbings):
     return [google_gke_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def oracle_to_porcelain(plumbing):
+    porcelain = models.Oracle()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port = plumbing.port
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.tls_required = plumbing.tls_required
+    return porcelain
+
+
+def oracle_to_plumbing(porcelain):
+    plumbing = Oracle()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.tls_required != None:
+
+        plumbing.tls_required = porcelain.tls_required
+    return plumbing
+
+
+def repeated_oracle_to_plumbing(porcelains):
+    return [oracle_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_oracle_to_porcelain(plumbings):
+    return [oracle_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def dynamo_db_to_porcelain(plumbing):
     porcelain = models.DynamoDB()
 
@@ -851,6 +1151,69 @@ def repeated_big_query_to_porcelain(plumbings):
     return [big_query_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def snowflake_to_porcelain(plumbing):
+    porcelain = models.Snowflake()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.schema = plumbing.schema
+
+    porcelain.port_override = plumbing.port_override
+    return porcelain
+
+
+def snowflake_to_plumbing(porcelain):
+    plumbing = Snowflake()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.schema != None:
+
+        plumbing.schema = porcelain.schema
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    return plumbing
+
+
+def repeated_snowflake_to_plumbing(porcelains):
+    return [snowflake_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_snowflake_to_porcelain(plumbings):
+    return [snowflake_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def memcached_to_porcelain(plumbing):
     porcelain = models.Memcached()
 
@@ -897,6 +1260,346 @@ def repeated_memcached_to_plumbing(porcelains):
 
 def repeated_memcached_to_porcelain(plumbings):
     return [memcached_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def postgres_to_porcelain(plumbing):
+    porcelain = models.Postgres()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def postgres_to_plumbing(porcelain):
+    plumbing = Postgres()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_postgres_to_plumbing(porcelains):
+    return [postgres_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_postgres_to_porcelain(plumbings):
+    return [postgres_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def aurora_postgres_to_porcelain(plumbing):
+    porcelain = models.AuroraPostgres()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def aurora_postgres_to_plumbing(porcelain):
+    plumbing = AuroraPostgres()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_aurora_postgres_to_plumbing(porcelains):
+    return [aurora_postgres_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_aurora_postgres_to_porcelain(plumbings):
+    return [aurora_postgres_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def greenplum_to_porcelain(plumbing):
+    porcelain = models.Greenplum()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def greenplum_to_plumbing(porcelain):
+    plumbing = Greenplum()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_greenplum_to_plumbing(porcelains):
+    return [greenplum_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_greenplum_to_porcelain(plumbings):
+    return [greenplum_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def cockroach_to_porcelain(plumbing):
+    porcelain = models.Cockroach()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def cockroach_to_plumbing(porcelain):
+    plumbing = Cockroach()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_cockroach_to_plumbing(porcelains):
+    return [cockroach_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_cockroach_to_porcelain(plumbings):
+    return [cockroach_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def redshift_to_porcelain(plumbing):
+    porcelain = models.Redshift()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def redshift_to_plumbing(porcelain):
+    plumbing = Redshift()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_redshift_to_plumbing(porcelains):
+    return [redshift_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_redshift_to_porcelain(plumbings):
+    return [redshift_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def ssh_to_porcelain(plumbing):
@@ -1575,6 +2278,285 @@ def repeated_druid_to_plumbing(porcelains):
 
 def repeated_druid_to_porcelain(plumbings):
     return [druid_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def sql_server_to_porcelain(plumbing):
+    porcelain = models.SQLServer()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.database = plumbing.database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.port = plumbing.port
+
+    porcelain.override_database = plumbing.override_database
+    return porcelain
+
+
+def sql_server_to_plumbing(porcelain):
+    plumbing = SQLServer()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.database != None:
+
+        plumbing.database = porcelain.database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.override_database != None:
+
+        plumbing.override_database = porcelain.override_database
+    return plumbing
+
+
+def repeated_sql_server_to_plumbing(porcelains):
+    return [sql_server_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_sql_server_to_porcelain(plumbings):
+    return [sql_server_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def mongo_hybrid_to_porcelain(plumbing):
+    porcelain = models.MongoHybrid()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.auth_database = plumbing.auth_database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+
+    porcelain.replica_set = plumbing.replica_set
+
+    porcelain.connect_to_replica = plumbing.connect_to_replica
+    return porcelain
+
+
+def mongo_hybrid_to_plumbing(porcelain):
+    plumbing = MongoHybrid()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.auth_database != None:
+
+        plumbing.auth_database = porcelain.auth_database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.replica_set != None:
+
+        plumbing.replica_set = porcelain.replica_set
+    if porcelain.connect_to_replica != None:
+
+        plumbing.connect_to_replica = porcelain.connect_to_replica
+    return plumbing
+
+
+def repeated_mongo_hybrid_to_plumbing(porcelains):
+    return [mongo_hybrid_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_mongo_hybrid_to_porcelain(plumbings):
+    return [mongo_hybrid_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def mongo_host_to_porcelain(plumbing):
+    porcelain = models.MongoHost()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.auth_database = plumbing.auth_database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+    return porcelain
+
+
+def mongo_host_to_plumbing(porcelain):
+    plumbing = MongoHost()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.auth_database != None:
+
+        plumbing.auth_database = porcelain.auth_database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    return plumbing
+
+
+def repeated_mongo_host_to_plumbing(porcelains):
+    return [mongo_host_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_mongo_host_to_porcelain(plumbings):
+    return [mongo_host_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def mongo_replica_set_to_porcelain(plumbing):
+    porcelain = models.MongoReplicaSet()
+
+    porcelain.id = plumbing.id
+
+    porcelain.name = plumbing.name
+
+    porcelain.healthy = plumbing.healthy
+
+    porcelain.hostname = plumbing.hostname
+
+    porcelain.auth_database = plumbing.auth_database
+
+    porcelain.port_override = plumbing.port_override
+
+    porcelain.username = plumbing.username
+
+    porcelain.password = plumbing.password
+
+    porcelain.port = plumbing.port
+
+    porcelain.replica_set = plumbing.replica_set
+
+    porcelain.connect_to_replica = plumbing.connect_to_replica
+    return porcelain
+
+
+def mongo_replica_set_to_plumbing(porcelain):
+    plumbing = MongoReplicaSet()
+    if porcelain.id != None:
+
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+
+        plumbing.hostname = porcelain.hostname
+    if porcelain.auth_database != None:
+
+        plumbing.auth_database = porcelain.auth_database
+    if porcelain.port_override != None:
+
+        plumbing.port_override = porcelain.port_override
+    if porcelain.username != None:
+
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+
+        plumbing.password = porcelain.password
+    if porcelain.port != None:
+
+        plumbing.port = porcelain.port
+    if porcelain.replica_set != None:
+
+        plumbing.replica_set = porcelain.replica_set
+    if porcelain.connect_to_replica != None:
+
+        plumbing.connect_to_replica = porcelain.connect_to_replica
+    return plumbing
+
+
+def repeated_mongo_replica_set_to_plumbing(porcelains):
+    return [
+        mongo_replica_set_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def repeated_mongo_replica_set_to_porcelain(plumbings):
+    return [mongo_replica_set_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def athena_to_porcelain(plumbing):
