@@ -33,14 +33,14 @@ class Sybase:
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'password: ' + repr(self.password) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
             '>'
 
 
@@ -82,16 +82,16 @@ class Presto:
 
     def __repr__(self):
         return '<sdm.Presto ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'username: ' + repr(self.username) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -127,14 +127,14 @@ class Teradata:
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -170,14 +170,14 @@ class AmazonES:
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'region: ' + repr(self.region) + \
-            'secret_access_key: ' + repr(self.secret_access_key) + \
-            'endpoint: ' + repr(self.endpoint) + \
-            'access_key: ' + repr(self.access_key) + \
-            'port_override: ' + repr(self.port_override) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             '>'
 
 
@@ -216,15 +216,15 @@ class Elastic:
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -257,13 +257,13 @@ class Redis:
 
     def __repr__(self):
         return '<sdm.Redis ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port_override: ' + repr(self.port_override) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -299,14 +299,14 @@ class ElasticacheRedis:
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port_override: ' + repr(self.port_override) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -351,17 +351,17 @@ class Kubernetes:
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port: ' + repr(self.port) + \
-            'certificate_authority: ' + repr(self.certificate_authority) + \
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
-            'client_certificate: ' + repr(self.client_certificate) + \
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + \
-            'client_key: ' + repr(self.client_key) + \
-            'client_key_filename: ' + repr(self.client_key_filename) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
             '>'
 
 
@@ -394,13 +394,13 @@ class KubernetesBasicAuth:
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port: ' + repr(self.port) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
             '>'
 
 
@@ -442,16 +442,16 @@ class AmazonEKS:
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'endpoint: ' + repr(self.endpoint) + \
-            'access_key: ' + repr(self.access_key) + \
-            'secret_access_key: ' + repr(self.secret_access_key) + \
-            'certificate_authority: ' + repr(self.certificate_authority) + \
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
-            'region: ' + repr(self.region) + \
-            'cluster_name: ' + repr(self.cluster_name) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             '>'
 
 
@@ -487,14 +487,14 @@ class GoogleGKE:
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'endpoint: ' + repr(self.endpoint) + \
-            'certificate_authority: ' + repr(self.certificate_authority) + \
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + \
-            'service_account_key: ' + repr(self.service_account_key) + \
-            'service_account_key_filename: ' + repr(self.service_account_key_filename) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+            'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
             '>'
 
 
@@ -536,16 +536,16 @@ class Oracle:
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port: ' + repr(self.port) + \
-            'port_override: ' + repr(self.port_override) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -581,14 +581,14 @@ class DynamoDB:
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'access_key: ' + repr(self.access_key) + \
-            'secret_access_key: ' + repr(self.secret_access_key) + \
-            'region: ' + repr(self.region) + \
-            'endpoint: ' + repr(self.endpoint) + \
-            'port_override: ' + repr(self.port_override) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             '>'
 
 
@@ -624,14 +624,14 @@ class RDP:
 
     def __repr__(self):
         return '<sdm.RDP ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -667,14 +667,14 @@ class BigQuery:
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'private_key: ' + repr(self.private_key) + \
-            'project: ' + repr(self.project) + \
-            'port_override: ' + repr(self.port_override) + \
-            'endpoint: ' + repr(self.endpoint) + \
-            'username: ' + repr(self.username) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
+            'project: ' + repr(self.project) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
 
@@ -713,15 +713,15 @@ class Snowflake:
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'schema: ' + repr(self.schema) + \
-            'port_override: ' + repr(self.port_override) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             '>'
 
 
@@ -751,12 +751,12 @@ class Memcached:
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -798,16 +798,16 @@ class Postgres:
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -849,16 +849,16 @@ class AuroraPostgres:
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -900,16 +900,16 @@ class Greenplum:
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -951,16 +951,16 @@ class Cockroach:
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -1002,16 +1002,16 @@ class Redshift:
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -1044,13 +1044,13 @@ class SSH:
 
     def __repr__(self):
         return '<sdm.SSH ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'port: ' + repr(self.port) + \
-            'public_key: ' + repr(self.public_key) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
             '>'
 
 
@@ -1092,16 +1092,16 @@ class HTTPBasicAuth:
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'url: ' + repr(self.url) + \
-            'healthcheck_path: ' + repr(self.healthcheck_path) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'headers_blacklist: ' + repr(self.headers_blacklist) + \
-            'default_path: ' + repr(self.default_path) + \
-            'subdomain: ' + repr(self.subdomain) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             '>'
 
 
@@ -1137,14 +1137,14 @@ class HTTPNoAuth:
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'url: ' + repr(self.url) + \
-            'healthcheck_path: ' + repr(self.healthcheck_path) + \
-            'headers_blacklist: ' + repr(self.headers_blacklist) + \
-            'default_path: ' + repr(self.default_path) + \
-            'subdomain: ' + repr(self.subdomain) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             '>'
 
 
@@ -1183,15 +1183,15 @@ class HTTPAuth:
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'url: ' + repr(self.url) + \
-            'healthcheck_path: ' + repr(self.healthcheck_path) + \
-            'auth_header: ' + repr(self.auth_header) + \
-            'headers_blacklist: ' + repr(self.headers_blacklist) + \
-            'default_path: ' + repr(self.default_path) + \
-            'subdomain: ' + repr(self.subdomain) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'auth_header: ' + repr(self.auth_header) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             '>'
 
 
@@ -1230,15 +1230,15 @@ class Cassandra:
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -1277,15 +1277,15 @@ class Mysql:
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1324,15 +1324,15 @@ class AuroraMysql:
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1371,15 +1371,15 @@ class Clustrix:
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1418,15 +1418,15 @@ class Maria:
 
     def __repr__(self):
         return '<sdm.Maria ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1465,15 +1465,15 @@ class Memsql:
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'port: ' + repr(self.port) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1485,7 +1485,7 @@ class Memsql:
 # username:
 # password:
 # port:
-class DruID:
+class Druid:
     __slots__ = [
         'id',
         'name',
@@ -1508,15 +1508,15 @@ class DruID:
         self.port = None
 
     def __repr__(self):
-        return '<sdm.DruID ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
+        return '<sdm.Druid ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             '>'
 
 
@@ -1561,17 +1561,17 @@ class SQLServer:
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'database: ' + repr(self.database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'schema: ' + repr(self.schema) + \
-            'port: ' + repr(self.port) + \
-            'override_database: ' + repr(self.override_database) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
             '>'
 
 
@@ -1619,18 +1619,18 @@ class MongoLegacyHost:
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'auth_database: ' + repr(self.auth_database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
-            'replica_set: ' + repr(self.replica_set) + \
-            'connect_to_replica: ' + repr(self.connect_to_replica) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -1678,18 +1678,18 @@ class MongoLegacyReplicaset:
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'auth_database: ' + repr(self.auth_database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
-            'replica_set: ' + repr(self.replica_set) + \
-            'connect_to_replica: ' + repr(self.connect_to_replica) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -1734,17 +1734,17 @@ class MongoHost:
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'auth_database: ' + repr(self.auth_database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
-            'schema: ' + repr(self.schema) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -1792,18 +1792,18 @@ class MongoReplicaSet:
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'hostname: ' + repr(self.hostname) + \
-            'auth_database: ' + repr(self.auth_database) + \
-            'port_override: ' + repr(self.port_override) + \
-            'username: ' + repr(self.username) + \
-            'password: ' + repr(self.password) + \
-            'port: ' + repr(self.port) + \
-            'replica_set: ' + repr(self.replica_set) + \
-            'connect_to_replica: ' + repr(self.connect_to_replica) + \
-            'tls_required: ' + repr(self.tls_required) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
 
@@ -1839,14 +1839,14 @@ class Athena:
 
     def __repr__(self):
         return '<sdm.Athena ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'healthy: ' + repr(self.healthy) + \
-            'access_key: ' + repr(self.access_key) + \
-            'secret_access_key: ' + repr(self.secret_access_key) + \
-            'output: ' + repr(self.output) + \
-            'port_override: ' + repr(self.port_override) + \
-            'region: ' + repr(self.region) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'output: ' + repr(self.output) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
             '>'
 
 
@@ -1922,10 +1922,10 @@ class RateLimitMetadata:
 
     def __repr__(self):
         return '<sdm.RateLimitMetadata ' + \
-            'limit: ' + repr(self.limit) + \
-            'remaining: ' + repr(self.remaining) + \
-            'reset_at: ' + repr(self.reset_at) + \
-            'bucket: ' + repr(self.bucket) + \
+            'limit: ' + repr(self.limit) + ' ' +\
+            'remaining: ' + repr(self.remaining) + ' ' +\
+            'reset_at: ' + repr(self.reset_at) + ' ' +\
+            'bucket: ' + repr(self.bucket) + ' ' +\
             '>'
 
 
@@ -1951,10 +1951,10 @@ class NodeCreateResponse:
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'node: ' + repr(self.node) + \
-            'token: ' + repr(self.token) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -1976,9 +1976,9 @@ class NodeGetResponse:
 
     def __repr__(self):
         return '<sdm.NodeGetResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'node: ' + repr(self.node) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2001,9 +2001,9 @@ class NodeUpdateResponse:
 
     def __repr__(self):
         return '<sdm.NodeUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'node: ' + repr(self.node) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2022,8 +2022,8 @@ class NodeDeleteResponse:
 
     def __repr__(self):
         return '<sdm.NodeDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2046,9 +2046,9 @@ class Relay:
 
     def __repr__(self):
         return '<sdm.Relay ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'state: ' + repr(self.state) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'state: ' + repr(self.state) + ' ' +\
             '>'
 
 
@@ -2077,11 +2077,11 @@ class Gateway:
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'state: ' + repr(self.state) + \
-            'listen_address: ' + repr(self.listen_address) + \
-            'bind_address: ' + repr(self.bind_address) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'state: ' + repr(self.state) + ' ' +\
+            'listen_address: ' + repr(self.listen_address) + ' ' +\
+            'bind_address: ' + repr(self.bind_address) + ' ' +\
             '>'
 
 
@@ -2103,9 +2103,9 @@ class ResourceCreateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'resource: ' + repr(self.resource) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2127,9 +2127,9 @@ class ResourceGetResponse:
 
     def __repr__(self):
         return '<sdm.ResourceGetResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'resource: ' + repr(self.resource) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2152,9 +2152,9 @@ class ResourceUpdateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'resource: ' + repr(self.resource) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2173,8 +2173,8 @@ class ResourceDeleteResponse:
 
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2196,9 +2196,9 @@ class RoleAttachmentCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'role_attachment: ' + repr(self.role_attachment) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2220,9 +2220,9 @@ class RoleAttachmentGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'role_attachment: ' + repr(self.role_attachment) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2241,8 +2241,8 @@ class RoleAttachmentDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2265,9 +2265,9 @@ class RoleAttachment:
 
     def __repr__(self):
         return '<sdm.RoleAttachment ' + \
-            'id: ' + repr(self.id) + \
-            'composite_role_id: ' + repr(self.composite_role_id) + \
-            'attached_role_id: ' + repr(self.attached_role_id) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
+            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
             '>'
 
 
@@ -2290,9 +2290,9 @@ class RoleCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleCreateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'role: ' + repr(self.role) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2314,9 +2314,9 @@ class RoleGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleGetResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'role: ' + repr(self.role) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2339,9 +2339,9 @@ class RoleUpdateResponse:
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'role: ' + repr(self.role) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2360,8 +2360,8 @@ class RoleDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + \
-            'rate_limit: ' + repr(self.rate_limit) + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
 
@@ -2385,7 +2385,7 @@ class Role:
 
     def __repr__(self):
         return '<sdm.Role ' + \
-            'id: ' + repr(self.id) + \
-            'name: ' + repr(self.name) + \
-            'composite: ' + repr(self.composite) + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'composite: ' + repr(self.composite) + ' ' +\
             '>'
