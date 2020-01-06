@@ -130,85 +130,85 @@ def resource_to_plumbing(porcelain):
 
 
 def resource_to_porcelain(plumbing):
-    if plumbing.sybase != None:
+    if plumbing.HasField('sybase'):
         return sybase_to_porcelain(plumbing.sybase)
-    if plumbing.presto != None:
+    if plumbing.HasField('presto'):
         return presto_to_porcelain(plumbing.presto)
-    if plumbing.teradata != None:
+    if plumbing.HasField('teradata'):
         return teradata_to_porcelain(plumbing.teradata)
-    if plumbing.amazon_es != None:
+    if plumbing.HasField('amazon_es'):
         return amazon_es_to_porcelain(plumbing.amazon_es)
-    if plumbing.elastic != None:
+    if plumbing.HasField('elastic'):
         return elastic_to_porcelain(plumbing.elastic)
-    if plumbing.redis != None:
+    if plumbing.HasField('redis'):
         return redis_to_porcelain(plumbing.redis)
-    if plumbing.elasticache_redis != None:
+    if plumbing.HasField('elasticache_redis'):
         return elasticache_redis_to_porcelain(plumbing.elasticache_redis)
-    if plumbing.kubernetes != None:
+    if plumbing.HasField('kubernetes'):
         return kubernetes_to_porcelain(plumbing.kubernetes)
-    if plumbing.kubernetes_basic_auth != None:
+    if plumbing.HasField('kubernetes_basic_auth'):
         return kubernetes_basic_auth_to_porcelain(
             plumbing.kubernetes_basic_auth)
-    if plumbing.amazon_eks != None:
+    if plumbing.HasField('amazon_eks'):
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
-    if plumbing.google_gke != None:
+    if plumbing.HasField('google_gke'):
         return google_gke_to_porcelain(plumbing.google_gke)
-    if plumbing.oracle != None:
+    if plumbing.HasField('oracle'):
         return oracle_to_porcelain(plumbing.oracle)
-    if plumbing.dynamo_db != None:
+    if plumbing.HasField('dynamo_db'):
         return dynamo_db_to_porcelain(plumbing.dynamo_db)
-    if plumbing.rdp != None:
+    if plumbing.HasField('rdp'):
         return rdp_to_porcelain(plumbing.rdp)
-    if plumbing.big_query != None:
+    if plumbing.HasField('big_query'):
         return big_query_to_porcelain(plumbing.big_query)
-    if plumbing.snowflake != None:
+    if plumbing.HasField('snowflake'):
         return snowflake_to_porcelain(plumbing.snowflake)
-    if plumbing.memcached != None:
+    if plumbing.HasField('memcached'):
         return memcached_to_porcelain(plumbing.memcached)
-    if plumbing.postgres != None:
+    if plumbing.HasField('postgres'):
         return postgres_to_porcelain(plumbing.postgres)
-    if plumbing.aurora_postgres != None:
+    if plumbing.HasField('aurora_postgres'):
         return aurora_postgres_to_porcelain(plumbing.aurora_postgres)
-    if plumbing.greenplum != None:
+    if plumbing.HasField('greenplum'):
         return greenplum_to_porcelain(plumbing.greenplum)
-    if plumbing.cockroach != None:
+    if plumbing.HasField('cockroach'):
         return cockroach_to_porcelain(plumbing.cockroach)
-    if plumbing.redshift != None:
+    if plumbing.HasField('redshift'):
         return redshift_to_porcelain(plumbing.redshift)
-    if plumbing.ssh != None:
+    if plumbing.HasField('ssh'):
         return ssh_to_porcelain(plumbing.ssh)
-    if plumbing.http_basic_auth != None:
+    if plumbing.HasField('http_basic_auth'):
         return http_basic_auth_to_porcelain(plumbing.http_basic_auth)
-    if plumbing.http_no_auth != None:
+    if plumbing.HasField('http_no_auth'):
         return http_no_auth_to_porcelain(plumbing.http_no_auth)
-    if plumbing.http_auth != None:
+    if plumbing.HasField('http_auth'):
         return http_auth_to_porcelain(plumbing.http_auth)
-    if plumbing.cassandra != None:
+    if plumbing.HasField('cassandra'):
         return cassandra_to_porcelain(plumbing.cassandra)
-    if plumbing.mysql != None:
+    if plumbing.HasField('mysql'):
         return mysql_to_porcelain(plumbing.mysql)
-    if plumbing.aurora_mysql != None:
+    if plumbing.HasField('aurora_mysql'):
         return aurora_mysql_to_porcelain(plumbing.aurora_mysql)
-    if plumbing.clustrix != None:
+    if plumbing.HasField('clustrix'):
         return clustrix_to_porcelain(plumbing.clustrix)
-    if plumbing.maria != None:
+    if plumbing.HasField('maria'):
         return maria_to_porcelain(plumbing.maria)
-    if plumbing.memsql != None:
+    if plumbing.HasField('memsql'):
         return memsql_to_porcelain(plumbing.memsql)
-    if plumbing.druid != None:
+    if plumbing.HasField('druid'):
         return druid_to_porcelain(plumbing.druid)
-    if plumbing.sql_server != None:
+    if plumbing.HasField('sql_server'):
         return sql_server_to_porcelain(plumbing.sql_server)
-    if plumbing.mongo_legacy_host != None:
+    if plumbing.HasField('mongo_legacy_host'):
         return mongo_legacy_host_to_porcelain(plumbing.mongo_legacy_host)
-    if plumbing.mongo_legacy_replicaset != None:
+    if plumbing.HasField('mongo_legacy_replicaset'):
         return mongo_legacy_replicaset_to_porcelain(
             plumbing.mongo_legacy_replicaset)
-    if plumbing.mongo_host != None:
+    if plumbing.HasField('mongo_host'):
         return mongo_host_to_porcelain(plumbing.mongo_host)
-    if plumbing.mongo_replica_set != None:
+    if plumbing.HasField('mongo_replica_set'):
         return mongo_replica_set_to_porcelain(plumbing.mongo_replica_set)
-    if plumbing.athena != None:
+    if plumbing.HasField('athena'):
         return athena_to_porcelain(plumbing.athena)
     return None
 
@@ -2274,9 +2274,9 @@ def node_to_plumbing(porcelain):
 
 
 def node_to_porcelain(plumbing):
-    if plumbing.relay != None:
+    if plumbing.HasField('relay'):
         return relay_to_porcelain(plumbing.relay)
-    if plumbing.gateway != None:
+    if plumbing.HasField('gateway'):
         return gateway_to_porcelain(plumbing.gateway)
     return None
 
