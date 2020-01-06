@@ -1,7 +1,6 @@
 import grpc
 from . import plumbing
 from . import models
-
 from .options_pb2 import *
 from .options_pb2_grpc import *
 from .drivers_pb2 import *
@@ -45,7 +44,7 @@ class Nodes:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.NodeCreateResponse()
+            resp = models.NodeCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
@@ -73,7 +72,7 @@ class Nodes:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.NodeGetResponse()
+            resp = models.NodeGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
@@ -100,7 +99,7 @@ class Nodes:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.NodeUpdateResponse()
+            resp = models.NodeUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.node = plumbing.node_to_porcelain(plumbing_response.node)
@@ -127,7 +126,7 @@ class Nodes:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.NodeDeleteResponse()
+            resp = models.NodeDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
@@ -159,7 +158,6 @@ class Nodes:
                     raise plumbing.error_to_porcelain(e) from e
                 tries = 0
                 for plumbing_item in plumbing_response.nodes:
-
                     yield plumbing.node_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -192,7 +190,7 @@ class Resources:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.ResourceCreateResponse()
+            resp = models.ResourceCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.resource = plumbing.resource_to_porcelain(
@@ -220,7 +218,7 @@ class Resources:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.ResourceGetResponse()
+            resp = models.ResourceGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.resource = plumbing.resource_to_porcelain(
@@ -248,7 +246,7 @@ class Resources:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.ResourceUpdateResponse()
+            resp = models.ResourceUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.resource = plumbing.resource_to_porcelain(
@@ -276,7 +274,7 @@ class Resources:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.ResourceDeleteResponse()
+            resp = models.ResourceDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
@@ -309,7 +307,6 @@ class Resources:
                     raise plumbing.error_to_porcelain(e) from e
                 tries = 0
                 for plumbing_item in plumbing_response.resources:
-
                     yield plumbing.resource_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -348,7 +345,7 @@ class RoleAttachments:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleAttachmentCreateResponse()
+            resp = models.RoleAttachmentCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.role_attachment = plumbing.role_attachment_to_porcelain(
@@ -377,7 +374,7 @@ class RoleAttachments:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleAttachmentGetResponse()
+            resp = models.RoleAttachmentGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.role_attachment = plumbing.role_attachment_to_porcelain(
@@ -406,7 +403,7 @@ class RoleAttachments:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleAttachmentDeleteResponse()
+            resp = models.RoleAttachmentDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
@@ -439,7 +436,6 @@ class RoleAttachments:
                     raise plumbing.error_to_porcelain(e) from e
                 tries = 0
                 for plumbing_item in plumbing_response.role_attachments:
-
                     yield plumbing.role_attachment_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -477,7 +473,7 @@ class Roles:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleCreateResponse()
+            resp = models.RoleCreateResponse()
         resp.meta = plumbing.create_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
@@ -504,7 +500,7 @@ class Roles:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleGetResponse()
+            resp = models.RoleGetResponse()
         resp.meta = plumbing.get_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
@@ -531,7 +527,7 @@ class Roles:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleUpdateResponse()
+            resp = models.RoleUpdateResponse()
         resp.meta = plumbing.update_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.role = plumbing.role_to_porcelain(plumbing_response.role)
@@ -558,7 +554,7 @@ class Roles:
                     continue
                 raise plumbing.error_to_porcelain(e) from e
             break
-        resp = models.RoleDeleteResponse()
+            resp = models.RoleDeleteResponse()
         resp.meta = plumbing.delete_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
@@ -590,7 +586,6 @@ class Roles:
                     raise plumbing.error_to_porcelain(e) from e
                 tries = 0
                 for plumbing_item in plumbing_response.roles:
-
                     yield plumbing.role_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
