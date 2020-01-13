@@ -1,6 +1,233 @@
 import collections
 
 
+# CreateResponseMetadata is reserved for future use.
+class CreateResponseMetadata:
+    __slots__ = []
+
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return '<sdm.CreateResponseMetadata ' + \
+            '>'
+
+
+# GetResponseMetadata is reserved for future use.
+class GetResponseMetadata:
+    __slots__ = []
+
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return '<sdm.GetResponseMetadata ' + \
+            '>'
+
+
+# UpdateResponseMetadata is reserved for future use.
+class UpdateResponseMetadata:
+    __slots__ = []
+
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return '<sdm.UpdateResponseMetadata ' + \
+            '>'
+
+
+# DeleteResponseMetadata is reserved for future use.
+class DeleteResponseMetadata:
+    __slots__ = []
+
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return '<sdm.DeleteResponseMetadata ' + \
+            '>'
+
+
+# RateLimitMetadata contains information about remaining requests avaialable
+# to the user over some timeframe.
+# limit: How many total requests the user/token is authorized to make before being
+# rate limited.
+# remaining: How many remaining requests out of the limit are still avaialable.
+# reset_at: The time when remaining will be reset to limit.
+# bucket: The bucket this user/token is associated with, which may be shared between
+# multiple users/tokens.
+class RateLimitMetadata:
+    __slots__ = [
+        'limit',
+        'remaining',
+        'reset_at',
+        'bucket',
+    ]
+
+    def __init__(self):
+        self.limit = None
+        self.remaining = None
+        self.reset_at = None
+        self.bucket = None
+
+    def __repr__(self):
+        return '<sdm.RateLimitMetadata ' + \
+            'limit: ' + repr(self.limit) + ' ' +\
+            'remaining: ' + repr(self.remaining) + ' ' +\
+            'reset_at: ' + repr(self.reset_at) + ' ' +\
+            'bucket: ' + repr(self.bucket) + ' ' +\
+            '>'
+
+
+# AccountCreateResponse reports how the Accounts were created in the system.
+# meta: Reserved for future use.
+# account: The created Account.
+# token: The auth token generated for the Account. The Account will use this token to
+# authenticate with the strongDM API.
+# rate_limit: Rate limit information.
+class AccountCreateResponse:
+    __slots__ = [
+        'meta',
+        'account',
+        'token',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.account = None
+        self.token = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountGetResponse returns a requested Account.
+# meta: Reserved for future use.
+# account: The requested Account.
+# rate_limit: Rate limit information.
+class AccountGetResponse:
+    __slots__ = [
+        'meta',
+        'account',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.account = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountUpdateResponse returns the fields of a Account after it has been updated by
+# a AccountUpdateRequest.
+# meta: Reserved for future use.
+# account: The updated Account.
+# rate_limit: Rate limit information.
+class AccountUpdateResponse:
+    __slots__ = [
+        'meta',
+        'account',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.account = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountDeleteResponse returns information about a Account that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class AccountDeleteResponse:
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# A User can connect to resources they are granted directly, or granted
+# via roles.
+# id: Unique identifier of the User.
+# email: The User's email address. Must be unique.
+# first_name: The User's first name.
+# last_name: The User's last name.
+class User:
+    __slots__ = [
+        'id',
+        'email',
+        'first_name',
+        'last_name',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.email = None
+        self.first_name = None
+        self.last_name = None
+
+    def __repr__(self):
+        return '<sdm.User ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'email: ' + repr(self.email) + ' ' +\
+            'first_name: ' + repr(self.first_name) + ' ' +\
+            'last_name: ' + repr(self.last_name) + ' ' +\
+            '>'
+
+
+# A Service is a service account that can connect to resources they are granted
+# directly, or granted via roles. Services are typically automated jobs.
+# id: Unique identifier of the Service.
+# name: Unique human-readable name of the Service.
+class Service:
+    __slots__ = [
+        'id',
+        'name',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return '<sdm.Service ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            '>'
+
+
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
@@ -1847,85 +2074,6 @@ class Teradata:
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-
-# CreateResponseMetadata is reserved for future use.
-class CreateResponseMetadata:
-    __slots__ = []
-
-    def __init__(self):
-        pass
-
-    def __repr__(self):
-        return '<sdm.CreateResponseMetadata ' + \
-            '>'
-
-
-# GetResponseMetadata is reserved for future use.
-class GetResponseMetadata:
-    __slots__ = []
-
-    def __init__(self):
-        pass
-
-    def __repr__(self):
-        return '<sdm.GetResponseMetadata ' + \
-            '>'
-
-
-# UpdateResponseMetadata is reserved for future use.
-class UpdateResponseMetadata:
-    __slots__ = []
-
-    def __init__(self):
-        pass
-
-    def __repr__(self):
-        return '<sdm.UpdateResponseMetadata ' + \
-            '>'
-
-
-# DeleteResponseMetadata is reserved for future use.
-class DeleteResponseMetadata:
-    __slots__ = []
-
-    def __init__(self):
-        pass
-
-    def __repr__(self):
-        return '<sdm.DeleteResponseMetadata ' + \
-            '>'
-
-
-# RateLimitMetadata contains information about remaining requests avaialable
-# to the user over some timeframe.
-# limit: How many total requests the user/token is authorized to make before being
-# rate limited.
-# remaining: How many remaining requests out of the limit are still avaialable.
-# reset_at: The time when remaining will be reset to limit.
-# bucket: The bucket this user/token is associated with, which may be shared between
-# multiple users/tokens.
-class RateLimitMetadata:
-    __slots__ = [
-        'limit',
-        'remaining',
-        'reset_at',
-        'bucket',
-    ]
-
-    def __init__(self):
-        self.limit = None
-        self.remaining = None
-        self.reset_at = None
-        self.bucket = None
-
-    def __repr__(self):
-        return '<sdm.RateLimitMetadata ' + \
-            'limit: ' + repr(self.limit) + ' ' +\
-            'remaining: ' + repr(self.remaining) + ' ' +\
-            'reset_at: ' + repr(self.reset_at) + ' ' +\
-            'bucket: ' + repr(self.bucket) + ' ' +\
             '>'
 
 

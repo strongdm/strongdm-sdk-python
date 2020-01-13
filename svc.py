@@ -3,10 +3,12 @@ from . import plumbing
 from . import models
 from .options_pb2 import *
 from .options_pb2_grpc import *
-from .drivers_pb2 import *
-from .drivers_pb2_grpc import *
 from .spec_pb2 import *
 from .spec_pb2_grpc import *
+from .accounts_pb2 import *
+from .accounts_pb2_grpc import *
+from .drivers_pb2 import *
+from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
 from .resources_pb2 import *
@@ -15,6 +17,162 @@ from .role_attachments_pb2 import *
 from .role_attachments_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+
+
+# Accounts are users, services or tokens who connect to and act within the strongDM network.
+class Accounts:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountsStub(channel)
+
+    # Create registers a new Account.
+    def create(self, account, timeout=None):
+        req = AccountCreateRequest()
+
+        req.account.CopyFrom(plumbing.account_to_plumbing(account))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Accounts.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.account = plumbing.account_to_porcelain(plumbing_response.account)
+        resp.token = plumbing_response.token
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one Account by ID.
+    def get(self, id, timeout=None):
+        req = AccountGetRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Accounts.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.account = plumbing.account_to_porcelain(plumbing_response.account)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Update patches a Account by ID.
+    def update(self, account, timeout=None):
+        req = AccountUpdateRequest()
+
+        req.account.CopyFrom(plumbing.account_to_plumbing(account))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Accounts.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountUpdateResponse()
+        resp.meta = plumbing.update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.account = plumbing.account_to_porcelain(plumbing_response.account)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes a Account by ID.
+    def delete(self, id, timeout=None):
+        req = AccountDeleteRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Accounts.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of Accounts matching a given set of criteria.
+    def list(self, filter, *args, timeout=None):
+        req = AccountListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Accounts.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.accounts:
+                    yield plumbing.account_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 # Nodes are proxies in the strongDM network. They come in two flavors: relays,
