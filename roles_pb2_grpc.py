@@ -5,124 +5,118 @@ from . import roles_pb2 as roles__pb2
 
 
 class RolesStub(object):
-    """Roles are tools for controlling user access to resources. Each Role holds a
+  """Roles are tools for controlling user access to resources. Each Role holds a
   list of resources which they grant access to. Composite roles are a special
   type of Role which have no resource associations of their own, but instead
   grant access to the combined resources associated with a set of child roles.
   Each user can be a member of one Role or composite role.
   """
-    def __init__(self, channel):
-        """Constructor.
+
+  def __init__(self, channel):
+    """Constructor.
 
     Args:
       channel: A grpc.Channel.
     """
-        self.Create = channel.unary_unary(
-            '/v1.Roles/Create',
-            request_serializer=roles__pb2.RoleCreateRequest.SerializeToString,
-            response_deserializer=roles__pb2.RoleCreateResponse.FromString,
+    self.Create = channel.unary_unary(
+        '/v1.Roles/Create',
+        request_serializer=roles__pb2.RoleCreateRequest.SerializeToString,
+        response_deserializer=roles__pb2.RoleCreateResponse.FromString,
         )
-        self.Get = channel.unary_unary(
-            '/v1.Roles/Get',
-            request_serializer=roles__pb2.RoleGetRequest.SerializeToString,
-            response_deserializer=roles__pb2.RoleGetResponse.FromString,
+    self.Get = channel.unary_unary(
+        '/v1.Roles/Get',
+        request_serializer=roles__pb2.RoleGetRequest.SerializeToString,
+        response_deserializer=roles__pb2.RoleGetResponse.FromString,
         )
-        self.Update = channel.unary_unary(
-            '/v1.Roles/Update',
-            request_serializer=roles__pb2.RoleUpdateRequest.SerializeToString,
-            response_deserializer=roles__pb2.RoleUpdateResponse.FromString,
+    self.Update = channel.unary_unary(
+        '/v1.Roles/Update',
+        request_serializer=roles__pb2.RoleUpdateRequest.SerializeToString,
+        response_deserializer=roles__pb2.RoleUpdateResponse.FromString,
         )
-        self.Delete = channel.unary_unary(
-            '/v1.Roles/Delete',
-            request_serializer=roles__pb2.RoleDeleteRequest.SerializeToString,
-            response_deserializer=roles__pb2.RoleDeleteResponse.FromString,
+    self.Delete = channel.unary_unary(
+        '/v1.Roles/Delete',
+        request_serializer=roles__pb2.RoleDeleteRequest.SerializeToString,
+        response_deserializer=roles__pb2.RoleDeleteResponse.FromString,
         )
-        self.List = channel.unary_unary(
-            '/v1.Roles/List',
-            request_serializer=roles__pb2.RoleListRequest.SerializeToString,
-            response_deserializer=roles__pb2.RoleListResponse.FromString,
+    self.List = channel.unary_unary(
+        '/v1.Roles/List',
+        request_serializer=roles__pb2.RoleListRequest.SerializeToString,
+        response_deserializer=roles__pb2.RoleListResponse.FromString,
         )
 
 
 class RolesServicer(object):
-    """Roles are tools for controlling user access to resources. Each Role holds a
+  """Roles are tools for controlling user access to resources. Each Role holds a
   list of resources which they grant access to. Composite roles are a special
   type of Role which have no resource associations of their own, but instead
   grant access to the combined resources associated with a set of child roles.
   Each user can be a member of one Role or composite role.
   """
-    def Create(self, request, context):
-        """Create registers a new Role.
-    """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
 
-    def Get(self, request, context):
-        """Get reads one Role by ID.
+  def Create(self, request, context):
+    """Create registers a new Role.
     """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
-        """Update patches a Role by ID.
+  def Get(self, request, context):
+    """Get reads one Role by ID.
     """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
-        """Delete removes a Role by ID.
+  def Update(self, request, context):
+    """Update patches a Role by ID.
     """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
-    def List(self, request, context):
-        """List gets a list of Roles matching a given set of criteria.
+  def Delete(self, request, context):
+    """Delete removes a Role by ID.
     """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def List(self, request, context):
+    """List gets a list of Roles matching a given set of criteria.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
 
 def add_RolesServicer_to_server(servicer, server):
-    rpc_method_handlers = {
-        'Create':
-        grpc.unary_unary_rpc_method_handler(
-            servicer.Create,
-            request_deserializer=roles__pb2.RoleCreateRequest.FromString,
-            response_serializer=roles__pb2.RoleCreateResponse.
-            SerializeToString,
-        ),
-        'Get':
-        grpc.unary_unary_rpc_method_handler(
-            servicer.Get,
-            request_deserializer=roles__pb2.RoleGetRequest.FromString,
-            response_serializer=roles__pb2.RoleGetResponse.SerializeToString,
-        ),
-        'Update':
-        grpc.unary_unary_rpc_method_handler(
-            servicer.Update,
-            request_deserializer=roles__pb2.RoleUpdateRequest.FromString,
-            response_serializer=roles__pb2.RoleUpdateResponse.
-            SerializeToString,
-        ),
-        'Delete':
-        grpc.unary_unary_rpc_method_handler(
-            servicer.Delete,
-            request_deserializer=roles__pb2.RoleDeleteRequest.FromString,
-            response_serializer=roles__pb2.RoleDeleteResponse.
-            SerializeToString,
-        ),
-        'List':
-        grpc.unary_unary_rpc_method_handler(
-            servicer.List,
-            request_deserializer=roles__pb2.RoleListRequest.FromString,
-            response_serializer=roles__pb2.RoleListResponse.SerializeToString,
-        ),
-    }
-    generic_handler = grpc.method_handlers_generic_handler(
-        'v1.Roles', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler, ))
+  rpc_method_handlers = {
+      'Create': grpc.unary_unary_rpc_method_handler(
+          servicer.Create,
+          request_deserializer=roles__pb2.RoleCreateRequest.FromString,
+          response_serializer=roles__pb2.RoleCreateResponse.SerializeToString,
+      ),
+      'Get': grpc.unary_unary_rpc_method_handler(
+          servicer.Get,
+          request_deserializer=roles__pb2.RoleGetRequest.FromString,
+          response_serializer=roles__pb2.RoleGetResponse.SerializeToString,
+      ),
+      'Update': grpc.unary_unary_rpc_method_handler(
+          servicer.Update,
+          request_deserializer=roles__pb2.RoleUpdateRequest.FromString,
+          response_serializer=roles__pb2.RoleUpdateResponse.SerializeToString,
+      ),
+      'Delete': grpc.unary_unary_rpc_method_handler(
+          servicer.Delete,
+          request_deserializer=roles__pb2.RoleDeleteRequest.FromString,
+          response_serializer=roles__pb2.RoleDeleteResponse.SerializeToString,
+      ),
+      'List': grpc.unary_unary_rpc_method_handler(
+          servicer.List,
+          request_deserializer=roles__pb2.RoleListRequest.FromString,
+          response_serializer=roles__pb2.RoleListResponse.SerializeToString,
+      ),
+  }
+  generic_handler = grpc.method_handlers_generic_handler(
+      'v1.Roles', rpc_method_handlers)
+  server.add_generic_rpc_handlers((generic_handler,))
