@@ -1236,7 +1236,6 @@ def mongo_legacy_host_to_porcelain(plumbing):
     porcelain.password = plumbing.password
     porcelain.port = plumbing.port
     porcelain.replica_set = plumbing.replica_set
-    porcelain.connect_to_replica = plumbing.connect_to_replica
     porcelain.tls_required = plumbing.tls_required
     return porcelain
 
@@ -1263,8 +1262,6 @@ def mongo_legacy_host_to_plumbing(porcelain):
         plumbing.port = porcelain.port
     if porcelain.replica_set != None:
         plumbing.replica_set = porcelain.replica_set
-    if porcelain.connect_to_replica != None:
-        plumbing.connect_to_replica = porcelain.connect_to_replica
     if porcelain.tls_required != None:
         plumbing.tls_required = porcelain.tls_required
     return plumbing
@@ -1351,7 +1348,6 @@ def mongo_host_to_porcelain(plumbing):
     porcelain.username = plumbing.username
     porcelain.password = plumbing.password
     porcelain.port = plumbing.port
-    porcelain.schema = plumbing.schema
     porcelain.tls_required = plumbing.tls_required
     return porcelain
 
@@ -1376,8 +1372,6 @@ def mongo_host_to_plumbing(porcelain):
         plumbing.password = porcelain.password
     if porcelain.port != None:
         plumbing.port = porcelain.port
-    if porcelain.schema != None:
-        plumbing.schema = porcelain.schema
     if porcelain.tls_required != None:
         plumbing.tls_required = porcelain.tls_required
     return plumbing

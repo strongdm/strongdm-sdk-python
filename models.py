@@ -911,7 +911,6 @@ class Memcached:
 # password:
 # port:
 # replica_set:
-# connect_to_replica:
 # tls_required:
 class MongoLegacyHost:
     __slots__ = [
@@ -925,7 +924,6 @@ class MongoLegacyHost:
         'password',
         'port',
         'replica_set',
-        'connect_to_replica',
         'tls_required',
     ]
 
@@ -940,7 +938,6 @@ class MongoLegacyHost:
         self.password = None
         self.port = None
         self.replica_set = None
-        self.connect_to_replica = None
         self.tls_required = None
 
     def __repr__(self):
@@ -955,7 +952,6 @@ class MongoLegacyHost:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
@@ -1028,7 +1024,6 @@ class MongoLegacyReplicaset:
 # username:
 # password:
 # port:
-# schema:
 # tls_required:
 class MongoHost:
     __slots__ = [
@@ -1041,7 +1036,6 @@ class MongoHost:
         'username',
         'password',
         'port',
-        'schema',
         'tls_required',
     ]
 
@@ -1055,7 +1049,6 @@ class MongoHost:
         self.username = None
         self.password = None
         self.port = None
-        self.schema = None
         self.tls_required = None
 
     def __repr__(self):
@@ -1069,7 +1062,6 @@ class MongoHost:
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
-            'schema: ' + repr(self.schema) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
