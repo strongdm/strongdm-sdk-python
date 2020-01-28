@@ -870,6 +870,41 @@ class GoogleGKE:
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
+# port:
+# token:
+class KubernetesServiceAccount:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'token',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.healthy = None
+        self.hostname = None
+        self.port = None
+        self.token = None
+
+    def __repr__(self):
+        return '<sdm.KubernetesServiceAccount ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
 # port_override:
 # port:
 class Memcached:

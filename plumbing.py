@@ -418,6 +418,9 @@ def resource_to_plumbing(porcelain):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKE):
         plumbing.google_gke.CopyFrom(google_gke_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesServiceAccount):
+        plumbing.kubernetes_service_account.CopyFrom(
+            kubernetes_service_account_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(memcached_to_plumbing(porcelain))
     if isinstance(porcelain, models.MongoLegacyHost):
@@ -506,6 +509,9 @@ def resource_to_porcelain(plumbing):
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.HasField('google_gke'):
         return google_gke_to_porcelain(plumbing.google_gke)
+    if plumbing.HasField('kubernetes_service_account'):
+        return kubernetes_service_account_to_porcelain(
+            plumbing.kubernetes_service_account)
     if plumbing.HasField('memcached'):
         return memcached_to_porcelain(plumbing.memcached)
     if plumbing.HasField('mongo_legacy_host'):
@@ -1186,6 +1192,48 @@ def repeated_google_gke_to_plumbing(porcelains):
 
 def repeated_google_gke_to_porcelain(plumbings):
     return [google_gke_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def kubernetes_service_account_to_porcelain(plumbing):
+    porcelain = models.KubernetesServiceAccount()
+    porcelain.id = plumbing.id
+    porcelain.name = plumbing.name
+    porcelain.healthy = plumbing.healthy
+    porcelain.hostname = plumbing.hostname
+    porcelain.port = plumbing.port
+    porcelain.token = plumbing.token
+    return porcelain
+
+
+def kubernetes_service_account_to_plumbing(porcelain):
+    plumbing = KubernetesServiceAccount()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+        plumbing.port = porcelain.port
+    if porcelain.token != None:
+        plumbing.token = porcelain.token
+    return plumbing
+
+
+def repeated_kubernetes_service_account_to_plumbing(porcelains):
+    return [
+        kubernetes_service_account_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_kubernetes_service_account_to_porcelain(plumbings):
+    return [
+        kubernetes_service_account_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def memcached_to_porcelain(plumbing):
