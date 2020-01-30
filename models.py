@@ -80,6 +80,100 @@ class RateLimitMetadata:
             '>'
 
 
+# AccountGrantCreateResponse reports how the AccountGrants were created in the system.
+# meta: Reserved for future use.
+# account_grant: The created AccountGrant.
+# rate_limit: Rate limit information.
+class AccountGrantCreateResponse:
+    __slots__ = [
+        'meta',
+        'account_grant',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.account_grant = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountGrantCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountGrantGetResponse returns a requested AccountGrant.
+# meta: Reserved for future use.
+# account_grant: The requested AccountGrant.
+# rate_limit: Rate limit information.
+class AccountGrantGetResponse:
+    __slots__ = [
+        'meta',
+        'account_grant',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.account_grant = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountGrantGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class AccountGrantDeleteResponse:
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.AccountGrantDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# A AccountGrant connects a composite role to another role, granting members
+# of the composite role the permissions granted to the attached role.
+# id: Unique identifier of the AccountGrant.
+# TODO: add strong ID
+# resource_id: The id of the composite role of this AccountGrant.
+# account_id: The id of the attached role of this AccountGrant.
+class AccountGrant:
+    __slots__ = [
+        'id',
+        'resource_id',
+        'account_id',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.resource_id = None
+        self.account_id = None
+
+    def __repr__(self):
+        return '<sdm.AccountGrant ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            '>'
+
+
 # AccountCreateResponse reports how the Accounts were created in the system.
 # meta: Reserved for future use.
 # account: The created Account.
@@ -2563,98 +2657,4 @@ class Role:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'composite: ' + repr(self.composite) + ' ' +\
-            '>'
-
-
-# UserGrantCreateResponse reports how the UserGrants were created in the system.
-# meta: Reserved for future use.
-# user_grant: The created UserGrant.
-# rate_limit: Rate limit information.
-class UserGrantCreateResponse:
-    __slots__ = [
-        'meta',
-        'user_grant',
-        'rate_limit',
-    ]
-
-    def __init__(self):
-        self.meta = None
-        self.user_grant = None
-        self.rate_limit = None
-
-    def __repr__(self):
-        return '<sdm.UserGrantCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'user_grant: ' + repr(self.user_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-
-# UserGrantGetResponse returns a requested UserGrant.
-# meta: Reserved for future use.
-# user_grant: The requested UserGrant.
-# rate_limit: Rate limit information.
-class UserGrantGetResponse:
-    __slots__ = [
-        'meta',
-        'user_grant',
-        'rate_limit',
-    ]
-
-    def __init__(self):
-        self.meta = None
-        self.user_grant = None
-        self.rate_limit = None
-
-    def __repr__(self):
-        return '<sdm.UserGrantGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'user_grant: ' + repr(self.user_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-
-# UserGrantDeleteResponse returns information about a UserGrant that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
-class UserGrantDeleteResponse:
-    __slots__ = [
-        'meta',
-        'rate_limit',
-    ]
-
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
-
-    def __repr__(self):
-        return '<sdm.UserGrantDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-
-# A UserGrant connects a composite role to another role, granting members
-# of the composite role the permissions granted to the attached role.
-# id: Unique identifier of the UserGrant.
-# TODO: add strong ID
-# resource_id: The id of the composite role of this UserGrant.
-# user_id: The id of the attached role of this UserGrant.
-class UserGrant:
-    __slots__ = [
-        'id',
-        'resource_id',
-        'user_id',
-    ]
-
-    def __init__(self):
-        self.id = None
-        self.resource_id = None
-        self.user_id = None
-
-    def __repr__(self):
-        return '<sdm.UserGrant ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'resource_id: ' + repr(self.resource_id) + ' ' +\
-            'user_id: ' + repr(self.user_id) + ' ' +\
             '>'

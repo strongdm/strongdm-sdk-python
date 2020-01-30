@@ -30,12 +30,12 @@ class Client:
             if addr.endswith('443'):
                 creds = grpc.ssl_channel_credentials()
                 channel = grpc.secure_channel(addr, creds)
+            self.account_grants = svc.AccountGrants(channel, self)
             self.accounts = svc.Accounts(channel, self)
             self.nodes = svc.Nodes(channel, self)
             self.resources = svc.Resources(channel, self)
             self.role_attachments = svc.RoleAttachments(channel, self)
             self.roles = svc.Roles(channel, self)
-            self.user_grants = svc.UserGrants(channel, self)
         except Exception as e:
             raise plumbing.error_to_porcelain(e) from e
         self._test_options = {}
