@@ -2564,3 +2564,97 @@ class Role:
             'name: ' + repr(self.name) + ' ' +\
             'composite: ' + repr(self.composite) + ' ' +\
             '>'
+
+
+# UserGrantCreateResponse reports how the UserGrants were created in the system.
+# meta: Reserved for future use.
+# user_grant: The created UserGrant.
+# rate_limit: Rate limit information.
+class UserGrantCreateResponse:
+    __slots__ = [
+        'meta',
+        'user_grant',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.user_grant = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.UserGrantCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'user_grant: ' + repr(self.user_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# UserGrantGetResponse returns a requested UserGrant.
+# meta: Reserved for future use.
+# user_grant: The requested UserGrant.
+# rate_limit: Rate limit information.
+class UserGrantGetResponse:
+    __slots__ = [
+        'meta',
+        'user_grant',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.user_grant = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.UserGrantGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'user_grant: ' + repr(self.user_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# UserGrantDeleteResponse returns information about a UserGrant that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class UserGrantDeleteResponse:
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(self):
+        self.meta = None
+        self.rate_limit = None
+
+    def __repr__(self):
+        return '<sdm.UserGrantDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# A UserGrant connects a composite role to another role, granting members
+# of the composite role the permissions granted to the attached role.
+# id: Unique identifier of the UserGrant.
+# TODO: add strong ID
+# resource_id: The id of the composite role of this UserGrant.
+# user_id: The id of the attached role of this UserGrant.
+class UserGrant:
+    __slots__ = [
+        'id',
+        'resource_id',
+        'user_id',
+    ]
+
+    def __init__(self):
+        self.id = None
+        self.resource_id = None
+        self.user_id = None
+
+    def __repr__(self):
+        return '<sdm.UserGrant ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'user_id: ' + repr(self.user_id) + ' ' +\
+            '>'

@@ -17,6 +17,8 @@ from .role_attachments_pb2 import *
 from .role_attachments_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+from .user_grants_pb2 import *
+from .user_grants_pb2_grpc import *
 
 
 # Accounts are users, services or tokens who connect to and act within the strongDM network.
@@ -779,6 +781,140 @@ class Roles:
                 tries = 0
                 for plumbing_item in plumbing_response.roles:
                     yield plumbing.role_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+# UserGrants represent relationships between composite roles and the roles
+# that make up those composite roles. When a composite role is attached to another
+# role, the permissions granted to members of the composite role are augmented to
+# include the permissions granted to members of the attached role.
+class UserGrants:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = UserGrantsStub(channel)
+
+    # Create registers a new UserGrant.
+    def create(self, user_grant, timeout=None):
+        req = UserGrantCreateRequest()
+
+        req.user_grant.CopyFrom(plumbing.user_grant_to_plumbing(user_grant))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('UserGrants.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.UserGrantCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.user_grant = plumbing.user_grant_to_porcelain(
+            plumbing_response.user_grant)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one UserGrant by ID.
+    def get(self, id, timeout=None):
+        req = UserGrantGetRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('UserGrants.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.UserGrantGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.user_grant = plumbing.user_grant_to_porcelain(
+            plumbing_response.user_grant)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes a UserGrant by ID.
+    def delete(self, id, timeout=None):
+        req = UserGrantDeleteRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('UserGrants.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.UserGrantDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of UserGrants matching a given set of criteria.
+    def list(self, filter, *args, timeout=None):
+        req = UserGrantListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'UserGrants.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.user_grants:
+                    yield plumbing.user_grant_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

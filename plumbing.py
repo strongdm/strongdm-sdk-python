@@ -14,6 +14,7 @@ from .nodes_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .roles_pb2 import *
+from .user_grants_pb2 import *
 
 
 def quote_filter_args(filter, *args):
@@ -3030,6 +3031,135 @@ def repeated_role_to_plumbing(porcelains):
 
 def repeated_role_to_porcelain(plumbings):
     return [role_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def user_grant_create_response_to_porcelain(plumbing):
+    porcelain = models.UserGrantCreateResponse()
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.user_grant = user_grant_to_porcelain(plumbing.user_grant)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def user_grant_create_response_to_plumbing(porcelain):
+    plumbing = UserGrantCreateResponse()
+    if porcelain.meta != None:
+        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+    if porcelain.user_grant != None:
+        plumbing.user_grant = user_grant_to_plumbing(porcelain.user_grant)
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+    return plumbing
+
+
+def repeated_user_grant_create_response_to_plumbing(porcelains):
+    return [
+        user_grant_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_user_grant_create_response_to_porcelain(plumbings):
+    return [
+        user_grant_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def user_grant_get_response_to_porcelain(plumbing):
+    porcelain = models.UserGrantGetResponse()
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.user_grant = user_grant_to_porcelain(plumbing.user_grant)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def user_grant_get_response_to_plumbing(porcelain):
+    plumbing = UserGrantGetResponse()
+    if porcelain.meta != None:
+        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+    if porcelain.user_grant != None:
+        plumbing.user_grant = user_grant_to_plumbing(porcelain.user_grant)
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+    return plumbing
+
+
+def repeated_user_grant_get_response_to_plumbing(porcelains):
+    return [
+        user_grant_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_user_grant_get_response_to_porcelain(plumbings):
+    return [
+        user_grant_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def user_grant_delete_response_to_porcelain(plumbing):
+    porcelain = models.UserGrantDeleteResponse()
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def user_grant_delete_response_to_plumbing(porcelain):
+    plumbing = UserGrantDeleteResponse()
+    if porcelain.meta != None:
+        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
+            porcelain.rate_limit)
+    return plumbing
+
+
+def repeated_user_grant_delete_response_to_plumbing(porcelains):
+    return [
+        user_grant_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_user_grant_delete_response_to_porcelain(plumbings):
+    return [
+        user_grant_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def user_grant_to_porcelain(plumbing):
+    porcelain = models.UserGrant()
+    porcelain.id = plumbing.id
+    porcelain.resource_id = plumbing.resource_id
+    porcelain.user_id = plumbing.user_id
+    return porcelain
+
+
+def user_grant_to_plumbing(porcelain):
+    plumbing = UserGrant()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.resource_id != None:
+        plumbing.resource_id = porcelain.resource_id
+    if porcelain.user_id != None:
+        plumbing.user_id = porcelain.user_id
+    return plumbing
+
+
+def repeated_user_grant_to_plumbing(porcelains):
+    return [user_grant_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_user_grant_to_porcelain(plumbings):
+    return [user_grant_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def is_status_detail(x):
