@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\025AccountGrantsPlumbing'),
-  serialized_pb=_b('\n\x14\x61\x63\x63ount_grants.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"y\n\x19\x41\x63\x63ountGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xca\x01\n\x1a\x41\x63\x63ountGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"V\n\x16\x41\x63\x63ountGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc4\x01\n\x17\x41\x63\x63ountGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x19\x41\x63\x63ountGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x95\x01\n\x1a\x41\x63\x63ountGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x17\x41\x63\x63ountGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xaf\x01\n\x18\x41\x63\x63ountGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x34\n\x0e\x61\x63\x63ount_grants\x18\x02 \x03(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe1\x02\n\x0c\x41\x63\x63ountGrant\x12,\n\x02id\x18\x01 \x01(\tB \xf2\xf8\xb3\x07\x1b\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nPermission\x12?\n\x0bresource_id\x18\x02 \x01(\tB*\xf2\xf8\xb3\x07%\xa2\xf3\xb3\x07\x0c\x44\x61tasourceID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12\x32\n\naccount_id\x18\x03 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x06UserID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04User:\xad\x01\xfa\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nPermission\xa8\xf3\xb3\x07\x01\x92\x41\x90\x01*J\n\x0f\x41 AccountGrant.\x12\x37https://www.strongdm.com/docs/api/entities#AccountGrant2B\x12@{ \"id\": \"ug-244\", \"resource_id\": \"rs-111\", \"account_id\":\"a-444\"}2\x9f\x04\n\rAccountGrants\x12\xce\x01\n\x06\x43reate\x12\x1d.v1.AccountGrantCreateRequest\x1a\x1e.v1.AccountGrantCreateResponse\"\x84\x01\x82\xd3\xe4\x93\x02\x16\"\x11/v1/accountGrants:\x01*\x92\x41\x65\"c\n Learn how to make a AccountGrant\x12?https://www.strongdm.com/docs/api/services/AccountGrants#Create\x12^\n\x03Get\x12\x1a.v1.AccountGrantGetRequest\x1a\x1b.v1.AccountGrantGetResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/accountGrants/{id}\x12g\n\x06\x44\x65lete\x12\x1d.v1.AccountGrantDeleteRequest\x1a\x1e.v1.AccountGrantDeleteResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/accountGrants/{id}\x12\\\n\x04List\x12\x1b.v1.AccountGrantListRequest\x1a\x1c.v1.AccountGrantListResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/accountGrants\x1a\x16\xca\xf9\xb3\x07\x11\xc2\xf9\xb3\x07\x0c\x41\x63\x63ountGrantB5\n\x1c\x63om.strongdm.api.v1.plumbingB\x15\x41\x63\x63ountGrantsPlumbingb\x06proto3')
+  serialized_pb=_b('\n\x14\x61\x63\x63ount_grants.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"y\n\x19\x41\x63\x63ountGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xca\x01\n\x1a\x41\x63\x63ountGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"V\n\x16\x41\x63\x63ountGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc4\x01\n\x17\x41\x63\x63ountGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x19\x41\x63\x63ountGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x95\x01\n\x1a\x41\x63\x63ountGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x17\x41\x63\x63ountGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xaf\x01\n\x18\x41\x63\x63ountGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x34\n\x0e\x61\x63\x63ount_grants\x18\x02 \x03(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf7\x03\n\x0c\x41\x63\x63ountGrant\x12,\n\x02id\x18\x01 \x01(\tB \xf2\xf8\xb3\x07\x1b\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nPermission\x12?\n\x0bresource_id\x18\x02 \x01(\tB*\xf2\xf8\xb3\x07%\xa2\xf3\xb3\x07\x0c\x44\x61tasourceID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12\x32\n\naccount_id\x18\x03 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x06UserID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04User\x12H\n\nstart_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tStartFrom\xb0\xf3\xb3\x07\x01\x12J\n\x0bvalid_until\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x19\xf2\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nValidUntil\xb0\xf3\xb3\x07\x01:\xad\x01\xfa\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nPermission\xa8\xf3\xb3\x07\x01\x92\x41\x90\x01*J\n\x0f\x41 AccountGrant.\x12\x37https://www.strongdm.com/docs/api/entities#AccountGrant2B\x12@{ \"id\": \"ug-244\", \"resource_id\": \"rs-111\", \"account_id\":\"a-444\"}2\x9f\x04\n\rAccountGrants\x12\xce\x01\n\x06\x43reate\x12\x1d.v1.AccountGrantCreateRequest\x1a\x1e.v1.AccountGrantCreateResponse\"\x84\x01\x82\xd3\xe4\x93\x02\x16\"\x11/v1/accountGrants:\x01*\x92\x41\x65\"c\n Learn how to make a AccountGrant\x12?https://www.strongdm.com/docs/api/services/AccountGrants#Create\x12^\n\x03Get\x12\x1a.v1.AccountGrantGetRequest\x1a\x1b.v1.AccountGrantGetResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/accountGrants/{id}\x12g\n\x06\x44\x65lete\x12\x1d.v1.AccountGrantDeleteRequest\x1a\x1e.v1.AccountGrantDeleteResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/accountGrants/{id}\x12\\\n\x04List\x12\x1b.v1.AccountGrantListRequest\x1a\x1c.v1.AccountGrantListResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/accountGrants\x1a\x16\xca\xf9\xb3\x07\x11\xc2\xf9\xb3\x07\x0c\x41\x63\x63ountGrantB5\n\x1c\x63om.strongdm.api.v1.plumbingB\x15\x41\x63\x63ountGrantsPlumbingb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
 
 
@@ -64,8 +65,8 @@ _ACCOUNTGRANTCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=131,
-  serialized_end=252,
+  serialized_start=164,
+  serialized_end=285,
 )
 
 
@@ -109,8 +110,8 @@ _ACCOUNTGRANTCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=255,
-  serialized_end=457,
+  serialized_start=288,
+  serialized_end=490,
 )
 
 
@@ -147,8 +148,8 @@ _ACCOUNTGRANTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=545,
+  serialized_start=492,
+  serialized_end=578,
 )
 
 
@@ -192,8 +193,8 @@ _ACCOUNTGRANTGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=548,
-  serialized_end=744,
+  serialized_start=581,
+  serialized_end=777,
 )
 
 
@@ -230,8 +231,8 @@ _ACCOUNTGRANTDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=746,
-  serialized_end=838,
+  serialized_start=779,
+  serialized_end=871,
 )
 
 
@@ -268,8 +269,8 @@ _ACCOUNTGRANTDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=841,
-  serialized_end=990,
+  serialized_start=874,
+  serialized_end=1023,
 )
 
 
@@ -306,8 +307,8 @@ _ACCOUNTGRANTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=992,
-  serialized_end=1084,
+  serialized_start=1025,
+  serialized_end=1117,
 )
 
 
@@ -351,8 +352,8 @@ _ACCOUNTGRANTLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1087,
-  serialized_end=1262,
+  serialized_start=1120,
+  serialized_end=1295,
 )
 
 
@@ -384,6 +385,20 @@ _ACCOUNTGRANT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\031\242\363\263\007\006UserID\260\363\263\007\001\312\363\263\007\004User'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_from', full_name='v1.AccountGrant.start_from', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\362\370\263\007\023\242\363\263\007\tStartFrom\260\363\263\007\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='valid_until', full_name='v1.AccountGrant.valid_until', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\362\370\263\007\024\242\363\263\007\nValidUntil\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -396,8 +411,8 @@ _ACCOUNTGRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1265,
-  serialized_end=1618,
+  serialized_start=1298,
+  serialized_end=1801,
 )
 
 _ACCOUNTGRANTCREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -416,6 +431,8 @@ _ACCOUNTGRANTLISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTRE
 _ACCOUNTGRANTLISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
 _ACCOUNTGRANTLISTRESPONSE.fields_by_name['account_grants'].message_type = _ACCOUNTGRANT
 _ACCOUNTGRANTLISTRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
+_ACCOUNTGRANT.fields_by_name['start_from'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_ACCOUNTGRANT.fields_by_name['valid_until'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['AccountGrantCreateRequest'] = _ACCOUNTGRANTCREATEREQUEST
 DESCRIPTOR.message_types_by_name['AccountGrantCreateResponse'] = _ACCOUNTGRANTCREATERESPONSE
 DESCRIPTOR.message_types_by_name['AccountGrantGetRequest'] = _ACCOUNTGRANTGETREQUEST
@@ -512,6 +529,8 @@ _ACCOUNTGRANTLISTRESPONSE.fields_by_name['rate_limit']._options = None
 _ACCOUNTGRANT.fields_by_name['id']._options = None
 _ACCOUNTGRANT.fields_by_name['resource_id']._options = None
 _ACCOUNTGRANT.fields_by_name['account_id']._options = None
+_ACCOUNTGRANT.fields_by_name['start_from']._options = None
+_ACCOUNTGRANT.fields_by_name['valid_until']._options = None
 _ACCOUNTGRANT._options = None
 
 _ACCOUNTGRANTS = _descriptor.ServiceDescriptor(
@@ -520,8 +539,8 @@ _ACCOUNTGRANTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=_b('\312\371\263\007\021\302\371\263\007\014AccountGrant'),
-  serialized_start=1621,
-  serialized_end=2164,
+  serialized_start=1804,
+  serialized_end=2347,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

@@ -281,6 +281,8 @@ def account_grant_to_porcelain(plumbing):
     porcelain.id = plumbing.id
     porcelain.resource_id = plumbing.resource_id
     porcelain.account_id = plumbing.account_id
+    porcelain.start_from = timestamp_to_porcelain(plumbing.start_from)
+    porcelain.valid_until = timestamp_to_porcelain(plumbing.valid_until)
     return porcelain
 
 
@@ -292,6 +294,10 @@ def account_grant_to_plumbing(porcelain):
         plumbing.resource_id = porcelain.resource_id
     if porcelain.account_id != None:
         plumbing.account_id = porcelain.account_id
+    if porcelain.start_from != None:
+        plumbing.start_from = timestamp_to_plumbing(porcelain.start_from)
+    if porcelain.valid_until != None:
+        plumbing.valid_until = timestamp_to_plumbing(porcelain.valid_until)
     return plumbing
 
 

@@ -151,26 +151,35 @@ class AccountGrantDeleteResponse:
 # A AccountGrant connects a composite role to another role, granting members
 # of the composite role the permissions granted to the attached role.
 # id: Unique identifier of the AccountGrant.
-# TODO: add strong ID
 # resource_id: The id of the composite role of this AccountGrant.
 # account_id: The id of the attached role of this AccountGrant.
+# start_from: The timestamp when the resource will be granted. Optional. Both start_at
+# and end_at must be defined together, or not defined at all.
+# valid_until: The timestamp when the resource grant will expire. Optional. Both
+# start_at and end_at must be defined together, or not defined at all.
 class AccountGrant:
     __slots__ = [
         'id',
         'resource_id',
         'account_id',
+        'start_from',
+        'valid_until',
     ]
 
     def __init__(self):
         self.id = None
         self.resource_id = None
         self.account_id = None
+        self.start_from = None
+        self.valid_until = None
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
             'id: ' + repr(self.id) + ' ' +\
             'resource_id: ' + repr(self.resource_id) + ' ' +\
             'account_id: ' + repr(self.account_id) + ' ' +\
+            'start_from: ' + repr(self.start_from) + ' ' +\
+            'valid_until: ' + repr(self.valid_until) + ' ' +\
             '>'
 
 
