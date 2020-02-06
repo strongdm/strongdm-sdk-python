@@ -32,10 +32,12 @@ def quote_filter_args(filter, *args):
 
 
 def timestamp_to_porcelain(t):
-    return t.ToDatetime()
+    return t.ToDatetime().replace(tzinfo=datetime.timezone.utc)
 
 
 def timestamp_to_plumbing(t):
+    if t.tzinfo is None:
+        t = t.astimezone(datetime.timezone.utc)
     res = Timestamp()
     res.FromDatetime(t)
     return res
