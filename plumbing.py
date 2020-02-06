@@ -152,7 +152,7 @@ def rate_limit_metadata_to_plumbing(porcelain):
     if porcelain.remaining != None:
         plumbing.remaining = porcelain.remaining
     if porcelain.reset_at != None:
-        plumbing.reset_at = timestamp_to_plumbing(porcelain.reset_at)
+        plumbing.reset_at.CopyFrom(timestamp_to_plumbing(porcelain.reset_at))
     if porcelain.bucket != None:
         plumbing.bucket = porcelain.bucket
     return plumbing
@@ -183,13 +183,14 @@ def account_grant_create_response_to_porcelain(plumbing):
 def account_grant_create_response_to_plumbing(porcelain):
     plumbing = AccountGrantCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.account_grant != None:
-        plumbing.account_grant = account_grant_to_plumbing(
-            porcelain.account_grant)
+        plumbing.account_grant.CopyFrom(
+            account_grant_to_plumbing(porcelain.account_grant))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -220,13 +221,14 @@ def account_grant_get_response_to_porcelain(plumbing):
 def account_grant_get_response_to_plumbing(porcelain):
     plumbing = AccountGrantGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.account_grant != None:
-        plumbing.account_grant = account_grant_to_plumbing(
-            porcelain.account_grant)
+        plumbing.account_grant.CopyFrom(
+            account_grant_to_plumbing(porcelain.account_grant))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -255,10 +257,11 @@ def account_grant_delete_response_to_porcelain(plumbing):
 def account_grant_delete_response_to_plumbing(porcelain):
     plumbing = AccountGrantDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -295,9 +298,11 @@ def account_grant_to_plumbing(porcelain):
     if porcelain.account_id != None:
         plumbing.account_id = porcelain.account_id
     if porcelain.start_from != None:
-        plumbing.start_from = timestamp_to_plumbing(porcelain.start_from)
+        plumbing.start_from.CopyFrom(
+            timestamp_to_plumbing(porcelain.start_from))
     if porcelain.valid_until != None:
-        plumbing.valid_until = timestamp_to_plumbing(porcelain.valid_until)
+        plumbing.valid_until.CopyFrom(
+            timestamp_to_plumbing(porcelain.valid_until))
     return plumbing
 
 
@@ -322,14 +327,15 @@ def account_create_response_to_porcelain(plumbing):
 def account_create_response_to_plumbing(porcelain):
     plumbing = AccountCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.account != None:
-        plumbing.account = account_to_plumbing(porcelain.account)
+        plumbing.account.CopyFrom(account_to_plumbing(porcelain.account))
     if porcelain.token != None:
         plumbing.token = porcelain.token
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -359,12 +365,13 @@ def account_get_response_to_porcelain(plumbing):
 def account_get_response_to_plumbing(porcelain):
     plumbing = AccountGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.account != None:
-        plumbing.account = account_to_plumbing(porcelain.account)
+        plumbing.account.CopyFrom(account_to_plumbing(porcelain.account))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -392,12 +399,13 @@ def account_update_response_to_porcelain(plumbing):
 def account_update_response_to_plumbing(porcelain):
     plumbing = AccountUpdateResponse()
     if porcelain.meta != None:
-        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            update_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.account != None:
-        plumbing.account = account_to_plumbing(porcelain.account)
+        plumbing.account.CopyFrom(account_to_plumbing(porcelain.account))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -426,10 +434,11 @@ def account_delete_response_to_porcelain(plumbing):
 def account_delete_response_to_plumbing(porcelain):
     plumbing = AccountDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2547,14 +2556,15 @@ def node_create_response_to_porcelain(plumbing):
 def node_create_response_to_plumbing(porcelain):
     plumbing = NodeCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.node != None:
-        plumbing.node = node_to_plumbing(porcelain.node)
+        plumbing.node.CopyFrom(node_to_plumbing(porcelain.node))
     if porcelain.token != None:
         plumbing.token = porcelain.token
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2582,12 +2592,13 @@ def node_get_response_to_porcelain(plumbing):
 def node_get_response_to_plumbing(porcelain):
     plumbing = NodeGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.node != None:
-        plumbing.node = node_to_plumbing(porcelain.node)
+        plumbing.node.CopyFrom(node_to_plumbing(porcelain.node))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2613,12 +2624,13 @@ def node_update_response_to_porcelain(plumbing):
 def node_update_response_to_plumbing(porcelain):
     plumbing = NodeUpdateResponse()
     if porcelain.meta != None:
-        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            update_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.node != None:
-        plumbing.node = node_to_plumbing(porcelain.node)
+        plumbing.node.CopyFrom(node_to_plumbing(porcelain.node))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2645,10 +2657,11 @@ def node_delete_response_to_porcelain(plumbing):
 def node_delete_response_to_plumbing(porcelain):
     plumbing = NodeDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2761,12 +2774,13 @@ def resource_create_response_to_porcelain(plumbing):
 def resource_create_response_to_plumbing(porcelain):
     plumbing = ResourceCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.resource != None:
-        plumbing.resource = resource_to_plumbing(porcelain.resource)
+        plumbing.resource.CopyFrom(resource_to_plumbing(porcelain.resource))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2796,12 +2810,13 @@ def resource_get_response_to_porcelain(plumbing):
 def resource_get_response_to_plumbing(porcelain):
     plumbing = ResourceGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.resource != None:
-        plumbing.resource = resource_to_plumbing(porcelain.resource)
+        plumbing.resource.CopyFrom(resource_to_plumbing(porcelain.resource))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2830,12 +2845,13 @@ def resource_update_response_to_porcelain(plumbing):
 def resource_update_response_to_plumbing(porcelain):
     plumbing = ResourceUpdateResponse()
     if porcelain.meta != None:
-        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            update_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.resource != None:
-        plumbing.resource = resource_to_plumbing(porcelain.resource)
+        plumbing.resource.CopyFrom(resource_to_plumbing(porcelain.resource))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2864,10 +2880,11 @@ def resource_delete_response_to_porcelain(plumbing):
 def resource_delete_response_to_plumbing(porcelain):
     plumbing = ResourceDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2898,13 +2915,14 @@ def role_attachment_create_response_to_porcelain(plumbing):
 def role_attachment_create_response_to_plumbing(porcelain):
     plumbing = RoleAttachmentCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.role_attachment != None:
-        plumbing.role_attachment = role_attachment_to_plumbing(
-            porcelain.role_attachment)
+        plumbing.role_attachment.CopyFrom(
+            role_attachment_to_plumbing(porcelain.role_attachment))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2935,13 +2953,14 @@ def role_attachment_get_response_to_porcelain(plumbing):
 def role_attachment_get_response_to_plumbing(porcelain):
     plumbing = RoleAttachmentGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.role_attachment != None:
-        plumbing.role_attachment = role_attachment_to_plumbing(
-            porcelain.role_attachment)
+        plumbing.role_attachment.CopyFrom(
+            role_attachment_to_plumbing(porcelain.role_attachment))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -2970,10 +2989,11 @@ def role_attachment_delete_response_to_porcelain(plumbing):
 def role_attachment_delete_response_to_plumbing(porcelain):
     plumbing = RoleAttachmentDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -3030,12 +3050,13 @@ def role_create_response_to_porcelain(plumbing):
 def role_create_response_to_plumbing(porcelain):
     plumbing = RoleCreateResponse()
     if porcelain.meta != None:
-        plumbing.meta = create_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.role != None:
-        plumbing.role = role_to_plumbing(porcelain.role)
+        plumbing.role.CopyFrom(role_to_plumbing(porcelain.role))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -3063,12 +3084,13 @@ def role_get_response_to_porcelain(plumbing):
 def role_get_response_to_plumbing(porcelain):
     plumbing = RoleGetResponse()
     if porcelain.meta != None:
-        plumbing.meta = get_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.role != None:
-        plumbing.role = role_to_plumbing(porcelain.role)
+        plumbing.role.CopyFrom(role_to_plumbing(porcelain.role))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -3094,12 +3116,13 @@ def role_update_response_to_porcelain(plumbing):
 def role_update_response_to_plumbing(porcelain):
     plumbing = RoleUpdateResponse()
     if porcelain.meta != None:
-        plumbing.meta = update_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            update_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.role != None:
-        plumbing.role = role_to_plumbing(porcelain.role)
+        plumbing.role.CopyFrom(role_to_plumbing(porcelain.role))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
@@ -3126,10 +3149,11 @@ def role_delete_response_to_porcelain(plumbing):
 def role_delete_response_to_plumbing(porcelain):
     plumbing = RoleDeleteResponse()
     if porcelain.meta != None:
-        plumbing.meta = delete_response_metadata_to_plumbing(porcelain.meta)
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
     if porcelain.rate_limit != None:
-        plumbing.rate_limit = rate_limit_metadata_to_plumbing(
-            porcelain.rate_limit)
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
 
 
