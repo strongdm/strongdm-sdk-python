@@ -8,12 +8,14 @@ from google.protobuf.timestamp_pb2 import Timestamp
 import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
+from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
 from .accounts_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
+from .role_grants_pb2 import *
 from .roles_pb2 import *
 
 
@@ -44,11 +46,15 @@ def timestamp_to_plumbing(t):
 
 
 def create_response_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.CreateResponseMetadata()
     return porcelain
 
 
 def create_response_metadata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = CreateResponseMetadata()
     return plumbing
 
@@ -68,11 +74,15 @@ def repeated_create_response_metadata_to_porcelain(plumbings):
 
 
 def get_response_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.GetResponseMetadata()
     return porcelain
 
 
 def get_response_metadata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = GetResponseMetadata()
     return plumbing
 
@@ -91,11 +101,15 @@ def repeated_get_response_metadata_to_porcelain(plumbings):
 
 
 def update_response_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.UpdateResponseMetadata()
     return porcelain
 
 
 def update_response_metadata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = UpdateResponseMetadata()
     return plumbing
 
@@ -115,11 +129,15 @@ def repeated_update_response_metadata_to_porcelain(plumbings):
 
 
 def delete_response_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.DeleteResponseMetadata()
     return porcelain
 
 
 def delete_response_metadata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = DeleteResponseMetadata()
     return plumbing
 
@@ -139,6 +157,8 @@ def repeated_delete_response_metadata_to_porcelain(plumbings):
 
 
 def rate_limit_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RateLimitMetadata()
     porcelain.limit = plumbing.limit
     porcelain.remaining = plumbing.remaining
@@ -148,6 +168,8 @@ def rate_limit_metadata_to_porcelain(plumbing):
 
 
 def rate_limit_metadata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RateLimitMetadata()
     if porcelain.limit != None:
         plumbing.limit = porcelain.limit
@@ -172,7 +194,196 @@ def repeated_rate_limit_metadata_to_porcelain(plumbings):
     ]
 
 
+def account_attachment_create_options_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountAttachmentCreateOptions()
+    porcelain.overwrite = plumbing.overwrite
+    return porcelain
+
+
+def account_attachment_create_options_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AccountAttachmentCreateOptions()
+    if porcelain.overwrite != None:
+        plumbing.overwrite = porcelain.overwrite
+    return plumbing
+
+
+def repeated_account_attachment_create_options_to_plumbing(porcelains):
+    return [
+        account_attachment_create_options_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_account_attachment_create_options_to_porcelain(plumbings):
+    return [
+        account_attachment_create_options_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def account_attachment_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountAttachmentCreateResponse()
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.account_attachment = account_attachment_to_porcelain(
+        plumbing.account_attachment)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def account_attachment_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AccountAttachmentCreateResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.account_attachment != None:
+        plumbing.account_attachment.CopyFrom(
+            account_attachment_to_plumbing(porcelain.account_attachment))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_account_attachment_create_response_to_plumbing(porcelains):
+    return [
+        account_attachment_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_account_attachment_create_response_to_porcelain(plumbings):
+    return [
+        account_attachment_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def account_attachment_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountAttachmentGetResponse()
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.account_attachment = account_attachment_to_porcelain(
+        plumbing.account_attachment)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def account_attachment_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AccountAttachmentGetResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.account_attachment != None:
+        plumbing.account_attachment.CopyFrom(
+            account_attachment_to_plumbing(porcelain.account_attachment))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_account_attachment_get_response_to_plumbing(porcelains):
+    return [
+        account_attachment_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_account_attachment_get_response_to_porcelain(plumbings):
+    return [
+        account_attachment_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def account_attachment_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountAttachmentDeleteResponse()
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def account_attachment_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AccountAttachmentDeleteResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_account_attachment_delete_response_to_plumbing(porcelains):
+    return [
+        account_attachment_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_account_attachment_delete_response_to_porcelain(plumbings):
+    return [
+        account_attachment_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def account_attachment_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountAttachment()
+    porcelain.id = plumbing.id
+    porcelain.account_id = plumbing.account_id
+    porcelain.role_id = plumbing.role_id
+    return porcelain
+
+
+def account_attachment_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AccountAttachment()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.account_id != None:
+        plumbing.account_id = porcelain.account_id
+    if porcelain.role_id != None:
+        plumbing.role_id = porcelain.role_id
+    return plumbing
+
+
+def repeated_account_attachment_to_plumbing(porcelains):
+    return [
+        account_attachment_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def repeated_account_attachment_to_porcelain(plumbings):
+    return [
+        account_attachment_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def account_grant_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountGrantCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.account_grant = account_grant_to_porcelain(
@@ -183,6 +394,8 @@ def account_grant_create_response_to_porcelain(plumbing):
 
 
 def account_grant_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountGrantCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -211,6 +424,8 @@ def repeated_account_grant_create_response_to_porcelain(plumbings):
 
 
 def account_grant_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountGrantGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.account_grant = account_grant_to_porcelain(
@@ -221,6 +436,8 @@ def account_grant_get_response_to_porcelain(plumbing):
 
 
 def account_grant_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountGrantGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -249,6 +466,8 @@ def repeated_account_grant_get_response_to_porcelain(plumbings):
 
 
 def account_grant_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountGrantDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -257,6 +476,8 @@ def account_grant_delete_response_to_porcelain(plumbing):
 
 
 def account_grant_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountGrantDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -282,6 +503,8 @@ def repeated_account_grant_delete_response_to_porcelain(plumbings):
 
 
 def account_grant_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountGrant()
     porcelain.id = plumbing.id
     porcelain.resource_id = plumbing.resource_id
@@ -292,6 +515,8 @@ def account_grant_to_porcelain(plumbing):
 
 
 def account_grant_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountGrant()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -317,6 +542,8 @@ def repeated_account_grant_to_porcelain(plumbings):
 
 
 def account_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.account = account_to_porcelain(plumbing.account)
@@ -327,6 +554,8 @@ def account_create_response_to_porcelain(plumbing):
 
 
 def account_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -356,6 +585,8 @@ def repeated_account_create_response_to_porcelain(plumbings):
 
 
 def account_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.account = account_to_porcelain(plumbing.account)
@@ -365,6 +596,8 @@ def account_get_response_to_porcelain(plumbing):
 
 
 def account_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -390,6 +623,8 @@ def repeated_account_get_response_to_porcelain(plumbings):
 
 
 def account_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountUpdateResponse()
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
     porcelain.account = account_to_porcelain(plumbing.account)
@@ -399,6 +634,8 @@ def account_update_response_to_porcelain(plumbing):
 
 
 def account_update_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountUpdateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -426,6 +663,8 @@ def repeated_account_update_response_to_porcelain(plumbings):
 
 
 def account_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AccountDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -434,6 +673,8 @@ def account_delete_response_to_porcelain(plumbing):
 
 
 def account_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AccountDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -459,6 +700,8 @@ def repeated_account_delete_response_to_porcelain(plumbings):
 
 
 def account_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Account()
     if isinstance(porcelain, models.User):
         plumbing.user.CopyFrom(user_to_plumbing(porcelain))
@@ -468,6 +711,8 @@ def account_to_plumbing(porcelain):
 
 
 def account_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     if plumbing.HasField('user'):
         return user_to_porcelain(plumbing.user)
     if plumbing.HasField('service'):
@@ -484,6 +729,8 @@ def repeated_account_to_porcelain(plumbings):
 
 
 def user_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.User()
     porcelain.id = plumbing.id
     porcelain.email = plumbing.email
@@ -493,6 +740,8 @@ def user_to_porcelain(plumbing):
 
 
 def user_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = User()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -514,6 +763,8 @@ def repeated_user_to_porcelain(plumbings):
 
 
 def service_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Service()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -521,6 +772,8 @@ def service_to_porcelain(plumbing):
 
 
 def service_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Service()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -538,6 +791,8 @@ def repeated_service_to_porcelain(plumbings):
 
 
 def resource_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Resource()
     if isinstance(porcelain, models.Athena):
         plumbing.athena.CopyFrom(athena_to_plumbing(porcelain))
@@ -625,12 +880,16 @@ def resource_to_plumbing(porcelain):
         plumbing.ssh.CopyFrom(ssh_to_plumbing(porcelain))
     if isinstance(porcelain, models.Sybase):
         plumbing.sybase.CopyFrom(sybase_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SybaseIQ):
+        plumbing.sybase_iq.CopyFrom(sybase_iq_to_plumbing(porcelain))
     if isinstance(porcelain, models.Teradata):
         plumbing.teradata.CopyFrom(teradata_to_plumbing(porcelain))
     return plumbing
 
 
 def resource_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     if plumbing.HasField('athena'):
         return athena_to_porcelain(plumbing.athena)
     if plumbing.HasField('big_query'):
@@ -712,6 +971,8 @@ def resource_to_porcelain(plumbing):
         return ssh_to_porcelain(plumbing.ssh)
     if plumbing.HasField('sybase'):
         return sybase_to_porcelain(plumbing.sybase)
+    if plumbing.HasField('sybase_iq'):
+        return sybase_iq_to_porcelain(plumbing.sybase_iq)
     if plumbing.HasField('teradata'):
         return teradata_to_porcelain(plumbing.teradata)
     return None
@@ -726,6 +987,8 @@ def repeated_resource_to_porcelain(plumbings):
 
 
 def athena_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Athena()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -739,6 +1002,8 @@ def athena_to_porcelain(plumbing):
 
 
 def athena_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Athena()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -768,6 +1033,8 @@ def repeated_athena_to_porcelain(plumbings):
 
 
 def big_query_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.BigQuery()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -781,6 +1048,8 @@ def big_query_to_porcelain(plumbing):
 
 
 def big_query_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = BigQuery()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -810,6 +1079,8 @@ def repeated_big_query_to_porcelain(plumbings):
 
 
 def cassandra_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Cassandra()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -824,6 +1095,8 @@ def cassandra_to_porcelain(plumbing):
 
 
 def cassandra_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Cassandra()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -855,6 +1128,8 @@ def repeated_cassandra_to_porcelain(plumbings):
 
 
 def druid_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Druid()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -868,6 +1143,8 @@ def druid_to_porcelain(plumbing):
 
 
 def druid_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Druid()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -897,6 +1174,8 @@ def repeated_druid_to_porcelain(plumbings):
 
 
 def dynamo_db_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.DynamoDB()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -910,6 +1189,8 @@ def dynamo_db_to_porcelain(plumbing):
 
 
 def dynamo_db_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = DynamoDB()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -939,6 +1220,8 @@ def repeated_dynamo_db_to_porcelain(plumbings):
 
 
 def amazon_es_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AmazonES()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -952,6 +1235,8 @@ def amazon_es_to_porcelain(plumbing):
 
 
 def amazon_es_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AmazonES()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -981,6 +1266,8 @@ def repeated_amazon_es_to_porcelain(plumbings):
 
 
 def elastic_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Elastic()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -995,6 +1282,8 @@ def elastic_to_porcelain(plumbing):
 
 
 def elastic_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Elastic()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1026,6 +1315,8 @@ def repeated_elastic_to_porcelain(plumbings):
 
 
 def http_basic_auth_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.HTTPBasicAuth()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1041,6 +1332,8 @@ def http_basic_auth_to_porcelain(plumbing):
 
 
 def http_basic_auth_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = HTTPBasicAuth()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1074,6 +1367,8 @@ def repeated_http_basic_auth_to_porcelain(plumbings):
 
 
 def http_no_auth_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.HTTPNoAuth()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1087,6 +1382,8 @@ def http_no_auth_to_porcelain(plumbing):
 
 
 def http_no_auth_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = HTTPNoAuth()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1116,6 +1413,8 @@ def repeated_http_no_auth_to_porcelain(plumbings):
 
 
 def http_auth_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.HTTPAuth()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1130,6 +1429,8 @@ def http_auth_to_porcelain(plumbing):
 
 
 def http_auth_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = HTTPAuth()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1161,6 +1462,8 @@ def repeated_http_auth_to_porcelain(plumbings):
 
 
 def kubernetes_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Kubernetes()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1177,6 +1480,8 @@ def kubernetes_to_porcelain(plumbing):
 
 
 def kubernetes_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Kubernetes()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1212,6 +1517,8 @@ def repeated_kubernetes_to_porcelain(plumbings):
 
 
 def kubernetes_basic_auth_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.KubernetesBasicAuth()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1224,6 +1531,8 @@ def kubernetes_basic_auth_to_porcelain(plumbing):
 
 
 def kubernetes_basic_auth_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = KubernetesBasicAuth()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1256,6 +1565,8 @@ def repeated_kubernetes_basic_auth_to_porcelain(plumbings):
 
 
 def amazon_eks_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AmazonEKS()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1271,6 +1582,8 @@ def amazon_eks_to_porcelain(plumbing):
 
 
 def amazon_eks_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AmazonEKS()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1304,6 +1617,8 @@ def repeated_amazon_eks_to_porcelain(plumbings):
 
 
 def google_gke_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.GoogleGKE()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1317,6 +1632,8 @@ def google_gke_to_porcelain(plumbing):
 
 
 def google_gke_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = GoogleGKE()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1346,6 +1663,8 @@ def repeated_google_gke_to_porcelain(plumbings):
 
 
 def kubernetes_service_account_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.KubernetesServiceAccount()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1357,6 +1676,8 @@ def kubernetes_service_account_to_porcelain(plumbing):
 
 
 def kubernetes_service_account_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = KubernetesServiceAccount()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1388,6 +1709,8 @@ def repeated_kubernetes_service_account_to_porcelain(plumbings):
 
 
 def memcached_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Memcached()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1399,6 +1722,8 @@ def memcached_to_porcelain(plumbing):
 
 
 def memcached_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Memcached()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1424,6 +1749,8 @@ def repeated_memcached_to_porcelain(plumbings):
 
 
 def mongo_legacy_host_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.MongoLegacyHost()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1440,6 +1767,8 @@ def mongo_legacy_host_to_porcelain(plumbing):
 
 
 def mongo_legacy_host_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = MongoLegacyHost()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1477,6 +1806,8 @@ def repeated_mongo_legacy_host_to_porcelain(plumbings):
 
 
 def mongo_legacy_replicaset_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.MongoLegacyReplicaset()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1494,6 +1825,8 @@ def mongo_legacy_replicaset_to_porcelain(plumbing):
 
 
 def mongo_legacy_replicaset_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = MongoLegacyReplicaset()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1537,6 +1870,8 @@ def repeated_mongo_legacy_replicaset_to_porcelain(plumbings):
 
 
 def mongo_host_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.MongoHost()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1552,6 +1887,8 @@ def mongo_host_to_porcelain(plumbing):
 
 
 def mongo_host_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = MongoHost()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1585,6 +1922,8 @@ def repeated_mongo_host_to_porcelain(plumbings):
 
 
 def mongo_replica_set_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.MongoReplicaSet()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1602,6 +1941,8 @@ def mongo_replica_set_to_porcelain(plumbing):
 
 
 def mongo_replica_set_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = MongoReplicaSet()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1641,6 +1982,8 @@ def repeated_mongo_replica_set_to_porcelain(plumbings):
 
 
 def mysql_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Mysql()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1655,6 +1998,8 @@ def mysql_to_porcelain(plumbing):
 
 
 def mysql_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Mysql()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1686,6 +2031,8 @@ def repeated_mysql_to_porcelain(plumbings):
 
 
 def aurora_mysql_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AuroraMysql()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1700,6 +2047,8 @@ def aurora_mysql_to_porcelain(plumbing):
 
 
 def aurora_mysql_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AuroraMysql()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1731,6 +2080,8 @@ def repeated_aurora_mysql_to_porcelain(plumbings):
 
 
 def clustrix_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Clustrix()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1745,6 +2096,8 @@ def clustrix_to_porcelain(plumbing):
 
 
 def clustrix_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Clustrix()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1776,6 +2129,8 @@ def repeated_clustrix_to_porcelain(plumbings):
 
 
 def maria_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Maria()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1790,6 +2145,8 @@ def maria_to_porcelain(plumbing):
 
 
 def maria_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Maria()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1821,6 +2178,8 @@ def repeated_maria_to_porcelain(plumbings):
 
 
 def memsql_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Memsql()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1835,6 +2194,8 @@ def memsql_to_porcelain(plumbing):
 
 
 def memsql_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Memsql()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1866,6 +2227,8 @@ def repeated_memsql_to_porcelain(plumbings):
 
 
 def oracle_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Oracle()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1881,6 +2244,8 @@ def oracle_to_porcelain(plumbing):
 
 
 def oracle_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Oracle()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1914,6 +2279,8 @@ def repeated_oracle_to_porcelain(plumbings):
 
 
 def postgres_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Postgres()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1929,6 +2296,8 @@ def postgres_to_porcelain(plumbing):
 
 
 def postgres_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Postgres()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -1962,6 +2331,8 @@ def repeated_postgres_to_porcelain(plumbings):
 
 
 def aurora_postgres_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.AuroraPostgres()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -1977,6 +2348,8 @@ def aurora_postgres_to_porcelain(plumbing):
 
 
 def aurora_postgres_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = AuroraPostgres()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2010,6 +2383,8 @@ def repeated_aurora_postgres_to_porcelain(plumbings):
 
 
 def greenplum_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Greenplum()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2025,6 +2400,8 @@ def greenplum_to_porcelain(plumbing):
 
 
 def greenplum_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Greenplum()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2058,6 +2435,8 @@ def repeated_greenplum_to_porcelain(plumbings):
 
 
 def cockroach_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Cockroach()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2073,6 +2452,8 @@ def cockroach_to_porcelain(plumbing):
 
 
 def cockroach_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Cockroach()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2106,6 +2487,8 @@ def repeated_cockroach_to_porcelain(plumbings):
 
 
 def redshift_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Redshift()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2121,6 +2504,8 @@ def redshift_to_porcelain(plumbing):
 
 
 def redshift_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Redshift()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2154,6 +2539,8 @@ def repeated_redshift_to_porcelain(plumbings):
 
 
 def presto_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Presto()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2169,6 +2556,8 @@ def presto_to_porcelain(plumbing):
 
 
 def presto_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Presto()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2202,6 +2591,8 @@ def repeated_presto_to_porcelain(plumbings):
 
 
 def rdp_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RDP()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2215,6 +2606,8 @@ def rdp_to_porcelain(plumbing):
 
 
 def rdp_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RDP()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2244,6 +2637,8 @@ def repeated_rdp_to_porcelain(plumbings):
 
 
 def redis_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Redis()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2256,6 +2651,8 @@ def redis_to_porcelain(plumbing):
 
 
 def redis_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Redis()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2283,6 +2680,8 @@ def repeated_redis_to_porcelain(plumbings):
 
 
 def elasticache_redis_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.ElasticacheRedis()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2296,6 +2695,8 @@ def elasticache_redis_to_porcelain(plumbing):
 
 
 def elasticache_redis_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = ElasticacheRedis()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2327,6 +2728,8 @@ def repeated_elasticache_redis_to_porcelain(plumbings):
 
 
 def snowflake_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Snowflake()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2341,6 +2744,8 @@ def snowflake_to_porcelain(plumbing):
 
 
 def snowflake_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Snowflake()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2372,6 +2777,8 @@ def repeated_snowflake_to_porcelain(plumbings):
 
 
 def sql_server_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.SQLServer()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2388,6 +2795,8 @@ def sql_server_to_porcelain(plumbing):
 
 
 def sql_server_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = SQLServer()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2423,6 +2832,8 @@ def repeated_sql_server_to_porcelain(plumbings):
 
 
 def ssh_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.SSH()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2435,6 +2846,8 @@ def ssh_to_porcelain(plumbing):
 
 
 def ssh_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = SSH()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2462,6 +2875,8 @@ def repeated_ssh_to_porcelain(plumbings):
 
 
 def sybase_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Sybase()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2475,6 +2890,8 @@ def sybase_to_porcelain(plumbing):
 
 
 def sybase_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Sybase()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2503,7 +2920,55 @@ def repeated_sybase_to_porcelain(plumbings):
     return [sybase_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def sybase_iq_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SybaseIQ()
+    porcelain.id = plumbing.id
+    porcelain.name = plumbing.name
+    porcelain.healthy = plumbing.healthy
+    porcelain.hostname = plumbing.hostname
+    porcelain.username = plumbing.username
+    porcelain.port_override = plumbing.port_override
+    porcelain.port = plumbing.port
+    porcelain.password = plumbing.password
+    return porcelain
+
+
+def sybase_iq_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SybaseIQ()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+        plumbing.hostname = porcelain.hostname
+    if porcelain.username != None:
+        plumbing.username = porcelain.username
+    if porcelain.port_override != None:
+        plumbing.port_override = porcelain.port_override
+    if porcelain.port != None:
+        plumbing.port = porcelain.port
+    if porcelain.password != None:
+        plumbing.password = porcelain.password
+    return plumbing
+
+
+def repeated_sybase_iq_to_plumbing(porcelains):
+    return [sybase_iq_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_sybase_iq_to_porcelain(plumbings):
+    return [sybase_iq_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def teradata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Teradata()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2517,6 +2982,8 @@ def teradata_to_porcelain(plumbing):
 
 
 def teradata_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Teradata()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2546,6 +3013,8 @@ def repeated_teradata_to_porcelain(plumbings):
 
 
 def node_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.NodeCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.node = node_to_porcelain(plumbing.node)
@@ -2556,6 +3025,8 @@ def node_create_response_to_porcelain(plumbing):
 
 
 def node_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = NodeCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2583,6 +3054,8 @@ def repeated_node_create_response_to_porcelain(plumbings):
 
 
 def node_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.NodeGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.node = node_to_porcelain(plumbing.node)
@@ -2592,6 +3065,8 @@ def node_get_response_to_porcelain(plumbing):
 
 
 def node_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = NodeGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2615,6 +3090,8 @@ def repeated_node_get_response_to_porcelain(plumbings):
 
 
 def node_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.NodeUpdateResponse()
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
     porcelain.node = node_to_porcelain(plumbing.node)
@@ -2624,6 +3101,8 @@ def node_update_response_to_porcelain(plumbing):
 
 
 def node_update_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = NodeUpdateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2649,6 +3128,8 @@ def repeated_node_update_response_to_porcelain(plumbings):
 
 
 def node_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.NodeDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -2657,6 +3138,8 @@ def node_delete_response_to_porcelain(plumbing):
 
 
 def node_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = NodeDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2680,6 +3163,8 @@ def repeated_node_delete_response_to_porcelain(plumbings):
 
 
 def node_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Node()
     if isinstance(porcelain, models.Relay):
         plumbing.relay.CopyFrom(relay_to_plumbing(porcelain))
@@ -2689,6 +3174,8 @@ def node_to_plumbing(porcelain):
 
 
 def node_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     if plumbing.HasField('relay'):
         return relay_to_porcelain(plumbing.relay)
     if plumbing.HasField('gateway'):
@@ -2705,6 +3192,8 @@ def repeated_node_to_porcelain(plumbings):
 
 
 def relay_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Relay()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2713,6 +3202,8 @@ def relay_to_porcelain(plumbing):
 
 
 def relay_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Relay()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2732,6 +3223,8 @@ def repeated_relay_to_porcelain(plumbings):
 
 
 def gateway_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Gateway()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -2742,6 +3235,8 @@ def gateway_to_porcelain(plumbing):
 
 
 def gateway_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Gateway()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -2765,6 +3260,8 @@ def repeated_gateway_to_porcelain(plumbings):
 
 
 def resource_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.ResourceCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.resource = resource_to_porcelain(plumbing.resource)
@@ -2774,6 +3271,8 @@ def resource_create_response_to_porcelain(plumbing):
 
 
 def resource_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = ResourceCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2801,6 +3300,8 @@ def repeated_resource_create_response_to_porcelain(plumbings):
 
 
 def resource_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.ResourceGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.resource = resource_to_porcelain(plumbing.resource)
@@ -2810,6 +3311,8 @@ def resource_get_response_to_porcelain(plumbing):
 
 
 def resource_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = ResourceGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2836,6 +3339,8 @@ def repeated_resource_get_response_to_porcelain(plumbings):
 
 
 def resource_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.ResourceUpdateResponse()
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
     porcelain.resource = resource_to_porcelain(plumbing.resource)
@@ -2845,6 +3350,8 @@ def resource_update_response_to_porcelain(plumbing):
 
 
 def resource_update_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = ResourceUpdateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2872,6 +3379,8 @@ def repeated_resource_update_response_to_porcelain(plumbings):
 
 
 def resource_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.ResourceDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -2880,6 +3389,8 @@ def resource_delete_response_to_porcelain(plumbing):
 
 
 def resource_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = ResourceDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2905,6 +3416,8 @@ def repeated_resource_delete_response_to_porcelain(plumbings):
 
 
 def role_attachment_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleAttachmentCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.role_attachment = role_attachment_to_porcelain(
@@ -2915,6 +3428,8 @@ def role_attachment_create_response_to_porcelain(plumbing):
 
 
 def role_attachment_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleAttachmentCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2943,6 +3458,8 @@ def repeated_role_attachment_create_response_to_porcelain(plumbings):
 
 
 def role_attachment_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleAttachmentGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.role_attachment = role_attachment_to_porcelain(
@@ -2953,6 +3470,8 @@ def role_attachment_get_response_to_porcelain(plumbing):
 
 
 def role_attachment_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleAttachmentGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -2981,6 +3500,8 @@ def repeated_role_attachment_get_response_to_porcelain(plumbings):
 
 
 def role_attachment_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleAttachmentDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -2989,6 +3510,8 @@ def role_attachment_delete_response_to_porcelain(plumbing):
 
 
 def role_attachment_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleAttachmentDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -3014,6 +3537,8 @@ def repeated_role_attachment_delete_response_to_porcelain(plumbings):
 
 
 def role_attachment_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleAttachment()
     porcelain.id = plumbing.id
     porcelain.composite_role_id = plumbing.composite_role_id
@@ -3022,6 +3547,8 @@ def role_attachment_to_porcelain(plumbing):
 
 
 def role_attachment_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleAttachment()
     if porcelain.id != None:
         plumbing.id = porcelain.id
@@ -3040,7 +3567,159 @@ def repeated_role_attachment_to_porcelain(plumbings):
     return [role_attachment_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def role_grant_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RoleGrantCreateResponse()
+    porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.role_grant = role_grant_to_porcelain(plumbing.role_grant)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_grant_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = RoleGrantCreateResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            create_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.role_grant != None:
+        plumbing.role_grant.CopyFrom(
+            role_grant_to_plumbing(porcelain.role_grant))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_role_grant_create_response_to_plumbing(porcelains):
+    return [
+        role_grant_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_grant_create_response_to_porcelain(plumbings):
+    return [
+        role_grant_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_grant_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RoleGrantGetResponse()
+    porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.role_grant = role_grant_to_porcelain(plumbing.role_grant)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_grant_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = RoleGrantGetResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            get_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.role_grant != None:
+        plumbing.role_grant.CopyFrom(
+            role_grant_to_plumbing(porcelain.role_grant))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_role_grant_get_response_to_plumbing(porcelains):
+    return [
+        role_grant_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_grant_get_response_to_porcelain(plumbings):
+    return [
+        role_grant_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_grant_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RoleGrantDeleteResponse()
+    porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def role_grant_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = RoleGrantDeleteResponse()
+    if porcelain.meta != None:
+        plumbing.meta.CopyFrom(
+            delete_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.rate_limit != None:
+        plumbing.rate_limit.CopyFrom(
+            rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def repeated_role_grant_delete_response_to_plumbing(porcelains):
+    return [
+        role_grant_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_role_grant_delete_response_to_porcelain(plumbings):
+    return [
+        role_grant_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def role_grant_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RoleGrant()
+    porcelain.id = plumbing.id
+    porcelain.resource_id = plumbing.resource_id
+    porcelain.role_id = plumbing.role_id
+    return porcelain
+
+
+def role_grant_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = RoleGrant()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.resource_id != None:
+        plumbing.resource_id = porcelain.resource_id
+    if porcelain.role_id != None:
+        plumbing.role_id = porcelain.role_id
+    return plumbing
+
+
+def repeated_role_grant_to_plumbing(porcelains):
+    return [role_grant_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_role_grant_to_porcelain(plumbings):
+    return [role_grant_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def role_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleCreateResponse()
     porcelain.meta = create_response_metadata_to_porcelain(plumbing.meta)
     porcelain.role = role_to_porcelain(plumbing.role)
@@ -3050,6 +3729,8 @@ def role_create_response_to_porcelain(plumbing):
 
 
 def role_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleCreateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -3075,6 +3756,8 @@ def repeated_role_create_response_to_porcelain(plumbings):
 
 
 def role_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleGetResponse()
     porcelain.meta = get_response_metadata_to_porcelain(plumbing.meta)
     porcelain.role = role_to_porcelain(plumbing.role)
@@ -3084,6 +3767,8 @@ def role_get_response_to_porcelain(plumbing):
 
 
 def role_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleGetResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -3107,6 +3792,8 @@ def repeated_role_get_response_to_porcelain(plumbings):
 
 
 def role_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleUpdateResponse()
     porcelain.meta = update_response_metadata_to_porcelain(plumbing.meta)
     porcelain.role = role_to_porcelain(plumbing.role)
@@ -3116,6 +3803,8 @@ def role_update_response_to_porcelain(plumbing):
 
 
 def role_update_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleUpdateResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -3141,6 +3830,8 @@ def repeated_role_update_response_to_porcelain(plumbings):
 
 
 def role_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.RoleDeleteResponse()
     porcelain.meta = delete_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = rate_limit_metadata_to_porcelain(
@@ -3149,6 +3840,8 @@ def role_delete_response_to_porcelain(plumbing):
 
 
 def role_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = RoleDeleteResponse()
     if porcelain.meta != None:
         plumbing.meta.CopyFrom(
@@ -3172,6 +3865,8 @@ def repeated_role_delete_response_to_porcelain(plumbings):
 
 
 def role_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
     porcelain = models.Role()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
@@ -3180,6 +3875,8 @@ def role_to_porcelain(plumbing):
 
 
 def role_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
     plumbing = Role()
     if porcelain.id != None:
         plumbing.id = porcelain.id

@@ -5,6 +5,8 @@ from .options_pb2 import *
 from .options_pb2_grpc import *
 from .spec_pb2 import *
 from .spec_pb2_grpc import *
+from .account_attachments_pb2 import *
+from .account_attachments_pb2_grpc import *
 from .account_grants_pb2 import *
 from .account_grants_pb2_grpc import *
 from .accounts_pb2 import *
@@ -17,8 +19,149 @@ from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .role_attachments_pb2 import *
 from .role_attachments_pb2_grpc import *
+from .role_grants_pb2 import *
+from .role_grants_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+
+
+# AccountAttachments represent relationships between an account and a role.
+class AccountAttachments:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountAttachmentsStub(channel)
+
+    # Create registers a new AccountAttachment.
+    def create(self, account_attachment, options=None, timeout=None):
+        req = AccountAttachmentCreateRequest()
+
+        if account_attachment is not None:
+            req.account_attachment.CopyFrom(
+                plumbing.account_attachment_to_plumbing(account_attachment))
+        if options is not None:
+            req.options.CopyFrom(
+                plumbing.account_attachment_create_options_to_plumbing(
+                    options))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'AccountAttachments.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountAttachmentCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.account_attachment = plumbing.account_attachment_to_porcelain(
+            plumbing_response.account_attachment)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one AccountAttachment by ID.
+    def get(self, id, timeout=None):
+        req = AccountAttachmentGetRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('AccountAttachments.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountAttachmentGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.account_attachment = plumbing.account_attachment_to_porcelain(
+            plumbing_response.account_attachment)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes a AccountAttachment by ID.
+    def delete(self, id, timeout=None):
+        req = AccountAttachmentDeleteRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'AccountAttachments.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountAttachmentDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of AccountAttachments matching a given set of criteria.
+    def list(self, filter, *args, timeout=None):
+        req = AccountAttachmentListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountAttachments.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.account_attachments:
+                    yield plumbing.account_attachment_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 # AccountGrants represent relationships between composite roles and the roles
@@ -34,8 +177,9 @@ class AccountGrants:
     def create(self, account_grant, timeout=None):
         req = AccountGrantCreateRequest()
 
-        req.account_grant.CopyFrom(
-            plumbing.account_grant_to_plumbing(account_grant))
+        if account_grant is not None:
+            req.account_grant.CopyFrom(
+                plumbing.account_grant_to_plumbing(account_grant))
         tries = 0
         plumbing_response = None
         while True:
@@ -167,7 +311,8 @@ class Accounts:
     def create(self, account, timeout=None):
         req = AccountCreateRequest()
 
-        req.account.CopyFrom(plumbing.account_to_plumbing(account))
+        if account is not None:
+            req.account.CopyFrom(plumbing.account_to_plumbing(account))
         tries = 0
         plumbing_response = None
         while True:
@@ -226,7 +371,8 @@ class Accounts:
     def update(self, account, timeout=None):
         req = AccountUpdateRequest()
 
-        req.account.CopyFrom(plumbing.account_to_plumbing(account))
+        if account is not None:
+            req.account.CopyFrom(plumbing.account_to_plumbing(account))
         tries = 0
         plumbing_response = None
         while True:
@@ -325,7 +471,8 @@ class Nodes:
     def create(self, node, timeout=None):
         req = NodeCreateRequest()
 
-        req.node.CopyFrom(plumbing.node_to_plumbing(node))
+        if node is not None:
+            req.node.CopyFrom(plumbing.node_to_plumbing(node))
         tries = 0
         plumbing_response = None
         while True:
@@ -384,7 +531,8 @@ class Nodes:
     def update(self, node, timeout=None):
         req = NodeUpdateRequest()
 
-        req.node.CopyFrom(plumbing.node_to_plumbing(node))
+        if node is not None:
+            req.node.CopyFrom(plumbing.node_to_plumbing(node))
         tries = 0
         plumbing_response = None
         while True:
@@ -480,7 +628,8 @@ class Resources:
     def create(self, resource, timeout=None):
         req = ResourceCreateRequest()
 
-        req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
+        if resource is not None:
+            req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
         tries = 0
         plumbing_response = None
         while True:
@@ -540,7 +689,8 @@ class Resources:
     def update(self, resource, timeout=None):
         req = ResourceUpdateRequest()
 
-        req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
+        if resource is not None:
+            req.resource.CopyFrom(plumbing.resource_to_plumbing(resource))
         tries = 0
         plumbing_response = None
         while True:
@@ -642,8 +792,9 @@ class RoleAttachments:
     def create(self, role_attachment, timeout=None):
         req = RoleAttachmentCreateRequest()
 
-        req.role_attachment.CopyFrom(
-            plumbing.role_attachment_to_plumbing(role_attachment))
+        if role_attachment is not None:
+            req.role_attachment.CopyFrom(
+                plumbing.role_attachment_to_plumbing(role_attachment))
         tries = 0
         plumbing_response = None
         while True:
@@ -765,6 +916,142 @@ class RoleAttachments:
         return generator(self, req)
 
 
+# RoleGrants represent relationships between composite roles and the roles
+# that make up those composite roles. When a composite role is attached to another
+# role, the permissions granted to members of the composite role are augmented to
+# include the permissions granted to members of the attached role.
+class RoleGrants:
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RoleGrantsStub(channel)
+
+    # Create registers a new RoleGrant.
+    def create(self, role_grant, timeout=None):
+        req = RoleGrantCreateRequest()
+
+        if role_grant is not None:
+            req.role_grant.CopyFrom(
+                plumbing.role_grant_to_plumbing(role_grant))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('RoleGrants.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleGrantCreateResponse()
+        resp.meta = plumbing.create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.role_grant = plumbing.role_grant_to_porcelain(
+            plumbing_response.role_grant)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Get reads one RoleGrant by ID.
+    def get(self, id, timeout=None):
+        req = RoleGrantGetRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('RoleGrants.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleGrantGetResponse()
+        resp.meta = plumbing.get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.role_grant = plumbing.role_grant_to_porcelain(
+            plumbing_response.role_grant)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # Delete removes a RoleGrant by ID.
+    def delete(self, id, timeout=None):
+        req = RoleGrantDeleteRequest()
+
+        req.id = id
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('RoleGrants.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleGrantDeleteResponse()
+        resp.meta = plumbing.delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    # List gets a list of RoleGrants matching a given set of criteria.
+    def list(self, filter, *args, timeout=None):
+        req = RoleGrantListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RoleGrants.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.role_grants:
+                    yield plumbing.role_grant_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
 # Roles are tools for controlling user access to resources. Each Role holds a
 # list of resources which they grant access to. Composite roles are a special
 # type of Role which have no resource associations of their own, but instead
@@ -779,7 +1066,8 @@ class Roles:
     def create(self, role, timeout=None):
         req = RoleCreateRequest()
 
-        req.role.CopyFrom(plumbing.role_to_plumbing(role))
+        if role is not None:
+            req.role.CopyFrom(plumbing.role_to_plumbing(role))
         tries = 0
         plumbing_response = None
         while True:
@@ -837,7 +1125,8 @@ class Roles:
     def update(self, role, timeout=None):
         req = RoleUpdateRequest()
 
-        req.role.CopyFrom(plumbing.role_to_plumbing(role))
+        if role is not None:
+            req.role.CopyFrom(plumbing.role_to_plumbing(role))
         tries = 0
         plumbing_response = None
         while True:

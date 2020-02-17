@@ -5,7 +5,7 @@ import collections
 class CreateResponseMetadata:
     __slots__ = []
 
-    def __init__(self):
+    def __init__(self, ):
         pass
 
     def __repr__(self):
@@ -17,7 +17,7 @@ class CreateResponseMetadata:
 class GetResponseMetadata:
     __slots__ = []
 
-    def __init__(self):
+    def __init__(self, ):
         pass
 
     def __repr__(self):
@@ -29,7 +29,7 @@ class GetResponseMetadata:
 class UpdateResponseMetadata:
     __slots__ = []
 
-    def __init__(self):
+    def __init__(self, ):
         pass
 
     def __repr__(self):
@@ -41,7 +41,7 @@ class UpdateResponseMetadata:
 class DeleteResponseMetadata:
     __slots__ = []
 
-    def __init__(self):
+    def __init__(self, ):
         pass
 
     def __repr__(self):
@@ -65,11 +65,17 @@ class RateLimitMetadata:
         'bucket',
     ]
 
-    def __init__(self):
-        self.limit = None
-        self.remaining = None
-        self.reset_at = None
-        self.bucket = None
+    def __init__(
+        self,
+        limit=None,
+        remaining=None,
+        reset_at=None,
+        bucket=None,
+    ):
+        self.limit = limit
+        self.remaining = remaining
+        self.reset_at = reset_at
+        self.bucket = bucket
 
     def __repr__(self):
         return '<sdm.RateLimitMetadata ' + \
@@ -77,6 +83,138 @@ class RateLimitMetadata:
             'remaining: ' + repr(self.remaining) + ' ' +\
             'reset_at: ' + repr(self.reset_at) + ' ' +\
             'bucket: ' + repr(self.bucket) + ' ' +\
+            '>'
+
+
+# AccountAttachmentCreateOptions specifies extra options for creating an
+# AccountAttachment.
+# overwrite: Overwrite clears all account grants before the attachment.
+class AccountAttachmentCreateOptions:
+    __slots__ = [
+        'overwrite',
+    ]
+
+    def __init__(
+        self,
+        overwrite=None,
+    ):
+        self.overwrite = overwrite
+
+    def __repr__(self):
+        return '<sdm.AccountAttachmentCreateOptions ' + \
+            'overwrite: ' + repr(self.overwrite) + ' ' +\
+            '>'
+
+
+# AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
+# meta: Reserved for future use.
+# account_attachment: The created AccountAttachment.
+# rate_limit: Rate limit information.
+class AccountAttachmentCreateResponse:
+    __slots__ = [
+        'meta',
+        'account_attachment',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        account_attachment=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account_attachment = account_attachment
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.AccountAttachmentCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountAttachmentGetResponse returns a requested AccountAttachment.
+# meta: Reserved for future use.
+# account_attachment: The requested AccountAttachment.
+# rate_limit: Rate limit information.
+class AccountAttachmentGetResponse:
+    __slots__ = [
+        'meta',
+        'account_attachment',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        account_attachment=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account_attachment = account_attachment
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.AccountAttachmentGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class AccountAttachmentDeleteResponse:
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.AccountAttachmentDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# A AccountAttachment connects a composite role to another role, granting members
+# of the composite role the permissions granted to the attached role.
+# id: Unique identifier of the AccountAttachment.
+# account_id: The id of the account of this AccountAttachment.
+# role_id: The id of the attached role of this AccountAttachment.
+class AccountAttachment:
+    __slots__ = [
+        'id',
+        'account_id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        account_id=None,
+        role_id=None,
+    ):
+        self.id = id
+        self.account_id = account_id
+        self.role_id = role_id
+
+    def __repr__(self):
+        return '<sdm.AccountAttachment ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
             '>'
 
 
@@ -91,10 +229,15 @@ class AccountGrantCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.account_grant = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        account_grant=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account_grant = account_grant
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountGrantCreateResponse ' + \
@@ -115,10 +258,15 @@ class AccountGrantGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.account_grant = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        account_grant=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account_grant = account_grant
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountGrantGetResponse ' + \
@@ -137,9 +285,13 @@ class AccountGrantDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountGrantDeleteResponse ' + \
@@ -166,12 +318,19 @@ class AccountGrant:
         'valid_until',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.resource_id = None
-        self.account_id = None
-        self.start_from = None
-        self.valid_until = None
+    def __init__(
+        self,
+        id=None,
+        resource_id=None,
+        account_id=None,
+        start_from=None,
+        valid_until=None,
+    ):
+        self.id = id
+        self.resource_id = resource_id
+        self.account_id = account_id
+        self.start_from = start_from
+        self.valid_until = valid_until
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
@@ -197,11 +356,17 @@ class AccountCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.account = None
-        self.token = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        account=None,
+        token=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account = account
+        self.token = token
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountCreateResponse ' + \
@@ -223,10 +388,15 @@ class AccountGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.account = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        account=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account = account
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountGetResponse ' + \
@@ -248,10 +418,15 @@ class AccountUpdateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.account = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        account=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.account = account
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountUpdateResponse ' + \
@@ -270,9 +445,13 @@ class AccountDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountDeleteResponse ' + \
@@ -295,11 +474,17 @@ class User:
         'last_name',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.email = None
-        self.first_name = None
-        self.last_name = None
+    def __init__(
+        self,
+        id=None,
+        email=None,
+        first_name=None,
+        last_name=None,
+    ):
+        self.id = id
+        self.email = email
+        self.first_name = first_name
+        self.last_name = last_name
 
     def __repr__(self):
         return '<sdm.User ' + \
@@ -320,9 +505,13 @@ class Service:
         'name',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+    ):
+        self.id = id
+        self.name = name
 
     def __repr__(self):
         return '<sdm.Service ' + \
@@ -351,15 +540,25 @@ class Athena:
         'region',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.access_key = None
-        self.secret_access_key = None
-        self.output = None
-        self.port_override = None
-        self.region = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        access_key=None,
+        secret_access_key=None,
+        output=None,
+        port_override=None,
+        region=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.access_key = access_key
+        self.secret_access_key = secret_access_key
+        self.output = output
+        self.port_override = port_override
+        self.region = region
 
     def __repr__(self):
         return '<sdm.Athena ' + \
@@ -394,15 +593,25 @@ class BigQuery:
         'username',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.private_key = None
-        self.project = None
-        self.port_override = None
-        self.endpoint = None
-        self.username = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        private_key=None,
+        project=None,
+        port_override=None,
+        endpoint=None,
+        username=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.private_key = private_key
+        self.project = project
+        self.port_override = port_override
+        self.endpoint = endpoint
+        self.username = username
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
@@ -439,16 +648,27 @@ class Cassandra:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        port_override=None,
+        port=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.port_override = port_override
+        self.port = port
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
@@ -484,15 +704,25 @@ class Druid:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port_override=None,
+        username=None,
+        password=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port_override = port_override
+        self.username = username
+        self.password = password
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Druid ' + \
@@ -527,15 +757,25 @@ class DynamoDB:
         'port_override',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.access_key = None
-        self.secret_access_key = None
-        self.region = None
-        self.endpoint = None
-        self.port_override = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        access_key=None,
+        secret_access_key=None,
+        region=None,
+        endpoint=None,
+        port_override=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.access_key = access_key
+        self.secret_access_key = secret_access_key
+        self.region = region
+        self.endpoint = endpoint
+        self.port_override = port_override
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
@@ -570,15 +810,25 @@ class AmazonES:
         'port_override',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.region = None
-        self.secret_access_key = None
-        self.endpoint = None
-        self.access_key = None
-        self.port_override = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        region=None,
+        secret_access_key=None,
+        endpoint=None,
+        access_key=None,
+        port_override=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.region = region
+        self.secret_access_key = secret_access_key
+        self.endpoint = endpoint
+        self.access_key = access_key
+        self.port_override = port_override
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
@@ -615,16 +865,27 @@ class Elastic:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        port_override=None,
+        port=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.port_override = port_override
+        self.port = port
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
@@ -664,17 +925,29 @@ class HTTPBasicAuth:
         'subdomain',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.url = None
-        self.healthcheck_path = None
-        self.username = None
-        self.password = None
-        self.headers_blacklist = None
-        self.default_path = None
-        self.subdomain = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        url=None,
+        healthcheck_path=None,
+        username=None,
+        password=None,
+        headers_blacklist=None,
+        default_path=None,
+        subdomain=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.url = url
+        self.healthcheck_path = healthcheck_path
+        self.username = username
+        self.password = password
+        self.headers_blacklist = headers_blacklist
+        self.default_path = default_path
+        self.subdomain = subdomain
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
@@ -711,15 +984,25 @@ class HTTPNoAuth:
         'subdomain',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.url = None
-        self.healthcheck_path = None
-        self.headers_blacklist = None
-        self.default_path = None
-        self.subdomain = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        url=None,
+        healthcheck_path=None,
+        headers_blacklist=None,
+        default_path=None,
+        subdomain=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.url = url
+        self.healthcheck_path = healthcheck_path
+        self.headers_blacklist = headers_blacklist
+        self.default_path = default_path
+        self.subdomain = subdomain
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
@@ -756,16 +1039,27 @@ class HTTPAuth:
         'subdomain',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.url = None
-        self.healthcheck_path = None
-        self.auth_header = None
-        self.headers_blacklist = None
-        self.default_path = None
-        self.subdomain = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        url=None,
+        healthcheck_path=None,
+        auth_header=None,
+        headers_blacklist=None,
+        default_path=None,
+        subdomain=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.url = url
+        self.healthcheck_path = healthcheck_path
+        self.auth_header = auth_header
+        self.headers_blacklist = headers_blacklist
+        self.default_path = default_path
+        self.subdomain = subdomain
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
@@ -807,18 +1101,31 @@ class Kubernetes:
         'client_key_filename',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port = None
-        self.certificate_authority = None
-        self.certificate_authority_filename = None
-        self.client_certificate = None
-        self.client_certificate_filename = None
-        self.client_key = None
-        self.client_key_filename = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        certificate_authority=None,
+        certificate_authority_filename=None,
+        client_certificate=None,
+        client_certificate_filename=None,
+        client_key=None,
+        client_key_filename=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.certificate_authority = certificate_authority
+        self.certificate_authority_filename = certificate_authority_filename
+        self.client_certificate = client_certificate
+        self.client_certificate_filename = client_certificate_filename
+        self.client_key = client_key
+        self.client_key_filename = client_key_filename
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
@@ -854,14 +1161,23 @@ class KubernetesBasicAuth:
         'password',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port = None
-        self.username = None
-        self.password = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        username=None,
+        password=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.username = username
+        self.password = password
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -899,17 +1215,29 @@ class AmazonEKS:
         'cluster_name',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.endpoint = None
-        self.access_key = None
-        self.secret_access_key = None
-        self.certificate_authority = None
-        self.certificate_authority_filename = None
-        self.region = None
-        self.cluster_name = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        endpoint=None,
+        access_key=None,
+        secret_access_key=None,
+        certificate_authority=None,
+        certificate_authority_filename=None,
+        region=None,
+        cluster_name=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.endpoint = endpoint
+        self.access_key = access_key
+        self.secret_access_key = secret_access_key
+        self.certificate_authority = certificate_authority
+        self.certificate_authority_filename = certificate_authority_filename
+        self.region = region
+        self.cluster_name = cluster_name
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
@@ -946,15 +1274,25 @@ class GoogleGKE:
         'service_account_key_filename',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.endpoint = None
-        self.certificate_authority = None
-        self.certificate_authority_filename = None
-        self.service_account_key = None
-        self.service_account_key_filename = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        endpoint=None,
+        certificate_authority=None,
+        certificate_authority_filename=None,
+        service_account_key=None,
+        service_account_key_filename=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.endpoint = endpoint
+        self.certificate_authority = certificate_authority
+        self.certificate_authority_filename = certificate_authority_filename
+        self.service_account_key = service_account_key
+        self.service_account_key_filename = service_account_key_filename
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
@@ -985,13 +1323,21 @@ class KubernetesServiceAccount:
         'token',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port = None
-        self.token = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        token=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.token = token
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
@@ -1020,13 +1366,21 @@ class Memcached:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
@@ -1065,18 +1419,31 @@ class MongoLegacyHost:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.auth_database = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-        self.replica_set = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        auth_database=None,
+        port_override=None,
+        username=None,
+        password=None,
+        port=None,
+        replica_set=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.auth_database = auth_database
+        self.port_override = port_override
+        self.username = username
+        self.password = password
+        self.port = port
+        self.replica_set = replica_set
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
@@ -1122,19 +1489,33 @@ class MongoLegacyReplicaset:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.auth_database = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-        self.replica_set = None
-        self.connect_to_replica = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        auth_database=None,
+        port_override=None,
+        username=None,
+        password=None,
+        port=None,
+        replica_set=None,
+        connect_to_replica=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.auth_database = auth_database
+        self.port_override = port_override
+        self.username = username
+        self.password = password
+        self.port = port
+        self.replica_set = replica_set
+        self.connect_to_replica = connect_to_replica
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
@@ -1177,17 +1558,29 @@ class MongoHost:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.auth_database = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        auth_database=None,
+        port_override=None,
+        username=None,
+        password=None,
+        port=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.auth_database = auth_database
+        self.port_override = port_override
+        self.username = username
+        self.password = password
+        self.port = port
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
@@ -1232,19 +1625,33 @@ class MongoReplicaSet:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.auth_database = None
-        self.port_override = None
-        self.username = None
-        self.password = None
-        self.port = None
-        self.replica_set = None
-        self.connect_to_replica = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        auth_database=None,
+        port_override=None,
+        username=None,
+        password=None,
+        port=None,
+        replica_set=None,
+        connect_to_replica=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.auth_database = auth_database
+        self.port_override = port_override
+        self.username = username
+        self.password = password
+        self.port = port
+        self.replica_set = replica_set
+        self.connect_to_replica = connect_to_replica
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
@@ -1285,16 +1692,27 @@ class Mysql:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
@@ -1332,16 +1750,27 @@ class AuroraMysql:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
@@ -1379,16 +1808,27 @@ class Clustrix:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
@@ -1426,16 +1866,27 @@ class Maria:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Maria ' + \
@@ -1473,16 +1924,27 @@ class Memsql:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
@@ -1522,17 +1984,29 @@ class Oracle:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port = None
-        self.port_override = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port=None,
+        port_override=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port = port
+        self.port_override = port_override
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
@@ -1573,17 +2047,29 @@ class Postgres:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
@@ -1624,17 +2110,29 @@ class AuroraPostgres:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
@@ -1675,17 +2173,29 @@ class Greenplum:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
@@ -1726,17 +2236,29 @@ class Cockroach:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
@@ -1777,17 +2299,29 @@ class Redshift:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
@@ -1828,17 +2362,29 @@ class Presto:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.port = None
-        self.username = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+        username=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+        self.username = username
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.Presto ' + \
@@ -1875,15 +2421,25 @@ class RDP:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.RDP ' + \
@@ -1916,14 +2472,23 @@ class Redis:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.password = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port_override=None,
+        password=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port_override = port_override
+        self.password = password
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Redis ' + \
@@ -1957,15 +2522,25 @@ class ElasticacheRedis:
         'tls_required',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.port_override = None
-        self.password = None
-        self.port = None
-        self.tls_required = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port_override=None,
+        password=None,
+        port=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port_override = port_override
+        self.password = password
+        self.port = port
+        self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
@@ -2002,16 +2577,27 @@ class Snowflake:
         'port_override',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.schema = None
-        self.port_override = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        schema=None,
+        port_override=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.schema = schema
+        self.port_override = port_override
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
@@ -2053,18 +2639,31 @@ class SQLServer:
         'override_database',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.database = None
-        self.port_override = None
-        self.schema = None
-        self.port = None
-        self.override_database = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        schema=None,
+        port=None,
+        override_database=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.schema = schema
+        self.port = port
+        self.override_database = override_database
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
@@ -2100,14 +2699,23 @@ class SSH:
         'public_key',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.port = None
-        self.public_key = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        port=None,
+        public_key=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.port = port
+        self.public_key = public_key
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -2141,18 +2749,81 @@ class Sybase:
         'password',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.port_override = None
-        self.port = None
-        self.password = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        port_override=None,
+        port=None,
+        password=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.port_override = port_override
+        self.port = port
+        self.password = password
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# username:
+# port_override:
+# port:
+# password:
+class SybaseIQ:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'username',
+        'port_override',
+        'port',
+        'password',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        port_override=None,
+        port=None,
+        password=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.port_override = port_override
+        self.port = port
+        self.password = password
+
+    def __repr__(self):
+        return '<sdm.SybaseIQ ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2184,15 +2855,25 @@ class Teradata:
         'port',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.healthy = None
-        self.hostname = None
-        self.username = None
-        self.password = None
-        self.port_override = None
-        self.port = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        username=None,
+        password=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.port_override = port_override
+        self.port = port
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
@@ -2221,11 +2902,17 @@ class NodeCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.node = None
-        self.token = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        node=None,
+        token=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.node = node
+        self.token = token
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
@@ -2247,10 +2934,15 @@ class NodeGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.node = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        node=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.node = node
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.NodeGetResponse ' + \
@@ -2272,10 +2964,15 @@ class NodeUpdateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.node = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        node=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.node = node
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.NodeUpdateResponse ' + \
@@ -2294,9 +2991,13 @@ class NodeDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.NodeDeleteResponse ' + \
@@ -2317,10 +3018,15 @@ class Relay:
         'state',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.state = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        state=None,
+    ):
+        self.id = id
+        self.name = name
+        self.state = state
 
     def __repr__(self):
         return '<sdm.Relay ' + \
@@ -2346,12 +3052,19 @@ class Gateway:
         'bind_address',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.state = None
-        self.listen_address = None
-        self.bind_address = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        state=None,
+        listen_address=None,
+        bind_address=None,
+    ):
+        self.id = id
+        self.name = name
+        self.state = state
+        self.listen_address = listen_address
+        self.bind_address = bind_address
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
@@ -2374,10 +3087,15 @@ class ResourceCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.resource = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        resource=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.resource = resource
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
@@ -2398,10 +3116,15 @@ class ResourceGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.resource = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        resource=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.resource = resource
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.ResourceGetResponse ' + \
@@ -2423,10 +3146,15 @@ class ResourceUpdateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.resource = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        resource=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.resource = resource
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.ResourceUpdateResponse ' + \
@@ -2445,9 +3173,13 @@ class ResourceDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse ' + \
@@ -2467,10 +3199,15 @@ class RoleAttachmentCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.role_attachment = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        role_attachment=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role_attachment = role_attachment
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
@@ -2491,10 +3228,15 @@ class RoleAttachmentGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.role_attachment = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        role_attachment=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role_attachment = role_attachment
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleAttachmentGetResponse ' + \
@@ -2513,9 +3255,13 @@ class RoleAttachmentDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleAttachmentDeleteResponse ' + \
@@ -2536,16 +3282,133 @@ class RoleAttachment:
         'attached_role_id',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.composite_role_id = None
-        self.attached_role_id = None
+    def __init__(
+        self,
+        id=None,
+        composite_role_id=None,
+        attached_role_id=None,
+    ):
+        self.id = id
+        self.composite_role_id = composite_role_id
+        self.attached_role_id = attached_role_id
 
     def __repr__(self):
         return '<sdm.RoleAttachment ' + \
             'id: ' + repr(self.id) + ' ' +\
             'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
             'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
+            '>'
+
+
+# RoleGrantCreateResponse reports how the RoleGrants were created in the system.
+# meta: Reserved for future use.
+# role_grant: The created RoleGrant.
+# rate_limit: Rate limit information.
+class RoleGrantCreateResponse:
+    __slots__ = [
+        'meta',
+        'role_grant',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        role_grant=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role_grant = role_grant
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.RoleGrantCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# RoleGrantGetResponse returns a requested RoleGrant.
+# meta: Reserved for future use.
+# role_grant: The requested RoleGrant.
+# rate_limit: Rate limit information.
+class RoleGrantGetResponse:
+    __slots__ = [
+        'meta',
+        'role_grant',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        role_grant=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role_grant = role_grant
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.RoleGrantGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
+# meta: Reserved for future use.
+# rate_limit: Rate limit information.
+class RoleGrantDeleteResponse:
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.RoleGrantDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+
+# A RoleGrant connects a resource to a role, granting members of the role
+# access to it.
+# id: Unique identifier of the RoleGrant.
+# resource_id: The id of the resource of this RoleGrant.
+# role_id: The id of the attached role of this RoleGrant.
+class RoleGrant:
+    __slots__ = [
+        'id',
+        'resource_id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        resource_id=None,
+        role_id=None,
+    ):
+        self.id = id
+        self.resource_id = resource_id
+        self.role_id = role_id
+
+    def __repr__(self):
+        return '<sdm.RoleGrant ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
             '>'
 
 
@@ -2561,10 +3424,15 @@ class RoleCreateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.role = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        role=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role = role
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleCreateResponse ' + \
@@ -2585,10 +3453,15 @@ class RoleGetResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.role = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        role=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role = role
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleGetResponse ' + \
@@ -2610,10 +3483,15 @@ class RoleUpdateResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.role = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        role=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.role = role
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
@@ -2632,9 +3510,13 @@ class RoleDeleteResponse:
         'rate_limit',
     ]
 
-    def __init__(self):
-        self.meta = None
-        self.rate_limit = None
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.RoleDeleteResponse ' + \
@@ -2656,10 +3538,15 @@ class Role:
         'composite',
     ]
 
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.composite = None
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        composite=None,
+    ):
+        self.id = id
+        self.name = name
+        self.composite = composite
 
     def __repr__(self):
         return '<sdm.Role ' + \
