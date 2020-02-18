@@ -188,8 +188,8 @@ class AccountAttachmentDeleteResponse:
             '>'
 
 
-# A AccountAttachment connects a composite role to another role, granting members
-# of the composite role the permissions granted to the attached role.
+# A AccountAttachment connects an account to a role, granting the account
+# the permissions granted to that role.
 # id: Unique identifier of the AccountAttachment.
 # account_id: The id of the account of this AccountAttachment.
 # role_id: The id of the attached role of this AccountAttachment.
@@ -300,8 +300,8 @@ class AccountGrantDeleteResponse:
             '>'
 
 
-# A AccountGrant connects a composite role to another role, granting members
-# of the composite role the permissions granted to the attached role.
+# An AccountGrant connects an account to a resource, granting the account
+# the ability to connect to that resource.
 # id: Unique identifier of the AccountGrant.
 # resource_id: The id of the composite role of this AccountGrant.
 # account_id: The id of the attached role of this AccountGrant.
@@ -3037,10 +3037,10 @@ class Relay:
 
 
 # Gateway represents a StrongDM CLI installation running in gateway mode.
-# id: Unique identifier of the Relay.
-# name: Unique human-readable name of the Relay.
+# id: Unique identifier of the Gateway.
+# name: Unique human-readable name of the Gateway.
 # state: The current state of the gateway. One of: "new", "verifying_restart",
-# "restarting", "started", "stopped", "dead", "unknown",
+# "restarting", "started", "stopped", "dead", "unknown"
 # listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
 # bind_address: The hostname/port tuple which the gateway daemon will bind to.
 class Gateway:
@@ -3383,7 +3383,7 @@ class RoleGrantDeleteResponse:
 
 
 # A RoleGrant connects a resource to a role, granting members of the role
-# access to it.
+# access to the resource.
 # id: Unique identifier of the RoleGrant.
 # resource_id: The id of the resource of this RoleGrant.
 # role_id: The id of the attached role of this RoleGrant.
