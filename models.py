@@ -1,3 +1,18 @@
+# Copyright 2020 StrongDM Inc
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 import collections
 
 
@@ -1194,6 +1209,49 @@ class KubernetesBasicAuth:
 # id: Unique identifier of the Resource.
 # name: Unique human-readable name of the Resource.
 # healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# port:
+# token:
+class KubernetesServiceAccount:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        token=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.KubernetesServiceAccount ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
 # endpoint:
 # access_key:
 # secret_access_key:
@@ -1312,8 +1370,124 @@ class GoogleGKE:
 # healthy: True if the datasource is reachable and the credentials are valid.
 # hostname:
 # port:
+# certificate_authority:
+# certificate_authority_filename:
+# client_certificate:
+# client_certificate_filename:
+# client_key:
+# client_key_filename:
+class AKS:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'certificate_authority',
+        'certificate_authority_filename',
+        'client_certificate',
+        'client_certificate_filename',
+        'client_key',
+        'client_key_filename',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        certificate_authority=None,
+        certificate_authority_filename=None,
+        client_certificate=None,
+        client_certificate_filename=None,
+        client_key=None,
+        client_key_filename=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.certificate_authority = certificate_authority
+        self.certificate_authority_filename = certificate_authority_filename
+        self.client_certificate = client_certificate
+        self.client_certificate_filename = client_certificate_filename
+        self.client_key = client_key
+        self.client_key_filename = client_key_filename
+
+    def __repr__(self):
+        return '<sdm.AKS ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# port:
+# username:
+# password:
+class AKSBasicAuth:
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'hostname',
+        'port',
+        'username',
+        'password',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        hostname=None,
+        port=None,
+        username=None,
+        password=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.hostname = hostname
+        self.port = port
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return '<sdm.AKSBasicAuth ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+
+# id: Unique identifier of the Resource.
+# name: Unique human-readable name of the Resource.
+# healthy: True if the datasource is reachable and the credentials are valid.
+# hostname:
+# port:
 # token:
-class KubernetesServiceAccount:
+class AKSServiceAccount:
     __slots__ = [
         'id',
         'name',
@@ -1340,7 +1514,7 @@ class KubernetesServiceAccount:
         self.token = token
 
     def __repr__(self):
-        return '<sdm.KubernetesServiceAccount ' + \
+        return '<sdm.AKSServiceAccount ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\

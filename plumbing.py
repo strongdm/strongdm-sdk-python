@@ -1,3 +1,18 @@
+# Copyright 2020 StrongDM Inc
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 import grpc
 import google.rpc as rpc
 import json
@@ -820,13 +835,20 @@ def resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.KubernetesBasicAuth):
         plumbing.kubernetes_basic_auth.CopyFrom(
             kubernetes_basic_auth_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesServiceAccount):
+        plumbing.kubernetes_service_account.CopyFrom(
+            kubernetes_service_account_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEKS):
         plumbing.amazon_eks.CopyFrom(amazon_eks_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKE):
         plumbing.google_gke.CopyFrom(google_gke_to_plumbing(porcelain))
-    if isinstance(porcelain, models.KubernetesServiceAccount):
-        plumbing.kubernetes_service_account.CopyFrom(
-            kubernetes_service_account_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AKS):
+        plumbing.aks.CopyFrom(aks_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AKSBasicAuth):
+        plumbing.aks_basic_auth.CopyFrom(aks_basic_auth_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AKSServiceAccount):
+        plumbing.aks_service_account.CopyFrom(
+            aks_service_account_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(memcached_to_plumbing(porcelain))
     if isinstance(porcelain, models.MongoLegacyHost):
@@ -915,13 +937,19 @@ def resource_to_porcelain(plumbing):
     if plumbing.HasField('kubernetes_basic_auth'):
         return kubernetes_basic_auth_to_porcelain(
             plumbing.kubernetes_basic_auth)
+    if plumbing.HasField('kubernetes_service_account'):
+        return kubernetes_service_account_to_porcelain(
+            plumbing.kubernetes_service_account)
     if plumbing.HasField('amazon_eks'):
         return amazon_eks_to_porcelain(plumbing.amazon_eks)
     if plumbing.HasField('google_gke'):
         return google_gke_to_porcelain(plumbing.google_gke)
-    if plumbing.HasField('kubernetes_service_account'):
-        return kubernetes_service_account_to_porcelain(
-            plumbing.kubernetes_service_account)
+    if plumbing.HasField('aks'):
+        return aks_to_porcelain(plumbing.aks)
+    if plumbing.HasField('aks_basic_auth'):
+        return aks_basic_auth_to_porcelain(plumbing.aks_basic_auth)
+    if plumbing.HasField('aks_service_account'):
+        return aks_service_account_to_porcelain(plumbing.aks_service_account)
     if plumbing.HasField('memcached'):
         return memcached_to_porcelain(plumbing.memcached)
     if plumbing.HasField('mongo_legacy_host'):
@@ -1564,6 +1592,52 @@ def repeated_kubernetes_basic_auth_to_porcelain(plumbings):
     ]
 
 
+def kubernetes_service_account_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KubernetesServiceAccount()
+    porcelain.id = plumbing.id
+    porcelain.name = plumbing.name
+    porcelain.healthy = plumbing.healthy
+    porcelain.hostname = plumbing.hostname
+    porcelain.port = plumbing.port
+    porcelain.token = plumbing.token
+    return porcelain
+
+
+def kubernetes_service_account_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = KubernetesServiceAccount()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+        plumbing.port = porcelain.port
+    if porcelain.token != None:
+        plumbing.token = porcelain.token
+    return plumbing
+
+
+def repeated_kubernetes_service_account_to_plumbing(porcelains):
+    return [
+        kubernetes_service_account_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def repeated_kubernetes_service_account_to_porcelain(plumbings):
+    return [
+        kubernetes_service_account_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def amazon_eks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -1662,10 +1736,108 @@ def repeated_google_gke_to_porcelain(plumbings):
     return [google_gke_to_porcelain(plumbing) for plumbing in plumbings]
 
 
-def kubernetes_service_account_to_porcelain(plumbing):
+def aks_to_porcelain(plumbing):
     if plumbing is None:
         return None
-    porcelain = models.KubernetesServiceAccount()
+    porcelain = models.AKS()
+    porcelain.id = plumbing.id
+    porcelain.name = plumbing.name
+    porcelain.healthy = plumbing.healthy
+    porcelain.hostname = plumbing.hostname
+    porcelain.port = plumbing.port
+    porcelain.certificate_authority = plumbing.certificate_authority
+    porcelain.certificate_authority_filename = plumbing.certificate_authority_filename
+    porcelain.client_certificate = plumbing.client_certificate
+    porcelain.client_certificate_filename = plumbing.client_certificate_filename
+    porcelain.client_key = plumbing.client_key
+    porcelain.client_key_filename = plumbing.client_key_filename
+    return porcelain
+
+
+def aks_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AKS()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+        plumbing.port = porcelain.port
+    if porcelain.certificate_authority != None:
+        plumbing.certificate_authority = porcelain.certificate_authority
+    if porcelain.certificate_authority_filename != None:
+        plumbing.certificate_authority_filename = porcelain.certificate_authority_filename
+    if porcelain.client_certificate != None:
+        plumbing.client_certificate = porcelain.client_certificate
+    if porcelain.client_certificate_filename != None:
+        plumbing.client_certificate_filename = porcelain.client_certificate_filename
+    if porcelain.client_key != None:
+        plumbing.client_key = porcelain.client_key
+    if porcelain.client_key_filename != None:
+        plumbing.client_key_filename = porcelain.client_key_filename
+    return plumbing
+
+
+def repeated_aks_to_plumbing(porcelains):
+    return [aks_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_aks_to_porcelain(plumbings):
+    return [aks_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def aks_basic_auth_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AKSBasicAuth()
+    porcelain.id = plumbing.id
+    porcelain.name = plumbing.name
+    porcelain.healthy = plumbing.healthy
+    porcelain.hostname = plumbing.hostname
+    porcelain.port = plumbing.port
+    porcelain.username = plumbing.username
+    porcelain.password = plumbing.password
+    return porcelain
+
+
+def aks_basic_auth_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AKSBasicAuth()
+    if porcelain.id != None:
+        plumbing.id = porcelain.id
+    if porcelain.name != None:
+        plumbing.name = porcelain.name
+    if porcelain.healthy != None:
+        plumbing.healthy = porcelain.healthy
+    if porcelain.hostname != None:
+        plumbing.hostname = porcelain.hostname
+    if porcelain.port != None:
+        plumbing.port = porcelain.port
+    if porcelain.username != None:
+        plumbing.username = porcelain.username
+    if porcelain.password != None:
+        plumbing.password = porcelain.password
+    return plumbing
+
+
+def repeated_aks_basic_auth_to_plumbing(porcelains):
+    return [aks_basic_auth_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def repeated_aks_basic_auth_to_porcelain(plumbings):
+    return [aks_basic_auth_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def aks_service_account_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AKSServiceAccount()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
     porcelain.healthy = plumbing.healthy
@@ -1675,10 +1847,10 @@ def kubernetes_service_account_to_porcelain(plumbing):
     return porcelain
 
 
-def kubernetes_service_account_to_plumbing(porcelain):
+def aks_service_account_to_plumbing(porcelain):
     if porcelain is None:
         return None
-    plumbing = KubernetesServiceAccount()
+    plumbing = AKSServiceAccount()
     if porcelain.id != None:
         plumbing.id = porcelain.id
     if porcelain.name != None:
@@ -1694,17 +1866,15 @@ def kubernetes_service_account_to_plumbing(porcelain):
     return plumbing
 
 
-def repeated_kubernetes_service_account_to_plumbing(porcelains):
+def repeated_aks_service_account_to_plumbing(porcelains):
     return [
-        kubernetes_service_account_to_plumbing(porcelain)
-        for porcelain in porcelains
+        aks_service_account_to_plumbing(porcelain) for porcelain in porcelains
     ]
 
 
-def repeated_kubernetes_service_account_to_porcelain(plumbings):
+def repeated_aks_service_account_to_porcelain(plumbings):
     return [
-        kubernetes_service_account_to_porcelain(plumbing)
-        for plumbing in plumbings
+        aks_service_account_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
