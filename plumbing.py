@@ -751,6 +751,7 @@ def user_to_porcelain(plumbing):
     porcelain.email = plumbing.email
     porcelain.first_name = plumbing.first_name
     porcelain.last_name = plumbing.last_name
+    porcelain.suspended = plumbing.suspended
     return porcelain
 
 
@@ -766,6 +767,8 @@ def user_to_plumbing(porcelain):
         plumbing.first_name = porcelain.first_name
     if porcelain.last_name != None:
         plumbing.last_name = porcelain.last_name
+    if porcelain.suspended != None:
+        plumbing.suspended = porcelain.suspended
     return plumbing
 
 
@@ -783,6 +786,7 @@ def service_to_porcelain(plumbing):
     porcelain = models.Service()
     porcelain.id = plumbing.id
     porcelain.name = plumbing.name
+    porcelain.suspended = plumbing.suspended
     return porcelain
 
 
@@ -794,6 +798,8 @@ def service_to_plumbing(porcelain):
         plumbing.id = porcelain.id
     if porcelain.name != None:
         plumbing.name = porcelain.name
+    if porcelain.suspended != None:
+        plumbing.suspended = porcelain.suspended
     return plumbing
 
 

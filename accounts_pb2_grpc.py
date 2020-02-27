@@ -19,7 +19,10 @@ from . import accounts_pb2 as accounts__pb2
 
 
 class AccountsStub(object):
-  """Accounts are users, services or tokens who connect to and act within the strongDM network.
+  """Accounts are users that have access to strongDM.
+  There are two types of accounts:
+  1. **Regular users:** humans who are authenticated through username and password or SSO
+  2. **Service users:** machines that are authneticated using a service token
   """
 
   def __init__(self, channel):
@@ -56,7 +59,10 @@ class AccountsStub(object):
 
 
 class AccountsServicer(object):
-  """Accounts are users, services or tokens who connect to and act within the strongDM network.
+  """Accounts are users that have access to strongDM.
+  There are two types of accounts:
+  1. **Regular users:** humans who are authenticated through username and password or SSO
+  2. **Service users:** machines that are authneticated using a service token
   """
 
   def Create(self, request, context):

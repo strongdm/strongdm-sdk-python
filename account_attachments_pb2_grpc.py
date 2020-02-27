@@ -19,7 +19,7 @@ from . import account_attachments_pb2 as account__attachments__pb2
 
 
 class AccountAttachmentsStub(object):
-  """AccountAttachments represent relationships between an account and a role.
+  """AccountAttachments assign an account to a role.
   """
 
   def __init__(self, channel):
@@ -51,7 +51,7 @@ class AccountAttachmentsStub(object):
 
 
 class AccountAttachmentsServicer(object):
-  """AccountAttachments represent relationships between an account and a role.
+  """AccountAttachments assign an account to a role.
   """
 
   def Create(self, request, context):

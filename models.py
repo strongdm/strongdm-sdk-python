@@ -203,8 +203,7 @@ class AccountAttachmentDeleteResponse:
             '>'
 
 
-# A AccountAttachment connects an account to a role, granting the account
-# the permissions granted to that role.
+# AccountAttachments assign an account to a role.
 # id: Unique identifier of the AccountAttachment.
 # account_id: The id of the account of this AccountAttachment.
 # role_id: The id of the attached role of this AccountAttachment.
@@ -315,8 +314,7 @@ class AccountGrantDeleteResponse:
             '>'
 
 
-# An AccountGrant connects an account to a resource, granting the account
-# the ability to connect to that resource.
+# AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
 # id: Unique identifier of the AccountGrant.
 # resource_id: The id of the composite role of this AccountGrant.
 # account_id: The id of the attached role of this AccountGrant.
@@ -481,12 +479,14 @@ class AccountDeleteResponse:
 # email: The User's email address. Must be unique.
 # first_name: The User's first name.
 # last_name: The User's last name.
+# suspended: The User's suspended state.
 class User:
     __slots__ = [
         'id',
         'email',
         'first_name',
         'last_name',
+        'suspended',
     ]
 
     def __init__(
@@ -495,11 +495,13 @@ class User:
         email=None,
         first_name=None,
         last_name=None,
+        suspended=None,
     ):
         self.id = id
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
+        self.suspended = suspended
 
     def __repr__(self):
         return '<sdm.User ' + \
@@ -507,6 +509,7 @@ class User:
             'email: ' + repr(self.email) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
             '>'
 
 
@@ -514,24 +517,29 @@ class User:
 # directly, or granted via roles. Services are typically automated jobs.
 # id: Unique identifier of the Service.
 # name: Unique human-readable name of the Service.
+# suspended: The Service's suspended state.
 class Service:
     __slots__ = [
         'id',
         'name',
+        'suspended',
     ]
 
     def __init__(
         self,
         id=None,
         name=None,
+        suspended=None,
     ):
         self.id = id
         self.name = name
+        self.suspended = suspended
 
     def __repr__(self):
         return '<sdm.Service ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
             '>'
 
 
@@ -3182,7 +3190,7 @@ class NodeDeleteResponse:
 
 # Relay represents a StrongDM CLI installation running in relay mode.
 # id: Unique identifier of the Relay.
-# name: Unique human-readable name of the Relay.
+# name: Unique human-readable name of the Relay. Generated if not provided on create.
 # state: The current state of the relay. One of: "new", "verifying_restart",
 # "restarting", "started", "stopped", "dead", "unknown",
 class Relay:
@@ -3212,11 +3220,12 @@ class Relay:
 
 # Gateway represents a StrongDM CLI installation running in gateway mode.
 # id: Unique identifier of the Gateway.
-# name: Unique human-readable name of the Gateway.
+# name: Unique human-readable name of the Gateway. Generated if not provided on create.
 # state: The current state of the gateway. One of: "new", "verifying_restart",
 # "restarting", "started", "stopped", "dead", "unknown"
 # listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
 # bind_address: The hostname/port tuple which the gateway daemon will bind to.
+# If not provided on create, set to "0.0.0.0:<listen_address_port>".
 class Gateway:
     __slots__ = [
         'id',
@@ -3444,8 +3453,7 @@ class RoleAttachmentDeleteResponse:
             '>'
 
 
-# A RoleAttachment connects a composite role to another role, granting members
-# of the composite role the permissions granted to the attached role.
+# A RoleAttachment assigns a role to a composite role.
 # id: Unique identifier of the RoleAttachment.
 # composite_role_id: The id of the composite role of this RoleAttachment.
 # attached_role_id: The id of the attached role of this RoleAttachment.
@@ -3557,7 +3565,7 @@ class RoleGrantDeleteResponse:
 
 
 # A RoleGrant connects a resource to a role, granting members of the role
-# access to the resource.
+# access to that resource.
 # id: Unique identifier of the RoleGrant.
 # resource_id: The id of the resource of this RoleGrant.
 # role_id: The id of the attached role of this RoleGrant.
@@ -3699,9 +3707,7 @@ class RoleDeleteResponse:
             '>'
 
 
-# A Role grants users access to a set of resources. Composite roles have no
-# resource associations of their own, but instead grant access to the combined
-# resources of their child roles.
+# A Role is a collection of permissions, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
 # id: Unique identifier of the Role.
 # name: Unique human-readable name of the Role.
 # composite: True if the Role is a composite role.
