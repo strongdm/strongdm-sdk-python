@@ -32,8 +32,12 @@ DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 
 # Client is a strongDM API client.
 class Client:
-    # Creates a new strongDM API client. The `addr` parameter expects a hostname/port tuple.
-    def __init__(self, addr, api_access_key, api_secret):
+    # Creates a new strongDM API client.
+    def __init__(self,
+                 api_access_key,
+                 api_secret,
+                 host='api.strongdm.com:443',
+                 insecure=False):
         self.api_access_key = api_access_key
         self.api_secret = base64.b64decode(api_secret)
         self.max_retries = DEFAULT_MAX_RETRIES
@@ -41,10 +45,11 @@ class Client:
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
 
         try:
-            channel = grpc.insecure_channel(addr)
-            if addr.endswith('443'):
+            if insecure:
+                channel = grpc.insecure_channel(host)
+            else:
                 creds = grpc.ssl_channel_credentials()
-                channel = grpc.secure_channel(addr, creds)
+                channel = grpc.secure_channel(host, creds)
             self.account_attachments = svc.AccountAttachments(channel, self)
             self.account_grants = svc.AccountGrants(channel, self)
             self.accounts = svc.Accounts(channel, self)
