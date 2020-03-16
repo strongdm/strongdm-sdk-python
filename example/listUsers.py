@@ -32,7 +32,7 @@ def main():
 
     users = client.accounts.list('')
     for user in users:
-        print("user " + user.id + ": " + user.email)
+        print(user)
 
 
 if __name__ == "__main__":
