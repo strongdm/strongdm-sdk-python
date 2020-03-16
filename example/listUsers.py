@@ -17,9 +17,10 @@ import os.path
 import os
 sys.path += [
     os.path.normpath(
-        os.path.join(os.path.abspath(os.path.dirname(__file__)), '../'))
+        os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../'))
 ]
-import python as sdm
+import importlib
+sdm = importlib.import_module("strongdm-sdk-python")
 
 
 # listUsers.py enumerates all users of an organization
