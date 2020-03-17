@@ -2872,6 +2872,7 @@ class SQLServer:
 # username:
 # port:
 # public_key:
+# port_forwarding:
 class SSH:
     __slots__ = [
         'id',
@@ -2881,6 +2882,7 @@ class SSH:
         'username',
         'port',
         'public_key',
+        'port_forwarding',
     ]
 
     def __init__(
@@ -2892,6 +2894,7 @@ class SSH:
         username=None,
         port=None,
         public_key=None,
+        port_forwarding=None,
     ):
         self.id = id
         self.name = name
@@ -2900,6 +2903,7 @@ class SSH:
         self.username = username
         self.port = port
         self.public_key = public_key
+        self.port_forwarding = port_forwarding
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -2910,6 +2914,7 @@ class SSH:
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             '>'
 
 
