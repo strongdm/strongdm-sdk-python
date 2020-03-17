@@ -3020,6 +3020,7 @@ def ssh_to_porcelain(plumbing):
     porcelain.username = plumbing.username
     porcelain.port = plumbing.port
     porcelain.public_key = plumbing.public_key
+    porcelain.port_forwarding = plumbing.port_forwarding
     return porcelain
 
 
@@ -3041,6 +3042,8 @@ def ssh_to_plumbing(porcelain):
         plumbing.port = porcelain.port
     if porcelain.public_key != None:
         plumbing.public_key = porcelain.public_key
+    if porcelain.port_forwarding != None:
+        plumbing.port_forwarding = porcelain.port_forwarding
     return plumbing
 
 
