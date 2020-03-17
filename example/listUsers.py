@@ -19,7 +19,6 @@ sys.path += [
     os.path.normpath(
         os.path.join(os.path.abspath(os.path.dirname(__file__)), '../'))
 ]
-print(sys.path)
 import importlib
 sdm = importlib.import_module("strongdm")
 
