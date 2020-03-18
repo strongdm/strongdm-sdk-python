@@ -20,6 +20,7 @@ $ export SDM_API_SECRET_KEY=<YOUR SECRET KEY>
 Run some example code.
 
 ```python
+import os
 import strongdm
 
 # listUsers.py enumerates all users of an organization
