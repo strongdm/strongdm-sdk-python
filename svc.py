@@ -42,14 +42,14 @@ from .roles_pb2 import *
 from .roles_pb2_grpc import *
 
 
+# AccountAttachments assign an account to a role.
 class AccountAttachments:
-    """AccountAttachments assign an account to a role."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountAttachmentsStub(channel)
 
+    # Create registers a new AccountAttachment.
     def create(self, account_attachment, options=None, timeout=None):
-        """Create registers a new AccountAttachment."""
         req = AccountAttachmentCreateRequest()
 
         if account_attachment is not None:
@@ -85,8 +85,8 @@ class AccountAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one AccountAttachment by ID.
     def get(self, id, timeout=None):
-        """Get reads one AccountAttachment by ID."""
         req = AccountAttachmentGetRequest()
 
         req.id = id
@@ -116,8 +116,8 @@ class AccountAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a AccountAttachment by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a AccountAttachment by ID."""
         req = AccountAttachmentDeleteRequest()
 
         req.id = id
@@ -145,8 +145,8 @@ class AccountAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of AccountAttachments matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of AccountAttachments matching a given set of criteria."""
         req = AccountAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -181,14 +181,14 @@ class AccountAttachments:
         return generator(self, req)
 
 
+# AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
 class AccountGrants:
-    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountGrantsStub(channel)
 
+    # Create registers a new AccountGrant.
     def create(self, account_grant, timeout=None):
-        """Create registers a new AccountGrant."""
         req = AccountGrantCreateRequest()
 
         if account_grant is not None:
@@ -220,8 +220,8 @@ class AccountGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one AccountGrant by ID.
     def get(self, id, timeout=None):
-        """Get reads one AccountGrant by ID."""
         req = AccountGrantGetRequest()
 
         req.id = id
@@ -251,8 +251,8 @@ class AccountGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a AccountGrant by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a AccountGrant by ID."""
         req = AccountGrantDeleteRequest()
 
         req.id = id
@@ -280,8 +280,8 @@ class AccountGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of AccountGrants matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of AccountGrants matching a given set of criteria."""
         req = AccountGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -315,17 +315,17 @@ class AccountGrants:
         return generator(self, req)
 
 
+# Accounts are users that have access to strongDM.
+# There are two types of accounts:
+# 1. **Regular users:** humans who are authenticated through username and password or SSO
+# 2. **Service users:** machines that are authneticated using a service token
 class Accounts:
-    """Accounts are users that have access to strongDM.
- There are two types of accounts:
- 1. **Regular users:** humans who are authenticated through username and password or SSO
- 2. **Service users:** machines that are authneticated using a service token"""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountsStub(channel)
 
+    # Create registers a new Account.
     def create(self, account, timeout=None):
-        """Create registers a new Account."""
         req = AccountCreateRequest()
 
         if account is not None:
@@ -355,8 +355,8 @@ class Accounts:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one Account by ID.
     def get(self, id, timeout=None):
-        """Get reads one Account by ID."""
         req = AccountGetRequest()
 
         req.id = id
@@ -384,8 +384,8 @@ class Accounts:
             plumbing_response.rate_limit)
         return resp
 
+    # Update patches a Account by ID.
     def update(self, account, timeout=None):
-        """Update patches a Account by ID."""
         req = AccountUpdateRequest()
 
         if account is not None:
@@ -414,8 +414,8 @@ class Accounts:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a Account by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a Account by ID."""
         req = AccountDeleteRequest()
 
         req.id = id
@@ -442,8 +442,8 @@ class Accounts:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of Accounts matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Accounts matching a given set of criteria."""
         req = AccountListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -476,17 +476,17 @@ class Accounts:
         return generator(self, req)
 
 
+# Nodes make up the strongDM network, and allow your users to connect securely to your resources.
+# There are two types of nodes:
+# 1. **Relay:** creates connectivity to your datasources, while maintaining the egress-only nature of your firewall
+# 1. **Gateways:** a relay that also listens for connections from strongDM clients
 class Nodes:
-    """Nodes make up the strongDM network, and allow your users to connect securely to your resources.
- There are two types of nodes:
- 1. **Relay:** creates connectivity to your datasources, while maintaining the egress-only nature of your firewall
- 1. **Gateways:** a relay that also listens for connections from strongDM clients"""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = NodesStub(channel)
 
+    # Create registers a new Node.
     def create(self, node, timeout=None):
-        """Create registers a new Node."""
         req = NodeCreateRequest()
 
         if node is not None:
@@ -516,8 +516,8 @@ class Nodes:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one Node by ID.
     def get(self, id, timeout=None):
-        """Get reads one Node by ID."""
         req = NodeGetRequest()
 
         req.id = id
@@ -545,8 +545,8 @@ class Nodes:
             plumbing_response.rate_limit)
         return resp
 
+    # Update patches a Node by ID.
     def update(self, node, timeout=None):
-        """Update patches a Node by ID."""
         req = NodeUpdateRequest()
 
         if node is not None:
@@ -575,8 +575,8 @@ class Nodes:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a Node by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a Node by ID."""
         req = NodeDeleteRequest()
 
         req.id = id
@@ -603,8 +603,8 @@ class Nodes:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of Nodes matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Nodes matching a given set of criteria."""
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -638,13 +638,12 @@ class Nodes:
 
 
 class Resources:
-    """"""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = ResourcesStub(channel)
 
+    # Create registers a new Resource.
     def create(self, resource, timeout=None):
-        """Create registers a new Resource."""
         req = ResourceCreateRequest()
 
         if resource is not None:
@@ -674,8 +673,8 @@ class Resources:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one Resource by ID.
     def get(self, id, timeout=None):
-        """Get reads one Resource by ID."""
         req = ResourceGetRequest()
 
         req.id = id
@@ -704,8 +703,8 @@ class Resources:
             plumbing_response.rate_limit)
         return resp
 
+    # Update patches a Resource by ID.
     def update(self, resource, timeout=None):
-        """Update patches a Resource by ID."""
         req = ResourceUpdateRequest()
 
         if resource is not None:
@@ -735,8 +734,8 @@ class Resources:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a Resource by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a Resource by ID."""
         req = ResourceDeleteRequest()
 
         req.id = id
@@ -763,8 +762,8 @@ class Resources:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of Resources matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Resources matching a given set of criteria."""
         req = ResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -798,17 +797,17 @@ class Resources:
         return generator(self, req)
 
 
+# RoleAttachments represent relationships between composite roles and the roles
+# that make up those composite roles. When a composite role is attached to another
+# role, the permissions granted to members of the composite role are augmented to
+# include the permissions granted to members of the attached role.
 class RoleAttachments:
-    """RoleAttachments represent relationships between composite roles and the roles
- that make up those composite roles. When a composite role is attached to another
- role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleAttachmentsStub(channel)
 
+    # Create registers a new RoleAttachment.
     def create(self, role_attachment, timeout=None):
-        """Create registers a new RoleAttachment."""
         req = RoleAttachmentCreateRequest()
 
         if role_attachment is not None:
@@ -840,8 +839,8 @@ class RoleAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one RoleAttachment by ID.
     def get(self, id, timeout=None):
-        """Get reads one RoleAttachment by ID."""
         req = RoleAttachmentGetRequest()
 
         req.id = id
@@ -871,8 +870,8 @@ class RoleAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a RoleAttachment by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a RoleAttachment by ID."""
         req = RoleAttachmentDeleteRequest()
 
         req.id = id
@@ -900,8 +899,8 @@ class RoleAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of RoleAttachments matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleAttachments matching a given set of criteria."""
         req = RoleAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -935,17 +934,17 @@ class RoleAttachments:
         return generator(self, req)
 
 
+# RoleGrants represent relationships between composite roles and the roles
+# that make up those composite roles. When a composite role is attached to another
+# role, the permissions granted to members of the composite role are augmented to
+# include the permissions granted to members of the attached role.
 class RoleGrants:
-    """RoleGrants represent relationships between composite roles and the roles
- that make up those composite roles. When a composite role is attached to another
- role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleGrantsStub(channel)
 
+    # Create registers a new RoleGrant.
     def create(self, role_grant, timeout=None):
-        """Create registers a new RoleGrant."""
         req = RoleGrantCreateRequest()
 
         if role_grant is not None:
@@ -977,8 +976,8 @@ class RoleGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one RoleGrant by ID.
     def get(self, id, timeout=None):
-        """Get reads one RoleGrant by ID."""
         req = RoleGrantGetRequest()
 
         req.id = id
@@ -1007,8 +1006,8 @@ class RoleGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a RoleGrant by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a RoleGrant by ID."""
         req = RoleGrantDeleteRequest()
 
         req.id = id
@@ -1036,8 +1035,8 @@ class RoleGrants:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of RoleGrants matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleGrants matching a given set of criteria."""
         req = RoleGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -1071,18 +1070,18 @@ class RoleGrants:
         return generator(self, req)
 
 
+# Roles are tools for controlling user access to resources. Each Role holds a
+# list of resources which they grant access to. Composite roles are a special
+# type of Role which have no resource associations of their own, but instead
+# grant access to the combined resources associated with a set of child roles.
+# Each user can be a member of one Role or composite role.
 class Roles:
-    """Roles are tools for controlling user access to resources. Each Role holds a
- list of resources which they grant access to. Composite roles are a special
- type of Role which have no resource associations of their own, but instead
- grant access to the combined resources associated with a set of child roles.
- Each user can be a member of one Role or composite role."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RolesStub(channel)
 
+    # Create registers a new Role.
     def create(self, role, timeout=None):
-        """Create registers a new Role."""
         req = RoleCreateRequest()
 
         if role is not None:
@@ -1111,8 +1110,8 @@ class Roles:
             plumbing_response.rate_limit)
         return resp
 
+    # Get reads one Role by ID.
     def get(self, id, timeout=None):
-        """Get reads one Role by ID."""
         req = RoleGetRequest()
 
         req.id = id
@@ -1140,8 +1139,8 @@ class Roles:
             plumbing_response.rate_limit)
         return resp
 
+    # Update patches a Role by ID.
     def update(self, role, timeout=None):
-        """Update patches a Role by ID."""
         req = RoleUpdateRequest()
 
         if role is not None:
@@ -1170,8 +1169,8 @@ class Roles:
             plumbing_response.rate_limit)
         return resp
 
+    # Delete removes a Role by ID.
     def delete(self, id, timeout=None):
-        """Delete removes a Role by ID."""
         req = RoleDeleteRequest()
 
         req.id = id
@@ -1198,8 +1197,8 @@ class Roles:
             plumbing_response.rate_limit)
         return resp
 
+    # List gets a list of Roles matching a given set of criteria.
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Roles matching a given set of criteria."""
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')

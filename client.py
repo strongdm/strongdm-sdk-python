@@ -32,12 +32,9 @@ DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 
 
+# Client is a strongDM API client.
 class Client:
-    """Client interacts with the strongDM API.
-
-    :param api_access_key: the access key to authenticate with strongDM
-    :param api_secret: the secret key to authenticate with strongDM
-    """
+    # Creates a new strongDM API client.
     def __init__(self,
                  api_access_key,
                  api_secret,
