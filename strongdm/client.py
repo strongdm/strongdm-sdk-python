@@ -33,17 +33,16 @@ DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 
 
 class Client:
-    """Client interacts with the strongDM API."""
+    """Client interacts with the strongDM API.
+
+    :param api_access_key: the access key to authenticate with strongDM
+    :param api_secret: the secret key to authenticate with strongDM
+    """
     def __init__(self,
                  api_access_key,
                  api_secret,
                  host='api.strongdm.com:443',
                  insecure=False):
-        """Creates a new strongDM API client.
-
-        :param api_access_key: the access key to authenticate with strongDM
-        :param api_secret: the secret key to authenticate with strongDM
-        """
         self.api_access_key = api_access_key
         self.api_secret = base64.b64decode(api_secret)
         self.max_retries = DEFAULT_MAX_RETRIES
