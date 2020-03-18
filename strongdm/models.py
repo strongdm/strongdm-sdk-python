@@ -18,8 +18,8 @@
 import collections
 
 
-# CreateResponseMetadata is reserved for future use.
 class CreateResponseMetadata:
+    """CreateResponseMetadata is reserved for future use."""
     __slots__ = []
 
     def __init__(self, ):
@@ -27,11 +27,11 @@ class CreateResponseMetadata:
 
     def __repr__(self):
         return '<sdm.CreateResponseMetadata ' + \
-            '>'
+         '>'
 
 
-# GetResponseMetadata is reserved for future use.
 class GetResponseMetadata:
+    """GetResponseMetadata is reserved for future use."""
     __slots__ = []
 
     def __init__(self, ):
@@ -39,11 +39,11 @@ class GetResponseMetadata:
 
     def __repr__(self):
         return '<sdm.GetResponseMetadata ' + \
-            '>'
+         '>'
 
 
-# UpdateResponseMetadata is reserved for future use.
 class UpdateResponseMetadata:
+    """UpdateResponseMetadata is reserved for future use."""
     __slots__ = []
 
     def __init__(self, ):
@@ -51,11 +51,11 @@ class UpdateResponseMetadata:
 
     def __repr__(self):
         return '<sdm.UpdateResponseMetadata ' + \
-            '>'
+         '>'
 
 
-# DeleteResponseMetadata is reserved for future use.
 class DeleteResponseMetadata:
+    """DeleteResponseMetadata is reserved for future use."""
     __slots__ = []
 
     def __init__(self, ):
@@ -63,18 +63,20 @@ class DeleteResponseMetadata:
 
     def __repr__(self):
         return '<sdm.DeleteResponseMetadata ' + \
-            '>'
+         '>'
 
 
-# RateLimitMetadata contains information about remaining requests avaialable
-# to the user over some timeframe.
-# limit: How many total requests the user/token is authorized to make before being
-# rate limited.
-# remaining: How many remaining requests out of the limit are still avaialable.
-# reset_at: The time when remaining will be reset to limit.
-# bucket: The bucket this user/token is associated with, which may be shared between
-# multiple users/tokens.
 class RateLimitMetadata:
+    """RateLimitMetadata contains information about remaining requests avaialable
+ to the user over some timeframe.
+
+	:param limit: How many total requests the user/token is authorized to make before being
+ rate limited.
+	:param remaining: How many remaining requests out of the limit are still avaialable.
+	:param reset_at: The time when remaining will be reset to limit.
+	:param bucket: The bucket this user/token is associated with, which may be shared between
+ multiple users/tokens.
+	"""
     __slots__ = [
         'limit',
         'remaining',
@@ -96,17 +98,19 @@ class RateLimitMetadata:
 
     def __repr__(self):
         return '<sdm.RateLimitMetadata ' + \
-            'limit: ' + repr(self.limit) + ' ' +\
-            'remaining: ' + repr(self.remaining) + ' ' +\
-            'reset_at: ' + repr(self.reset_at) + ' ' +\
-            'bucket: ' + repr(self.bucket) + ' ' +\
-            '>'
+         'limit: ' + repr(self.limit) + ' ' +\
+         'remaining: ' + repr(self.remaining) + ' ' +\
+         'reset_at: ' + repr(self.reset_at) + ' ' +\
+         'bucket: ' + repr(self.bucket) + ' ' +\
+         '>'
 
 
-# AccountAttachmentCreateOptions specifies extra options for creating an
-# AccountAttachment.
-# overwrite: Overwrite clears all account grants before the attachment.
 class AccountAttachmentCreateOptions:
+    """AccountAttachmentCreateOptions specifies extra options for creating an
+ AccountAttachment.
+
+	:param overwrite: Overwrite clears all account grants before the attachment.
+	"""
     __slots__ = [
         'overwrite',
     ]
@@ -119,15 +123,17 @@ class AccountAttachmentCreateOptions:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateOptions ' + \
-            'overwrite: ' + repr(self.overwrite) + ' ' +\
-            '>'
+         'overwrite: ' + repr(self.overwrite) + ' ' +\
+         '>'
 
 
-# AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
-# meta: Reserved for future use.
-# account_attachment: The created AccountAttachment.
-# rate_limit: Rate limit information.
 class AccountAttachmentCreateResponse:
+    """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
+
+	:param meta: Reserved for future use.
+	:param account_attachment: The created AccountAttachment.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account_attachment',
@@ -146,17 +152,19 @@ class AccountAttachmentCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountAttachmentGetResponse returns a requested AccountAttachment.
-# meta: Reserved for future use.
-# account_attachment: The requested AccountAttachment.
-# rate_limit: Rate limit information.
 class AccountAttachmentGetResponse:
+    """AccountAttachmentGetResponse returns a requested AccountAttachment.
+
+	:param meta: Reserved for future use.
+	:param account_attachment: The requested AccountAttachment.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account_attachment',
@@ -175,16 +183,18 @@ class AccountAttachmentGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class AccountAttachmentDeleteResponse:
+    """AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -200,16 +210,18 @@ class AccountAttachmentDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountAttachments assign an account to a role.
-# id: Unique identifier of the AccountAttachment.
-# account_id: The id of the account of this AccountAttachment.
-# role_id: The id of the attached role of this AccountAttachment.
 class AccountAttachment:
+    """AccountAttachments assign an account to a role.
+
+	:param id: Unique identifier of the AccountAttachment.
+	:param account_id: The id of the account of this AccountAttachment.
+	:param role_id: The id of the attached role of this AccountAttachment.
+	"""
     __slots__ = [
         'id',
         'account_id',
@@ -228,17 +240,19 @@ class AccountAttachment:
 
     def __repr__(self):
         return '<sdm.AccountAttachment ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'account_id: ' + repr(self.account_id) + ' ' +\
-            'role_id: ' + repr(self.role_id) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'account_id: ' + repr(self.account_id) + ' ' +\
+         'role_id: ' + repr(self.role_id) + ' ' +\
+         '>'
 
 
-# AccountGrantCreateResponse reports how the AccountGrants were created in the system.
-# meta: Reserved for future use.
-# account_grant: The created AccountGrant.
-# rate_limit: Rate limit information.
 class AccountGrantCreateResponse:
+    """AccountGrantCreateResponse reports how the AccountGrants were created in the system.
+
+	:param meta: Reserved for future use.
+	:param account_grant: The created AccountGrant.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account_grant',
@@ -257,17 +271,19 @@ class AccountGrantCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_grant: ' + repr(self.account_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account_grant: ' + repr(self.account_grant) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountGrantGetResponse returns a requested AccountGrant.
-# meta: Reserved for future use.
-# account_grant: The requested AccountGrant.
-# rate_limit: Rate limit information.
 class AccountGrantGetResponse:
+    """AccountGrantGetResponse returns a requested AccountGrant.
+
+	:param meta: Reserved for future use.
+	:param account_grant: The requested AccountGrant.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account_grant',
@@ -286,16 +302,18 @@ class AccountGrantGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_grant: ' + repr(self.account_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account_grant: ' + repr(self.account_grant) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class AccountGrantDeleteResponse:
+    """AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -311,20 +329,22 @@ class AccountGrantDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
-# id: Unique identifier of the AccountGrant.
-# resource_id: The id of the composite role of this AccountGrant.
-# account_id: The id of the attached role of this AccountGrant.
-# start_from: The timestamp when the resource will be granted. Optional. Both start_at
-# and end_at must be defined together, or not defined at all.
-# valid_until: The timestamp when the resource grant will expire. Optional. Both
-# start_at and end_at must be defined together, or not defined at all.
 class AccountGrant:
+    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
+
+	:param id: Unique identifier of the AccountGrant.
+	:param resource_id: The id of the composite role of this AccountGrant.
+	:param account_id: The id of the attached role of this AccountGrant.
+	:param start_from: The timestamp when the resource will be granted. Optional. Both start_at
+ and end_at must be defined together, or not defined at all.
+	:param valid_until: The timestamp when the resource grant will expire. Optional. Both
+ start_at and end_at must be defined together, or not defined at all.
+	"""
     __slots__ = [
         'id',
         'resource_id',
@@ -349,21 +369,23 @@ class AccountGrant:
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'resource_id: ' + repr(self.resource_id) + ' ' +\
-            'account_id: ' + repr(self.account_id) + ' ' +\
-            'start_from: ' + repr(self.start_from) + ' ' +\
-            'valid_until: ' + repr(self.valid_until) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'resource_id: ' + repr(self.resource_id) + ' ' +\
+         'account_id: ' + repr(self.account_id) + ' ' +\
+         'start_from: ' + repr(self.start_from) + ' ' +\
+         'valid_until: ' + repr(self.valid_until) + ' ' +\
+         '>'
 
 
-# AccountCreateResponse reports how the Accounts were created in the system.
-# meta: Reserved for future use.
-# account: The created Account.
-# token: The auth token generated for the Account. The Account will use this token to
-# authenticate with the strongDM API.
-# rate_limit: Rate limit information.
 class AccountCreateResponse:
+    """AccountCreateResponse reports how the Accounts were created in the system.
+
+	:param meta: Reserved for future use.
+	:param account: The created Account.
+	:param token: The auth token generated for the Account. The Account will use this token to
+ authenticate with the strongDM API.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account',
@@ -385,18 +407,20 @@ class AccountCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account: ' + repr(self.account) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account: ' + repr(self.account) + ' ' +\
+         'token: ' + repr(self.token) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountGetResponse returns a requested Account.
-# meta: Reserved for future use.
-# account: The requested Account.
-# rate_limit: Rate limit information.
 class AccountGetResponse:
+    """AccountGetResponse returns a requested Account.
+
+	:param meta: Reserved for future use.
+	:param account: The requested Account.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account',
@@ -415,18 +439,20 @@ class AccountGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account: ' + repr(self.account) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account: ' + repr(self.account) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountUpdateResponse returns the fields of a Account after it has been updated by
-# a AccountUpdateRequest.
-# meta: Reserved for future use.
-# account: The updated Account.
-# rate_limit: Rate limit information.
 class AccountUpdateResponse:
+    """AccountUpdateResponse returns the fields of a Account after it has been updated by
+ a AccountUpdateRequest.
+
+	:param meta: Reserved for future use.
+	:param account: The updated Account.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'account',
@@ -445,16 +471,18 @@ class AccountUpdateResponse:
 
     def __repr__(self):
         return '<sdm.AccountUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account: ' + repr(self.account) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'account: ' + repr(self.account) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# AccountDeleteResponse returns information about a Account that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class AccountDeleteResponse:
+    """AccountDeleteResponse returns information about a Account that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -470,19 +498,21 @@ class AccountDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# A User can connect to resources they are granted directly, or granted
-# via roles.
-# id: Unique identifier of the User.
-# email: The User's email address. Must be unique.
-# first_name: The User's first name.
-# last_name: The User's last name.
-# suspended: The User's suspended state.
 class User:
+    """A User can connect to resources they are granted directly, or granted
+ via roles.
+
+	:param id: Unique identifier of the User.
+	:param email: The User's email address. Must be unique.
+	:param first_name: The User's first name.
+	:param last_name: The User's last name.
+	:param suspended: The User's suspended state.
+	"""
     __slots__ = [
         'id',
         'email',
@@ -507,20 +537,22 @@ class User:
 
     def __repr__(self):
         return '<sdm.User ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'email: ' + repr(self.email) + ' ' +\
-            'first_name: ' + repr(self.first_name) + ' ' +\
-            'last_name: ' + repr(self.last_name) + ' ' +\
-            'suspended: ' + repr(self.suspended) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'email: ' + repr(self.email) + ' ' +\
+         'first_name: ' + repr(self.first_name) + ' ' +\
+         'last_name: ' + repr(self.last_name) + ' ' +\
+         'suspended: ' + repr(self.suspended) + ' ' +\
+         '>'
 
 
-# A Service is a service account that can connect to resources they are granted
-# directly, or granted via roles. Services are typically automated jobs.
-# id: Unique identifier of the Service.
-# name: Unique human-readable name of the Service.
-# suspended: The Service's suspended state.
 class Service:
+    """A Service is a service account that can connect to resources they are granted
+ directly, or granted via roles. Services are typically automated jobs.
+
+	:param id: Unique identifier of the Service.
+	:param name: Unique human-readable name of the Service.
+	:param suspended: The Service's suspended state.
+	"""
     __slots__ = [
         'id',
         'name',
@@ -539,21 +571,24 @@ class Service:
 
     def __repr__(self):
         return '<sdm.Service ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'suspended: ' + repr(self.suspended) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'suspended: ' + repr(self.suspended) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# access_key:
-# secret_access_key:
-# output:
-# port_override:
-# region:
 class Athena:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param access_key: 
+	:param secret_access_key: 
+	:param output: 
+	:param port_override: 
+	:param region: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -587,26 +622,29 @@ class Athena:
 
     def __repr__(self):
         return '<sdm.Athena ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'output: ' + repr(self.output) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'access_key: ' + repr(self.access_key) + ' ' +\
+         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+         'output: ' + repr(self.output) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'region: ' + repr(self.region) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# private_key:
-# project:
-# port_override:
-# endpoint:
-# username:
 class BigQuery:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param private_key: 
+	:param project: 
+	:param port_override: 
+	:param endpoint: 
+	:param username: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -640,27 +678,30 @@ class BigQuery:
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'private_key: ' + repr(self.private_key) + ' ' +\
-            'project: ' + repr(self.project) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'private_key: ' + repr(self.private_key) + ' ' +\
+         'project: ' + repr(self.project) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'endpoint: ' + repr(self.endpoint) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
-# tls_required:
 class Cassandra:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param port_override: 
+	:param port: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -697,27 +738,30 @@ class Cassandra:
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# username:
-# password:
-# port:
 class Druid:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port_override: 
+	:param username: 
+	:param password: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -751,26 +795,29 @@ class Druid:
 
     def __repr__(self):
         return '<sdm.Druid ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# access_key:
-# secret_access_key:
-# region:
-# endpoint:
-# port_override:
 class DynamoDB:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param access_key: 
+	:param secret_access_key: 
+	:param region: 
+	:param endpoint: 
+	:param port_override: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -804,26 +851,29 @@ class DynamoDB:
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'access_key: ' + repr(self.access_key) + ' ' +\
+         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+         'region: ' + repr(self.region) + ' ' +\
+         'endpoint: ' + repr(self.endpoint) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# region:
-# secret_access_key:
-# endpoint:
-# access_key:
-# port_override:
 class AmazonES:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param region: 
+	:param secret_access_key: 
+	:param endpoint: 
+	:param access_key: 
+	:param port_override: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -857,27 +907,30 @@ class AmazonES:
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'region: ' + repr(self.region) + ' ' +\
+         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+         'endpoint: ' + repr(self.endpoint) + ' ' +\
+         'access_key: ' + repr(self.access_key) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
-# tls_required:
 class Elastic:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param port_override: 
+	:param port: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -914,29 +967,32 @@ class Elastic:
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# url:
-# healthcheck_path:
-# username:
-# password:
-# headers_blacklist:
-# default_path:
-# subdomain:
 class HTTPBasicAuth:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param url: 
+	:param healthcheck_path: 
+	:param username: 
+	:param password: 
+	:param headers_blacklist: 
+	:param default_path: 
+	:param subdomain: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -976,28 +1032,31 @@ class HTTPBasicAuth:
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'url: ' + repr(self.url) + ' ' +\
+         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+         'default_path: ' + repr(self.default_path) + ' ' +\
+         'subdomain: ' + repr(self.subdomain) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# url:
-# healthcheck_path:
-# headers_blacklist:
-# default_path:
-# subdomain:
 class HTTPNoAuth:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param url: 
+	:param healthcheck_path: 
+	:param headers_blacklist: 
+	:param default_path: 
+	:param subdomain: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1031,27 +1090,30 @@ class HTTPNoAuth:
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'url: ' + repr(self.url) + ' ' +\
+         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+         'default_path: ' + repr(self.default_path) + ' ' +\
+         'subdomain: ' + repr(self.subdomain) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# url:
-# healthcheck_path:
-# auth_header:
-# headers_blacklist:
-# default_path:
-# subdomain:
 class HTTPAuth:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param url: 
+	:param healthcheck_path: 
+	:param auth_header: 
+	:param headers_blacklist: 
+	:param default_path: 
+	:param subdomain: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1088,30 +1150,33 @@ class HTTPAuth:
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'auth_header: ' + repr(self.auth_header) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'url: ' + repr(self.url) + ' ' +\
+         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+         'auth_header: ' + repr(self.auth_header) + ' ' +\
+         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+         'default_path: ' + repr(self.default_path) + ' ' +\
+         'subdomain: ' + repr(self.subdomain) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# certificate_authority:
-# certificate_authority_filename:
-# client_certificate:
-# client_certificate_filename:
-# client_key:
-# client_key_filename:
 class Kubernetes:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param certificate_authority: 
+	:param certificate_authority_filename: 
+	:param client_certificate: 
+	:param client_certificate_filename: 
+	:param client_key: 
+	:param client_key_filename: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1154,28 +1219,31 @@ class Kubernetes:
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+         'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+         'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+         'client_key: ' + repr(self.client_key) + ' ' +\
+         'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# username:
-# password:
 class KubernetesBasicAuth:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param username: 
+	:param password: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1206,23 +1274,26 @@ class KubernetesBasicAuth:
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# token:
 class KubernetesServiceAccount:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param token: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1250,26 +1321,29 @@ class KubernetesServiceAccount:
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'token: ' + repr(self.token) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
-# access_key:
-# secret_access_key:
-# certificate_authority:
-# certificate_authority_filename:
-# region:
-# cluster_name:
 class AmazonEKS:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param endpoint: 
+	:param access_key: 
+	:param secret_access_key: 
+	:param certificate_authority: 
+	:param certificate_authority_filename: 
+	:param region: 
+	:param cluster_name: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1309,28 +1383,31 @@ class AmazonEKS:
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'endpoint: ' + repr(self.endpoint) + ' ' +\
+         'access_key: ' + repr(self.access_key) + ' ' +\
+         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+         'region: ' + repr(self.region) + ' ' +\
+         'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# endpoint:
-# certificate_authority:
-# certificate_authority_filename:
-# service_account_key:
-# service_account_key_filename:
 class GoogleGKE:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param endpoint: 
+	:param certificate_authority: 
+	:param certificate_authority_filename: 
+	:param service_account_key: 
+	:param service_account_key_filename: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1364,29 +1441,32 @@ class GoogleGKE:
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
-            'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'endpoint: ' + repr(self.endpoint) + ' ' +\
+         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+         'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+         'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# certificate_authority:
-# certificate_authority_filename:
-# client_certificate:
-# client_certificate_filename:
-# client_key:
-# client_key_filename:
 class AKS:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param certificate_authority: 
+	:param certificate_authority_filename: 
+	:param client_certificate: 
+	:param client_certificate_filename: 
+	:param client_key: 
+	:param client_key_filename: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1429,28 +1509,31 @@ class AKS:
 
     def __repr__(self):
         return '<sdm.AKS ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+         'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+         'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+         'client_key: ' + repr(self.client_key) + ' ' +\
+         'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# username:
-# password:
 class AKSBasicAuth:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param username: 
+	:param password: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1481,23 +1564,26 @@ class AKSBasicAuth:
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port:
-# token:
 class AKSServiceAccount:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port: 
+	:param token: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1525,22 +1611,25 @@ class AKSServiceAccount:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'token: ' + repr(self.token) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# port:
 class Memcached:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1568,27 +1657,30 @@ class Memcached:
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# auth_database:
-# port_override:
-# username:
-# password:
-# port:
-# replica_set:
-# tls_required:
 class MongoLegacyHost:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param auth_database: 
+	:param port_override: 
+	:param username: 
+	:param password: 
+	:param port: 
+	:param replica_set: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1631,33 +1723,36 @@ class MongoLegacyHost:
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'auth_database: ' + repr(self.auth_database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'replica_set: ' + repr(self.replica_set) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# auth_database:
-# port_override:
-# username:
-# password:
-# port:
-# replica_set:
-# connect_to_replica:
-# tls_required:
 class MongoLegacyReplicaset:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param auth_database: 
+	:param port_override: 
+	:param username: 
+	:param password: 
+	:param port: 
+	:param replica_set: 
+	:param connect_to_replica: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1703,32 +1798,35 @@ class MongoLegacyReplicaset:
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'auth_database: ' + repr(self.auth_database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'replica_set: ' + repr(self.replica_set) + ' ' +\
+         'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# auth_database:
-# port_override:
-# username:
-# password:
-# port:
-# tls_required:
 class MongoHost:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param auth_database: 
+	:param port_override: 
+	:param username: 
+	:param password: 
+	:param port: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1768,32 +1866,35 @@ class MongoHost:
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'auth_database: ' + repr(self.auth_database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# auth_database:
-# port_override:
-# username:
-# password:
-# port:
-# replica_set:
-# connect_to_replica:
-# tls_required:
 class MongoReplicaSet:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param auth_database: 
+	:param port_override: 
+	:param username: 
+	:param password: 
+	:param port: 
+	:param replica_set: 
+	:param connect_to_replica: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1839,31 +1940,34 @@ class MongoReplicaSet:
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'auth_database: ' + repr(self.auth_database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'replica_set: ' + repr(self.replica_set) + ' ' +\
+         'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
 class Mysql:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1900,28 +2004,31 @@ class Mysql:
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
 class AuroraMysql:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -1958,28 +2065,31 @@ class AuroraMysql:
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
 class Clustrix:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2016,28 +2126,31 @@ class Clustrix:
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
 class Maria:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2074,28 +2187,31 @@ class Maria:
 
     def __repr__(self):
         return '<sdm.Maria ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
 class Memsql:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2132,29 +2248,32 @@ class Memsql:
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port:
-# port_override:
-# tls_required:
 class Oracle:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port: 
+	:param port_override: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2194,30 +2313,33 @@ class Oracle:
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
-# override_database:
 class Postgres:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2257,30 +2379,33 @@ class Postgres:
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
-# override_database:
 class AuroraPostgres:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2320,30 +2445,33 @@ class AuroraPostgres:
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
-# override_database:
 class Greenplum:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2383,30 +2511,33 @@ class Greenplum:
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
-# override_database:
 class Cockroach:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2446,30 +2577,33 @@ class Cockroach:
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# port:
-# override_database:
 class Redshift:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2509,30 +2643,33 @@ class Redshift:
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# password:
-# database:
-# port_override:
-# port:
-# username:
-# tls_required:
 class Presto:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param port: 
+	:param username: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2572,28 +2709,31 @@ class Presto:
 
     def __repr__(self):
         return '<sdm.Presto ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
 class RDP:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2627,25 +2767,28 @@ class RDP:
 
     def __repr__(self):
         return '<sdm.RDP ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# password:
-# port:
 class Redis:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port_override: 
+	:param password: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2676,25 +2819,28 @@ class Redis:
 
     def __repr__(self):
         return '<sdm.Redis ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# port_override:
-# password:
-# port:
-# tls_required:
 class ElasticacheRedis:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param port_override: 
+	:param password: 
+	:param port: 
+	:param tls_required: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2728,27 +2874,30 @@ class ElasticacheRedis:
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'tls_required: ' + repr(self.tls_required) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# schema:
-# port_override:
 class Snowflake:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param schema: 
+	:param port_override: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2785,30 +2934,33 @@ class Snowflake:
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'schema: ' + repr(self.schema) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'schema: ' + repr(self.schema) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# database:
-# port_override:
-# schema:
-# port:
-# override_database:
 class SQLServer:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param database: 
+	:param port_override: 
+	:param schema: 
+	:param port: 
+	:param override_database: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2851,29 +3003,32 @@ class SQLServer:
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'schema: ' + repr(self.schema) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'database: ' + repr(self.database) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'schema: ' + repr(self.schema) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'override_database: ' + repr(self.override_database) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# port:
-# public_key:
-# port_forwarding:
 class SSH:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param port: 
+	:param public_key: 
+	:param port_forwarding: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2907,26 +3062,29 @@ class SSH:
 
     def __repr__(self):
         return '<sdm.SSH ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'public_key: ' + repr(self.public_key) + ' ' +\
-            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'public_key: ' + repr(self.public_key) + ' ' +\
+         'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# port_override:
-# port:
-# password:
 class Sybase:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param port_override: 
+	:param port: 
+	:param password: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -2960,26 +3118,29 @@ class Sybase:
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# port_override:
-# port:
-# password:
 class SybaseIQ:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param port_override: 
+	:param port: 
+	:param password: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -3013,26 +3174,29 @@ class SybaseIQ:
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         '>'
 
 
-# id: Unique identifier of the Resource.
-# name: Unique human-readable name of the Resource.
-# healthy: True if the datasource is reachable and the credentials are valid.
-# hostname:
-# username:
-# password:
-# port_override:
-# port:
 class Teradata:
+    """
+
+	:param id: Unique identifier of the Resource.
+	:param name: Unique human-readable name of the Resource.
+	:param healthy: True if the datasource is reachable and the credentials are valid.
+	:param hostname: 
+	:param username: 
+	:param password: 
+	:param port_override: 
+	:param port: 
+	"""
     __slots__ = [
         'id',
         'name',
@@ -3066,24 +3230,26 @@ class Teradata:
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'healthy: ' + repr(self.healthy) + ' ' +\
+         'hostname: ' + repr(self.hostname) + ' ' +\
+         'username: ' + repr(self.username) + ' ' +\
+         'password: ' + repr(self.password) + ' ' +\
+         'port_override: ' + repr(self.port_override) + ' ' +\
+         'port: ' + repr(self.port) + ' ' +\
+         '>'
 
 
-# NodeCreateResponse reports how the Nodes were created in the system.
-# meta: Reserved for future use.
-# node: The created Node.
-# token: The auth token generated for the Node. The Node will use this token to
-# authenticate with the strongDM API.
-# rate_limit: Rate limit information.
 class NodeCreateResponse:
+    """NodeCreateResponse reports how the Nodes were created in the system.
+
+	:param meta: Reserved for future use.
+	:param node: The created Node.
+	:param token: The auth token generated for the Node. The Node will use this token to
+ authenticate with the strongDM API.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'node',
@@ -3105,18 +3271,20 @@ class NodeCreateResponse:
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'node: ' + repr(self.node) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'node: ' + repr(self.node) + ' ' +\
+         'token: ' + repr(self.token) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# NodeGetResponse returns a requested Node.
-# meta: Reserved for future use.
-# node: The requested Node.
-# rate_limit: Rate limit information.
 class NodeGetResponse:
+    """NodeGetResponse returns a requested Node.
+
+	:param meta: Reserved for future use.
+	:param node: The requested Node.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'node',
@@ -3135,18 +3303,20 @@ class NodeGetResponse:
 
     def __repr__(self):
         return '<sdm.NodeGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'node: ' + repr(self.node) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'node: ' + repr(self.node) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# NodeUpdateResponse returns the fields of a Node after it has been updated by
-# a NodeUpdateRequest.
-# meta: Reserved for future use.
-# node: The updated Node.
-# rate_limit: Rate limit information.
 class NodeUpdateResponse:
+    """NodeUpdateResponse returns the fields of a Node after it has been updated by
+ a NodeUpdateRequest.
+
+	:param meta: Reserved for future use.
+	:param node: The updated Node.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'node',
@@ -3165,16 +3335,18 @@ class NodeUpdateResponse:
 
     def __repr__(self):
         return '<sdm.NodeUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'node: ' + repr(self.node) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'node: ' + repr(self.node) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# NodeDeleteResponse returns information about a Node that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class NodeDeleteResponse:
+    """NodeDeleteResponse returns information about a Node that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3190,17 +3362,19 @@ class NodeDeleteResponse:
 
     def __repr__(self):
         return '<sdm.NodeDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# Relay represents a StrongDM CLI installation running in relay mode.
-# id: Unique identifier of the Relay.
-# name: Unique human-readable name of the Relay. Generated if not provided on create.
-# state: The current state of the relay. One of: "new", "verifying_restart",
-# "restarting", "started", "stopped", "dead", "unknown",
 class Relay:
+    """Relay represents a StrongDM CLI installation running in relay mode.
+
+	:param id: Unique identifier of the Relay.
+	:param name: Unique human-readable name of the Relay. Generated if not provided on create.
+	:param state: The current state of the relay. One of: "new", "verifying_restart",
+ "restarting", "started", "stopped", "dead", "unknown",
+	"""
     __slots__ = [
         'id',
         'name',
@@ -3219,21 +3393,23 @@ class Relay:
 
     def __repr__(self):
         return '<sdm.Relay ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'state: ' + repr(self.state) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'state: ' + repr(self.state) + ' ' +\
+         '>'
 
 
-# Gateway represents a StrongDM CLI installation running in gateway mode.
-# id: Unique identifier of the Gateway.
-# name: Unique human-readable name of the Gateway. Generated if not provided on create.
-# state: The current state of the gateway. One of: "new", "verifying_restart",
-# "restarting", "started", "stopped", "dead", "unknown"
-# listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
-# bind_address: The hostname/port tuple which the gateway daemon will bind to.
-# If not provided on create, set to "0.0.0.0:<listen_address_port>".
 class Gateway:
+    """Gateway represents a StrongDM CLI installation running in gateway mode.
+
+	:param id: Unique identifier of the Gateway.
+	:param name: Unique human-readable name of the Gateway. Generated if not provided on create.
+	:param state: The current state of the gateway. One of: "new", "verifying_restart",
+ "restarting", "started", "stopped", "dead", "unknown"
+	:param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
+	:param bind_address: The hostname/port tuple which the gateway daemon will bind to.
+ If not provided on create, set to "0.0.0.0:<listen_address_port>".
+	"""
     __slots__ = [
         'id',
         'name',
@@ -3258,19 +3434,21 @@ class Gateway:
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'state: ' + repr(self.state) + ' ' +\
-            'listen_address: ' + repr(self.listen_address) + ' ' +\
-            'bind_address: ' + repr(self.bind_address) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'state: ' + repr(self.state) + ' ' +\
+         'listen_address: ' + repr(self.listen_address) + ' ' +\
+         'bind_address: ' + repr(self.bind_address) + ' ' +\
+         '>'
 
 
-# ResourceCreateResponse reports how the Resources were created in the system.
-# meta: Reserved for future use.
-# resource: The created Resource.
-# rate_limit: Rate limit information.
 class ResourceCreateResponse:
+    """ResourceCreateResponse reports how the Resources were created in the system.
+
+	:param meta: Reserved for future use.
+	:param resource: The created Resource.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'resource',
@@ -3289,17 +3467,19 @@ class ResourceCreateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'resource: ' + repr(self.resource) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# ResourceGetResponse returns a requested Resource.
-# meta: Reserved for future use.
-# resource: The requested Resource.
-# rate_limit: Rate limit information.
 class ResourceGetResponse:
+    """ResourceGetResponse returns a requested Resource.
+
+	:param meta: Reserved for future use.
+	:param resource: The requested Resource.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'resource',
@@ -3318,18 +3498,20 @@ class ResourceGetResponse:
 
     def __repr__(self):
         return '<sdm.ResourceGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'resource: ' + repr(self.resource) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# ResourceUpdateResponse returns the fields of a Resource after it has been updated by
-# a ResourceUpdateRequest.
-# meta: Reserved for future use.
-# resource: The updated Resource.
-# rate_limit: Rate limit information.
 class ResourceUpdateResponse:
+    """ResourceUpdateResponse returns the fields of a Resource after it has been updated by
+ a ResourceUpdateRequest.
+
+	:param meta: Reserved for future use.
+	:param resource: The updated Resource.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'resource',
@@ -3348,16 +3530,18 @@ class ResourceUpdateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'resource: ' + repr(self.resource) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# ResourceDeleteResponse returns information about a Resource that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class ResourceDeleteResponse:
+    """ResourceDeleteResponse returns information about a Resource that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3373,16 +3557,18 @@ class ResourceDeleteResponse:
 
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
-# meta: Reserved for future use.
-# role_attachment: The created RoleAttachment.
-# rate_limit: Rate limit information.
 class RoleAttachmentCreateResponse:
+    """RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
+
+	:param meta: Reserved for future use.
+	:param role_attachment: The created RoleAttachment.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role_attachment',
@@ -3401,17 +3587,19 @@ class RoleAttachmentCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleAttachmentGetResponse returns a requested RoleAttachment.
-# meta: Reserved for future use.
-# role_attachment: The requested RoleAttachment.
-# rate_limit: Rate limit information.
 class RoleAttachmentGetResponse:
+    """RoleAttachmentGetResponse returns a requested RoleAttachment.
+
+	:param meta: Reserved for future use.
+	:param role_attachment: The requested RoleAttachment.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role_attachment',
@@ -3430,16 +3618,18 @@ class RoleAttachmentGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class RoleAttachmentDeleteResponse:
+    """RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3455,16 +3645,18 @@ class RoleAttachmentDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# A RoleAttachment assigns a role to a composite role.
-# id: Unique identifier of the RoleAttachment.
-# composite_role_id: The id of the composite role of this RoleAttachment.
-# attached_role_id: The id of the attached role of this RoleAttachment.
 class RoleAttachment:
+    """A RoleAttachment assigns a role to a composite role.
+
+	:param id: Unique identifier of the RoleAttachment.
+	:param composite_role_id: The id of the composite role of this RoleAttachment.
+	:param attached_role_id: The id of the attached role of this RoleAttachment.
+	"""
     __slots__ = [
         'id',
         'composite_role_id',
@@ -3483,17 +3675,19 @@ class RoleAttachment:
 
     def __repr__(self):
         return '<sdm.RoleAttachment ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
-            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
+         'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
+         '>'
 
 
-# RoleGrantCreateResponse reports how the RoleGrants were created in the system.
-# meta: Reserved for future use.
-# role_grant: The created RoleGrant.
-# rate_limit: Rate limit information.
 class RoleGrantCreateResponse:
+    """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
+
+	:param meta: Reserved for future use.
+	:param role_grant: The created RoleGrant.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role_grant',
@@ -3512,17 +3706,19 @@ class RoleGrantCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role_grant: ' + repr(self.role_grant) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleGrantGetResponse returns a requested RoleGrant.
-# meta: Reserved for future use.
-# role_grant: The requested RoleGrant.
-# rate_limit: Rate limit information.
 class RoleGrantGetResponse:
+    """RoleGrantGetResponse returns a requested RoleGrant.
+
+	:param meta: Reserved for future use.
+	:param role_grant: The requested RoleGrant.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role_grant',
@@ -3541,16 +3737,18 @@ class RoleGrantGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role_grant: ' + repr(self.role_grant) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class RoleGrantDeleteResponse:
+    """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3566,17 +3764,19 @@ class RoleGrantDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# A RoleGrant connects a resource to a role, granting members of the role
-# access to that resource.
-# id: Unique identifier of the RoleGrant.
-# resource_id: The id of the resource of this RoleGrant.
-# role_id: The id of the attached role of this RoleGrant.
 class RoleGrant:
+    """A RoleGrant connects a resource to a role, granting members of the role
+ access to that resource.
+
+	:param id: Unique identifier of the RoleGrant.
+	:param resource_id: The id of the resource of this RoleGrant.
+	:param role_id: The id of the attached role of this RoleGrant.
+	"""
     __slots__ = [
         'id',
         'resource_id',
@@ -3595,18 +3795,20 @@ class RoleGrant:
 
     def __repr__(self):
         return '<sdm.RoleGrant ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'resource_id: ' + repr(self.resource_id) + ' ' +\
-            'role_id: ' + repr(self.role_id) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'resource_id: ' + repr(self.resource_id) + ' ' +\
+         'role_id: ' + repr(self.role_id) + ' ' +\
+         '>'
 
 
-# RoleCreateResponse reports how the Roles were created in the system. It can
-# communicate partial successes or failures.
-# meta: Reserved for future use.
-# role: The created Role.
-# rate_limit: Rate limit information.
 class RoleCreateResponse:
+    """RoleCreateResponse reports how the Roles were created in the system. It can
+ communicate partial successes or failures.
+
+	:param meta: Reserved for future use.
+	:param role: The created Role.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role',
@@ -3625,17 +3827,19 @@ class RoleCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role: ' + repr(self.role) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role: ' + repr(self.role) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleGetResponse returns a requested Role.
-# meta: Reserved for future use.
-# role: The requested Role.
-# rate_limit: Rate limit information.
 class RoleGetResponse:
+    """RoleGetResponse returns a requested Role.
+
+	:param meta: Reserved for future use.
+	:param role: The requested Role.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role',
@@ -3654,18 +3858,20 @@ class RoleGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role: ' + repr(self.role) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role: ' + repr(self.role) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleUpdateResponse returns the fields of a Role after it has been updated by
-# a RoleUpdateRequest.
-# meta: Reserved for future use.
-# role: The updated Role.
-# rate_limit: Rate limit information.
 class RoleUpdateResponse:
+    """RoleUpdateResponse returns the fields of a Role after it has been updated by
+ a RoleUpdateRequest.
+
+	:param meta: Reserved for future use.
+	:param role: The updated Role.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'role',
@@ -3684,16 +3890,18 @@ class RoleUpdateResponse:
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role: ' + repr(self.role) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'role: ' + repr(self.role) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# RoleDeleteResponse returns information about a Role that was deleted.
-# meta: Reserved for future use.
-# rate_limit: Rate limit information.
 class RoleDeleteResponse:
+    """RoleDeleteResponse returns information about a Role that was deleted.
+
+	:param meta: Reserved for future use.
+	:param rate_limit: Rate limit information.
+	"""
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3709,16 +3917,18 @@ class RoleDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
+         'meta: ' + repr(self.meta) + ' ' +\
+         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+         '>'
 
 
-# A Role is a collection of permissions, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
-# id: Unique identifier of the Role.
-# name: Unique human-readable name of the Role.
-# composite: True if the Role is a composite role.
 class Role:
+    """A Role is a collection of permissions, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
+
+	:param id: Unique identifier of the Role.
+	:param name: Unique human-readable name of the Role.
+	:param composite: True if the Role is a composite role.
+	"""
     __slots__ = [
         'id',
         'name',
@@ -3737,7 +3947,7 @@ class Role:
 
     def __repr__(self):
         return '<sdm.Role ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'composite: ' + repr(self.composite) + ' ' +\
-            '>'
+         'id: ' + repr(self.id) + ' ' +\
+         'name: ' + repr(self.name) + ' ' +\
+         'composite: ' + repr(self.composite) + ' ' +\
+         '>'
