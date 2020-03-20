@@ -52,7 +52,7 @@ def quote_filter_args(filter, *args):
 
 def timestamp_to_porcelain(t):
     ts = t.ToDatetime().replace(tzinfo=datetime.timezone.utc)
-    if ts == datetime.datetime(1970,1,1,0,0,0,0,datetime.timezone.utc):
+    if ts == datetime.datetime(1970, 1, 1, 0, 0, 0, 0, datetime.timezone.utc):
         return None
     return ts
 

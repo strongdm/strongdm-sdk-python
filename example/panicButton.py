@@ -20,6 +20,7 @@ import json
 import os
 import strongdm
 
+
 # panicButton.py suspends all users except for one admin,
 # in the fake use case of a critical break in or something
 # usage:
@@ -50,20 +51,28 @@ def main():
                 client.accounts.update(user)
             for attachment in state['attachments']:
                 try:
-                    client.account_attachments.create(strongdm.AccountAttachment(account_id=attachment["account_id"],role_id=attachment["role_id"]))
+                    client.account_attachments.create(
+                        strongdm.AccountAttachment(
+                            account_id=attachment["account_id"],
+                            role_id=attachment["role_id"]))
                 except strongdm.errors.AlreadyExistsError:
                     pass
                 except Exception as ex:
-                    print("skipping creation of attachment due to error: ", str(ex))
+                    print("skipping creation of attachment due to error: ",
+                          str(ex))
             for grant in state['grants']:
                 try:
-                    client.account_grants.create(strongdm.AccountGrant(account_id=grant["account_id"],resource_id=grant["resource_id"]))
+                    client.account_grants.create(
+                        strongdm.AccountGrant(
+                            account_id=grant["account_id"],
+                            resource_id=grant["resource_id"]))
                 except strongdm.errors.AlreadyExistsError:
                     pass
                 except Exception as ex:
                     print("skipping creation of grant due to error: ", str(ex))
             print("reinstated " + str(reinstated_count) + " users")
-            print("recreated " + str(len(state['attachments'])) + " account attachments")
+            print("recreated " + str(len(state['attachments'])) +
+                  " account attachments")
             print("recreated " + str(len(state['grants'])) + " account grants")
         return
 
@@ -83,16 +92,23 @@ def main():
     account_grants = client.account_grants.list('')
 
     state = {
-        'attachments': [{"account_id":x.account_id,"role_id":x.role_id} for x in account_attachments if x.account_id != admin_user_id],
-        'grants': [{"account_id":x.account_id,"resource_id":x.resource_id} for x in account_grants if x.account_id != admin_user_id and x.valid_until is None],
+        'attachments': [{
+            "account_id": x.account_id,
+            "role_id": x.role_id
+        } for x in account_attachments if x.account_id != admin_user_id],
+        'grants': [{
+            "account_id": x.account_id,
+            "resource_id": x.resource_id
+        } for x in account_grants
+                   if x.account_id != admin_user_id and x.valid_until is None],
     }
 
-    print("storing " + str(len(state['attachments'])) + " account attachments in state")
+    print("storing " + str(len(state['attachments'])) +
+          " account attachments in state")
     print("storing " + str(len(state['grants'])) + " account grants in state")
 
     with open('state.json', 'w') as outfile:
         json.dump(state, outfile)
-
 
     suspended_count = 0
     users = client.accounts.list('')
@@ -104,8 +120,8 @@ def main():
             client.accounts.update(user)
             suspended_count += 1
         except Exception as ex:
-            print("skipping user " + user.id + " on account of error: " + str(ex))
-
+            print("skipping user " + user.id + " on account of error: " +
+                  str(ex))
 
     print("suspended " + str(suspended_count) + " users ")
 
