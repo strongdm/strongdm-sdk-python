@@ -12,23 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import sys
-import os.path
 import os
-sys.path += [
-    os.path.normpath(
-        os.path.join(os.path.abspath(os.path.dirname(__file__)), '../../'))
-]
-import importlib
-sdm = importlib.import_module("strongdm-sdk-python")
+import strongdm
 
 
 # listUsers.py enumerates all users of an organization
 # usage:
 # python3 listUsers.py
 def main():
-    client = sdm.Client(os.getenv("SDM_API_ACCESS_KEY"),
-                        os.getenv("SDM_API_SECRET_KEY"))
+    client = strongdm.Client(os.getenv("SDM_API_ACCESS_KEY"),
+                             os.getenv("SDM_API_SECRET_KEY"))
 
     users = client.accounts.list('')
     for user in users:
