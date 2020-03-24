@@ -13,7 +13,10 @@
 # limitations under the License.
 #
 import yaml
+import json
 import os
+import argparse
+import datetime
 import strongdm
 from okta.framework.ApiClient import ApiClient
 from okta.framework.Utils import Utils
@@ -36,6 +39,14 @@ class OktaUser:
 
     def __repr__(self):
         return "%s %s" % (self.login, self.groups)
+
+    def to_dict(self):
+        return {
+            'login': self.login,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'groups': self.groups,
+        }
 
 
 def load_okta_users():
@@ -62,13 +73,23 @@ def load_okta_users():
 
 
 def main():
-    try:
-        okta_sync()
-    except Exception as ex:
-        print("okta sync failed:" + str(ex))
+    parser = argparse.ArgumentParser(
+        description='Update StrongDM permissions according to Okta groups')
+    parser.add_argument('-p',
+                        '--plan',
+                        action='store_const',
+                        const=True,
+                        help='calculate changes but do not apply them')
+    parser.add_argument('-v',
+                        '--verbose',
+                        action='store_const',
+                        const=True,
+                        help='print detailed report')
+    args = parser.parse_args()
+    okta_sync(args.plan, args.verbose)
 
 
-def okta_sync():
+def okta_sync(plan, verbose):
     SDM_API_ACCESS_KEY = os.getenv('SDM_API_ACCESS_KEY')
     SDM_API_SECRET_KEY = os.getenv('SDM_API_SECRET_KEY')
     OKTA_CLIENT_TOKEN = os.getenv('OKTA_CLIENT_TOKEN')
@@ -81,13 +102,36 @@ def okta_sync():
         )
         return
 
+    report = {
+        'start': str(datetime.datetime.now()),
+        'oktaUsersCount': 0,
+        'oktaUsers': [],
+        'sdmUsersCount': 0,
+        'sdmUsers': [],
+        'bothUsersCount': 0,
+        'sdmResourcesCount': 0,
+        'sdmResources': {},
+        'permissionsGranted': 0,
+        'permissionsRevoked': 0,
+        'grants': [],
+        'revocations': [],
+        'matchers': {},
+    }
+
     matchers = load_matchers()
     okta_users = load_okta_users()
 
+    report['matchers'] = matchers
+    report['oktaUsers'] = [x.to_dict() for x in okta_users]
+    report['oktaUsersCount'] = len(okta_users)
+
     client = strongdm.Client(SDM_API_ACCESS_KEY, SDM_API_SECRET_KEY)
 
-    accounts = {o.email: o.id for o in client.accounts.list("")}
-    permissions = [v for v in client.account_grants.list("")]
+    accounts = {o.email: o for o in client.accounts.list('type:user')}
+    permissions = [v for v in client.account_grants.list('')]
+
+    report['sdmUsers'] = {k: v.to_dict() for (k, v) in accounts.items()}
+    report['sdmUsersCount'] = len(accounts)
 
     # define current state
     current = {}
@@ -102,15 +146,19 @@ def okta_sync():
     for group in matchers["groups"]:
         for resourceQuery in group["resources"]:
             for res in client.resources.list(resourceQuery):
+                report['sdmResources'] = res
                 for u in okta_users:
                     if group["name"] in u.groups:
                         if u.login not in accounts:
                             continue
                         overlapping += 1
-                        aid = accounts[u.login]
+                        aid = accounts[u.login].id
                         if aid not in desired:
                             desired[aid] = set()
                         desired[aid].add(res.id)
+
+    report['bothUsersCount'] = overlapping
+    report['sdmResourcesCount'] = len(report['sdmResources'])
 
     # revoke things
     revocations = 0
@@ -118,8 +166,13 @@ def okta_sync():
         desRes = desired.get(aid, set())
         for rid in curRes:
             if rid[0] not in desRes:
+                if plan:
+                    print('Plan: revoke {} from user {}'.format(rid[1], aid))
+                else:
+                    client.account_grants.delete(rid[1])
+                report['revocations'].append(rid[1])
                 revocations += 1
-                client.account_grants.delete(rid[1])
+    report['permissionsRevoked'] = revocations
 
     # grant things
     grants = 0
@@ -128,12 +181,21 @@ def okta_sync():
         for rid in desRes:
             for cr in curRes:
                 if rid != cr[0]:
+                    ag = strongdm.AccountGrant(resource_id=rid, account_id=aid)
+                    if plan:
+                        print('Plan: grant {} to user {}'.format(rid, aid))
+                    else:
+                        ag = client.account_grants.create(ag)
+                    report['grants'].append(ag)
                     grants += 1
-                    client.account_grants.create(
-                        strongdm.AccountGrant(resource_id=rid, account_id=aid))
+    report['permissionsGranted'] = grants
+    report['complete'] = str(datetime.datetime.now())
 
-    print("{} Okta users, {} strongDM users, {} overlapping users, {} grants, {} revocations".format(\
-        len(okta_users),len(accounts), overlapping, grants, revocations))
+    if verbose:
+        print(json.dumps(report, indent=4, sort_keys=True))
+    else:
+        print("{} Okta users, {} strongDM users, {} overlapping users, {} grants, {} revocations".format(\
+            len(okta_users),len(accounts), overlapping, grants, revocations))
 
 
 if __name__ == '__main__':
