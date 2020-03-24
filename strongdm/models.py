@@ -27,7 +27,14 @@ class CreateResponseMetadata:
 
     def __repr__(self):
         return '<sdm.CreateResponseMetadata ' + \
-         '>'
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class GetResponseMetadata:
@@ -39,7 +46,14 @@ class GetResponseMetadata:
 
     def __repr__(self):
         return '<sdm.GetResponseMetadata ' + \
-         '>'
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class UpdateResponseMetadata:
@@ -51,7 +65,14 @@ class UpdateResponseMetadata:
 
     def __repr__(self):
         return '<sdm.UpdateResponseMetadata ' + \
-         '>'
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class DeleteResponseMetadata:
@@ -63,20 +84,27 @@ class DeleteResponseMetadata:
 
     def __repr__(self):
         return '<sdm.DeleteResponseMetadata ' + \
-         '>'
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class RateLimitMetadata:
     """RateLimitMetadata contains information about remaining requests avaialable
  to the user over some timeframe.
 
-	:param limit: How many total requests the user/token is authorized to make before being
+    :param limit: How many total requests the user/token is authorized to make before being
  rate limited.
-	:param remaining: How many remaining requests out of the limit are still avaialable.
-	:param reset_at: The time when remaining will be reset to limit.
-	:param bucket: The bucket this user/token is associated with, which may be shared between
+    :param remaining: How many remaining requests out of the limit are still avaialable.
+    :param reset_at: The time when remaining will be reset to limit.
+    :param bucket: The bucket this user/token is associated with, which may be shared between
  multiple users/tokens.
-	"""
+    """
     __slots__ = [
         'limit',
         'remaining',
@@ -98,19 +126,36 @@ class RateLimitMetadata:
 
     def __repr__(self):
         return '<sdm.RateLimitMetadata ' + \
-         'limit: ' + repr(self.limit) + ' ' +\
-         'remaining: ' + repr(self.remaining) + ' ' +\
-         'reset_at: ' + repr(self.reset_at) + ' ' +\
-         'bucket: ' + repr(self.bucket) + ' ' +\
-         '>'
+            'limit: ' + repr(self.limit) + ' ' +\
+            'remaining: ' + repr(self.remaining) + ' ' +\
+            'reset_at: ' + repr(self.reset_at) + ' ' +\
+            'bucket: ' + repr(self.bucket) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'limit': self.limit,
+            'remaining': self.remaining,
+            'reset_at': self.reset_at,
+            'bucket': self.bucket,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            limit=d.get('limit'),
+            remaining=d.get('remaining'),
+            reset_at=d.get('reset_at'),
+            bucket=d.get('bucket'),
+        )
 
 
 class AccountAttachmentCreateOptions:
     """AccountAttachmentCreateOptions specifies extra options for creating an
  AccountAttachment.
 
-	:param overwrite: Overwrite clears all account grants before the attachment.
-	"""
+    :param overwrite: Overwrite clears all account grants before the attachment.
+    """
     __slots__ = [
         'overwrite',
     ]
@@ -123,17 +168,26 @@ class AccountAttachmentCreateOptions:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateOptions ' + \
-         'overwrite: ' + repr(self.overwrite) + ' ' +\
-         '>'
+            'overwrite: ' + repr(self.overwrite) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'overwrite': self.overwrite,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(overwrite=d.get('overwrite'), )
 
 
 class AccountAttachmentCreateResponse:
     """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
 
-	:param meta: Reserved for future use.
-	:param account_attachment: The created AccountAttachment.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account_attachment: The created AccountAttachment.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account_attachment',
@@ -152,19 +206,34 @@ class AccountAttachmentCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account_attachment: ' + repr(self.account_attachment) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account_attachment': self.account_attachment,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account_attachment=d.get('account_attachment'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountAttachmentGetResponse:
     """AccountAttachmentGetResponse returns a requested AccountAttachment.
 
-	:param meta: Reserved for future use.
-	:param account_attachment: The requested AccountAttachment.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account_attachment: The requested AccountAttachment.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account_attachment',
@@ -183,18 +252,33 @@ class AccountAttachmentGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account_attachment: ' + repr(self.account_attachment) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account_attachment': self.account_attachment,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account_attachment=d.get('account_attachment'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountAttachmentDeleteResponse:
     """AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -210,18 +294,31 @@ class AccountAttachmentDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountAttachmentDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountAttachment:
     """AccountAttachments assign an account to a role.
 
-	:param id: Unique identifier of the AccountAttachment.
-	:param account_id: The id of the account of this AccountAttachment.
-	:param role_id: The id of the attached role of this AccountAttachment.
-	"""
+    :param id: Unique identifier of the AccountAttachment.
+    :param account_id: The id of the account of this AccountAttachment.
+    :param role_id: The id of the attached role of this AccountAttachment.
+    """
     __slots__ = [
         'id',
         'account_id',
@@ -240,19 +337,34 @@ class AccountAttachment:
 
     def __repr__(self):
         return '<sdm.AccountAttachment ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'account_id: ' + repr(self.account_id) + ' ' +\
-         'role_id: ' + repr(self.role_id) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'account_id': self.account_id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            account_id=d.get('account_id'),
+            role_id=d.get('role_id'),
+        )
 
 
 class AccountGrantCreateResponse:
     """AccountGrantCreateResponse reports how the AccountGrants were created in the system.
 
-	:param meta: Reserved for future use.
-	:param account_grant: The created AccountGrant.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account_grant: The created AccountGrant.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account_grant',
@@ -271,19 +383,34 @@ class AccountGrantCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account_grant: ' + repr(self.account_grant) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account_grant': self.account_grant,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account_grant=d.get('account_grant'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountGrantGetResponse:
     """AccountGrantGetResponse returns a requested AccountGrant.
 
-	:param meta: Reserved for future use.
-	:param account_grant: The requested AccountGrant.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account_grant: The requested AccountGrant.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account_grant',
@@ -302,18 +429,33 @@ class AccountGrantGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account_grant: ' + repr(self.account_grant) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account_grant': self.account_grant,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account_grant=d.get('account_grant'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountGrantDeleteResponse:
     """AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -329,22 +471,35 @@ class AccountGrantDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountGrantDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountGrant:
     """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
 
-	:param id: Unique identifier of the AccountGrant.
-	:param resource_id: The id of the composite role of this AccountGrant.
-	:param account_id: The id of the attached role of this AccountGrant.
-	:param start_from: The timestamp when the resource will be granted. Optional. Both start_at
+    :param id: Unique identifier of the AccountGrant.
+    :param resource_id: The id of the composite role of this AccountGrant.
+    :param account_id: The id of the attached role of this AccountGrant.
+    :param start_from: The timestamp when the resource will be granted. Optional. Both start_at
  and end_at must be defined together, or not defined at all.
-	:param valid_until: The timestamp when the resource grant will expire. Optional. Both
+    :param valid_until: The timestamp when the resource grant will expire. Optional. Both
  start_at and end_at must be defined together, or not defined at all.
-	"""
+    """
     __slots__ = [
         'id',
         'resource_id',
@@ -369,23 +524,42 @@ class AccountGrant:
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'resource_id: ' + repr(self.resource_id) + ' ' +\
-         'account_id: ' + repr(self.account_id) + ' ' +\
-         'start_from: ' + repr(self.start_from) + ' ' +\
-         'valid_until: ' + repr(self.valid_until) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'start_from: ' + repr(self.start_from) + ' ' +\
+            'valid_until: ' + repr(self.valid_until) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'resource_id': self.resource_id,
+            'account_id': self.account_id,
+            'start_from': self.start_from,
+            'valid_until': self.valid_until,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            resource_id=d.get('resource_id'),
+            account_id=d.get('account_id'),
+            start_from=d.get('start_from'),
+            valid_until=d.get('valid_until'),
+        )
 
 
 class AccountCreateResponse:
     """AccountCreateResponse reports how the Accounts were created in the system.
 
-	:param meta: Reserved for future use.
-	:param account: The created Account.
-	:param token: The auth token generated for the Account. The Account will use this token to
+    :param meta: Reserved for future use.
+    :param account: The created Account.
+    :param token: The auth token generated for the Account. The Account will use this token to
  authenticate with the strongDM API.
-	:param rate_limit: Rate limit information.
-	"""
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account',
@@ -407,20 +581,37 @@ class AccountCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account: ' + repr(self.account) + ' ' +\
-         'token: ' + repr(self.token) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account': self.account,
+            'token': self.token,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account=d.get('account'),
+            token=d.get('token'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountGetResponse:
     """AccountGetResponse returns a requested Account.
 
-	:param meta: Reserved for future use.
-	:param account: The requested Account.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account: The requested Account.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account',
@@ -439,20 +630,35 @@ class AccountGetResponse:
 
     def __repr__(self):
         return '<sdm.AccountGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account: ' + repr(self.account) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account': self.account,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account=d.get('account'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountUpdateResponse:
     """AccountUpdateResponse returns the fields of a Account after it has been updated by
  a AccountUpdateRequest.
 
-	:param meta: Reserved for future use.
-	:param account: The updated Account.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param account: The updated Account.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'account',
@@ -471,18 +677,33 @@ class AccountUpdateResponse:
 
     def __repr__(self):
         return '<sdm.AccountUpdateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'account: ' + repr(self.account) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'account: ' + repr(self.account) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'account': self.account,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            account=d.get('account'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class AccountDeleteResponse:
     """AccountDeleteResponse returns information about a Account that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -498,21 +719,34 @@ class AccountDeleteResponse:
 
     def __repr__(self):
         return '<sdm.AccountDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class User:
     """A User can connect to resources they are granted directly, or granted
  via roles.
 
-	:param id: Unique identifier of the User.
-	:param email: The User's email address. Must be unique.
-	:param first_name: The User's first name.
-	:param last_name: The User's last name.
-	:param suspended: The User's suspended state.
-	"""
+    :param id: Unique identifier of the User.
+    :param email: The User's email address. Must be unique.
+    :param first_name: The User's first name.
+    :param last_name: The User's last name.
+    :param suspended: The User's suspended state.
+    """
     __slots__ = [
         'id',
         'email',
@@ -537,22 +771,41 @@ class User:
 
     def __repr__(self):
         return '<sdm.User ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'email: ' + repr(self.email) + ' ' +\
-         'first_name: ' + repr(self.first_name) + ' ' +\
-         'last_name: ' + repr(self.last_name) + ' ' +\
-         'suspended: ' + repr(self.suspended) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'email: ' + repr(self.email) + ' ' +\
+            'first_name: ' + repr(self.first_name) + ' ' +\
+            'last_name: ' + repr(self.last_name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'suspended': self.suspended,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            email=d.get('email'),
+            first_name=d.get('first_name'),
+            last_name=d.get('last_name'),
+            suspended=d.get('suspended'),
+        )
 
 
 class Service:
     """A Service is a service account that can connect to resources they are granted
  directly, or granted via roles. Services are typically automated jobs.
 
-	:param id: Unique identifier of the Service.
-	:param name: Unique human-readable name of the Service.
-	:param suspended: The Service's suspended state.
-	"""
+    :param id: Unique identifier of the Service.
+    :param name: Unique human-readable name of the Service.
+    :param suspended: The Service's suspended state.
+    """
     __slots__ = [
         'id',
         'name',
@@ -571,24 +824,39 @@ class Service:
 
     def __repr__(self):
         return '<sdm.Service ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'suspended: ' + repr(self.suspended) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'suspended': self.suspended,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            suspended=d.get('suspended'),
+        )
 
 
 class Athena:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param access_key: 
-	:param secret_access_key: 
-	:param output: 
-	:param port_override: 
-	:param region: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param access_key: 
+    :param secret_access_key: 
+    :param output: 
+    :param port_override: 
+    :param region: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -622,29 +890,54 @@ class Athena:
 
     def __repr__(self):
         return '<sdm.Athena ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'access_key: ' + repr(self.access_key) + ' ' +\
-         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-         'output: ' + repr(self.output) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'region: ' + repr(self.region) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'output: ' + repr(self.output) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'access_key': self.access_key,
+            'secret_access_key': self.secret_access_key,
+            'output': self.output,
+            'port_override': self.port_override,
+            'region': self.region,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            access_key=d.get('access_key'),
+            secret_access_key=d.get('secret_access_key'),
+            output=d.get('output'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+        )
 
 
 class BigQuery:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param private_key: 
-	:param project: 
-	:param port_override: 
-	:param endpoint: 
-	:param username: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param private_key: 
+    :param project: 
+    :param port_override: 
+    :param endpoint: 
+    :param username: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -678,30 +971,55 @@ class BigQuery:
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'private_key: ' + repr(self.private_key) + ' ' +\
-         'project: ' + repr(self.project) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'endpoint: ' + repr(self.endpoint) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
+            'project: ' + repr(self.project) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'private_key': self.private_key,
+            'project': self.project,
+            'port_override': self.port_override,
+            'endpoint': self.endpoint,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            private_key=d.get('private_key'),
+            project=d.get('project'),
+            port_override=d.get('port_override'),
+            endpoint=d.get('endpoint'),
+            username=d.get('username'),
+        )
 
 
 class Cassandra:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param port_override: 
-	:param port: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param port_override: 
+    :param port: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -738,30 +1056,57 @@ class Cassandra:
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'port_override': self.port_override,
+            'port': self.port,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class Druid:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port_override: 
-	:param username: 
-	:param password: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port_override: 
+    :param username: 
+    :param password: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -795,29 +1140,54 @@ class Druid:
 
     def __repr__(self):
         return '<sdm.Druid ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port_override': self.port_override,
+            'username': self.username,
+            'password': self.password,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port_override=d.get('port_override'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port=d.get('port'),
+        )
 
 
 class DynamoDB:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param access_key: 
-	:param secret_access_key: 
-	:param region: 
-	:param endpoint: 
-	:param port_override: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param access_key: 
+    :param secret_access_key: 
+    :param region: 
+    :param endpoint: 
+    :param port_override: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -851,29 +1221,54 @@ class DynamoDB:
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'access_key: ' + repr(self.access_key) + ' ' +\
-         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-         'region: ' + repr(self.region) + ' ' +\
-         'endpoint: ' + repr(self.endpoint) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'access_key': self.access_key,
+            'secret_access_key': self.secret_access_key,
+            'region': self.region,
+            'endpoint': self.endpoint,
+            'port_override': self.port_override,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            access_key=d.get('access_key'),
+            secret_access_key=d.get('secret_access_key'),
+            region=d.get('region'),
+            endpoint=d.get('endpoint'),
+            port_override=d.get('port_override'),
+        )
 
 
 class AmazonES:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param region: 
-	:param secret_access_key: 
-	:param endpoint: 
-	:param access_key: 
-	:param port_override: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param region: 
+    :param secret_access_key: 
+    :param endpoint: 
+    :param access_key: 
+    :param port_override: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -907,30 +1302,55 @@ class AmazonES:
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'region: ' + repr(self.region) + ' ' +\
-         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-         'endpoint: ' + repr(self.endpoint) + ' ' +\
-         'access_key: ' + repr(self.access_key) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'region': self.region,
+            'secret_access_key': self.secret_access_key,
+            'endpoint': self.endpoint,
+            'access_key': self.access_key,
+            'port_override': self.port_override,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            region=d.get('region'),
+            secret_access_key=d.get('secret_access_key'),
+            endpoint=d.get('endpoint'),
+            access_key=d.get('access_key'),
+            port_override=d.get('port_override'),
+        )
 
 
 class Elastic:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param port_override: 
-	:param port: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param port_override: 
+    :param port: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -967,32 +1387,59 @@ class Elastic:
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'port_override': self.port_override,
+            'port': self.port,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class HTTPBasicAuth:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param url: 
-	:param healthcheck_path: 
-	:param username: 
-	:param password: 
-	:param headers_blacklist: 
-	:param default_path: 
-	:param subdomain: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param url: 
+    :param healthcheck_path: 
+    :param username: 
+    :param password: 
+    :param headers_blacklist: 
+    :param default_path: 
+    :param subdomain: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1032,31 +1479,60 @@ class HTTPBasicAuth:
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'url: ' + repr(self.url) + ' ' +\
-         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-         'default_path: ' + repr(self.default_path) + ' ' +\
-         'subdomain: ' + repr(self.subdomain) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'url': self.url,
+            'healthcheck_path': self.healthcheck_path,
+            'username': self.username,
+            'password': self.password,
+            'headers_blacklist': self.headers_blacklist,
+            'default_path': self.default_path,
+            'subdomain': self.subdomain,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            url=d.get('url'),
+            healthcheck_path=d.get('healthcheck_path'),
+            username=d.get('username'),
+            password=d.get('password'),
+            headers_blacklist=d.get('headers_blacklist'),
+            default_path=d.get('default_path'),
+            subdomain=d.get('subdomain'),
+        )
 
 
 class HTTPNoAuth:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param url: 
-	:param healthcheck_path: 
-	:param headers_blacklist: 
-	:param default_path: 
-	:param subdomain: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param url: 
+    :param healthcheck_path: 
+    :param headers_blacklist: 
+    :param default_path: 
+    :param subdomain: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1090,30 +1566,55 @@ class HTTPNoAuth:
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'url: ' + repr(self.url) + ' ' +\
-         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-         'default_path: ' + repr(self.default_path) + ' ' +\
-         'subdomain: ' + repr(self.subdomain) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'url': self.url,
+            'healthcheck_path': self.healthcheck_path,
+            'headers_blacklist': self.headers_blacklist,
+            'default_path': self.default_path,
+            'subdomain': self.subdomain,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            url=d.get('url'),
+            healthcheck_path=d.get('healthcheck_path'),
+            headers_blacklist=d.get('headers_blacklist'),
+            default_path=d.get('default_path'),
+            subdomain=d.get('subdomain'),
+        )
 
 
 class HTTPAuth:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param url: 
-	:param healthcheck_path: 
-	:param auth_header: 
-	:param headers_blacklist: 
-	:param default_path: 
-	:param subdomain: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param url: 
+    :param healthcheck_path: 
+    :param auth_header: 
+    :param headers_blacklist: 
+    :param default_path: 
+    :param subdomain: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1150,33 +1651,60 @@ class HTTPAuth:
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'url: ' + repr(self.url) + ' ' +\
-         'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-         'auth_header: ' + repr(self.auth_header) + ' ' +\
-         'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-         'default_path: ' + repr(self.default_path) + ' ' +\
-         'subdomain: ' + repr(self.subdomain) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'auth_header: ' + repr(self.auth_header) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'url': self.url,
+            'healthcheck_path': self.healthcheck_path,
+            'auth_header': self.auth_header,
+            'headers_blacklist': self.headers_blacklist,
+            'default_path': self.default_path,
+            'subdomain': self.subdomain,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            url=d.get('url'),
+            healthcheck_path=d.get('healthcheck_path'),
+            auth_header=d.get('auth_header'),
+            headers_blacklist=d.get('headers_blacklist'),
+            default_path=d.get('default_path'),
+            subdomain=d.get('subdomain'),
+        )
 
 
 class Kubernetes:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param certificate_authority: 
-	:param certificate_authority_filename: 
-	:param client_certificate: 
-	:param client_certificate_filename: 
-	:param client_key: 
-	:param client_key_filename: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param certificate_authority: 
+    :param certificate_authority_filename: 
+    :param client_certificate: 
+    :param client_certificate_filename: 
+    :param client_key: 
+    :param client_key_filename: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1219,31 +1747,64 @@ class Kubernetes:
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-         'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-         'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
-         'client_key: ' + repr(self.client_key) + ' ' +\
-         'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'certificate_authority': self.certificate_authority,
+            'certificate_authority_filename':
+            self.certificate_authority_filename,
+            'client_certificate': self.client_certificate,
+            'client_certificate_filename': self.client_certificate_filename,
+            'client_key': self.client_key,
+            'client_key_filename': self.client_key_filename,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            certificate_authority=d.get('certificate_authority'),
+            certificate_authority_filename=d.get(
+                'certificate_authority_filename'),
+            client_certificate=d.get('client_certificate'),
+            client_certificate_filename=d.get('client_certificate_filename'),
+            client_key=d.get('client_key'),
+            client_key_filename=d.get('client_key_filename'),
+        )
 
 
 class KubernetesBasicAuth:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param username: 
-	:param password: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param username: 
+    :param password: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1274,26 +1835,49 @@ class KubernetesBasicAuth:
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'username': self.username,
+            'password': self.password,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            username=d.get('username'),
+            password=d.get('password'),
+        )
 
 
 class KubernetesServiceAccount:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param token: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param token: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1321,29 +1905,50 @@ class KubernetesServiceAccount:
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'token: ' + repr(self.token) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            token=d.get('token'),
+        )
 
 
 class AmazonEKS:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param endpoint: 
-	:param access_key: 
-	:param secret_access_key: 
-	:param certificate_authority: 
-	:param certificate_authority_filename: 
-	:param region: 
-	:param cluster_name: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param endpoint: 
+    :param access_key: 
+    :param secret_access_key: 
+    :param certificate_authority: 
+    :param certificate_authority_filename: 
+    :param region: 
+    :param cluster_name: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1383,31 +1988,62 @@ class AmazonEKS:
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'endpoint: ' + repr(self.endpoint) + ' ' +\
-         'access_key: ' + repr(self.access_key) + ' ' +\
-         'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-         'region: ' + repr(self.region) + ' ' +\
-         'cluster_name: ' + repr(self.cluster_name) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'endpoint': self.endpoint,
+            'access_key': self.access_key,
+            'secret_access_key': self.secret_access_key,
+            'certificate_authority': self.certificate_authority,
+            'certificate_authority_filename':
+            self.certificate_authority_filename,
+            'region': self.region,
+            'cluster_name': self.cluster_name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            endpoint=d.get('endpoint'),
+            access_key=d.get('access_key'),
+            secret_access_key=d.get('secret_access_key'),
+            certificate_authority=d.get('certificate_authority'),
+            certificate_authority_filename=d.get(
+                'certificate_authority_filename'),
+            region=d.get('region'),
+            cluster_name=d.get('cluster_name'),
+        )
 
 
 class GoogleGKE:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param endpoint: 
-	:param certificate_authority: 
-	:param certificate_authority_filename: 
-	:param service_account_key: 
-	:param service_account_key_filename: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param endpoint: 
+    :param certificate_authority: 
+    :param certificate_authority_filename: 
+    :param service_account_key: 
+    :param service_account_key_filename: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1441,32 +2077,59 @@ class GoogleGKE:
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'endpoint: ' + repr(self.endpoint) + ' ' +\
-         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-         'service_account_key: ' + repr(self.service_account_key) + ' ' +\
-         'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+            'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'endpoint': self.endpoint,
+            'certificate_authority': self.certificate_authority,
+            'certificate_authority_filename':
+            self.certificate_authority_filename,
+            'service_account_key': self.service_account_key,
+            'service_account_key_filename': self.service_account_key_filename,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            endpoint=d.get('endpoint'),
+            certificate_authority=d.get('certificate_authority'),
+            certificate_authority_filename=d.get(
+                'certificate_authority_filename'),
+            service_account_key=d.get('service_account_key'),
+            service_account_key_filename=d.get('service_account_key_filename'),
+        )
 
 
 class AKS:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param certificate_authority: 
-	:param certificate_authority_filename: 
-	:param client_certificate: 
-	:param client_certificate_filename: 
-	:param client_key: 
-	:param client_key_filename: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param certificate_authority: 
+    :param certificate_authority_filename: 
+    :param client_certificate: 
+    :param client_certificate_filename: 
+    :param client_key: 
+    :param client_key_filename: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1509,31 +2172,64 @@ class AKS:
 
     def __repr__(self):
         return '<sdm.AKS ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-         'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
-         'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-         'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
-         'client_key: ' + repr(self.client_key) + ' ' +\
-         'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'certificate_authority': self.certificate_authority,
+            'certificate_authority_filename':
+            self.certificate_authority_filename,
+            'client_certificate': self.client_certificate,
+            'client_certificate_filename': self.client_certificate_filename,
+            'client_key': self.client_key,
+            'client_key_filename': self.client_key_filename,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            certificate_authority=d.get('certificate_authority'),
+            certificate_authority_filename=d.get(
+                'certificate_authority_filename'),
+            client_certificate=d.get('client_certificate'),
+            client_certificate_filename=d.get('client_certificate_filename'),
+            client_key=d.get('client_key'),
+            client_key_filename=d.get('client_key_filename'),
+        )
 
 
 class AKSBasicAuth:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param username: 
-	:param password: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param username: 
+    :param password: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1564,26 +2260,49 @@ class AKSBasicAuth:
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'username': self.username,
+            'password': self.password,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            username=d.get('username'),
+            password=d.get('password'),
+        )
 
 
 class AKSServiceAccount:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port: 
-	:param token: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port: 
+    :param token: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1611,25 +2330,46 @@ class AKSServiceAccount:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'token: ' + repr(self.token) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port': self.port,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            token=d.get('token'),
+        )
 
 
 class Memcached:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1657,30 +2397,51 @@ class Memcached:
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class MongoLegacyHost:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param auth_database: 
-	:param port_override: 
-	:param username: 
-	:param password: 
-	:param port: 
-	:param replica_set: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param auth_database: 
+    :param port_override: 
+    :param username: 
+    :param password: 
+    :param port: 
+    :param replica_set: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1723,36 +2484,67 @@ class MongoLegacyHost:
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'auth_database: ' + repr(self.auth_database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'replica_set: ' + repr(self.replica_set) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'auth_database': self.auth_database,
+            'port_override': self.port_override,
+            'username': self.username,
+            'password': self.password,
+            'port': self.port,
+            'replica_set': self.replica_set,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            auth_database=d.get('auth_database'),
+            port_override=d.get('port_override'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port=d.get('port'),
+            replica_set=d.get('replica_set'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class MongoLegacyReplicaset:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param auth_database: 
-	:param port_override: 
-	:param username: 
-	:param password: 
-	:param port: 
-	:param replica_set: 
-	:param connect_to_replica: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param auth_database: 
+    :param port_override: 
+    :param username: 
+    :param password: 
+    :param port: 
+    :param replica_set: 
+    :param connect_to_replica: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1798,35 +2590,68 @@ class MongoLegacyReplicaset:
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'auth_database: ' + repr(self.auth_database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'replica_set: ' + repr(self.replica_set) + ' ' +\
-         'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'auth_database': self.auth_database,
+            'port_override': self.port_override,
+            'username': self.username,
+            'password': self.password,
+            'port': self.port,
+            'replica_set': self.replica_set,
+            'connect_to_replica': self.connect_to_replica,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            auth_database=d.get('auth_database'),
+            port_override=d.get('port_override'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port=d.get('port'),
+            replica_set=d.get('replica_set'),
+            connect_to_replica=d.get('connect_to_replica'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class MongoHost:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param auth_database: 
-	:param port_override: 
-	:param username: 
-	:param password: 
-	:param port: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param auth_database: 
+    :param port_override: 
+    :param username: 
+    :param password: 
+    :param port: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1866,35 +2691,64 @@ class MongoHost:
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'auth_database: ' + repr(self.auth_database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'auth_database': self.auth_database,
+            'port_override': self.port_override,
+            'username': self.username,
+            'password': self.password,
+            'port': self.port,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            auth_database=d.get('auth_database'),
+            port_override=d.get('port_override'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port=d.get('port'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class MongoReplicaSet:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param auth_database: 
-	:param port_override: 
-	:param username: 
-	:param password: 
-	:param port: 
-	:param replica_set: 
-	:param connect_to_replica: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param auth_database: 
+    :param port_override: 
+    :param username: 
+    :param password: 
+    :param port: 
+    :param replica_set: 
+    :param connect_to_replica: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -1940,34 +2794,67 @@ class MongoReplicaSet:
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'auth_database: ' + repr(self.auth_database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'replica_set: ' + repr(self.replica_set) + ' ' +\
-         'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'auth_database': self.auth_database,
+            'port_override': self.port_override,
+            'username': self.username,
+            'password': self.password,
+            'port': self.port,
+            'replica_set': self.replica_set,
+            'connect_to_replica': self.connect_to_replica,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            auth_database=d.get('auth_database'),
+            port_override=d.get('port_override'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port=d.get('port'),
+            replica_set=d.get('replica_set'),
+            connect_to_replica=d.get('connect_to_replica'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class Mysql:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2004,31 +2891,58 @@ class Mysql:
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class AuroraMysql:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2065,31 +2979,58 @@ class AuroraMysql:
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class Clustrix:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2126,31 +3067,58 @@ class Clustrix:
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class Maria:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2187,31 +3155,58 @@ class Maria:
 
     def __repr__(self):
         return '<sdm.Maria ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class Memsql:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2248,32 +3243,59 @@ class Memsql:
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class Oracle:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port: 
-	:param port_override: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port: 
+    :param port_override: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2313,33 +3335,62 @@ class Oracle:
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port': self.port,
+            'port_override': self.port_override,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class Postgres:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2379,33 +3430,62 @@ class Postgres:
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class AuroraPostgres:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2445,33 +3525,62 @@ class AuroraPostgres:
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class Greenplum:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2511,33 +3620,62 @@ class Greenplum:
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class Cockroach:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2577,33 +3715,62 @@ class Cockroach:
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class Redshift:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2643,33 +3810,62 @@ class Redshift:
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class Presto:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param port: 
-	:param username: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    :param username: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2709,31 +3905,60 @@ class Presto:
 
     def __repr__(self):
         return '<sdm.Presto ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+            'username': self.username,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            username=d.get('username'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class RDP:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2767,28 +3992,53 @@ class RDP:
 
     def __repr__(self):
         return '<sdm.RDP ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class Redis:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port_override: 
-	:param password: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port_override: 
+    :param password: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2819,28 +4069,51 @@ class Redis:
 
     def __repr__(self):
         return '<sdm.Redis ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port_override': self.port_override,
+            'password': self.password,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port_override=d.get('port_override'),
+            password=d.get('password'),
+            port=d.get('port'),
+        )
 
 
 class ElasticacheRedis:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param port_override: 
-	:param password: 
-	:param port: 
-	:param tls_required: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param port_override: 
+    :param password: 
+    :param port: 
+    :param tls_required: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2874,30 +4147,55 @@ class ElasticacheRedis:
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'tls_required: ' + repr(self.tls_required) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'port_override': self.port_override,
+            'password': self.password,
+            'port': self.port,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            port_override=d.get('port_override'),
+            password=d.get('password'),
+            port=d.get('port'),
+            tls_required=d.get('tls_required'),
+        )
 
 
 class Snowflake:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param schema: 
-	:param port_override: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param schema: 
+    :param port_override: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -2934,33 +4232,60 @@ class Snowflake:
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'schema: ' + repr(self.schema) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'schema': self.schema,
+            'port_override': self.port_override,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            schema=d.get('schema'),
+            port_override=d.get('port_override'),
+        )
 
 
 class SQLServer:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param database: 
-	:param port_override: 
-	:param schema: 
-	:param port: 
-	:param override_database: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param schema: 
+    :param port: 
+    :param override_database: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -3003,32 +4328,63 @@ class SQLServer:
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'database: ' + repr(self.database) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'schema: ' + repr(self.schema) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'override_database: ' + repr(self.override_database) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'schema': self.schema,
+            'port': self.port,
+            'override_database': self.override_database,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            schema=d.get('schema'),
+            port=d.get('port'),
+            override_database=d.get('override_database'),
+        )
 
 
 class SSH:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param port: 
-	:param public_key: 
-	:param port_forwarding: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param port: 
+    :param public_key: 
+    :param port_forwarding: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -3062,29 +4418,54 @@ class SSH:
 
     def __repr__(self):
         return '<sdm.SSH ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'public_key: ' + repr(self.public_key) + ' ' +\
-         'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'port': self.port,
+            'public_key': self.public_key,
+            'port_forwarding': self.port_forwarding,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            port=d.get('port'),
+            public_key=d.get('public_key'),
+            port_forwarding=d.get('port_forwarding'),
+        )
 
 
 class Sybase:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param port_override: 
-	:param port: 
-	:param password: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param port_override: 
+    :param port: 
+    :param password: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -3118,29 +4499,54 @@ class Sybase:
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'port_override': self.port_override,
+            'port': self.port,
+            'password': self.password,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            password=d.get('password'),
+        )
 
 
 class SybaseIQ:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param port_override: 
-	:param port: 
-	:param password: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param port_override: 
+    :param port: 
+    :param password: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -3174,29 +4580,54 @@ class SybaseIQ:
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'port_override': self.port_override,
+            'port': self.port,
+            'password': self.password,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            password=d.get('password'),
+        )
 
 
 class Teradata:
     """
 
-	:param id: Unique identifier of the Resource.
-	:param name: Unique human-readable name of the Resource.
-	:param healthy: True if the datasource is reachable and the credentials are valid.
-	:param hostname: 
-	:param username: 
-	:param password: 
-	:param port_override: 
-	:param port: 
-	"""
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param port_override: 
+    :param port: 
+    """
     __slots__ = [
         'id',
         'name',
@@ -3230,26 +4661,51 @@ class Teradata:
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'healthy: ' + repr(self.healthy) + ' ' +\
-         'hostname: ' + repr(self.hostname) + ' ' +\
-         'username: ' + repr(self.username) + ' ' +\
-         'password: ' + repr(self.password) + ' ' +\
-         'port_override: ' + repr(self.port_override) + ' ' +\
-         'port: ' + repr(self.port) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
 
 
 class NodeCreateResponse:
     """NodeCreateResponse reports how the Nodes were created in the system.
 
-	:param meta: Reserved for future use.
-	:param node: The created Node.
-	:param token: The auth token generated for the Node. The Node will use this token to
+    :param meta: Reserved for future use.
+    :param node: The created Node.
+    :param token: The auth token generated for the Node. The Node will use this token to
  authenticate with the strongDM API.
-	:param rate_limit: Rate limit information.
-	"""
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'node',
@@ -3271,20 +4727,37 @@ class NodeCreateResponse:
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'node: ' + repr(self.node) + ' ' +\
-         'token: ' + repr(self.token) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'node': self.node,
+            'token': self.token,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            node=d.get('node'),
+            token=d.get('token'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class NodeGetResponse:
     """NodeGetResponse returns a requested Node.
 
-	:param meta: Reserved for future use.
-	:param node: The requested Node.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param node: The requested Node.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'node',
@@ -3303,20 +4776,35 @@ class NodeGetResponse:
 
     def __repr__(self):
         return '<sdm.NodeGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'node: ' + repr(self.node) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'node': self.node,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            node=d.get('node'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class NodeUpdateResponse:
     """NodeUpdateResponse returns the fields of a Node after it has been updated by
  a NodeUpdateRequest.
 
-	:param meta: Reserved for future use.
-	:param node: The updated Node.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param node: The updated Node.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'node',
@@ -3335,18 +4823,33 @@ class NodeUpdateResponse:
 
     def __repr__(self):
         return '<sdm.NodeUpdateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'node: ' + repr(self.node) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'node': self.node,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            node=d.get('node'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class NodeDeleteResponse:
     """NodeDeleteResponse returns information about a Node that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3362,19 +4865,32 @@ class NodeDeleteResponse:
 
     def __repr__(self):
         return '<sdm.NodeDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class Relay:
     """Relay represents a StrongDM CLI installation running in relay mode.
 
-	:param id: Unique identifier of the Relay.
-	:param name: Unique human-readable name of the Relay. Generated if not provided on create.
-	:param state: The current state of the relay. One of: "new", "verifying_restart",
+    :param id: Unique identifier of the Relay.
+    :param name: Unique human-readable name of the Relay. Generated if not provided on create.
+    :param state: The current state of the relay. One of: "new", "verifying_restart",
  "restarting", "started", "stopped", "dead", "unknown",
-	"""
+    """
     __slots__ = [
         'id',
         'name',
@@ -3393,23 +4909,38 @@ class Relay:
 
     def __repr__(self):
         return '<sdm.Relay ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'state: ' + repr(self.state) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'state: ' + repr(self.state) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'state': self.state,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            state=d.get('state'),
+        )
 
 
 class Gateway:
     """Gateway represents a StrongDM CLI installation running in gateway mode.
 
-	:param id: Unique identifier of the Gateway.
-	:param name: Unique human-readable name of the Gateway. Generated if not provided on create.
-	:param state: The current state of the gateway. One of: "new", "verifying_restart",
+    :param id: Unique identifier of the Gateway.
+    :param name: Unique human-readable name of the Gateway. Generated if not provided on create.
+    :param state: The current state of the gateway. One of: "new", "verifying_restart",
  "restarting", "started", "stopped", "dead", "unknown"
-	:param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
-	:param bind_address: The hostname/port tuple which the gateway daemon will bind to.
+    :param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
+    :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
  If not provided on create, set to "0.0.0.0:<listen_address_port>".
-	"""
+    """
     __slots__ = [
         'id',
         'name',
@@ -3434,21 +4965,40 @@ class Gateway:
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'state: ' + repr(self.state) + ' ' +\
-         'listen_address: ' + repr(self.listen_address) + ' ' +\
-         'bind_address: ' + repr(self.bind_address) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'state: ' + repr(self.state) + ' ' +\
+            'listen_address: ' + repr(self.listen_address) + ' ' +\
+            'bind_address: ' + repr(self.bind_address) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'state': self.state,
+            'listen_address': self.listen_address,
+            'bind_address': self.bind_address,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            state=d.get('state'),
+            listen_address=d.get('listen_address'),
+            bind_address=d.get('bind_address'),
+        )
 
 
 class ResourceCreateResponse:
     """ResourceCreateResponse reports how the Resources were created in the system.
 
-	:param meta: Reserved for future use.
-	:param resource: The created Resource.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param resource: The created Resource.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'resource',
@@ -3467,19 +5017,34 @@ class ResourceCreateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'resource: ' + repr(self.resource) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'resource': self.resource,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            resource=d.get('resource'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class ResourceGetResponse:
     """ResourceGetResponse returns a requested Resource.
 
-	:param meta: Reserved for future use.
-	:param resource: The requested Resource.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param resource: The requested Resource.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'resource',
@@ -3498,20 +5063,35 @@ class ResourceGetResponse:
 
     def __repr__(self):
         return '<sdm.ResourceGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'resource: ' + repr(self.resource) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'resource': self.resource,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            resource=d.get('resource'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class ResourceUpdateResponse:
     """ResourceUpdateResponse returns the fields of a Resource after it has been updated by
  a ResourceUpdateRequest.
 
-	:param meta: Reserved for future use.
-	:param resource: The updated Resource.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param resource: The updated Resource.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'resource',
@@ -3530,18 +5110,33 @@ class ResourceUpdateResponse:
 
     def __repr__(self):
         return '<sdm.ResourceUpdateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'resource: ' + repr(self.resource) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'resource': self.resource,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            resource=d.get('resource'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class ResourceDeleteResponse:
     """ResourceDeleteResponse returns information about a Resource that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3557,18 +5152,31 @@ class ResourceDeleteResponse:
 
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleAttachmentCreateResponse:
     """RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
 
-	:param meta: Reserved for future use.
-	:param role_attachment: The created RoleAttachment.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role_attachment: The created RoleAttachment.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role_attachment',
@@ -3587,19 +5195,34 @@ class RoleAttachmentCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role_attachment': self.role_attachment,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role_attachment=d.get('role_attachment'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleAttachmentGetResponse:
     """RoleAttachmentGetResponse returns a requested RoleAttachment.
 
-	:param meta: Reserved for future use.
-	:param role_attachment: The requested RoleAttachment.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role_attachment: The requested RoleAttachment.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role_attachment',
@@ -3618,18 +5241,33 @@ class RoleAttachmentGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role_attachment': self.role_attachment,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role_attachment=d.get('role_attachment'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleAttachmentDeleteResponse:
     """RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3645,18 +5283,31 @@ class RoleAttachmentDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleAttachmentDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleAttachment:
     """A RoleAttachment assigns a role to a composite role.
 
-	:param id: Unique identifier of the RoleAttachment.
-	:param composite_role_id: The id of the composite role of this RoleAttachment.
-	:param attached_role_id: The id of the attached role of this RoleAttachment.
-	"""
+    :param id: Unique identifier of the RoleAttachment.
+    :param composite_role_id: The id of the composite role of this RoleAttachment.
+    :param attached_role_id: The id of the attached role of this RoleAttachment.
+    """
     __slots__ = [
         'id',
         'composite_role_id',
@@ -3675,19 +5326,34 @@ class RoleAttachment:
 
     def __repr__(self):
         return '<sdm.RoleAttachment ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
-         'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
+            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'composite_role_id': self.composite_role_id,
+            'attached_role_id': self.attached_role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            composite_role_id=d.get('composite_role_id'),
+            attached_role_id=d.get('attached_role_id'),
+        )
 
 
 class RoleGrantCreateResponse:
     """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
 
-	:param meta: Reserved for future use.
-	:param role_grant: The created RoleGrant.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role_grant: The created RoleGrant.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role_grant',
@@ -3706,19 +5372,34 @@ class RoleGrantCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role_grant: ' + repr(self.role_grant) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role_grant': self.role_grant,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role_grant=d.get('role_grant'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleGrantGetResponse:
     """RoleGrantGetResponse returns a requested RoleGrant.
 
-	:param meta: Reserved for future use.
-	:param role_grant: The requested RoleGrant.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role_grant: The requested RoleGrant.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role_grant',
@@ -3737,18 +5418,33 @@ class RoleGrantGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role_grant: ' + repr(self.role_grant) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role_grant': self.role_grant,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role_grant=d.get('role_grant'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleGrantDeleteResponse:
     """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3764,19 +5460,32 @@ class RoleGrantDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleGrantDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleGrant:
     """A RoleGrant connects a resource to a role, granting members of the role
  access to that resource.
 
-	:param id: Unique identifier of the RoleGrant.
-	:param resource_id: The id of the resource of this RoleGrant.
-	:param role_id: The id of the attached role of this RoleGrant.
-	"""
+    :param id: Unique identifier of the RoleGrant.
+    :param resource_id: The id of the resource of this RoleGrant.
+    :param role_id: The id of the attached role of this RoleGrant.
+    """
     __slots__ = [
         'id',
         'resource_id',
@@ -3795,20 +5504,35 @@ class RoleGrant:
 
     def __repr__(self):
         return '<sdm.RoleGrant ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'resource_id: ' + repr(self.resource_id) + ' ' +\
-         'role_id: ' + repr(self.role_id) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'resource_id': self.resource_id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            resource_id=d.get('resource_id'),
+            role_id=d.get('role_id'),
+        )
 
 
 class RoleCreateResponse:
     """RoleCreateResponse reports how the Roles were created in the system. It can
  communicate partial successes or failures.
 
-	:param meta: Reserved for future use.
-	:param role: The created Role.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role: The created Role.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role',
@@ -3827,19 +5551,34 @@ class RoleCreateResponse:
 
     def __repr__(self):
         return '<sdm.RoleCreateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role: ' + repr(self.role) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role': self.role,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role=d.get('role'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleGetResponse:
     """RoleGetResponse returns a requested Role.
 
-	:param meta: Reserved for future use.
-	:param role: The requested Role.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role: The requested Role.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role',
@@ -3858,20 +5597,35 @@ class RoleGetResponse:
 
     def __repr__(self):
         return '<sdm.RoleGetResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role: ' + repr(self.role) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role': self.role,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role=d.get('role'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleUpdateResponse:
     """RoleUpdateResponse returns the fields of a Role after it has been updated by
  a RoleUpdateRequest.
 
-	:param meta: Reserved for future use.
-	:param role: The updated Role.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param role: The updated Role.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'role',
@@ -3890,18 +5644,33 @@ class RoleUpdateResponse:
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'role: ' + repr(self.role) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'role': self.role,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            role=d.get('role'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class RoleDeleteResponse:
     """RoleDeleteResponse returns information about a Role that was deleted.
 
-	:param meta: Reserved for future use.
-	:param rate_limit: Rate limit information.
-	"""
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3917,18 +5686,31 @@ class RoleDeleteResponse:
 
     def __repr__(self):
         return '<sdm.RoleDeleteResponse ' + \
-         'meta: ' + repr(self.meta) + ' ' +\
-         'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-         '>'
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
 
 
 class Role:
     """A Role is a collection of permissions, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
 
-	:param id: Unique identifier of the Role.
-	:param name: Unique human-readable name of the Role.
-	:param composite: True if the Role is a composite role.
-	"""
+    :param id: Unique identifier of the Role.
+    :param name: Unique human-readable name of the Role.
+    :param composite: True if the Role is a composite role.
+    """
     __slots__ = [
         'id',
         'name',
@@ -3947,7 +5729,22 @@ class Role:
 
     def __repr__(self):
         return '<sdm.Role ' + \
-         'id: ' + repr(self.id) + ' ' +\
-         'name: ' + repr(self.name) + ' ' +\
-         'composite: ' + repr(self.composite) + ' ' +\
-         '>'
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'composite: ' + repr(self.composite) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'composite': self.composite,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            composite=d.get('composite'),
+        )
