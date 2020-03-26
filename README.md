@@ -38,8 +38,3 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-
-
-<!-- Checkout our [release notes](https://github.com/aws/aws-sdk-go/releases) for
-information about the latest bug fixes, updates, and features added to the SDK. -->
