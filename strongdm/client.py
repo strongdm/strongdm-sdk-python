@@ -17,6 +17,7 @@
 
 import grpc
 import hmac
+import random
 import hashlib
 import base64
 import datetime
@@ -93,7 +94,7 @@ class Client:
         if (dur_max > self.max_retry_delay):
             dur_max = self.max_retry_delay
         # get a value between 0 and max
-        dur = rand() * dur_max
+        dur = random.random() * dur_max
         time.sleep(dur)
 
     def shouldRetry(self, iter, err):
