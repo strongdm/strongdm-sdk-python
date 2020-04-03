@@ -2040,6 +2040,7 @@ class AmazonEKS:
     :param certificate_authority_filename: 
     :param region: 
     :param cluster_name: 
+    :param role_arn: 
     """
     __slots__ = [
         'id',
@@ -2053,6 +2054,7 @@ class AmazonEKS:
         'certificate_authority_filename',
         'region',
         'cluster_name',
+        'role_arn',
     ]
 
     def __init__(
@@ -2068,6 +2070,7 @@ class AmazonEKS:
         certificate_authority_filename=None,
         region=None,
         cluster_name=None,
+        role_arn=None,
     ):
         self.id = id
         self.name = name
@@ -2080,6 +2083,7 @@ class AmazonEKS:
         self.certificate_authority_filename = certificate_authority_filename
         self.region = region
         self.cluster_name = cluster_name
+        self.role_arn = role_arn
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
@@ -2094,6 +2098,7 @@ class AmazonEKS:
             'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2110,6 +2115,7 @@ class AmazonEKS:
             self.certificate_authority_filename,
             'region': self.region,
             'cluster_name': self.cluster_name,
+            'role_arn': self.role_arn,
         }
 
     @classmethod
@@ -2127,6 +2133,7 @@ class AmazonEKS:
                 'certificate_authority_filename'),
             region=d.get('region'),
             cluster_name=d.get('cluster_name'),
+            role_arn=d.get('role_arn'),
         )
 
 

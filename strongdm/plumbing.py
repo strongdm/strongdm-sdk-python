@@ -1797,6 +1797,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
         plumbing.certificate_authority_filename)
     porcelain.region = (plumbing.region)
     porcelain.cluster_name = (plumbing.cluster_name)
+    porcelain.role_arn = (plumbing.role_arn)
     return porcelain
 
 
@@ -1827,6 +1828,8 @@ def convert_amazon_eks_to_plumbing(porcelain):
         plumbing.region = (porcelain.region)
     if porcelain.cluster_name is not None:
         plumbing.cluster_name = (porcelain.cluster_name)
+    if porcelain.role_arn is not None:
+        plumbing.role_arn = (porcelain.role_arn)
     return plumbing
 
 
