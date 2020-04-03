@@ -851,6 +851,7 @@ class Athena:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param access_key: 
     :param secret_access_key: 
     :param output: 
@@ -861,6 +862,7 @@ class Athena:
         'id',
         'name',
         'healthy',
+        'tags',
         'access_key',
         'secret_access_key',
         'output',
@@ -873,6 +875,7 @@ class Athena:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         access_key=None,
         secret_access_key=None,
         output=None,
@@ -882,6 +885,7 @@ class Athena:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.output = output
@@ -893,6 +897,7 @@ class Athena:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'output: ' + repr(self.output) + ' ' +\
@@ -905,6 +910,7 @@ class Athena:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'output': self.output,
@@ -918,6 +924,7 @@ class Athena:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             output=d.get('output'),
@@ -932,6 +939,7 @@ class BigQuery:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param private_key: 
     :param project: 
     :param port_override: 
@@ -942,6 +950,7 @@ class BigQuery:
         'id',
         'name',
         'healthy',
+        'tags',
         'private_key',
         'project',
         'port_override',
@@ -954,6 +963,7 @@ class BigQuery:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         private_key=None,
         project=None,
         port_override=None,
@@ -963,6 +973,7 @@ class BigQuery:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.private_key = private_key
         self.project = project
         self.port_override = port_override
@@ -974,6 +985,7 @@ class BigQuery:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
             'project: ' + repr(self.project) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -986,6 +998,7 @@ class BigQuery:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'private_key': self.private_key,
             'project': self.project,
             'port_override': self.port_override,
@@ -999,6 +1012,7 @@ class BigQuery:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             private_key=d.get('private_key'),
             project=d.get('project'),
             port_override=d.get('port_override'),
@@ -1013,6 +1027,7 @@ class Cassandra:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1024,6 +1039,7 @@ class Cassandra:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -1037,6 +1053,7 @@ class Cassandra:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -1047,6 +1064,7 @@ class Cassandra:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1059,6 +1077,7 @@ class Cassandra:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1072,6 +1091,7 @@ class Cassandra:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1086,6 +1106,7 @@ class Cassandra:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1101,6 +1122,7 @@ class Druid:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port_override: 
     :param username: 
@@ -1111,6 +1133,7 @@ class Druid:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port_override',
         'username',
@@ -1123,6 +1146,7 @@ class Druid:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port_override=None,
         username=None,
@@ -1132,6 +1156,7 @@ class Druid:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port_override = port_override
         self.username = username
@@ -1143,6 +1168,7 @@ class Druid:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1155,6 +1181,7 @@ class Druid:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'username': self.username,
@@ -1168,6 +1195,7 @@ class Druid:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             username=d.get('username'),
@@ -1182,6 +1210,7 @@ class DynamoDB:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param access_key: 
     :param secret_access_key: 
     :param region: 
@@ -1192,6 +1221,7 @@ class DynamoDB:
         'id',
         'name',
         'healthy',
+        'tags',
         'access_key',
         'secret_access_key',
         'region',
@@ -1204,6 +1234,7 @@ class DynamoDB:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         access_key=None,
         secret_access_key=None,
         region=None,
@@ -1213,6 +1244,7 @@ class DynamoDB:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.region = region
@@ -1224,6 +1256,7 @@ class DynamoDB:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
@@ -1236,6 +1269,7 @@ class DynamoDB:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'region': self.region,
@@ -1249,6 +1283,7 @@ class DynamoDB:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             region=d.get('region'),
@@ -1263,6 +1298,7 @@ class AmazonES:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param region: 
     :param secret_access_key: 
     :param endpoint: 
@@ -1273,6 +1309,7 @@ class AmazonES:
         'id',
         'name',
         'healthy',
+        'tags',
         'region',
         'secret_access_key',
         'endpoint',
@@ -1285,6 +1322,7 @@ class AmazonES:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         region=None,
         secret_access_key=None,
         endpoint=None,
@@ -1294,6 +1332,7 @@ class AmazonES:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.region = region
         self.secret_access_key = secret_access_key
         self.endpoint = endpoint
@@ -1305,6 +1344,7 @@ class AmazonES:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
@@ -1317,6 +1357,7 @@ class AmazonES:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'region': self.region,
             'secret_access_key': self.secret_access_key,
             'endpoint': self.endpoint,
@@ -1330,6 +1371,7 @@ class AmazonES:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             region=d.get('region'),
             secret_access_key=d.get('secret_access_key'),
             endpoint=d.get('endpoint'),
@@ -1344,6 +1386,7 @@ class Elastic:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1355,6 +1398,7 @@ class Elastic:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -1368,6 +1412,7 @@ class Elastic:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -1378,6 +1423,7 @@ class Elastic:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1390,6 +1436,7 @@ class Elastic:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1403,6 +1450,7 @@ class Elastic:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1417,6 +1465,7 @@ class Elastic:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1432,6 +1481,7 @@ class HTTPBasicAuth:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param url: 
     :param healthcheck_path: 
     :param username: 
@@ -1444,6 +1494,7 @@ class HTTPBasicAuth:
         'id',
         'name',
         'healthy',
+        'tags',
         'url',
         'healthcheck_path',
         'username',
@@ -1458,6 +1509,7 @@ class HTTPBasicAuth:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         url=None,
         healthcheck_path=None,
         username=None,
@@ -1469,6 +1521,7 @@ class HTTPBasicAuth:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.username = username
@@ -1482,6 +1535,7 @@ class HTTPBasicAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1496,6 +1550,7 @@ class HTTPBasicAuth:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'username': self.username,
@@ -1511,6 +1566,7 @@ class HTTPBasicAuth:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             username=d.get('username'),
@@ -1527,6 +1583,7 @@ class HTTPNoAuth:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param url: 
     :param healthcheck_path: 
     :param headers_blacklist: 
@@ -1537,6 +1594,7 @@ class HTTPNoAuth:
         'id',
         'name',
         'healthy',
+        'tags',
         'url',
         'healthcheck_path',
         'headers_blacklist',
@@ -1549,6 +1607,7 @@ class HTTPNoAuth:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         url=None,
         healthcheck_path=None,
         headers_blacklist=None,
@@ -1558,6 +1617,7 @@ class HTTPNoAuth:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.headers_blacklist = headers_blacklist
@@ -1569,6 +1629,7 @@ class HTTPNoAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -1581,6 +1642,7 @@ class HTTPNoAuth:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'headers_blacklist': self.headers_blacklist,
@@ -1594,6 +1656,7 @@ class HTTPNoAuth:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -1608,6 +1671,7 @@ class HTTPAuth:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param url: 
     :param healthcheck_path: 
     :param auth_header: 
@@ -1619,6 +1683,7 @@ class HTTPAuth:
         'id',
         'name',
         'healthy',
+        'tags',
         'url',
         'healthcheck_path',
         'auth_header',
@@ -1632,6 +1697,7 @@ class HTTPAuth:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         url=None,
         healthcheck_path=None,
         auth_header=None,
@@ -1642,6 +1708,7 @@ class HTTPAuth:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.auth_header = auth_header
@@ -1654,6 +1721,7 @@ class HTTPAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'auth_header: ' + repr(self.auth_header) + ' ' +\
@@ -1667,6 +1735,7 @@ class HTTPAuth:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'auth_header': self.auth_header,
@@ -1681,6 +1750,7 @@ class HTTPAuth:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             auth_header=d.get('auth_header'),
@@ -1696,6 +1766,7 @@ class Kubernetes:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -1709,6 +1780,7 @@ class Kubernetes:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'certificate_authority',
@@ -1724,6 +1796,7 @@ class Kubernetes:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -1736,6 +1809,7 @@ class Kubernetes:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -1750,6 +1824,7 @@ class Kubernetes:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -1765,6 +1840,7 @@ class Kubernetes:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -1782,6 +1858,7 @@ class Kubernetes:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -1800,6 +1877,7 @@ class KubernetesBasicAuth:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param username: 
@@ -1809,6 +1887,7 @@ class KubernetesBasicAuth:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'username',
@@ -1820,6 +1899,7 @@ class KubernetesBasicAuth:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         username=None,
@@ -1828,6 +1908,7 @@ class KubernetesBasicAuth:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -1838,6 +1919,7 @@ class KubernetesBasicAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1849,6 +1931,7 @@ class KubernetesBasicAuth:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -1861,6 +1944,7 @@ class KubernetesBasicAuth:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -1874,6 +1958,7 @@ class KubernetesServiceAccount:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param token: 
@@ -1882,6 +1967,7 @@ class KubernetesServiceAccount:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'token',
@@ -1892,6 +1978,7 @@ class KubernetesServiceAccount:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         token=None,
@@ -1899,6 +1986,7 @@ class KubernetesServiceAccount:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -1908,6 +1996,7 @@ class KubernetesServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -1918,6 +2007,7 @@ class KubernetesServiceAccount:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -1929,6 +2019,7 @@ class KubernetesServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -1941,6 +2032,7 @@ class AmazonEKS:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param endpoint: 
     :param access_key: 
     :param secret_access_key: 
@@ -1948,12 +2040,12 @@ class AmazonEKS:
     :param certificate_authority_filename: 
     :param region: 
     :param cluster_name: 
-    :param role_arn: 
     """
     __slots__ = [
         'id',
         'name',
         'healthy',
+        'tags',
         'endpoint',
         'access_key',
         'secret_access_key',
@@ -1961,7 +2053,6 @@ class AmazonEKS:
         'certificate_authority_filename',
         'region',
         'cluster_name',
-        'role_arn',
     ]
 
     def __init__(
@@ -1969,6 +2060,7 @@ class AmazonEKS:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         endpoint=None,
         access_key=None,
         secret_access_key=None,
@@ -1976,11 +2068,11 @@ class AmazonEKS:
         certificate_authority_filename=None,
         region=None,
         cluster_name=None,
-        role_arn=None,
     ):
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.endpoint = endpoint
         self.access_key = access_key
         self.secret_access_key = secret_access_key
@@ -1988,13 +2080,13 @@ class AmazonEKS:
         self.certificate_authority_filename = certificate_authority_filename
         self.region = region
         self.cluster_name = cluster_name
-        self.role_arn = role_arn
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -2002,7 +2094,6 @@ class AmazonEKS:
             'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2010,6 +2101,7 @@ class AmazonEKS:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'endpoint': self.endpoint,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
@@ -2018,7 +2110,6 @@ class AmazonEKS:
             self.certificate_authority_filename,
             'region': self.region,
             'cluster_name': self.cluster_name,
-            'role_arn': self.role_arn,
         }
 
     @classmethod
@@ -2027,6 +2118,7 @@ class AmazonEKS:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             endpoint=d.get('endpoint'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
@@ -2035,7 +2127,6 @@ class AmazonEKS:
                 'certificate_authority_filename'),
             region=d.get('region'),
             cluster_name=d.get('cluster_name'),
-            role_arn=d.get('role_arn'),
         )
 
 
@@ -2045,6 +2136,7 @@ class GoogleGKE:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param endpoint: 
     :param certificate_authority: 
     :param certificate_authority_filename: 
@@ -2055,6 +2147,7 @@ class GoogleGKE:
         'id',
         'name',
         'healthy',
+        'tags',
         'endpoint',
         'certificate_authority',
         'certificate_authority_filename',
@@ -2067,6 +2160,7 @@ class GoogleGKE:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         endpoint=None,
         certificate_authority=None,
         certificate_authority_filename=None,
@@ -2076,6 +2170,7 @@ class GoogleGKE:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.endpoint = endpoint
         self.certificate_authority = certificate_authority
         self.certificate_authority_filename = certificate_authority_filename
@@ -2087,6 +2182,7 @@ class GoogleGKE:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
@@ -2099,6 +2195,7 @@ class GoogleGKE:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'endpoint': self.endpoint,
             'certificate_authority': self.certificate_authority,
             'certificate_authority_filename':
@@ -2113,6 +2210,7 @@ class GoogleGKE:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             endpoint=d.get('endpoint'),
             certificate_authority=d.get('certificate_authority'),
             certificate_authority_filename=d.get(
@@ -2128,6 +2226,7 @@ class AKS:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -2141,6 +2240,7 @@ class AKS:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'certificate_authority',
@@ -2156,6 +2256,7 @@ class AKS:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -2168,6 +2269,7 @@ class AKS:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -2182,6 +2284,7 @@ class AKS:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -2197,6 +2300,7 @@ class AKS:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -2214,6 +2318,7 @@ class AKS:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -2232,6 +2337,7 @@ class AKSBasicAuth:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param username: 
@@ -2241,6 +2347,7 @@ class AKSBasicAuth:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'username',
@@ -2252,6 +2359,7 @@ class AKSBasicAuth:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         username=None,
@@ -2260,6 +2368,7 @@ class AKSBasicAuth:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -2270,6 +2379,7 @@ class AKSBasicAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -2281,6 +2391,7 @@ class AKSBasicAuth:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -2293,6 +2404,7 @@ class AKSBasicAuth:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -2306,6 +2418,7 @@ class AKSServiceAccount:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port: 
     :param token: 
@@ -2314,6 +2427,7 @@ class AKSServiceAccount:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port',
         'token',
@@ -2324,6 +2438,7 @@ class AKSServiceAccount:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port=None,
         token=None,
@@ -2331,6 +2446,7 @@ class AKSServiceAccount:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -2340,6 +2456,7 @@ class AKSServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -2350,6 +2467,7 @@ class AKSServiceAccount:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -2361,6 +2479,7 @@ class AKSServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -2373,6 +2492,7 @@ class Memcached:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port_override: 
     :param port: 
@@ -2381,6 +2501,7 @@ class Memcached:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port_override',
         'port',
@@ -2391,6 +2512,7 @@ class Memcached:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port_override=None,
         port=None,
@@ -2398,6 +2520,7 @@ class Memcached:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port_override = port_override
         self.port = port
@@ -2407,6 +2530,7 @@ class Memcached:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -2417,6 +2541,7 @@ class Memcached:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'port': self.port,
@@ -2428,6 +2553,7 @@ class Memcached:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             port=d.get('port'),
@@ -2440,6 +2566,7 @@ class MongoLegacyHost:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2453,6 +2580,7 @@ class MongoLegacyHost:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'auth_database',
         'port_override',
@@ -2468,6 +2596,7 @@ class MongoLegacyHost:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2480,6 +2609,7 @@ class MongoLegacyHost:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2494,6 +2624,7 @@ class MongoLegacyHost:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2509,6 +2640,7 @@ class MongoLegacyHost:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2525,6 +2657,7 @@ class MongoLegacyHost:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -2542,6 +2675,7 @@ class MongoLegacyReplicaset:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2556,6 +2690,7 @@ class MongoLegacyReplicaset:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'auth_database',
         'port_override',
@@ -2572,6 +2707,7 @@ class MongoLegacyReplicaset:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2585,6 +2721,7 @@ class MongoLegacyReplicaset:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2600,6 +2737,7 @@ class MongoLegacyReplicaset:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2616,6 +2754,7 @@ class MongoLegacyReplicaset:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2633,6 +2772,7 @@ class MongoLegacyReplicaset:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -2651,6 +2791,7 @@ class MongoHost:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2663,6 +2804,7 @@ class MongoHost:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'auth_database',
         'port_override',
@@ -2677,6 +2819,7 @@ class MongoHost:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2688,6 +2831,7 @@ class MongoHost:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2701,6 +2845,7 @@ class MongoHost:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2715,6 +2860,7 @@ class MongoHost:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2730,6 +2876,7 @@ class MongoHost:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -2746,6 +2893,7 @@ class MongoReplicaSet:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2760,6 +2908,7 @@ class MongoReplicaSet:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'auth_database',
         'port_override',
@@ -2776,6 +2925,7 @@ class MongoReplicaSet:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2789,6 +2939,7 @@ class MongoReplicaSet:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2804,6 +2955,7 @@ class MongoReplicaSet:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2820,6 +2972,7 @@ class MongoReplicaSet:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2837,6 +2990,7 @@ class MongoReplicaSet:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -2855,6 +3009,7 @@ class Mysql:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -2866,6 +3021,7 @@ class Mysql:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -2879,6 +3035,7 @@ class Mysql:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -2889,6 +3046,7 @@ class Mysql:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -2901,6 +3059,7 @@ class Mysql:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -2914,6 +3073,7 @@ class Mysql:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -2928,6 +3088,7 @@ class Mysql:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -2943,6 +3104,7 @@ class AuroraMysql:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -2954,6 +3116,7 @@ class AuroraMysql:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -2967,6 +3130,7 @@ class AuroraMysql:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -2977,6 +3141,7 @@ class AuroraMysql:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -2989,6 +3154,7 @@ class AuroraMysql:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3002,6 +3168,7 @@ class AuroraMysql:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3016,6 +3183,7 @@ class AuroraMysql:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3031,6 +3199,7 @@ class Clustrix:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3042,6 +3211,7 @@ class Clustrix:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3055,6 +3225,7 @@ class Clustrix:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3065,6 +3236,7 @@ class Clustrix:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3077,6 +3249,7 @@ class Clustrix:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3090,6 +3263,7 @@ class Clustrix:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3104,6 +3278,7 @@ class Clustrix:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3119,6 +3294,7 @@ class Maria:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3130,6 +3306,7 @@ class Maria:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3143,6 +3320,7 @@ class Maria:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3153,6 +3331,7 @@ class Maria:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3165,6 +3344,7 @@ class Maria:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3178,6 +3358,7 @@ class Maria:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3192,6 +3373,7 @@ class Maria:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3207,6 +3389,7 @@ class Memsql:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3218,6 +3401,7 @@ class Memsql:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3231,6 +3415,7 @@ class Memsql:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3241,6 +3426,7 @@ class Memsql:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3253,6 +3439,7 @@ class Memsql:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3266,6 +3453,7 @@ class Memsql:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3280,6 +3468,7 @@ class Memsql:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3295,6 +3484,7 @@ class Oracle:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3307,6 +3497,7 @@ class Oracle:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3321,6 +3512,7 @@ class Oracle:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3332,6 +3524,7 @@ class Oracle:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3345,6 +3538,7 @@ class Oracle:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3359,6 +3553,7 @@ class Oracle:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3374,6 +3569,7 @@ class Oracle:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3390,6 +3586,7 @@ class Postgres:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3402,6 +3599,7 @@ class Postgres:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3416,6 +3614,7 @@ class Postgres:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3427,6 +3626,7 @@ class Postgres:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3440,6 +3640,7 @@ class Postgres:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3454,6 +3655,7 @@ class Postgres:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3469,6 +3671,7 @@ class Postgres:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3485,6 +3688,7 @@ class AuroraPostgres:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3497,6 +3701,7 @@ class AuroraPostgres:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3511,6 +3716,7 @@ class AuroraPostgres:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3522,6 +3728,7 @@ class AuroraPostgres:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3535,6 +3742,7 @@ class AuroraPostgres:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3549,6 +3757,7 @@ class AuroraPostgres:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3564,6 +3773,7 @@ class AuroraPostgres:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3580,6 +3790,7 @@ class Greenplum:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3592,6 +3803,7 @@ class Greenplum:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3606,6 +3818,7 @@ class Greenplum:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3617,6 +3830,7 @@ class Greenplum:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3630,6 +3844,7 @@ class Greenplum:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3644,6 +3859,7 @@ class Greenplum:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3659,6 +3875,7 @@ class Greenplum:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3675,6 +3892,7 @@ class Cockroach:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3687,6 +3905,7 @@ class Cockroach:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3701,6 +3920,7 @@ class Cockroach:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3712,6 +3932,7 @@ class Cockroach:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3725,6 +3946,7 @@ class Cockroach:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3739,6 +3961,7 @@ class Cockroach:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3754,6 +3977,7 @@ class Cockroach:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3770,6 +3994,7 @@ class Redshift:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3782,6 +4007,7 @@ class Redshift:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3796,6 +4022,7 @@ class Redshift:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3807,6 +4034,7 @@ class Redshift:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3820,6 +4048,7 @@ class Redshift:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3834,6 +4063,7 @@ class Redshift:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3849,6 +4079,7 @@ class Redshift:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3865,6 +4096,7 @@ class Presto:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param password: 
     :param database: 
@@ -3877,6 +4109,7 @@ class Presto:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'password',
         'database',
@@ -3891,6 +4124,7 @@ class Presto:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         password=None,
         database=None,
@@ -3902,6 +4136,7 @@ class Presto:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.password = password
         self.database = database
@@ -3915,6 +4150,7 @@ class Presto:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
@@ -3929,6 +4165,7 @@ class Presto:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'password': self.password,
             'database': self.database,
@@ -3944,6 +4181,7 @@ class Presto:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             password=d.get('password'),
             database=d.get('database'),
@@ -3960,6 +4198,7 @@ class RDP:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3970,6 +4209,7 @@ class RDP:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -3982,6 +4222,7 @@ class RDP:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -3991,6 +4232,7 @@ class RDP:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4002,6 +4244,7 @@ class RDP:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4014,6 +4257,7 @@ class RDP:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4027,6 +4271,7 @@ class RDP:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4041,6 +4286,7 @@ class Redis:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -4050,6 +4296,7 @@ class Redis:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port_override',
         'password',
@@ -4061,6 +4308,7 @@ class Redis:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -4069,6 +4317,7 @@ class Redis:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -4079,6 +4328,7 @@ class Redis:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4090,6 +4340,7 @@ class Redis:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -4102,6 +4353,7 @@ class Redis:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -4115,6 +4367,7 @@ class ElasticacheRedis:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -4125,6 +4378,7 @@ class ElasticacheRedis:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'port_override',
         'password',
@@ -4137,6 +4391,7 @@ class ElasticacheRedis:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -4146,6 +4401,7 @@ class ElasticacheRedis:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -4157,6 +4413,7 @@ class ElasticacheRedis:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4169,6 +4426,7 @@ class ElasticacheRedis:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -4182,6 +4440,7 @@ class ElasticacheRedis:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -4196,6 +4455,7 @@ class Snowflake:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4207,6 +4467,7 @@ class Snowflake:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -4220,6 +4481,7 @@ class Snowflake:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -4230,6 +4492,7 @@ class Snowflake:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4242,6 +4505,7 @@ class Snowflake:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4255,6 +4519,7 @@ class Snowflake:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4269,6 +4534,7 @@ class Snowflake:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4284,6 +4550,7 @@ class SQLServer:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4297,6 +4564,7 @@ class SQLServer:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -4312,6 +4580,7 @@ class SQLServer:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -4324,6 +4593,7 @@ class SQLServer:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4338,6 +4608,7 @@ class SQLServer:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4353,6 +4624,7 @@ class SQLServer:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4369,6 +4641,7 @@ class SQLServer:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4386,6 +4659,7 @@ class SSH:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param port: 
@@ -4396,6 +4670,7 @@ class SSH:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'port',
@@ -4408,6 +4683,7 @@ class SSH:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         port=None,
@@ -4417,6 +4693,7 @@ class SSH:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -4428,6 +4705,7 @@ class SSH:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -4440,6 +4718,7 @@ class SSH:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -4453,6 +4732,7 @@ class SSH:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -4467,6 +4747,7 @@ class Sybase:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -4477,6 +4758,7 @@ class Sybase:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'port_override',
@@ -4489,6 +4771,7 @@ class Sybase:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -4498,6 +4781,7 @@ class Sybase:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -4509,6 +4793,7 @@ class Sybase:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -4521,6 +4806,7 @@ class Sybase:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -4534,6 +4820,7 @@ class Sybase:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -4548,6 +4835,7 @@ class SybaseIQ:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -4558,6 +4846,7 @@ class SybaseIQ:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'port_override',
@@ -4570,6 +4859,7 @@ class SybaseIQ:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -4579,6 +4869,7 @@ class SybaseIQ:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -4590,6 +4881,7 @@ class SybaseIQ:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -4602,6 +4894,7 @@ class SybaseIQ:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -4615,6 +4908,7 @@ class SybaseIQ:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -4629,6 +4923,7 @@ class Teradata:
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4639,6 +4934,7 @@ class Teradata:
         'id',
         'name',
         'healthy',
+        'tags',
         'hostname',
         'username',
         'password',
@@ -4651,6 +4947,7 @@ class Teradata:
         id=None,
         name=None,
         healthy=None,
+        tags=None,
         hostname=None,
         username=None,
         password=None,
@@ -4660,6 +4957,7 @@ class Teradata:
         self.id = id
         self.name = name
         self.healthy = healthy
+        self.tags = tags
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4671,6 +4969,7 @@ class Teradata:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4683,6 +4982,7 @@ class Teradata:
             'id': self.id,
             'name': self.name,
             'healthy': self.healthy,
+            'tags': self.tags,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4696,6 +4996,7 @@ class Teradata:
             id=d.get('id'),
             name=d.get('name'),
             healthy=d.get('healthy'),
+            tags=d.get('tags'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
