@@ -28,6 +28,7 @@ from .spec_pb2 import *
 from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
 from .accounts_pb2 import *
+from .tags_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
 from .resources_pb2 import *
@@ -83,7 +84,7 @@ def convert_tags_to_plumbing(t):
         return None
     tags = Tags()
     for key, value in t.items():
-        pair = Pair()
+        pair = Tags.Pair()
         pair.name = key
         pair.value = value
         tags.pairs.append(pair)

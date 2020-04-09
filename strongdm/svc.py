@@ -28,6 +28,8 @@ from .account_grants_pb2 import *
 from .account_grants_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
+from .tags_pb2 import *
+from .tags_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
@@ -183,7 +185,7 @@ class AccountAttachments:
 
 
 class AccountGrants:
-    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource."""
+    """AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountGrantsStub(channel)
