@@ -64,7 +64,7 @@ class Client:
             self.role_grants = svc.RoleGrants(channel, self)
             self.roles = svc.Roles(channel, self)
         except Exception as e:
-            raise plumbing.convert_error_to_porcelain(e) from e
+            raise plumbing.error_to_porcelain(e) from e
         self._test_options = {}
 
     def get_metadata(self, method_name, req):

@@ -29,5 +29,3 @@ strongdm/roles_pb2_grpc.py
 strongdm/spec_pb2.py
 strongdm/spec_pb2_grpc.py
 strongdm/svc.py
-strongdm/tags_pb2.py
-strongdm/tags_pb2_grpc.py

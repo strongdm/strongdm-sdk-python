@@ -19,7 +19,7 @@ from . import account_grants_pb2 as account__grants__pb2
 
 
 class AccountGrantsStub(object):
-  """AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource.
+  """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
   """
 
   def __init__(self, channel):
@@ -51,7 +51,7 @@ class AccountGrantsStub(object):
 
 
 class AccountGrantsServicer(object):
-  """AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource.
+  """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
   """
 
   def Create(self, request, context):
