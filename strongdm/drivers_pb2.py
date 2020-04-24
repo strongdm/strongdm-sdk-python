@@ -37,7 +37,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\017DriversPlumbing'),
-  serialized_pb=_b('\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\ntags.proto\"\xba\x0e\n\x08Resource\x12\x1c\n\x06\x61thena\x18\x64 \x01(\x0b\x32\n.v1.AthenaH\x00\x12\"\n\tbig_query\x18\xc8\x01 \x01(\x0b\x32\x0c.v1.BigQueryH\x00\x12#\n\tcassandra\x18\xac\x02 \x01(\x0b\x32\r.v1.CassandraH\x00\x12\x1b\n\x05\x64ruid\x18\x90\x03 \x01(\x0b\x32\t.v1.DruidH\x00\x12\"\n\tdynamo_db\x18\xf4\x03 \x01(\x0b\x32\x0c.v1.DynamoDBH\x00\x12\"\n\tamazon_es\x18\xd8\x04 \x01(\x0b\x32\x0c.v1.AmazonESH\x00\x12\x1f\n\x07\x65lastic\x18\xd9\x04 \x01(\x0b\x32\x0b.v1.ElasticH\x00\x12-\n\x0fhttp_basic_auth\x18\xbc\x05 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12\'\n\x0chttp_no_auth\x18\xbd\x05 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12\"\n\thttp_auth\x18\xbe\x05 \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12%\n\nkubernetes\x18\xa0\x06 \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12\x39\n\x15kubernetes_basic_auth\x18\xa1\x06 \x01(\x0b\x32\x17.v1.KubernetesBasicAuthH\x00\x12\x43\n\x1akubernetes_service_account\x18\xa4\x06 \x01(\x0b\x32\x1c.v1.KubernetesServiceAccountH\x00\x12$\n\namazon_eks\x18\xa2\x06 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12$\n\ngoogle_gke\x18\xa3\x06 \x01(\x0b\x32\r.v1.GoogleGKEH\x00\x12\x17\n\x03\x61ks\x18\xa5\x06 \x01(\x0b\x32\x07.v1.AKSH\x00\x12+\n\x0e\x61ks_basic_auth\x18\xa6\x06 \x01(\x0b\x32\x10.v1.AKSBasicAuthH\x00\x12\x35\n\x13\x61ks_service_account\x18\xa7\x06 \x01(\x0b\x32\x15.v1.AKSServiceAccountH\x00\x12#\n\tmemcached\x18\x84\x07 \x01(\x0b\x32\r.v1.MemcachedH\x00\x12\x31\n\x11mongo_legacy_host\x18\xe8\x07 \x01(\x0b\x32\x13.v1.MongoLegacyHostH\x00\x12=\n\x17mongo_legacy_replicaset\x18\xe9\x07 \x01(\x0b\x32\x19.v1.MongoLegacyReplicasetH\x00\x12$\n\nmongo_host\x18\xea\x07 \x01(\x0b\x32\r.v1.MongoHostH\x00\x12\x31\n\x11mongo_replica_set\x18\xeb\x07 \x01(\x0b\x32\x13.v1.MongoReplicaSetH\x00\x12\x1b\n\x05mysql\x18\xcc\x08 \x01(\x0b\x32\t.v1.MysqlH\x00\x12(\n\x0c\x61urora_mysql\x18\xcd\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12!\n\x08\x63lustrix\x18\xce\x08 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1b\n\x05maria\x18\xcf\x08 \x01(\x0b\x32\t.v1.MariaH\x00\x12\x1d\n\x06memsql\x18\xd0\x08 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1d\n\x06oracle\x18\xb0\t \x01(\x0b\x32\n.v1.OracleH\x00\x12!\n\x08postgres\x18\x94\n \x01(\x0b\x32\x0c.v1.PostgresH\x00\x12.\n\x0f\x61urora_postgres\x18\x95\n \x01(\x0b\x32\x12.v1.AuroraPostgresH\x00\x12#\n\tgreenplum\x18\x96\n \x01(\x0b\x32\r.v1.GreenplumH\x00\x12#\n\tcockroach\x18\x97\n \x01(\x0b\x32\r.v1.CockroachH\x00\x12!\n\x08redshift\x18\x98\n \x01(\x0b\x32\x0c.v1.RedshiftH\x00\x12\x1d\n\x06presto\x18\xf8\n \x01(\x0b\x32\n.v1.PrestoH\x00\x12\x17\n\x03rdp\x18\xdc\x0b \x01(\x0b\x32\x07.v1.RDPH\x00\x12\x1b\n\x05redis\x18\xc0\x0c \x01(\x0b\x32\t.v1.RedisH\x00\x12\x32\n\x11\x65lasticache_redis\x18\xc1\x0c \x01(\x0b\x32\x14.v1.ElasticacheRedisH\x00\x12#\n\tsnowflake\x18\xa4\r \x01(\x0b\x32\r.v1.SnowflakeH\x00\x12$\n\nsql_server\x18\x88\x0e \x01(\x0b\x32\r.v1.SQLServerH\x00\x12\x17\n\x03ssh\x18\xec\x0e \x01(\x0b\x32\x07.v1.SSHH\x00\x12\x1d\n\x06sybase\x18\xd0\x0f \x01(\x0b\x32\n.v1.SybaseH\x00\x12\"\n\tsybase_iq\x18\xd1\x0f \x01(\x0b\x32\x0c.v1.SybaseIQH\x00\x12!\n\x08teradata\x18\xb4\x10 \x01(\x0b\x32\x0c.v1.TeradataH\x00:c\xfa\xf8\xb3\x07T\xc2\xf3\xb3\x07O\xa2\xf3\xb3\x07!tf_examples/resource_resource.txt\xaa\xf3\xb3\x07$tf_examples/resource_data_source.txt\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42(\n\x08resource\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\"\xcb\x03\n\x06\x41thena\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\naccess_key\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11secret_access_key\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x33\n\x06output\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x41\n\x06region\x18\x05 \x01(\tB1\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x0b:\tus-east-1\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xba\x03\n\x08\x42igQuery\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x0bprivate_key\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x34\n\x07project\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x65ndpoint\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf9\x03\n\tCassandra\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x39\x30\x34\x32\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x06 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xba\x03\n\x05\x44ruid\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x02 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x38\x30\x38\x32\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc1\x03\n\x08\x44ynamoDB\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\naccess_key\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11secret_access_key\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x33\n\x06region\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x65ndpoint\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc1\x03\n\x08\x41mazonES\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\x06region\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11secret_access_key\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x65ndpoint\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x37\n\naccess_key\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf7\x03\n\x07\x45lastic\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x39\x32\x30\x30\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x06 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xbd\x04\n\rHTTPBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x03url\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x10healthcheck_path\x18\x02 \x01(\tB)\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11headers_blacklist\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x36\n\tsubdomain\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xcc\x03\n\nHTTPNoAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x03url\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x10healthcheck_path\x18\x02 \x01(\tB)\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12>\n\x11headers_blacklist\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x36\n\tsubdomain\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x84\x04\n\x08HTTPAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x03url\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x10healthcheck_path\x18\x02 \x01(\tB)\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12\x38\n\x0b\x61uth_header\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11headers_blacklist\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x36\n\tsubdomain\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xab\x05\n\nKubernetes\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x42\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12K\n\x1e\x63\x65rtificate_authority_filename\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x12\x63lient_certificate\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x1b\x63lient_certificate_filename\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x37\n\nclient_key\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\x13\x63lient_key_filename\x18\x08 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x8b\x03\n\x13KubernetesBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xd6\x02\n\x18KubernetesServiceAccount\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x32\n\x05token\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x89\x05\n\tAmazonEKS\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08\x65ndpoint\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x37\n\naccess_key\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12>\n\x11secret_access_key\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x42\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12K\n\x1e\x63\x65rtificate_authority_filename\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x33\n\x06region\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0c\x63luster_name\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08role_arn\x18\x08 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf6\x03\n\tGoogleGKE\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08\x65ndpoint\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x42\n\x15\x63\x65rtificate_authority\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12K\n\x1e\x63\x65rtificate_authority_filename\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\x13service_account_key\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12I\n\x1cservice_account_key_filename\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa4\x05\n\x03\x41KS\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x42\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12K\n\x1e\x63\x65rtificate_authority_filename\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x12\x63lient_certificate\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x1b\x63lient_certificate_filename\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x37\n\nclient_key\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\x13\x63lient_key_filename\x18\x08 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x84\x03\n\x0c\x41KSBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xcf\x02\n\x11\x41KSServiceAccount\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x04port\x18\x02 \x01(\x05\x42+\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12\x32\n\x05token\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xd1\x02\n\tMemcached\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x02 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12;\n\x04port\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x31\x31\x32\x31\x31\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf6\x04\n\x0fMongoLegacyHost\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rauth_database\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12;\n\x04port\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x38\n\x0breplica_set\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x08 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc7\x05\n\x15MongoLegacyReplicaset\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rauth_database\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12;\n\x04port\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x38\n\x0breplica_set\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12I\n\x12\x63onnect_to_replica\x18\x08 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\t \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb6\x04\n\tMongoHost\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rauth_database\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12;\n\x04port\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x08 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc1\x05\n\x0fMongoReplicaSet\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rauth_database\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12;\n\x04port\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x38\n\x0breplica_set\x18\x07 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12I\n\x12\x63onnect_to_replica\x18\x08 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\t \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf1\x03\n\x05Mysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf7\x03\n\x0b\x41uroraMysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf4\x03\n\x08\x43lustrix\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf1\x03\n\x05Maria\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf2\x03\n\x06Memsql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x04\n\x06Oracle\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x35\x32\x31\x92\x41\x02@\x00\x12:\n\rport_override\x18\x06 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb4\x04\n\x08Postgres\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xba\x04\n\x0e\x41uroraPostgres\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb5\x04\n\tGreenplum\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb5\x04\n\tCockroach\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb4\x04\n\x08Redshift\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x06 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x39\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x04\n\x06Presto\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x38\x30\x38\x30\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x39\n\x0ctls_required\x18\x07 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb8\x03\n\x03RDP\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x38\x39\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x83\x03\n\x05Redis\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x02 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x04 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x36\x33\x37\x39\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xd2\x03\n\x10\x45lasticacheRedis\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x02 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x04 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x36\x33\x37\x39\x92\x41\x02@\x00\x12\x42\n\x0ctls_required\x18\x05 \x01(\x08\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04true\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xee\x03\n\tSnowflake\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x33\n\x06schema\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x06 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xea\x04\n\tSQLServer\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08\x64\x61tabase\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x05 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x33\n\x06schema\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x07 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x34\x33\x33\x92\x41\x02@\x00\x12>\n\x11override_database\x18\x08 \x01(\x08\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc4\x03\n\x03SSH\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x38\n\x04port\x18\x03 \x01(\x05\x42*\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x04:\x02\x32\x32\x92\x41\x02@\x00\x12\x37\n\npublic_key\x18\x04 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12\x46\n\x0fport_forwarding\x18\x05 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xbb\x03\n\x06Sybase\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x04 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x32\x36\x33\x38\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xbd\x03\n\x08SybaseIQ\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x03 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x04 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x32\x36\x33\x38\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x05 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xbd\x03\n\x08Teradata\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\x08hostname\x18\x01 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08username\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x35\n\x08password\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\rport_override\x18\x04 \x01(\x05\x42#\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12:\n\x04port\x18\x05 \x01(\x05\x42,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x30\x32\x35\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3')
+  serialized_pb=_b('\n\rdrivers.proto\x12\x02v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\ntags.proto\"\xba\x0e\n\x08Resource\x12\x1c\n\x06\x61thena\x18\x64 \x01(\x0b\x32\n.v1.AthenaH\x00\x12\"\n\tbig_query\x18\xc8\x01 \x01(\x0b\x32\x0c.v1.BigQueryH\x00\x12#\n\tcassandra\x18\xac\x02 \x01(\x0b\x32\r.v1.CassandraH\x00\x12\x1b\n\x05\x64ruid\x18\x90\x03 \x01(\x0b\x32\t.v1.DruidH\x00\x12\"\n\tdynamo_db\x18\xf4\x03 \x01(\x0b\x32\x0c.v1.DynamoDBH\x00\x12\"\n\tamazon_es\x18\xd8\x04 \x01(\x0b\x32\x0c.v1.AmazonESH\x00\x12\x1f\n\x07\x65lastic\x18\xd9\x04 \x01(\x0b\x32\x0b.v1.ElasticH\x00\x12-\n\x0fhttp_basic_auth\x18\xbc\x05 \x01(\x0b\x32\x11.v1.HTTPBasicAuthH\x00\x12\'\n\x0chttp_no_auth\x18\xbd\x05 \x01(\x0b\x32\x0e.v1.HTTPNoAuthH\x00\x12\"\n\thttp_auth\x18\xbe\x05 \x01(\x0b\x32\x0c.v1.HTTPAuthH\x00\x12%\n\nkubernetes\x18\xa0\x06 \x01(\x0b\x32\x0e.v1.KubernetesH\x00\x12\x39\n\x15kubernetes_basic_auth\x18\xa1\x06 \x01(\x0b\x32\x17.v1.KubernetesBasicAuthH\x00\x12\x43\n\x1akubernetes_service_account\x18\xa4\x06 \x01(\x0b\x32\x1c.v1.KubernetesServiceAccountH\x00\x12$\n\namazon_eks\x18\xa2\x06 \x01(\x0b\x32\r.v1.AmazonEKSH\x00\x12$\n\ngoogle_gke\x18\xa3\x06 \x01(\x0b\x32\r.v1.GoogleGKEH\x00\x12\x17\n\x03\x61ks\x18\xa5\x06 \x01(\x0b\x32\x07.v1.AKSH\x00\x12+\n\x0e\x61ks_basic_auth\x18\xa6\x06 \x01(\x0b\x32\x10.v1.AKSBasicAuthH\x00\x12\x35\n\x13\x61ks_service_account\x18\xa7\x06 \x01(\x0b\x32\x15.v1.AKSServiceAccountH\x00\x12#\n\tmemcached\x18\x84\x07 \x01(\x0b\x32\r.v1.MemcachedH\x00\x12\x31\n\x11mongo_legacy_host\x18\xe8\x07 \x01(\x0b\x32\x13.v1.MongoLegacyHostH\x00\x12=\n\x17mongo_legacy_replicaset\x18\xe9\x07 \x01(\x0b\x32\x19.v1.MongoLegacyReplicasetH\x00\x12$\n\nmongo_host\x18\xea\x07 \x01(\x0b\x32\r.v1.MongoHostH\x00\x12\x31\n\x11mongo_replica_set\x18\xeb\x07 \x01(\x0b\x32\x13.v1.MongoReplicaSetH\x00\x12\x1b\n\x05mysql\x18\xcc\x08 \x01(\x0b\x32\t.v1.MysqlH\x00\x12(\n\x0c\x61urora_mysql\x18\xcd\x08 \x01(\x0b\x32\x0f.v1.AuroraMysqlH\x00\x12!\n\x08\x63lustrix\x18\xce\x08 \x01(\x0b\x32\x0c.v1.ClustrixH\x00\x12\x1b\n\x05maria\x18\xcf\x08 \x01(\x0b\x32\t.v1.MariaH\x00\x12\x1d\n\x06memsql\x18\xd0\x08 \x01(\x0b\x32\n.v1.MemsqlH\x00\x12\x1d\n\x06oracle\x18\xb0\t \x01(\x0b\x32\n.v1.OracleH\x00\x12!\n\x08postgres\x18\x94\n \x01(\x0b\x32\x0c.v1.PostgresH\x00\x12.\n\x0f\x61urora_postgres\x18\x95\n \x01(\x0b\x32\x12.v1.AuroraPostgresH\x00\x12#\n\tgreenplum\x18\x96\n \x01(\x0b\x32\r.v1.GreenplumH\x00\x12#\n\tcockroach\x18\x97\n \x01(\x0b\x32\r.v1.CockroachH\x00\x12!\n\x08redshift\x18\x98\n \x01(\x0b\x32\x0c.v1.RedshiftH\x00\x12\x1d\n\x06presto\x18\xf8\n \x01(\x0b\x32\n.v1.PrestoH\x00\x12\x17\n\x03rdp\x18\xdc\x0b \x01(\x0b\x32\x07.v1.RDPH\x00\x12\x1b\n\x05redis\x18\xc0\x0c \x01(\x0b\x32\t.v1.RedisH\x00\x12\x32\n\x11\x65lasticache_redis\x18\xc1\x0c \x01(\x0b\x32\x14.v1.ElasticacheRedisH\x00\x12#\n\tsnowflake\x18\xa4\r \x01(\x0b\x32\r.v1.SnowflakeH\x00\x12$\n\nsql_server\x18\x88\x0e \x01(\x0b\x32\r.v1.SQLServerH\x00\x12\x17\n\x03ssh\x18\xec\x0e \x01(\x0b\x32\x07.v1.SSHH\x00\x12\x1d\n\x06sybase\x18\xd0\x0f \x01(\x0b\x32\n.v1.SybaseH\x00\x12\"\n\tsybase_iq\x18\xd1\x0f \x01(\x0b\x32\x0c.v1.SybaseIQH\x00\x12!\n\x08teradata\x18\xb4\x10 \x01(\x0b\x32\x0c.v1.TeradataH\x00:c\xfa\xf8\xb3\x07T\xc2\xf3\xb3\x07O\xa2\xf3\xb3\x07!tf_examples/resource_resource.txt\xaa\xf3\xb3\x07$tf_examples/resource_data_source.txt\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42(\n\x08resource\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\"\xfd\x03\n\x06\x41thena\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x41\n\naccess_key\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x11secret_access_key\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12=\n\x06output\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12K\n\x06region\x18\x05 \x01(\tB;\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x0b:\tus-east-1\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xec\x03\n\x08\x42igQuery\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x42\n\x0bprivate_key\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12>\n\x07project\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08\x65ndpoint\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb5\x04\n\tCassandra\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x39\x30\x34\x32\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\x06 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xec\x03\n\x05\x44ruid\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x02 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08username\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x38\x30\x38\x32\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf3\x03\n\x08\x44ynamoDB\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x41\n\naccess_key\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x11secret_access_key\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12=\n\x06region\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08\x65ndpoint\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf3\x03\n\x08\x41mazonES\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x06region\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x11secret_access_key\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x65ndpoint\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x41\n\naccess_key\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb3\x04\n\x07\x45lastic\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x39\x32\x30\x30\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\x06 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x83\x05\n\rHTTPBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\x03url\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12M\n\x10healthcheck_path\x18\x02 \x01(\tB3\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12?\n\x08username\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12H\n\x11headers_blacklist\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0c\x64\x65\x66\x61ult_path\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\tsubdomain\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfe\x03\n\nHTTPNoAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\x03url\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12M\n\x10healthcheck_path\x18\x02 \x01(\tB3\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12H\n\x11headers_blacklist\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0c\x64\x65\x66\x61ult_path\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\tsubdomain\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc0\x04\n\x08HTTPAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\x03url\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12M\n\x10healthcheck_path\x18\x02 \x01(\tB3\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x03:\x01/\x92\x41\x02@\x00\x12\x42\n\x0b\x61uth_header\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12H\n\x11headers_blacklist\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0c\x64\x65\x66\x61ult_path\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12@\n\tsubdomain\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfb\x05\n\nKubernetes\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12L\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12U\n\x1e\x63\x65rtificate_authority_filename\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12I\n\x12\x63lient_certificate\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12R\n\x1b\x63lient_certificate_filename\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x41\n\nclient_key\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12J\n\x13\x63lient_key_filename\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb3\x03\n\x13KubernetesBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12?\n\x08username\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf4\x02\n\x18KubernetesServiceAccount\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12<\n\x05token\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xd9\x05\n\tAmazonEKS\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08\x65ndpoint\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x41\n\naccess_key\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12H\n\x11secret_access_key\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12L\n\x15\x63\x65rtificate_authority\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12U\n\x1e\x63\x65rtificate_authority_filename\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12=\n\x06region\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0c\x63luster_name\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08role_arn\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa8\x04\n\tGoogleGKE\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08\x65ndpoint\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12L\n\x15\x63\x65rtificate_authority\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12U\n\x1e\x63\x65rtificate_authority_filename\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12J\n\x13service_account_key\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12S\n\x1cservice_account_key_filename\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf4\x05\n\x03\x41KS\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12L\n\x15\x63\x65rtificate_authority\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12U\n\x1e\x63\x65rtificate_authority_filename\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12I\n\x12\x63lient_certificate\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12R\n\x1b\x63lient_certificate_filename\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x41\n\nclient_key\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12J\n\x13\x63lient_key_filename\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xac\x03\n\x0c\x41KSBasicAuth\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12?\n\x08username\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xed\x02\n\x11\x41KSServiceAccount\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x04port\x18\x02 \x01(\x05\x42\x35\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x05:\x03\x34\x34\x33\x92\x41\x02@\x00\x12<\n\x05token\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xef\x02\n\tMemcached\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x02 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x45\n\x04port\x18\x03 \x01(\x05\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x31\x31\x32\x31\x31\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc6\x05\n\x0fMongoLegacyHost\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rauth_database\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08username\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x45\n\x04port\x18\x06 \x01(\x05\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x42\n\x0breplica_set\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\x08 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xa1\x06\n\x15MongoLegacyReplicaset\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rauth_database\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08username\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x45\n\x04port\x18\x06 \x01(\x05\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x42\n\x0breplica_set\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12S\n\x12\x63onnect_to_replica\x18\x08 \x01(\x08\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\t \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfc\x04\n\tMongoHost\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rauth_database\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08username\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x45\n\x04port\x18\x06 \x01(\x05\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\x08 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x9b\x06\n\x0fMongoReplicaSet\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rauth_database\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08username\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x45\n\x04port\x18\x06 \x01(\x05\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x32\x37\x30\x31\x37\x92\x41\x02@\x00\x12\x42\n\x0breplica_set\x18\x07 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12S\n\x12\x63onnect_to_replica\x18\x08 \x01(\x08\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\t \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x04\n\x05Mysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb3\x04\n\x0b\x41uroraMysql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb0\x04\n\x08\x43lustrix\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xad\x04\n\x05Maria\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xae\x04\n\x06Memsql\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x30\x36\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf3\x04\n\x06Oracle\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x35\x32\x31\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x43\n\x0ctls_required\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfa\x04\n\x08Postgres\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x80\x05\n\x0e\x41uroraPostgres\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfb\x04\n\tGreenplum\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfb\x04\n\tCockroach\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x32\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfa\x04\n\x08Redshift\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x06 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x35\x34\x33\x39\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf3\x04\n\x06Presto\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x38\x30\x38\x30\x92\x41\x02@\x00\x12?\n\x08username\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x43\n\x0ctls_required\x18\x07 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xea\x03\n\x03RDP\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x33\x33\x38\x39\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xab\x03\n\x05Redis\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x02 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\x04port\x18\x04 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x36\x33\x37\x39\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x84\x04\n\x10\x45lasticacheRedis\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x02 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\x04port\x18\x04 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x36\x33\x37\x39\x92\x41\x02@\x00\x12L\n\x0ctls_required\x18\x05 \x01(\x08\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04true\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaa\x04\n\tSnowflake\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12=\n\x06schema\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x06 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xba\x05\n\tSQLServer\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12?\n\x08\x64\x61tabase\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x05 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12=\n\x06schema\x18\x06 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\x04port\x18\x07 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x34\x33\x33\x92\x41\x02@\x00\x12H\n\x11override_database\x18\x08 \x01(\x08\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xf6\x03\n\x03SSH\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x42\n\x04port\x18\x03 \x01(\x05\x42\x34\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x04:\x02\x32\x32\x92\x41\x02@\x00\x12\x41\n\npublic_key\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12P\n\x0fport_forwarding\x18\x05 \x01(\x08\x42\x37\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x07:\x05\x66\x61lse\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xed\x03\n\x06Sybase\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x04 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x32\x36\x33\x38\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xef\x03\n\x08SybaseIQ\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x03 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x04 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x32\x36\x33\x38\x92\x41\x02@\x00\x12?\n\x08password\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xef\x03\n\x08Teradata\x12\x18\n\x02id\x18\x80\x80\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x04name\x18\x81\x80\x02 \x01(\tB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\x12\"\n\x07healthy\x18\x82\x80\x02 \x01(\x08\x42\x0f\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x92\x41\x02@\x01\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x08hostname\x18\x01 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08username\x18\x02 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x00\x12?\n\x08password\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x01\x92\x41\x02@\x00\x12\x44\n\rport_override\x18\x04 \x01(\x05\x42-\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x02@\x01\x12\x44\n\x04port\x18\x05 \x01(\x05\x42\x36\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\xc0\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xd8\xf3\xb3\x07\x00\xf2\xf8\xb3\x07\x05\xe8\xf3\xb3\x07\x00\x92\x41\x06:\x04\x31\x30\x32\x35\x92\x41\x02@\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42/\n\x1c\x63om.strongdm.api.v1.plumbingB\x0f\x44riversPlumbingb\x06proto3')
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
@@ -420,35 +420,35 @@ _ATHENA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='secret_access_key', full_name='v1.Athena.secret_access_key', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='output', full_name='v1.Athena.output', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Athena.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='region', full_name='v1.Athena.region', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\013:\tus-east-1\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\013:\tus-east-1\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -462,7 +462,7 @@ _ATHENA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1948,
-  serialized_end=2407,
+  serialized_end=2457,
 )
 
 
@@ -507,35 +507,35 @@ _BIGQUERY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='project', full_name='v1.BigQuery.project', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.BigQuery.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='endpoint', full_name='v1.BigQuery.endpoint', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.BigQuery.username', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -548,8 +548,8 @@ _BIGQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2410,
-  serialized_end=2852,
+  serialized_start=2460,
+  serialized_end=2952,
 )
 
 
@@ -594,42 +594,42 @@ _CASSANDRA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Cassandra.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Cassandra.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Cassandra.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Cassandra.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0049042\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0049042\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.Cassandra.tls_required', index=9,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -642,8 +642,8 @@ _CASSANDRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2855,
-  serialized_end=3360,
+  serialized_start=2955,
+  serialized_end=3520,
 )
 
 
@@ -688,35 +688,35 @@ _DRUID = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Druid.port_override', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Druid.username', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Druid.password', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Druid.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0048082\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0048082\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -729,8 +729,8 @@ _DRUID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3363,
-  serialized_end=3805,
+  serialized_start=3523,
+  serialized_end=4015,
 )
 
 
@@ -775,35 +775,35 @@ _DYNAMODB = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='secret_access_key', full_name='v1.DynamoDB.secret_access_key', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='region', full_name='v1.DynamoDB.region', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='endpoint', full_name='v1.DynamoDB.endpoint', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.DynamoDB.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -816,8 +816,8 @@ _DYNAMODB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3808,
-  serialized_end=4257,
+  serialized_start=4018,
+  serialized_end=4517,
 )
 
 
@@ -862,35 +862,35 @@ _AMAZONES = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='secret_access_key', full_name='v1.AmazonES.secret_access_key', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='endpoint', full_name='v1.AmazonES.endpoint', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_key', full_name='v1.AmazonES.access_key', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.AmazonES.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -903,8 +903,8 @@ _AMAZONES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4260,
-  serialized_end=4709,
+  serialized_start=4520,
+  serialized_end=5019,
 )
 
 
@@ -949,42 +949,42 @@ _ELASTIC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Elastic.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Elastic.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Elastic.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Elastic.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0049200\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0049200\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.Elastic.tls_required', index=9,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -997,8 +997,8 @@ _ELASTIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4712,
-  serialized_end=5215,
+  serialized_start=5022,
+  serialized_end=5585,
 )
 
 
@@ -1043,49 +1043,49 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='healthcheck_path', full_name='v1.HTTPBasicAuth.healthcheck_path', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.HTTPBasicAuth.username', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.HTTPBasicAuth.password', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='headers_blacklist', full_name='v1.HTTPBasicAuth.headers_blacklist', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_path', full_name='v1.HTTPBasicAuth.default_path', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subdomain', full_name='v1.HTTPBasicAuth.subdomain', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1098,8 +1098,8 @@ _HTTPBASICAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5218,
-  serialized_end=5791,
+  serialized_start=5588,
+  serialized_end=6231,
 )
 
 
@@ -1144,35 +1144,35 @@ _HTTPNOAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='healthcheck_path', full_name='v1.HTTPNoAuth.healthcheck_path', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='headers_blacklist', full_name='v1.HTTPNoAuth.headers_blacklist', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_path', full_name='v1.HTTPNoAuth.default_path', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subdomain', full_name='v1.HTTPNoAuth.subdomain', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1185,8 +1185,8 @@ _HTTPNOAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5794,
-  serialized_end=6254,
+  serialized_start=6234,
+  serialized_end=6744,
 )
 
 
@@ -1231,42 +1231,42 @@ _HTTPAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='healthcheck_path', full_name='v1.HTTPAuth.healthcheck_path', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\003:\001/\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_header', full_name='v1.HTTPAuth.auth_header', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='headers_blacklist', full_name='v1.HTTPAuth.headers_blacklist', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_path', full_name='v1.HTTPAuth.default_path', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subdomain', full_name='v1.HTTPAuth.subdomain', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1279,8 +1279,8 @@ _HTTPAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6257,
-  serialized_end=6773,
+  serialized_start=6747,
+  serialized_end=7323,
 )
 
 
@@ -1325,56 +1325,56 @@ _KUBERNETES = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Kubernetes.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority', full_name='v1.Kubernetes.certificate_authority', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority_filename', full_name='v1.Kubernetes.certificate_authority_filename', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_certificate', full_name='v1.Kubernetes.client_certificate', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_certificate_filename', full_name='v1.Kubernetes.client_certificate_filename', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_key', full_name='v1.Kubernetes.client_key', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_key_filename', full_name='v1.Kubernetes.client_key_filename', index=11,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1387,8 +1387,8 @@ _KUBERNETES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6776,
-  serialized_end=7459,
+  serialized_start=7326,
+  serialized_end=8089,
 )
 
 
@@ -1433,28 +1433,28 @@ _KUBERNETESBASICAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.KubernetesBasicAuth.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.KubernetesBasicAuth.username', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.KubernetesBasicAuth.password', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1467,8 +1467,8 @@ _KUBERNETESBASICAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7462,
-  serialized_end=7857,
+  serialized_start=8092,
+  serialized_end=8527,
 )
 
 
@@ -1513,21 +1513,21 @@ _KUBERNETESSERVICEACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.KubernetesServiceAccount.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='token', full_name='v1.KubernetesServiceAccount.token', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1540,8 +1540,8 @@ _KUBERNETESSERVICEACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7860,
-  serialized_end=8202,
+  serialized_start=8530,
+  serialized_end=8902,
 )
 
 
@@ -1586,56 +1586,56 @@ _AMAZONEKS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_key', full_name='v1.AmazonEKS.access_key', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='secret_access_key', full_name='v1.AmazonEKS.secret_access_key', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority', full_name='v1.AmazonEKS.certificate_authority', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority_filename', full_name='v1.AmazonEKS.certificate_authority_filename', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='region', full_name='v1.AmazonEKS.region', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cluster_name', full_name='v1.AmazonEKS.cluster_name', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='role_arn', full_name='v1.AmazonEKS.role_arn', index=11,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1648,8 +1648,8 @@ _AMAZONEKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8205,
-  serialized_end=8854,
+  serialized_start=8905,
+  serialized_end=9634,
 )
 
 
@@ -1694,35 +1694,35 @@ _GOOGLEGKE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority', full_name='v1.GoogleGKE.certificate_authority', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority_filename', full_name='v1.GoogleGKE.certificate_authority_filename', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_account_key', full_name='v1.GoogleGKE.service_account_key', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_account_key_filename', full_name='v1.GoogleGKE.service_account_key_filename', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1735,8 +1735,8 @@ _GOOGLEGKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8857,
-  serialized_end=9359,
+  serialized_start=9637,
+  serialized_end=10189,
 )
 
 
@@ -1781,56 +1781,56 @@ _AKS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.AKS.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority', full_name='v1.AKS.certificate_authority', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate_authority_filename', full_name='v1.AKS.certificate_authority_filename', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_certificate', full_name='v1.AKS.client_certificate', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_certificate_filename', full_name='v1.AKS.client_certificate_filename', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_key', full_name='v1.AKS.client_key', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_key_filename', full_name='v1.AKS.client_key_filename', index=11,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1843,8 +1843,8 @@ _AKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9362,
-  serialized_end=10038,
+  serialized_start=10192,
+  serialized_end=10948,
 )
 
 
@@ -1889,28 +1889,28 @@ _AKSBASICAUTH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.AKSBasicAuth.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.AKSBasicAuth.username', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.AKSBasicAuth.password', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1923,8 +1923,8 @@ _AKSBASICAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10041,
-  serialized_end=10429,
+  serialized_start=10951,
+  serialized_end=11379,
 )
 
 
@@ -1969,21 +1969,21 @@ _AKSSERVICEACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.AKSServiceAccount.port', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\005:\003443\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='token', full_name='v1.AKSServiceAccount.token', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1996,8 +1996,8 @@ _AKSSERVICEACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10432,
-  serialized_end=10767,
+  serialized_start=11382,
+  serialized_end=11747,
 )
 
 
@@ -2042,21 +2042,21 @@ _MEMCACHED = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Memcached.port_override', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Memcached.port', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\00511211\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\00511211\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2069,8 +2069,8 @@ _MEMCACHED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10770,
-  serialized_end=11107,
+  serialized_start=11750,
+  serialized_end=12117,
 )
 
 
@@ -2115,56 +2115,56 @@ _MONGOLEGACYHOST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_database', full_name='v1.MongoLegacyHost.auth_database', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.MongoLegacyHost.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.MongoLegacyHost.username', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.MongoLegacyHost.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.MongoLegacyHost.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replica_set', full_name='v1.MongoLegacyHost.replica_set', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.MongoLegacyHost.tls_required', index=11,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2177,8 +2177,8 @@ _MONGOLEGACYHOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11110,
-  serialized_end=11740,
+  serialized_start=12120,
+  serialized_end=12830,
 )
 
 
@@ -2223,63 +2223,63 @@ _MONGOLEGACYREPLICASET = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_database', full_name='v1.MongoLegacyReplicaset.auth_database', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.MongoLegacyReplicaset.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.MongoLegacyReplicaset.username', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.MongoLegacyReplicaset.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.MongoLegacyReplicaset.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replica_set', full_name='v1.MongoLegacyReplicaset.replica_set', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='connect_to_replica', full_name='v1.MongoLegacyReplicaset.connect_to_replica', index=11,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.MongoLegacyReplicaset.tls_required', index=12,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2292,8 +2292,8 @@ _MONGOLEGACYREPLICASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11743,
-  serialized_end=12454,
+  serialized_start=12833,
+  serialized_end=13634,
 )
 
 
@@ -2338,49 +2338,49 @@ _MONGOHOST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_database', full_name='v1.MongoHost.auth_database', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.MongoHost.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.MongoHost.username', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.MongoHost.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.MongoHost.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.MongoHost.tls_required', index=10,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2393,8 +2393,8 @@ _MONGOHOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12457,
-  serialized_end=13023,
+  serialized_start=13637,
+  serialized_end=14273,
 )
 
 
@@ -2439,63 +2439,63 @@ _MONGOREPLICASET = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auth_database', full_name='v1.MongoReplicaSet.auth_database', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.MongoReplicaSet.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.MongoReplicaSet.username', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.MongoReplicaSet.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.MongoReplicaSet.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\00527017\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replica_set', full_name='v1.MongoReplicaSet.replica_set', index=10,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='connect_to_replica', full_name='v1.MongoReplicaSet.connect_to_replica', index=11,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.MongoReplicaSet.tls_required', index=12,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2508,8 +2508,8 @@ _MONGOREPLICASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13026,
-  serialized_end=13731,
+  serialized_start=14276,
+  serialized_end=15071,
 )
 
 
@@ -2554,42 +2554,42 @@ _MYSQL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Mysql.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Mysql.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Mysql.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Mysql.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Mysql.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2602,8 +2602,8 @@ _MYSQL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13734,
-  serialized_end=14231,
+  serialized_start=15074,
+  serialized_end=15631,
 )
 
 
@@ -2648,42 +2648,42 @@ _AURORAMYSQL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.AuroraMysql.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.AuroraMysql.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.AuroraMysql.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.AuroraMysql.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.AuroraMysql.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2696,8 +2696,8 @@ _AURORAMYSQL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14234,
-  serialized_end=14737,
+  serialized_start=15634,
+  serialized_end=16197,
 )
 
 
@@ -2742,42 +2742,42 @@ _CLUSTRIX = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Clustrix.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Clustrix.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Clustrix.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Clustrix.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Clustrix.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2790,8 +2790,8 @@ _CLUSTRIX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14740,
-  serialized_end=15240,
+  serialized_start=16200,
+  serialized_end=16760,
 )
 
 
@@ -2836,42 +2836,42 @@ _MARIA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Maria.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Maria.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Maria.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Maria.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Maria.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2884,8 +2884,8 @@ _MARIA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15243,
-  serialized_end=15740,
+  serialized_start=16763,
+  serialized_end=17320,
 )
 
 
@@ -2930,42 +2930,42 @@ _MEMSQL = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Memsql.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Memsql.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Memsql.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Memsql.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Memsql.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043306\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2978,8 +2978,8 @@ _MEMSQL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15743,
-  serialized_end=16241,
+  serialized_start=17323,
+  serialized_end=17881,
 )
 
 
@@ -3024,49 +3024,49 @@ _ORACLE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Oracle.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Oracle.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Oracle.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Oracle.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\006:\0041521\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0041521\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Oracle.port_override', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.Oracle.tls_required', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3079,8 +3079,8 @@ _ORACLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16244,
-  serialized_end=16801,
+  serialized_start=17884,
+  serialized_end=18511,
 )
 
 
@@ -3125,49 +3125,49 @@ _POSTGRES = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Postgres.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Postgres.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Postgres.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Postgres.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Postgres.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.Postgres.override_database', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3180,8 +3180,8 @@ _POSTGRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16804,
-  serialized_end=17368,
+  serialized_start=18514,
+  serialized_end=19148,
 )
 
 
@@ -3226,49 +3226,49 @@ _AURORAPOSTGRES = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.AuroraPostgres.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.AuroraPostgres.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.AuroraPostgres.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.AuroraPostgres.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.AuroraPostgres.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.AuroraPostgres.override_database', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3281,8 +3281,8 @@ _AURORAPOSTGRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17371,
-  serialized_end=17941,
+  serialized_start=19151,
+  serialized_end=19791,
 )
 
 
@@ -3327,49 +3327,49 @@ _GREENPLUM = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Greenplum.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Greenplum.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Greenplum.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Greenplum.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Greenplum.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.Greenplum.override_database', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3382,8 +3382,8 @@ _GREENPLUM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17944,
-  serialized_end=18509,
+  serialized_start=19794,
+  serialized_end=20429,
 )
 
 
@@ -3428,49 +3428,49 @@ _COCKROACH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Cockroach.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Cockroach.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Cockroach.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Cockroach.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Cockroach.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0045432\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.Cockroach.override_database', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3483,8 +3483,8 @@ _COCKROACH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18512,
-  serialized_end=19077,
+  serialized_start=20432,
+  serialized_end=21067,
 )
 
 
@@ -3529,49 +3529,49 @@ _REDSHIFT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Redshift.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Redshift.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Redshift.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Redshift.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Redshift.port', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0045439\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0045439\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.Redshift.override_database', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3584,8 +3584,8 @@ _REDSHIFT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19080,
-  serialized_end=19644,
+  serialized_start=21070,
+  serialized_end=21704,
 )
 
 
@@ -3630,49 +3630,49 @@ _PRESTO = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Presto.password', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Presto.database', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Presto.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Presto.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0048080\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0048080\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Presto.username', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.Presto.tls_required', index=10,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3685,8 +3685,8 @@ _PRESTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19647,
-  serialized_end=20204,
+  serialized_start=21707,
+  serialized_end=22334,
 )
 
 
@@ -3731,35 +3731,35 @@ _RDP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.RDP.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.RDP.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.RDP.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.RDP.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0043389\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0043389\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3772,8 +3772,8 @@ _RDP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20207,
-  serialized_end=20647,
+  serialized_start=22337,
+  serialized_end=22827,
 )
 
 
@@ -3818,28 +3818,28 @@ _REDIS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Redis.port_override', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Redis.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Redis.port', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0046379\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0046379\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3852,8 +3852,8 @@ _REDIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20650,
-  serialized_end=21037,
+  serialized_start=22830,
+  serialized_end=23257,
 )
 
 
@@ -3898,35 +3898,35 @@ _ELASTICACHEREDIS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.ElasticacheRedis.port_override', index=5,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.ElasticacheRedis.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.ElasticacheRedis.port', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0046379\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0046379\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tls_required', full_name='v1.ElasticacheRedis.tls_required', index=8,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\004true\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\004true\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3939,8 +3939,8 @@ _ELASTICACHEREDIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21040,
-  serialized_end=21506,
+  serialized_start=23260,
+  serialized_end=23776,
 )
 
 
@@ -3985,42 +3985,42 @@ _SNOWFLAKE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Snowflake.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Snowflake.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.Snowflake.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='schema', full_name='v1.Snowflake.schema', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Snowflake.port_override', index=9,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4033,8 +4033,8 @@ _SNOWFLAKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21509,
-  serialized_end=22003,
+  serialized_start=23779,
+  serialized_end=24333,
 )
 
 
@@ -4079,56 +4079,56 @@ _SQLSERVER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.SQLServer.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.SQLServer.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database', full_name='v1.SQLServer.database', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.SQLServer.port_override', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='schema', full_name='v1.SQLServer.schema', index=9,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.SQLServer.port', index=10,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0041433\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0041433\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='override_database', full_name='v1.SQLServer.override_database', index=11,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4141,8 +4141,8 @@ _SQLSERVER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22006,
-  serialized_end=22624,
+  serialized_start=24336,
+  serialized_end=25034,
 )
 
 
@@ -4187,35 +4187,35 @@ _SSH = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.SSH.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.SSH.port', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\004:\00222\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\004:\00222\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='public_key', full_name='v1.SSH.public_key', index=7,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\222A\002@\001'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_forwarding', full_name='v1.SSH.port_forwarding', index=8,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\007:\005false\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4228,8 +4228,8 @@ _SSH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22627,
-  serialized_end=23079,
+  serialized_start=25037,
+  serialized_end=25539,
 )
 
 
@@ -4274,35 +4274,35 @@ _SYBASE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Sybase.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Sybase.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Sybase.port', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0042638\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0042638\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Sybase.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4315,8 +4315,8 @@ _SYBASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23082,
-  serialized_end=23525,
+  serialized_start=25542,
+  serialized_end=26035,
 )
 
 
@@ -4361,35 +4361,35 @@ _SYBASEIQ = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.SybaseIQ.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.SybaseIQ.port_override', index=6,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.SybaseIQ.port', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0042638\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0042638\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.SybaseIQ.password', index=8,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4402,8 +4402,8 @@ _SYBASEIQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23528,
-  serialized_end=23973,
+  serialized_start=26038,
+  serialized_end=26533,
 )
 
 
@@ -4448,35 +4448,35 @@ _TERADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='username', full_name='v1.Teradata.username', index=5,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='v1.Teradata.password', index=6,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\001\222A\002@\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port_override', full_name='v1.Teradata.port_override', index=7,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\001\362\370\263\007\005\330\363\263\007\000\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\001\362\370\263\007\005\350\363\263\007\000\222A\002@\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='v1.Teradata.port', index=8,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\222A\006:\0041025\222A\002@\000'), file=DESCRIPTOR),
+      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\300\363\263\007\000\362\370\263\007\005\330\363\263\007\000\362\370\263\007\005\350\363\263\007\000\222A\006:\0041025\222A\002@\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4489,8 +4489,8 @@ _TERADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23976,
-  serialized_end=24421,
+  serialized_start=26536,
+  serialized_end=27031,
 )
 
 _RESOURCE.fields_by_name['athena'].message_type = _ATHENA

@@ -5204,7 +5204,8 @@ class Relay:
     :param id: Unique identifier of the Relay.
     :param name: Unique human-readable name of the Relay. Generated if not provided on create.
     :param state: The current state of the relay. One of: "new", "verifying_restart",
- "restarting", "started", "stopped", "dead", "unknown",
+ "awaiting_restart", "restarting", "started", "stopped", "dead",
+ "unknown".
     """
     __slots__ = [
         'id',

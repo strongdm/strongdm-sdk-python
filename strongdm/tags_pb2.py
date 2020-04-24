@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbing'),
-  serialized_pb=_b('\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\x95\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a#\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:J\xfa\xf8\xb3\x07\x45\xca\xf3\xb3\x07@\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMapB,\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingb\x06proto3')
+  serialized_pb=_b('\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd8\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a#\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x8c\x01\xfa\xf8\xb3\x07\x86\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}B,\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingb\x06proto3')
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 
@@ -99,14 +99,14 @@ _TAGS = _descriptor.Descriptor(
   nested_types=[_TAGS_PAIR, ],
   enum_types=[
   ],
-  serialized_options=_b('\372\370\263\007E\312\363\263\007@\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap'),
+  serialized_options=_b('\372\370\263\007\206\001\312\363\263\007\200\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=183,
+  serialized_end=250,
 )
 
 _TAGS_PAIR.containing_type = _TAGS
