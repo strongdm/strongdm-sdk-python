@@ -955,6 +955,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.cockroach.CopyFrom(convert_cockroach_to_plumbing(porcelain))
     if isinstance(porcelain, models.Redshift):
         plumbing.redshift.CopyFrom(convert_redshift_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Citus):
+        plumbing.citus.CopyFrom(convert_citus_to_plumbing(porcelain))
     if isinstance(porcelain, models.Presto):
         plumbing.presto.CopyFrom(convert_presto_to_plumbing(porcelain))
     if isinstance(porcelain, models.RDP):
@@ -1056,6 +1058,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_cockroach_to_porcelain(plumbing.cockroach)
     if plumbing.HasField('redshift'):
         return convert_redshift_to_porcelain(plumbing.redshift)
+    if plumbing.HasField('citus'):
+        return convert_citus_to_porcelain(plumbing.citus)
     if plumbing.HasField('presto'):
         return convert_presto_to_porcelain(plumbing.presto)
     if plumbing.HasField('rdp'):
@@ -2975,6 +2979,61 @@ def convert_repeated_redshift_to_plumbing(porcelains):
 
 def convert_repeated_redshift_to_porcelain(plumbings):
     return [convert_redshift_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_citus_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Citus()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.username = (plumbing.username)
+    porcelain.password = (plumbing.password)
+    porcelain.database = (plumbing.database)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.port = (plumbing.port)
+    porcelain.override_database = (plumbing.override_database)
+    return porcelain
+
+
+def convert_citus_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = Citus()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.username is not None:
+        plumbing.username = (porcelain.username)
+    if porcelain.password is not None:
+        plumbing.password = (porcelain.password)
+    if porcelain.database is not None:
+        plumbing.database = (porcelain.database)
+    if porcelain.port_override is not None:
+        plumbing.port_override = (porcelain.port_override)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.override_database is not None:
+        plumbing.override_database = (porcelain.override_database)
+    return plumbing
+
+
+def convert_repeated_citus_to_plumbing(porcelains):
+    return [convert_citus_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_citus_to_porcelain(plumbings):
+    return [convert_citus_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_presto_to_porcelain(plumbing):
