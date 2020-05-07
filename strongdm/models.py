@@ -1775,6 +1775,7 @@ class Kubernetes:
     :param client_certificate_filename: 
     :param client_key: 
     :param client_key_filename: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -1789,6 +1790,7 @@ class Kubernetes:
         'client_certificate_filename',
         'client_key',
         'client_key_filename',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -1805,6 +1807,7 @@ class Kubernetes:
         client_certificate_filename=None,
         client_key=None,
         client_key_filename=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -1818,6 +1821,7 @@ class Kubernetes:
         self.client_certificate_filename = client_certificate_filename
         self.client_key = client_key
         self.client_key_filename = client_key_filename
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
@@ -1833,6 +1837,7 @@ class Kubernetes:
             'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
             'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1850,6 +1855,7 @@ class Kubernetes:
             'client_certificate_filename': self.client_certificate_filename,
             'client_key': self.client_key,
             'client_key_filename': self.client_key_filename,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -1868,6 +1874,7 @@ class Kubernetes:
             client_certificate_filename=d.get('client_certificate_filename'),
             client_key=d.get('client_key'),
             client_key_filename=d.get('client_key_filename'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -1882,6 +1889,7 @@ class KubernetesBasicAuth:
     :param port: 
     :param username: 
     :param password: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -1892,6 +1900,7 @@ class KubernetesBasicAuth:
         'port',
         'username',
         'password',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -1904,6 +1913,7 @@ class KubernetesBasicAuth:
         port=None,
         username=None,
         password=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -1913,6 +1923,7 @@ class KubernetesBasicAuth:
         self.port = port
         self.username = username
         self.password = password
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -1924,6 +1935,7 @@ class KubernetesBasicAuth:
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1936,6 +1948,7 @@ class KubernetesBasicAuth:
             'port': self.port,
             'username': self.username,
             'password': self.password,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -1949,6 +1962,7 @@ class KubernetesBasicAuth:
             port=d.get('port'),
             username=d.get('username'),
             password=d.get('password'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -1962,6 +1976,7 @@ class KubernetesServiceAccount:
     :param hostname: 
     :param port: 
     :param token: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -1971,6 +1986,7 @@ class KubernetesServiceAccount:
         'hostname',
         'port',
         'token',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -1982,6 +1998,7 @@ class KubernetesServiceAccount:
         hostname=None,
         port=None,
         token=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -1990,6 +2007,7 @@ class KubernetesServiceAccount:
         self.hostname = hostname
         self.port = port
         self.token = token
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
@@ -2000,6 +2018,7 @@ class KubernetesServiceAccount:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2011,6 +2030,7 @@ class KubernetesServiceAccount:
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2023,6 +2043,7 @@ class KubernetesServiceAccount:
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -2041,6 +2062,7 @@ class AmazonEKS:
     :param region: 
     :param cluster_name: 
     :param role_arn: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -2055,6 +2077,7 @@ class AmazonEKS:
         'region',
         'cluster_name',
         'role_arn',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -2071,6 +2094,7 @@ class AmazonEKS:
         region=None,
         cluster_name=None,
         role_arn=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -2084,6 +2108,7 @@ class AmazonEKS:
         self.region = region
         self.cluster_name = cluster_name
         self.role_arn = role_arn
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
@@ -2099,6 +2124,7 @@ class AmazonEKS:
             'region: ' + repr(self.region) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2116,6 +2142,7 @@ class AmazonEKS:
             'region': self.region,
             'cluster_name': self.cluster_name,
             'role_arn': self.role_arn,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2134,6 +2161,7 @@ class AmazonEKS:
             region=d.get('region'),
             cluster_name=d.get('cluster_name'),
             role_arn=d.get('role_arn'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -2149,6 +2177,7 @@ class GoogleGKE:
     :param certificate_authority_filename: 
     :param service_account_key: 
     :param service_account_key_filename: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -2160,6 +2189,7 @@ class GoogleGKE:
         'certificate_authority_filename',
         'service_account_key',
         'service_account_key_filename',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -2173,6 +2203,7 @@ class GoogleGKE:
         certificate_authority_filename=None,
         service_account_key=None,
         service_account_key_filename=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -2183,6 +2214,7 @@ class GoogleGKE:
         self.certificate_authority_filename = certificate_authority_filename
         self.service_account_key = service_account_key
         self.service_account_key_filename = service_account_key_filename
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
@@ -2195,6 +2227,7 @@ class GoogleGKE:
             'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2209,6 +2242,7 @@ class GoogleGKE:
             self.certificate_authority_filename,
             'service_account_key': self.service_account_key,
             'service_account_key_filename': self.service_account_key_filename,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2224,6 +2258,7 @@ class GoogleGKE:
                 'certificate_authority_filename'),
             service_account_key=d.get('service_account_key'),
             service_account_key_filename=d.get('service_account_key_filename'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -2242,6 +2277,7 @@ class AKS:
     :param client_certificate_filename: 
     :param client_key: 
     :param client_key_filename: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -2256,6 +2292,7 @@ class AKS:
         'client_certificate_filename',
         'client_key',
         'client_key_filename',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -2272,6 +2309,7 @@ class AKS:
         client_certificate_filename=None,
         client_key=None,
         client_key_filename=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -2285,6 +2323,7 @@ class AKS:
         self.client_certificate_filename = client_certificate_filename
         self.client_key = client_key
         self.client_key_filename = client_key_filename
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.AKS ' + \
@@ -2300,6 +2339,7 @@ class AKS:
             'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
             'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2317,6 +2357,7 @@ class AKS:
             'client_certificate_filename': self.client_certificate_filename,
             'client_key': self.client_key,
             'client_key_filename': self.client_key_filename,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2335,6 +2376,7 @@ class AKS:
             client_certificate_filename=d.get('client_certificate_filename'),
             client_key=d.get('client_key'),
             client_key_filename=d.get('client_key_filename'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -2349,6 +2391,7 @@ class AKSBasicAuth:
     :param port: 
     :param username: 
     :param password: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -2359,6 +2402,7 @@ class AKSBasicAuth:
         'port',
         'username',
         'password',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -2371,6 +2415,7 @@ class AKSBasicAuth:
         port=None,
         username=None,
         password=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -2380,6 +2425,7 @@ class AKSBasicAuth:
         self.port = port
         self.username = username
         self.password = password
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
@@ -2391,6 +2437,7 @@ class AKSBasicAuth:
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2403,6 +2450,7 @@ class AKSBasicAuth:
             'port': self.port,
             'username': self.username,
             'password': self.password,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2416,6 +2464,7 @@ class AKSBasicAuth:
             port=d.get('port'),
             username=d.get('username'),
             password=d.get('password'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 
@@ -2429,6 +2478,7 @@ class AKSServiceAccount:
     :param hostname: 
     :param port: 
     :param token: 
+    :param healthcheck_namespace: 
     """
     __slots__ = [
         'id',
@@ -2438,6 +2488,7 @@ class AKSServiceAccount:
         'hostname',
         'port',
         'token',
+        'healthcheck_namespace',
     ]
 
     def __init__(
@@ -2449,6 +2500,7 @@ class AKSServiceAccount:
         hostname=None,
         port=None,
         token=None,
+        healthcheck_namespace=None,
     ):
         self.id = id
         self.name = name
@@ -2457,6 +2509,7 @@ class AKSServiceAccount:
         self.hostname = hostname
         self.port = port
         self.token = token
+        self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
@@ -2467,6 +2520,7 @@ class AKSServiceAccount:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -2478,6 +2532,7 @@ class AKSServiceAccount:
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
+            'healthcheck_namespace': self.healthcheck_namespace,
         }
 
     @classmethod
@@ -2490,6 +2545,7 @@ class AKSServiceAccount:
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 
 

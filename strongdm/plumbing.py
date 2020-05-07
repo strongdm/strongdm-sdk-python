@@ -1637,6 +1637,7 @@ def convert_kubernetes_to_porcelain(plumbing):
         plumbing.client_certificate_filename)
     porcelain.client_key = (plumbing.client_key)
     porcelain.client_key_filename = (plumbing.client_key_filename)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1670,6 +1671,8 @@ def convert_kubernetes_to_plumbing(porcelain):
         plumbing.client_key = (porcelain.client_key)
     if porcelain.client_key_filename is not None:
         plumbing.client_key_filename = (porcelain.client_key_filename)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1697,6 +1700,7 @@ def convert_kubernetes_basic_auth_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1720,6 +1724,8 @@ def convert_kubernetes_basic_auth_to_plumbing(porcelain):
         plumbing.username = (porcelain.username)
     if porcelain.password is not None:
         plumbing.password = (porcelain.password)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1748,6 +1754,7 @@ def convert_kubernetes_service_account_to_porcelain(plumbing):
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.token = (plumbing.token)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1769,6 +1776,8 @@ def convert_kubernetes_service_account_to_plumbing(porcelain):
         plumbing.port = (porcelain.port)
     if porcelain.token is not None:
         plumbing.token = (porcelain.token)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1803,6 +1812,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
     porcelain.region = (plumbing.region)
     porcelain.cluster_name = (plumbing.cluster_name)
     porcelain.role_arn = (plumbing.role_arn)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1835,6 +1845,8 @@ def convert_amazon_eks_to_plumbing(porcelain):
         plumbing.cluster_name = (porcelain.cluster_name)
     if porcelain.role_arn is not None:
         plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1865,6 +1877,7 @@ def convert_google_gke_to_porcelain(plumbing):
     porcelain.service_account_key = (plumbing.service_account_key)
     porcelain.service_account_key_filename = (
         plumbing.service_account_key_filename)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1892,6 +1905,8 @@ def convert_google_gke_to_plumbing(porcelain):
     if porcelain.service_account_key_filename is not None:
         plumbing.service_account_key_filename = (
             porcelain.service_account_key_filename)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1925,6 +1940,7 @@ def convert_aks_to_porcelain(plumbing):
         plumbing.client_certificate_filename)
     porcelain.client_key = (plumbing.client_key)
     porcelain.client_key_filename = (plumbing.client_key_filename)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -1958,6 +1974,8 @@ def convert_aks_to_plumbing(porcelain):
         plumbing.client_key = (porcelain.client_key)
     if porcelain.client_key_filename is not None:
         plumbing.client_key_filename = (porcelain.client_key_filename)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -1981,6 +1999,7 @@ def convert_aks_basic_auth_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -2004,6 +2023,8 @@ def convert_aks_basic_auth_to_plumbing(porcelain):
         plumbing.username = (porcelain.username)
     if porcelain.password is not None:
         plumbing.password = (porcelain.password)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
@@ -2031,6 +2052,7 @@ def convert_aks_service_account_to_porcelain(plumbing):
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.token = (plumbing.token)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
 
@@ -2052,6 +2074,8 @@ def convert_aks_service_account_to_plumbing(porcelain):
         plumbing.port = (porcelain.port)
     if porcelain.token is not None:
         plumbing.token = (porcelain.token)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
 
 
