@@ -4906,6 +4906,87 @@ class SSH:
         )
 
 
+class SSHCert:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param hostname: 
+    :param username: 
+    :param port: 
+    :param port_forwarding: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'hostname',
+        'username',
+        'port',
+        'port_forwarding',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        hostname=None,
+        username=None,
+        port=None,
+        port_forwarding=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.hostname = hostname
+        self.username = username
+        self.port = port
+        self.port_forwarding = port_forwarding
+
+    def __repr__(self):
+        return '<sdm.SSHCert ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'hostname': self.hostname,
+            'username': self.username,
+            'port': self.port,
+            'port_forwarding': self.port_forwarding,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            port=d.get('port'),
+            port_forwarding=d.get('port_forwarding'),
+        )
+
+
 class Sybase:
     """
 

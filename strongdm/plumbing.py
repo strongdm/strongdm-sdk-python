@@ -972,6 +972,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.sql_server.CopyFrom(convert_sql_server_to_plumbing(porcelain))
     if isinstance(porcelain, models.SSH):
         plumbing.ssh.CopyFrom(convert_ssh_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SSHCert):
+        plumbing.ssh_cert.CopyFrom(convert_ssh_cert_to_plumbing(porcelain))
     if isinstance(porcelain, models.Sybase):
         plumbing.sybase.CopyFrom(convert_sybase_to_plumbing(porcelain))
     if isinstance(porcelain, models.SybaseIQ):
@@ -1075,6 +1077,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_sql_server_to_porcelain(plumbing.sql_server)
     if plumbing.HasField('ssh'):
         return convert_ssh_to_porcelain(plumbing.ssh)
+    if plumbing.HasField('ssh_cert'):
+        return convert_ssh_cert_to_porcelain(plumbing.ssh_cert)
     if plumbing.HasField('sybase'):
         return convert_sybase_to_porcelain(plumbing.sybase)
     if plumbing.HasField('sybase_iq'):
@@ -3428,6 +3432,54 @@ def convert_repeated_ssh_to_plumbing(porcelains):
 
 def convert_repeated_ssh_to_porcelain(plumbings):
     return [convert_ssh_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_ssh_cert_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SSHCert()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.username = (plumbing.username)
+    porcelain.port = (plumbing.port)
+    porcelain.port_forwarding = (plumbing.port_forwarding)
+    return porcelain
+
+
+def convert_ssh_cert_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SSHCert()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.username is not None:
+        plumbing.username = (porcelain.username)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.port_forwarding is not None:
+        plumbing.port_forwarding = (porcelain.port_forwarding)
+    return plumbing
+
+
+def convert_repeated_ssh_cert_to_plumbing(porcelains):
+    return [
+        convert_ssh_cert_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_ssh_cert_to_porcelain(plumbings):
+    return [convert_ssh_cert_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_sybase_to_porcelain(plumbing):
