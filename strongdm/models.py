@@ -1116,6 +1116,101 @@ class Cassandra:
         )
 
 
+class DB2:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+
+    def __repr__(self):
+        return '<sdm.DB2 ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+        )
+
+
 class Druid:
     """
 

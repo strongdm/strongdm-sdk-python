@@ -882,6 +882,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.big_query.CopyFrom(convert_big_query_to_plumbing(porcelain))
     if isinstance(porcelain, models.Cassandra):
         plumbing.cassandra.CopyFrom(convert_cassandra_to_plumbing(porcelain))
+    if isinstance(porcelain, models.DB2):
+        plumbing.db_2.CopyFrom(convert_db_2_to_plumbing(porcelain))
     if isinstance(porcelain, models.Druid):
         plumbing.druid.CopyFrom(convert_druid_to_plumbing(porcelain))
     if isinstance(porcelain, models.DynamoDB):
@@ -992,6 +994,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_big_query_to_porcelain(plumbing.big_query)
     if plumbing.HasField('cassandra'):
         return convert_cassandra_to_porcelain(plumbing.cassandra)
+    if plumbing.HasField('db_2'):
+        return convert_db_2_to_porcelain(plumbing.db_2)
     if plumbing.HasField('druid'):
         return convert_druid_to_porcelain(plumbing.druid)
     if plumbing.HasField('dynamo_db'):
@@ -1250,6 +1254,58 @@ def convert_repeated_cassandra_to_plumbing(porcelains):
 
 def convert_repeated_cassandra_to_porcelain(plumbings):
     return [convert_cassandra_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_db_2_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.DB2()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.username = (plumbing.username)
+    porcelain.password = (plumbing.password)
+    porcelain.database = (plumbing.database)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.port = (plumbing.port)
+    return porcelain
+
+
+def convert_db_2_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = DB2()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.username is not None:
+        plumbing.username = (porcelain.username)
+    if porcelain.password is not None:
+        plumbing.password = (porcelain.password)
+    if porcelain.database is not None:
+        plumbing.database = (porcelain.database)
+    if porcelain.port_override is not None:
+        plumbing.port_override = (porcelain.port_override)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    return plumbing
+
+
+def convert_repeated_db_2_to_plumbing(porcelains):
+    return [convert_db_2_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_db_2_to_porcelain(plumbings):
+    return [convert_db_2_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_druid_to_porcelain(plumbing):
