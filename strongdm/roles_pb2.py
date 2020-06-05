@@ -31,6 +31,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
+from . import tags_pb2 as tags__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -38,9 +39,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\rRolesPlumbing'),
-  serialized_pb=_b('\n\x0broles.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"`\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb1\x01\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xab\x01\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"l\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb1\x01\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x8d\x01\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x96\x01\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x95\x02\n\x04Role\x12&\n\x02id\x18\x01 \x01(\tB\x1a\xf2\xf8\xb3\x07\x15\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x30\n\tcomposite\x18\x03 \x01(\x08\x42\x1d\xf2\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\tComposite\xb0\xf3\xb3\x07\x01\xe0\xf3\xb3\x07\x01:\x8a\x01\xfa\xf8\xb3\x07Z\xa2\xf3\xb3\x07\x04Role\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07G\xa2\xf3\xb3\x07\x1dtf_examples/role_resource.txt\xaa\xf3\xb3\x07 tf_examples/role_data_source.txt\x92\x41(2&\x12${ \"id\": \"r-7\", \"name\": \"happy-goat\"}2\xf2\x03\n\x05Roles\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/roles:\x01*\x92\x41U\"S\n\x18Learn how to make a Role\x12\x37https://www.strongdm.com/docs/api/services/Roles#Create\x12\x46\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/roles/{id}\x12R\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/roles/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/roles/{id}\x12\x44\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/roles\x1a\x0e\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04RoleB-\n\x1c\x63om.strongdm.api.v1.plumbingB\rRolesPlumbingb\x06proto3')
+  serialized_pb=_b('\n\x0broles.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"`\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb1\x01\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xab\x01\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"l\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb1\x01\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x8d\x01\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x96\x01\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc2\x02\n\x04Role\x12&\n\x02id\x18\x01 \x01(\tB\x1a\xf2\xf8\xb3\x07\x15\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x30\n\tcomposite\x18\x03 \x01(\x08\x42\x1d\xf2\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\tComposite\xb0\xf3\xb3\x07\x01\xe0\xf3\xb3\x07\x01\x12+\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:\x8a\x01\xfa\xf8\xb3\x07Z\xa2\xf3\xb3\x07\x04Role\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07G\xa2\xf3\xb3\x07\x1dtf_examples/role_resource.txt\xaa\xf3\xb3\x07 tf_examples/role_data_source.txt\x92\x41(2&\x12${ \"id\": \"r-7\", \"name\": \"happy-goat\"}2\xf2\x03\n\x05Roles\x12\xa5\x01\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"l\x82\xd3\xe4\x93\x02\x0e\"\t/v1/roles:\x01*\x92\x41U\"S\n\x18Learn how to make a Role\x12\x37https://www.strongdm.com/docs/api/services/Roles#Create\x12\x46\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/roles/{id}\x12R\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/roles/{id}:\x01*\x12O\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/roles/{id}\x12\x44\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/roles\x1a\x0e\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04RoleB-\n\x1c\x63om.strongdm.api.v1.plumbingB\rRolesPlumbingb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
 
 
@@ -78,8 +79,8 @@ _ROLECREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=122,
-  serialized_end=218,
+  serialized_start=134,
+  serialized_end=230,
 )
 
 
@@ -123,8 +124,8 @@ _ROLECREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=221,
-  serialized_end=398,
+  serialized_start=233,
+  serialized_end=410,
 )
 
 
@@ -161,8 +162,8 @@ _ROLEGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=400,
-  serialized_end=478,
+  serialized_start=412,
+  serialized_end=490,
 )
 
 
@@ -206,8 +207,8 @@ _ROLEGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=481,
-  serialized_end=652,
+  serialized_start=493,
+  serialized_end=664,
 )
 
 
@@ -251,8 +252,8 @@ _ROLEUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=654,
-  serialized_end=762,
+  serialized_start=666,
+  serialized_end=774,
 )
 
 
@@ -296,8 +297,8 @@ _ROLEUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=765,
-  serialized_end=942,
+  serialized_start=777,
+  serialized_end=954,
 )
 
 
@@ -334,8 +335,8 @@ _ROLEDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=944,
-  serialized_end=1028,
+  serialized_start=956,
+  serialized_end=1040,
 )
 
 
@@ -372,8 +373,8 @@ _ROLEDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1031,
-  serialized_end=1172,
+  serialized_start=1043,
+  serialized_end=1184,
 )
 
 
@@ -410,8 +411,8 @@ _ROLELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1174,
-  serialized_end=1258,
+  serialized_start=1186,
+  serialized_end=1270,
 )
 
 
@@ -455,8 +456,8 @@ _ROLELISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1261,
-  serialized_end=1411,
+  serialized_start=1273,
+  serialized_end=1423,
 )
 
 
@@ -488,6 +489,13 @@ _ROLE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\030\242\363\263\007\tComposite\260\363\263\007\001\340\363\263\007\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='v1.Role.tags', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\362\370\263\007\016\242\363\263\007\004Tags\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -500,8 +508,8 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1414,
-  serialized_end=1691,
+  serialized_start=1426,
+  serialized_end=1748,
 )
 
 _ROLECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -525,6 +533,7 @@ _ROLELISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMET
 _ROLELISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
 _ROLELISTRESPONSE.fields_by_name['roles'].message_type = _ROLE
 _ROLELISTRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
+_ROLE.fields_by_name['tags'].message_type = tags__pb2._TAGS
 DESCRIPTOR.message_types_by_name['RoleCreateRequest'] = _ROLECREATEREQUEST
 DESCRIPTOR.message_types_by_name['RoleCreateResponse'] = _ROLECREATERESPONSE
 DESCRIPTOR.message_types_by_name['RoleGetRequest'] = _ROLEGETREQUEST
@@ -642,6 +651,7 @@ _ROLELISTRESPONSE.fields_by_name['rate_limit']._options = None
 _ROLE.fields_by_name['id']._options = None
 _ROLE.fields_by_name['name']._options = None
 _ROLE.fields_by_name['composite']._options = None
+_ROLE.fields_by_name['tags']._options = None
 _ROLE._options = None
 
 _ROLES = _descriptor.ServiceDescriptor(
@@ -650,8 +660,8 @@ _ROLES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=_b('\312\371\263\007\t\302\371\263\007\004Role'),
-  serialized_start=1694,
-  serialized_end=2192,
+  serialized_start=1751,
+  serialized_end=2249,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

@@ -27,8 +27,8 @@ from .options_pb2 import *
 from .spec_pb2 import *
 from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
-from .accounts_pb2 import *
 from .tags_pb2 import *
+from .accounts_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
 from .resources_pb2 import *
@@ -813,6 +813,7 @@ def convert_user_to_porcelain(plumbing):
     porcelain.first_name = (plumbing.first_name)
     porcelain.last_name = (plumbing.last_name)
     porcelain.suspended = (plumbing.suspended)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
 
@@ -830,6 +831,8 @@ def convert_user_to_plumbing(porcelain):
         plumbing.last_name = (porcelain.last_name)
     if porcelain.suspended is not None:
         plumbing.suspended = (porcelain.suspended)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
 
@@ -848,6 +851,7 @@ def convert_service_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.suspended = (plumbing.suspended)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
 
@@ -861,6 +865,8 @@ def convert_service_to_plumbing(porcelain):
         plumbing.name = (porcelain.name)
     if porcelain.suspended is not None:
         plumbing.suspended = (porcelain.suspended)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
 
@@ -3454,6 +3460,8 @@ def convert_ssh_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.public_key = (plumbing.public_key)
     porcelain.port_forwarding = (plumbing.port_forwarding)
+    porcelain.allow_deprecated_key_exchanges = (
+        plumbing.allow_deprecated_key_exchanges)
     return porcelain
 
 
@@ -3479,6 +3487,9 @@ def convert_ssh_to_plumbing(porcelain):
         plumbing.public_key = (porcelain.public_key)
     if porcelain.port_forwarding is not None:
         plumbing.port_forwarding = (porcelain.port_forwarding)
+    if porcelain.allow_deprecated_key_exchanges is not None:
+        plumbing.allow_deprecated_key_exchanges = (
+            porcelain.allow_deprecated_key_exchanges)
     return plumbing
 
 
@@ -3502,6 +3513,8 @@ def convert_ssh_cert_to_porcelain(plumbing):
     porcelain.username = (plumbing.username)
     porcelain.port = (plumbing.port)
     porcelain.port_forwarding = (plumbing.port_forwarding)
+    porcelain.allow_deprecated_key_exchanges = (
+        plumbing.allow_deprecated_key_exchanges)
     return porcelain
 
 
@@ -3525,6 +3538,9 @@ def convert_ssh_cert_to_plumbing(porcelain):
         plumbing.port = (porcelain.port)
     if porcelain.port_forwarding is not None:
         plumbing.port_forwarding = (porcelain.port_forwarding)
+    if porcelain.allow_deprecated_key_exchanges is not None:
+        plumbing.allow_deprecated_key_exchanges = (
+            porcelain.allow_deprecated_key_exchanges)
     return plumbing
 
 
@@ -3888,6 +3904,7 @@ def convert_relay_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.state = (plumbing.state)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
 
@@ -3901,6 +3918,8 @@ def convert_relay_to_plumbing(porcelain):
         plumbing.name = (porcelain.name)
     if porcelain.state is not None:
         plumbing.state = (porcelain.state)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
 
@@ -3921,6 +3940,7 @@ def convert_gateway_to_porcelain(plumbing):
     porcelain.state = (plumbing.state)
     porcelain.listen_address = (plumbing.listen_address)
     porcelain.bind_address = (plumbing.bind_address)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
 
@@ -3938,6 +3958,8 @@ def convert_gateway_to_plumbing(porcelain):
         plumbing.listen_address = (porcelain.listen_address)
     if porcelain.bind_address is not None:
         plumbing.bind_address = (porcelain.bind_address)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
 
@@ -4595,6 +4617,7 @@ def convert_role_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.composite = (plumbing.composite)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
 
@@ -4608,6 +4631,8 @@ def convert_role_to_plumbing(porcelain):
         plumbing.name = (porcelain.name)
     if porcelain.composite is not None:
         plumbing.composite = (porcelain.composite)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
 
