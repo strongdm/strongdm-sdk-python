@@ -746,6 +746,7 @@ class User:
     :param first_name: The User's first name.
     :param last_name: The User's last name.
     :param suspended: The User's suspended state.
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
@@ -753,6 +754,7 @@ class User:
         'first_name',
         'last_name',
         'suspended',
+        'tags',
     ]
 
     def __init__(
@@ -762,12 +764,14 @@ class User:
         first_name=None,
         last_name=None,
         suspended=None,
+        tags=None,
     ):
         self.id = id
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
         self.suspended = suspended
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.User ' + \
@@ -776,6 +780,7 @@ class User:
             'first_name: ' + repr(self.first_name) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -785,6 +790,7 @@ class User:
             'first_name': self.first_name,
             'last_name': self.last_name,
             'suspended': self.suspended,
+            'tags': self.tags,
         }
 
     @classmethod
@@ -795,6 +801,7 @@ class User:
             first_name=d.get('first_name'),
             last_name=d.get('last_name'),
             suspended=d.get('suspended'),
+            tags=d.get('tags'),
         )
 
 
@@ -805,11 +812,13 @@ class Service:
     :param id: Unique identifier of the Service.
     :param name: Unique human-readable name of the Service.
     :param suspended: The Service's suspended state.
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
         'name',
         'suspended',
+        'tags',
     ]
 
     def __init__(
@@ -817,16 +826,19 @@ class Service:
         id=None,
         name=None,
         suspended=None,
+        tags=None,
     ):
         self.id = id
         self.name = name
         self.suspended = suspended
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.Service ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -834,6 +846,7 @@ class Service:
             'id': self.id,
             'name': self.name,
             'suspended': self.suspended,
+            'tags': self.tags,
         }
 
     @classmethod
@@ -842,6 +855,7 @@ class Service:
             id=d.get('id'),
             name=d.get('name'),
             suspended=d.get('suspended'),
+            tags=d.get('tags'),
         )
 
 
@@ -1113,6 +1127,101 @@ class Cassandra:
             port_override=d.get('port_override'),
             port=d.get('port'),
             tls_required=d.get('tls_required'),
+        )
+
+
+class DB2:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param database: 
+    :param port_override: 
+    :param port: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'hostname',
+        'username',
+        'password',
+        'database',
+        'port_override',
+        'port',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        hostname=None,
+        username=None,
+        password=None,
+        database=None,
+        port_override=None,
+        port=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.database = database
+        self.port_override = port_override
+        self.port = port
+
+    def __repr__(self):
+        return '<sdm.DB2 ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'database': self.database,
+            'port_override': self.port_override,
+            'port': self.port,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            database=d.get('database'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
         )
 
 
@@ -4830,6 +4939,7 @@ class SSH:
     :param port: 
     :param public_key: 
     :param port_forwarding: 
+    :param allow_deprecated_key_exchanges: 
     """
     __slots__ = [
         'id',
@@ -4841,6 +4951,7 @@ class SSH:
         'port',
         'public_key',
         'port_forwarding',
+        'allow_deprecated_key_exchanges',
     ]
 
     def __init__(
@@ -4854,6 +4965,7 @@ class SSH:
         port=None,
         public_key=None,
         port_forwarding=None,
+        allow_deprecated_key_exchanges=None,
     ):
         self.id = id
         self.name = name
@@ -4864,6 +4976,7 @@ class SSH:
         self.port = port
         self.public_key = public_key
         self.port_forwarding = port_forwarding
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -4876,6 +4989,7 @@ class SSH:
             'port: ' + repr(self.port) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -4889,6 +5003,8 @@ class SSH:
             'port': self.port,
             'public_key': self.public_key,
             'port_forwarding': self.port_forwarding,
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
         }
 
     @classmethod
@@ -4903,6 +5019,8 @@ class SSH:
             port=d.get('port'),
             public_key=d.get('public_key'),
             port_forwarding=d.get('port_forwarding'),
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
         )
 
 
@@ -4917,6 +5035,7 @@ class SSHCert:
     :param username: 
     :param port: 
     :param port_forwarding: 
+    :param allow_deprecated_key_exchanges: 
     """
     __slots__ = [
         'id',
@@ -4927,6 +5046,7 @@ class SSHCert:
         'username',
         'port',
         'port_forwarding',
+        'allow_deprecated_key_exchanges',
     ]
 
     def __init__(
@@ -4939,6 +5059,7 @@ class SSHCert:
         username=None,
         port=None,
         port_forwarding=None,
+        allow_deprecated_key_exchanges=None,
     ):
         self.id = id
         self.name = name
@@ -4948,6 +5069,7 @@ class SSHCert:
         self.username = username
         self.port = port
         self.port_forwarding = port_forwarding
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
 
     def __repr__(self):
         return '<sdm.SSHCert ' + \
@@ -4959,6 +5081,7 @@ class SSHCert:
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -4971,6 +5094,8 @@ class SSHCert:
             'username': self.username,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
         }
 
     @classmethod
@@ -4984,6 +5109,8 @@ class SSHCert:
             username=d.get('username'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
         )
 
 
@@ -5445,11 +5572,13 @@ class Relay:
     :param state: The current state of the relay. One of: "new", "verifying_restart",
  "awaiting_restart", "restarting", "started", "stopped", "dead",
  "unknown".
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
         'name',
         'state',
+        'tags',
     ]
 
     def __init__(
@@ -5457,16 +5586,19 @@ class Relay:
         id=None,
         name=None,
         state=None,
+        tags=None,
     ):
         self.id = id
         self.name = name
         self.state = state
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.Relay ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -5474,6 +5606,7 @@ class Relay:
             'id': self.id,
             'name': self.name,
             'state': self.state,
+            'tags': self.tags,
         }
 
     @classmethod
@@ -5482,6 +5615,7 @@ class Relay:
             id=d.get('id'),
             name=d.get('name'),
             state=d.get('state'),
+            tags=d.get('tags'),
         )
 
 
@@ -5495,6 +5629,7 @@ class Gateway:
     :param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
     :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
  If not provided on create, set to "0.0.0.0:<listen_address_port>".
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
@@ -5502,6 +5637,7 @@ class Gateway:
         'state',
         'listen_address',
         'bind_address',
+        'tags',
     ]
 
     def __init__(
@@ -5511,12 +5647,14 @@ class Gateway:
         state=None,
         listen_address=None,
         bind_address=None,
+        tags=None,
     ):
         self.id = id
         self.name = name
         self.state = state
         self.listen_address = listen_address
         self.bind_address = bind_address
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
@@ -5525,6 +5663,7 @@ class Gateway:
             'state: ' + repr(self.state) + ' ' +\
             'listen_address: ' + repr(self.listen_address) + ' ' +\
             'bind_address: ' + repr(self.bind_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -5534,6 +5673,7 @@ class Gateway:
             'state': self.state,
             'listen_address': self.listen_address,
             'bind_address': self.bind_address,
+            'tags': self.tags,
         }
 
     @classmethod
@@ -5544,6 +5684,7 @@ class Gateway:
             state=d.get('state'),
             listen_address=d.get('listen_address'),
             bind_address=d.get('bind_address'),
+            tags=d.get('tags'),
         )
 
 
@@ -6265,11 +6406,13 @@ class Role:
     :param id: Unique identifier of the Role.
     :param name: Unique human-readable name of the Role.
     :param composite: True if the Role is a composite role.
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
         'name',
         'composite',
+        'tags',
     ]
 
     def __init__(
@@ -6277,16 +6420,19 @@ class Role:
         id=None,
         name=None,
         composite=None,
+        tags=None,
     ):
         self.id = id
         self.name = name
         self.composite = composite
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.Role ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'composite: ' + repr(self.composite) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -6294,6 +6440,7 @@ class Role:
             'id': self.id,
             'name': self.name,
             'composite': self.composite,
+            'tags': self.tags,
         }
 
     @classmethod
@@ -6302,4 +6449,5 @@ class Role:
             id=d.get('id'),
             name=d.get('name'),
             composite=d.get('composite'),
+            tags=d.get('tags'),
         )
