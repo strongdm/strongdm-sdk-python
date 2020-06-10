@@ -38,7 +38,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\n\034com.strongdm.api.v1.plumbingB\032AccountAttachmentsPlumbing'),
-  serialized_pb=_b('\n\x19\x61\x63\x63ount_attachments.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"\xdc\x01\n\x1e\x41\x63\x63ountAttachmentCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x07options\x18\x03 \x01(\x0b\x32\".v1.AccountAttachmentCreateOptionsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x11\xfa\xf8\xb3\x07\x0c\xba\xf3\xb3\x07\x07options\"K\n\x1e\x41\x63\x63ountAttachmentCreateOptions\x12\x1d\n\toverwrite\x18\x01 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xd9\x01\n\x1f\x41\x63\x63ountAttachmentCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x1b\x41\x63\x63ountAttachmentGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd3\x01\n\x1c\x41\x63\x63ountAttachmentGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"a\n\x1e\x41\x63\x63ountAttachmentDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9a\x01\n\x1f\x41\x63\x63ountAttachmentDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"a\n\x1c\x41\x63\x63ountAttachmentListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbe\x01\n\x1d\x41\x63\x63ountAttachmentListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12>\n\x13\x61\x63\x63ount_attachments\x18\x02 \x03(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf2\x02\n\x11\x41\x63\x63ountAttachment\x12*\n\x02id\x18\x01 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x08UserRole\x12\x37\n\naccount_id\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06UserID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04User\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role:\xc1\x01\xfa\xf8\xb3\x07z\xa2\xf3\xb3\x07\x08UserRole\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x63\xa2\xf3\xb3\x07+tf_examples/account_attachment_resource.txt\xaa\xf3\xb3\x07.tf_examples/account_attachment_data_source.txt\x92\x41?2=\x12;{ \"id\": \"aa-244\", \"role_id\": \"r-111\", \"account_id\":\"a-444\"}2\xf3\x04\n\x12\x41\x63\x63ountAttachments\x12\xe8\x01\n\x06\x43reate\x12\".v1.AccountAttachmentCreateRequest\x1a#.v1.AccountAttachmentCreateResponse\"\x94\x01\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/account_attachments:\x01*\x92\x41o\"m\n%Learn how to make a AccountAttachment\x12\x44https://www.strongdm.com/docs/api/services/AccountAttachments#Create\x12n\n\x03Get\x12\x1f.v1.AccountAttachmentGetRequest\x1a .v1.AccountAttachmentGetResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/account_attachments/{id}\x12w\n\x06\x44\x65lete\x12\".v1.AccountAttachmentDeleteRequest\x1a#.v1.AccountAttachmentDeleteResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/account_attachments/{id}\x12l\n\x04List\x12 .v1.AccountAttachmentListRequest\x1a!.v1.AccountAttachmentListResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/account_attachments\x1a\x1b\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11\x41\x63\x63ountAttachmentB:\n\x1c\x63om.strongdm.api.v1.plumbingB\x1a\x41\x63\x63ountAttachmentsPlumbingb\x06proto3')
+  serialized_pb=_b('\n\x19\x61\x63\x63ount_attachments.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"\x9b\x01\n\x1e\x41\x63\x63ountAttachmentCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x11\xfa\xf8\xb3\x07\x0c\xba\xf3\xb3\x07\x07options\"\xd9\x01\n\x1f\x41\x63\x63ountAttachmentCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x1b\x41\x63\x63ountAttachmentGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd3\x01\n\x1c\x41\x63\x63ountAttachmentGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x12\x61\x63\x63ount_attachment\x18\x02 \x01(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"a\n\x1e\x41\x63\x63ountAttachmentDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9a\x01\n\x1f\x41\x63\x63ountAttachmentDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"a\n\x1c\x41\x63\x63ountAttachmentListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbe\x01\n\x1d\x41\x63\x63ountAttachmentListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12>\n\x13\x61\x63\x63ount_attachments\x18\x02 \x03(\x0b\x32\x15.v1.AccountAttachmentB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf2\x02\n\x11\x41\x63\x63ountAttachment\x12*\n\x02id\x18\x01 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x08UserRole\x12\x37\n\naccount_id\x18\x02 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06UserID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04User\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role:\xc1\x01\xfa\xf8\xb3\x07z\xa2\xf3\xb3\x07\x08UserRole\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x63\xa2\xf3\xb3\x07+tf_examples/account_attachment_resource.txt\xaa\xf3\xb3\x07.tf_examples/account_attachment_data_source.txt\x92\x41?2=\x12;{ \"id\": \"aa-244\", \"role_id\": \"r-111\", \"account_id\":\"a-444\"}2\xf3\x04\n\x12\x41\x63\x63ountAttachments\x12\xe8\x01\n\x06\x43reate\x12\".v1.AccountAttachmentCreateRequest\x1a#.v1.AccountAttachmentCreateResponse\"\x94\x01\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/account_attachments:\x01*\x92\x41o\"m\n%Learn how to make a AccountAttachment\x12\x44https://www.strongdm.com/docs/api/services/AccountAttachments#Create\x12n\n\x03Get\x12\x1f.v1.AccountAttachmentGetRequest\x1a .v1.AccountAttachmentGetResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/account_attachments/{id}\x12w\n\x06\x44\x65lete\x12\".v1.AccountAttachmentDeleteRequest\x1a#.v1.AccountAttachmentDeleteResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/account_attachments/{id}\x12l\n\x04List\x12 .v1.AccountAttachmentListRequest\x1a!.v1.AccountAttachmentListResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/account_attachments\x1a\x1b\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11\x41\x63\x63ountAttachmentB:\n\x1c\x63om.strongdm.api.v1.plumbingB\x1a\x41\x63\x63ountAttachmentsPlumbingb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -66,13 +66,6 @@ _ACCOUNTATTACHMENTCREATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='options', full_name='v1.AccountAttachmentCreateRequest.options', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -86,38 +79,7 @@ _ACCOUNTATTACHMENTCREATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=137,
-  serialized_end=357,
-)
-
-
-_ACCOUNTATTACHMENTCREATEOPTIONS = _descriptor.Descriptor(
-  name='AccountAttachmentCreateOptions',
-  full_name='v1.AccountAttachmentCreateOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='overwrite', full_name='v1.AccountAttachmentCreateOptions.overwrite', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\370\263\007\005\260\363\263\007\001'), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('\372\370\263\007\005\250\363\263\007\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=359,
-  serialized_end=434,
+  serialized_end=292,
 )
 
 
@@ -161,8 +123,8 @@ _ACCOUNTATTACHMENTCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=437,
-  serialized_end=654,
+  serialized_start=295,
+  serialized_end=512,
 )
 
 
@@ -199,8 +161,8 @@ _ACCOUNTATTACHMENTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=656,
-  serialized_end=747,
+  serialized_start=514,
+  serialized_end=605,
 )
 
 
@@ -244,8 +206,8 @@ _ACCOUNTATTACHMENTGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=750,
-  serialized_end=961,
+  serialized_start=608,
+  serialized_end=819,
 )
 
 
@@ -282,8 +244,8 @@ _ACCOUNTATTACHMENTDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=963,
-  serialized_end=1060,
+  serialized_start=821,
+  serialized_end=918,
 )
 
 
@@ -320,8 +282,8 @@ _ACCOUNTATTACHMENTDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1217,
+  serialized_start=921,
+  serialized_end=1075,
 )
 
 
@@ -358,8 +320,8 @@ _ACCOUNTATTACHMENTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1219,
-  serialized_end=1316,
+  serialized_start=1077,
+  serialized_end=1174,
 )
 
 
@@ -403,8 +365,8 @@ _ACCOUNTATTACHMENTLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1319,
-  serialized_end=1509,
+  serialized_start=1177,
+  serialized_end=1367,
 )
 
 
@@ -448,13 +410,12 @@ _ACCOUNTATTACHMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1512,
-  serialized_end=1882,
+  serialized_start=1370,
+  serialized_end=1740,
 )
 
 _ACCOUNTATTACHMENTCREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
 _ACCOUNTATTACHMENTCREATEREQUEST.fields_by_name['account_attachment'].message_type = _ACCOUNTATTACHMENT
-_ACCOUNTATTACHMENTCREATEREQUEST.fields_by_name['options'].message_type = _ACCOUNTATTACHMENTCREATEOPTIONS
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['account_attachment'].message_type = _ACCOUNTATTACHMENT
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
@@ -470,7 +431,6 @@ _ACCOUNTATTACHMENTLISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._
 _ACCOUNTATTACHMENTLISTRESPONSE.fields_by_name['account_attachments'].message_type = _ACCOUNTATTACHMENT
 _ACCOUNTATTACHMENTLISTRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
 DESCRIPTOR.message_types_by_name['AccountAttachmentCreateRequest'] = _ACCOUNTATTACHMENTCREATEREQUEST
-DESCRIPTOR.message_types_by_name['AccountAttachmentCreateOptions'] = _ACCOUNTATTACHMENTCREATEOPTIONS
 DESCRIPTOR.message_types_by_name['AccountAttachmentCreateResponse'] = _ACCOUNTATTACHMENTCREATERESPONSE
 DESCRIPTOR.message_types_by_name['AccountAttachmentGetRequest'] = _ACCOUNTATTACHMENTGETREQUEST
 DESCRIPTOR.message_types_by_name['AccountAttachmentGetResponse'] = _ACCOUNTATTACHMENTGETRESPONSE
@@ -487,13 +447,6 @@ AccountAttachmentCreateRequest = _reflection.GeneratedProtocolMessageType('Accou
   # @@protoc_insertion_point(class_scope:v1.AccountAttachmentCreateRequest)
   })
 _sym_db.RegisterMessage(AccountAttachmentCreateRequest)
-
-AccountAttachmentCreateOptions = _reflection.GeneratedProtocolMessageType('AccountAttachmentCreateOptions', (_message.Message,), {
-  'DESCRIPTOR' : _ACCOUNTATTACHMENTCREATEOPTIONS,
-  '__module__' : 'account_attachments_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AccountAttachmentCreateOptions)
-  })
-_sym_db.RegisterMessage(AccountAttachmentCreateOptions)
 
 AccountAttachmentCreateResponse = _reflection.GeneratedProtocolMessageType('AccountAttachmentCreateResponse', (_message.Message,), {
   'DESCRIPTOR' : _ACCOUNTATTACHMENTCREATERESPONSE,
@@ -554,10 +507,7 @@ _sym_db.RegisterMessage(AccountAttachment)
 
 DESCRIPTOR._options = None
 _ACCOUNTATTACHMENTCREATEREQUEST.fields_by_name['account_attachment']._options = None
-_ACCOUNTATTACHMENTCREATEREQUEST.fields_by_name['options']._options = None
 _ACCOUNTATTACHMENTCREATEREQUEST._options = None
-_ACCOUNTATTACHMENTCREATEOPTIONS.fields_by_name['overwrite']._options = None
-_ACCOUNTATTACHMENTCREATEOPTIONS._options = None
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['meta']._options = None
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['account_attachment']._options = None
 _ACCOUNTATTACHMENTCREATERESPONSE.fields_by_name['rate_limit']._options = None
@@ -585,8 +535,8 @@ _ACCOUNTATTACHMENTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=_b('\312\371\263\007\026\302\371\263\007\021AccountAttachment'),
-  serialized_start=1885,
-  serialized_end=2512,
+  serialized_start=1743,
+  serialized_end=2370,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

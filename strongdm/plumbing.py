@@ -244,37 +244,6 @@ def convert_repeated_rate_limit_metadata_to_porcelain(plumbings):
     ]
 
 
-def convert_account_attachment_create_options_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.AccountAttachmentCreateOptions()
-    porcelain.overwrite = (plumbing.overwrite)
-    return porcelain
-
-
-def convert_account_attachment_create_options_to_plumbing(porcelain):
-    if porcelain is None:
-        return None
-    plumbing = AccountAttachmentCreateOptions()
-    if porcelain.overwrite is not None:
-        plumbing.overwrite = (porcelain.overwrite)
-    return plumbing
-
-
-def convert_repeated_account_attachment_create_options_to_plumbing(porcelains):
-    return [
-        convert_account_attachment_create_options_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_account_attachment_create_options_to_porcelain(plumbings):
-    return [
-        convert_account_attachment_create_options_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
 def convert_account_attachment_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None

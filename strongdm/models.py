@@ -150,37 +150,6 @@ class RateLimitMetadata:
         )
 
 
-class AccountAttachmentCreateOptions:
-    """AccountAttachmentCreateOptions specifies extra options for creating an
- AccountAttachment.
-
-    :param overwrite: Overwrite clears all account grants before the attachment.
-    """
-    __slots__ = [
-        'overwrite',
-    ]
-
-    def __init__(
-        self,
-        overwrite=None,
-    ):
-        self.overwrite = overwrite
-
-    def __repr__(self):
-        return '<sdm.AccountAttachmentCreateOptions ' + \
-            'overwrite: ' + repr(self.overwrite) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'overwrite': self.overwrite,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(overwrite=d.get('overwrite'), )
-
-
 class AccountAttachmentCreateResponse:
     """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
 
