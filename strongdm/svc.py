@@ -50,7 +50,7 @@ class AccountAttachments:
         self.parent = client
         self.stub = AccountAttachmentsStub(channel)
 
-    def create(self, account_attachment, options=None, timeout=None):
+    def create(self, account_attachment, timeout=None):
         """Create registers a new AccountAttachment."""
         req = AccountAttachmentCreateRequest()
 
@@ -58,10 +58,6 @@ class AccountAttachments:
             req.account_attachment.CopyFrom(
                 plumbing.convert_account_attachment_to_plumbing(
                     account_attachment))
-        if options is not None:
-            req.options.CopyFrom(
-                plumbing.convert_account_attachment_create_options_to_plumbing(
-                    options))
         tries = 0
         plumbing_response = None
         while True:
