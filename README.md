@@ -41,6 +41,10 @@ if __name__ == "__main__":
 
 * Documentation:  [strongdm package](https://strongdm.github.io/strongdm-sdk-python-docs/)
 * Examples: [GitHub - strongdm/strongdm-sdk-python-examples](https://github.com/strongdm/strongdm-sdk-python-examples)
+	1. [Managing Resources](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/1_managing_resources)
+	2. [Managing Accounts](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/2_managing_accounts)
+	3. [Managing Roles](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/3_managing_roles)
+	4. [Managing Gateways](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/4_managing_gateways)
 
 ## License
 
