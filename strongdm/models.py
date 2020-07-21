@@ -1109,7 +1109,6 @@ class DB2I:
     :param hostname: 
     :param username: 
     :param password: 
-    :param database: 
     :param port_override: 
     :param port: 
     :param tls_required: 
@@ -1122,7 +1121,6 @@ class DB2I:
         'hostname',
         'username',
         'password',
-        'database',
         'port_override',
         'port',
         'tls_required',
@@ -1137,7 +1135,6 @@ class DB2I:
         hostname=None,
         username=None,
         password=None,
-        database=None,
         port_override=None,
         port=None,
         tls_required=None,
@@ -1149,7 +1146,6 @@ class DB2I:
         self.hostname = hostname
         self.username = username
         self.password = password
-        self.database = database
         self.port_override = port_override
         self.port = port
         self.tls_required = tls_required
@@ -1163,7 +1159,6 @@ class DB2I:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
@@ -1178,7 +1173,6 @@ class DB2I:
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
-            'database': self.database,
             'port_override': self.port_override,
             'port': self.port,
             'tls_required': self.tls_required,
@@ -1194,7 +1188,6 @@ class DB2I:
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
-            database=d.get('database'),
             port_override=d.get('port_override'),
             port=d.get('port'),
             tls_required=d.get('tls_required'),

@@ -1246,7 +1246,6 @@ def convert_db_2_i_to_porcelain(plumbing):
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
-    porcelain.database = (plumbing.database)
     porcelain.port_override = (plumbing.port_override)
     porcelain.port = (plumbing.port)
     porcelain.tls_required = (plumbing.tls_required)
@@ -1271,8 +1270,6 @@ def convert_db_2_i_to_plumbing(porcelain):
         plumbing.username = (porcelain.username)
     if porcelain.password is not None:
         plumbing.password = (porcelain.password)
-    if porcelain.database is not None:
-        plumbing.database = (porcelain.database)
     if porcelain.port_override is not None:
         plumbing.port_override = (porcelain.port_override)
     if porcelain.port is not None:
