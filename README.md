@@ -1,31 +1,30 @@
 # strongDM SDK for Python
 
-The official strongDM SDK for the Python programming language.
+This is the official [strongDM](https://www.strongdm.com/) SDK for the Python programming language.
 
-## Quick Start
-
-First, install the library:
+## Installation
 
 ```bash
 $ pip install strongdm
 ```
 
-Next, go to https://app.strongdm.com and create an API key. Set the `SDM_API_ACCESS_KEY` and `SDM_API_SECRET_KEY` environment variables.
+## Authentication
 
+If you don't already have them you will need to generate a set of API keys, instructions are here: [API Credentials](https://www.strongdm.com/docs/admin-guide/api-credentials/)
+
+Add the keys as environment variables; the SDK will need to access these keys for every request.
 ```bash
 $ export SDM_API_ACCESS_KEY=<YOUR ACCESS KEY>
 $ export SDM_API_SECRET_KEY=<YOUR SECRET KEY>
 ```
 
-Run some example code.
+## List Users
+The following code lists all registered users:
 
 ```python
 import os
 import strongdm
 
-# listUsers.py enumerates all users of an organization
-# usage:
-# python3 listUsers.py
 def main():
     client = strongdm.Client(os.getenv("SDM_API_ACCESS_KEY"),
                         os.getenv("SDM_API_SECRET_KEY"))
@@ -34,7 +33,19 @@ def main():
     for user in users:
         print(user)
 
-
 if __name__ == "__main__":
     main()
 ```
+
+## Useful Links
+
+* Documentation:  [strongdm package](https://strongdm.github.io/strongdm-sdk-python-docs/)
+* Examples: [GitHub - strongdm/strongdm-sdk-python-examples](https://github.com/strongdm/strongdm-sdk-python-examples)
+
+## License
+
+[Apache 2](https://github.com/strongdm/strongdm-sdk-python/blob/master/LICENSE)
+
+## Contributing 
+
+Currently, strongDM does not accept pull requests for this repository. Please submit any feedback to <support@strongdm.com>.
