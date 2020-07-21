@@ -48,4 +48,4 @@ if __name__ == "__main__":
 
 ## Contributing 
 
-Currently, strongDM does not accept pull requests for this repository. Please submit any feedback to <support@strongdm.com>.
+Currently, we are not accepting pull requests directly to this repository, but our users are some of the most resourceful and ambitious folks out there. So, if you have something to contribute, find a bug, or just want to give us some feedback, please email <support@strongdm.com>.
