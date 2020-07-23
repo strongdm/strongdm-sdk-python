@@ -1099,7 +1099,102 @@ class Cassandra:
         )
 
 
-class DB2:
+class DB2I:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param hostname: 
+    :param username: 
+    :param password: 
+    :param port_override: 
+    :param port: 
+    :param tls_required: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'hostname',
+        'username',
+        'password',
+        'port_override',
+        'port',
+        'tls_required',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        hostname=None,
+        username=None,
+        password=None,
+        port_override=None,
+        port=None,
+        tls_required=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.port_override = port_override
+        self.port = port
+        self.tls_required = tls_required
+
+    def __repr__(self):
+        return '<sdm.DB2I ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'hostname': self.hostname,
+            'username': self.username,
+            'password': self.password,
+            'port_override': self.port_override,
+            'port': self.port,
+            'tls_required': self.tls_required,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            port=d.get('port'),
+            tls_required=d.get('tls_required'),
+        )
+
+
+class DB2LUW:
     """
 
     :param id: Unique identifier of the Resource.
@@ -1151,7 +1246,7 @@ class DB2:
         self.port = port
 
     def __repr__(self):
-        return '<sdm.DB2 ' + \
+        return '<sdm.DB2LUW ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
