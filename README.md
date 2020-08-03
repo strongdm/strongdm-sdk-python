@@ -2,6 +2,10 @@
 
 This is the official [strongDM](https://www.strongdm.com/) SDK for the Python programming language.
 
+
+Learn more with our [📚strongDM API docs](https://www.strongdm.com/docs/api/) or [📓browse the SDK reference](https://strongdm.github.io/strongdm-sdk-python-docs/).
+
+
 ## Installation
 
 ```bash
@@ -45,7 +49,7 @@ if __name__ == "__main__":
 	2. [Managing Accounts](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/2_managing_accounts)
 	3. [Managing Roles](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/3_managing_roles)
 	4. [Managing Gateways](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/4_managing_gateways)
-
+   
 ## License
 
 [Apache 2](https://github.com/strongdm/strongdm-sdk-python/blob/master/LICENSE)
