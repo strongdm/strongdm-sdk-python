@@ -14,26 +14,30 @@
 #
 from distutils.core import setup
 setup(
-  name = 'strongdm',
-  packages = ['strongdm'],
-  version = '1.0.11',
-  license='apache-2.0',
-  description = 'strongDM SDK for the Python programming language.',
-  author = 'strongDM Team',
-  author_email = 'sdk-feedback@strongdm.com',
-  url = 'https://github.com/strongdm/strongdm-sdk-python',
-  download_url = 'https://github.com/strongdm/strongdm-sdk-python/archive/v1.0.11.tar.gz',
-  keywords = ['strongDM', 'sdm', 'api', 'automation', 'security', 'audit', 'database', 'server', 'ssh', 'rdp'],
-  install_requires=[
-          'grpcio',
-          'googleapis-common-protos',
-          'protoc-gen-swagger',
-      ],
-  classifiers=[
-    'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
-    'Intended Audience :: Developers',
-    'Topic :: Security',
-    'License :: OSI Approved :: Apache Software License',
-    'Programming Language :: Python :: 3',
-  ],
+    name='strongdm',
+    packages=['strongdm'],
+    version='1.0.12',
+    license='apache-2.0',
+    description='strongDM SDK for the Python programming language.',
+    author='strongDM Team',
+    author_email='sdk-feedback@strongdm.com',
+    url='https://github.com/strongdm/strongdm-sdk-python',
+    download_url=
+    'https://github.com/strongdm/strongdm-sdk-python/archive/v1.0.12.tar.gz',
+    keywords=[
+        'strongDM', 'sdm', 'api', 'automation', 'security', 'audit',
+        'database', 'server', 'ssh', 'rdp'
+    ],
+    install_requires=[
+        'grpcio',
+        'googleapis-common-protos',
+        'protoc-gen-swagger',
+    ],
+    classifiers=[
+        'Development Status :: 4 - Beta',  # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+        'Intended Audience :: Developers',
+        'Topic :: Security',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3',
+    ],
 )

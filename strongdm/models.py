@@ -1744,11 +1744,8 @@ class Kubernetes:
     :param hostname: 
     :param port: 
     :param certificate_authority: 
-    :param certificate_authority_filename: 
     :param client_certificate: 
-    :param client_certificate_filename: 
     :param client_key: 
-    :param client_key_filename: 
     :param healthcheck_namespace: 
     """
     __slots__ = [
@@ -1759,11 +1756,8 @@ class Kubernetes:
         'hostname',
         'port',
         'certificate_authority',
-        'certificate_authority_filename',
         'client_certificate',
-        'client_certificate_filename',
         'client_key',
-        'client_key_filename',
         'healthcheck_namespace',
     ]
     def __init__(self,
@@ -1774,11 +1768,8 @@ class Kubernetes:
         hostname=None,
         port=None,
         certificate_authority=None,
-        certificate_authority_filename=None,
         client_certificate=None,
-        client_certificate_filename=None,
         client_key=None,
-        client_key_filename=None,
         healthcheck_namespace=None,
     ):
         self.id = id
@@ -1788,11 +1779,8 @@ class Kubernetes:
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
-        self.certificate_authority_filename = certificate_authority_filename
         self.client_certificate = client_certificate
-        self.client_certificate_filename = client_certificate_filename
         self.client_key = client_key
-        self.client_key_filename = client_key_filename
         self.healthcheck_namespace = healthcheck_namespace
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
@@ -1803,11 +1791,8 @@ class Kubernetes:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
-            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
     def to_dict(self):
@@ -1819,11 +1804,8 @@ class Kubernetes:
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
-            'certificate_authority_filename': self.certificate_authority_filename,
             'client_certificate': self.client_certificate,
-            'client_certificate_filename': self.client_certificate_filename,
             'client_key': self.client_key,
-            'client_key_filename': self.client_key_filename,
             'healthcheck_namespace': self.healthcheck_namespace,
         }
     @classmethod
@@ -1836,11 +1818,8 @@ class Kubernetes:
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
-            certificate_authority_filename=d.get('certificate_authority_filename'),
             client_certificate=d.get('client_certificate'),
-            client_certificate_filename=d.get('client_certificate_filename'),
             client_key=d.get('client_key'),
-            client_key_filename=d.get('client_key_filename'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 class KubernetesBasicAuth:
@@ -2009,7 +1988,6 @@ class AmazonEKS:
     :param access_key: 
     :param secret_access_key: 
     :param certificate_authority: 
-    :param certificate_authority_filename: 
     :param region: 
     :param cluster_name: 
     :param role_arn: 
@@ -2024,7 +2002,6 @@ class AmazonEKS:
         'access_key',
         'secret_access_key',
         'certificate_authority',
-        'certificate_authority_filename',
         'region',
         'cluster_name',
         'role_arn',
@@ -2039,7 +2016,6 @@ class AmazonEKS:
         access_key=None,
         secret_access_key=None,
         certificate_authority=None,
-        certificate_authority_filename=None,
         region=None,
         cluster_name=None,
         role_arn=None,
@@ -2053,7 +2029,6 @@ class AmazonEKS:
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.certificate_authority = certificate_authority
-        self.certificate_authority_filename = certificate_authority_filename
         self.region = region
         self.cluster_name = cluster_name
         self.role_arn = role_arn
@@ -2068,7 +2043,6 @@ class AmazonEKS:
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
@@ -2084,7 +2058,6 @@ class AmazonEKS:
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'certificate_authority': self.certificate_authority,
-            'certificate_authority_filename': self.certificate_authority_filename,
             'region': self.region,
             'cluster_name': self.cluster_name,
             'role_arn': self.role_arn,
@@ -2101,7 +2074,6 @@ class AmazonEKS:
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             certificate_authority=d.get('certificate_authority'),
-            certificate_authority_filename=d.get('certificate_authority_filename'),
             region=d.get('region'),
             cluster_name=d.get('cluster_name'),
             role_arn=d.get('role_arn'),
@@ -2116,9 +2088,7 @@ class GoogleGKE:
     :param tags: Tags is a map of key, value pairs.
     :param endpoint: 
     :param certificate_authority: 
-    :param certificate_authority_filename: 
     :param service_account_key: 
-    :param service_account_key_filename: 
     :param healthcheck_namespace: 
     """
     __slots__ = [
@@ -2128,9 +2098,7 @@ class GoogleGKE:
         'tags',
         'endpoint',
         'certificate_authority',
-        'certificate_authority_filename',
         'service_account_key',
-        'service_account_key_filename',
         'healthcheck_namespace',
     ]
     def __init__(self,
@@ -2140,9 +2108,7 @@ class GoogleGKE:
         tags=None,
         endpoint=None,
         certificate_authority=None,
-        certificate_authority_filename=None,
         service_account_key=None,
-        service_account_key_filename=None,
         healthcheck_namespace=None,
     ):
         self.id = id
@@ -2151,9 +2117,7 @@ class GoogleGKE:
         self.tags = tags
         self.endpoint = endpoint
         self.certificate_authority = certificate_authority
-        self.certificate_authority_filename = certificate_authority_filename
         self.service_account_key = service_account_key
-        self.service_account_key_filename = service_account_key_filename
         self.healthcheck_namespace = healthcheck_namespace
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
@@ -2163,9 +2127,7 @@ class GoogleGKE:
             'tags: ' + repr(self.tags) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
-            'service_account_key_filename: ' + repr(self.service_account_key_filename) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
     def to_dict(self):
@@ -2176,9 +2138,7 @@ class GoogleGKE:
             'tags': self.tags,
             'endpoint': self.endpoint,
             'certificate_authority': self.certificate_authority,
-            'certificate_authority_filename': self.certificate_authority_filename,
             'service_account_key': self.service_account_key,
-            'service_account_key_filename': self.service_account_key_filename,
             'healthcheck_namespace': self.healthcheck_namespace,
         }
     @classmethod
@@ -2190,9 +2150,7 @@ class GoogleGKE:
             tags=d.get('tags'),
             endpoint=d.get('endpoint'),
             certificate_authority=d.get('certificate_authority'),
-            certificate_authority_filename=d.get('certificate_authority_filename'),
             service_account_key=d.get('service_account_key'),
-            service_account_key_filename=d.get('service_account_key_filename'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 class AKS:
@@ -2205,11 +2163,8 @@ class AKS:
     :param hostname: 
     :param port: 
     :param certificate_authority: 
-    :param certificate_authority_filename: 
     :param client_certificate: 
-    :param client_certificate_filename: 
     :param client_key: 
-    :param client_key_filename: 
     :param healthcheck_namespace: 
     """
     __slots__ = [
@@ -2220,11 +2175,8 @@ class AKS:
         'hostname',
         'port',
         'certificate_authority',
-        'certificate_authority_filename',
         'client_certificate',
-        'client_certificate_filename',
         'client_key',
-        'client_key_filename',
         'healthcheck_namespace',
     ]
     def __init__(self,
@@ -2235,11 +2187,8 @@ class AKS:
         hostname=None,
         port=None,
         certificate_authority=None,
-        certificate_authority_filename=None,
         client_certificate=None,
-        client_certificate_filename=None,
         client_key=None,
-        client_key_filename=None,
         healthcheck_namespace=None,
     ):
         self.id = id
@@ -2249,11 +2198,8 @@ class AKS:
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
-        self.certificate_authority_filename = certificate_authority_filename
         self.client_certificate = client_certificate
-        self.client_certificate_filename = client_certificate_filename
         self.client_key = client_key
-        self.client_key_filename = client_key_filename
         self.healthcheck_namespace = healthcheck_namespace
     def __repr__(self):
         return '<sdm.AKS ' + \
@@ -2264,11 +2210,8 @@ class AKS:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'certificate_authority_filename: ' + repr(self.certificate_authority_filename) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_certificate_filename: ' + repr(self.client_certificate_filename) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
-            'client_key_filename: ' + repr(self.client_key_filename) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
     def to_dict(self):
@@ -2280,11 +2223,8 @@ class AKS:
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
-            'certificate_authority_filename': self.certificate_authority_filename,
             'client_certificate': self.client_certificate,
-            'client_certificate_filename': self.client_certificate_filename,
             'client_key': self.client_key,
-            'client_key_filename': self.client_key_filename,
             'healthcheck_namespace': self.healthcheck_namespace,
         }
     @classmethod
@@ -2297,11 +2237,8 @@ class AKS:
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
-            certificate_authority_filename=d.get('certificate_authority_filename'),
             client_certificate=d.get('client_certificate'),
-            client_certificate_filename=d.get('client_certificate_filename'),
             client_key=d.get('client_key'),
-            client_key_filename=d.get('client_key_filename'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 class AKSBasicAuth:
