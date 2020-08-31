@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 from distutils.core import setup
 setup(
     name='strongdm',
@@ -19,6 +26,8 @@ setup(
     version='1.0.12',
     license='apache-2.0',
     description='strongDM SDK for the Python programming language.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='strongDM Team',
     author_email='sdk-feedback@strongdm.com',
     url='https://github.com/strongdm/strongdm-sdk-python',
