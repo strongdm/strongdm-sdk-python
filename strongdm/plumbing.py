@@ -275,7 +275,7 @@ def convert_account_attachment_create_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_create_response_to_plumbing(
-    porcelains):
+        porcelains):
     return [
         convert_account_attachment_create_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -283,7 +283,7 @@ def convert_repeated_account_attachment_create_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_create_response_to_porcelain(
-    plumbings):
+        plumbings):
     return [
         convert_account_attachment_create_response_to_porcelain(plumbing)
         for plumbing in plumbings
@@ -358,7 +358,7 @@ def convert_account_attachment_delete_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_delete_response_to_plumbing(
-    porcelains):
+        porcelains):
     return [
         convert_account_attachment_delete_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -366,7 +366,7 @@ def convert_repeated_account_attachment_delete_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_delete_response_to_porcelain(
-    plumbings):
+        plumbings):
     return [
         convert_account_attachment_delete_response_to_porcelain(plumbing)
         for plumbing in plumbings
