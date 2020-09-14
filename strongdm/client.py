@@ -58,6 +58,7 @@ class Client:
             self.account_attachments = svc.AccountAttachments(channel, self)
             self.account_grants = svc.AccountGrants(channel, self)
             self.accounts = svc.Accounts(channel, self)
+            self.control_panel = svc.ControlPanel(channel, self)
             self.nodes = svc.Nodes(channel, self)
             self.resources = svc.Resources(channel, self)
             self.role_attachments = svc.RoleAttachments(channel, self)

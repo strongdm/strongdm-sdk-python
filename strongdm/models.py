@@ -828,6 +828,54 @@ class Service:
         )
 
 
+class ControlPanelGetSSHCAPublicKeyResponse:
+    """ControlPanelGetSSHCAPublicKeyResponse represents a request for an
+ organization's SSH Certificate Authority public key.
+
+    :param meta: Reserved for future use.
+    :param public_key: The public key of the SSH Certificate Authority, in OpenSSH RSA public
+ key format.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'public_key',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        public_key=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.public_key = public_key
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.ControlPanelGetSSHCAPublicKeyResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'public_key': self.public_key,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            public_key=d.get('public_key'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class Athena:
     """
 

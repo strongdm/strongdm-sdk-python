@@ -29,6 +29,7 @@ from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
 from .tags_pb2 import *
 from .accounts_pb2 import *
+from .control_panel_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
 from .resources_pb2 import *
@@ -275,7 +276,7 @@ def convert_account_attachment_create_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_create_response_to_plumbing(
-        porcelains):
+    porcelains):
     return [
         convert_account_attachment_create_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -283,7 +284,7 @@ def convert_repeated_account_attachment_create_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_create_response_to_porcelain(
-        plumbings):
+    plumbings):
     return [
         convert_account_attachment_create_response_to_porcelain(plumbing)
         for plumbing in plumbings
@@ -358,7 +359,7 @@ def convert_account_attachment_delete_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_delete_response_to_plumbing(
-        porcelains):
+    porcelains):
     return [
         convert_account_attachment_delete_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -366,7 +367,7 @@ def convert_repeated_account_attachment_delete_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_delete_response_to_porcelain(
-        plumbings):
+    plumbings):
     return [
         convert_account_attachment_delete_response_to_porcelain(plumbing)
         for plumbing in plumbings
@@ -845,6 +846,48 @@ def convert_repeated_service_to_plumbing(porcelains):
 
 def convert_repeated_service_to_porcelain(plumbings):
     return [convert_service_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_control_panel_get_sshca_public_key_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ControlPanelGetSSHCAPublicKeyResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_control_panel_get_sshca_public_key_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = ControlPanelGetSSHCAPublicKeyResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_get_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.public_key is not None:
+        plumbing.public_key = (porcelain.public_key)
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_control_panel_get_sshca_public_key_response_to_plumbing(
+    porcelains):
+    return [
+        convert_control_panel_get_sshca_public_key_response_to_plumbing(
+            porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_control_panel_get_sshca_public_key_response_to_porcelain(
+    plumbings):
+    return [
+        convert_control_panel_get_sshca_public_key_response_to_porcelain(
+            plumbing) for plumbing in plumbings
+    ]
 
 
 def convert_resource_to_plumbing(porcelain):

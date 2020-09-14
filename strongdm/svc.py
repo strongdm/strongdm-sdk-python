@@ -30,6 +30,8 @@ from .tags_pb2 import *
 from .tags_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
+from .control_panel_pb2 import *
+from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
@@ -476,6 +478,42 @@ class Accounts:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class ControlPanel:
+    """ControlPanel contains all administrative controls."""
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ControlPanelStub(channel)
+
+    def get_sshca_public_key(self, timeout=None):
+        """GetSSHCAPublicKey retrieves the SSH CA public key."""
+        req = ControlPanelGetSSHCAPublicKeyRequest()
+
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.GetSSHCAPublicKey(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ControlPanel.GetSSHCAPublicKey', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ControlPanelGetSSHCAPublicKeyResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.public_key = (plumbing_response.public_key)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
 
 
 class Nodes:
