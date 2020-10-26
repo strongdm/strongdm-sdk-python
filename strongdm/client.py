@@ -64,6 +64,7 @@ class Client:
             self.role_attachments = svc.RoleAttachments(channel, self)
             self.role_grants = svc.RoleGrants(channel, self)
             self.roles = svc.Roles(channel, self)
+            self.secret_stores = svc.SecretStores(channel, self)
         except Exception as e:
             raise plumbing.convert_error_to_porcelain(e) from e
         self._test_options = {}

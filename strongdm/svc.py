@@ -44,6 +44,8 @@ from .role_grants_pb2 import *
 from .role_grants_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+from .secretstores_pb2 import *
+from .secretstores_pb2_grpc import *
 
 
 class AccountAttachments:
@@ -1268,6 +1270,172 @@ class Roles:
                 tries = 0
                 for plumbing_item in plumbing_response.roles:
                     yield plumbing.convert_role_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SecretStores:
+    """SecretStores are ..."""
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = SecretStoresStub(channel)
+
+    def create(self, secret_store, timeout=None):
+        req = SecretStoreCreateRequest()
+
+        if secret_store is not None:
+            req.secret_store.CopyFrom(
+                plumbing.convert_secret_store_to_plumbing(secret_store))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('SecretStores.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretStoreCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.secret_store = plumbing.convert_secret_store_to_porcelain(
+            plumbing_response.secret_store)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        """Get reads one SecretStore by ID."""
+        req = SecretStoreGetRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('SecretStores.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretStoreGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.secret_store = plumbing.convert_secret_store_to_porcelain(
+            plumbing_response.secret_store)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, secret_store, timeout=None):
+        """Update patches a SecretStore by ID."""
+        req = SecretStoreUpdateRequest()
+
+        if secret_store is not None:
+            req.secret_store.CopyFrom(
+                plumbing.convert_secret_store_to_plumbing(secret_store))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('SecretStores.Update',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretStoreUpdateResponse()
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.secret_store = plumbing.convert_secret_store_to_porcelain(
+            plumbing_response.secret_store)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        """Delete removes a SecretStore by ID."""
+        req = SecretStoreDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('SecretStores.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretStoreDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        """List gets a list of SecretStores matching a given set of criteria."""
+        req = SecretStoreListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'SecretStores.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.secret_stores:
+                    yield plumbing.convert_secret_store_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

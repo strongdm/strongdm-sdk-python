@@ -36,6 +36,7 @@ from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *
 from .roles_pb2 import *
+from .secretstores_pb2 import *
 
 
 def quote_filter_args(filter, *args):
@@ -276,7 +277,7 @@ def convert_account_attachment_create_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_create_response_to_plumbing(
-    porcelains):
+        porcelains):
     return [
         convert_account_attachment_create_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -284,7 +285,7 @@ def convert_repeated_account_attachment_create_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_create_response_to_porcelain(
-    plumbings):
+        plumbings):
     return [
         convert_account_attachment_create_response_to_porcelain(plumbing)
         for plumbing in plumbings
@@ -359,7 +360,7 @@ def convert_account_attachment_delete_response_to_plumbing(porcelain):
 
 
 def convert_repeated_account_attachment_delete_response_to_plumbing(
-    porcelains):
+        porcelains):
     return [
         convert_account_attachment_delete_response_to_plumbing(porcelain)
         for porcelain in porcelains
@@ -367,7 +368,7 @@ def convert_repeated_account_attachment_delete_response_to_plumbing(
 
 
 def convert_repeated_account_attachment_delete_response_to_porcelain(
-    plumbings):
+        plumbings):
     return [
         convert_account_attachment_delete_response_to_porcelain(plumbing)
         for plumbing in plumbings
@@ -875,7 +876,7 @@ def convert_control_panel_get_sshca_public_key_response_to_plumbing(porcelain):
 
 
 def convert_repeated_control_panel_get_sshca_public_key_response_to_plumbing(
-    porcelains):
+        porcelains):
     return [
         convert_control_panel_get_sshca_public_key_response_to_plumbing(
             porcelain) for porcelain in porcelains
@@ -883,7 +884,7 @@ def convert_repeated_control_panel_get_sshca_public_key_response_to_plumbing(
 
 
 def convert_repeated_control_panel_get_sshca_public_key_response_to_porcelain(
-    plumbings):
+        plumbings):
     return [
         convert_control_panel_get_sshca_public_key_response_to_porcelain(
             plumbing) for plumbing in plumbings
@@ -4671,6 +4672,213 @@ def convert_repeated_role_to_plumbing(porcelains):
 
 def convert_repeated_role_to_porcelain(plumbings):
     return [convert_role_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_secret_store_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretStoreCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.secret_store = convert_secret_store_to_porcelain(
+        plumbing.secret_store)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_store_create_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SecretStoreCreateResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_create_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.secret_store is not None:
+        plumbing.secret_store.CopyFrom(
+            convert_secret_store_to_plumbing(porcelain.secret_store))
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_store_create_response_to_plumbing(porcelains):
+    return [
+        convert_secret_store_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_store_create_response_to_porcelain(plumbings):
+    return [
+        convert_secret_store_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_store_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretStoreGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.secret_store = convert_secret_store_to_porcelain(
+        plumbing.secret_store)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_store_get_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SecretStoreGetResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_get_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.secret_store is not None:
+        plumbing.secret_store.CopyFrom(
+            convert_secret_store_to_plumbing(porcelain.secret_store))
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_store_get_response_to_plumbing(porcelains):
+    return [
+        convert_secret_store_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_store_get_response_to_porcelain(plumbings):
+    return [
+        convert_secret_store_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_store_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretStoreUpdateResponse()
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.secret_store = convert_secret_store_to_porcelain(
+        plumbing.secret_store)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_store_update_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SecretStoreUpdateResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_update_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.secret_store is not None:
+        plumbing.secret_store.CopyFrom(
+            convert_secret_store_to_plumbing(porcelain.secret_store))
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_store_update_response_to_plumbing(porcelains):
+    return [
+        convert_secret_store_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_store_update_response_to_porcelain(plumbings):
+    return [
+        convert_secret_store_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_store_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretStoreDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_store_delete_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SecretStoreDeleteResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_store_delete_response_to_plumbing(porcelains):
+    return [
+        convert_secret_store_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_store_delete_response_to_porcelain(plumbings):
+    return [
+        convert_secret_store_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.kind = (plumbing.kind)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_secret_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SecretStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.server_address is not None:
+        plumbing.server_address = (porcelain.server_address)
+    if porcelain.kind is not None:
+        plumbing.kind = (porcelain.kind)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_secret_store_to_plumbing(porcelains):
+    return [
+        convert_secret_store_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_store_to_porcelain(plumbings):
+    return [
+        convert_secret_store_to_porcelain(plumbing) for plumbing in plumbings
+    ]
 
 
 def is_status_detail(x):

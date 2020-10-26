@@ -32,9 +32,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tags.proto',
   package='v1',
   syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbing',
+  serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd8\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a#\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x8c\x01\xfa\xf8\xb3\x07\x86\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}B,\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingb\x06proto3'
+  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd8\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a#\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x8c\x01\xfa\xf8\xb3\x07\x86\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}B`\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 

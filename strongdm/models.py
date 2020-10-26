@@ -6491,3 +6491,244 @@ class Role:
             composite=d.get('composite'),
             tags=d.get('tags'),
         )
+
+
+class SecretStoreCreateResponse:
+    """SecretStoreCreateResponse reports how the SecretStores were created in the system.
+
+    :param meta: Reserved for future use.
+    :param secret_store: The created SecretStore.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'secret_store',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        secret_store=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.secret_store = secret_store
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.SecretStoreCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'secret_store': self.secret_store,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            secret_store=d.get('secret_store'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class SecretStoreGetResponse:
+    """SecretStoreGetResponse returns a requested SecretStore.
+
+    :param meta: Reserved for future use.
+    :param secret_store: The requested SecretStore.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'secret_store',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        secret_store=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.secret_store = secret_store
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.SecretStoreGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'secret_store': self.secret_store,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            secret_store=d.get('secret_store'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class SecretStoreUpdateResponse:
+    """SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
+ a SecretStoreUpdateRequest.
+
+    :param meta: Reserved for future use.
+    :param secret_store: The updated SecretStore.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'secret_store',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        secret_store=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.secret_store = secret_store
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.SecretStoreUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'secret_store': self.secret_store,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            secret_store=d.get('secret_store'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class SecretStoreDeleteResponse:
+    """SecretStoreDeleteResponse returns information about a SecretStore that was deleted.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.SecretStoreDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class SecretStore:
+    """A SecretStore is a ...
+
+    :param id: option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+     example: { value: '{ "id": "r-7", "name": "happy-goat"}' }
+ };
+ Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param server_address: 
+    :param kind: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'server_address',
+        'kind',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        server_address=None,
+        kind=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.server_address = server_address
+        self.kind = kind
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.SecretStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'kind: ' + repr(self.kind) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'server_address': self.server_address,
+            'kind': self.kind,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            server_address=d.get('server_address'),
+            kind=d.get('kind'),
+            tags=d.get('tags'),
+        )
