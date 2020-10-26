@@ -28,8 +28,8 @@ strongdm/role_grants_pb2.py
 strongdm/role_grants_pb2_grpc.py
 strongdm/roles_pb2.py
 strongdm/roles_pb2_grpc.py
-strongdm/secretstores_pb2.py
-strongdm/secretstores_pb2_grpc.py
+strongdm/secret_stores_pb2.py
+strongdm/secret_stores_pb2_grpc.py
 strongdm/spec_pb2.py
 strongdm/spec_pb2_grpc.py
 strongdm/svc.py

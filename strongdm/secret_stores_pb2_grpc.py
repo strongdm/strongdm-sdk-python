@@ -16,7 +16,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from . import secretstores_pb2 as secretstores__pb2
+from . import secret_stores_pb2 as secret__stores__pb2
 
 
 class SecretStoresStub(object):
@@ -31,28 +31,28 @@ class SecretStoresStub(object):
         """
         self.Create = channel.unary_unary(
                 '/v1.SecretStores/Create',
-                request_serializer=secretstores__pb2.SecretStoreCreateRequest.SerializeToString,
-                response_deserializer=secretstores__pb2.SecretStoreCreateResponse.FromString,
+                request_serializer=secret__stores__pb2.SecretStoreCreateRequest.SerializeToString,
+                response_deserializer=secret__stores__pb2.SecretStoreCreateResponse.FromString,
                 )
         self.Get = channel.unary_unary(
                 '/v1.SecretStores/Get',
-                request_serializer=secretstores__pb2.SecretStoreGetRequest.SerializeToString,
-                response_deserializer=secretstores__pb2.SecretStoreGetResponse.FromString,
+                request_serializer=secret__stores__pb2.SecretStoreGetRequest.SerializeToString,
+                response_deserializer=secret__stores__pb2.SecretStoreGetResponse.FromString,
                 )
         self.Update = channel.unary_unary(
                 '/v1.SecretStores/Update',
-                request_serializer=secretstores__pb2.SecretStoreUpdateRequest.SerializeToString,
-                response_deserializer=secretstores__pb2.SecretStoreUpdateResponse.FromString,
+                request_serializer=secret__stores__pb2.SecretStoreUpdateRequest.SerializeToString,
+                response_deserializer=secret__stores__pb2.SecretStoreUpdateResponse.FromString,
                 )
         self.Delete = channel.unary_unary(
                 '/v1.SecretStores/Delete',
-                request_serializer=secretstores__pb2.SecretStoreDeleteRequest.SerializeToString,
-                response_deserializer=secretstores__pb2.SecretStoreDeleteResponse.FromString,
+                request_serializer=secret__stores__pb2.SecretStoreDeleteRequest.SerializeToString,
+                response_deserializer=secret__stores__pb2.SecretStoreDeleteResponse.FromString,
                 )
         self.List = channel.unary_unary(
                 '/v1.SecretStores/List',
-                request_serializer=secretstores__pb2.SecretStoreListRequest.SerializeToString,
-                response_deserializer=secretstores__pb2.SecretStoreListResponse.FromString,
+                request_serializer=secret__stores__pb2.SecretStoreListRequest.SerializeToString,
+                response_deserializer=secret__stores__pb2.SecretStoreListResponse.FromString,
                 )
 
 
@@ -99,28 +99,28 @@ def add_SecretStoresServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=secretstores__pb2.SecretStoreCreateRequest.FromString,
-                    response_serializer=secretstores__pb2.SecretStoreCreateResponse.SerializeToString,
+                    request_deserializer=secret__stores__pb2.SecretStoreCreateRequest.FromString,
+                    response_serializer=secret__stores__pb2.SecretStoreCreateResponse.SerializeToString,
             ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=secretstores__pb2.SecretStoreGetRequest.FromString,
-                    response_serializer=secretstores__pb2.SecretStoreGetResponse.SerializeToString,
+                    request_deserializer=secret__stores__pb2.SecretStoreGetRequest.FromString,
+                    response_serializer=secret__stores__pb2.SecretStoreGetResponse.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
-                    request_deserializer=secretstores__pb2.SecretStoreUpdateRequest.FromString,
-                    response_serializer=secretstores__pb2.SecretStoreUpdateResponse.SerializeToString,
+                    request_deserializer=secret__stores__pb2.SecretStoreUpdateRequest.FromString,
+                    response_serializer=secret__stores__pb2.SecretStoreUpdateResponse.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
-                    request_deserializer=secretstores__pb2.SecretStoreDeleteRequest.FromString,
-                    response_serializer=secretstores__pb2.SecretStoreDeleteResponse.SerializeToString,
+                    request_deserializer=secret__stores__pb2.SecretStoreDeleteRequest.FromString,
+                    response_serializer=secret__stores__pb2.SecretStoreDeleteResponse.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=secretstores__pb2.SecretStoreListRequest.FromString,
-                    response_serializer=secretstores__pb2.SecretStoreListResponse.SerializeToString,
+                    request_deserializer=secret__stores__pb2.SecretStoreListRequest.FromString,
+                    response_serializer=secret__stores__pb2.SecretStoreListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -145,8 +145,8 @@ class SecretStores(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.SecretStores/Create',
-            secretstores__pb2.SecretStoreCreateRequest.SerializeToString,
-            secretstores__pb2.SecretStoreCreateResponse.FromString,
+            secret__stores__pb2.SecretStoreCreateRequest.SerializeToString,
+            secret__stores__pb2.SecretStoreCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -162,8 +162,8 @@ class SecretStores(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.SecretStores/Get',
-            secretstores__pb2.SecretStoreGetRequest.SerializeToString,
-            secretstores__pb2.SecretStoreGetResponse.FromString,
+            secret__stores__pb2.SecretStoreGetRequest.SerializeToString,
+            secret__stores__pb2.SecretStoreGetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -179,8 +179,8 @@ class SecretStores(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.SecretStores/Update',
-            secretstores__pb2.SecretStoreUpdateRequest.SerializeToString,
-            secretstores__pb2.SecretStoreUpdateResponse.FromString,
+            secret__stores__pb2.SecretStoreUpdateRequest.SerializeToString,
+            secret__stores__pb2.SecretStoreUpdateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -196,8 +196,8 @@ class SecretStores(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.SecretStores/Delete',
-            secretstores__pb2.SecretStoreDeleteRequest.SerializeToString,
-            secretstores__pb2.SecretStoreDeleteResponse.FromString,
+            secret__stores__pb2.SecretStoreDeleteRequest.SerializeToString,
+            secret__stores__pb2.SecretStoreDeleteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -213,7 +213,7 @@ class SecretStores(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.SecretStores/List',
-            secretstores__pb2.SecretStoreListRequest.SerializeToString,
-            secretstores__pb2.SecretStoreListResponse.FromString,
+            secret__stores__pb2.SecretStoreListRequest.SerializeToString,
+            secret__stores__pb2.SecretStoreListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -44,8 +44,8 @@ from .role_grants_pb2 import *
 from .role_grants_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
-from .secretstores_pb2 import *
-from .secretstores_pb2_grpc import *
+from .secret_stores_pb2 import *
+from .secret_stores_pb2_grpc import *
 
 
 class AccountAttachments:

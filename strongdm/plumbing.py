@@ -36,7 +36,7 @@ from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *
 from .roles_pb2 import *
-from .secretstores_pb2 import *
+from .secret_stores_pb2 import *
 
 
 def quote_filter_args(filter, *args):
