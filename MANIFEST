@@ -2,6 +2,8 @@
 setup.cfg
 setup.py
 strongdm/__init__.py
+strongdm/access_rules_pb2.py
+strongdm/access_rules_pb2_grpc.py
 strongdm/account_attachments_pb2.py
 strongdm/account_attachments_pb2_grpc.py
 strongdm/account_grants_pb2.py

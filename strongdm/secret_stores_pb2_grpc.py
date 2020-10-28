@@ -20,7 +20,7 @@ from . import secret_stores_pb2 as secret__stores__pb2
 
 
 class SecretStoresStub(object):
-    """SecretStores are ...
+    """SecretStores are servers where resource secrets (passwords, keys) are stored.
     """
 
     def __init__(self, channel):
@@ -57,7 +57,7 @@ class SecretStoresStub(object):
 
 
 class SecretStoresServicer(object):
-    """SecretStores are ...
+    """SecretStores are servers where resource secrets (passwords, keys) are stored.
     """
 
     def Create(self, request, context):
@@ -130,7 +130,7 @@ def add_SecretStoresServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SecretStores(object):
-    """SecretStores are ...
+    """SecretStores are servers where resource secrets (passwords, keys) are stored.
     """
 
     @staticmethod
