@@ -32,6 +32,8 @@ from .account_grants_pb2 import *
 from .account_grants_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
+from .audits_pb2 import *
+from .audits_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *

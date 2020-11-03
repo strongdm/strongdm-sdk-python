@@ -38,7 +38,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\024SecretStoresPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13secret_stores.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"v\n\x18SecretStoreCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x19SecretStoreCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"U\n\x15SecretStoreGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc1\x01\n\x16SecretStoreGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x18SecretStoreUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x19SecretStoreUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x18SecretStoreDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x94\x01\n\x19SecretStoreDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16SecretStoreListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xac\x01\n\x17SecretStoreListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\rsecret_stores\x18\x02 \x03(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xab\x02\n\x0bSecretStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x39\n\x0eserver_address\x18\x03 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\rServerAddress\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x41\n\x04kind\x18\x04 \x01(\tB3\xf2\xf8\xb3\x07.\xa2\xf3\xb3\x07\x04Kind\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xfa\xf3\xb3\x07\x16models.SecretStoreKind\x12+\n\x04tags\x18\x05 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:\x1a\xfa\xf8\xb3\x07\x15\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\x32\xf8\x04\n\x0cSecretStores\x12\xc9\x01\n\x06\x43reate\x12\x1c.v1.SecretStoreCreateRequest\x1a\x1d.v1.SecretStoreCreateResponse\"\x81\x01\x82\xd3\xe4\x93\x02\x15\"\x10/v1/secretstores:\x01*\x92\x41\x63\"a\n\x1fLearn how to make a SecretStore\x12>https://www.strongdm.com/docs/api/services/SecretStores#Create\x12[\n\x03Get\x12\x19.v1.SecretStoreGetRequest\x1a\x1a.v1.SecretStoreGetResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/secretstores/{id}\x12g\n\x06Update\x12\x1c.v1.SecretStoreUpdateRequest\x1a\x1d.v1.SecretStoreUpdateResponse\" \x82\xd3\xe4\x93\x02\x1a\x1a\x15/v1/secretstores/{id}:\x01*\x12\x64\n\x06\x44\x65lete\x12\x1c.v1.SecretStoreDeleteRequest\x1a\x1d.v1.SecretStoreDeleteResponse\"\x1d\x82\xd3\xe4\x93\x02\x17*\x15/v1/secretstores/{id}\x12Y\n\x04List\x12\x1a.v1.SecretStoreListRequest\x1a\x1b.v1.SecretStoreListResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/secretstores\x1a\x15\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bSecretStoreBh\n\x1c\x63om.strongdm.api.v1.plumbingB\x14SecretStoresPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x13secret_stores.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"v\n\x18SecretStoreCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x19SecretStoreCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"U\n\x15SecretStoreGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc1\x01\n\x16SecretStoreGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x18SecretStoreUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x19SecretStoreUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x18SecretStoreDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x94\x01\n\x19SecretStoreDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16SecretStoreListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xac\x01\n\x17SecretStoreListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\rsecret_stores\x18\x02 \x03(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb0\x01\n\x0bSecretStore\x12&\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreH\x00\x12*\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x41\n\x0csecret_store\x12\x31\xaa\xf8\xb3\x07\x10\xa2\xf8\xb3\x07\x0bSecretStore\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xf1\x01\n\x0fVaultTokenStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12>\n\x0eserver_address\x18\x03 \x01(\tB&\xf2\xf8\xb3\x07!\xa2\xf3\xb3\x07\rServerAddress\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12+\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:\x1a\xfa\xf8\xb3\x07\x15\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\"\xa9\x03\n\rVaultTLSStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12>\n\x0eserver_address\x18\x03 \x01(\tB&\xf2\xf8\xb3\x07!\xa2\xf3\xb3\x07\rServerAddress\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12\x34\n\x0c\x63\x61_cert_path\x18\x04 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\nCACertPath\xb0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12\x41\n\x10\x63lient_cert_path\x18\x05 \x01(\tB\'\xf2\xf8\xb3\x07\"\xa2\xf3\xb3\x07\x0e\x43lientCertPath\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12?\n\x0f\x63lient_key_path\x18\x06 \x01(\tB&\xf2\xf8\xb3\x07!\xa2\xf3\xb3\x07\rClientKeyPath\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12+\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:\x1a\xfa\xf8\xb3\x07\x15\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\x32\xf8\x04\n\x0cSecretStores\x12\xc9\x01\n\x06\x43reate\x12\x1c.v1.SecretStoreCreateRequest\x1a\x1d.v1.SecretStoreCreateResponse\"\x81\x01\x82\xd3\xe4\x93\x02\x15\"\x10/v1/secretstores:\x01*\x92\x41\x63\"a\n\x1fLearn how to make a SecretStore\x12>https://www.strongdm.com/docs/api/services/SecretStores#Create\x12[\n\x03Get\x12\x19.v1.SecretStoreGetRequest\x1a\x1a.v1.SecretStoreGetResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/secretstores/{id}\x12g\n\x06Update\x12\x1c.v1.SecretStoreUpdateRequest\x1a\x1d.v1.SecretStoreUpdateResponse\" \x82\xd3\xe4\x93\x02\x1a\x1a\x15/v1/secretstores/{id}:\x01*\x12\x64\n\x06\x44\x65lete\x12\x1c.v1.SecretStoreDeleteRequest\x1a\x1d.v1.SecretStoreDeleteResponse\"\x1d\x82\xd3\xe4\x93\x02\x17*\x15/v1/secretstores/{id}\x12Y\n\x04List\x12\x1a.v1.SecretStoreListRequest\x1a\x1b.v1.SecretStoreListResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/secretstores\x1a\x15\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bSecretStoreBh\n\x1c\x63om.strongdm.api.v1.plumbingB\x14SecretStoresPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
@@ -479,36 +479,73 @@ _SECRETSTORE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='v1.SecretStore.id', index=0,
+      name='vault_tls', full_name='v1.SecretStore.vault_tls', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vault_token', full_name='v1.SecretStore.vault_token', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='secret_store', full_name='v1.SecretStore.secret_store',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\252\370\263\007\020\242\370\263\007\013SecretStore\252\370\263\007\t\252\370\263\007\004tags\252\370\263\007\t\252\370\263\007\004name'),
+  ],
+  serialized_start=1595,
+  serialized_end=1771,
+)
+
+
+_VAULTTOKENSTORE = _descriptor.Descriptor(
+  name='VaultTokenStore',
+  full_name='v1.VaultTokenStore',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='v1.VaultTokenStore.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\007\034\242\363\263\007\002ID\260\363\263\007\001\312\363\263\007\013SecretStore', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='v1.SecretStore.name', index=1,
+      name='name', full_name='v1.VaultTokenStore.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\007\023\242\363\263\007\004Name\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='server_address', full_name='v1.SecretStore.server_address', index=2,
+      name='server_address', full_name='v1.VaultTokenStore.server_address', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\034\242\363\263\007\rServerAddress\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007!\242\363\263\007\rServerAddress\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kind', full_name='v1.SecretStore.kind', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007.\242\363\263\007\004Kind\260\363\263\007\001\300\363\263\007\001\372\363\263\007\026models.SecretStoreKind', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.SecretStore.tags', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='tags', full_name='v1.VaultTokenStore.tags', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -525,8 +562,82 @@ _SECRETSTORE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1595,
-  serialized_end=1894,
+  serialized_start=1774,
+  serialized_end=2015,
+)
+
+
+_VAULTTLSSTORE = _descriptor.Descriptor(
+  name='VaultTLSStore',
+  full_name='v1.VaultTLSStore',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='v1.VaultTLSStore.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\034\242\363\263\007\002ID\260\363\263\007\001\312\363\263\007\013SecretStore', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='v1.VaultTLSStore.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\023\242\363\263\007\004Name\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='server_address', full_name='v1.VaultTLSStore.server_address', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007!\242\363\263\007\rServerAddress\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ca_cert_path', full_name='v1.VaultTLSStore.ca_cert_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\031\242\363\263\007\nCACertPath\260\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_cert_path', full_name='v1.VaultTLSStore.client_cert_path', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\"\242\363\263\007\016ClientCertPath\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_key_path', full_name='v1.VaultTLSStore.client_key_path', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007!\242\363\263\007\rClientKeyPath\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='v1.VaultTLSStore.tags', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\016\242\363\263\007\004Tags\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\372\370\263\007\025\242\363\263\007\013SecretStore\250\363\263\007\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2018,
+  serialized_end=2443,
 )
 
 _SECRETSTORECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -550,7 +661,16 @@ _SECRETSTORELISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQ
 _SECRETSTORELISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
 _SECRETSTORELISTRESPONSE.fields_by_name['secret_stores'].message_type = _SECRETSTORE
 _SECRETSTORELISTRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_SECRETSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
+_SECRETSTORE.fields_by_name['vault_tls'].message_type = _VAULTTLSSTORE
+_SECRETSTORE.fields_by_name['vault_token'].message_type = _VAULTTOKENSTORE
+_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
+  _SECRETSTORE.fields_by_name['vault_tls'])
+_SECRETSTORE.fields_by_name['vault_tls'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
+_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
+  _SECRETSTORE.fields_by_name['vault_token'])
+_SECRETSTORE.fields_by_name['vault_token'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
+_VAULTTOKENSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
+_VAULTTLSSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
 DESCRIPTOR.message_types_by_name['SecretStoreCreateRequest'] = _SECRETSTORECREATEREQUEST
 DESCRIPTOR.message_types_by_name['SecretStoreCreateResponse'] = _SECRETSTORECREATERESPONSE
 DESCRIPTOR.message_types_by_name['SecretStoreGetRequest'] = _SECRETSTOREGETREQUEST
@@ -562,6 +682,8 @@ DESCRIPTOR.message_types_by_name['SecretStoreDeleteResponse'] = _SECRETSTOREDELE
 DESCRIPTOR.message_types_by_name['SecretStoreListRequest'] = _SECRETSTORELISTREQUEST
 DESCRIPTOR.message_types_by_name['SecretStoreListResponse'] = _SECRETSTORELISTRESPONSE
 DESCRIPTOR.message_types_by_name['SecretStore'] = _SECRETSTORE
+DESCRIPTOR.message_types_by_name['VaultTokenStore'] = _VAULTTOKENSTORE
+DESCRIPTOR.message_types_by_name['VaultTLSStore'] = _VAULTTLSSTORE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SecretStoreCreateRequest = _reflection.GeneratedProtocolMessageType('SecretStoreCreateRequest', (_message.Message,), {
@@ -641,6 +763,20 @@ SecretStore = _reflection.GeneratedProtocolMessageType('SecretStore', (_message.
   })
 _sym_db.RegisterMessage(SecretStore)
 
+VaultTokenStore = _reflection.GeneratedProtocolMessageType('VaultTokenStore', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTOKENSTORE,
+  '__module__' : 'secret_stores_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTokenStore)
+  })
+_sym_db.RegisterMessage(VaultTokenStore)
+
+VaultTLSStore = _reflection.GeneratedProtocolMessageType('VaultTLSStore', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTLSSTORE,
+  '__module__' : 'secret_stores_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTLSStore)
+  })
+_sym_db.RegisterMessage(VaultTLSStore)
+
 
 DESCRIPTOR._options = None
 _SECRETSTORECREATEREQUEST.fields_by_name['secret_store']._options = None
@@ -665,12 +801,21 @@ _SECRETSTOREDELETERESPONSE._options = None
 _SECRETSTORELISTREQUEST.fields_by_name['filter']._options = None
 _SECRETSTORELISTRESPONSE.fields_by_name['secret_stores']._options = None
 _SECRETSTORELISTRESPONSE.fields_by_name['rate_limit']._options = None
-_SECRETSTORE.fields_by_name['id']._options = None
-_SECRETSTORE.fields_by_name['name']._options = None
-_SECRETSTORE.fields_by_name['server_address']._options = None
-_SECRETSTORE.fields_by_name['kind']._options = None
-_SECRETSTORE.fields_by_name['tags']._options = None
+_SECRETSTORE.oneofs_by_name['secret_store']._options = None
 _SECRETSTORE._options = None
+_VAULTTOKENSTORE.fields_by_name['id']._options = None
+_VAULTTOKENSTORE.fields_by_name['name']._options = None
+_VAULTTOKENSTORE.fields_by_name['server_address']._options = None
+_VAULTTOKENSTORE.fields_by_name['tags']._options = None
+_VAULTTOKENSTORE._options = None
+_VAULTTLSSTORE.fields_by_name['id']._options = None
+_VAULTTLSSTORE.fields_by_name['name']._options = None
+_VAULTTLSSTORE.fields_by_name['server_address']._options = None
+_VAULTTLSSTORE.fields_by_name['ca_cert_path']._options = None
+_VAULTTLSSTORE.fields_by_name['client_cert_path']._options = None
+_VAULTTLSSTORE.fields_by_name['client_key_path']._options = None
+_VAULTTLSSTORE.fields_by_name['tags']._options = None
+_VAULTTLSSTORE._options = None
 
 _SECRETSTORES = _descriptor.ServiceDescriptor(
   name='SecretStores',
@@ -679,8 +824,8 @@ _SECRETSTORES = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\020\302\371\263\007\013SecretStore',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1897,
-  serialized_end=2529,
+  serialized_start=2446,
+  serialized_end=3078,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

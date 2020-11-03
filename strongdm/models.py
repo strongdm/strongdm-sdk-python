@@ -6671,9 +6671,8 @@ class SecretStoreDeleteResponse:
         )
 
 
-class SecretStore:
-    """A SecretStore is a server where resource secrets (passwords, keys) are stored. 
- Coming soon support for HashiCorp Vault and AWS Secret Store. Contact support@strongdm.com to request access to the beta.
+class VaultTokenStore:
+    """
 
     :param id: option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
      example: { value: '{ "id": "r-7", "name": "happy-goat"}' }
@@ -6681,14 +6680,12 @@ class SecretStore:
  Unique identifier of the SecretStore.
     :param name: Unique human-readable name of the SecretStore.
     :param server_address: 
-    :param kind: 
     :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
         'name',
         'server_address',
-        'kind',
         'tags',
     ]
 
@@ -6697,21 +6694,18 @@ class SecretStore:
         id=None,
         name=None,
         server_address=None,
-        kind=None,
         tags=None,
     ):
         self.id = id
         self.name = name
         self.server_address = server_address
-        self.kind = kind
         self.tags = tags
 
     def __repr__(self):
-        return '<sdm.SecretStore ' + \
+        return '<sdm.VaultTokenStore ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'server_address: ' + repr(self.server_address) + ' ' +\
-            'kind: ' + repr(self.kind) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
@@ -6720,7 +6714,6 @@ class SecretStore:
             'id': self.id,
             'name': self.name,
             'server_address': self.server_address,
-            'kind': self.kind,
             'tags': self.tags,
         }
 
@@ -6730,6 +6723,82 @@ class SecretStore:
             id=d.get('id'),
             name=d.get('name'),
             server_address=d.get('server_address'),
-            kind=d.get('kind'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultTLSStore:
+    """
+
+    :param id: option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+     example: { value: '{ "id": "r-7", "name": "happy-goat"}' }
+ };
+ Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param server_address: 
+    :param ca_cert_path: 
+    :param client_cert_path: 
+    :param client_key_path: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'server_address',
+        'ca_cert_path',
+        'client_cert_path',
+        'client_key_path',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        server_address=None,
+        ca_cert_path=None,
+        client_cert_path=None,
+        client_key_path=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.server_address = server_address
+        self.ca_cert_path = ca_cert_path
+        self.client_cert_path = client_cert_path
+        self.client_key_path = client_key_path
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.VaultTLSStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'ca_cert_path: ' + repr(self.ca_cert_path) + ' ' +\
+            'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
+            'client_key_path: ' + repr(self.client_key_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'server_address': self.server_address,
+            'ca_cert_path': self.ca_cert_path,
+            'client_cert_path': self.client_cert_path,
+            'client_key_path': self.client_key_path,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            server_address=d.get('server_address'),
+            ca_cert_path=d.get('ca_cert_path'),
+            client_cert_path=d.get('client_cert_path'),
+            client_key_path=d.get('client_key_path'),
             tags=d.get('tags'),
         )

@@ -30,6 +30,7 @@ from .access_rules_pb2 import *
 from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
 from .accounts_pb2 import *
+from .audits_pb2 import *
 from .control_panel_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
@@ -4841,33 +4842,27 @@ def convert_repeated_secret_store_delete_response_to_porcelain(plumbings):
     ]
 
 
-def convert_secret_store_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.SecretStore()
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.server_address = (plumbing.server_address)
-    porcelain.kind = (plumbing.kind)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    return porcelain
-
-
 def convert_secret_store_to_plumbing(porcelain):
     if porcelain is None:
         return None
     plumbing = SecretStore()
-    if porcelain.id is not None:
-        plumbing.id = (porcelain.id)
-    if porcelain.name is not None:
-        plumbing.name = (porcelain.name)
-    if porcelain.server_address is not None:
-        plumbing.server_address = (porcelain.server_address)
-    if porcelain.kind is not None:
-        plumbing.kind = (porcelain.kind)
-    if porcelain.tags is not None:
-        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if isinstance(porcelain, models.VaultTLSStore):
+        plumbing.vault_tls.CopyFrom(
+            convert_vault_tls_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultTokenStore):
+        plumbing.vault_token.CopyFrom(
+            convert_vault_token_store_to_plumbing(porcelain))
     return plumbing
+
+
+def convert_secret_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    if plumbing.HasField('vault_tls'):
+        return convert_vault_tls_store_to_porcelain(plumbing.vault_tls)
+    if plumbing.HasField('vault_token'):
+        return convert_vault_token_store_to_porcelain(plumbing.vault_token)
+    return None
 
 
 def convert_repeated_secret_store_to_plumbing(porcelains):
@@ -4879,6 +4874,95 @@ def convert_repeated_secret_store_to_plumbing(porcelains):
 def convert_repeated_secret_store_to_porcelain(plumbings):
     return [
         convert_secret_store_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_vault_token_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTokenStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_token_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = VaultTokenStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.server_address is not None:
+        plumbing.server_address = (porcelain.server_address)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_token_store_to_plumbing(porcelains):
+    return [
+        convert_vault_token_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_token_store_to_porcelain(plumbings):
+    return [
+        convert_vault_token_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_tls_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTLSStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.ca_cert_path = (plumbing.ca_cert_path)
+    porcelain.client_cert_path = (plumbing.client_cert_path)
+    porcelain.client_key_path = (plumbing.client_key_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_tls_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = VaultTLSStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.server_address is not None:
+        plumbing.server_address = (porcelain.server_address)
+    if porcelain.ca_cert_path is not None:
+        plumbing.ca_cert_path = (porcelain.ca_cert_path)
+    if porcelain.client_cert_path is not None:
+        plumbing.client_cert_path = (porcelain.client_cert_path)
+    if porcelain.client_key_path is not None:
+        plumbing.client_key_path = (porcelain.client_key_path)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_tls_store_to_plumbing(porcelains):
+    return [
+        convert_vault_tls_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_tls_store_to_porcelain(plumbings):
+    return [
+        convert_vault_tls_store_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 

@@ -30,6 +30,11 @@ class AccessRulesStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Plan = channel.unary_unary(
+                '/v1.AccessRules/Plan',
+                request_serializer=access__rules__pb2.AccessRulePlanRequest.SerializeToString,
+                response_deserializer=access__rules__pb2.AccessRulePlanResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/v1.AccessRules/Create',
                 request_serializer=access__rules__pb2.AccessRuleCreateRequest.SerializeToString,
@@ -40,10 +45,20 @@ class AccessRulesStub(object):
                 request_serializer=access__rules__pb2.AccessRuleGetRequest.SerializeToString,
                 response_deserializer=access__rules__pb2.AccessRuleGetResponse.FromString,
                 )
+        self.Update = channel.unary_unary(
+                '/v1.AccessRules/Update',
+                request_serializer=access__rules__pb2.AccessRuleUpdateRequest.SerializeToString,
+                response_deserializer=access__rules__pb2.AccessRuleUpdateResponse.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/v1.AccessRules/Delete',
                 request_serializer=access__rules__pb2.AccessRuleDeleteRequest.SerializeToString,
                 response_deserializer=access__rules__pb2.AccessRuleDeleteResponse.FromString,
+                )
+        self.List = channel.unary_unary(
+                '/v1.AccessRules/List',
+                request_serializer=access__rules__pb2.AccessRuleListRequest.SerializeToString,
+                response_deserializer=access__rules__pb2.AccessRuleListResponse.FromString,
                 )
 
 
@@ -51,6 +66,13 @@ class AccessRulesServicer(object):
     """AccessRules allows the use of tags and other attributes to grant resources
     to roles. Each Role may have several access rules.
     """
+
+    def Plan(self, request, context):
+        """Plan registers a new AccessRule.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
         """Create registers a new AccessRule.
@@ -66,8 +88,22 @@ class AccessRulesServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Update(self, request, context):
+        """Update patches a AccessRule by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Delete removes a AccessRule by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """List gets a list of Access Rules matching a given set of criteria.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -76,6 +112,11 @@ class AccessRulesServicer(object):
 
 def add_AccessRulesServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Plan': grpc.unary_unary_rpc_method_handler(
+                    servicer.Plan,
+                    request_deserializer=access__rules__pb2.AccessRulePlanRequest.FromString,
+                    response_serializer=access__rules__pb2.AccessRulePlanResponse.SerializeToString,
+            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=access__rules__pb2.AccessRuleCreateRequest.FromString,
@@ -86,10 +127,20 @@ def add_AccessRulesServicer_to_server(servicer, server):
                     request_deserializer=access__rules__pb2.AccessRuleGetRequest.FromString,
                     response_serializer=access__rules__pb2.AccessRuleGetResponse.SerializeToString,
             ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=access__rules__pb2.AccessRuleUpdateRequest.FromString,
+                    response_serializer=access__rules__pb2.AccessRuleUpdateResponse.SerializeToString,
+            ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=access__rules__pb2.AccessRuleDeleteRequest.FromString,
                     response_serializer=access__rules__pb2.AccessRuleDeleteResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=access__rules__pb2.AccessRuleListRequest.FromString,
+                    response_serializer=access__rules__pb2.AccessRuleListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -102,6 +153,23 @@ class AccessRules(object):
     """AccessRules allows the use of tags and other attributes to grant resources
     to roles. Each Role may have several access rules.
     """
+
+    @staticmethod
+    def Plan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/Plan',
+            access__rules__pb2.AccessRulePlanRequest.SerializeToString,
+            access__rules__pb2.AccessRulePlanResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Create(request,
@@ -138,6 +206,23 @@ class AccessRules(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/Update',
+            access__rules__pb2.AccessRuleUpdateRequest.SerializeToString,
+            access__rules__pb2.AccessRuleUpdateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Delete(request,
             target,
             options=(),
@@ -151,5 +236,22 @@ class AccessRules(object):
         return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/Delete',
             access__rules__pb2.AccessRuleDeleteRequest.SerializeToString,
             access__rules__pb2.AccessRuleDeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/List',
+            access__rules__pb2.AccessRuleListRequest.SerializeToString,
+            access__rules__pb2.AccessRuleListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
