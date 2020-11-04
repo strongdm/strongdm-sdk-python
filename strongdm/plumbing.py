@@ -4924,7 +4924,7 @@ def convert_vault_tls_store_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.server_address = (plumbing.server_address)
-    porcelain.ca_cert_path = (plumbing.ca_cert_path)
+    porcelain.ca_cert_path = (plumbing.CA_cert_path)
     porcelain.client_cert_path = (plumbing.client_cert_path)
     porcelain.client_key_path = (plumbing.client_key_path)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -4942,7 +4942,7 @@ def convert_vault_tls_store_to_plumbing(porcelain):
     if porcelain.server_address is not None:
         plumbing.server_address = (porcelain.server_address)
     if porcelain.ca_cert_path is not None:
-        plumbing.ca_cert_path = (porcelain.ca_cert_path)
+        plumbing.CA_cert_path = (porcelain.ca_cert_path)
     if porcelain.client_cert_path is not None:
         plumbing.client_cert_path = (porcelain.client_cert_path)
     if porcelain.client_key_path is not None:
