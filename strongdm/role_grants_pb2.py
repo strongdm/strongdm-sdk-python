@@ -25,8 +25,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
@@ -37,9 +35,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\022RoleGrantsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11role_grants.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\"p\n\x16RoleGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc1\x01\n\x17RoleGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"S\n\x13RoleGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbb\x01\n\x14RoleGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Y\n\x16RoleGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x92\x01\n\x17RoleGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Y\n\x14RoleGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa6\x01\n\x15RoleGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12.\n\x0brole_grants\x18\x02 \x03(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf5\x02\n\tRoleGrant\x12\x30\n\x02id\x18\x01 \x01(\tB$\xf2\xf8\xb3\x07\x1f\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0eRolePermission\x12\x44\n\x0bresource_id\x18\x02 \x01(\tB/\xf2\xf8\xb3\x07*\xa2\xf3\xb3\x07\x0c\x44\x61tasourceID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role:\xb9\x01\xfa\xf8\xb3\x07p\xa2\xf3\xb3\x07\x0e\x44\x61tasourceRole\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07S\xa2\xf3\xb3\x07#tf_examples/role_grant_resource.txt\xaa\xf3\xb3\x07&tf_examples/role_grant_data_source.txt\x92\x41\x41\x32?\x12={ \"id\": \"rg-244\", \"resource_id\": \"rs-111\", \"role_id\":\"r-444\"}2\xf2\x03\n\nRoleGrants\x12\xbf\x01\n\x06\x43reate\x12\x1a.v1.RoleGrantCreateRequest\x1a\x1b.v1.RoleGrantCreateResponse\"|\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/role_grants:\x01*\x92\x41_\"]\n\x1dLearn how to make a RoleGrant\x12<https://www.strongdm.com/docs/api/services/RoleGrants#Create\x12V\n\x03Get\x12\x17.v1.RoleGrantGetRequest\x1a\x18.v1.RoleGrantGetResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/role_grants/{id}\x12_\n\x06\x44\x65lete\x12\x1a.v1.RoleGrantDeleteRequest\x1a\x1b.v1.RoleGrantDeleteResponse\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/role_grants/{id}\x12T\n\x04List\x12\x18.v1.RoleGrantListRequest\x1a\x19.v1.RoleGrantListResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/role_grants\x1a\x13\xca\xf9\xb3\x07\x0e\xc2\xf9\xb3\x07\tRoleGrantBf\n\x1c\x63om.strongdm.api.v1.plumbingB\x12RoleGrantsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x11role_grants.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"p\n\x16RoleGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xcb\x01\n\x17RoleGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"S\n\x13RoleGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc5\x01\n\x14RoleGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12-\n\nrole_grant\x18\x02 \x01(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Y\n\x16RoleGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9c\x01\n\x17RoleGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Y\n\x14RoleGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb0\x01\n\x15RoleGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12.\n\x0brole_grants\x18\x02 \x03(\x0b\x32\r.v1.RoleGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01\"\xb0\x02\n\tRoleGrant\x12\x30\n\x02id\x18\x01 \x01(\tB$\xf2\xf8\xb3\x07\x1f\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0eRolePermission\x12\x44\n\x0bresource_id\x18\x02 \x01(\tB/\xf2\xf8\xb3\x07*\xa2\xf3\xb3\x07\x0c\x44\x61tasourceID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role:u\xfa\xf8\xb3\x07p\xa2\xf3\xb3\x07\x0e\x44\x61tasourceRole\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07S\xa2\xf3\xb3\x07#tf_examples/role_grant_resource.txt\xaa\xf3\xb3\x07&tf_examples/role_grant_data_source.txt2\xcc\x03\n\nRoleGrants\x12j\n\x06\x43reate\x12\x1a.v1.RoleGrantCreateRequest\x1a\x1b.v1.RoleGrantCreateResponse\"\'\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x14\xaa\xf3\xb3\x07\x0f/v1/role_grants\x12\x65\n\x03Get\x12\x17.v1.RoleGrantGetRequest\x1a\x18.v1.RoleGrantGetResponse\"+\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role_grants/{id}\x12q\n\x06\x44\x65lete\x12\x1a.v1.RoleGrantDeleteRequest\x1a\x1b.v1.RoleGrantDeleteResponse\".\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role_grants/{id}\x12\x63\n\x04List\x12\x18.v1.RoleGrantListRequest\x1a\x19.v1.RoleGrantListResponse\"&\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x14\xaa\xf3\xb3\x07\x0f/v1/role_grants\x1a\x13\xca\xf9\xb3\x07\x0e\xc2\xf9\xb3\x07\tRoleGrantBf\n\x1c\x63om.strongdm.api.v1.plumbingB\x12RoleGrantsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
+  dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
 
 
@@ -78,8 +76,8 @@ _ROLEGRANTCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=128,
-  serialized_end=240,
+  serialized_start=52,
+  serialized_end=164,
 )
 
 
@@ -111,7 +109,7 @@ _ROLEGRANTCREATERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -124,8 +122,8 @@ _ROLEGRANTCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=243,
-  serialized_end=436,
+  serialized_start=167,
+  serialized_end=370,
 )
 
 
@@ -163,8 +161,8 @@ _ROLEGRANTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=521,
+  serialized_start=372,
+  serialized_end=455,
 )
 
 
@@ -196,7 +194,7 @@ _ROLEGRANTGETRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -209,8 +207,8 @@ _ROLEGRANTGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=524,
-  serialized_end=711,
+  serialized_start=458,
+  serialized_end=655,
 )
 
 
@@ -248,8 +246,8 @@ _ROLEGRANTDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=802,
+  serialized_start=657,
+  serialized_end=746,
 )
 
 
@@ -274,7 +272,7 @@ _ROLEGRANTDELETERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -287,8 +285,8 @@ _ROLEGRANTDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=805,
-  serialized_end=951,
+  serialized_start=749,
+  serialized_end=905,
 )
 
 
@@ -326,8 +324,8 @@ _ROLEGRANTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=953,
-  serialized_end=1042,
+  serialized_start=907,
+  serialized_end=996,
 )
 
 
@@ -359,7 +357,7 @@ _ROLEGRANTLISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -372,8 +370,8 @@ _ROLEGRANTLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1045,
-  serialized_end=1211,
+  serialized_start=999,
+  serialized_end=1175,
 )
 
 
@@ -412,14 +410,14 @@ _ROLEGRANT = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007p\242\363\263\007\016DatasourceRole\250\363\263\007\001\302\363\263\007S\242\363\263\007#tf_examples/role_grant_resource.txt\252\363\263\007&tf_examples/role_grant_data_source.txt\222AA2?\022={ \"id\": \"rg-244\", \"resource_id\": \"rs-111\", \"role_id\":\"r-444\"}',
+  serialized_options=b'\372\370\263\007p\242\363\263\007\016DatasourceRole\250\363\263\007\001\302\363\263\007S\242\363\263\007#tf_examples/role_grant_resource.txt\252\363\263\007&tf_examples/role_grant_data_source.txt',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1587,
+  serialized_start=1178,
+  serialized_end=1482,
 )
 
 _ROLEGRANTCREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -543,8 +541,8 @@ _ROLEGRANTS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\016\302\371\263\007\tRoleGrant',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1590,
-  serialized_end=2088,
+  serialized_start=1485,
+  serialized_end=1945,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -553,7 +551,7 @@ _ROLEGRANTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEGRANTCREATEREQUEST,
     output_type=_ROLEGRANTCREATERESPONSE,
-    serialized_options=b'\202\323\344\223\002\024\"\017/v1/role_grants:\001*\222A_\"]\n\035Learn how to make a RoleGrant\022<https://www.strongdm.com/docs/api/services/RoleGrants#Create',
+    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\024\252\363\263\007\017/v1/role_grants',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -563,7 +561,7 @@ _ROLEGRANTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEGRANTGETREQUEST,
     output_type=_ROLEGRANTGETRESPONSE,
-    serialized_options=b'\202\323\344\223\002\026\022\024/v1/role_grants/{id}',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\031\252\363\263\007\024/v1/role_grants/{id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -573,7 +571,7 @@ _ROLEGRANTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEGRANTDELETEREQUEST,
     output_type=_ROLEGRANTDELETERESPONSE,
-    serialized_options=b'\202\323\344\223\002\026*\024/v1/role_grants/{id}',
+    serialized_options=b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\031\252\363\263\007\024/v1/role_grants/{id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -583,7 +581,7 @@ _ROLEGRANTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEGRANTLISTREQUEST,
     output_type=_ROLEGRANTLISTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\022\017/v1/role_grants',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\024\252\363\263\007\017/v1/role_grants',
     create_key=_descriptor._internal_create_key,
   ),
 ])

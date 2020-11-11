@@ -6674,10 +6674,7 @@ class SecretStoreDeleteResponse:
 class VaultTokenStore:
     """
 
-    :param id: option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-     example: { value: '{ "id": "r-7", "name": "happy-goat"}' }
- };
- Unique identifier of the SecretStore.
+    :param id: Unique identifier of the SecretStore.
     :param name: Unique human-readable name of the SecretStore.
     :param server_address: 
     :param tags: Tags is a map of key, value pairs.
@@ -6730,10 +6727,7 @@ class VaultTokenStore:
 class VaultTLSStore:
     """
 
-    :param id: option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-     example: { value: '{ "id": "r-7", "name": "happy-goat"}' }
- };
- Unique identifier of the SecretStore.
+    :param id: Unique identifier of the SecretStore.
     :param name: Unique human-readable name of the SecretStore.
     :param server_address: 
     :param ca_cert_path: 

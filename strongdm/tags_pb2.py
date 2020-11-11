@@ -34,7 +34,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd8\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a#\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x8c\x01\xfa\xf8\xb3\x07\x86\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}B`\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xe9\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a/\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\n\xfa\xf8\xb3\x07\x05\xf0\xf3\xb3\x07\x01:\x91\x01\xfa\xf8\xb3\x07\x8b\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf0\xf3\xb3\x07\x01\x42`\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 
@@ -69,14 +69,14 @@ _TAGS_PAIR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\372\370\263\007\005\360\363\263\007\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=72,
-  serialized_end=107,
+  serialized_end=119,
 )
 
 _TAGS = _descriptor.Descriptor(
@@ -100,14 +100,14 @@ _TAGS = _descriptor.Descriptor(
   nested_types=[_TAGS_PAIR, ],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\206\001\312\363\263\007\200\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}',
+  serialized_options=b'\372\370\263\007\213\001\312\363\263\007\200\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\360\363\263\007\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=250,
+  serialized_end=267,
 )
 
 _TAGS_PAIR.containing_type = _TAGS
@@ -132,5 +132,6 @@ _sym_db.RegisterMessage(Tags.Pair)
 
 
 DESCRIPTOR._options = None
+_TAGS_PAIR._options = None
 _TAGS._options = None
 # @@protoc_insertion_point(module_scope)

@@ -25,7 +25,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 from . import access_rules_pb2 as access__rules__pb2
@@ -37,9 +36,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\016AuditsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x61udits.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\x12\x61\x63\x63\x65ss_rules.proto\"c\n\x15GetAccessRulesRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x18\n\x04when\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xca\x01\n\x16GetAccessRulesResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x0c\x61\x63\x63\x65ss_rules\x18\x02 \x03(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\x32\x8c\x01\n\x06\x41udits\x12g\n\x0eGetAccessRules\x12\x19.v1.GetAccessRulesRequest\x1a\x1a.v1.GetAccessRulesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/audit/access_rules\x1a\x19\xca\xf9\xb3\x07\n\xc2\xf9\xb3\x07\x05\x41udit\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42\x62\n\x1c\x63om.strongdm.api.v1.plumbingB\x0e\x41uditsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x0c\x61udits.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\x12\x61\x63\x63\x65ss_rules.proto\"c\n\x15GetAccessRulesRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x18\n\x04when\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd4\x01\n\x16GetAccessRulesResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x0c\x61\x63\x63\x65ss_rules\x18\x02 \x03(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\x32\x9b\x01\n\x06\x41udits\x12v\n\x0eGetAccessRules\x12\x19.v1.GetAccessRulesRequest\x1a\x1a.v1.GetAccessRulesResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/audit/access_rules\x1a\x19\xca\xf9\xb3\x07\n\xc2\xf9\xb3\x07\x05\x41udit\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42\x62\n\x1c\x63om.strongdm.api.v1.plumbingB\x0e\x41uditsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,access__rules__pb2.DESCRIPTOR,])
+  dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,access__rules__pb2.DESCRIPTOR,])
 
 
 
@@ -78,8 +77,8 @@ _GETACCESSRULESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=97,
-  serialized_end=196,
+  serialized_start=67,
+  serialized_end=166,
 )
 
 
@@ -111,7 +110,7 @@ _GETACCESSRULESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -124,8 +123,8 @@ _GETACCESSRULESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=199,
-  serialized_end=401,
+  serialized_start=169,
+  serialized_end=381,
 )
 
 _GETACCESSRULESREQUEST.fields_by_name['meta'].message_type = spec__pb2._GETREQUESTMETADATA
@@ -166,8 +165,8 @@ _AUDITS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\n\302\371\263\007\005Audit\312\371\263\007\005\310\371\263\007\001',
   create_key=_descriptor._internal_create_key,
-  serialized_start=404,
-  serialized_end=544,
+  serialized_start=384,
+  serialized_end=539,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAccessRules',
@@ -176,7 +175,7 @@ _AUDITS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETACCESSRULESREQUEST,
     output_type=_GETACCESSRULESRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/v1/audit/access_rules',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\033\252\363\263\007\026/v1/audit/access_rules',
     create_key=_descriptor._internal_create_key,
   ),
 ])
