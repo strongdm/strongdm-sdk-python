@@ -1135,6 +1135,7 @@ def convert_athena_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.access_key = (plumbing.access_key)
     porcelain.secret_access_key = (plumbing.secret_access_key)
     porcelain.output = (plumbing.output)
@@ -1155,6 +1156,8 @@ def convert_athena_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.access_key is not None:
         plumbing.access_key = (porcelain.access_key)
     if porcelain.secret_access_key is not None:
@@ -1184,6 +1187,7 @@ def convert_big_query_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.private_key = (plumbing.private_key)
     porcelain.project = (plumbing.project)
     porcelain.port_override = (plumbing.port_override)
@@ -1204,6 +1208,8 @@ def convert_big_query_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.private_key is not None:
         plumbing.private_key = (porcelain.private_key)
     if porcelain.project is not None:
@@ -1235,6 +1241,7 @@ def convert_cassandra_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -1256,6 +1263,8 @@ def convert_cassandra_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -1289,6 +1298,7 @@ def convert_db_2_i_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -1310,6 +1320,8 @@ def convert_db_2_i_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -1341,6 +1353,7 @@ def convert_db_2_luw_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -1362,6 +1375,8 @@ def convert_db_2_luw_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -1395,6 +1410,7 @@ def convert_druid_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port_override = (plumbing.port_override)
     porcelain.username = (plumbing.username)
@@ -1415,6 +1431,8 @@ def convert_druid_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port_override is not None:
@@ -1444,6 +1462,7 @@ def convert_dynamo_db_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.access_key = (plumbing.access_key)
     porcelain.secret_access_key = (plumbing.secret_access_key)
     porcelain.region = (plumbing.region)
@@ -1464,6 +1483,8 @@ def convert_dynamo_db_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.access_key is not None:
         plumbing.access_key = (porcelain.access_key)
     if porcelain.secret_access_key is not None:
@@ -1495,6 +1516,7 @@ def convert_amazon_es_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.region = (plumbing.region)
     porcelain.secret_access_key = (plumbing.secret_access_key)
     porcelain.endpoint = (plumbing.endpoint)
@@ -1515,6 +1537,8 @@ def convert_amazon_es_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.region is not None:
         plumbing.region = (porcelain.region)
     if porcelain.secret_access_key is not None:
@@ -1546,6 +1570,7 @@ def convert_elastic_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -1567,6 +1592,8 @@ def convert_elastic_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -1598,6 +1625,7 @@ def convert_http_basic_auth_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.url = (plumbing.url)
     porcelain.healthcheck_path = (plumbing.healthcheck_path)
     porcelain.username = (plumbing.username)
@@ -1620,6 +1648,8 @@ def convert_http_basic_auth_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.url is not None:
         plumbing.url = (porcelain.url)
     if porcelain.healthcheck_path is not None:
@@ -1659,6 +1689,7 @@ def convert_http_no_auth_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.url = (plumbing.url)
     porcelain.healthcheck_path = (plumbing.healthcheck_path)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -1679,6 +1710,8 @@ def convert_http_no_auth_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.url is not None:
         plumbing.url = (porcelain.url)
     if porcelain.healthcheck_path is not None:
@@ -1712,6 +1745,7 @@ def convert_http_auth_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.url = (plumbing.url)
     porcelain.healthcheck_path = (plumbing.healthcheck_path)
     porcelain.auth_header = (plumbing.auth_header)
@@ -1733,6 +1767,8 @@ def convert_http_auth_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.url is not None:
         plumbing.url = (porcelain.url)
     if porcelain.healthcheck_path is not None:
@@ -1766,6 +1802,7 @@ def convert_kubernetes_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.certificate_authority = (plumbing.certificate_authority)
@@ -1787,6 +1824,8 @@ def convert_kubernetes_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -1822,6 +1861,7 @@ def convert_kubernetes_basic_auth_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.username = (plumbing.username)
@@ -1842,6 +1882,8 @@ def convert_kubernetes_basic_auth_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -1877,6 +1919,7 @@ def convert_kubernetes_service_account_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.token = (plumbing.token)
@@ -1896,6 +1939,8 @@ def convert_kubernetes_service_account_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -1929,6 +1974,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.access_key = (plumbing.access_key)
     porcelain.secret_access_key = (plumbing.secret_access_key)
@@ -1952,6 +1998,8 @@ def convert_amazon_eks_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.endpoint is not None:
         plumbing.endpoint = (porcelain.endpoint)
     if porcelain.access_key is not None:
@@ -1991,6 +2039,7 @@ def convert_google_gke_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.service_account_key = (plumbing.service_account_key)
@@ -2010,6 +2059,8 @@ def convert_google_gke_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.endpoint is not None:
         plumbing.endpoint = (porcelain.endpoint)
     if porcelain.certificate_authority is not None:
@@ -2041,6 +2092,7 @@ def convert_aks_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.certificate_authority = (plumbing.certificate_authority)
@@ -2062,6 +2114,8 @@ def convert_aks_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -2093,6 +2147,7 @@ def convert_aks_basic_auth_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.username = (plumbing.username)
@@ -2113,6 +2168,8 @@ def convert_aks_basic_auth_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -2147,6 +2204,7 @@ def convert_aks_service_account_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port = (plumbing.port)
     porcelain.token = (plumbing.token)
@@ -2166,6 +2224,8 @@ def convert_aks_service_account_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port is not None:
@@ -2199,6 +2259,7 @@ def convert_memcached_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port_override = (plumbing.port_override)
     porcelain.port = (plumbing.port)
@@ -2217,6 +2278,8 @@ def convert_memcached_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port_override is not None:
@@ -2244,6 +2307,7 @@ def convert_mongo_legacy_host_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.auth_database = (plumbing.auth_database)
     porcelain.port_override = (plumbing.port_override)
@@ -2267,6 +2331,8 @@ def convert_mongo_legacy_host_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.auth_database is not None:
@@ -2308,6 +2374,7 @@ def convert_mongo_legacy_replicaset_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.auth_database = (plumbing.auth_database)
     porcelain.port_override = (plumbing.port_override)
@@ -2332,6 +2399,8 @@ def convert_mongo_legacy_replicaset_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.auth_database is not None:
@@ -2375,6 +2444,7 @@ def convert_mongo_host_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.auth_database = (plumbing.auth_database)
     porcelain.port_override = (plumbing.port_override)
@@ -2397,6 +2467,8 @@ def convert_mongo_host_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.auth_database is not None:
@@ -2434,6 +2506,7 @@ def convert_mongo_replica_set_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.auth_database = (plumbing.auth_database)
     porcelain.port_override = (plumbing.port_override)
@@ -2458,6 +2531,8 @@ def convert_mongo_replica_set_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.auth_database is not None:
@@ -2501,6 +2576,7 @@ def convert_mysql_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2522,6 +2598,8 @@ def convert_mysql_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2553,6 +2631,7 @@ def convert_aurora_mysql_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2574,6 +2653,8 @@ def convert_aurora_mysql_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2609,6 +2690,7 @@ def convert_clustrix_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2630,6 +2712,8 @@ def convert_clustrix_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2663,6 +2747,7 @@ def convert_maria_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2684,6 +2769,8 @@ def convert_maria_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2715,6 +2802,7 @@ def convert_memsql_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2736,6 +2824,8 @@ def convert_memsql_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2767,6 +2857,7 @@ def convert_oracle_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2789,6 +2880,8 @@ def convert_oracle_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2822,6 +2915,7 @@ def convert_postgres_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2844,6 +2938,8 @@ def convert_postgres_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2879,6 +2975,7 @@ def convert_aurora_postgres_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2901,6 +2998,8 @@ def convert_aurora_postgres_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2940,6 +3039,7 @@ def convert_greenplum_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -2962,6 +3062,8 @@ def convert_greenplum_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -2997,6 +3099,7 @@ def convert_cockroach_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3019,6 +3122,8 @@ def convert_cockroach_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3054,6 +3159,7 @@ def convert_redshift_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3076,6 +3182,8 @@ def convert_redshift_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3111,6 +3219,7 @@ def convert_citus_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3133,6 +3242,8 @@ def convert_citus_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3166,6 +3277,7 @@ def convert_presto_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.password = (plumbing.password)
     porcelain.database = (plumbing.database)
@@ -3188,6 +3300,8 @@ def convert_presto_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.password is not None:
@@ -3221,6 +3335,7 @@ def convert_rdp_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3241,6 +3356,8 @@ def convert_rdp_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3270,6 +3387,7 @@ def convert_redis_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port_override = (plumbing.port_override)
     porcelain.password = (plumbing.password)
@@ -3289,6 +3407,8 @@ def convert_redis_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port_override is not None:
@@ -3316,6 +3436,7 @@ def convert_elasticache_redis_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.port_override = (plumbing.port_override)
     porcelain.password = (plumbing.password)
@@ -3336,6 +3457,8 @@ def convert_elasticache_redis_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.port_override is not None:
@@ -3371,6 +3494,7 @@ def convert_snowflake_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3392,6 +3516,8 @@ def convert_snowflake_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3425,6 +3551,7 @@ def convert_sql_server_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3448,6 +3575,8 @@ def convert_sql_server_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3487,6 +3616,7 @@ def convert_ssh_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.port = (plumbing.port)
@@ -3509,6 +3639,8 @@ def convert_ssh_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3541,6 +3673,7 @@ def convert_ssh_cert_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.port = (plumbing.port)
@@ -3562,6 +3695,8 @@ def convert_ssh_cert_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3594,6 +3729,7 @@ def convert_sybase_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.port_override = (plumbing.port_override)
@@ -3614,6 +3750,8 @@ def convert_sybase_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3643,6 +3781,7 @@ def convert_sybase_iq_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.port_override = (plumbing.port_override)
@@ -3663,6 +3802,8 @@ def convert_sybase_iq_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:
@@ -3694,6 +3835,7 @@ def convert_teradata_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.healthy = (plumbing.healthy)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.hostname = (plumbing.hostname)
     porcelain.username = (plumbing.username)
     porcelain.password = (plumbing.password)
@@ -3714,6 +3856,8 @@ def convert_teradata_to_plumbing(porcelain):
         plumbing.healthy = (porcelain.healthy)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.hostname is not None:
         plumbing.hostname = (porcelain.hostname)
     if porcelain.username is not None:

@@ -883,6 +883,7 @@ class Athena:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param access_key: 
     :param secret_access_key: 
     :param output: 
@@ -894,6 +895,7 @@ class Athena:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'access_key',
         'secret_access_key',
         'output',
@@ -907,6 +909,7 @@ class Athena:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         access_key=None,
         secret_access_key=None,
         output=None,
@@ -917,6 +920,7 @@ class Athena:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.output = output
@@ -929,6 +933,7 @@ class Athena:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'output: ' + repr(self.output) + ' ' +\
@@ -942,6 +947,7 @@ class Athena:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'output': self.output,
@@ -956,6 +962,7 @@ class Athena:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             output=d.get('output'),
@@ -971,6 +978,7 @@ class BigQuery:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param private_key: 
     :param project: 
     :param port_override: 
@@ -982,6 +990,7 @@ class BigQuery:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'private_key',
         'project',
         'port_override',
@@ -995,6 +1004,7 @@ class BigQuery:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         private_key=None,
         project=None,
         port_override=None,
@@ -1005,6 +1015,7 @@ class BigQuery:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.private_key = private_key
         self.project = project
         self.port_override = port_override
@@ -1017,6 +1028,7 @@ class BigQuery:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
             'project: ' + repr(self.project) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -1030,6 +1042,7 @@ class BigQuery:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'private_key': self.private_key,
             'project': self.project,
             'port_override': self.port_override,
@@ -1044,6 +1057,7 @@ class BigQuery:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             private_key=d.get('private_key'),
             project=d.get('project'),
             port_override=d.get('port_override'),
@@ -1059,6 +1073,7 @@ class Cassandra:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1071,6 +1086,7 @@ class Cassandra:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -1085,6 +1101,7 @@ class Cassandra:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -1096,6 +1113,7 @@ class Cassandra:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1109,6 +1127,7 @@ class Cassandra:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1123,6 +1142,7 @@ class Cassandra:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1138,6 +1158,7 @@ class Cassandra:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1154,6 +1175,7 @@ class DB2I:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1166,6 +1188,7 @@ class DB2I:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -1180,6 +1203,7 @@ class DB2I:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -1191,6 +1215,7 @@ class DB2I:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1204,6 +1229,7 @@ class DB2I:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1218,6 +1244,7 @@ class DB2I:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1233,6 +1260,7 @@ class DB2I:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1249,6 +1277,7 @@ class DB2LUW:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1261,6 +1290,7 @@ class DB2LUW:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -1275,6 +1305,7 @@ class DB2LUW:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -1286,6 +1317,7 @@ class DB2LUW:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1299,6 +1331,7 @@ class DB2LUW:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1313,6 +1346,7 @@ class DB2LUW:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1328,6 +1362,7 @@ class DB2LUW:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1344,6 +1379,7 @@ class Druid:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port_override: 
     :param username: 
@@ -1355,6 +1391,7 @@ class Druid:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port_override',
         'username',
@@ -1368,6 +1405,7 @@ class Druid:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port_override=None,
         username=None,
@@ -1378,6 +1416,7 @@ class Druid:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port_override = port_override
         self.username = username
@@ -1390,6 +1429,7 @@ class Druid:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1403,6 +1443,7 @@ class Druid:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'username': self.username,
@@ -1417,6 +1458,7 @@ class Druid:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             username=d.get('username'),
@@ -1432,6 +1474,7 @@ class DynamoDB:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param access_key: 
     :param secret_access_key: 
     :param region: 
@@ -1443,6 +1486,7 @@ class DynamoDB:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'access_key',
         'secret_access_key',
         'region',
@@ -1456,6 +1500,7 @@ class DynamoDB:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         access_key=None,
         secret_access_key=None,
         region=None,
@@ -1466,6 +1511,7 @@ class DynamoDB:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.region = region
@@ -1478,6 +1524,7 @@ class DynamoDB:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
@@ -1491,6 +1538,7 @@ class DynamoDB:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'region': self.region,
@@ -1505,6 +1553,7 @@ class DynamoDB:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             region=d.get('region'),
@@ -1520,6 +1569,7 @@ class AmazonES:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param region: 
     :param secret_access_key: 
     :param endpoint: 
@@ -1531,6 +1581,7 @@ class AmazonES:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'region',
         'secret_access_key',
         'endpoint',
@@ -1544,6 +1595,7 @@ class AmazonES:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         region=None,
         secret_access_key=None,
         endpoint=None,
@@ -1554,6 +1606,7 @@ class AmazonES:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.region = region
         self.secret_access_key = secret_access_key
         self.endpoint = endpoint
@@ -1566,6 +1619,7 @@ class AmazonES:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
@@ -1579,6 +1633,7 @@ class AmazonES:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'region': self.region,
             'secret_access_key': self.secret_access_key,
             'endpoint': self.endpoint,
@@ -1593,6 +1648,7 @@ class AmazonES:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             region=d.get('region'),
             secret_access_key=d.get('secret_access_key'),
             endpoint=d.get('endpoint'),
@@ -1608,6 +1664,7 @@ class Elastic:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1620,6 +1677,7 @@ class Elastic:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -1634,6 +1692,7 @@ class Elastic:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -1645,6 +1704,7 @@ class Elastic:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1658,6 +1718,7 @@ class Elastic:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1672,6 +1733,7 @@ class Elastic:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1687,6 +1749,7 @@ class Elastic:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1703,6 +1766,7 @@ class HTTPBasicAuth:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param url: 
     :param healthcheck_path: 
     :param username: 
@@ -1716,6 +1780,7 @@ class HTTPBasicAuth:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'url',
         'healthcheck_path',
         'username',
@@ -1731,6 +1796,7 @@ class HTTPBasicAuth:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         url=None,
         healthcheck_path=None,
         username=None,
@@ -1743,6 +1809,7 @@ class HTTPBasicAuth:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.username = username
@@ -1757,6 +1824,7 @@ class HTTPBasicAuth:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1772,6 +1840,7 @@ class HTTPBasicAuth:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'username': self.username,
@@ -1788,6 +1857,7 @@ class HTTPBasicAuth:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             username=d.get('username'),
@@ -1805,6 +1875,7 @@ class HTTPNoAuth:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param url: 
     :param healthcheck_path: 
     :param headers_blacklist: 
@@ -1816,6 +1887,7 @@ class HTTPNoAuth:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'url',
         'healthcheck_path',
         'headers_blacklist',
@@ -1829,6 +1901,7 @@ class HTTPNoAuth:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         url=None,
         healthcheck_path=None,
         headers_blacklist=None,
@@ -1839,6 +1912,7 @@ class HTTPNoAuth:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.headers_blacklist = headers_blacklist
@@ -1851,6 +1925,7 @@ class HTTPNoAuth:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -1864,6 +1939,7 @@ class HTTPNoAuth:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'headers_blacklist': self.headers_blacklist,
@@ -1878,6 +1954,7 @@ class HTTPNoAuth:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -1893,6 +1970,7 @@ class HTTPAuth:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param url: 
     :param healthcheck_path: 
     :param auth_header: 
@@ -1905,6 +1983,7 @@ class HTTPAuth:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'url',
         'healthcheck_path',
         'auth_header',
@@ -1919,6 +1998,7 @@ class HTTPAuth:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         url=None,
         healthcheck_path=None,
         auth_header=None,
@@ -1930,6 +2010,7 @@ class HTTPAuth:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.auth_header = auth_header
@@ -1943,6 +2024,7 @@ class HTTPAuth:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'auth_header: ' + repr(self.auth_header) + ' ' +\
@@ -1957,6 +2039,7 @@ class HTTPAuth:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'auth_header': self.auth_header,
@@ -1972,6 +2055,7 @@ class HTTPAuth:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             auth_header=d.get('auth_header'),
@@ -1988,6 +2072,7 @@ class Kubernetes:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -2000,6 +2085,7 @@ class Kubernetes:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'certificate_authority',
@@ -2014,6 +2100,7 @@ class Kubernetes:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -2025,6 +2112,7 @@ class Kubernetes:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -2038,6 +2126,7 @@ class Kubernetes:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -2052,6 +2141,7 @@ class Kubernetes:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -2067,6 +2157,7 @@ class Kubernetes:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -2083,6 +2174,7 @@ class KubernetesBasicAuth:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param username: 
@@ -2094,6 +2186,7 @@ class KubernetesBasicAuth:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'username',
@@ -2107,6 +2200,7 @@ class KubernetesBasicAuth:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         username=None,
@@ -2117,6 +2211,7 @@ class KubernetesBasicAuth:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -2129,6 +2224,7 @@ class KubernetesBasicAuth:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -2142,6 +2238,7 @@ class KubernetesBasicAuth:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -2156,6 +2253,7 @@ class KubernetesBasicAuth:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -2171,6 +2269,7 @@ class KubernetesServiceAccount:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param token: 
@@ -2181,6 +2280,7 @@ class KubernetesServiceAccount:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'token',
@@ -2193,6 +2293,7 @@ class KubernetesServiceAccount:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         token=None,
@@ -2202,6 +2303,7 @@ class KubernetesServiceAccount:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -2213,6 +2315,7 @@ class KubernetesServiceAccount:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -2225,6 +2328,7 @@ class KubernetesServiceAccount:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -2238,6 +2342,7 @@ class KubernetesServiceAccount:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -2252,6 +2357,7 @@ class AmazonEKS:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param endpoint: 
     :param access_key: 
     :param secret_access_key: 
@@ -2266,6 +2372,7 @@ class AmazonEKS:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'endpoint',
         'access_key',
         'secret_access_key',
@@ -2282,6 +2389,7 @@ class AmazonEKS:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         endpoint=None,
         access_key=None,
         secret_access_key=None,
@@ -2295,6 +2403,7 @@ class AmazonEKS:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.endpoint = endpoint
         self.access_key = access_key
         self.secret_access_key = secret_access_key
@@ -2310,6 +2419,7 @@ class AmazonEKS:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -2326,6 +2436,7 @@ class AmazonEKS:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'endpoint': self.endpoint,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
@@ -2343,6 +2454,7 @@ class AmazonEKS:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             endpoint=d.get('endpoint'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
@@ -2361,6 +2473,7 @@ class GoogleGKE:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param endpoint: 
     :param certificate_authority: 
     :param service_account_key: 
@@ -2371,6 +2484,7 @@ class GoogleGKE:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'endpoint',
         'certificate_authority',
         'service_account_key',
@@ -2383,6 +2497,7 @@ class GoogleGKE:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         endpoint=None,
         certificate_authority=None,
         service_account_key=None,
@@ -2392,6 +2507,7 @@ class GoogleGKE:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.endpoint = endpoint
         self.certificate_authority = certificate_authority
         self.service_account_key = service_account_key
@@ -2403,6 +2519,7 @@ class GoogleGKE:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
@@ -2415,6 +2532,7 @@ class GoogleGKE:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'endpoint': self.endpoint,
             'certificate_authority': self.certificate_authority,
             'service_account_key': self.service_account_key,
@@ -2428,6 +2546,7 @@ class GoogleGKE:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             endpoint=d.get('endpoint'),
             certificate_authority=d.get('certificate_authority'),
             service_account_key=d.get('service_account_key'),
@@ -2442,6 +2561,7 @@ class AKS:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -2454,6 +2574,7 @@ class AKS:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'certificate_authority',
@@ -2468,6 +2589,7 @@ class AKS:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -2479,6 +2601,7 @@ class AKS:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -2492,6 +2615,7 @@ class AKS:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -2506,6 +2630,7 @@ class AKS:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -2521,6 +2646,7 @@ class AKS:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -2537,6 +2663,7 @@ class AKSBasicAuth:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param username: 
@@ -2548,6 +2675,7 @@ class AKSBasicAuth:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'username',
@@ -2561,6 +2689,7 @@ class AKSBasicAuth:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         username=None,
@@ -2571,6 +2700,7 @@ class AKSBasicAuth:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -2583,6 +2713,7 @@ class AKSBasicAuth:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -2596,6 +2727,7 @@ class AKSBasicAuth:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -2610,6 +2742,7 @@ class AKSBasicAuth:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -2625,6 +2758,7 @@ class AKSServiceAccount:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port: 
     :param token: 
@@ -2635,6 +2769,7 @@ class AKSServiceAccount:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port',
         'token',
@@ -2647,6 +2782,7 @@ class AKSServiceAccount:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port=None,
         token=None,
@@ -2656,6 +2792,7 @@ class AKSServiceAccount:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -2667,6 +2804,7 @@ class AKSServiceAccount:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -2679,6 +2817,7 @@ class AKSServiceAccount:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -2692,6 +2831,7 @@ class AKSServiceAccount:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -2706,6 +2846,7 @@ class Memcached:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port_override: 
     :param port: 
@@ -2715,6 +2856,7 @@ class Memcached:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port_override',
         'port',
@@ -2726,6 +2868,7 @@ class Memcached:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port_override=None,
         port=None,
@@ -2734,6 +2877,7 @@ class Memcached:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port_override = port_override
         self.port = port
@@ -2744,6 +2888,7 @@ class Memcached:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -2755,6 +2900,7 @@ class Memcached:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'port': self.port,
@@ -2767,6 +2913,7 @@ class Memcached:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             port=d.get('port'),
@@ -2780,6 +2927,7 @@ class MongoLegacyHost:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2794,6 +2942,7 @@ class MongoLegacyHost:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'auth_database',
         'port_override',
@@ -2810,6 +2959,7 @@ class MongoLegacyHost:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2823,6 +2973,7 @@ class MongoLegacyHost:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2838,6 +2989,7 @@ class MongoLegacyHost:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2854,6 +3006,7 @@ class MongoLegacyHost:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2871,6 +3024,7 @@ class MongoLegacyHost:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -2889,6 +3043,7 @@ class MongoLegacyReplicaset:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -2904,6 +3059,7 @@ class MongoLegacyReplicaset:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'auth_database',
         'port_override',
@@ -2921,6 +3077,7 @@ class MongoLegacyReplicaset:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -2935,6 +3092,7 @@ class MongoLegacyReplicaset:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -2951,6 +3109,7 @@ class MongoLegacyReplicaset:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -2968,6 +3127,7 @@ class MongoLegacyReplicaset:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -2986,6 +3146,7 @@ class MongoLegacyReplicaset:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -3005,6 +3166,7 @@ class MongoHost:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -3018,6 +3180,7 @@ class MongoHost:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'auth_database',
         'port_override',
@@ -3033,6 +3196,7 @@ class MongoHost:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -3045,6 +3209,7 @@ class MongoHost:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -3059,6 +3224,7 @@ class MongoHost:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -3074,6 +3240,7 @@ class MongoHost:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -3090,6 +3257,7 @@ class MongoHost:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -3107,6 +3275,7 @@ class MongoReplicaSet:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -3122,6 +3291,7 @@ class MongoReplicaSet:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'auth_database',
         'port_override',
@@ -3139,6 +3309,7 @@ class MongoReplicaSet:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -3153,6 +3324,7 @@ class MongoReplicaSet:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -3169,6 +3341,7 @@ class MongoReplicaSet:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -3186,6 +3359,7 @@ class MongoReplicaSet:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -3204,6 +3378,7 @@ class MongoReplicaSet:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -3223,6 +3398,7 @@ class Mysql:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3235,6 +3411,7 @@ class Mysql:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3249,6 +3426,7 @@ class Mysql:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3260,6 +3438,7 @@ class Mysql:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3273,6 +3452,7 @@ class Mysql:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3287,6 +3467,7 @@ class Mysql:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3302,6 +3483,7 @@ class Mysql:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3318,6 +3500,7 @@ class AuroraMysql:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3330,6 +3513,7 @@ class AuroraMysql:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3344,6 +3528,7 @@ class AuroraMysql:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3355,6 +3540,7 @@ class AuroraMysql:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3368,6 +3554,7 @@ class AuroraMysql:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3382,6 +3569,7 @@ class AuroraMysql:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3397,6 +3585,7 @@ class AuroraMysql:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3413,6 +3602,7 @@ class Clustrix:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3425,6 +3615,7 @@ class Clustrix:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3439,6 +3630,7 @@ class Clustrix:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3450,6 +3642,7 @@ class Clustrix:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3463,6 +3656,7 @@ class Clustrix:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3477,6 +3671,7 @@ class Clustrix:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3492,6 +3687,7 @@ class Clustrix:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3508,6 +3704,7 @@ class Maria:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3520,6 +3717,7 @@ class Maria:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3534,6 +3732,7 @@ class Maria:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3545,6 +3744,7 @@ class Maria:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3558,6 +3758,7 @@ class Maria:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3572,6 +3773,7 @@ class Maria:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3587,6 +3789,7 @@ class Maria:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3603,6 +3806,7 @@ class Memsql:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3615,6 +3819,7 @@ class Memsql:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3629,6 +3834,7 @@ class Memsql:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3640,6 +3846,7 @@ class Memsql:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3653,6 +3860,7 @@ class Memsql:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3667,6 +3875,7 @@ class Memsql:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3682,6 +3891,7 @@ class Memsql:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3698,6 +3908,7 @@ class Oracle:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3711,6 +3922,7 @@ class Oracle:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3726,6 +3938,7 @@ class Oracle:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3738,6 +3951,7 @@ class Oracle:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3752,6 +3966,7 @@ class Oracle:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3767,6 +3982,7 @@ class Oracle:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3783,6 +3999,7 @@ class Oracle:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3800,6 +4017,7 @@ class Postgres:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3813,6 +4031,7 @@ class Postgres:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3828,6 +4047,7 @@ class Postgres:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3840,6 +4060,7 @@ class Postgres:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3854,6 +4075,7 @@ class Postgres:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3869,6 +4091,7 @@ class Postgres:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3885,6 +4108,7 @@ class Postgres:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -3902,6 +4126,7 @@ class AuroraPostgres:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -3915,6 +4140,7 @@ class AuroraPostgres:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -3930,6 +4156,7 @@ class AuroraPostgres:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -3942,6 +4169,7 @@ class AuroraPostgres:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -3956,6 +4184,7 @@ class AuroraPostgres:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -3971,6 +4200,7 @@ class AuroraPostgres:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -3987,6 +4217,7 @@ class AuroraPostgres:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4004,6 +4235,7 @@ class Greenplum:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4017,6 +4249,7 @@ class Greenplum:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4032,6 +4265,7 @@ class Greenplum:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4044,6 +4278,7 @@ class Greenplum:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4058,6 +4293,7 @@ class Greenplum:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4073,6 +4309,7 @@ class Greenplum:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4089,6 +4326,7 @@ class Greenplum:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4106,6 +4344,7 @@ class Cockroach:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4119,6 +4358,7 @@ class Cockroach:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4134,6 +4374,7 @@ class Cockroach:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4146,6 +4387,7 @@ class Cockroach:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4160,6 +4402,7 @@ class Cockroach:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4175,6 +4418,7 @@ class Cockroach:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4191,6 +4435,7 @@ class Cockroach:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4208,6 +4453,7 @@ class Redshift:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4221,6 +4467,7 @@ class Redshift:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4236,6 +4483,7 @@ class Redshift:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4248,6 +4496,7 @@ class Redshift:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4262,6 +4511,7 @@ class Redshift:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4277,6 +4527,7 @@ class Redshift:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4293,6 +4544,7 @@ class Redshift:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4310,6 +4562,7 @@ class Citus:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4323,6 +4576,7 @@ class Citus:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4338,6 +4592,7 @@ class Citus:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4350,6 +4605,7 @@ class Citus:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4364,6 +4620,7 @@ class Citus:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4379,6 +4636,7 @@ class Citus:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4395,6 +4653,7 @@ class Citus:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4412,6 +4671,7 @@ class Presto:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param password: 
     :param database: 
@@ -4425,6 +4685,7 @@ class Presto:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'password',
         'database',
@@ -4440,6 +4701,7 @@ class Presto:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         password=None,
         database=None,
@@ -4452,6 +4714,7 @@ class Presto:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.password = password
         self.database = database
@@ -4466,6 +4729,7 @@ class Presto:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
@@ -4481,6 +4745,7 @@ class Presto:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'password': self.password,
             'database': self.database,
@@ -4497,6 +4762,7 @@ class Presto:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             password=d.get('password'),
             database=d.get('database'),
@@ -4514,6 +4780,7 @@ class RDP:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4525,6 +4792,7 @@ class RDP:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4538,6 +4806,7 @@ class RDP:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4548,6 +4817,7 @@ class RDP:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4560,6 +4830,7 @@ class RDP:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4573,6 +4844,7 @@ class RDP:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4587,6 +4859,7 @@ class RDP:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4602,6 +4875,7 @@ class Redis:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -4612,6 +4886,7 @@ class Redis:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port_override',
         'password',
@@ -4624,6 +4899,7 @@ class Redis:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -4633,6 +4909,7 @@ class Redis:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -4644,6 +4921,7 @@ class Redis:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4656,6 +4934,7 @@ class Redis:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -4669,6 +4948,7 @@ class Redis:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -4683,6 +4963,7 @@ class ElasticacheRedis:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -4694,6 +4975,7 @@ class ElasticacheRedis:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'port_override',
         'password',
@@ -4707,6 +4989,7 @@ class ElasticacheRedis:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -4717,6 +5000,7 @@ class ElasticacheRedis:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -4729,6 +5013,7 @@ class ElasticacheRedis:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4742,6 +5027,7 @@ class ElasticacheRedis:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -4756,6 +5042,7 @@ class ElasticacheRedis:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -4771,6 +5058,7 @@ class Snowflake:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4783,6 +5071,7 @@ class Snowflake:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4797,6 +5086,7 @@ class Snowflake:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4808,6 +5098,7 @@ class Snowflake:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4821,6 +5112,7 @@ class Snowflake:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4835,6 +5127,7 @@ class Snowflake:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4850,6 +5143,7 @@ class Snowflake:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4866,6 +5160,7 @@ class SQLServer:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4880,6 +5175,7 @@ class SQLServer:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -4896,6 +5192,7 @@ class SQLServer:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -4909,6 +5206,7 @@ class SQLServer:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4924,6 +5222,7 @@ class SQLServer:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4940,6 +5239,7 @@ class SQLServer:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4957,6 +5257,7 @@ class SQLServer:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4975,6 +5276,7 @@ class SSH:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param port: 
@@ -4987,6 +5289,7 @@ class SSH:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'port',
@@ -5001,6 +5304,7 @@ class SSH:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         port=None,
@@ -5012,6 +5316,7 @@ class SSH:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -5025,6 +5330,7 @@ class SSH:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -5039,6 +5345,7 @@ class SSH:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -5055,6 +5362,7 @@ class SSH:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -5072,6 +5380,7 @@ class SSHCert:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param port: 
@@ -5083,6 +5392,7 @@ class SSHCert:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'port',
@@ -5096,6 +5406,7 @@ class SSHCert:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         port=None,
@@ -5106,6 +5417,7 @@ class SSHCert:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -5118,6 +5430,7 @@ class SSHCert:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -5131,6 +5444,7 @@ class SSHCert:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -5146,6 +5460,7 @@ class SSHCert:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -5162,6 +5477,7 @@ class Sybase:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -5173,6 +5489,7 @@ class Sybase:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'port_override',
@@ -5186,6 +5503,7 @@ class Sybase:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -5196,6 +5514,7 @@ class Sybase:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -5208,6 +5527,7 @@ class Sybase:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -5221,6 +5541,7 @@ class Sybase:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -5235,6 +5556,7 @@ class Sybase:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -5250,6 +5572,7 @@ class SybaseIQ:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -5261,6 +5584,7 @@ class SybaseIQ:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'port_override',
@@ -5274,6 +5598,7 @@ class SybaseIQ:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -5284,6 +5609,7 @@ class SybaseIQ:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -5296,6 +5622,7 @@ class SybaseIQ:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -5309,6 +5636,7 @@ class SybaseIQ:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -5323,6 +5651,7 @@ class SybaseIQ:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -5338,6 +5667,7 @@ class Teradata:
     :param name: Unique human-readable name of the Resource.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5349,6 +5679,7 @@ class Teradata:
         'name',
         'healthy',
         'tags',
+        'secret_store_id',
         'hostname',
         'username',
         'password',
@@ -5362,6 +5693,7 @@ class Teradata:
         name=None,
         healthy=None,
         tags=None,
+        secret_store_id=None,
         hostname=None,
         username=None,
         password=None,
@@ -5372,6 +5704,7 @@ class Teradata:
         self.name = name
         self.healthy = healthy
         self.tags = tags
+        self.secret_store_id = secret_store_id
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5384,6 +5717,7 @@ class Teradata:
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5397,6 +5731,7 @@ class Teradata:
             'name': self.name,
             'healthy': self.healthy,
             'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5411,6 +5746,7 @@ class Teradata:
             name=d.get('name'),
             healthy=d.get('healthy'),
             tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),

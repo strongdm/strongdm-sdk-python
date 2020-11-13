@@ -36,7 +36,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\023AccessRulesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x61\x63\x63\x65ss_rules.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"\x7f\n\x17\x41\x63\x63\x65ssRuleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd8\x01\n\x18\x41\x63\x63\x65ssRuleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x14\x41\x63\x63\x65ssRuleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd2\x01\n\x15\x41\x63\x63\x65ssRuleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\x8b\x01\n\x17\x41\x63\x63\x65ssRuleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x03 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd8\x01\n\x18\x41\x63\x63\x65ssRuleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"f\n\x17\x41\x63\x63\x65ssRuleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xa7\x01\n\x18\x41\x63\x63\x65ssRuleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"f\n\x15\x41\x63\x63\x65ssRuleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xbf\x01\n\x16\x41\x63\x63\x65ssRuleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x30\n\x0c\x61\x63\x63\x65ss_rules\x18\x02 \x03(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xfb\x02\n\nAccessRule\x12,\n\x02id\x18\x01 \x01(\tB \xf2\xf8\xb3\x07\x1b\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nAccessRule\x12\x36\n\rresource_type\x18\x02 \x01(\tB\x1f\xf2\xf8\xb3\x07\x1a\xa2\xf3\xb3\x07\x0b\x44\x42TypeAlias\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role\x12\x41\n\x0cresource_ids\x18\x04 \x03(\tB+\xf2\xf8\xb3\x07&\xa2\xf3\xb3\x07\rDatasourceIDs\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12+\n\x04tags\x18\x05 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01\x12\x41\n\x12\x61\x66\x66\x65\x63ted_resources\x18\x06 \x01(\x03\x42%\xf2\xf8\xb3\x07 \xa2\xf3\xb3\x07\x11\x41\x66\x66\x65\x63tedResources\xb0\xf3\xb3\x07\x01\xd8\xf3\xb3\x07\x01:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\nAccessRule\xa8\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\"}\n\x15\x41\x63\x63\x65ssRulePlanRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xcd\x01\n\x16\x41\x63\x63\x65ssRulePlanResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x61\x66\x66\x65\x63ted_resources\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xc5\x05\n\x0b\x41\x63\x63\x65ssRules\x12l\n\x04Plan\x12\x19.v1.AccessRulePlanRequest\x1a\x1a.v1.AccessRulePlanResponse\"-\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access_rules/plan\x12m\n\x06\x43reate\x12\x1b.v1.AccessRuleCreateRequest\x1a\x1c.v1.AccessRuleCreateResponse\"(\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x15\xaa\xf3\xb3\x07\x10/v1/access_rules\x12h\n\x03Get\x12\x18.v1.AccessRuleGetRequest\x1a\x19.v1.AccessRuleGetResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access_rules/{id}\x12q\n\x06Update\x12\x1b.v1.AccessRuleUpdateRequest\x1a\x1c.v1.AccessRuleUpdateResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access_rules/{id}\x12t\n\x06\x44\x65lete\x12\x1b.v1.AccessRuleDeleteRequest\x1a\x1c.v1.AccessRuleDeleteResponse\"/\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access_rules/{id}\x12\x66\n\x04List\x12\x19.v1.AccessRuleListRequest\x1a\x1a.v1.AccessRuleListResponse\"\'\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x15\xaa\xf3\xb3\x07\x10/v1/access_rules\x1a\x1e\xca\xf9\xb3\x07\x0f\xc2\xf9\xb3\x07\nAccessRule\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42g\n\x1c\x63om.strongdm.api.v1.plumbingB\x13\x41\x63\x63\x65ssRulesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x12\x61\x63\x63\x65ss_rules.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"\x7f\n\x17\x41\x63\x63\x65ssRuleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd8\x01\n\x18\x41\x63\x63\x65ssRuleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x14\x41\x63\x63\x65ssRuleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd2\x01\n\x15\x41\x63\x63\x65ssRuleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\x8b\x01\n\x17\x41\x63\x63\x65ssRuleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x03 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xd8\x01\n\x18\x41\x63\x63\x65ssRuleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"f\n\x17\x41\x63\x63\x65ssRuleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xa7\x01\n\x18\x41\x63\x63\x65ssRuleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"f\n\x15\x41\x63\x63\x65ssRuleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xbf\x01\n\x16\x41\x63\x63\x65ssRuleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x30\n\x0c\x61\x63\x63\x65ss_rules\x18\x02 \x03(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xfb\x02\n\nAccessRule\x12,\n\x02id\x18\x01 \x01(\tB \xf2\xf8\xb3\x07\x1b\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nAccessRule\x12\x36\n\rresource_type\x18\x02 \x01(\tB\x1f\xf2\xf8\xb3\x07\x1a\xa2\xf3\xb3\x07\x0b\x44\x42TypeAlias\xa8\xf3\xb3\x07\x01\xb0\xf3\xb3\x07\x01\x12\x34\n\x07role_id\x18\x03 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xa2\xf3\xb3\x07\x06RoleID\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Role\x12\x41\n\x0cresource_ids\x18\x04 \x03(\tB+\xf2\xf8\xb3\x07&\xa2\xf3\xb3\x07\rDatasourceIDs\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\nDatasource\x12+\n\x04tags\x18\x05 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01\x12\x41\n\x12\x61\x66\x66\x65\x63ted_resources\x18\x06 \x01(\x03\x42%\xf2\xf8\xb3\x07 \xa2\xf3\xb3\x07\x11\x41\x66\x66\x65\x63tedResources\xb0\xf3\xb3\x07\x01\xd8\xf3\xb3\x07\x01:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\nAccessRule\xa8\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\"}\n\x15\x41\x63\x63\x65ssRulePlanRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12/\n\x0b\x61\x63\x63\x65ss_rule\x18\x02 \x01(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xcd\x01\n\x16\x41\x63\x63\x65ssRulePlanResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12\x61\x66\x66\x65\x63ted_resources\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x9c\x01\n\x16\x41pplyAccessRuleRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x1b\n\x07role_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x0c\x61\x63\x63\x65ss_rules\x18\x03 \x03(\x0b\x32\x0e.v1.AccessRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\x9c\x01\n\x17\x41pplyAccessRuleResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xb7\x06\n\x0b\x41\x63\x63\x65ssRules\x12l\n\x04Plan\x12\x19.v1.AccessRulePlanRequest\x1a\x1a.v1.AccessRulePlanResponse\"-\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access-rules/plan\x12m\n\x06\x43reate\x12\x1b.v1.AccessRuleCreateRequest\x1a\x1c.v1.AccessRuleCreateResponse\"(\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x15\xaa\xf3\xb3\x07\x10/v1/access-rules\x12h\n\x03Get\x12\x18.v1.AccessRuleGetRequest\x1a\x19.v1.AccessRuleGetResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access-rules/{id}\x12q\n\x06Update\x12\x1b.v1.AccessRuleUpdateRequest\x1a\x1c.v1.AccessRuleUpdateResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access-rules/{id}\x12t\n\x06\x44\x65lete\x12\x1b.v1.AccessRuleDeleteRequest\x1a\x1c.v1.AccessRuleDeleteResponse\"/\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/access-rules/{id}\x12\x66\n\x04List\x12\x19.v1.AccessRuleListRequest\x1a\x1a.v1.AccessRuleListResponse\"\'\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x15\xaa\xf3\xb3\x07\x10/v1/access-rules\x12p\n\x05\x41pply\x12\x1a.v1.ApplyAccessRuleRequest\x1a\x1b.v1.ApplyAccessRuleResponse\".\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/roles-access-rules\x1a\x1e\xca\xf9\xb3\x07\x0f\xc2\xf9\xb3\x07\nAccessRule\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42g\n\x1c\x63om.strongdm.api.v1.plumbingB\x13\x41\x63\x63\x65ssRulesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
@@ -619,6 +619,91 @@ _ACCESSRULEPLANRESPONSE = _descriptor.Descriptor(
   serialized_end=2372,
 )
 
+
+_APPLYACCESSRULEREQUEST = _descriptor.Descriptor(
+  name='ApplyAccessRuleRequest',
+  full_name='v1.ApplyAccessRuleRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='meta', full_name='v1.ApplyAccessRuleRequest.meta', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role_id', full_name='v1.ApplyAccessRuleRequest.role_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='access_rules', full_name='v1.ApplyAccessRuleRequest.access_rules', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\372\370\263\007\005\320\363\263\007\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2375,
+  serialized_end=2531,
+)
+
+
+_APPLYACCESSRULERESPONSE = _descriptor.Descriptor(
+  name='ApplyAccessRuleResponse',
+  full_name='v1.ApplyAccessRuleResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='meta', full_name='v1.ApplyAccessRuleResponse.meta', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rate_limit', full_name='v1.ApplyAccessRuleResponse.rate_limit', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\372\370\263\007\005\320\363\263\007\001\372\370\263\007\005\250\363\263\007\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2534,
+  serialized_end=2690,
+)
+
 _ACCESSRULECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
 _ACCESSRULECREATEREQUEST.fields_by_name['access_rule'].message_type = _ACCESSRULE
 _ACCESSRULECREATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
@@ -645,6 +730,10 @@ _ACCESSRULEPLANREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATERE
 _ACCESSRULEPLANREQUEST.fields_by_name['access_rule'].message_type = _ACCESSRULE
 _ACCESSRULEPLANRESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
 _ACCESSRULEPLANRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
+_APPLYACCESSRULEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
+_APPLYACCESSRULEREQUEST.fields_by_name['access_rules'].message_type = _ACCESSRULE
+_APPLYACCESSRULERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
+_APPLYACCESSRULERESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
 DESCRIPTOR.message_types_by_name['AccessRuleCreateRequest'] = _ACCESSRULECREATEREQUEST
 DESCRIPTOR.message_types_by_name['AccessRuleCreateResponse'] = _ACCESSRULECREATERESPONSE
 DESCRIPTOR.message_types_by_name['AccessRuleGetRequest'] = _ACCESSRULEGETREQUEST
@@ -658,6 +747,8 @@ DESCRIPTOR.message_types_by_name['AccessRuleListResponse'] = _ACCESSRULELISTRESP
 DESCRIPTOR.message_types_by_name['AccessRule'] = _ACCESSRULE
 DESCRIPTOR.message_types_by_name['AccessRulePlanRequest'] = _ACCESSRULEPLANREQUEST
 DESCRIPTOR.message_types_by_name['AccessRulePlanResponse'] = _ACCESSRULEPLANRESPONSE
+DESCRIPTOR.message_types_by_name['ApplyAccessRuleRequest'] = _APPLYACCESSRULEREQUEST
+DESCRIPTOR.message_types_by_name['ApplyAccessRuleResponse'] = _APPLYACCESSRULERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AccessRuleCreateRequest = _reflection.GeneratedProtocolMessageType('AccessRuleCreateRequest', (_message.Message,), {
@@ -751,6 +842,20 @@ AccessRulePlanResponse = _reflection.GeneratedProtocolMessageType('AccessRulePla
   })
 _sym_db.RegisterMessage(AccessRulePlanResponse)
 
+ApplyAccessRuleRequest = _reflection.GeneratedProtocolMessageType('ApplyAccessRuleRequest', (_message.Message,), {
+  'DESCRIPTOR' : _APPLYACCESSRULEREQUEST,
+  '__module__' : 'access_rules_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ApplyAccessRuleRequest)
+  })
+_sym_db.RegisterMessage(ApplyAccessRuleRequest)
+
+ApplyAccessRuleResponse = _reflection.GeneratedProtocolMessageType('ApplyAccessRuleResponse', (_message.Message,), {
+  'DESCRIPTOR' : _APPLYACCESSRULERESPONSE,
+  '__module__' : 'access_rules_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ApplyAccessRuleResponse)
+  })
+_sym_db.RegisterMessage(ApplyAccessRuleResponse)
+
 
 DESCRIPTOR._options = None
 _ACCESSRULECREATEREQUEST.fields_by_name['access_rule']._options = None
@@ -794,6 +899,12 @@ _ACCESSRULEPLANRESPONSE.fields_by_name['meta']._options = None
 _ACCESSRULEPLANRESPONSE.fields_by_name['affected_resources']._options = None
 _ACCESSRULEPLANRESPONSE.fields_by_name['rate_limit']._options = None
 _ACCESSRULEPLANRESPONSE._options = None
+_APPLYACCESSRULEREQUEST.fields_by_name['role_id']._options = None
+_APPLYACCESSRULEREQUEST.fields_by_name['access_rules']._options = None
+_APPLYACCESSRULEREQUEST._options = None
+_APPLYACCESSRULERESPONSE.fields_by_name['meta']._options = None
+_APPLYACCESSRULERESPONSE.fields_by_name['rate_limit']._options = None
+_APPLYACCESSRULERESPONSE._options = None
 
 _ACCESSRULES = _descriptor.ServiceDescriptor(
   name='AccessRules',
@@ -802,8 +913,8 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\017\302\371\263\007\nAccessRule\312\371\263\007\005\310\371\263\007\001',
   create_key=_descriptor._internal_create_key,
-  serialized_start=2375,
-  serialized_end=3084,
+  serialized_start=2693,
+  serialized_end=3516,
   methods=[
   _descriptor.MethodDescriptor(
     name='Plan',
@@ -812,7 +923,7 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULEPLANREQUEST,
     output_type=_ACCESSRULEPLANRESPONSE,
-    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\032\252\363\263\007\025/v1/access_rules/plan',
+    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\032\252\363\263\007\025/v1/access-rules/plan',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -822,7 +933,7 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULECREATEREQUEST,
     output_type=_ACCESSRULECREATERESPONSE,
-    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\025\252\363\263\007\020/v1/access_rules',
+    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\025\252\363\263\007\020/v1/access-rules',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -832,7 +943,7 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULEGETREQUEST,
     output_type=_ACCESSRULEGETRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\032\252\363\263\007\025/v1/access_rules/{id}',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\032\252\363\263\007\025/v1/access-rules/{id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -842,7 +953,7 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULEUPDATEREQUEST,
     output_type=_ACCESSRULEUPDATERESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\032\252\363\263\007\025/v1/access_rules/{id}',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\032\252\363\263\007\025/v1/access-rules/{id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -852,7 +963,7 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULEDELETEREQUEST,
     output_type=_ACCESSRULEDELETERESPONSE,
-    serialized_options=b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\032\252\363\263\007\025/v1/access_rules/{id}',
+    serialized_options=b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\032\252\363\263\007\025/v1/access-rules/{id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -862,7 +973,17 @@ _ACCESSRULES = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ACCESSRULELISTREQUEST,
     output_type=_ACCESSRULELISTRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\025\252\363\263\007\020/v1/access_rules',
+    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\025\252\363\263\007\020/v1/access-rules',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Apply',
+    full_name='v1.AccessRules.Apply',
+    index=6,
+    containing_service=None,
+    input_type=_APPLYACCESSRULEREQUEST,
+    output_type=_APPLYACCESSRULERESPONSE,
+    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\033\252\363\263\007\026/v1/roles-access-rules',
     create_key=_descriptor._internal_create_key,
   ),
 ])

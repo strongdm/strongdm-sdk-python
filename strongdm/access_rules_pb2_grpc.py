@@ -60,6 +60,11 @@ class AccessRulesStub(object):
                 request_serializer=access__rules__pb2.AccessRuleListRequest.SerializeToString,
                 response_deserializer=access__rules__pb2.AccessRuleListResponse.FromString,
                 )
+        self.Apply = channel.unary_unary(
+                '/v1.AccessRules/Apply',
+                request_serializer=access__rules__pb2.ApplyAccessRuleRequest.SerializeToString,
+                response_deserializer=access__rules__pb2.ApplyAccessRuleResponse.FromString,
+                )
 
 
 class AccessRulesServicer(object):
@@ -109,6 +114,13 @@ class AccessRulesServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Apply(self, request, context):
+        """Apply resets a role and apply all given access rules.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AccessRulesServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -141,6 +153,11 @@ def add_AccessRulesServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=access__rules__pb2.AccessRuleListRequest.FromString,
                     response_serializer=access__rules__pb2.AccessRuleListResponse.SerializeToString,
+            ),
+            'Apply': grpc.unary_unary_rpc_method_handler(
+                    servicer.Apply,
+                    request_deserializer=access__rules__pb2.ApplyAccessRuleRequest.FromString,
+                    response_serializer=access__rules__pb2.ApplyAccessRuleResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -253,5 +270,22 @@ class AccessRules(object):
         return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/List',
             access__rules__pb2.AccessRuleListRequest.SerializeToString,
             access__rules__pb2.AccessRuleListResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Apply(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AccessRules/Apply',
+            access__rules__pb2.ApplyAccessRuleRequest.SerializeToString,
+            access__rules__pb2.ApplyAccessRuleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
