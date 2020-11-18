@@ -38,6 +38,7 @@ from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *
 from .roles_pb2 import *
+from .secret_store_healths_pb2 import *
 from .secret_stores_pb2 import *
 
 
@@ -4996,6 +4997,8 @@ def convert_secret_store_to_plumbing(porcelain):
     if isinstance(porcelain, models.VaultTokenStore):
         plumbing.vault_token.CopyFrom(
             convert_vault_token_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AWSStore):
+        plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
     return plumbing
 
 
@@ -5006,6 +5009,8 @@ def convert_secret_store_to_porcelain(plumbing):
         return convert_vault_tls_store_to_porcelain(plumbing.vault_tls)
     if plumbing.HasField('vault_token'):
         return convert_vault_token_store_to_porcelain(plumbing.vault_token)
+    if plumbing.HasField('aws'):
+        return convert_aws_store_to_porcelain(plumbing.aws)
     return None
 
 
@@ -5108,6 +5113,42 @@ def convert_repeated_vault_tls_store_to_porcelain(plumbings):
         convert_vault_tls_store_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
+
+
+def convert_aws_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.region = (plumbing.region)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_aws_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AWSStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.region is not None:
+        plumbing.region = (porcelain.region)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_aws_store_to_plumbing(porcelains):
+    return [
+        convert_aws_store_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_store_to_porcelain(plumbings):
+    return [convert_aws_store_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def is_status_detail(x):

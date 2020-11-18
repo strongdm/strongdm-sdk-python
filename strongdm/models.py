@@ -7132,3 +7132,56 @@ class VaultTLSStore:
             client_key_path=d.get('client_key_path'),
             tags=d.get('tags'),
         )
+
+
+class AWSStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param region: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'region',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        region=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.region = region
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AWSStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            tags=d.get('tags'),
+        )
