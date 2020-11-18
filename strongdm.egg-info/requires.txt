@@ -1,0 +1,2 @@
+grpcio==1.33.2
+googleapis-common-protos==1.52.0
