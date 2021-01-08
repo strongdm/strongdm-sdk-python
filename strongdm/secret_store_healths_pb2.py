@@ -36,7 +36,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\032SecretStoreHealthsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1asecret_store_healths.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"m\n\x1cSecretStoreHealthListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xdf\x01\n\x1dSecretStoreHealthListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12?\n\x14secret_store_healths\x18\x02 \x03(\x0b\x32\x15.v1.SecretStoreHealthB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"y\n\x1dSecretStoreHealthCheckRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12#\n\x0fsecret_store_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xa1\x01\n\x1eSecretStoreHealthCheckResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xbb\x03\n\x11SecretStoreHealth\x12\x45\n\x0fsecret_store_id\x18\x01 \x01(\tB,\xf2\xf8\xb3\x07\'\xa2\xf3\xb3\x07\rSecretStoreID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12/\n\x07node_id\x18\x02 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x06NodeID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Node\x12)\n\x06\x64\x65tail\x18\x03 \x01(\tB\x19\xf2\xf8\xb3\x07\x14\xa2\xf3\xb3\x07\nDetailJSON\xb0\xf3\xb3\x07\x01\x12H\n\x06status\x18\x04 \x01(\tB8\xf2\xf8\xb3\x07\x33\xa2\xf3\xb3\x07\x06Status\xb0\xf3\xb3\x07\x01\xaa\xf4\xb3\x07\x1emodels.SecretStoreHealthStatus\x12H\n\nchanged_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tChangedAt\xb0\xf3\xb3\x07\x01\x12H\n\nchecked_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tCreatedAt\xb0\xf3\xb3\x07\x01:%\xfa\xf8\xb3\x07 \xa2\xf3\xb3\x07\x11SecretStoreHealth\xa8\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x32\xbc\x02\n\x12SecretStoreHealths\x12|\n\x04List\x12 .v1.SecretStoreHealthListRequest\x1a!.v1.SecretStoreHealthListResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/secret-store-healths\x12\x80\x01\n\x05\x43heck\x12!.v1.SecretStoreHealthCheckRequest\x1a\".v1.SecretStoreHealthCheckResponse\"0\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/secret-store-healths\x1a%\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11SecretStoreHealth\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42n\n\x1c\x63om.strongdm.api.v1.plumbingB\x1aSecretStoreHealthsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x1asecret_store_healths.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"m\n\x1cSecretStoreHealthListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xdf\x01\n\x1dSecretStoreHealthListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12?\n\x14secret_store_healths\x18\x02 \x03(\x0b\x32\x15.v1.SecretStoreHealthB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"y\n\x1dSecretStoreHealthCheckRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12#\n\x0fsecret_store_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\"\xa1\x01\n\x1eSecretStoreHealthCheckResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x14\xfa\xf8\xb3\x07\x05\xd0\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xfd\x03\n\x11SecretStoreHealth\x12\x45\n\x0fsecret_store_id\x18\x01 \x01(\tB,\xf2\xf8\xb3\x07\'\xa2\xf3\xb3\x07\rSecretStoreID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12/\n\x07node_id\x18\x02 \x01(\tB\x1e\xf2\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x06NodeID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x04Node\x12H\n\x06status\x18\x04 \x01(\tB8\xf2\xf8\xb3\x07\x33\xa2\xf3\xb3\x07\x06Status\xb0\xf3\xb3\x07\x01\xaa\xf4\xb3\x07\x1emodels.SecretStoreHealthStatus\x12H\n\nchanged_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tChangedAt\xb0\xf3\xb3\x07\x01\x12H\n\nchecked_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\tCreatedAt\xb0\xf3\xb3\x07\x01\x12\x1e\n\x05\x65rror\x18\x08 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12%\n\x0creachability\x18\t \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x12\x1e\n\x05\x66lags\x18\n \x03(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01:%\xfa\xf8\xb3\x07 \xa2\xf3\xb3\x07\x11SecretStoreHealth\xa8\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01J\x04\x08\x03\x10\x04\x32\xbc\x02\n\x12SecretStoreHealths\x12|\n\x04List\x12 .v1.SecretStoreHealthListRequest\x1a!.v1.SecretStoreHealthListResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/secret-store-healths\x12\x80\x01\n\x05\x43heck\x12!.v1.SecretStoreHealthCheckRequest\x1a\".v1.SecretStoreHealthCheckResponse\"0\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/secret-store-healths\x1a%\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11SecretStoreHealth\xca\xf9\xb3\x07\x05\xc8\xf9\xb3\x07\x01\x42n\n\x1c\x63om.strongdm.api.v1.plumbingB\x1aSecretStoreHealthsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -229,33 +229,47 @@ _SECRETSTOREHEALTH = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\007\031\242\363\263\007\006NodeID\260\363\263\007\001\312\363\263\007\004Node', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='detail', full_name='v1.SecretStoreHealth.detail', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\024\242\363\263\007\nDetailJSON\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='v1.SecretStoreHealth.status', index=3,
+      name='status', full_name='v1.SecretStoreHealth.status', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\0073\242\363\263\007\006Status\260\363\263\007\001\252\364\263\007\036models.SecretStoreHealthStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='changed_at', full_name='v1.SecretStoreHealth.changed_at', index=4,
+      name='changed_at', full_name='v1.SecretStoreHealth.changed_at', index=3,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\007\023\242\363\263\007\tChangedAt\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='checked_at', full_name='v1.SecretStoreHealth.checked_at', index=5,
+      name='checked_at', full_name='v1.SecretStoreHealth.checked_at', index=4,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\370\263\007\023\242\363\263\007\tCreatedAt\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='v1.SecretStoreHealth.error', index=5,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reachability', full_name='v1.SecretStoreHealth.reachability', index=6,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flags', full_name='v1.SecretStoreHealth.flags', index=7,
+      number=10, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\320\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -269,7 +283,7 @@ _SECRETSTOREHEALTH = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=719,
-  serialized_end=1162,
+  serialized_end=1228,
 )
 
 _SECRETSTOREHEALTHLISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMETADATA
@@ -336,10 +350,12 @@ _SECRETSTOREHEALTHCHECKRESPONSE.fields_by_name['rate_limit']._options = None
 _SECRETSTOREHEALTHCHECKRESPONSE._options = None
 _SECRETSTOREHEALTH.fields_by_name['secret_store_id']._options = None
 _SECRETSTOREHEALTH.fields_by_name['node_id']._options = None
-_SECRETSTOREHEALTH.fields_by_name['detail']._options = None
 _SECRETSTOREHEALTH.fields_by_name['status']._options = None
 _SECRETSTOREHEALTH.fields_by_name['changed_at']._options = None
 _SECRETSTOREHEALTH.fields_by_name['checked_at']._options = None
+_SECRETSTOREHEALTH.fields_by_name['error']._options = None
+_SECRETSTOREHEALTH.fields_by_name['reachability']._options = None
+_SECRETSTOREHEALTH.fields_by_name['flags']._options = None
 _SECRETSTOREHEALTH._options = None
 
 _SECRETSTOREHEALTHS = _descriptor.ServiceDescriptor(
@@ -349,8 +365,8 @@ _SECRETSTOREHEALTHS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\026\302\371\263\007\021SecretStoreHealth\312\371\263\007\005\310\371\263\007\001',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1165,
-  serialized_end=1481,
+  serialized_start=1231,
+  serialized_end=1547,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',

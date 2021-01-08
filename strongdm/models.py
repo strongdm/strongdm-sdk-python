@@ -971,6 +971,94 @@ class Athena:
         )
 
 
+class AWS:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param access_key: 
+    :param secret_access_key: 
+    :param healthcheck_region: 
+    :param role_arn: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'access_key',
+        'secret_access_key',
+        'healthcheck_region',
+        'role_arn',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        access_key=None,
+        secret_access_key=None,
+        healthcheck_region=None,
+        role_arn=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.access_key = access_key
+        self.secret_access_key = secret_access_key
+        self.healthcheck_region = healthcheck_region
+        self.role_arn = role_arn
+
+    def __repr__(self):
+        return '<sdm.AWS ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'access_key': self.access_key,
+            'secret_access_key': self.secret_access_key,
+            'healthcheck_region': self.healthcheck_region,
+            'role_arn': self.role_arn,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            access_key=d.get('access_key'),
+            secret_access_key=d.get('secret_access_key'),
+            healthcheck_region=d.get('healthcheck_region'),
+            role_arn=d.get('role_arn'),
+        )
+
+
 class BigQuery:
     """
 
@@ -6829,6 +6917,186 @@ class Role:
         )
 
 
+class AWSStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param region: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'region',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        region=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.region = region
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AWSStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultTLSStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param server_address: 
+    :param ca_cert_path: 
+    :param client_cert_path: 
+    :param client_key_path: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'server_address',
+        'ca_cert_path',
+        'client_cert_path',
+        'client_key_path',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        server_address=None,
+        ca_cert_path=None,
+        client_cert_path=None,
+        client_key_path=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.server_address = server_address
+        self.ca_cert_path = ca_cert_path
+        self.client_cert_path = client_cert_path
+        self.client_key_path = client_key_path
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.VaultTLSStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'ca_cert_path: ' + repr(self.ca_cert_path) + ' ' +\
+            'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
+            'client_key_path: ' + repr(self.client_key_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'server_address': self.server_address,
+            'ca_cert_path': self.ca_cert_path,
+            'client_cert_path': self.client_cert_path,
+            'client_key_path': self.client_key_path,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            server_address=d.get('server_address'),
+            ca_cert_path=d.get('ca_cert_path'),
+            client_cert_path=d.get('client_cert_path'),
+            client_key_path=d.get('client_key_path'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultTokenStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param server_address: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.server_address = server_address
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.VaultTokenStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
 class SecretStoreCreateResponse:
     """SecretStoreCreateResponse reports how the SecretStores were created in the system.
 
@@ -7004,184 +7272,4 @@ class SecretStoreDeleteResponse:
         return cls(
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
-        )
-
-
-class VaultTokenStore:
-    """
-
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param server_address: 
-    :param tags: Tags is a map of key, value pairs.
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'server_address',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        server_address=None,
-        tags=None,
-    ):
-        self.id = id
-        self.name = name
-        self.server_address = server_address
-        self.tags = tags
-
-    def __repr__(self):
-        return '<sdm.VaultTokenStore ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'server_address: ' + repr(self.server_address) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'server_address': self.server_address,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            server_address=d.get('server_address'),
-            tags=d.get('tags'),
-        )
-
-
-class VaultTLSStore:
-    """
-
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param server_address: 
-    :param ca_cert_path: 
-    :param client_cert_path: 
-    :param client_key_path: 
-    :param tags: Tags is a map of key, value pairs.
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'server_address',
-        'ca_cert_path',
-        'client_cert_path',
-        'client_key_path',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        server_address=None,
-        ca_cert_path=None,
-        client_cert_path=None,
-        client_key_path=None,
-        tags=None,
-    ):
-        self.id = id
-        self.name = name
-        self.server_address = server_address
-        self.ca_cert_path = ca_cert_path
-        self.client_cert_path = client_cert_path
-        self.client_key_path = client_key_path
-        self.tags = tags
-
-    def __repr__(self):
-        return '<sdm.VaultTLSStore ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'server_address: ' + repr(self.server_address) + ' ' +\
-            'ca_cert_path: ' + repr(self.ca_cert_path) + ' ' +\
-            'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
-            'client_key_path: ' + repr(self.client_key_path) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'server_address': self.server_address,
-            'ca_cert_path': self.ca_cert_path,
-            'client_cert_path': self.client_cert_path,
-            'client_key_path': self.client_key_path,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            server_address=d.get('server_address'),
-            ca_cert_path=d.get('ca_cert_path'),
-            client_cert_path=d.get('client_cert_path'),
-            client_key_path=d.get('client_key_path'),
-            tags=d.get('tags'),
-        )
-
-
-class AWSStore:
-    """
-
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param region: 
-    :param tags: Tags is a map of key, value pairs.
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'region',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        region=None,
-        tags=None,
-    ):
-        self.id = id
-        self.name = name
-        self.region = region
-        self.tags = tags
-
-    def __repr__(self):
-        return '<sdm.AWSStore ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'region': self.region,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            region=d.get('region'),
-            tags=d.get('tags'),
         )

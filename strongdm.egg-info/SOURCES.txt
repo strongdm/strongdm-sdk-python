@@ -14,6 +14,8 @@ strongdm/audits_pb2_grpc.py
 strongdm/client.py
 strongdm/control_panel_pb2.py
 strongdm/control_panel_pb2_grpc.py
+strongdm/demo_provisioning_requests_pb2.py
+strongdm/demo_provisioning_requests_pb2_grpc.py
 strongdm/drivers_pb2.py
 strongdm/drivers_pb2_grpc.py
 strongdm/errors.py
@@ -33,6 +35,8 @@ strongdm/roles_pb2.py
 strongdm/roles_pb2_grpc.py
 strongdm/secret_store_healths_pb2.py
 strongdm/secret_store_healths_pb2_grpc.py
+strongdm/secret_store_types_pb2.py
+strongdm/secret_store_types_pb2_grpc.py
 strongdm/secret_stores_pb2.py
 strongdm/secret_stores_pb2_grpc.py
 strongdm/spec_pb2.py
