@@ -26,11 +26,9 @@ import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
 from .tags_pb2 import *
-from .access_rules_pb2 import *
 from .account_attachments_pb2 import *
 from .account_grants_pb2 import *
 from .accounts_pb2 import *
-from .audits_pb2 import *
 from .control_panel_pb2 import *
 from .demo_provisioning_requests_pb2 import *
 from .drivers_pb2 import *
@@ -39,7 +37,6 @@ from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *
 from .roles_pb2 import *
-from .secret_store_healths_pb2 import *
 from .secret_store_types_pb2 import *
 from .secret_stores_pb2 import *
 

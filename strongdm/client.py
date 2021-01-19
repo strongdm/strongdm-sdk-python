@@ -43,8 +43,8 @@ class Client:
                  api_secret,
                  host='api.strongdm.com:443',
                  insecure=False):
-        self.api_access_key = api_access_key
-        self.api_secret = base64.b64decode(api_secret)
+        self.api_access_key = api_access_key.strip()
+        self.api_secret = base64.b64decode(api_secret.strip())
         self.max_retries = DEFAULT_MAX_RETRIES
         self.base_retry_delay = DEFAULT_BASE_RETRY_DELAY
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
