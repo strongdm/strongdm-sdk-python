@@ -889,6 +889,8 @@ class Athena:
     :param output: 
     :param port_override: 
     :param region: 
+    :param role_arn: 
+    :param role_external_id: 
     """
     __slots__ = [
         'id',
@@ -901,6 +903,8 @@ class Athena:
         'output',
         'port_override',
         'region',
+        'role_arn',
+        'role_external_id',
     ]
 
     def __init__(
@@ -915,6 +919,8 @@ class Athena:
         output=None,
         port_override=None,
         region=None,
+        role_arn=None,
+        role_external_id=None,
     ):
         self.id = id
         self.name = name
@@ -926,6 +932,8 @@ class Athena:
         self.output = output
         self.port_override = port_override
         self.region = region
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
 
     def __repr__(self):
         return '<sdm.Athena ' + \
@@ -939,6 +947,8 @@ class Athena:
             'output: ' + repr(self.output) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -953,6 +963,8 @@ class Athena:
             'output': self.output,
             'port_override': self.port_override,
             'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
         }
 
     @classmethod
@@ -968,6 +980,8 @@ class Athena:
             output=d.get('output'),
             port_override=d.get('port_override'),
             region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
         )
 
 
@@ -983,6 +997,7 @@ class AWS:
     :param secret_access_key: 
     :param healthcheck_region: 
     :param role_arn: 
+    :param role_external_id: 
     """
     __slots__ = [
         'id',
@@ -994,6 +1009,7 @@ class AWS:
         'secret_access_key',
         'healthcheck_region',
         'role_arn',
+        'role_external_id',
     ]
 
     def __init__(
@@ -1007,6 +1023,7 @@ class AWS:
         secret_access_key=None,
         healthcheck_region=None,
         role_arn=None,
+        role_external_id=None,
     ):
         self.id = id
         self.name = name
@@ -1017,6 +1034,7 @@ class AWS:
         self.secret_access_key = secret_access_key
         self.healthcheck_region = healthcheck_region
         self.role_arn = role_arn
+        self.role_external_id = role_external_id
 
     def __repr__(self):
         return '<sdm.AWS ' + \
@@ -1029,6 +1047,7 @@ class AWS:
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1042,6 +1061,7 @@ class AWS:
             'secret_access_key': self.secret_access_key,
             'healthcheck_region': self.healthcheck_region,
             'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
         }
 
     @classmethod
@@ -1056,6 +1076,7 @@ class AWS:
             secret_access_key=d.get('secret_access_key'),
             healthcheck_region=d.get('healthcheck_region'),
             role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
         )
 
 
@@ -1568,6 +1589,8 @@ class DynamoDB:
     :param region: 
     :param endpoint: 
     :param port_override: 
+    :param role_arn: 
+    :param role_external_id: 
     """
     __slots__ = [
         'id',
@@ -1580,6 +1603,8 @@ class DynamoDB:
         'region',
         'endpoint',
         'port_override',
+        'role_arn',
+        'role_external_id',
     ]
 
     def __init__(
@@ -1594,6 +1619,8 @@ class DynamoDB:
         region=None,
         endpoint=None,
         port_override=None,
+        role_arn=None,
+        role_external_id=None,
     ):
         self.id = id
         self.name = name
@@ -1605,6 +1632,8 @@ class DynamoDB:
         self.region = region
         self.endpoint = endpoint
         self.port_override = port_override
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
@@ -1618,6 +1647,8 @@ class DynamoDB:
             'region: ' + repr(self.region) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1632,6 +1663,8 @@ class DynamoDB:
             'region': self.region,
             'endpoint': self.endpoint,
             'port_override': self.port_override,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
         }
 
     @classmethod
@@ -1647,6 +1680,8 @@ class DynamoDB:
             region=d.get('region'),
             endpoint=d.get('endpoint'),
             port_override=d.get('port_override'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
         )
 
 
@@ -1663,6 +1698,8 @@ class AmazonES:
     :param endpoint: 
     :param access_key: 
     :param port_override: 
+    :param role_arn: 
+    :param role_external_id: 
     """
     __slots__ = [
         'id',
@@ -1675,6 +1712,8 @@ class AmazonES:
         'endpoint',
         'access_key',
         'port_override',
+        'role_arn',
+        'role_external_id',
     ]
 
     def __init__(
@@ -1689,6 +1728,8 @@ class AmazonES:
         endpoint=None,
         access_key=None,
         port_override=None,
+        role_arn=None,
+        role_external_id=None,
     ):
         self.id = id
         self.name = name
@@ -1700,6 +1741,8 @@ class AmazonES:
         self.endpoint = endpoint
         self.access_key = access_key
         self.port_override = port_override
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
@@ -1713,6 +1756,8 @@ class AmazonES:
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1727,6 +1772,8 @@ class AmazonES:
             'endpoint': self.endpoint,
             'access_key': self.access_key,
             'port_override': self.port_override,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
         }
 
     @classmethod
@@ -1742,6 +1789,8 @@ class AmazonES:
             endpoint=d.get('endpoint'),
             access_key=d.get('access_key'),
             port_override=d.get('port_override'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
         )
 
 
@@ -2453,6 +2502,7 @@ class AmazonEKS:
     :param region: 
     :param cluster_name: 
     :param role_arn: 
+    :param role_external_id: 
     :param healthcheck_namespace: 
     """
     __slots__ = [
@@ -2468,6 +2518,7 @@ class AmazonEKS:
         'region',
         'cluster_name',
         'role_arn',
+        'role_external_id',
         'healthcheck_namespace',
     ]
 
@@ -2485,6 +2536,7 @@ class AmazonEKS:
         region=None,
         cluster_name=None,
         role_arn=None,
+        role_external_id=None,
         healthcheck_namespace=None,
     ):
         self.id = id
@@ -2499,6 +2551,7 @@ class AmazonEKS:
         self.region = region
         self.cluster_name = cluster_name
         self.role_arn = role_arn
+        self.role_external_id = role_external_id
         self.healthcheck_namespace = healthcheck_namespace
 
     def __repr__(self):
@@ -2515,6 +2568,7 @@ class AmazonEKS:
             'region: ' + repr(self.region) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             '>'
 
@@ -2532,6 +2586,7 @@ class AmazonEKS:
             'region': self.region,
             'cluster_name': self.cluster_name,
             'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
             'healthcheck_namespace': self.healthcheck_namespace,
         }
 
@@ -2550,6 +2605,7 @@ class AmazonEKS:
             region=d.get('region'),
             cluster_name=d.get('cluster_name'),
             role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
         )
 

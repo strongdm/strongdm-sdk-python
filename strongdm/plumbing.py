@@ -1145,6 +1145,8 @@ def convert_athena_to_porcelain(plumbing):
     porcelain.output = (plumbing.output)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     return porcelain
 
 
@@ -1172,6 +1174,10 @@ def convert_athena_to_plumbing(porcelain):
         plumbing.port_override = (porcelain.port_override)
     if porcelain.region is not None:
         plumbing.region = (porcelain.region)
+    if porcelain.role_arn is not None:
+        plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
     return plumbing
 
 
@@ -1196,6 +1202,7 @@ def convert_aws_to_porcelain(plumbing):
     porcelain.secret_access_key = (plumbing.secret_access_key)
     porcelain.healthcheck_region = (plumbing.healthcheck_region)
     porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     return porcelain
 
 
@@ -1221,6 +1228,8 @@ def convert_aws_to_plumbing(porcelain):
         plumbing.healthcheck_region = (porcelain.healthcheck_region)
     if porcelain.role_arn is not None:
         plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
     return plumbing
 
 
@@ -1521,6 +1530,8 @@ def convert_dynamo_db_to_porcelain(plumbing):
     porcelain.region = (plumbing.region)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     return porcelain
 
 
@@ -1548,6 +1559,10 @@ def convert_dynamo_db_to_plumbing(porcelain):
         plumbing.endpoint = (porcelain.endpoint)
     if porcelain.port_override is not None:
         plumbing.port_override = (porcelain.port_override)
+    if porcelain.role_arn is not None:
+        plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
     return plumbing
 
 
@@ -1575,6 +1590,8 @@ def convert_amazon_es_to_porcelain(plumbing):
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.access_key = (plumbing.access_key)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     return porcelain
 
 
@@ -1602,6 +1619,10 @@ def convert_amazon_es_to_plumbing(porcelain):
         plumbing.access_key = (porcelain.access_key)
     if porcelain.port_override is not None:
         plumbing.port_override = (porcelain.port_override)
+    if porcelain.role_arn is not None:
+        plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
     return plumbing
 
 
@@ -2035,6 +2056,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
     porcelain.region = (plumbing.region)
     porcelain.cluster_name = (plumbing.cluster_name)
     porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     return porcelain
 
@@ -2067,6 +2089,8 @@ def convert_amazon_eks_to_plumbing(porcelain):
         plumbing.cluster_name = (porcelain.cluster_name)
     if porcelain.role_arn is not None:
         plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
     if porcelain.healthcheck_namespace is not None:
         plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     return plumbing
