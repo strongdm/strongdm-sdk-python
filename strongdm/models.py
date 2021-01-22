@@ -150,6 +150,45 @@ class RateLimitMetadata:
         )
 
 
+class Tag:
+    """
+
+    :param name: 
+    :param value: 
+    """
+    __slots__ = [
+        'name',
+        'value',
+    ]
+
+    def __init__(
+        self,
+        name=None,
+        value=None,
+    ):
+        self.name = name
+        self.value = value
+
+    def __repr__(self):
+        return '<sdm.Tag ' + \
+            'name: ' + repr(self.name) + ' ' +\
+            'value: ' + repr(self.value) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'value': self.value,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            name=d.get('name'),
+            value=d.get('value'),
+        )
+
+
 class AccountAttachmentCreateResponse:
     """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
 

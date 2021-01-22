@@ -248,6 +248,34 @@ def convert_repeated_rate_limit_metadata_to_porcelain(plumbings):
     ]
 
 
+def convert_tag_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Tag()
+    porcelain.name = (plumbing.name)
+    porcelain.value = (plumbing.value)
+    return porcelain
+
+
+def convert_tag_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = Tag()
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.value is not None:
+        plumbing.value = (porcelain.value)
+    return plumbing
+
+
+def convert_repeated_tag_to_plumbing(porcelains):
+    return [convert_tag_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_tag_to_porcelain(plumbings):
+    return [convert_tag_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_account_attachment_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None

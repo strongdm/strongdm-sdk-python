@@ -688,6 +688,40 @@ class Resources:
         self.parent = client
         self.stub = ResourcesStub(channel)
 
+    def enumerate_tags(self, filter, *args, timeout=None):
+        """EnumerateTags gets a list of the filter matching tags."""
+        req = EnumerateTagsRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.EnumerateTags(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'Resources.EnumerateTags', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.matches:
+                    yield plumbing.convert_tag_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
     def create(self, resource, timeout=None):
         """Create registers a new Resource."""
         req = ResourceCreateRequest()

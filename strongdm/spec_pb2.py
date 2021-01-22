@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"^\n\x12\x41lreadyExistsError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x06\"T\n\rNotFoundError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x05\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x03\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x10\"1\n\x0fPermissionError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x07\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\r\"p\n\x0eRateLimitError\x12?\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"B\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42R\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"^\n\x12\x41lreadyExistsError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x06\"T\n\rNotFoundError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x05\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x03\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x10\"1\n\x0fPermissionError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x07\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\r\"p\n\x0eRateLimitError\x12?\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"B\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBR\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -575,6 +575,56 @@ _RATELIMITMETADATA = _descriptor.Descriptor(
   serialized_end=1120,
 )
 
+
+_GENERICREQUESTMETADATA = _descriptor.Descriptor(
+  name='GenericRequestMetadata',
+  full_name='v1.GenericRequestMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1122,
+  serialized_end=1146,
+)
+
+
+_GENERICRESPONSEMETADATA = _descriptor.Descriptor(
+  name='GenericResponseMetadata',
+  full_name='v1.GenericResponseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1148,
+  serialized_end=1173,
+)
+
 _RATELIMITERROR.fields_by_name['rate_limit'].message_type = _RATELIMITMETADATA
 _RATELIMITMETADATA.fields_by_name['reset_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['AlreadyExistsError'] = _ALREADYEXISTSERROR
@@ -595,6 +645,8 @@ DESCRIPTOR.message_types_by_name['DeleteResponseMetadata'] = _DELETERESPONSEMETA
 DESCRIPTOR.message_types_by_name['ListRequestMetadata'] = _LISTREQUESTMETADATA
 DESCRIPTOR.message_types_by_name['ListResponseMetadata'] = _LISTRESPONSEMETADATA
 DESCRIPTOR.message_types_by_name['RateLimitMetadata'] = _RATELIMITMETADATA
+DESCRIPTOR.message_types_by_name['GenericRequestMetadata'] = _GENERICREQUESTMETADATA
+DESCRIPTOR.message_types_by_name['GenericResponseMetadata'] = _GENERICRESPONSEMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AlreadyExistsError = _reflection.GeneratedProtocolMessageType('AlreadyExistsError', (_message.Message,), {
@@ -722,6 +774,20 @@ RateLimitMetadata = _reflection.GeneratedProtocolMessageType('RateLimitMetadata'
   # @@protoc_insertion_point(class_scope:v1.RateLimitMetadata)
   })
 _sym_db.RegisterMessage(RateLimitMetadata)
+
+GenericRequestMetadata = _reflection.GeneratedProtocolMessageType('GenericRequestMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _GENERICREQUESTMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GenericRequestMetadata)
+  })
+_sym_db.RegisterMessage(GenericRequestMetadata)
+
+GenericResponseMetadata = _reflection.GeneratedProtocolMessageType('GenericResponseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _GENERICRESPONSEMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GenericResponseMetadata)
+  })
+_sym_db.RegisterMessage(GenericResponseMetadata)
 
 
 DESCRIPTOR._options = None

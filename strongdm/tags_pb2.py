@@ -34,7 +34,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xe9\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a/\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\n\xfa\xf8\xb3\x07\x05\xf0\xf3\xb3\x07\x01:\x91\x01\xfa\xf8\xb3\x07\x8b\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf0\xf3\xb3\x07\x01\x42`\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xe9\x01\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a/\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\n\xfa\xf8\xb3\x07\x05\xf0\xf3\xb3\x07\x01:\x91\x01\xfa\xf8\xb3\x07\x8b\x01\xca\xf3\xb3\x07\x80\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf0\xf3\xb3\x07\x01\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42`\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 
@@ -110,9 +110,49 @@ _TAGS = _descriptor.Descriptor(
   serialized_end=267,
 )
 
+
+_TAG = _descriptor.Descriptor(
+  name='Tag',
+  full_name='v1.Tag',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='v1.Tag.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='v1.Tag.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=269,
+  serialized_end=339,
+)
+
 _TAGS_PAIR.containing_type = _TAGS
 _TAGS.fields_by_name['pairs'].message_type = _TAGS_PAIR
 DESCRIPTOR.message_types_by_name['Tags'] = _TAGS
+DESCRIPTOR.message_types_by_name['Tag'] = _TAG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Tags = _reflection.GeneratedProtocolMessageType('Tags', (_message.Message,), {
@@ -130,8 +170,18 @@ Tags = _reflection.GeneratedProtocolMessageType('Tags', (_message.Message,), {
 _sym_db.RegisterMessage(Tags)
 _sym_db.RegisterMessage(Tags.Pair)
 
+Tag = _reflection.GeneratedProtocolMessageType('Tag', (_message.Message,), {
+  'DESCRIPTOR' : _TAG,
+  '__module__' : 'tags_pb2'
+  # @@protoc_insertion_point(class_scope:v1.Tag)
+  })
+_sym_db.RegisterMessage(Tag)
+
 
 DESCRIPTOR._options = None
 _TAGS_PAIR._options = None
 _TAGS._options = None
+_TAG.fields_by_name['name']._options = None
+_TAG.fields_by_name['value']._options = None
+_TAG._options = None
 # @@protoc_insertion_point(module_scope)
