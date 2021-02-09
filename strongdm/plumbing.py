@@ -33,6 +33,7 @@ from .control_panel_pb2 import *
 from .demo_provisioning_requests_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
+from .permissions_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *

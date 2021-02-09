@@ -38,6 +38,8 @@ from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .permissions_pb2 import *
+from .permissions_pb2_grpc import *
 from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .role_attachments_pb2 import *
