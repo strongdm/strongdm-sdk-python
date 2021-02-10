@@ -26,8 +26,8 @@ strongdm/nodes_pb2.py
 strongdm/nodes_pb2_grpc.py
 strongdm/options_pb2.py
 strongdm/options_pb2_grpc.py
-strongdm/permissions_pb2.py
-strongdm/permissions_pb2_grpc.py
+strongdm/permission_grants_pb2.py
+strongdm/permission_grants_pb2_grpc.py
 strongdm/plumbing.py
 strongdm/resources_pb2.py
 strongdm/resources_pb2_grpc.py
