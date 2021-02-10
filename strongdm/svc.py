@@ -32,14 +32,10 @@ from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
-from .demo_provisioning_requests_pb2 import *
-from .demo_provisioning_requests_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
-from .permissions_pb2 import *
-from .permissions_pb2_grpc import *
 from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .role_attachments_pb2 import *
