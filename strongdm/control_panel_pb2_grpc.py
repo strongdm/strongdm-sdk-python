@@ -34,6 +34,11 @@ class ControlPanelStub(object):
                 request_serializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.SerializeToString,
                 response_deserializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.FromString,
                 )
+        self.VerifyJWT = channel.unary_unary(
+                '/v1.ControlPanel/VerifyJWT',
+                request_serializer=control__panel__pb2.ControlPanelVerifyJWTRequest.SerializeToString,
+                response_deserializer=control__panel__pb2.ControlPanelVerifyJWTResponse.FromString,
+                )
 
 
 class ControlPanelServicer(object):
@@ -47,6 +52,13 @@ class ControlPanelServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def VerifyJWT(self, request, context):
+        """VerifyJWT reports whether the given JWT token (x-sdm-token) is valid.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ControlPanelServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -54,6 +66,11 @@ def add_ControlPanelServicer_to_server(servicer, server):
                     servicer.GetSSHCAPublicKey,
                     request_deserializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.FromString,
                     response_serializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.SerializeToString,
+            ),
+            'VerifyJWT': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyJWT,
+                    request_deserializer=control__panel__pb2.ControlPanelVerifyJWTRequest.FromString,
+                    response_serializer=control__panel__pb2.ControlPanelVerifyJWTResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -80,5 +97,22 @@ class ControlPanel(object):
         return grpc.experimental.unary_unary(request, target, '/v1.ControlPanel/GetSSHCAPublicKey',
             control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.SerializeToString,
             control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def VerifyJWT(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.ControlPanel/VerifyJWT',
+            control__panel__pb2.ControlPanelVerifyJWTRequest.SerializeToString,
+            control__panel__pb2.ControlPanelVerifyJWTResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

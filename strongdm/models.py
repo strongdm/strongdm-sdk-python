@@ -915,6 +915,52 @@ class ControlPanelGetSSHCAPublicKeyResponse:
         )
 
 
+class ControlPanelVerifyJWTResponse:
+    """ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
+
+    :param meta: Reserved for future use.
+    :param valid: Reports if the given token is valid.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'valid',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        valid=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.valid = valid
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.ControlPanelVerifyJWTResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'valid: ' + repr(self.valid) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'valid': self.valid,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            valid=d.get('valid'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class Athena:
     """
 

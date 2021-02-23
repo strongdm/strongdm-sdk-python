@@ -920,6 +920,46 @@ def convert_repeated_control_panel_get_sshca_public_key_response_to_porcelain(
     ]
 
 
+def convert_control_panel_verify_jwt_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ControlPanelVerifyJWTResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.valid = (plumbing.valid)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_control_panel_verify_jwt_response_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = ControlPanelVerifyJWTResponse()
+    if porcelain.meta is not None:
+        plumbing.meta.CopyFrom(
+            convert_get_response_metadata_to_plumbing(porcelain.meta))
+    if porcelain.valid is not None:
+        plumbing.valid = (porcelain.valid)
+    if porcelain.rate_limit is not None:
+        plumbing.rate_limit.CopyFrom(
+            convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_control_panel_verify_jwt_response_to_plumbing(porcelains):
+    return [
+        convert_control_panel_verify_jwt_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_control_panel_verify_jwt_response_to_porcelain(plumbings):
+    return [
+        convert_control_panel_verify_jwt_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_resource_to_plumbing(porcelain):
     if porcelain is None:
         return None
