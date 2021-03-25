@@ -5699,6 +5699,110 @@ class SSHCert:
         )
 
 
+class SSHCustomerKey:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param hostname: 
+    :param username: 
+    :param port: 
+    :param private_key: 
+    :param port_forwarding: 
+    :param allow_deprecated_key_exchanges: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'hostname',
+        'username',
+        'port',
+        'private_key',
+        'port_forwarding',
+        'allow_deprecated_key_exchanges',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        hostname=None,
+        username=None,
+        port=None,
+        private_key=None,
+        port_forwarding=None,
+        allow_deprecated_key_exchanges=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.hostname = hostname
+        self.username = username
+        self.port = port
+        self.private_key = private_key
+        self.port_forwarding = port_forwarding
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+
+    def __repr__(self):
+        return '<sdm.SSHCustomerKey ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'hostname': self.hostname,
+            'username': self.username,
+            'port': self.port,
+            'private_key': self.private_key,
+            'port_forwarding': self.port_forwarding,
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            hostname=d.get('hostname'),
+            username=d.get('username'),
+            port=d.get('port'),
+            private_key=d.get('private_key'),
+            port_forwarding=d.get('port_forwarding'),
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
+        )
+
+
 class Sybase:
     """
 
