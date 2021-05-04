@@ -2389,6 +2389,108 @@ class Kubernetes:
         )
 
 
+class KubernetesUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param hostname: 
+    :param port: 
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'hostname',
+        'port',
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        hostname=None,
+        port=None,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.hostname = hostname
+        self.port = port
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.KubernetesUserImpersonation ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'hostname': self.hostname,
+            'port': self.port,
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
 class KubernetesBasicAuth:
     """
 
@@ -2572,6 +2674,94 @@ class KubernetesServiceAccount:
         )
 
 
+class KubernetesServiceAccountUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param hostname: 
+    :param port: 
+    :param token: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'hostname',
+        'port',
+        'token',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        hostname=None,
+        port=None,
+        token=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.hostname = hostname
+        self.port = port
+        self.token = token
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'hostname': self.hostname,
+            'port': self.port,
+            'token': self.token,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            token=d.get('token'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
 class AmazonEKS:
     """
 
@@ -2641,6 +2831,129 @@ class AmazonEKS:
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'endpoint': self.endpoint,
+            'access_key': self.access_key,
+            'secret_access_key': self.secret_access_key,
+            'certificate_authority': self.certificate_authority,
+            'region': self.region,
+            'cluster_name': self.cluster_name,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            endpoint=d.get('endpoint'),
+            access_key=d.get('access_key'),
+            secret_access_key=d.get('secret_access_key'),
+            certificate_authority=d.get('certificate_authority'),
+            region=d.get('region'),
+            cluster_name=d.get('cluster_name'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
+class AmazonEKSUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param endpoint: 
+    :param access_key: 
+    :param secret_access_key: 
+    :param certificate_authority: 
+    :param region: 
+    :param cluster_name: 
+    :param role_arn: 
+    :param role_external_id: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'endpoint',
+        'access_key',
+        'secret_access_key',
+        'certificate_authority',
+        'region',
+        'cluster_name',
+        'role_arn',
+        'role_external_id',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        endpoint=None,
+        access_key=None,
+        secret_access_key=None,
+        certificate_authority=None,
+        region=None,
+        cluster_name=None,
+        role_arn=None,
+        role_external_id=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.endpoint = endpoint
+        self.access_key = access_key
+        self.secret_access_key = secret_access_key
+        self.certificate_authority = certificate_authority
+        self.region = region
+        self.cluster_name = cluster_name
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.AmazonEKSUserImpersonation ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2783,6 +3096,94 @@ class GoogleGKE:
         )
 
 
+class GoogleGKEUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param endpoint: 
+    :param certificate_authority: 
+    :param service_account_key: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'endpoint',
+        'certificate_authority',
+        'service_account_key',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        endpoint=None,
+        certificate_authority=None,
+        service_account_key=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.endpoint = endpoint
+        self.certificate_authority = certificate_authority
+        self.service_account_key = service_account_key
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.GoogleGKEUserImpersonation ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'endpoint': self.endpoint,
+            'certificate_authority': self.certificate_authority,
+            'service_account_key': self.service_account_key,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            endpoint=d.get('endpoint'),
+            certificate_authority=d.get('certificate_authority'),
+            service_account_key=d.get('service_account_key'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
 class AKS:
     """
 
@@ -2840,6 +3241,108 @@ class AKS:
 
     def __repr__(self):
         return '<sdm.AKS ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'hostname': self.hostname,
+            'port': self.port,
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
+class AKSUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param hostname: 
+    :param port: 
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'hostname',
+        'port',
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        hostname=None,
+        port=None,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.hostname = hostname
+        self.port = port
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.AKSUserImpersonation ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -3029,6 +3532,94 @@ class AKSServiceAccount:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'healthy': self.healthy,
+            'tags': self.tags,
+            'secret_store_id': self.secret_store_id,
+            'hostname': self.hostname,
+            'port': self.port,
+            'token': self.token,
+            'healthcheck_namespace': self.healthcheck_namespace,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            healthy=d.get('healthy'),
+            tags=d.get('tags'),
+            secret_store_id=d.get('secret_store_id'),
+            hostname=d.get('hostname'),
+            port=d.get('port'),
+            token=d.get('token'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+        )
+
+
+class AKSServiceAccountUserImpersonation:
+    """
+
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param tags: Tags is a map of key, value pairs.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param hostname: 
+    :param port: 
+    :param token: 
+    :param healthcheck_namespace: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'healthy',
+        'tags',
+        'secret_store_id',
+        'hostname',
+        'port',
+        'token',
+        'healthcheck_namespace',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        healthy=None,
+        tags=None,
+        secret_store_id=None,
+        hostname=None,
+        port=None,
+        token=None,
+        healthcheck_namespace=None,
+    ):
+        self.id = id
+        self.name = name
+        self.healthy = healthy
+        self.tags = tags
+        self.secret_store_id = secret_store_id
+        self.hostname = hostname
+        self.port = port
+        self.token = token
+        self.healthcheck_namespace = healthcheck_namespace
+
+    def __repr__(self):
+        return '<sdm.AKSServiceAccountUserImpersonation ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\

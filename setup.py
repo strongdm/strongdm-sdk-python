@@ -23,7 +23,7 @@ from setuptools import setup
 setup(
     name='strongdm',
     packages=['strongdm'],
-    version='1.0.20',
+    version='1.0.21',
     license='apache-2.0',
     description='strongDM SDK for the Python programming language.',
     long_description=long_description,
@@ -32,7 +32,7 @@ setup(
     author_email='sdk-feedback@strongdm.com',
     url='https://github.com/strongdm/strongdm-sdk-python',
     download_url=
-    'https://github.com/strongdm/strongdm-sdk-python/archive/v1.0.20.tar.gz',
+    'https://github.com/strongdm/strongdm-sdk-python/archive/v1.0.21.tar.gz',
     keywords=[
         'strongDM', 'sdm', 'api', 'automation', 'security', 'audit',
         'database', 'server', 'ssh', 'rdp'

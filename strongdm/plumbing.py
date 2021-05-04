@@ -994,24 +994,44 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.http_auth.CopyFrom(convert_http_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.Kubernetes):
         plumbing.kubernetes.CopyFrom(convert_kubernetes_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesUserImpersonation):
+        plumbing.kubernetes_user_impersonation.CopyFrom(
+            convert_kubernetes_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.KubernetesBasicAuth):
         plumbing.kubernetes_basic_auth.CopyFrom(
             convert_kubernetes_basic_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.KubernetesServiceAccount):
         plumbing.kubernetes_service_account.CopyFrom(
             convert_kubernetes_service_account_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesServiceAccountUserImpersonation):
+        plumbing.kubernetes_service_account_user_impersonation.CopyFrom(
+            convert_kubernetes_service_account_user_impersonation_to_plumbing(
+                porcelain))
     if isinstance(porcelain, models.AmazonEKS):
         plumbing.amazon_eks.CopyFrom(convert_amazon_eks_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AmazonEKSUserImpersonation):
+        plumbing.amazon_eks_user_impersonation.CopyFrom(
+            convert_amazon_eks_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKE):
         plumbing.google_gke.CopyFrom(convert_google_gke_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GoogleGKEUserImpersonation):
+        plumbing.google_gke_user_impersonation.CopyFrom(
+            convert_google_gke_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKS):
         plumbing.aks.CopyFrom(convert_aks_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AKSUserImpersonation):
+        plumbing.aks_user_impersonation.CopyFrom(
+            convert_aks_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKSBasicAuth):
         plumbing.aks_basic_auth.CopyFrom(
             convert_aks_basic_auth_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKSServiceAccount):
         plumbing.aks_service_account.CopyFrom(
             convert_aks_service_account_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AKSServiceAccountUserImpersonation):
+        plumbing.aks_service_account_user_impersonation.CopyFrom(
+            convert_aks_service_account_user_impersonation_to_plumbing(
+                porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(convert_memcached_to_plumbing(porcelain))
     if isinstance(porcelain, models.MongoLegacyHost):
@@ -1111,23 +1131,41 @@ def convert_resource_to_porcelain(plumbing):
         return convert_http_auth_to_porcelain(plumbing.http_auth)
     if plumbing.HasField('kubernetes'):
         return convert_kubernetes_to_porcelain(plumbing.kubernetes)
+    if plumbing.HasField('kubernetes_user_impersonation'):
+        return convert_kubernetes_user_impersonation_to_porcelain(
+            plumbing.kubernetes_user_impersonation)
     if plumbing.HasField('kubernetes_basic_auth'):
         return convert_kubernetes_basic_auth_to_porcelain(
             plumbing.kubernetes_basic_auth)
     if plumbing.HasField('kubernetes_service_account'):
         return convert_kubernetes_service_account_to_porcelain(
             plumbing.kubernetes_service_account)
+    if plumbing.HasField('kubernetes_service_account_user_impersonation'):
+        return convert_kubernetes_service_account_user_impersonation_to_porcelain(
+            plumbing.kubernetes_service_account_user_impersonation)
     if plumbing.HasField('amazon_eks'):
         return convert_amazon_eks_to_porcelain(plumbing.amazon_eks)
+    if plumbing.HasField('amazon_eks_user_impersonation'):
+        return convert_amazon_eks_user_impersonation_to_porcelain(
+            plumbing.amazon_eks_user_impersonation)
     if plumbing.HasField('google_gke'):
         return convert_google_gke_to_porcelain(plumbing.google_gke)
+    if plumbing.HasField('google_gke_user_impersonation'):
+        return convert_google_gke_user_impersonation_to_porcelain(
+            plumbing.google_gke_user_impersonation)
     if plumbing.HasField('aks'):
         return convert_aks_to_porcelain(plumbing.aks)
+    if plumbing.HasField('aks_user_impersonation'):
+        return convert_aks_user_impersonation_to_porcelain(
+            plumbing.aks_user_impersonation)
     if plumbing.HasField('aks_basic_auth'):
         return convert_aks_basic_auth_to_porcelain(plumbing.aks_basic_auth)
     if plumbing.HasField('aks_service_account'):
         return convert_aks_service_account_to_porcelain(
             plumbing.aks_service_account)
+    if plumbing.HasField('aks_service_account_user_impersonation'):
+        return convert_aks_service_account_user_impersonation_to_porcelain(
+            plumbing.aks_service_account_user_impersonation)
     if plumbing.HasField('memcached'):
         return convert_memcached_to_porcelain(plumbing.memcached)
     if plumbing.HasField('mongo_legacy_host'):
@@ -1999,6 +2037,67 @@ def convert_repeated_kubernetes_to_porcelain(plumbings):
     ]
 
 
+def convert_kubernetes_user_impersonation_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KubernetesUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.port = (plumbing.port)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.client_certificate = (plumbing.client_certificate)
+    porcelain.client_key = (plumbing.client_key)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_kubernetes_user_impersonation_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = KubernetesUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.certificate_authority is not None:
+        plumbing.certificate_authority = (porcelain.certificate_authority)
+    if porcelain.client_certificate is not None:
+        plumbing.client_certificate = (porcelain.client_certificate)
+    if porcelain.client_key is not None:
+        plumbing.client_key = (porcelain.client_key)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_kubernetes_user_impersonation_to_plumbing(porcelains):
+    return [
+        convert_kubernetes_user_impersonation_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_kubernetes_user_impersonation_to_porcelain(plumbings):
+    return [
+        convert_kubernetes_user_impersonation_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_kubernetes_basic_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2112,6 +2211,65 @@ def convert_repeated_kubernetes_service_account_to_porcelain(plumbings):
     ]
 
 
+def convert_kubernetes_service_account_user_impersonation_to_porcelain(
+        plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KubernetesServiceAccountUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.port = (plumbing.port)
+    porcelain.token = (plumbing.token)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_kubernetes_service_account_user_impersonation_to_plumbing(
+        porcelain):
+    if porcelain is None:
+        return None
+    plumbing = KubernetesServiceAccountUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.token is not None:
+        plumbing.token = (porcelain.token)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_kubernetes_service_account_user_impersonation_to_plumbing(
+        porcelains):
+    return [
+        convert_kubernetes_service_account_user_impersonation_to_plumbing(
+            porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_kubernetes_service_account_user_impersonation_to_porcelain(
+        plumbings):
+    return [
+        convert_kubernetes_service_account_user_impersonation_to_porcelain(
+            plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_amazon_eks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2180,6 +2338,76 @@ def convert_repeated_amazon_eks_to_porcelain(plumbings):
     ]
 
 
+def convert_amazon_eks_user_impersonation_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AmazonEKSUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.access_key = (plumbing.access_key)
+    porcelain.secret_access_key = (plumbing.secret_access_key)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.region = (plumbing.region)
+    porcelain.cluster_name = (plumbing.cluster_name)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_amazon_eks_user_impersonation_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AmazonEKSUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.endpoint is not None:
+        plumbing.endpoint = (porcelain.endpoint)
+    if porcelain.access_key is not None:
+        plumbing.access_key = (porcelain.access_key)
+    if porcelain.secret_access_key is not None:
+        plumbing.secret_access_key = (porcelain.secret_access_key)
+    if porcelain.certificate_authority is not None:
+        plumbing.certificate_authority = (porcelain.certificate_authority)
+    if porcelain.region is not None:
+        plumbing.region = (porcelain.region)
+    if porcelain.cluster_name is not None:
+        plumbing.cluster_name = (porcelain.cluster_name)
+    if porcelain.role_arn is not None:
+        plumbing.role_arn = (porcelain.role_arn)
+    if porcelain.role_external_id is not None:
+        plumbing.role_external_id = (porcelain.role_external_id)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_amazon_eks_user_impersonation_to_plumbing(porcelains):
+    return [
+        convert_amazon_eks_user_impersonation_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_amazon_eks_user_impersonation_to_porcelain(plumbings):
+    return [
+        convert_amazon_eks_user_impersonation_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_google_gke_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2230,6 +2458,61 @@ def convert_repeated_google_gke_to_plumbing(porcelains):
 def convert_repeated_google_gke_to_porcelain(plumbings):
     return [
         convert_google_gke_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_google_gke_user_impersonation_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GoogleGKEUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.service_account_key = (plumbing.service_account_key)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_google_gke_user_impersonation_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = GoogleGKEUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.endpoint is not None:
+        plumbing.endpoint = (porcelain.endpoint)
+    if porcelain.certificate_authority is not None:
+        plumbing.certificate_authority = (porcelain.certificate_authority)
+    if porcelain.service_account_key is not None:
+        plumbing.service_account_key = (porcelain.service_account_key)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_google_gke_user_impersonation_to_plumbing(porcelains):
+    return [
+        convert_google_gke_user_impersonation_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_google_gke_user_impersonation_to_porcelain(plumbings):
+    return [
+        convert_google_gke_user_impersonation_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 
@@ -2286,6 +2569,67 @@ def convert_repeated_aks_to_plumbing(porcelains):
 
 def convert_repeated_aks_to_porcelain(plumbings):
     return [convert_aks_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_aks_user_impersonation_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AKSUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.port = (plumbing.port)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.client_certificate = (plumbing.client_certificate)
+    porcelain.client_key = (plumbing.client_key)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_aks_user_impersonation_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AKSUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.certificate_authority is not None:
+        plumbing.certificate_authority = (porcelain.certificate_authority)
+    if porcelain.client_certificate is not None:
+        plumbing.client_certificate = (porcelain.client_certificate)
+    if porcelain.client_key is not None:
+        plumbing.client_key = (porcelain.client_key)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_aks_user_impersonation_to_plumbing(porcelains):
+    return [
+        convert_aks_user_impersonation_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aks_user_impersonation_to_porcelain(plumbings):
+    return [
+        convert_aks_user_impersonation_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_aks_basic_auth_to_porcelain(plumbing):
@@ -2396,6 +2740,63 @@ def convert_repeated_aks_service_account_to_plumbing(porcelains):
 def convert_repeated_aks_service_account_to_porcelain(plumbings):
     return [
         convert_aks_service_account_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_aks_service_account_user_impersonation_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AKSServiceAccountUserImpersonation()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.port = (plumbing.port)
+    porcelain.token = (plumbing.token)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    return porcelain
+
+
+def convert_aks_service_account_user_impersonation_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AKSServiceAccountUserImpersonation()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    if porcelain.token is not None:
+        plumbing.token = (porcelain.token)
+    if porcelain.healthcheck_namespace is not None:
+        plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    return plumbing
+
+
+def convert_repeated_aks_service_account_user_impersonation_to_plumbing(
+        porcelains):
+    return [
+        convert_aks_service_account_user_impersonation_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aks_service_account_user_impersonation_to_porcelain(
+        plumbings):
+    return [
+        convert_aks_service_account_user_impersonation_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
