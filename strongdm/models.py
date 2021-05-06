@@ -969,6 +969,7 @@ class Athena:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param access_key: 
     :param secret_access_key: 
     :param output: 
@@ -983,6 +984,7 @@ class Athena:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'access_key',
         'secret_access_key',
         'output',
@@ -999,6 +1001,7 @@ class Athena:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         access_key=None,
         secret_access_key=None,
         output=None,
@@ -1012,6 +1015,7 @@ class Athena:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.output = output
@@ -1027,6 +1031,7 @@ class Athena:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'output: ' + repr(self.output) + ' ' +\
@@ -1043,6 +1048,7 @@ class Athena:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'output': self.output,
@@ -1060,6 +1066,7 @@ class Athena:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             output=d.get('output'),
@@ -1078,6 +1085,7 @@ class AWS:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param access_key: 
     :param secret_access_key: 
     :param healthcheck_region: 
@@ -1090,6 +1098,7 @@ class AWS:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'access_key',
         'secret_access_key',
         'healthcheck_region',
@@ -1104,6 +1113,7 @@ class AWS:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         access_key=None,
         secret_access_key=None,
         healthcheck_region=None,
@@ -1115,6 +1125,7 @@ class AWS:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.healthcheck_region = healthcheck_region
@@ -1128,6 +1139,7 @@ class AWS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
@@ -1142,6 +1154,7 @@ class AWS:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'healthcheck_region': self.healthcheck_region,
@@ -1157,6 +1170,7 @@ class AWS:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             healthcheck_region=d.get('healthcheck_region'),
@@ -1173,6 +1187,7 @@ class BigQuery:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param private_key: 
     :param project: 
     :param port_override: 
@@ -1185,6 +1200,7 @@ class BigQuery:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'private_key',
         'project',
         'port_override',
@@ -1199,6 +1215,7 @@ class BigQuery:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         private_key=None,
         project=None,
         port_override=None,
@@ -1210,6 +1227,7 @@ class BigQuery:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.private_key = private_key
         self.project = project
         self.port_override = port_override
@@ -1223,6 +1241,7 @@ class BigQuery:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
             'project: ' + repr(self.project) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -1237,6 +1256,7 @@ class BigQuery:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'private_key': self.private_key,
             'project': self.project,
             'port_override': self.port_override,
@@ -1252,6 +1272,7 @@ class BigQuery:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             private_key=d.get('private_key'),
             project=d.get('project'),
             port_override=d.get('port_override'),
@@ -1268,6 +1289,7 @@ class Cassandra:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1281,6 +1303,7 @@ class Cassandra:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -1296,6 +1319,7 @@ class Cassandra:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -1308,6 +1332,7 @@ class Cassandra:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1322,6 +1347,7 @@ class Cassandra:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1337,6 +1363,7 @@ class Cassandra:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1353,6 +1380,7 @@ class Cassandra:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1370,6 +1398,7 @@ class DB2I:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1383,6 +1412,7 @@ class DB2I:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -1398,6 +1428,7 @@ class DB2I:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -1410,6 +1441,7 @@ class DB2I:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1424,6 +1456,7 @@ class DB2I:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1439,6 +1472,7 @@ class DB2I:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1455,6 +1489,7 @@ class DB2I:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1472,6 +1507,7 @@ class DB2LUW:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1485,6 +1521,7 @@ class DB2LUW:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -1500,6 +1537,7 @@ class DB2LUW:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -1512,6 +1550,7 @@ class DB2LUW:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1526,6 +1565,7 @@ class DB2LUW:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1541,6 +1581,7 @@ class DB2LUW:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1557,6 +1598,7 @@ class DB2LUW:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1574,6 +1616,7 @@ class Druid:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port_override: 
     :param username: 
@@ -1586,6 +1629,7 @@ class Druid:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port_override',
         'username',
@@ -1600,6 +1644,7 @@ class Druid:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port_override=None,
         username=None,
@@ -1611,6 +1656,7 @@ class Druid:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port_override = port_override
         self.username = username
@@ -1624,6 +1670,7 @@ class Druid:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -1638,6 +1685,7 @@ class Druid:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'username': self.username,
@@ -1653,6 +1701,7 @@ class Druid:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             username=d.get('username'),
@@ -1669,6 +1718,7 @@ class DynamoDB:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param access_key: 
     :param secret_access_key: 
     :param region: 
@@ -1683,6 +1733,7 @@ class DynamoDB:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'access_key',
         'secret_access_key',
         'region',
@@ -1699,6 +1750,7 @@ class DynamoDB:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         access_key=None,
         secret_access_key=None,
         region=None,
@@ -1712,6 +1764,7 @@ class DynamoDB:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.access_key = access_key
         self.secret_access_key = secret_access_key
         self.region = region
@@ -1727,6 +1780,7 @@ class DynamoDB:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
@@ -1743,6 +1797,7 @@ class DynamoDB:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
             'region': self.region,
@@ -1760,6 +1815,7 @@ class DynamoDB:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
             region=d.get('region'),
@@ -1778,6 +1834,7 @@ class AmazonES:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param region: 
     :param secret_access_key: 
     :param endpoint: 
@@ -1792,6 +1849,7 @@ class AmazonES:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'region',
         'secret_access_key',
         'endpoint',
@@ -1808,6 +1866,7 @@ class AmazonES:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         region=None,
         secret_access_key=None,
         endpoint=None,
@@ -1821,6 +1880,7 @@ class AmazonES:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.region = region
         self.secret_access_key = secret_access_key
         self.endpoint = endpoint
@@ -1836,6 +1896,7 @@ class AmazonES:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
@@ -1852,6 +1913,7 @@ class AmazonES:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'region': self.region,
             'secret_access_key': self.secret_access_key,
             'endpoint': self.endpoint,
@@ -1869,6 +1931,7 @@ class AmazonES:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             region=d.get('region'),
             secret_access_key=d.get('secret_access_key'),
             endpoint=d.get('endpoint'),
@@ -1887,6 +1950,7 @@ class Elastic:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -1900,6 +1964,7 @@ class Elastic:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -1915,6 +1980,7 @@ class Elastic:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -1927,6 +1993,7 @@ class Elastic:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -1941,6 +2008,7 @@ class Elastic:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -1956,6 +2024,7 @@ class Elastic:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -1972,6 +2041,7 @@ class Elastic:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -1989,6 +2059,7 @@ class HTTPBasicAuth:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param url: 
     :param healthcheck_path: 
     :param username: 
@@ -2003,6 +2074,7 @@ class HTTPBasicAuth:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'url',
         'healthcheck_path',
         'username',
@@ -2019,6 +2091,7 @@ class HTTPBasicAuth:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         url=None,
         healthcheck_path=None,
         username=None,
@@ -2032,6 +2105,7 @@ class HTTPBasicAuth:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.username = username
@@ -2047,6 +2121,7 @@ class HTTPBasicAuth:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -2063,6 +2138,7 @@ class HTTPBasicAuth:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'username': self.username,
@@ -2080,6 +2156,7 @@ class HTTPBasicAuth:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             username=d.get('username'),
@@ -2098,6 +2175,7 @@ class HTTPNoAuth:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param url: 
     :param healthcheck_path: 
     :param headers_blacklist: 
@@ -2110,6 +2188,7 @@ class HTTPNoAuth:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'url',
         'healthcheck_path',
         'headers_blacklist',
@@ -2124,6 +2203,7 @@ class HTTPNoAuth:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         url=None,
         healthcheck_path=None,
         headers_blacklist=None,
@@ -2135,6 +2215,7 @@ class HTTPNoAuth:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.headers_blacklist = headers_blacklist
@@ -2148,6 +2229,7 @@ class HTTPNoAuth:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -2162,6 +2244,7 @@ class HTTPNoAuth:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'headers_blacklist': self.headers_blacklist,
@@ -2177,6 +2260,7 @@ class HTTPNoAuth:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -2193,6 +2277,7 @@ class HTTPAuth:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param url: 
     :param healthcheck_path: 
     :param auth_header: 
@@ -2206,6 +2291,7 @@ class HTTPAuth:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'url',
         'healthcheck_path',
         'auth_header',
@@ -2221,6 +2307,7 @@ class HTTPAuth:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         url=None,
         healthcheck_path=None,
         auth_header=None,
@@ -2233,6 +2320,7 @@ class HTTPAuth:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.url = url
         self.healthcheck_path = healthcheck_path
         self.auth_header = auth_header
@@ -2247,6 +2335,7 @@ class HTTPAuth:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'auth_header: ' + repr(self.auth_header) + ' ' +\
@@ -2262,6 +2351,7 @@ class HTTPAuth:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'url': self.url,
             'healthcheck_path': self.healthcheck_path,
             'auth_header': self.auth_header,
@@ -2278,6 +2368,7 @@ class HTTPAuth:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             url=d.get('url'),
             healthcheck_path=d.get('healthcheck_path'),
             auth_header=d.get('auth_header'),
@@ -2295,6 +2386,7 @@ class Kubernetes:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -2308,6 +2400,7 @@ class Kubernetes:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'certificate_authority',
@@ -2323,6 +2416,7 @@ class Kubernetes:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -2335,6 +2429,7 @@ class Kubernetes:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -2349,6 +2444,7 @@ class Kubernetes:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -2364,6 +2460,7 @@ class Kubernetes:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -2380,6 +2477,7 @@ class Kubernetes:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -2397,6 +2495,7 @@ class KubernetesUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -2410,6 +2509,7 @@ class KubernetesUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'certificate_authority',
@@ -2425,6 +2525,7 @@ class KubernetesUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -2437,6 +2538,7 @@ class KubernetesUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -2451,6 +2553,7 @@ class KubernetesUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -2466,6 +2569,7 @@ class KubernetesUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -2482,6 +2586,7 @@ class KubernetesUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -2499,6 +2604,7 @@ class KubernetesBasicAuth:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param username: 
@@ -2511,6 +2617,7 @@ class KubernetesBasicAuth:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'username',
@@ -2525,6 +2632,7 @@ class KubernetesBasicAuth:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         username=None,
@@ -2536,6 +2644,7 @@ class KubernetesBasicAuth:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -2549,6 +2658,7 @@ class KubernetesBasicAuth:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -2563,6 +2673,7 @@ class KubernetesBasicAuth:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -2578,6 +2689,7 @@ class KubernetesBasicAuth:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -2594,6 +2706,7 @@ class KubernetesServiceAccount:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param token: 
@@ -2605,6 +2718,7 @@ class KubernetesServiceAccount:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'token',
@@ -2618,6 +2732,7 @@ class KubernetesServiceAccount:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         token=None,
@@ -2628,6 +2743,7 @@ class KubernetesServiceAccount:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -2640,6 +2756,7 @@ class KubernetesServiceAccount:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -2653,6 +2770,7 @@ class KubernetesServiceAccount:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -2667,6 +2785,7 @@ class KubernetesServiceAccount:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -2682,6 +2801,7 @@ class KubernetesServiceAccountUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param token: 
@@ -2693,6 +2813,7 @@ class KubernetesServiceAccountUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'token',
@@ -2706,6 +2827,7 @@ class KubernetesServiceAccountUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         token=None,
@@ -2716,6 +2838,7 @@ class KubernetesServiceAccountUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -2728,6 +2851,7 @@ class KubernetesServiceAccountUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -2741,6 +2865,7 @@ class KubernetesServiceAccountUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -2755,6 +2880,7 @@ class KubernetesServiceAccountUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -2770,6 +2896,7 @@ class AmazonEKS:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param endpoint: 
     :param access_key: 
     :param secret_access_key: 
@@ -2786,6 +2913,7 @@ class AmazonEKS:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'endpoint',
         'access_key',
         'secret_access_key',
@@ -2804,6 +2932,7 @@ class AmazonEKS:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         endpoint=None,
         access_key=None,
         secret_access_key=None,
@@ -2819,6 +2948,7 @@ class AmazonEKS:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.endpoint = endpoint
         self.access_key = access_key
         self.secret_access_key = secret_access_key
@@ -2836,6 +2966,7 @@ class AmazonEKS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -2854,6 +2985,7 @@ class AmazonEKS:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
@@ -2873,6 +3005,7 @@ class AmazonEKS:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
@@ -2893,6 +3026,7 @@ class AmazonEKSUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param endpoint: 
     :param access_key: 
     :param secret_access_key: 
@@ -2909,6 +3043,7 @@ class AmazonEKSUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'endpoint',
         'access_key',
         'secret_access_key',
@@ -2927,6 +3062,7 @@ class AmazonEKSUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         endpoint=None,
         access_key=None,
         secret_access_key=None,
@@ -2942,6 +3078,7 @@ class AmazonEKSUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.endpoint = endpoint
         self.access_key = access_key
         self.secret_access_key = secret_access_key
@@ -2959,6 +3096,7 @@ class AmazonEKSUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'access_key: ' + repr(self.access_key) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -2977,6 +3115,7 @@ class AmazonEKSUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'access_key': self.access_key,
             'secret_access_key': self.secret_access_key,
@@ -2996,6 +3135,7 @@ class AmazonEKSUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             access_key=d.get('access_key'),
             secret_access_key=d.get('secret_access_key'),
@@ -3016,6 +3156,7 @@ class GoogleGKE:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param endpoint: 
     :param certificate_authority: 
     :param service_account_key: 
@@ -3027,6 +3168,7 @@ class GoogleGKE:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'endpoint',
         'certificate_authority',
         'service_account_key',
@@ -3040,6 +3182,7 @@ class GoogleGKE:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         endpoint=None,
         certificate_authority=None,
         service_account_key=None,
@@ -3050,6 +3193,7 @@ class GoogleGKE:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.endpoint = endpoint
         self.certificate_authority = certificate_authority
         self.service_account_key = service_account_key
@@ -3062,6 +3206,7 @@ class GoogleGKE:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
@@ -3075,6 +3220,7 @@ class GoogleGKE:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'certificate_authority': self.certificate_authority,
             'service_account_key': self.service_account_key,
@@ -3089,6 +3235,7 @@ class GoogleGKE:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             certificate_authority=d.get('certificate_authority'),
             service_account_key=d.get('service_account_key'),
@@ -3104,6 +3251,7 @@ class GoogleGKEUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param endpoint: 
     :param certificate_authority: 
     :param service_account_key: 
@@ -3115,6 +3263,7 @@ class GoogleGKEUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'endpoint',
         'certificate_authority',
         'service_account_key',
@@ -3128,6 +3277,7 @@ class GoogleGKEUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         endpoint=None,
         certificate_authority=None,
         service_account_key=None,
@@ -3138,6 +3288,7 @@ class GoogleGKEUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.endpoint = endpoint
         self.certificate_authority = certificate_authority
         self.service_account_key = service_account_key
@@ -3150,6 +3301,7 @@ class GoogleGKEUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
@@ -3163,6 +3315,7 @@ class GoogleGKEUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'certificate_authority': self.certificate_authority,
             'service_account_key': self.service_account_key,
@@ -3177,6 +3330,7 @@ class GoogleGKEUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             certificate_authority=d.get('certificate_authority'),
             service_account_key=d.get('service_account_key'),
@@ -3192,6 +3346,7 @@ class AKS:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -3205,6 +3360,7 @@ class AKS:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'certificate_authority',
@@ -3220,6 +3376,7 @@ class AKS:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -3232,6 +3389,7 @@ class AKS:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -3246,6 +3404,7 @@ class AKS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -3261,6 +3420,7 @@ class AKS:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -3277,6 +3437,7 @@ class AKS:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -3294,6 +3455,7 @@ class AKSUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param certificate_authority: 
@@ -3307,6 +3469,7 @@ class AKSUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'certificate_authority',
@@ -3322,6 +3485,7 @@ class AKSUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         certificate_authority=None,
@@ -3334,6 +3498,7 @@ class AKSUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.certificate_authority = certificate_authority
@@ -3348,6 +3513,7 @@ class AKSUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
@@ -3363,6 +3529,7 @@ class AKSUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'certificate_authority': self.certificate_authority,
@@ -3379,6 +3546,7 @@ class AKSUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             certificate_authority=d.get('certificate_authority'),
@@ -3396,6 +3564,7 @@ class AKSBasicAuth:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param username: 
@@ -3408,6 +3577,7 @@ class AKSBasicAuth:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'username',
@@ -3422,6 +3592,7 @@ class AKSBasicAuth:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         username=None,
@@ -3433,6 +3604,7 @@ class AKSBasicAuth:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.username = username
@@ -3446,6 +3618,7 @@ class AKSBasicAuth:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -3460,6 +3633,7 @@ class AKSBasicAuth:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'username': self.username,
@@ -3475,6 +3649,7 @@ class AKSBasicAuth:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             username=d.get('username'),
@@ -3491,6 +3666,7 @@ class AKSServiceAccount:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param token: 
@@ -3502,6 +3678,7 @@ class AKSServiceAccount:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'token',
@@ -3515,6 +3692,7 @@ class AKSServiceAccount:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         token=None,
@@ -3525,6 +3703,7 @@ class AKSServiceAccount:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -3537,6 +3716,7 @@ class AKSServiceAccount:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -3550,6 +3730,7 @@ class AKSServiceAccount:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -3564,6 +3745,7 @@ class AKSServiceAccount:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -3579,6 +3761,7 @@ class AKSServiceAccountUserImpersonation:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port: 
     :param token: 
@@ -3590,6 +3773,7 @@ class AKSServiceAccountUserImpersonation:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port',
         'token',
@@ -3603,6 +3787,7 @@ class AKSServiceAccountUserImpersonation:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port=None,
         token=None,
@@ -3613,6 +3798,7 @@ class AKSServiceAccountUserImpersonation:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port = port
         self.token = token
@@ -3625,6 +3811,7 @@ class AKSServiceAccountUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -3638,6 +3825,7 @@ class AKSServiceAccountUserImpersonation:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port': self.port,
             'token': self.token,
@@ -3652,6 +3840,7 @@ class AKSServiceAccountUserImpersonation:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port=d.get('port'),
             token=d.get('token'),
@@ -3667,6 +3856,7 @@ class Memcached:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port_override: 
     :param port: 
@@ -3677,6 +3867,7 @@ class Memcached:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port_override',
         'port',
@@ -3689,6 +3880,7 @@ class Memcached:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port_override=None,
         port=None,
@@ -3698,6 +3890,7 @@ class Memcached:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port_override = port_override
         self.port = port
@@ -3709,6 +3902,7 @@ class Memcached:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -3721,6 +3915,7 @@ class Memcached:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'port': self.port,
@@ -3734,6 +3929,7 @@ class Memcached:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             port=d.get('port'),
@@ -3748,6 +3944,7 @@ class MongoLegacyHost:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -3763,6 +3960,7 @@ class MongoLegacyHost:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'auth_database',
         'port_override',
@@ -3780,6 +3978,7 @@ class MongoLegacyHost:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -3794,6 +3993,7 @@ class MongoLegacyHost:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -3810,6 +4010,7 @@ class MongoLegacyHost:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -3827,6 +4028,7 @@ class MongoLegacyHost:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -3845,6 +4047,7 @@ class MongoLegacyHost:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -3864,6 +4067,7 @@ class MongoLegacyReplicaset:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -3880,6 +4084,7 @@ class MongoLegacyReplicaset:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'auth_database',
         'port_override',
@@ -3898,6 +4103,7 @@ class MongoLegacyReplicaset:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -3913,6 +4119,7 @@ class MongoLegacyReplicaset:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -3930,6 +4137,7 @@ class MongoLegacyReplicaset:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -3948,6 +4156,7 @@ class MongoLegacyReplicaset:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -3967,6 +4176,7 @@ class MongoLegacyReplicaset:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -3987,6 +4197,7 @@ class MongoHost:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -4001,6 +4212,7 @@ class MongoHost:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'auth_database',
         'port_override',
@@ -4017,6 +4229,7 @@ class MongoHost:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -4030,6 +4243,7 @@ class MongoHost:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -4045,6 +4259,7 @@ class MongoHost:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -4061,6 +4276,7 @@ class MongoHost:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -4078,6 +4294,7 @@ class MongoHost:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -4096,6 +4313,7 @@ class MongoReplicaSet:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param auth_database: 
     :param port_override: 
@@ -4112,6 +4330,7 @@ class MongoReplicaSet:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'auth_database',
         'port_override',
@@ -4130,6 +4349,7 @@ class MongoReplicaSet:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         auth_database=None,
         port_override=None,
@@ -4145,6 +4365,7 @@ class MongoReplicaSet:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.auth_database = auth_database
         self.port_override = port_override
@@ -4162,6 +4383,7 @@ class MongoReplicaSet:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'auth_database: ' + repr(self.auth_database) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -4180,6 +4402,7 @@ class MongoReplicaSet:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'auth_database': self.auth_database,
             'port_override': self.port_override,
@@ -4199,6 +4422,7 @@ class MongoReplicaSet:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             auth_database=d.get('auth_database'),
             port_override=d.get('port_override'),
@@ -4219,6 +4443,7 @@ class Mysql:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4232,6 +4457,7 @@ class Mysql:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4247,6 +4473,7 @@ class Mysql:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4259,6 +4486,7 @@ class Mysql:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4273,6 +4501,7 @@ class Mysql:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4288,6 +4517,7 @@ class Mysql:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4304,6 +4534,7 @@ class Mysql:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4321,6 +4552,7 @@ class AuroraMysql:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4334,6 +4566,7 @@ class AuroraMysql:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4349,6 +4582,7 @@ class AuroraMysql:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4361,6 +4595,7 @@ class AuroraMysql:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4375,6 +4610,7 @@ class AuroraMysql:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4390,6 +4626,7 @@ class AuroraMysql:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4406,6 +4643,7 @@ class AuroraMysql:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4423,6 +4661,7 @@ class Clustrix:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4436,6 +4675,7 @@ class Clustrix:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4451,6 +4691,7 @@ class Clustrix:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4463,6 +4704,7 @@ class Clustrix:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4477,6 +4719,7 @@ class Clustrix:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4492,6 +4735,7 @@ class Clustrix:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4508,6 +4752,7 @@ class Clustrix:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4525,6 +4770,7 @@ class Maria:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4538,6 +4784,7 @@ class Maria:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4553,6 +4800,7 @@ class Maria:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4565,6 +4813,7 @@ class Maria:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4579,6 +4828,7 @@ class Maria:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4594,6 +4844,7 @@ class Maria:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4610,6 +4861,7 @@ class Maria:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4627,6 +4879,7 @@ class Memsql:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4640,6 +4893,7 @@ class Memsql:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4655,6 +4909,7 @@ class Memsql:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4667,6 +4922,7 @@ class Memsql:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4681,6 +4937,7 @@ class Memsql:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4696,6 +4953,7 @@ class Memsql:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4712,6 +4970,7 @@ class Memsql:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4729,6 +4988,7 @@ class Oracle:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4743,6 +5003,7 @@ class Oracle:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4759,6 +5020,7 @@ class Oracle:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4772,6 +5034,7 @@ class Oracle:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4787,6 +5050,7 @@ class Oracle:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4803,6 +5067,7 @@ class Oracle:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4820,6 +5085,7 @@ class Oracle:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4838,6 +5104,7 @@ class Postgres:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4852,6 +5119,7 @@ class Postgres:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4868,6 +5136,7 @@ class Postgres:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4881,6 +5150,7 @@ class Postgres:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -4896,6 +5166,7 @@ class Postgres:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -4912,6 +5183,7 @@ class Postgres:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -4929,6 +5201,7 @@ class Postgres:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -4947,6 +5220,7 @@ class AuroraPostgres:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -4961,6 +5235,7 @@ class AuroraPostgres:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -4977,6 +5252,7 @@ class AuroraPostgres:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -4990,6 +5266,7 @@ class AuroraPostgres:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5005,6 +5282,7 @@ class AuroraPostgres:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5021,6 +5299,7 @@ class AuroraPostgres:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5038,6 +5317,7 @@ class AuroraPostgres:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5056,6 +5336,7 @@ class Greenplum:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5070,6 +5351,7 @@ class Greenplum:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5086,6 +5368,7 @@ class Greenplum:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5099,6 +5382,7 @@ class Greenplum:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5114,6 +5398,7 @@ class Greenplum:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5130,6 +5415,7 @@ class Greenplum:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5147,6 +5433,7 @@ class Greenplum:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5165,6 +5452,7 @@ class Cockroach:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5179,6 +5467,7 @@ class Cockroach:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5195,6 +5484,7 @@ class Cockroach:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5208,6 +5498,7 @@ class Cockroach:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5223,6 +5514,7 @@ class Cockroach:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5239,6 +5531,7 @@ class Cockroach:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5256,6 +5549,7 @@ class Cockroach:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5274,6 +5568,7 @@ class Redshift:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5288,6 +5583,7 @@ class Redshift:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5304,6 +5600,7 @@ class Redshift:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5317,6 +5614,7 @@ class Redshift:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5332,6 +5630,7 @@ class Redshift:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5348,6 +5647,7 @@ class Redshift:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5365,6 +5665,7 @@ class Redshift:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5383,6 +5684,7 @@ class Citus:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5397,6 +5699,7 @@ class Citus:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5413,6 +5716,7 @@ class Citus:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5426,6 +5730,7 @@ class Citus:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5441,6 +5746,7 @@ class Citus:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5457,6 +5763,7 @@ class Citus:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5474,6 +5781,7 @@ class Citus:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5492,6 +5800,7 @@ class Presto:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param password: 
     :param database: 
@@ -5506,6 +5815,7 @@ class Presto:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'password',
         'database',
@@ -5522,6 +5832,7 @@ class Presto:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         password=None,
         database=None,
@@ -5535,6 +5846,7 @@ class Presto:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.password = password
         self.database = database
@@ -5550,6 +5862,7 @@ class Presto:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
@@ -5566,6 +5879,7 @@ class Presto:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'password': self.password,
             'database': self.database,
@@ -5583,6 +5897,7 @@ class Presto:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             password=d.get('password'),
             database=d.get('database'),
@@ -5601,6 +5916,7 @@ class RDP:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5613,6 +5929,7 @@ class RDP:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5627,6 +5944,7 @@ class RDP:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5638,6 +5956,7 @@ class RDP:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5651,6 +5970,7 @@ class RDP:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5665,6 +5985,7 @@ class RDP:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5680,6 +6001,7 @@ class RDP:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5696,6 +6018,7 @@ class Redis:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -5707,6 +6030,7 @@ class Redis:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port_override',
         'password',
@@ -5720,6 +6044,7 @@ class Redis:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -5730,6 +6055,7 @@ class Redis:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -5742,6 +6068,7 @@ class Redis:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5755,6 +6082,7 @@ class Redis:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -5769,6 +6097,7 @@ class Redis:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -5784,6 +6113,7 @@ class ElasticacheRedis:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param port_override: 
     :param password: 
@@ -5796,6 +6126,7 @@ class ElasticacheRedis:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'port_override',
         'password',
@@ -5810,6 +6141,7 @@ class ElasticacheRedis:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         port_override=None,
         password=None,
@@ -5821,6 +6153,7 @@ class ElasticacheRedis:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.port_override = port_override
         self.password = password
@@ -5834,6 +6167,7 @@ class ElasticacheRedis:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5848,6 +6182,7 @@ class ElasticacheRedis:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'port_override': self.port_override,
             'password': self.password,
@@ -5863,6 +6198,7 @@ class ElasticacheRedis:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             port_override=d.get('port_override'),
             password=d.get('password'),
@@ -5879,6 +6215,7 @@ class Snowflake:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5892,6 +6229,7 @@ class Snowflake:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -5907,6 +6245,7 @@ class Snowflake:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -5919,6 +6258,7 @@ class Snowflake:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -5933,6 +6273,7 @@ class Snowflake:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5948,6 +6289,7 @@ class Snowflake:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -5964,6 +6306,7 @@ class Snowflake:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -5981,6 +6324,7 @@ class SQLServer:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -5996,6 +6340,7 @@ class SQLServer:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -6013,6 +6358,7 @@ class SQLServer:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -6027,6 +6373,7 @@ class SQLServer:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -6043,6 +6390,7 @@ class SQLServer:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -6060,6 +6408,7 @@ class SQLServer:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -6078,6 +6427,7 @@ class SQLServer:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
@@ -6097,6 +6447,7 @@ class SSH:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param port: 
@@ -6110,6 +6461,7 @@ class SSH:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'port',
@@ -6125,6 +6477,7 @@ class SSH:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         port=None,
@@ -6137,6 +6490,7 @@ class SSH:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -6151,6 +6505,7 @@ class SSH:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -6166,6 +6521,7 @@ class SSH:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -6183,6 +6539,7 @@ class SSH:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -6201,6 +6558,7 @@ class SSHCert:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param port: 
@@ -6213,6 +6571,7 @@ class SSHCert:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'port',
@@ -6227,6 +6586,7 @@ class SSHCert:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         port=None,
@@ -6238,6 +6598,7 @@ class SSHCert:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -6251,6 +6612,7 @@ class SSHCert:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -6265,6 +6627,7 @@ class SSHCert:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -6281,6 +6644,7 @@ class SSHCert:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -6298,6 +6662,7 @@ class SSHCustomerKey:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param port: 
@@ -6311,6 +6676,7 @@ class SSHCustomerKey:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'port',
@@ -6326,6 +6692,7 @@ class SSHCustomerKey:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         port=None,
@@ -6338,6 +6705,7 @@ class SSHCustomerKey:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.port = port
@@ -6352,6 +6720,7 @@ class SSHCustomerKey:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -6367,6 +6736,7 @@ class SSHCustomerKey:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'port': self.port,
@@ -6384,6 +6754,7 @@ class SSHCustomerKey:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port=d.get('port'),
@@ -6402,6 +6773,7 @@ class Sybase:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -6414,6 +6786,7 @@ class Sybase:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'port_override',
@@ -6428,6 +6801,7 @@ class Sybase:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -6439,6 +6813,7 @@ class Sybase:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -6452,6 +6827,7 @@ class Sybase:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -6466,6 +6842,7 @@ class Sybase:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -6481,6 +6858,7 @@ class Sybase:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -6497,6 +6875,7 @@ class SybaseIQ:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param port_override: 
@@ -6509,6 +6888,7 @@ class SybaseIQ:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'port_override',
@@ -6523,6 +6903,7 @@ class SybaseIQ:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         port_override=None,
@@ -6534,6 +6915,7 @@ class SybaseIQ:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.port_override = port_override
@@ -6547,6 +6929,7 @@ class SybaseIQ:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -6561,6 +6944,7 @@ class SybaseIQ:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'port_override': self.port_override,
@@ -6576,6 +6960,7 @@ class SybaseIQ:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             port_override=d.get('port_override'),
@@ -6592,6 +6977,7 @@ class Teradata:
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param hostname: 
     :param username: 
     :param password: 
@@ -6604,6 +6990,7 @@ class Teradata:
         'healthy',
         'tags',
         'secret_store_id',
+        'egress_filter',
         'hostname',
         'username',
         'password',
@@ -6618,6 +7005,7 @@ class Teradata:
         healthy=None,
         tags=None,
         secret_store_id=None,
+        egress_filter=None,
         hostname=None,
         username=None,
         password=None,
@@ -6629,6 +7017,7 @@ class Teradata:
         self.healthy = healthy
         self.tags = tags
         self.secret_store_id = secret_store_id
+        self.egress_filter = egress_filter
         self.hostname = hostname
         self.username = username
         self.password = password
@@ -6642,6 +7031,7 @@ class Teradata:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -6656,6 +7046,7 @@ class Teradata:
             'healthy': self.healthy,
             'tags': self.tags,
             'secret_store_id': self.secret_store_id,
+            'egress_filter': self.egress_filter,
             'hostname': self.hostname,
             'username': self.username,
             'password': self.password,
@@ -6671,6 +7062,7 @@ class Teradata:
             healthy=d.get('healthy'),
             tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
+            egress_filter=d.get('egress_filter'),
             hostname=d.get('hostname'),
             username=d.get('username'),
             password=d.get('password'),
