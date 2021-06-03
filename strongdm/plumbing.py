@@ -4862,6 +4862,7 @@ def convert_relay_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.state = (plumbing.state)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.gateway_filter = (plumbing.gateway_filter)
     return porcelain
 
 
@@ -4877,6 +4878,8 @@ def convert_relay_to_plumbing(porcelain):
         plumbing.state = (porcelain.state)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.gateway_filter is not None:
+        plumbing.gateway_filter = (porcelain.gateway_filter)
     return plumbing
 
 
@@ -4898,6 +4901,7 @@ def convert_gateway_to_porcelain(plumbing):
     porcelain.listen_address = (plumbing.listen_address)
     porcelain.bind_address = (plumbing.bind_address)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.gateway_filter = (plumbing.gateway_filter)
     return porcelain
 
 
@@ -4917,6 +4921,8 @@ def convert_gateway_to_plumbing(porcelain):
         plumbing.bind_address = (porcelain.bind_address)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.gateway_filter is not None:
+        plumbing.gateway_filter = (porcelain.gateway_filter)
     return plumbing
 
 

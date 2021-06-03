@@ -7266,12 +7266,15 @@ class Relay:
  "awaiting_restart", "restarting", "started", "stopped", "dead",
  "unknown".
     :param tags: Tags is a map of key, value pairs.
+    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
+ gateways.
     """
     __slots__ = [
         'id',
         'name',
         'state',
         'tags',
+        'gateway_filter',
     ]
 
     def __init__(
@@ -7280,11 +7283,13 @@ class Relay:
         name=None,
         state=None,
         tags=None,
+        gateway_filter=None,
     ):
         self.id = id
         self.name = name
         self.state = state
         self.tags = tags
+        self.gateway_filter = gateway_filter
 
     def __repr__(self):
         return '<sdm.Relay ' + \
@@ -7292,6 +7297,7 @@ class Relay:
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -7300,6 +7306,7 @@ class Relay:
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
+            'gateway_filter': self.gateway_filter,
         }
 
     @classmethod
@@ -7309,6 +7316,7 @@ class Relay:
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),
+            gateway_filter=d.get('gateway_filter'),
         )
 
 
@@ -7323,6 +7331,8 @@ class Gateway:
     :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
  If not provided on create, set to "0.0.0.0:<listen_address_port>".
     :param tags: Tags is a map of key, value pairs.
+    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
+ gateways.
     """
     __slots__ = [
         'id',
@@ -7331,6 +7341,7 @@ class Gateway:
         'listen_address',
         'bind_address',
         'tags',
+        'gateway_filter',
     ]
 
     def __init__(
@@ -7341,6 +7352,7 @@ class Gateway:
         listen_address=None,
         bind_address=None,
         tags=None,
+        gateway_filter=None,
     ):
         self.id = id
         self.name = name
@@ -7348,6 +7360,7 @@ class Gateway:
         self.listen_address = listen_address
         self.bind_address = bind_address
         self.tags = tags
+        self.gateway_filter = gateway_filter
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
@@ -7357,6 +7370,7 @@ class Gateway:
             'listen_address: ' + repr(self.listen_address) + ' ' +\
             'bind_address: ' + repr(self.bind_address) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -7367,6 +7381,7 @@ class Gateway:
             'listen_address': self.listen_address,
             'bind_address': self.bind_address,
             'tags': self.tags,
+            'gateway_filter': self.gateway_filter,
         }
 
     @classmethod
@@ -7378,6 +7393,7 @@ class Gateway:
             listen_address=d.get('listen_address'),
             bind_address=d.get('bind_address'),
             tags=d.get('tags'),
+            gateway_filter=d.get('gateway_filter'),
         )
 
 
