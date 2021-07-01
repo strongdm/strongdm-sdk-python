@@ -10,8 +10,6 @@ strongdm/account_grants_pb2.py
 strongdm/account_grants_pb2_grpc.py
 strongdm/accounts_pb2.py
 strongdm/accounts_pb2_grpc.py
-strongdm/audits_pb2.py
-strongdm/audits_pb2_grpc.py
 strongdm/builds_private_pb2.py
 strongdm/builds_private_pb2_grpc.py
 strongdm/client.py

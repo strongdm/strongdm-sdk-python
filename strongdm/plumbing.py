@@ -1062,6 +1062,9 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.maria.CopyFrom(convert_maria_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memsql):
         plumbing.memsql.CopyFrom(convert_memsql_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SingleStore):
+        plumbing.single_store.CopyFrom(
+            convert_single_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.Oracle):
         plumbing.oracle.CopyFrom(convert_oracle_to_plumbing(porcelain))
     if isinstance(porcelain, models.Postgres):
@@ -1201,6 +1204,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_maria_to_porcelain(plumbing.maria)
     if plumbing.HasField('memsql'):
         return convert_memsql_to_porcelain(plumbing.memsql)
+    if plumbing.HasField('single_store'):
+        return convert_single_store_to_porcelain(plumbing.single_store)
     if plumbing.HasField('oracle'):
         return convert_oracle_to_porcelain(plumbing.oracle)
     if plumbing.HasField('postgres'):
@@ -3648,6 +3653,68 @@ def convert_repeated_memsql_to_plumbing(porcelains):
 
 def convert_repeated_memsql_to_porcelain(plumbings):
     return [convert_memsql_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_single_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SingleStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.username = (plumbing.username)
+    porcelain.password = (plumbing.password)
+    porcelain.database = (plumbing.database)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.port = (plumbing.port)
+    return porcelain
+
+
+def convert_single_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = SingleStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.egress_filter is not None:
+        plumbing.egress_filter = (porcelain.egress_filter)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.username is not None:
+        plumbing.username = (porcelain.username)
+    if porcelain.password is not None:
+        plumbing.password = (porcelain.password)
+    if porcelain.database is not None:
+        plumbing.database = (porcelain.database)
+    if porcelain.port_override is not None:
+        plumbing.port_override = (porcelain.port_override)
+    if porcelain.port is not None:
+        plumbing.port = (porcelain.port)
+    return plumbing
+
+
+def convert_repeated_single_store_to_plumbing(porcelains):
+    return [
+        convert_single_store_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_single_store_to_porcelain(plumbings):
+    return [
+        convert_single_store_to_porcelain(plumbing) for plumbing in plumbings
+    ]
 
 
 def convert_oracle_to_porcelain(plumbing):
