@@ -5839,6 +5839,7 @@ def convert_role_to_porcelain(plumbing):
     porcelain = models.Role()
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.access_rules = (plumbing.access_rules)
     porcelain.composite = (plumbing.composite)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -5852,6 +5853,8 @@ def convert_role_to_plumbing(porcelain):
         plumbing.id = (porcelain.id)
     if porcelain.name is not None:
         plumbing.name = (porcelain.name)
+    if porcelain.access_rules is not None:
+        plumbing.access_rules = (porcelain.access_rules)
     if porcelain.composite is not None:
         plumbing.composite = (porcelain.composite)
     if porcelain.tags is not None:

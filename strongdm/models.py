@@ -8528,12 +8528,14 @@ class Role:
 
     :param id: Unique identifier of the Role.
     :param name: Unique human-readable name of the Role.
+    :param access_rules: AccessRules JSON encoded access rules data.
     :param composite: True if the Role is a composite role.
     :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
         'id',
         'name',
+        'access_rules',
         'composite',
         'tags',
     ]
@@ -8542,11 +8544,13 @@ class Role:
         self,
         id=None,
         name=None,
+        access_rules=None,
         composite=None,
         tags=None,
     ):
         self.id = id
         self.name = name
+        self.access_rules = access_rules
         self.composite = composite
         self.tags = tags
 
@@ -8554,6 +8558,7 @@ class Role:
         return '<sdm.Role ' + \
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'access_rules: ' + repr(self.access_rules) + ' ' +\
             'composite: ' + repr(self.composite) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -8562,6 +8567,7 @@ class Role:
         return {
             'id': self.id,
             'name': self.name,
+            'access_rules': self.access_rules,
             'composite': self.composite,
             'tags': self.tags,
         }
@@ -8571,6 +8577,7 @@ class Role:
         return cls(
             id=d.get('id'),
             name=d.get('name'),
+            access_rules=d.get('access_rules'),
             composite=d.get('composite'),
             tags=d.get('tags'),
         )
