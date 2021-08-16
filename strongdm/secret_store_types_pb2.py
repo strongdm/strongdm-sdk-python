@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\031SecretStoresTypesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\x86\x02\n\x0bSecretStore\x12*\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreB\r\xf2\xf8\xb3\x07\x08\x8a\xf4\xb3\x07\x03\x61wsH\x00\x12:\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreB\x12\xf2\xf8\xb3\x07\r\x8a\xf4\xb3\x07\x08vaultTLSH\x00\x12@\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreB\x14\xf2\xf8\xb3\x07\x0f\x8a\xf4\xb3\x07\nvaultTokenH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x41\n\x0csecret_store\x12\x31\xaa\xf8\xb3\x07\x10\xa2\xf8\xb3\x07\x0bSecretStore\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\x86\x02\n\x08\x41WSStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12:\n\x06region\x18\x03 \x01(\tB*\xf2\xf8\xb3\x07%\xa2\xf3\xb3\x07\x06Region\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\x06region\x12+\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01::\xfa\xf8\xb3\x07\x35\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\x03\x61ws\xe2\xf3\xb3\x07\x03\x61ws\xea\xf3\xb3\x07\x03\x61ws\xfa\xf3\xb3\x07\x03\x61ws\"\xa4\x04\n\rVaultTLSStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12P\n\x0eserver_address\x18\x03 \x01(\tB8\xf2\xf8\xb3\x07\x33\xa2\xf3\xb3\x07\rServerAddress\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rserverAddress\x12\x43\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB-\xf2\xf8\xb3\x07(\xa2\xf3\xb3\x07\nCACertPath\xb0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\ncaCertPath\x12T\n\x10\x63lient_cert_path\x18\x05 \x01(\tB:\xf2\xf8\xb3\x07\x35\xa2\xf3\xb3\x07\x0e\x43lientCertPath\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\x0e\x63lientCertPath\x12Q\n\x0f\x63lient_key_path\x18\x06 \x01(\tB8\xf2\xf8\xb3\x07\x33\xa2\xf3\xb3\x07\rClientKeyPath\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rclientKeyPath\x12+\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:O\xfa\xf8\xb3\x07J\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\x08vaultTLS\xe2\xf3\xb3\x07\x08vaultTLS\xea\xf3\xb3\x07\x08vaultTLS\xfa\xf3\xb3\x07\tvault_tls\"\xc0\x02\n\x0fVaultTokenStore\x12-\n\x02id\x18\x01 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x02ID\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x0bSecretStore\x12&\n\x04name\x18\x02 \x01(\tB\x18\xf2\xf8\xb3\x07\x13\xa2\xf3\xb3\x07\x04Name\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12P\n\x0eserver_address\x18\x03 \x01(\tB8\xf2\xf8\xb3\x07\x33\xa2\xf3\xb3\x07\rServerAddress\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xd0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rserverAddress\x12+\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\x13\xf2\xf8\xb3\x07\x0e\xa2\xf3\xb3\x07\x04Tags\xb0\xf3\xb3\x07\x01:W\xfa\xf8\xb3\x07R\xa2\xf3\xb3\x07\x0bSecretStore\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\nvaultToken\xe2\xf3\xb3\x07\nvaultToken\xea\xf3\xb3\x07\nvaultToken\xfa\xf3\xb3\x07\x0bvault_tokenBm\n\x1c\x63om.strongdm.api.v1.plumbingB\x19SecretStoresTypesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\xf1\x01\n\x0bSecretStore\x12*\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreB\r\xf2\xf8\xb3\x07\x08\x8a\xf4\xb3\x07\x03\x61wsH\x00\x12:\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreB\x12\xf2\xf8\xb3\x07\r\x8a\xf4\xb3\x07\x08vaultTLSH\x00\x12@\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreB\x14\xf2\xf8\xb3\x07\x0f\x8a\xf4\xb3\x07\nvaultTokenH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42,\n\x0csecret_store\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xbd\x01\n\x08\x41WSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12*\n\x06region\x18\x03 \x01(\tB\x1a\xf2\xf8\xb3\x07\x15\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\x06region\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:*\xfa\xf8\xb3\x07%\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\x03\x61ws\xe2\xf3\xb3\x07\x03\x61ws\xea\xf3\xb3\x07\x03\x61ws\xfa\xf3\xb3\x07\x03\x61ws\"\x91\x03\n\rVaultTLSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x39\n\x0eserver_address\x18\x03 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rserverAddress\x12/\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB\x19\xf2\xf8\xb3\x07\x14\xb0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\ncaCertPath\x12<\n\x10\x63lient_cert_path\x18\x05 \x01(\tB\"\xf2\xf8\xb3\x07\x1d\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\x0e\x63lientCertPath\x12:\n\x0f\x63lient_key_path\x18\x06 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rclientKeyPath\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:?\xfa\xf8\xb3\x07:\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\x08vaultTLS\xe2\xf3\xb3\x07\x08vaultTLS\xea\xf3\xb3\x07\x08vaultTLS\xfa\xf3\xb3\x07\tvault_tls\"\xf0\x01\n\x0fVaultTokenStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x39\n\x0eserver_address\x18\x03 \x01(\tB!\xf2\xf8\xb3\x07\x1c\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x8a\xf4\xb3\x07\rserverAddress\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:G\xfa\xf8\xb3\x07\x42\xa8\xf3\xb3\x07\x01\xda\xf3\xb3\x07\nvaultToken\xe2\xf3\xb3\x07\nvaultToken\xea\xf3\xb3\x07\nvaultToken\xfa\xf3\xb3\x07\x0bvault_tokenBm\n\x1c\x63om.strongdm.api.v1.plumbingB\x19SecretStoresTypesPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
@@ -86,10 +86,10 @@ _SECRETSTORE = _descriptor.Descriptor(
       name='secret_store', full_name='v1.SecretStore.secret_store',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\252\370\263\007\020\242\370\263\007\013SecretStore\252\370\263\007\t\252\370\263\007\004tags\252\370\263\007\t\252\370\263\007\004name'),
+    fields=[], serialized_options=b'\252\370\263\007\t\252\370\263\007\004tags\252\370\263\007\t\252\370\263\007\004name'),
   ],
   serialized_start=60,
-  serialized_end=322,
+  serialized_end=301,
 )
 
 
@@ -107,42 +107,42 @@ _AWSSTORE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\034\242\363\263\007\002ID\260\363\263\007\001\312\363\263\007\013SecretStore', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='v1.AWSStore.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\023\242\363\263\007\004Name\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='region', full_name='v1.AWSStore.region', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007%\242\363\263\007\006Region\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001\212\364\263\007\006region', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\025\260\363\263\007\001\300\363\263\007\001\212\364\263\007\006region', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='v1.AWSStore.tags', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\016\242\363\263\007\004Tags\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\0075\242\363\263\007\013SecretStore\250\363\263\007\001\332\363\263\007\003aws\342\363\263\007\003aws\352\363\263\007\003aws\372\363\263\007\003aws',
+  serialized_options=b'\372\370\263\007%\250\363\263\007\001\332\363\263\007\003aws\342\363\263\007\003aws\352\363\263\007\003aws\372\363\263\007\003aws',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=325,
-  serialized_end=587,
+  serialized_start=304,
+  serialized_end=493,
 )
 
 
@@ -160,63 +160,63 @@ _VAULTTLSSTORE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\034\242\363\263\007\002ID\260\363\263\007\001\312\363\263\007\013SecretStore', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='v1.VaultTLSStore.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\023\242\363\263\007\004Name\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='server_address', full_name='v1.VaultTLSStore.server_address', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\0073\242\363\263\007\rServerAddress\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001\212\364\263\007\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\034\260\363\263\007\001\300\363\263\007\001\212\364\263\007\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='CA_cert_path', full_name='v1.VaultTLSStore.CA_cert_path', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007(\242\363\263\007\nCACertPath\260\363\263\007\001\320\363\263\007\001\212\364\263\007\ncaCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\024\260\363\263\007\001\212\364\263\007\ncaCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='client_cert_path', full_name='v1.VaultTLSStore.client_cert_path', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\0075\242\363\263\007\016ClientCertPath\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001\212\364\263\007\016clientCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\035\260\363\263\007\001\300\363\263\007\001\212\364\263\007\016clientCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='client_key_path', full_name='v1.VaultTLSStore.client_key_path', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\0073\242\363\263\007\rClientKeyPath\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001\212\364\263\007\rclientKeyPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\034\260\363\263\007\001\300\363\263\007\001\212\364\263\007\rclientKeyPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='v1.VaultTLSStore.tags', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\016\242\363\263\007\004Tags\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007J\242\363\263\007\013SecretStore\250\363\263\007\001\332\363\263\007\010vaultTLS\342\363\263\007\010vaultTLS\352\363\263\007\010vaultTLS\372\363\263\007\tvault_tls',
+  serialized_options=b'\372\370\263\007:\250\363\263\007\001\332\363\263\007\010vaultTLS\342\363\263\007\010vaultTLS\352\363\263\007\010vaultTLS\372\363\263\007\tvault_tls',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=590,
-  serialized_end=1138,
+  serialized_start=496,
+  serialized_end=897,
 )
 
 
@@ -234,42 +234,42 @@ _VAULTTOKENSTORE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\034\242\363\263\007\002ID\260\363\263\007\001\312\363\263\007\013SecretStore', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='v1.VaultTokenStore.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\023\242\363\263\007\004Name\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='server_address', full_name='v1.VaultTokenStore.server_address', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\0073\242\363\263\007\rServerAddress\260\363\263\007\001\300\363\263\007\001\320\363\263\007\001\212\364\263\007\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\034\260\363\263\007\001\300\363\263\007\001\212\364\263\007\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tags', full_name='v1.VaultTokenStore.tags', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\016\242\363\263\007\004Tags\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007R\242\363\263\007\013SecretStore\250\363\263\007\001\332\363\263\007\nvaultToken\342\363\263\007\nvaultToken\352\363\263\007\nvaultToken\372\363\263\007\013vault_token',
+  serialized_options=b'\372\370\263\007B\250\363\263\007\001\332\363\263\007\nvaultToken\342\363\263\007\nvaultToken\352\363\263\007\nvaultToken\372\363\263\007\013vault_token',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1141,
-  serialized_end=1461,
+  serialized_start=900,
+  serialized_end=1140,
 )
 
 _SECRETSTORE.fields_by_name['aws'].message_type = _AWSSTORE

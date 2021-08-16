@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"^\n\x12\x41lreadyExistsError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:!\xfa\xf8\xb3\x07\x1c\xa2\xf3\xb3\x07\x12\x41lreadyExistsError\xb0\xf3\xb3\x07\x06\"T\n\rNotFoundError\x12%\n\x06\x65ntity\x18\x01 \x01(\tB\x15\xf2\xf8\xb3\x07\x10\xa2\xf3\xb3\x07\x06\x45ntity\xb0\xf3\xb3\x07\x01:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rNotFoundError\xb0\xf3\xb3\x07\x05\"1\n\x0f\x42\x61\x64RequestError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0f\x42\x61\x64RequestError\xb0\xf3\xb3\x07\x03\"9\n\x13\x41uthenticationError:\"\xfa\xf8\xb3\x07\x1d\xa2\xf3\xb3\x07\x13\x41uthenticationError\xb0\xf3\xb3\x07\x10\"1\n\x0fPermissionError:\x1e\xfa\xf8\xb3\x07\x19\xa2\xf3\xb3\x07\x0fPermissionError\xb0\xf3\xb3\x07\x07\"-\n\rInternalError:\x1c\xfa\xf8\xb3\x07\x17\xa2\xf3\xb3\x07\rInternalError\xb0\xf3\xb3\x07\r\"p\n\x0eRateLimitError\x12?\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x1d\xfa\xf8\xb3\x07\x18\xa2\xf3\xb3\x07\x0eRateLimitError\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBR\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"]\n\x0eRateLimitError\x12?\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBR\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -56,21 +56,21 @@ _ALREADYEXISTSERROR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\020\242\363\263\007\006Entity\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\034\242\363\263\007\022AlreadyExistsError\260\363\263\007\006',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\006',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=66,
-  serialized_end=160,
+  serialized_end=126,
 )
 
 
@@ -88,21 +88,21 @@ _NOTFOUNDERROR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\020\242\363\263\007\006Entity\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\027\242\363\263\007\rNotFoundError\260\363\263\007\005',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\005',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=162,
-  serialized_end=246,
+  serialized_start=128,
+  serialized_end=183,
 )
 
 
@@ -120,14 +120,14 @@ _BADREQUESTERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\031\242\363\263\007\017BadRequestError\260\363\263\007\003',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\003',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=248,
-  serialized_end=297,
+  serialized_start=185,
+  serialized_end=214,
 )
 
 
@@ -145,14 +145,14 @@ _AUTHENTICATIONERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\035\242\363\263\007\023AuthenticationError\260\363\263\007\020',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\020',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=299,
-  serialized_end=356,
+  serialized_start=216,
+  serialized_end=249,
 )
 
 
@@ -170,14 +170,14 @@ _PERMISSIONERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\031\242\363\263\007\017PermissionError\260\363\263\007\007',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\007',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=358,
-  serialized_end=407,
+  serialized_start=251,
+  serialized_end=280,
 )
 
 
@@ -195,14 +195,14 @@ _INTERNALERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\027\242\363\263\007\rInternalError\260\363\263\007\r',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\r',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=409,
-  serialized_end=454,
+  serialized_start=282,
+  serialized_end=309,
 )
 
 
@@ -227,14 +227,14 @@ _RATELIMITERROR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\030\242\363\263\007\016RateLimitError\260\363\263\007\010',
+  serialized_options=b'\372\370\263\007\005\260\363\263\007\010',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=456,
-  serialized_end=568,
+  serialized_start=311,
+  serialized_end=404,
 )
 
 
@@ -258,8 +258,8 @@ _CREATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=570,
-  serialized_end=593,
+  serialized_start=406,
+  serialized_end=429,
 )
 
 
@@ -283,8 +283,8 @@ _CREATERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=595,
-  serialized_end=631,
+  serialized_start=431,
+  serialized_end=467,
 )
 
 
@@ -308,8 +308,8 @@ _GETREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=633,
-  serialized_end=653,
+  serialized_start=469,
+  serialized_end=489,
 )
 
 
@@ -333,8 +333,8 @@ _GETRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=688,
+  serialized_start=491,
+  serialized_end=524,
 )
 
 
@@ -358,8 +358,8 @@ _UPDATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=690,
-  serialized_end=713,
+  serialized_start=526,
+  serialized_end=549,
 )
 
 
@@ -383,8 +383,8 @@ _UPDATERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=715,
-  serialized_end=751,
+  serialized_start=551,
+  serialized_end=587,
 )
 
 
@@ -408,8 +408,8 @@ _DELETEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=753,
-  serialized_end=776,
+  serialized_start=589,
+  serialized_end=612,
 )
 
 
@@ -433,8 +433,8 @@ _DELETERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=778,
-  serialized_end=814,
+  serialized_start=614,
+  serialized_end=650,
 )
 
 
@@ -486,8 +486,8 @@ _LISTREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=816,
-  serialized_end=900,
+  serialized_start=652,
+  serialized_end=736,
 )
 
 
@@ -525,8 +525,8 @@ _LISTRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=902,
-  serialized_end=960,
+  serialized_start=738,
+  serialized_end=796,
 )
 
 
@@ -578,8 +578,8 @@ _RATELIMITMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=963,
-  serialized_end=1138,
+  serialized_start=799,
+  serialized_end=974,
 )
 
 
@@ -603,8 +603,8 @@ _GENERICREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1140,
-  serialized_end=1164,
+  serialized_start=976,
+  serialized_end=1000,
 )
 
 
@@ -628,8 +628,8 @@ _GENERICRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1166,
-  serialized_end=1191,
+  serialized_start=1002,
+  serialized_end=1027,
 )
 
 _RATELIMITERROR.fields_by_name['rate_limit'].message_type = _RATELIMITMETADATA
