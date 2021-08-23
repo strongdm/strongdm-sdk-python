@@ -30,6 +30,8 @@ from . import plumbing
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
+API_VERSION = '2021-08-23'
+USER_AGENT = 'strongdm-sdk-python/1.0.27'
 
 
 class Client:
@@ -70,9 +72,13 @@ class Client:
         self._test_options = {}
 
     def get_metadata(self, method_name, req):
-        return [('x-sdm-authentication', self.api_access_key),
-                ('x-sdm-signature',
-                 self.sign(method_name, req.SerializeToString()))]
+        return [
+            ('x-sdm-authentication', self.api_access_key),
+            ('x-sdm-signature', self.sign(method_name,
+                                          req.SerializeToString())),
+            ('x-sdm-api-version', API_VERSION),
+            ('x-sdm-user-agent', USER_AGENT),
+        ]
 
     def sign(self, method_name, request_bytes):
         def hmac_digest(key, msg_byte_string):
