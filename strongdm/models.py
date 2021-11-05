@@ -18,265 +18,759 @@
 import collections
 
 
-class CreateResponseMetadata:
-    """CreateResponseMetadata is reserved for future use."""
-    __slots__ = []
+class AKS:
+    """
 
-    def __init__(self, ):
-        pass
-
-    def __repr__(self):
-        return '<sdm.CreateResponseMetadata ' + \
-            '>'
-
-    def to_dict(self):
-        return {}
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls()
-
-
-class GetResponseMetadata:
-    """GetResponseMetadata is reserved for future use."""
-    __slots__ = []
-
-    def __init__(self, ):
-        pass
-
-    def __repr__(self):
-        return '<sdm.GetResponseMetadata ' + \
-            '>'
-
-    def to_dict(self):
-        return {}
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls()
-
-
-class UpdateResponseMetadata:
-    """UpdateResponseMetadata is reserved for future use."""
-    __slots__ = []
-
-    def __init__(self, ):
-        pass
-
-    def __repr__(self):
-        return '<sdm.UpdateResponseMetadata ' + \
-            '>'
-
-    def to_dict(self):
-        return {}
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls()
-
-
-class DeleteResponseMetadata:
-    """DeleteResponseMetadata is reserved for future use."""
-    __slots__ = []
-
-    def __init__(self, ):
-        pass
-
-    def __repr__(self):
-        return '<sdm.DeleteResponseMetadata ' + \
-            '>'
-
-    def to_dict(self):
-        return {}
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls()
-
-
-class RateLimitMetadata:
-    """RateLimitMetadata contains information about remaining requests avaialable
- to the user over some timeframe.
-
-    :param limit: How many total requests the user/token is authorized to make before being
- rate limited.
-    :param remaining: How many remaining requests out of the limit are still avaialable.
-    :param reset_at: The time when remaining will be reset to limit.
-    :param bucket: The bucket this user/token is associated with, which may be shared between
- multiple users/tokens.
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
-        'limit',
-        'remaining',
-        'reset_at',
-        'bucket',
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
     ]
 
     def __init__(
         self,
-        limit=None,
-        remaining=None,
-        reset_at=None,
-        bucket=None,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
     ):
-        self.limit = limit
-        self.remaining = remaining
-        self.reset_at = reset_at
-        self.bucket = bucket
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
 
     def __repr__(self):
-        return '<sdm.RateLimitMetadata ' + \
-            'limit: ' + repr(self.limit) + ' ' +\
-            'remaining: ' + repr(self.remaining) + ' ' +\
-            'reset_at: ' + repr(self.reset_at) + ' ' +\
-            'bucket: ' + repr(self.bucket) + ' ' +\
+        return '<sdm.AKS ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'limit': self.limit,
-            'remaining': self.remaining,
-            'reset_at': self.reset_at,
-            'bucket': self.bucket,
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            limit=d.get('limit'),
-            remaining=d.get('remaining'),
-            reset_at=d.get('reset_at'),
-            bucket=d.get('bucket'),
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
         )
 
 
-class Tag:
+class AKSBasicAuth:
     """
 
-    :param name: 
-    :param value: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
         'name',
-        'value',
+        'password',
+        'port',
+        'secret_store_id',
+        'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
         name=None,
-        value=None,
+        password=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
     ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
         self.name = name
-        self.value = value
+        self.password = password
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.Tag ' + \
+        return '<sdm.AKSBasicAuth ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'value: ' + repr(self.value) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
             'name': self.name,
-            'value': self.value,
+            'password': self.password,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
             name=d.get('name'),
-            value=d.get('value'),
+            password=d.get('password'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class AKSServiceAccount:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param token: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        token=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.AKSServiceAccount ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            token=d.get('token'),
+        )
+
+
+class AKSServiceAccountUserImpersonation:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param token: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        token=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.AKSServiceAccountUserImpersonation ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            token=d.get('token'),
+        )
+
+
+class AKSUserImpersonation:
+    """
+
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AKSUserImpersonation ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class AWS:
+    """
+
+    :param access_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_region: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param role_arn: 
+    :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'access_key',
+        'egress_filter',
+        'healthcheck_region',
+        'healthy',
+        'id',
+        'name',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_key=None,
+        egress_filter=None,
+        healthcheck_region=None,
+        healthy=None,
+        id=None,
+        name=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.access_key = access_key
+        self.egress_filter = egress_filter
+        self.healthcheck_region = healthcheck_region
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AWS ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_key': self.access_key,
+            'egress_filter': self.egress_filter,
+            'healthcheck_region': self.healthcheck_region,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_key=d.get('access_key'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_region=d.get('healthcheck_region'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class AWSStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param region: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'region',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        region=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.region = region
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AWSStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            tags=d.get('tags'),
+        )
+
+
+class AccountAttachment:
+    """AccountAttachments assign an account to a role or composite role.
+
+    :param account_id: The id of the account of this AccountAttachment.
+    :param id: Unique identifier of the AccountAttachment.
+    :param role_id: The id of the attached role of this AccountAttachment.
+    """
+    __slots__ = [
+        'account_id',
+        'id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        id=None,
+        role_id=None,
+    ):
+        self.account_id = account_id
+        self.id = id
+        self.role_id = role_id
+
+    def __repr__(self):
+        return '<sdm.AccountAttachment ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'id': self.id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            id=d.get('id'),
+            role_id=d.get('role_id'),
         )
 
 
 class AccountAttachmentCreateResponse:
     """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
 
-    :param meta: Reserved for future use.
     :param account_attachment: The created AccountAttachment.
+    :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
     """
     __slots__ = [
-        'meta',
         'account_attachment',
+        'meta',
         'rate_limit',
     ]
 
     def __init__(
         self,
-        meta=None,
         account_attachment=None,
+        meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
         self.account_attachment = account_attachment
+        self.meta = meta
         self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
             'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'meta': self.meta,
             'account_attachment': self.account_attachment,
+            'meta': self.meta,
             'rate_limit': self.rate_limit,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            meta=d.get('meta'),
             account_attachment=d.get('account_attachment'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class AccountAttachmentGetResponse:
-    """AccountAttachmentGetResponse returns a requested AccountAttachment.
-
-    :param meta: Reserved for future use.
-    :param account_attachment: The requested AccountAttachment.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'account_attachment',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        account_attachment=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.account_attachment = account_attachment
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.AccountAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'account_attachment': self.account_attachment,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
             meta=d.get('meta'),
-            account_attachment=d.get('account_attachment'),
             rate_limit=d.get('rate_limit'),
         )
 
@@ -320,140 +814,295 @@ class AccountAttachmentDeleteResponse:
         )
 
 
-class AccountAttachment:
-    """AccountAttachments assign an account to a role or composite role.
+class AccountAttachmentGetResponse:
+    """AccountAttachmentGetResponse returns a requested AccountAttachment.
 
-    :param id: Unique identifier of the AccountAttachment.
-    :param account_id: The id of the account of this AccountAttachment.
-    :param role_id: The id of the attached role of this AccountAttachment.
+    :param account_attachment: The requested AccountAttachment.
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
     """
     __slots__ = [
-        'id',
-        'account_id',
-        'role_id',
+        'account_attachment',
+        'meta',
+        'rate_limit',
     ]
 
     def __init__(
         self,
-        id=None,
-        account_id=None,
-        role_id=None,
+        account_attachment=None,
+        meta=None,
+        rate_limit=None,
     ):
-        self.id = id
-        self.account_id = account_id
-        self.role_id = role_id
+        self.account_attachment = account_attachment
+        self.meta = meta
+        self.rate_limit = rate_limit
 
     def __repr__(self):
-        return '<sdm.AccountAttachment ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'account_id: ' + repr(self.account_id) + ' ' +\
-            'role_id: ' + repr(self.role_id) + ' ' +\
+        return '<sdm.AccountAttachmentGetResponse ' + \
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'account_id': self.account_id,
-            'role_id': self.role_id,
+            'account_attachment': self.account_attachment,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            id=d.get('id'),
+            account_attachment=d.get('account_attachment'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountCreateResponse:
+    """AccountCreateResponse reports how the Accounts were created in the system.
+
+    :param account: The created Account.
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param token: The auth token generated for the Account. The Account will use this token to
+ authenticate with the strongDM API.
+    """
+    __slots__ = [
+        'account',
+        'meta',
+        'rate_limit',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        account=None,
+        meta=None,
+        rate_limit=None,
+        token=None,
+    ):
+        self.account = account
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.AccountCreateResponse ' + \
+            'account: ' + repr(self.account) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account': self.account,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account=d.get('account'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            token=d.get('token'),
+        )
+
+
+class AccountDeleteResponse:
+    """AccountDeleteResponse returns information about a Account that was deleted.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.AccountDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountGetResponse:
+    """AccountGetResponse returns a requested Account.
+
+    :param account: The requested Account.
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'account',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        account=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.account = account
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.AccountGetResponse ' + \
+            'account: ' + repr(self.account) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account': self.account,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account=d.get('account'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountGrant:
+    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
+
+    :param account_id: The id of the attached role of this AccountGrant.
+    :param id: Unique identifier of the AccountGrant.
+    :param resource_id: The id of the composite role of this AccountGrant.
+    :param start_from: The timestamp when the resource will be granted. Optional. Both start_at
+ and end_at must be defined together, or not defined at all.
+    :param valid_until: The timestamp when the resource grant will expire. Optional. Both
+ start_at and end_at must be defined together, or not defined at all.
+    """
+    __slots__ = [
+        'account_id',
+        'id',
+        'resource_id',
+        'start_from',
+        'valid_until',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        id=None,
+        resource_id=None,
+        start_from=None,
+        valid_until=None,
+    ):
+        self.account_id = account_id
+        self.id = id
+        self.resource_id = resource_id
+        self.start_from = start_from
+        self.valid_until = valid_until
+
+    def __repr__(self):
+        return '<sdm.AccountGrant ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'start_from: ' + repr(self.start_from) + ' ' +\
+            'valid_until: ' + repr(self.valid_until) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'id': self.id,
+            'resource_id': self.resource_id,
+            'start_from': self.start_from,
+            'valid_until': self.valid_until,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
             account_id=d.get('account_id'),
-            role_id=d.get('role_id'),
+            id=d.get('id'),
+            resource_id=d.get('resource_id'),
+            start_from=d.get('start_from'),
+            valid_until=d.get('valid_until'),
         )
 
 
 class AccountGrantCreateResponse:
     """AccountGrantCreateResponse reports how the AccountGrants were created in the system.
 
-    :param meta: Reserved for future use.
     :param account_grant: The created AccountGrant.
+    :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
     """
     __slots__ = [
-        'meta',
         'account_grant',
+        'meta',
         'rate_limit',
     ]
 
     def __init__(
         self,
-        meta=None,
         account_grant=None,
+        meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
         self.account_grant = account_grant
+        self.meta = meta
         self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountGrantCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
             'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'meta': self.meta,
             'account_grant': self.account_grant,
+            'meta': self.meta,
             'rate_limit': self.rate_limit,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            meta=d.get('meta'),
             account_grant=d.get('account_grant'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class AccountGrantGetResponse:
-    """AccountGrantGetResponse returns a requested AccountGrant.
-
-    :param meta: Reserved for future use.
-    :param account_grant: The requested AccountGrant.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'account_grant',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        account_grant=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.account_grant = account_grant
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.AccountGrantGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account_grant: ' + repr(self.account_grant) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'account_grant': self.account_grant,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
             meta=d.get('meta'),
-            account_grant=d.get('account_grant'),
             rate_limit=d.get('rate_limit'),
         )
 
@@ -497,164 +1146,48 @@ class AccountGrantDeleteResponse:
         )
 
 
-class AccountGrant:
-    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
+class AccountGrantGetResponse:
+    """AccountGrantGetResponse returns a requested AccountGrant.
 
-    :param id: Unique identifier of the AccountGrant.
-    :param resource_id: The id of the composite role of this AccountGrant.
-    :param account_id: The id of the attached role of this AccountGrant.
-    :param start_from: The timestamp when the resource will be granted. Optional. Both start_at
- and end_at must be defined together, or not defined at all.
-    :param valid_until: The timestamp when the resource grant will expire. Optional. Both
- start_at and end_at must be defined together, or not defined at all.
-    """
-    __slots__ = [
-        'id',
-        'resource_id',
-        'account_id',
-        'start_from',
-        'valid_until',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        resource_id=None,
-        account_id=None,
-        start_from=None,
-        valid_until=None,
-    ):
-        self.id = id
-        self.resource_id = resource_id
-        self.account_id = account_id
-        self.start_from = start_from
-        self.valid_until = valid_until
-
-    def __repr__(self):
-        return '<sdm.AccountGrant ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'resource_id: ' + repr(self.resource_id) + ' ' +\
-            'account_id: ' + repr(self.account_id) + ' ' +\
-            'start_from: ' + repr(self.start_from) + ' ' +\
-            'valid_until: ' + repr(self.valid_until) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'resource_id': self.resource_id,
-            'account_id': self.account_id,
-            'start_from': self.start_from,
-            'valid_until': self.valid_until,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            resource_id=d.get('resource_id'),
-            account_id=d.get('account_id'),
-            start_from=d.get('start_from'),
-            valid_until=d.get('valid_until'),
-        )
-
-
-class AccountCreateResponse:
-    """AccountCreateResponse reports how the Accounts were created in the system.
-
+    :param account_grant: The requested AccountGrant.
     :param meta: Reserved for future use.
-    :param account: The created Account.
-    :param token: The auth token generated for the Account. The Account will use this token to
- authenticate with the strongDM API.
     :param rate_limit: Rate limit information.
     """
     __slots__ = [
+        'account_grant',
         'meta',
-        'account',
-        'token',
         'rate_limit',
     ]
 
     def __init__(
         self,
+        account_grant=None,
         meta=None,
-        account=None,
-        token=None,
         rate_limit=None,
     ):
+        self.account_grant = account_grant
         self.meta = meta
-        self.account = account
-        self.token = token
         self.rate_limit = rate_limit
 
     def __repr__(self):
-        return '<sdm.AccountCreateResponse ' + \
+        return '<sdm.AccountGrantGetResponse ' + \
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
             'meta: ' + repr(self.meta) + ' ' +\
-            'account: ' + repr(self.account) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'account_grant': self.account_grant,
             'meta': self.meta,
-            'account': self.account,
-            'token': self.token,
             'rate_limit': self.rate_limit,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            account_grant=d.get('account_grant'),
             meta=d.get('meta'),
-            account=d.get('account'),
-            token=d.get('token'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class AccountGetResponse:
-    """AccountGetResponse returns a requested Account.
-
-    :param meta: Reserved for future use.
-    :param account: The requested Account.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'account',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        account=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.account = account
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.AccountGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'account: ' + repr(self.account) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'account': self.account,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            account=d.get('account'),
             rate_limit=d.get('rate_limit'),
         )
 
@@ -663,76 +1196,36 @@ class AccountUpdateResponse:
     """AccountUpdateResponse returns the fields of a Account after it has been updated by
  a AccountUpdateRequest.
 
-    :param meta: Reserved for future use.
     :param account: The updated Account.
+    :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
     """
     __slots__ = [
-        'meta',
         'account',
+        'meta',
         'rate_limit',
     ]
 
     def __init__(
         self,
-        meta=None,
         account=None,
+        meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
         self.account = account
+        self.meta = meta
         self.rate_limit = rate_limit
 
     def __repr__(self):
         return '<sdm.AccountUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
             'account: ' + repr(self.account) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'account': self.account,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            account=d.get('account'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class AccountDeleteResponse:
-    """AccountDeleteResponse returns information about a Account that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.AccountDeleteResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'account': self.account,
             'meta': self.meta,
             'rate_limit': self.rate_limit,
         }
@@ -740,130 +1233,1387 @@ class AccountDeleteResponse:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            account=d.get('account'),
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
         )
 
 
-class User:
-    """A User can connect to resources they are granted directly, or granted
- via roles.
+class AmazonEKS:
+    """
 
-    :param id: Unique identifier of the User.
-    :param email: The User's email address. Must be unique.
-    :param first_name: The User's first name.
-    :param last_name: The User's last name.
-    :param suspended: The User's suspended state.
+    :param access_key: 
+    :param certificate_authority: 
+    :param cluster_name: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param region: 
+    :param role_arn: 
+    :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
-        'id',
-        'email',
-        'first_name',
-        'last_name',
-        'suspended',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        email=None,
-        first_name=None,
-        last_name=None,
-        suspended=None,
-        tags=None,
-    ):
-        self.id = id
-        self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
-        self.suspended = suspended
-        self.tags = tags
-
-    def __repr__(self):
-        return '<sdm.User ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'email: ' + repr(self.email) + ' ' +\
-            'first_name: ' + repr(self.first_name) + ' ' +\
-            'last_name: ' + repr(self.last_name) + ' ' +\
-            'suspended: ' + repr(self.suspended) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'email': self.email,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'suspended': self.suspended,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            email=d.get('email'),
-            first_name=d.get('first_name'),
-            last_name=d.get('last_name'),
-            suspended=d.get('suspended'),
-            tags=d.get('tags'),
-        )
-
-
-class Service:
-    """A Service is a service account that can connect to resources they are granted
- directly, or granted via roles. Services are typically automated jobs.
-
-    :param id: Unique identifier of the Service.
-    :param name: Unique human-readable name of the Service.
-    :param suspended: The Service's suspended state.
-    :param tags: Tags is a map of key, value pairs.
-    """
-    __slots__ = [
+        'access_key',
+        'certificate_authority',
+        'cluster_name',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
         'id',
         'name',
-        'suspended',
+        'region',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
         'tags',
     ]
 
     def __init__(
         self,
+        access_key=None,
+        certificate_authority=None,
+        cluster_name=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
         id=None,
         name=None,
-        suspended=None,
+        region=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
         tags=None,
     ):
+        self.access_key = access_key
+        self.certificate_authority = certificate_authority
+        self.cluster_name = cluster_name
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
         self.id = id
         self.name = name
-        self.suspended = suspended
+        self.region = region
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
         self.tags = tags
 
     def __repr__(self):
-        return '<sdm.Service ' + \
+        return '<sdm.AmazonEKS ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'suspended: ' + repr(self.suspended) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'access_key': self.access_key,
+            'certificate_authority': self.certificate_authority,
+            'cluster_name': self.cluster_name,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
-            'suspended': self.suspended,
+            'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
             'tags': self.tags,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_key=d.get('access_key'),
+            certificate_authority=d.get('certificate_authority'),
+            cluster_name=d.get('cluster_name'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
-            suspended=d.get('suspended'),
+            region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+        )
+
+
+class AmazonEKSUserImpersonation:
+    """
+
+    :param access_key: 
+    :param certificate_authority: 
+    :param cluster_name: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param region: 
+    :param role_arn: 
+    :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'access_key',
+        'certificate_authority',
+        'cluster_name',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'region',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_key=None,
+        certificate_authority=None,
+        cluster_name=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        region=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.access_key = access_key
+        self.certificate_authority = certificate_authority
+        self.cluster_name = cluster_name
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.region = region
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AmazonEKSUserImpersonation ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_key': self.access_key,
+            'certificate_authority': self.certificate_authority,
+            'cluster_name': self.cluster_name,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_key=d.get('access_key'),
+            certificate_authority=d.get('certificate_authority'),
+            cluster_name=d.get('cluster_name'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class AmazonES:
+    """
+
+    :param access_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port_override: 
+    :param region: 
+    :param role_arn: 
+    :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'access_key',
+        'egress_filter',
+        'endpoint',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'region',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_key=None,
+        egress_filter=None,
+        endpoint=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        region=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.access_key = access_key
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.port_override = port_override
+        self.region = region
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.AmazonES ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_key': self.access_key,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_key=d.get('access_key'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class AmazonMQAMQP091:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.AmazonMQAMQP091 ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class Athena:
+    """
+
+    :param access_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param output: 
+    :param port_override: 
+    :param region: 
+    :param role_arn: 
+    :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'access_key',
+        'egress_filter',
+        'healthy',
+        'id',
+        'name',
+        'output',
+        'port_override',
+        'region',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_key=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        name=None,
+        output=None,
+        port_override=None,
+        region=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.access_key = access_key
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.output = output
+        self.port_override = port_override
+        self.region = region
+        self.role_arn = role_arn
+        self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Athena ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'output: ' + repr(self.output) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_key': self.access_key,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'output': self.output,
+            'port_override': self.port_override,
+            'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_key=d.get('access_key'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            output=d.get('output'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class AuroraMysql:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.AuroraMysql ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class AuroraPostgres:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.AuroraPostgres ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class BigQuery:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port_override: 
+    :param private_key: 
+    :param project: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'endpoint',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'private_key',
+        'project',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        endpoint=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        private_key=None,
+        project=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.port_override = port_override
+        self.private_key = private_key
+        self.project = project
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.BigQuery ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
+            'project: ' + repr(self.project) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'private_key': self.private_key,
+            'project': self.project,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            private_key=d.get('private_key'),
+            project=d.get('project'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Cassandra:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Cassandra ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class Citus:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Citus ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Clustrix:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Clustrix ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Cockroach:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Cockroach ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
@@ -919,6570 +2669,2883 @@ class ControlPanelVerifyJWTResponse:
     """ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
 
     :param meta: Reserved for future use.
-    :param valid: Reports if the given token is valid.
     :param rate_limit: Rate limit information.
+    :param valid: Reports if the given token is valid.
     """
     __slots__ = [
         'meta',
-        'valid',
         'rate_limit',
+        'valid',
     ]
 
     def __init__(
         self,
         meta=None,
-        valid=None,
         rate_limit=None,
+        valid=None,
     ):
         self.meta = meta
-        self.valid = valid
         self.rate_limit = rate_limit
+        self.valid = valid
 
     def __repr__(self):
         return '<sdm.ControlPanelVerifyJWTResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'valid: ' + repr(self.valid) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'valid: ' + repr(self.valid) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'valid': self.valid,
             'rate_limit': self.rate_limit,
+            'valid': self.valid,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            valid=d.get('valid'),
             rate_limit=d.get('rate_limit'),
+            valid=d.get('valid'),
         )
 
 
-class RabbitMQAMQP091:
-    """
+class CreateResponseMetadata:
+    """CreateResponseMetadata is reserved for future use."""
+    __slots__ = []
 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param port: 
-    :param username: 
-    :param password: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'port',
-        'username',
-        'password',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        port=None,
-        username=None,
-        password=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.port = port
-        self.username = username
-        self.password = password
-        self.tls_required = tls_required
+    def __init__(self, ):
+        pass
 
     def __repr__(self):
-        return '<sdm.RabbitMQAMQP091 ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
+        return '<sdm.CreateResponseMetadata ' + \
             '>'
 
     def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'port': self.port,
-            'username': self.username,
-            'password': self.password,
-            'tls_required': self.tls_required,
-        }
+        return {}
 
     @classmethod
     def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            username=d.get('username'),
-            password=d.get('password'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class AmazonMQAMQP091:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param port: 
-    :param username: 
-    :param password: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'port',
-        'username',
-        'password',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        port=None,
-        username=None,
-        password=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.port = port
-        self.username = username
-        self.password = password
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.AmazonMQAMQP091 ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'port': self.port,
-            'username': self.username,
-            'password': self.password,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            username=d.get('username'),
-            password=d.get('password'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class Athena:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param access_key: 
-    :param secret_access_key: 
-    :param output: 
-    :param port_override: 
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'access_key',
-        'secret_access_key',
-        'output',
-        'port_override',
-        'region',
-        'role_arn',
-        'role_external_id',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        access_key=None,
-        secret_access_key=None,
-        output=None,
-        port_override=None,
-        region=None,
-        role_arn=None,
-        role_external_id=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.access_key = access_key
-        self.secret_access_key = secret_access_key
-        self.output = output
-        self.port_override = port_override
-        self.region = region
-        self.role_arn = role_arn
-        self.role_external_id = role_external_id
-
-    def __repr__(self):
-        return '<sdm.Athena ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'output: ' + repr(self.output) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
-            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'access_key': self.access_key,
-            'secret_access_key': self.secret_access_key,
-            'output': self.output,
-            'port_override': self.port_override,
-            'region': self.region,
-            'role_arn': self.role_arn,
-            'role_external_id': self.role_external_id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            access_key=d.get('access_key'),
-            secret_access_key=d.get('secret_access_key'),
-            output=d.get('output'),
-            port_override=d.get('port_override'),
-            region=d.get('region'),
-            role_arn=d.get('role_arn'),
-            role_external_id=d.get('role_external_id'),
-        )
-
-
-class AWS:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param access_key: 
-    :param secret_access_key: 
-    :param healthcheck_region: 
-    :param role_arn: 
-    :param role_external_id: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'access_key',
-        'secret_access_key',
-        'healthcheck_region',
-        'role_arn',
-        'role_external_id',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        access_key=None,
-        secret_access_key=None,
-        healthcheck_region=None,
-        role_arn=None,
-        role_external_id=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.access_key = access_key
-        self.secret_access_key = secret_access_key
-        self.healthcheck_region = healthcheck_region
-        self.role_arn = role_arn
-        self.role_external_id = role_external_id
-
-    def __repr__(self):
-        return '<sdm.AWS ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
-            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'access_key': self.access_key,
-            'secret_access_key': self.secret_access_key,
-            'healthcheck_region': self.healthcheck_region,
-            'role_arn': self.role_arn,
-            'role_external_id': self.role_external_id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            access_key=d.get('access_key'),
-            secret_access_key=d.get('secret_access_key'),
-            healthcheck_region=d.get('healthcheck_region'),
-            role_arn=d.get('role_arn'),
-            role_external_id=d.get('role_external_id'),
-        )
-
-
-class BigQuery:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param private_key: 
-    :param project: 
-    :param port_override: 
-    :param endpoint: 
-    :param username: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'private_key',
-        'project',
-        'port_override',
-        'endpoint',
-        'username',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        private_key=None,
-        project=None,
-        port_override=None,
-        endpoint=None,
-        username=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.private_key = private_key
-        self.project = project
-        self.port_override = port_override
-        self.endpoint = endpoint
-        self.username = username
-
-    def __repr__(self):
-        return '<sdm.BigQuery ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'private_key: ' + repr(self.private_key) + ' ' +\
-            'project: ' + repr(self.project) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'private_key': self.private_key,
-            'project': self.project,
-            'port_override': self.port_override,
-            'endpoint': self.endpoint,
-            'username': self.username,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            private_key=d.get('private_key'),
-            project=d.get('project'),
-            port_override=d.get('port_override'),
-            endpoint=d.get('endpoint'),
-            username=d.get('username'),
-        )
-
-
-class Cassandra:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param port_override: 
-    :param port: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'port_override',
-        'port',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        port_override=None,
-        port=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.port_override = port_override
-        self.port = port
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.Cassandra ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'port_override': self.port_override,
-            'port': self.port,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            tls_required=d.get('tls_required'),
-        )
+        return cls()
 
 
 class DB2I:
     """
 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
     :param password: 
-    :param port_override: 
     :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
     :param tls_required: 
+    :param username: 
     """
     __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
         'password',
-        'port_override',
         'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
         'tls_required',
+        'username',
     ]
 
     def __init__(
         self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
         password=None,
-        port_override=None,
         port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
         tls_required=None,
+        username=None,
     ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
         self.password = password
-        self.port_override = port_override
         self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
         self.tls_required = tls_required
+        self.username = username
 
     def __repr__(self):
         return '<sdm.DB2I ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
             'password': self.password,
-            'port_override': self.port_override,
             'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
             'tls_required': self.tls_required,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
             password=d.get('password'),
-            port_override=d.get('port_override'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
             tls_required=d.get('tls_required'),
+            username=d.get('username'),
         )
 
 
 class DB2LUW:
     """
 
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
     :param password: 
-    :param database: 
-    :param port_override: 
     :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
         'password',
-        'database',
-        'port_override',
         'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
         password=None,
-        database=None,
-        port_override=None,
         port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
     ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
         self.password = password
-        self.database = database
-        self.port_override = port_override
         self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
 
     def __repr__(self):
         return '<sdm.DB2LUW ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
             'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
             'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
             password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
+
+
+class DeleteResponseMetadata:
+    """DeleteResponseMetadata is reserved for future use."""
+    __slots__ = []
+
+    def __init__(self, ):
+        pass
+
+    def __repr__(self):
+        return '<sdm.DeleteResponseMetadata ' + \
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class Druid:
     """
 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param username: 
     :param password: 
     :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'username',
         'password',
         'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        username=None,
         password=None,
         port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
     ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.username = username
         self.password = password
         self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
 
     def __repr__(self):
         return '<sdm.Druid ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'username': self.username,
             'password': self.password,
             'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            username=d.get('username'),
             password=d.get('password'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
 class DynamoDB:
     """
 
+    :param access_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param access_key: 
-    :param secret_access_key: 
-    :param region: 
-    :param endpoint: 
     :param port_override: 
+    :param region: 
     :param role_arn: 
     :param role_external_id: 
+    :param secret_access_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
     """
     __slots__ = [
+        'access_key',
+        'egress_filter',
+        'endpoint',
+        'healthy',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'access_key',
-        'secret_access_key',
-        'region',
-        'endpoint',
         'port_override',
+        'region',
         'role_arn',
         'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'tags',
     ]
 
     def __init__(
         self,
+        access_key=None,
+        egress_filter=None,
+        endpoint=None,
+        healthy=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        access_key=None,
-        secret_access_key=None,
-        region=None,
-        endpoint=None,
         port_override=None,
+        region=None,
         role_arn=None,
         role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        tags=None,
     ):
+        self.access_key = access_key
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthy = healthy
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.access_key = access_key
-        self.secret_access_key = secret_access_key
-        self.region = region
-        self.endpoint = endpoint
         self.port_override = port_override
+        self.region = region
         self.role_arn = role_arn
         self.role_external_id = role_external_id
+        self.secret_access_key = secret_access_key
+        self.secret_store_id = secret_store_id
+        self.tags = tags
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'access_key': self.access_key,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'access_key': self.access_key,
-            'secret_access_key': self.secret_access_key,
-            'region': self.region,
-            'endpoint': self.endpoint,
             'port_override': self.port_override,
+            'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_key=d.get('access_key'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            access_key=d.get('access_key'),
-            secret_access_key=d.get('secret_access_key'),
-            region=d.get('region'),
-            endpoint=d.get('endpoint'),
             port_override=d.get('port_override'),
+            region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
-        )
-
-
-class AmazonES:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param region: 
-    :param secret_access_key: 
-    :param endpoint: 
-    :param access_key: 
-    :param port_override: 
-    :param role_arn: 
-    :param role_external_id: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'region',
-        'secret_access_key',
-        'endpoint',
-        'access_key',
-        'port_override',
-        'role_arn',
-        'role_external_id',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        region=None,
-        secret_access_key=None,
-        endpoint=None,
-        access_key=None,
-        port_override=None,
-        role_arn=None,
-        role_external_id=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.region = region
-        self.secret_access_key = secret_access_key
-        self.endpoint = endpoint
-        self.access_key = access_key
-        self.port_override = port_override
-        self.role_arn = role_arn
-        self.role_external_id = role_external_id
-
-    def __repr__(self):
-        return '<sdm.AmazonES ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
-            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'region': self.region,
-            'secret_access_key': self.secret_access_key,
-            'endpoint': self.endpoint,
-            'access_key': self.access_key,
-            'port_override': self.port_override,
-            'role_arn': self.role_arn,
-            'role_external_id': self.role_external_id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            region=d.get('region'),
             secret_access_key=d.get('secret_access_key'),
-            endpoint=d.get('endpoint'),
-            access_key=d.get('access_key'),
-            port_override=d.get('port_override'),
-            role_arn=d.get('role_arn'),
-            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
         )
 
 
 class Elastic:
     """
 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
     :param password: 
-    :param port_override: 
     :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
     :param tls_required: 
+    :param username: 
     """
     __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
         'password',
-        'port_override',
         'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
         'tls_required',
+        'username',
     ]
 
     def __init__(
         self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
         password=None,
-        port_override=None,
         port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
         tls_required=None,
+        username=None,
     ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
         self.password = password
-        self.port_override = port_override
         self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
         self.tls_required = tls_required
+        self.username = username
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
             'password': self.password,
-            'port_override': self.port_override,
             'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
             'tls_required': self.tls_required,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
             password=d.get('password'),
-            port_override=d.get('port_override'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
             tls_required=d.get('tls_required'),
-        )
-
-
-class HTTPBasicAuth:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param url: 
-    :param healthcheck_path: 
-    :param username: 
-    :param password: 
-    :param headers_blacklist: 
-    :param default_path: 
-    :param subdomain: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'url',
-        'healthcheck_path',
-        'username',
-        'password',
-        'headers_blacklist',
-        'default_path',
-        'subdomain',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        url=None,
-        healthcheck_path=None,
-        username=None,
-        password=None,
-        headers_blacklist=None,
-        default_path=None,
-        subdomain=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.url = url
-        self.healthcheck_path = healthcheck_path
-        self.username = username
-        self.password = password
-        self.headers_blacklist = headers_blacklist
-        self.default_path = default_path
-        self.subdomain = subdomain
-
-    def __repr__(self):
-        return '<sdm.HTTPBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'url': self.url,
-            'healthcheck_path': self.healthcheck_path,
-            'username': self.username,
-            'password': self.password,
-            'headers_blacklist': self.headers_blacklist,
-            'default_path': self.default_path,
-            'subdomain': self.subdomain,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            url=d.get('url'),
-            healthcheck_path=d.get('healthcheck_path'),
             username=d.get('username'),
-            password=d.get('password'),
-            headers_blacklist=d.get('headers_blacklist'),
-            default_path=d.get('default_path'),
-            subdomain=d.get('subdomain'),
-        )
-
-
-class HTTPNoAuth:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param url: 
-    :param healthcheck_path: 
-    :param headers_blacklist: 
-    :param default_path: 
-    :param subdomain: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'url',
-        'healthcheck_path',
-        'headers_blacklist',
-        'default_path',
-        'subdomain',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        url=None,
-        healthcheck_path=None,
-        headers_blacklist=None,
-        default_path=None,
-        subdomain=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.url = url
-        self.healthcheck_path = healthcheck_path
-        self.headers_blacklist = headers_blacklist
-        self.default_path = default_path
-        self.subdomain = subdomain
-
-    def __repr__(self):
-        return '<sdm.HTTPNoAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'url': self.url,
-            'healthcheck_path': self.healthcheck_path,
-            'headers_blacklist': self.headers_blacklist,
-            'default_path': self.default_path,
-            'subdomain': self.subdomain,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            url=d.get('url'),
-            healthcheck_path=d.get('healthcheck_path'),
-            headers_blacklist=d.get('headers_blacklist'),
-            default_path=d.get('default_path'),
-            subdomain=d.get('subdomain'),
-        )
-
-
-class HTTPAuth:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param url: 
-    :param healthcheck_path: 
-    :param auth_header: 
-    :param headers_blacklist: 
-    :param default_path: 
-    :param subdomain: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'url',
-        'healthcheck_path',
-        'auth_header',
-        'headers_blacklist',
-        'default_path',
-        'subdomain',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        url=None,
-        healthcheck_path=None,
-        auth_header=None,
-        headers_blacklist=None,
-        default_path=None,
-        subdomain=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.url = url
-        self.healthcheck_path = healthcheck_path
-        self.auth_header = auth_header
-        self.headers_blacklist = headers_blacklist
-        self.default_path = default_path
-        self.subdomain = subdomain
-
-    def __repr__(self):
-        return '<sdm.HTTPAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'url: ' + repr(self.url) + ' ' +\
-            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
-            'auth_header: ' + repr(self.auth_header) + ' ' +\
-            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
-            'default_path: ' + repr(self.default_path) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'url': self.url,
-            'healthcheck_path': self.healthcheck_path,
-            'auth_header': self.auth_header,
-            'headers_blacklist': self.headers_blacklist,
-            'default_path': self.default_path,
-            'subdomain': self.subdomain,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            url=d.get('url'),
-            healthcheck_path=d.get('healthcheck_path'),
-            auth_header=d.get('auth_header'),
-            headers_blacklist=d.get('headers_blacklist'),
-            default_path=d.get('default_path'),
-            subdomain=d.get('subdomain'),
-        )
-
-
-class Kubernetes:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'certificate_authority',
-        'client_certificate',
-        'client_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        certificate_authority=None,
-        client_certificate=None,
-        client_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.certificate_authority = certificate_authority
-        self.client_certificate = client_certificate
-        self.client_key = client_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.Kubernetes ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'certificate_authority': self.certificate_authority,
-            'client_certificate': self.client_certificate,
-            'client_key': self.client_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            certificate_authority=d.get('certificate_authority'),
-            client_certificate=d.get('client_certificate'),
-            client_key=d.get('client_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class KubernetesUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'certificate_authority',
-        'client_certificate',
-        'client_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        certificate_authority=None,
-        client_certificate=None,
-        client_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.certificate_authority = certificate_authority
-        self.client_certificate = client_certificate
-        self.client_key = client_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.KubernetesUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'certificate_authority': self.certificate_authority,
-            'client_certificate': self.client_certificate,
-            'client_key': self.client_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            certificate_authority=d.get('certificate_authority'),
-            client_certificate=d.get('client_certificate'),
-            client_key=d.get('client_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class KubernetesBasicAuth:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param username: 
-    :param password: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'username',
-        'password',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        username=None,
-        password=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.username = username
-        self.password = password
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.KubernetesBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'username': self.username,
-            'password': self.password,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            username=d.get('username'),
-            password=d.get('password'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class KubernetesServiceAccount:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param token: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'token',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        token=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.token = token
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.KubernetesServiceAccount ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'token': self.token,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            token=d.get('token'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class KubernetesServiceAccountUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param token: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'token',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        token=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.token = token
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'token': self.token,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            token=d.get('token'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AmazonEKS:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param access_key: 
-    :param secret_access_key: 
-    :param certificate_authority: 
-    :param region: 
-    :param cluster_name: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'endpoint',
-        'access_key',
-        'secret_access_key',
-        'certificate_authority',
-        'region',
-        'cluster_name',
-        'role_arn',
-        'role_external_id',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        endpoint=None,
-        access_key=None,
-        secret_access_key=None,
-        certificate_authority=None,
-        region=None,
-        cluster_name=None,
-        role_arn=None,
-        role_external_id=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.endpoint = endpoint
-        self.access_key = access_key
-        self.secret_access_key = secret_access_key
-        self.certificate_authority = certificate_authority
-        self.region = region
-        self.cluster_name = cluster_name
-        self.role_arn = role_arn
-        self.role_external_id = role_external_id
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AmazonEKS ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
-            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'endpoint': self.endpoint,
-            'access_key': self.access_key,
-            'secret_access_key': self.secret_access_key,
-            'certificate_authority': self.certificate_authority,
-            'region': self.region,
-            'cluster_name': self.cluster_name,
-            'role_arn': self.role_arn,
-            'role_external_id': self.role_external_id,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            endpoint=d.get('endpoint'),
-            access_key=d.get('access_key'),
-            secret_access_key=d.get('secret_access_key'),
-            certificate_authority=d.get('certificate_authority'),
-            region=d.get('region'),
-            cluster_name=d.get('cluster_name'),
-            role_arn=d.get('role_arn'),
-            role_external_id=d.get('role_external_id'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AmazonEKSUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param access_key: 
-    :param secret_access_key: 
-    :param certificate_authority: 
-    :param region: 
-    :param cluster_name: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'endpoint',
-        'access_key',
-        'secret_access_key',
-        'certificate_authority',
-        'region',
-        'cluster_name',
-        'role_arn',
-        'role_external_id',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        endpoint=None,
-        access_key=None,
-        secret_access_key=None,
-        certificate_authority=None,
-        region=None,
-        cluster_name=None,
-        role_arn=None,
-        role_external_id=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.endpoint = endpoint
-        self.access_key = access_key
-        self.secret_access_key = secret_access_key
-        self.certificate_authority = certificate_authority
-        self.region = region
-        self.cluster_name = cluster_name
-        self.role_arn = role_arn
-        self.role_external_id = role_external_id
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AmazonEKSUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'access_key: ' + repr(self.access_key) + ' ' +\
-            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
-            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
-            'role_arn: ' + repr(self.role_arn) + ' ' +\
-            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'endpoint': self.endpoint,
-            'access_key': self.access_key,
-            'secret_access_key': self.secret_access_key,
-            'certificate_authority': self.certificate_authority,
-            'region': self.region,
-            'cluster_name': self.cluster_name,
-            'role_arn': self.role_arn,
-            'role_external_id': self.role_external_id,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            endpoint=d.get('endpoint'),
-            access_key=d.get('access_key'),
-            secret_access_key=d.get('secret_access_key'),
-            certificate_authority=d.get('certificate_authority'),
-            region=d.get('region'),
-            cluster_name=d.get('cluster_name'),
-            role_arn=d.get('role_arn'),
-            role_external_id=d.get('role_external_id'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class GoogleGKE:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param certificate_authority: 
-    :param service_account_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'endpoint',
-        'certificate_authority',
-        'service_account_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        endpoint=None,
-        certificate_authority=None,
-        service_account_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.endpoint = endpoint
-        self.certificate_authority = certificate_authority
-        self.service_account_key = service_account_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.GoogleGKE ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'endpoint': self.endpoint,
-            'certificate_authority': self.certificate_authority,
-            'service_account_key': self.service_account_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            endpoint=d.get('endpoint'),
-            certificate_authority=d.get('certificate_authority'),
-            service_account_key=d.get('service_account_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class GoogleGKEUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param certificate_authority: 
-    :param service_account_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'endpoint',
-        'certificate_authority',
-        'service_account_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        endpoint=None,
-        certificate_authority=None,
-        service_account_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.endpoint = endpoint
-        self.certificate_authority = certificate_authority
-        self.service_account_key = service_account_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.GoogleGKEUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'endpoint: ' + repr(self.endpoint) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'endpoint': self.endpoint,
-            'certificate_authority': self.certificate_authority,
-            'service_account_key': self.service_account_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            endpoint=d.get('endpoint'),
-            certificate_authority=d.get('certificate_authority'),
-            service_account_key=d.get('service_account_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AKS:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'certificate_authority',
-        'client_certificate',
-        'client_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        certificate_authority=None,
-        client_certificate=None,
-        client_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.certificate_authority = certificate_authority
-        self.client_certificate = client_certificate
-        self.client_key = client_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AKS ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'certificate_authority': self.certificate_authority,
-            'client_certificate': self.client_certificate,
-            'client_key': self.client_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            certificate_authority=d.get('certificate_authority'),
-            client_certificate=d.get('client_certificate'),
-            client_key=d.get('client_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AKSUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'certificate_authority',
-        'client_certificate',
-        'client_key',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        certificate_authority=None,
-        client_certificate=None,
-        client_key=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.certificate_authority = certificate_authority
-        self.client_certificate = client_certificate
-        self.client_key = client_key
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AKSUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
-            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
-            'client_key: ' + repr(self.client_key) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'certificate_authority': self.certificate_authority,
-            'client_certificate': self.client_certificate,
-            'client_key': self.client_key,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            certificate_authority=d.get('certificate_authority'),
-            client_certificate=d.get('client_certificate'),
-            client_key=d.get('client_key'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AKSBasicAuth:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param username: 
-    :param password: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'username',
-        'password',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        username=None,
-        password=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.username = username
-        self.password = password
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AKSBasicAuth ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'username': self.username,
-            'password': self.password,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            username=d.get('username'),
-            password=d.get('password'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AKSServiceAccount:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param token: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'token',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        token=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.token = token
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AKSServiceAccount ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'token': self.token,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            token=d.get('token'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class AKSServiceAccountUserImpersonation:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port: 
-    :param token: 
-    :param healthcheck_namespace: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port',
-        'token',
-        'healthcheck_namespace',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port=None,
-        token=None,
-        healthcheck_namespace=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port = port
-        self.token = token
-        self.healthcheck_namespace = healthcheck_namespace
-
-    def __repr__(self):
-        return '<sdm.AKSServiceAccountUserImpersonation ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
-            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port': self.port,
-            'token': self.token,
-            'healthcheck_namespace': self.healthcheck_namespace,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port=d.get('port'),
-            token=d.get('token'),
-            healthcheck_namespace=d.get('healthcheck_namespace'),
-        )
-
-
-class Memcached:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Memcached ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class MongoLegacyHost:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param auth_database: 
-    :param port_override: 
-    :param username: 
-    :param password: 
-    :param port: 
-    :param replica_set: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'auth_database',
-        'port_override',
-        'username',
-        'password',
-        'port',
-        'replica_set',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        auth_database=None,
-        port_override=None,
-        username=None,
-        password=None,
-        port=None,
-        replica_set=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.auth_database = auth_database
-        self.port_override = port_override
-        self.username = username
-        self.password = password
-        self.port = port
-        self.replica_set = replica_set
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.MongoLegacyHost ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'auth_database': self.auth_database,
-            'port_override': self.port_override,
-            'username': self.username,
-            'password': self.password,
-            'port': self.port,
-            'replica_set': self.replica_set,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            auth_database=d.get('auth_database'),
-            port_override=d.get('port_override'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port=d.get('port'),
-            replica_set=d.get('replica_set'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class MongoLegacyReplicaset:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param auth_database: 
-    :param port_override: 
-    :param username: 
-    :param password: 
-    :param port: 
-    :param replica_set: 
-    :param connect_to_replica: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'auth_database',
-        'port_override',
-        'username',
-        'password',
-        'port',
-        'replica_set',
-        'connect_to_replica',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        auth_database=None,
-        port_override=None,
-        username=None,
-        password=None,
-        port=None,
-        replica_set=None,
-        connect_to_replica=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.auth_database = auth_database
-        self.port_override = port_override
-        self.username = username
-        self.password = password
-        self.port = port
-        self.replica_set = replica_set
-        self.connect_to_replica = connect_to_replica
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.MongoLegacyReplicaset ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'auth_database': self.auth_database,
-            'port_override': self.port_override,
-            'username': self.username,
-            'password': self.password,
-            'port': self.port,
-            'replica_set': self.replica_set,
-            'connect_to_replica': self.connect_to_replica,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            auth_database=d.get('auth_database'),
-            port_override=d.get('port_override'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port=d.get('port'),
-            replica_set=d.get('replica_set'),
-            connect_to_replica=d.get('connect_to_replica'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class MongoHost:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param auth_database: 
-    :param port_override: 
-    :param username: 
-    :param password: 
-    :param port: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'auth_database',
-        'port_override',
-        'username',
-        'password',
-        'port',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        auth_database=None,
-        port_override=None,
-        username=None,
-        password=None,
-        port=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.auth_database = auth_database
-        self.port_override = port_override
-        self.username = username
-        self.password = password
-        self.port = port
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.MongoHost ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'auth_database': self.auth_database,
-            'port_override': self.port_override,
-            'username': self.username,
-            'password': self.password,
-            'port': self.port,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            auth_database=d.get('auth_database'),
-            port_override=d.get('port_override'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port=d.get('port'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class MongoReplicaSet:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param auth_database: 
-    :param port_override: 
-    :param username: 
-    :param password: 
-    :param port: 
-    :param replica_set: 
-    :param connect_to_replica: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'auth_database',
-        'port_override',
-        'username',
-        'password',
-        'port',
-        'replica_set',
-        'connect_to_replica',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        auth_database=None,
-        port_override=None,
-        username=None,
-        password=None,
-        port=None,
-        replica_set=None,
-        connect_to_replica=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.auth_database = auth_database
-        self.port_override = port_override
-        self.username = username
-        self.password = password
-        self.port = port
-        self.replica_set = replica_set
-        self.connect_to_replica = connect_to_replica
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.MongoReplicaSet ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'auth_database: ' + repr(self.auth_database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
-            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'auth_database': self.auth_database,
-            'port_override': self.port_override,
-            'username': self.username,
-            'password': self.password,
-            'port': self.port,
-            'replica_set': self.replica_set,
-            'connect_to_replica': self.connect_to_replica,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            auth_database=d.get('auth_database'),
-            port_override=d.get('port_override'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port=d.get('port'),
-            replica_set=d.get('replica_set'),
-            connect_to_replica=d.get('connect_to_replica'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class Mysql:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Mysql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class AuroraMysql:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.AuroraMysql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class Clustrix:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Clustrix ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class Maria:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Maria ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class Memsql:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Memsql ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class SingleStore:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.SingleStore ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class Oracle:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port: 
-    :param port_override: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port',
-        'port_override',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port=None,
-        port_override=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port = port
-        self.port_override = port_override
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.Oracle ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port': self.port,
-            'port_override': self.port_override,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port=d.get('port'),
-            port_override=d.get('port_override'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class Postgres:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.Postgres ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class AuroraPostgres:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.AuroraPostgres ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class Greenplum:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.Greenplum ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class Cockroach:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.Cockroach ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class Redshift:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.Redshift ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class Citus:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param override_database: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'override_database',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        override_database=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.override_database = override_database
-
-    def __repr__(self):
-        return '<sdm.Citus ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'override_database': self.override_database,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            override_database=d.get('override_database'),
-        )
-
-
-class Presto:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param password: 
-    :param database: 
-    :param port_override: 
-    :param port: 
-    :param username: 
-    :param tls_required: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'password',
-        'database',
-        'port_override',
-        'port',
-        'username',
-        'tls_required',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        password=None,
-        database=None,
-        port_override=None,
-        port=None,
-        username=None,
-        tls_required=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.password = password
-        self.database = database
-        self.port_override = port_override
-        self.port = port
-        self.username = username
-        self.tls_required = tls_required
-
-    def __repr__(self):
-        return '<sdm.Presto ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'tls_required: ' + repr(self.tls_required) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'password': self.password,
-            'database': self.database,
-            'port_override': self.port_override,
-            'port': self.port,
-            'username': self.username,
-            'tls_required': self.tls_required,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            password=d.get('password'),
-            database=d.get('database'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            username=d.get('username'),
-            tls_required=d.get('tls_required'),
-        )
-
-
-class RawTCP:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.RawTCP ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class RDP:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param port_override: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'port_override',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        port_override=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.port_override = port_override
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.RDP ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'port_override': self.port_override,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-        )
-
-
-class Redis:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
-    :param password: 
-    :param port: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
-        'password',
-        'port',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
-        password=None,
-        port=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
-        self.password = password
-        self.port = port
-
-    def __repr__(self):
-        return '<sdm.Redis ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
-            'password': self.password,
-            'port': self.port,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
-            password=d.get('password'),
-            port=d.get('port'),
         )
 
 
 class ElasticacheRedis:
     """
 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param port_override: 
     :param password: 
     :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
     :param tls_required: 
     """
     __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'port_override',
         'password',
         'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
         'tls_required',
     ]
 
     def __init__(
         self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        port_override=None,
         password=None,
         port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
         tls_required=None,
     ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.port_override = port_override
         self.password = password
         self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
         self.tls_required = tls_required
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'port_override': self.port_override,
             'password': self.password,
             'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
             'tls_required': self.tls_required,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            port_override=d.get('port_override'),
             password=d.get('password'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
             tls_required=d.get('tls_required'),
         )
 
 
-class Snowflake:
-    """
+class Gateway:
+    """Gateway represents a StrongDM CLI installation running in gateway mode.
 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
+ If not provided on create, set to "0.0.0.0:<listen_address_port>".
+    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
+ gateways.
+    :param id: Unique identifier of the Gateway.
+    :param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
+    :param name: Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
+    :param state: The current state of the gateway. One of: "new", "verifying_restart",
+ "restarting", "started", "stopped", "dead", "unknown"
     :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
-    :param database: 
-    :param schema: 
-    :param port_override: 
     """
     __slots__ = [
+        'bind_address',
+        'gateway_filter',
         'id',
+        'listen_address',
         'name',
-        'healthy',
+        'state',
         'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
-        'database',
-        'schema',
-        'port_override',
     ]
 
     def __init__(
         self,
+        bind_address=None,
+        gateway_filter=None,
         id=None,
+        listen_address=None,
         name=None,
-        healthy=None,
+        state=None,
         tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
-        database=None,
-        schema=None,
-        port_override=None,
     ):
+        self.bind_address = bind_address
+        self.gateway_filter = gateway_filter
         self.id = id
+        self.listen_address = listen_address
         self.name = name
-        self.healthy = healthy
+        self.state = state
         self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
-        self.database = database
-        self.schema = schema
-        self.port_override = port_override
 
     def __repr__(self):
-        return '<sdm.Snowflake ' + \
+        return '<sdm.Gateway ' + \
+            'bind_address: ' + repr(self.bind_address) + ' ' +\
+            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'listen_address: ' + repr(self.listen_address) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
+            'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'schema: ' + repr(self.schema) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'bind_address': self.bind_address,
+            'gateway_filter': self.gateway_filter,
             'id': self.id,
+            'listen_address': self.listen_address,
             'name': self.name,
-            'healthy': self.healthy,
+            'state': self.state,
             'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
-            'database': self.database,
-            'schema': self.schema,
-            'port_override': self.port_override,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_address=d.get('bind_address'),
+            gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
+            listen_address=d.get('listen_address'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
+            state=d.get('state'),
             tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
-            database=d.get('database'),
-            schema=d.get('schema'),
-            port_override=d.get('port_override'),
         )
 
 
-class SQLServer:
+class GetResponseMetadata:
+    """GetResponseMetadata is reserved for future use."""
+    __slots__ = []
+
+    def __init__(self, ):
+        pass
+
+    def __repr__(self):
+        return '<sdm.GetResponseMetadata ' + \
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
+
+
+class GoogleGKE:
     """
 
+    :param certificate_authority: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param endpoint: 
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param service_account_key: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'certificate_authority',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'secret_store_id',
+        'service_account_key',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        secret_store_id=None,
+        service_account_key=None,
+        tags=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.secret_store_id = secret_store_id
+        self.service_account_key = service_account_key
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.GoogleGKE ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'secret_store_id': self.secret_store_id,
+            'service_account_key': self.service_account_key,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            secret_store_id=d.get('secret_store_id'),
+            service_account_key=d.get('service_account_key'),
+            tags=d.get('tags'),
+        )
+
+
+class GoogleGKEUserImpersonation:
+    """
+
+    :param certificate_authority: 
     :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param password: 
+    :param endpoint: 
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param service_account_key: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'certificate_authority',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'secret_store_id',
+        'service_account_key',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        secret_store_id=None,
+        service_account_key=None,
+        tags=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.egress_filter = egress_filter
+        self.endpoint = endpoint
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.secret_store_id = secret_store_id
+        self.service_account_key = service_account_key
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.GoogleGKEUserImpersonation ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'service_account_key: ' + repr(self.service_account_key) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'secret_store_id': self.secret_store_id,
+            'service_account_key': self.service_account_key,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            secret_store_id=d.get('secret_store_id'),
+            service_account_key=d.get('service_account_key'),
+            tags=d.get('tags'),
+        )
+
+
+class Greenplum:
+    """
+
     :param database: 
-    :param port_override: 
-    :param schema: 
-    :param port: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
     :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'password',
         'database',
-        'port_override',
-        'schema',
-        'port',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
         'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
     ]
 
     def __init__(
         self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        password=None,
         database=None,
-        port_override=None,
-        schema=None,
-        port=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
         override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
     ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.password = password
         self.database = database
-        self.port_override = port_override
-        self.schema = schema
-        self.port = port
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
         self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.SQLServer ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
+        return '<sdm.Greenplum ' + \
             'database: ' + repr(self.database) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'schema: ' + repr(self.schema) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
             'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'password': self.password,
             'database': self.database,
-            'port_override': self.port_override,
-            'schema': self.schema,
-            'port': self.port,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
             'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            password=d.get('password'),
             database=d.get('database'),
-            port_override=d.get('port_override'),
-            schema=d.get('schema'),
-            port=d.get('port'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
             override_database=d.get('override_database'),
-        )
-
-
-class SSH:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param port: 
-    :param public_key: 
-    :param port_forwarding: 
-    :param allow_deprecated_key_exchanges: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'port',
-        'public_key',
-        'port_forwarding',
-        'allow_deprecated_key_exchanges',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        port=None,
-        public_key=None,
-        port_forwarding=None,
-        allow_deprecated_key_exchanges=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.port = port
-        self.public_key = public_key
-        self.port_forwarding = port_forwarding
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
-
-    def __repr__(self):
-        return '<sdm.SSH ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'public_key: ' + repr(self.public_key) + ' ' +\
-            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
-            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'port': self.port,
-            'public_key': self.public_key,
-            'port_forwarding': self.port_forwarding,
-            'allow_deprecated_key_exchanges':
-            self.allow_deprecated_key_exchanges,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            port=d.get('port'),
-            public_key=d.get('public_key'),
-            port_forwarding=d.get('port_forwarding'),
-            allow_deprecated_key_exchanges=d.get(
-                'allow_deprecated_key_exchanges'),
-        )
-
-
-class SSHCert:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param port: 
-    :param port_forwarding: 
-    :param allow_deprecated_key_exchanges: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'port',
-        'port_forwarding',
-        'allow_deprecated_key_exchanges',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        port=None,
-        port_forwarding=None,
-        allow_deprecated_key_exchanges=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.port = port
-        self.port_forwarding = port_forwarding
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
-
-    def __repr__(self):
-        return '<sdm.SSHCert ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
-            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'port': self.port,
-            'port_forwarding': self.port_forwarding,
-            'allow_deprecated_key_exchanges':
-            self.allow_deprecated_key_exchanges,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            port=d.get('port'),
-            port_forwarding=d.get('port_forwarding'),
-            allow_deprecated_key_exchanges=d.get(
-                'allow_deprecated_key_exchanges'),
-        )
-
-
-class SSHCustomerKey:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param port: 
-    :param private_key: 
-    :param port_forwarding: 
-    :param allow_deprecated_key_exchanges: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'port',
-        'private_key',
-        'port_forwarding',
-        'allow_deprecated_key_exchanges',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        port=None,
-        private_key=None,
-        port_forwarding=None,
-        allow_deprecated_key_exchanges=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.port = port
-        self.private_key = private_key
-        self.port_forwarding = port_forwarding
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
-
-    def __repr__(self):
-        return '<sdm.SSHCustomerKey ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'private_key: ' + repr(self.private_key) + ' ' +\
-            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
-            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'port': self.port,
-            'private_key': self.private_key,
-            'port_forwarding': self.port_forwarding,
-            'allow_deprecated_key_exchanges':
-            self.allow_deprecated_key_exchanges,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            port=d.get('port'),
-            private_key=d.get('private_key'),
-            port_forwarding=d.get('port_forwarding'),
-            allow_deprecated_key_exchanges=d.get(
-                'allow_deprecated_key_exchanges'),
-        )
-
-
-class Sybase:
-    """
-
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param port_override: 
-    :param port: 
-    :param password: 
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'port_override',
-        'port',
-        'password',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        port_override=None,
-        port=None,
-        password=None,
-    ):
-        self.id = id
-        self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.port_override = port_override
-        self.port = port
-        self.password = password
-
-    def __repr__(self):
-        return '<sdm.Sybase ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'port_override': self.port_override,
-            'port': self.port,
-            'password': self.password,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
             password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
-class SybaseIQ:
+class HTTPAuth:
     """
 
+    :param auth_header: 
+    :param default_path: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param headers_blacklist: 
+    :param healthcheck_path: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
-    :param port_override: 
-    :param port: 
-    :param password: 
+    :param subdomain: 
+    :param tags: Tags is a map of key, value pairs.
+    :param url: 
     """
     __slots__ = [
+        'auth_header',
+        'default_path',
+        'egress_filter',
+        'headers_blacklist',
+        'healthcheck_path',
+        'healthy',
         'id',
         'name',
-        'healthy',
-        'tags',
         'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
-        'port_override',
-        'port',
-        'password',
+        'subdomain',
+        'tags',
+        'url',
     ]
 
     def __init__(
         self,
+        auth_header=None,
+        default_path=None,
+        egress_filter=None,
+        headers_blacklist=None,
+        healthcheck_path=None,
+        healthy=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
         secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
-        port_override=None,
-        port=None,
-        password=None,
+        subdomain=None,
+        tags=None,
+        url=None,
     ):
+        self.auth_header = auth_header
+        self.default_path = default_path
+        self.egress_filter = egress_filter
+        self.headers_blacklist = headers_blacklist
+        self.healthcheck_path = healthcheck_path
+        self.healthy = healthy
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
         self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
-        self.port_override = port_override
-        self.port = port
-        self.password = password
+        self.subdomain = subdomain
+        self.tags = tags
+        self.url = url
 
     def __repr__(self):
-        return '<sdm.SybaseIQ ' + \
+        return '<sdm.HTTPAuth ' + \
+            'auth_header: ' + repr(self.auth_header) + ' ' +\
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'auth_header': self.auth_header,
+            'default_path': self.default_path,
+            'egress_filter': self.egress_filter,
+            'headers_blacklist': self.headers_blacklist,
+            'healthcheck_path': self.healthcheck_path,
+            'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
             'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
-            'port_override': self.port_override,
-            'port': self.port,
-            'password': self.password,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'url': self.url,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            auth_header=d.get('auth_header'),
+            default_path=d.get('default_path'),
+            egress_filter=d.get('egress_filter'),
+            headers_blacklist=d.get('headers_blacklist'),
+            healthcheck_path=d.get('healthcheck_path'),
+            healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
             secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
-            port_override=d.get('port_override'),
-            port=d.get('port'),
-            password=d.get('password'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            url=d.get('url'),
         )
 
 
-class Teradata:
+class HTTPBasicAuth:
     """
 
+    :param default_path: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param headers_blacklist: 
+    :param healthcheck_path: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
     :param id: Unique identifier of the Resource.
     :param name: Unique human-readable name of the Resource.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param tags: Tags is a map of key, value pairs.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param hostname: 
-    :param username: 
     :param password: 
-    :param port_override: 
-    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param subdomain: 
+    :param tags: Tags is a map of key, value pairs.
+    :param url: 
+    :param username: 
     """
     __slots__ = [
+        'default_path',
+        'egress_filter',
+        'headers_blacklist',
+        'healthcheck_path',
+        'healthy',
         'id',
         'name',
-        'healthy',
-        'tags',
-        'secret_store_id',
-        'egress_filter',
-        'hostname',
-        'username',
         'password',
-        'port_override',
-        'port',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'url',
+        'username',
     ]
 
     def __init__(
         self,
+        default_path=None,
+        egress_filter=None,
+        headers_blacklist=None,
+        healthcheck_path=None,
+        healthy=None,
         id=None,
         name=None,
-        healthy=None,
-        tags=None,
-        secret_store_id=None,
-        egress_filter=None,
-        hostname=None,
-        username=None,
         password=None,
-        port_override=None,
-        port=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        url=None,
+        username=None,
     ):
+        self.default_path = default_path
+        self.egress_filter = egress_filter
+        self.headers_blacklist = headers_blacklist
+        self.healthcheck_path = healthcheck_path
+        self.healthy = healthy
         self.id = id
         self.name = name
-        self.healthy = healthy
-        self.tags = tags
-        self.secret_store_id = secret_store_id
-        self.egress_filter = egress_filter
-        self.hostname = hostname
-        self.username = username
         self.password = password
-        self.port_override = port_override
-        self.port = port
+        self.secret_store_id = secret_store_id
+        self.subdomain = subdomain
+        self.tags = tags
+        self.url = url
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.Teradata ' + \
+        return '<sdm.HTTPBasicAuth ' + \
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'default_path': self.default_path,
+            'egress_filter': self.egress_filter,
+            'headers_blacklist': self.headers_blacklist,
+            'healthcheck_path': self.healthcheck_path,
+            'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
-            'healthy': self.healthy,
-            'tags': self.tags,
-            'secret_store_id': self.secret_store_id,
-            'egress_filter': self.egress_filter,
-            'hostname': self.hostname,
-            'username': self.username,
             'password': self.password,
-            'port_override': self.port_override,
-            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'url': self.url,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            default_path=d.get('default_path'),
+            egress_filter=d.get('egress_filter'),
+            headers_blacklist=d.get('headers_blacklist'),
+            healthcheck_path=d.get('healthcheck_path'),
+            healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
-            healthy=d.get('healthy'),
-            tags=d.get('tags'),
-            secret_store_id=d.get('secret_store_id'),
-            egress_filter=d.get('egress_filter'),
-            hostname=d.get('hostname'),
-            username=d.get('username'),
             password=d.get('password'),
-            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            url=d.get('url'),
+            username=d.get('username'),
+        )
+
+
+class HTTPNoAuth:
+    """
+
+    :param default_path: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param headers_blacklist: 
+    :param healthcheck_path: 
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param subdomain: 
+    :param tags: Tags is a map of key, value pairs.
+    :param url: 
+    """
+    __slots__ = [
+        'default_path',
+        'egress_filter',
+        'headers_blacklist',
+        'healthcheck_path',
+        'healthy',
+        'id',
+        'name',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'url',
+    ]
+
+    def __init__(
+        self,
+        default_path=None,
+        egress_filter=None,
+        headers_blacklist=None,
+        healthcheck_path=None,
+        healthy=None,
+        id=None,
+        name=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        url=None,
+    ):
+        self.default_path = default_path
+        self.egress_filter = egress_filter
+        self.headers_blacklist = headers_blacklist
+        self.healthcheck_path = healthcheck_path
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.secret_store_id = secret_store_id
+        self.subdomain = subdomain
+        self.tags = tags
+        self.url = url
+
+    def __repr__(self):
+        return '<sdm.HTTPNoAuth ' + \
+            'default_path: ' + repr(self.default_path) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
+            'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'default_path': self.default_path,
+            'egress_filter': self.egress_filter,
+            'headers_blacklist': self.headers_blacklist,
+            'healthcheck_path': self.healthcheck_path,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'url': self.url,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            default_path=d.get('default_path'),
+            egress_filter=d.get('egress_filter'),
+            headers_blacklist=d.get('headers_blacklist'),
+            healthcheck_path=d.get('healthcheck_path'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            url=d.get('url'),
+        )
+
+
+class Kubernetes:
+    """
+
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Kubernetes ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
             port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class KubernetesBasicAuth:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.KubernetesBasicAuth ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class KubernetesServiceAccount:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param token: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        token=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.KubernetesServiceAccount ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            token=d.get('token'),
+        )
+
+
+class KubernetesServiceAccountUserImpersonation:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param token: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+        'token',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+        token=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.token = token
+
+    def __repr__(self):
+        return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'token': self.token,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            token=d.get('token'),
+        )
+
+
+class KubernetesUserImpersonation:
+    """
+
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.egress_filter = egress_filter
+        self.healthcheck_namespace = healthcheck_namespace
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.KubernetesUserImpersonation ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class Maria:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Maria ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Memcached:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Memcached ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class Memsql:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Memsql ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class MongoHost:
+    """
+
+    :param auth_database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'auth_database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        auth_database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.auth_database = auth_database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MongoHost ' + \
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_database': self.auth_database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_database=d.get('auth_database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class MongoLegacyHost:
+    """
+
+    :param auth_database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param replica_set: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'auth_database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'replica_set',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        auth_database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        replica_set=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.auth_database = auth_database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.replica_set = replica_set
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MongoLegacyHost ' + \
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_database': self.auth_database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'replica_set': self.replica_set,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_database=d.get('auth_database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            replica_set=d.get('replica_set'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class MongoLegacyReplicaset:
+    """
+
+    :param auth_database: 
+    :param connect_to_replica: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param replica_set: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'auth_database',
+        'connect_to_replica',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'replica_set',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        auth_database=None,
+        connect_to_replica=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        replica_set=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.auth_database = auth_database
+        self.connect_to_replica = connect_to_replica
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.replica_set = replica_set
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MongoLegacyReplicaset ' + \
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_database': self.auth_database,
+            'connect_to_replica': self.connect_to_replica,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'replica_set': self.replica_set,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_database=d.get('auth_database'),
+            connect_to_replica=d.get('connect_to_replica'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            replica_set=d.get('replica_set'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class MongoReplicaSet:
+    """
+
+    :param auth_database: 
+    :param connect_to_replica: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param replica_set: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'auth_database',
+        'connect_to_replica',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'replica_set',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        auth_database=None,
+        connect_to_replica=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        replica_set=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.auth_database = auth_database
+        self.connect_to_replica = connect_to_replica
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.replica_set = replica_set
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MongoReplicaSet ' + \
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'replica_set: ' + repr(self.replica_set) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_database': self.auth_database,
+            'connect_to_replica': self.connect_to_replica,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'replica_set': self.replica_set,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_database=d.get('auth_database'),
+            connect_to_replica=d.get('connect_to_replica'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            replica_set=d.get('replica_set'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class Mysql:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Mysql ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
@@ -7491,43 +5554,43 @@ class NodeCreateResponse:
 
     :param meta: Reserved for future use.
     :param node: The created Node.
+    :param rate_limit: Rate limit information.
     :param token: The auth token generated for the Node. The Node will use this token to
  authenticate with the strongDM API.
-    :param rate_limit: Rate limit information.
     """
     __slots__ = [
         'meta',
         'node',
-        'token',
         'rate_limit',
+        'token',
     ]
 
     def __init__(
         self,
         meta=None,
         node=None,
-        token=None,
         rate_limit=None,
+        token=None,
     ):
         self.meta = meta
         self.node = node
-        self.token = token
         self.rate_limit = rate_limit
+        self.token = token
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
             'node: ' + repr(self.node) + ' ' +\
-            'token: ' + repr(self.token) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'token: ' + repr(self.token) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
             'node': self.node,
-            'token': self.token,
             'rate_limit': self.rate_limit,
+            'token': self.token,
         }
 
     @classmethod
@@ -7535,7 +5598,46 @@ class NodeCreateResponse:
         return cls(
             meta=d.get('meta'),
             node=d.get('node'),
+            rate_limit=d.get('rate_limit'),
             token=d.get('token'),
+        )
+
+
+class NodeDeleteResponse:
+    """NodeDeleteResponse returns information about a Node that was deleted.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+
+    def __repr__(self):
+        return '<sdm.NodeDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
         )
 
@@ -7633,182 +5735,980 @@ class NodeUpdateResponse:
         )
 
 
-class NodeDeleteResponse:
-    """NodeDeleteResponse returns information about a Node that was deleted.
+class Oracle:
+    """
 
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
     """
     __slots__ = [
-        'meta',
-        'rate_limit',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
     ]
 
     def __init__(
         self,
-        meta=None,
-        rate_limit=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
     ):
-        self.meta = meta
-        self.rate_limit = rate_limit
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.NodeDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+        return '<sdm.Oracle ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class Postgres:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Postgres ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Presto:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Presto ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class RDP:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.RDP ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class RabbitMQAMQP091:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.RabbitMQAMQP091 ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class RateLimitMetadata:
+    """RateLimitMetadata contains information about remaining requests avaialable
+ to the user over some timeframe.
+
+    :param bucket: The bucket this user/token is associated with, which may be shared between
+ multiple users/tokens.
+    :param limit: How many total requests the user/token is authorized to make before being
+ rate limited.
+    :param remaining: How many remaining requests out of the limit are still avaialable.
+    :param reset_at: The time when remaining will be reset to limit.
+    """
+    __slots__ = [
+        'bucket',
+        'limit',
+        'remaining',
+        'reset_at',
+    ]
+
+    def __init__(
+        self,
+        bucket=None,
+        limit=None,
+        remaining=None,
+        reset_at=None,
+    ):
+        self.bucket = bucket
+        self.limit = limit
+        self.remaining = remaining
+        self.reset_at = reset_at
+
+    def __repr__(self):
+        return '<sdm.RateLimitMetadata ' + \
+            'bucket: ' + repr(self.bucket) + ' ' +\
+            'limit: ' + repr(self.limit) + ' ' +\
+            'remaining: ' + repr(self.remaining) + ' ' +\
+            'reset_at: ' + repr(self.reset_at) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bucket': self.bucket,
+            'limit': self.limit,
+            'remaining': self.remaining,
+            'reset_at': self.reset_at,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bucket=d.get('bucket'),
+            limit=d.get('limit'),
+            remaining=d.get('remaining'),
+            reset_at=d.get('reset_at'),
+        )
+
+
+class RawTCP:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.RawTCP ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class Redis:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Redis ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
+class Redshift:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Redshift ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
 class Relay:
     """Relay represents a StrongDM CLI installation running in relay mode.
 
+    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
+ gateways.
     :param id: Unique identifier of the Relay.
     :param name: Unique human-readable name of the Relay. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
     :param state: The current state of the relay. One of: "new", "verifying_restart",
  "awaiting_restart", "restarting", "started", "stopped", "dead",
  "unknown".
     :param tags: Tags is a map of key, value pairs.
-    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
- gateways.
     """
     __slots__ = [
+        'gateway_filter',
         'id',
         'name',
         'state',
         'tags',
-        'gateway_filter',
     ]
 
     def __init__(
         self,
+        gateway_filter=None,
         id=None,
         name=None,
         state=None,
         tags=None,
-        gateway_filter=None,
     ):
+        self.gateway_filter = gateway_filter
         self.id = id
         self.name = name
         self.state = state
         self.tags = tags
-        self.gateway_filter = gateway_filter
 
     def __repr__(self):
         return '<sdm.Relay ' + \
+            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
-            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'gateway_filter': self.gateway_filter,
             'id': self.id,
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
-            'gateway_filter': self.gateway_filter,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),
-            gateway_filter=d.get('gateway_filter'),
-        )
-
-
-class Gateway:
-    """Gateway represents a StrongDM CLI installation running in gateway mode.
-
-    :param id: Unique identifier of the Gateway.
-    :param name: Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
-    :param state: The current state of the gateway. One of: "new", "verifying_restart",
- "restarting", "started", "stopped", "dead", "unknown"
-    :param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
-    :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
- If not provided on create, set to "0.0.0.0:<listen_address_port>".
-    :param tags: Tags is a map of key, value pairs.
-    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
- gateways.
-    """
-    __slots__ = [
-        'id',
-        'name',
-        'state',
-        'listen_address',
-        'bind_address',
-        'tags',
-        'gateway_filter',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        state=None,
-        listen_address=None,
-        bind_address=None,
-        tags=None,
-        gateway_filter=None,
-    ):
-        self.id = id
-        self.name = name
-        self.state = state
-        self.listen_address = listen_address
-        self.bind_address = bind_address
-        self.tags = tags
-        self.gateway_filter = gateway_filter
-
-    def __repr__(self):
-        return '<sdm.Gateway ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'state: ' + repr(self.state) + ' ' +\
-            'listen_address: ' + repr(self.listen_address) + ' ' +\
-            'bind_address: ' + repr(self.bind_address) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'state': self.state,
-            'listen_address': self.listen_address,
-            'bind_address': self.bind_address,
-            'tags': self.tags,
-            'gateway_filter': self.gateway_filter,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            state=d.get('state'),
-            listen_address=d.get('listen_address'),
-            bind_address=d.get('bind_address'),
-            tags=d.get('tags'),
-            gateway_filter=d.get('gateway_filter'),
         )
 
 
@@ -7816,138 +6716,45 @@ class ResourceCreateResponse:
     """ResourceCreateResponse reports how the Resources were created in the system.
 
     :param meta: Reserved for future use.
-    :param resource: The created Resource.
     :param rate_limit: Rate limit information.
+    :param resource: The created Resource.
     """
     __slots__ = [
         'meta',
-        'resource',
         'rate_limit',
+        'resource',
     ]
 
     def __init__(
         self,
         meta=None,
-        resource=None,
         rate_limit=None,
+        resource=None,
     ):
         self.meta = meta
-        self.resource = resource
         self.rate_limit = rate_limit
+        self.resource = resource
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'resource': self.resource,
             'rate_limit': self.rate_limit,
+            'resource': self.resource,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            resource=d.get('resource'),
             rate_limit=d.get('rate_limit'),
-        )
-
-
-class ResourceGetResponse:
-    """ResourceGetResponse returns a requested Resource.
-
-    :param meta: Reserved for future use.
-    :param resource: The requested Resource.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'resource',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        resource=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.resource = resource
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.ResourceGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'resource': self.resource,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
             resource=d.get('resource'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class ResourceUpdateResponse:
-    """ResourceUpdateResponse returns the fields of a Resource after it has been updated by
- a ResourceUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param resource: The updated Resource.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'resource',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        resource=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.resource = resource
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.ResourceUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'resource: ' + repr(self.resource) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'resource': self.resource,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            resource=d.get('resource'),
-            rate_limit=d.get('rate_limit'),
         )
 
 
@@ -7990,95 +6797,248 @@ class ResourceDeleteResponse:
         )
 
 
+class ResourceGetResponse:
+    """ResourceGetResponse returns a requested Resource.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param resource: The requested Resource.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'resource',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        resource=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.resource = resource
+
+    def __repr__(self):
+        return '<sdm.ResourceGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'resource': self.resource,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            resource=d.get('resource'),
+        )
+
+
+class ResourceUpdateResponse:
+    """ResourceUpdateResponse returns the fields of a Resource after it has been updated by
+ a ResourceUpdateRequest.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param resource: The updated Resource.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'resource',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        resource=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.resource = resource
+
+    def __repr__(self):
+        return '<sdm.ResourceUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'resource': self.resource,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            resource=d.get('resource'),
+        )
+
+
+class Role:
+    """A Role is a collection of access grants, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
+
+    :param access_rules: AccessRules JSON encoded access rules data.
+    :param composite: True if the Role is a composite role.
+    :param id: Unique identifier of the Role.
+    :param name: Unique human-readable name of the Role.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'access_rules',
+        'composite',
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_rules=None,
+        composite=None,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.access_rules = access_rules
+        self.composite = composite
+        self.id = id
+        self.name = name
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Role ' + \
+            'access_rules: ' + repr(self.access_rules) + ' ' +\
+            'composite: ' + repr(self.composite) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_rules': self.access_rules,
+            'composite': self.composite,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_rules=d.get('access_rules'),
+            composite=d.get('composite'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
+class RoleAttachment:
+    """A RoleAttachment assigns a role to a composite role.
+
+    :param attached_role_id: The id of the attached role of this RoleAttachment.
+    :param composite_role_id: The id of the composite role of this RoleAttachment.
+    :param id: Unique identifier of the RoleAttachment.
+    """
+    __slots__ = [
+        'attached_role_id',
+        'composite_role_id',
+        'id',
+    ]
+
+    def __init__(
+        self,
+        attached_role_id=None,
+        composite_role_id=None,
+        id=None,
+    ):
+        self.attached_role_id = attached_role_id
+        self.composite_role_id = composite_role_id
+        self.id = id
+
+    def __repr__(self):
+        return '<sdm.RoleAttachment ' + \
+            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
+            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'attached_role_id': self.attached_role_id,
+            'composite_role_id': self.composite_role_id,
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            attached_role_id=d.get('attached_role_id'),
+            composite_role_id=d.get('composite_role_id'),
+            id=d.get('id'),
+        )
+
+
 class RoleAttachmentCreateResponse:
     """RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
 
     :param meta: Reserved for future use.
-    :param role_attachment: The created RoleAttachment.
     :param rate_limit: Rate limit information.
+    :param role_attachment: The created RoleAttachment.
     """
     __slots__ = [
         'meta',
-        'role_attachment',
         'rate_limit',
+        'role_attachment',
     ]
 
     def __init__(
         self,
         meta=None,
-        role_attachment=None,
         rate_limit=None,
+        role_attachment=None,
     ):
         self.meta = meta
-        self.role_attachment = role_attachment
         self.rate_limit = rate_limit
+        self.role_attachment = role_attachment
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'role_attachment': self.role_attachment,
             'rate_limit': self.rate_limit,
+            'role_attachment': self.role_attachment,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            role_attachment=d.get('role_attachment'),
             rate_limit=d.get('rate_limit'),
-        )
-
-
-class RoleAttachmentGetResponse:
-    """RoleAttachmentGetResponse returns a requested RoleAttachment.
-
-    :param meta: Reserved for future use.
-    :param role_attachment: The requested RoleAttachment.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'role_attachment',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        role_attachment=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.role_attachment = role_attachment
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.RoleAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'role_attachment': self.role_attachment,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
             role_attachment=d.get('role_attachment'),
-            rate_limit=d.get('rate_limit'),
         )
 
 
@@ -8121,146 +7081,101 @@ class RoleAttachmentDeleteResponse:
         )
 
 
-class RoleAttachment:
-    """A RoleAttachment assigns a role to a composite role.
-
-    :param id: Unique identifier of the RoleAttachment.
-    :param composite_role_id: The id of the composite role of this RoleAttachment.
-    :param attached_role_id: The id of the attached role of this RoleAttachment.
-    """
-    __slots__ = [
-        'id',
-        'composite_role_id',
-        'attached_role_id',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        composite_role_id=None,
-        attached_role_id=None,
-    ):
-        self.id = id
-        self.composite_role_id = composite_role_id
-        self.attached_role_id = attached_role_id
-
-    def __repr__(self):
-        return '<sdm.RoleAttachment ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
-            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'composite_role_id': self.composite_role_id,
-            'attached_role_id': self.attached_role_id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            composite_role_id=d.get('composite_role_id'),
-            attached_role_id=d.get('attached_role_id'),
-        )
-
-
-class RoleGrantCreateResponse:
-    """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
+class RoleAttachmentGetResponse:
+    """RoleAttachmentGetResponse returns a requested RoleAttachment.
 
     :param meta: Reserved for future use.
-    :param role_grant: The created RoleGrant.
     :param rate_limit: Rate limit information.
+    :param role_attachment: The requested RoleAttachment.
     """
     __slots__ = [
         'meta',
-        'role_grant',
         'rate_limit',
+        'role_attachment',
     ]
 
     def __init__(
         self,
         meta=None,
-        role_grant=None,
         rate_limit=None,
+        role_attachment=None,
     ):
         self.meta = meta
-        self.role_grant = role_grant
         self.rate_limit = rate_limit
+        self.role_attachment = role_attachment
 
     def __repr__(self):
-        return '<sdm.RoleGrantCreateResponse ' + \
+        return '<sdm.RoleAttachmentGetResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'role_grant': self.role_grant,
             'rate_limit': self.rate_limit,
+            'role_attachment': self.role_attachment,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            role_grant=d.get('role_grant'),
             rate_limit=d.get('rate_limit'),
+            role_attachment=d.get('role_attachment'),
         )
 
 
-class RoleGrantGetResponse:
-    """RoleGrantGetResponse returns a requested RoleGrant.
+class RoleCreateResponse:
+    """RoleCreateResponse reports how the Roles were created in the system. It can
+ communicate partial successes or failures.
 
     :param meta: Reserved for future use.
-    :param role_grant: The requested RoleGrant.
     :param rate_limit: Rate limit information.
+    :param role: The created Role.
     """
     __slots__ = [
         'meta',
-        'role_grant',
         'rate_limit',
+        'role',
     ]
 
     def __init__(
         self,
         meta=None,
-        role_grant=None,
         rate_limit=None,
+        role=None,
     ):
         self.meta = meta
-        self.role_grant = role_grant
         self.rate_limit = rate_limit
+        self.role = role
 
     def __repr__(self):
-        return '<sdm.RoleGrantGetResponse ' + \
+        return '<sdm.RoleCreateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'role_grant': self.role_grant,
             'rate_limit': self.rate_limit,
+            'role': self.role,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            role_grant=d.get('role_grant'),
             rate_limit=d.get('rate_limit'),
+            role=d.get('role'),
         )
 
 
-class RoleGrantDeleteResponse:
-    """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
+class RoleDeleteResponse:
+    """RoleDeleteResponse returns information about a Role that was deleted.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
@@ -8279,7 +7194,7 @@ class RoleGrantDeleteResponse:
         self.rate_limit = rate_limit
 
     def __repr__(self):
-        return '<sdm.RoleGrantDeleteResponse ' + \
+        return '<sdm.RoleDeleteResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
@@ -8295,6 +7210,52 @@ class RoleGrantDeleteResponse:
         return cls(
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
+        )
+
+
+class RoleGetResponse:
+    """RoleGetResponse returns a requested Role.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param role: The requested Role.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'role',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        role=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.role = role
+
+    def __repr__(self):
+        return '<sdm.RoleGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'role': self.role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            role=d.get('role'),
         )
 
 
@@ -8344,41 +7305,80 @@ class RoleGrant:
         )
 
 
-class RoleCreateResponse:
-    """RoleCreateResponse reports how the Roles were created in the system. It can
- communicate partial successes or failures.
+class RoleGrantCreateResponse:
+    """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
 
     :param meta: Reserved for future use.
-    :param role: The created Role.
+    :param rate_limit: Rate limit information.
+    :param role_grant: The created RoleGrant.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'role_grant',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        role_grant=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.role_grant = role_grant
+
+    def __repr__(self):
+        return '<sdm.RoleGrantCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'role_grant': self.role_grant,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            role_grant=d.get('role_grant'),
+        )
+
+
+class RoleGrantDeleteResponse:
+    """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
+
+    :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
     """
     __slots__ = [
         'meta',
-        'role',
         'rate_limit',
     ]
 
     def __init__(
         self,
         meta=None,
-        role=None,
         rate_limit=None,
     ):
         self.meta = meta
-        self.role = role
         self.rate_limit = rate_limit
 
     def __repr__(self):
-        return '<sdm.RoleCreateResponse ' + \
+        return '<sdm.RoleGrantDeleteResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'role: ' + repr(self.role) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'role': self.role,
             'rate_limit': self.rate_limit,
         }
 
@@ -8386,54 +7386,53 @@ class RoleCreateResponse:
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            role=d.get('role'),
             rate_limit=d.get('rate_limit'),
         )
 
 
-class RoleGetResponse:
-    """RoleGetResponse returns a requested Role.
+class RoleGrantGetResponse:
+    """RoleGrantGetResponse returns a requested RoleGrant.
 
     :param meta: Reserved for future use.
-    :param role: The requested Role.
     :param rate_limit: Rate limit information.
+    :param role_grant: The requested RoleGrant.
     """
     __slots__ = [
         'meta',
-        'role',
         'rate_limit',
+        'role_grant',
     ]
 
     def __init__(
         self,
         meta=None,
-        role=None,
         rate_limit=None,
+        role_grant=None,
     ):
         self.meta = meta
-        self.role = role
         self.rate_limit = rate_limit
+        self.role_grant = role_grant
 
     def __repr__(self):
-        return '<sdm.RoleGetResponse ' + \
+        return '<sdm.RoleGrantGetResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'role: ' + repr(self.role) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role_grant: ' + repr(self.role_grant) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'role': self.role,
             'rate_limit': self.rate_limit,
+            'role_grant': self.role_grant,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            role=d.get('role'),
             rate_limit=d.get('rate_limit'),
+            role_grant=d.get('role_grant'),
         )
 
 
@@ -8442,324 +7441,494 @@ class RoleUpdateResponse:
  a RoleUpdateRequest.
 
     :param meta: Reserved for future use.
-    :param role: The updated Role.
     :param rate_limit: Rate limit information.
+    :param role: The updated Role.
     """
     __slots__ = [
         'meta',
-        'role',
         'rate_limit',
+        'role',
     ]
 
     def __init__(
         self,
         meta=None,
-        role=None,
         rate_limit=None,
+        role=None,
     ):
         self.meta = meta
-        self.role = role
         self.rate_limit = rate_limit
+        self.role = role
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             'role: ' + repr(self.role) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
+            'rate_limit': self.rate_limit,
             'role': self.role,
-            'rate_limit': self.rate_limit,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
             role=d.get('role'),
-            rate_limit=d.get('rate_limit'),
         )
 
 
-class RoleDeleteResponse:
-    """RoleDeleteResponse returns information about a Role that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
+class SQLServer:
     """
-    __slots__ = [
-        'meta',
-        'rate_limit',
-    ]
 
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.RoleDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class Role:
-    """A Role is a collection of access grants, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
-
-    :param id: Unique identifier of the Role.
-    :param name: Unique human-readable name of the Role.
-    :param access_rules: AccessRules JSON encoded access rules data.
-    :param composite: True if the Role is a composite role.
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param schema: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'access_rules',
-        'composite',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'schema',
+        'secret_store_id',
         'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        access_rules=None,
-        composite=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        schema=None,
+        secret_store_id=None,
         tags=None,
+        username=None,
     ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.access_rules = access_rules
-        self.composite = composite
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.schema = schema
+        self.secret_store_id = secret_store_id
         self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.Role ' + \
+        return '<sdm.SQLServer ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'access_rules: ' + repr(self.access_rules) + ' ' +\
-            'composite: ' + repr(self.composite) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'access_rules': self.access_rules,
-            'composite': self.composite,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'schema': self.schema,
+            'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            access_rules=d.get('access_rules'),
-            composite=d.get('composite'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            schema=d.get('schema'),
+            secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
-class AWSStore:
+class SSH:
     """
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param region: 
+    :param allow_deprecated_key_exchanges: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param port_forwarding: 
+    :param public_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'allow_deprecated_key_exchanges',
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'region',
+        'port',
+        'port_forwarding',
+        'public_key',
+        'secret_store_id',
         'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        allow_deprecated_key_exchanges=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        region=None,
+        port=None,
+        port_forwarding=None,
+        public_key=None,
+        secret_store_id=None,
         tags=None,
+        username=None,
     ):
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.region = region
+        self.port = port
+        self.port_forwarding = port_forwarding
+        self.public_key = public_key
+        self.secret_store_id = secret_store_id
         self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.AWSStore ' + \
+        return '<sdm.SSH ' + \
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'region: ' + repr(self.region) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'region': self.region,
+            'port': self.port,
+            'port_forwarding': self.port_forwarding,
+            'public_key': self.public_key,
+            'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            region=d.get('region'),
+            port=d.get('port'),
+            port_forwarding=d.get('port_forwarding'),
+            public_key=d.get('public_key'),
+            secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
-class VaultTLSStore:
+class SSHCert:
     """
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param server_address: 
-    :param ca_cert_path: 
-    :param client_cert_path: 
-    :param client_key_path: 
+    :param allow_deprecated_key_exchanges: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param port_forwarding: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'allow_deprecated_key_exchanges',
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'server_address',
-        'ca_cert_path',
-        'client_cert_path',
-        'client_key_path',
+        'port',
+        'port_forwarding',
+        'secret_store_id',
         'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        allow_deprecated_key_exchanges=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        server_address=None,
-        ca_cert_path=None,
-        client_cert_path=None,
-        client_key_path=None,
+        port=None,
+        port_forwarding=None,
+        secret_store_id=None,
         tags=None,
+        username=None,
     ):
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.server_address = server_address
-        self.ca_cert_path = ca_cert_path
-        self.client_cert_path = client_cert_path
-        self.client_key_path = client_key_path
+        self.port = port
+        self.port_forwarding = port_forwarding
+        self.secret_store_id = secret_store_id
         self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.VaultTLSStore ' + \
+        return '<sdm.SSHCert ' + \
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'server_address: ' + repr(self.server_address) + ' ' +\
-            'ca_cert_path: ' + repr(self.ca_cert_path) + ' ' +\
-            'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
-            'client_key_path: ' + repr(self.client_key_path) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'server_address': self.server_address,
-            'ca_cert_path': self.ca_cert_path,
-            'client_cert_path': self.client_cert_path,
-            'client_key_path': self.client_key_path,
+            'port': self.port,
+            'port_forwarding': self.port_forwarding,
+            'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            server_address=d.get('server_address'),
-            ca_cert_path=d.get('ca_cert_path'),
-            client_cert_path=d.get('client_cert_path'),
-            client_key_path=d.get('client_key_path'),
+            port=d.get('port'),
+            port_forwarding=d.get('port_forwarding'),
+            secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
-class VaultTokenStore:
+class SSHCustomerKey:
     """
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param server_address: 
+    :param allow_deprecated_key_exchanges: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param port: 
+    :param port_forwarding: 
+    :param private_key: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
+    :param username: 
     """
     __slots__ = [
+        'allow_deprecated_key_exchanges',
+        'egress_filter',
+        'healthy',
+        'hostname',
         'id',
         'name',
-        'server_address',
+        'port',
+        'port_forwarding',
+        'private_key',
+        'secret_store_id',
         'tags',
+        'username',
     ]
 
     def __init__(
         self,
+        allow_deprecated_key_exchanges=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
         id=None,
         name=None,
-        server_address=None,
+        port=None,
+        port_forwarding=None,
+        private_key=None,
+        secret_store_id=None,
         tags=None,
+        username=None,
     ):
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
         self.id = id
         self.name = name
-        self.server_address = server_address
+        self.port = port
+        self.port_forwarding = port_forwarding
+        self.private_key = private_key
+        self.secret_store_id = secret_store_id
         self.tags = tags
+        self.username = username
 
     def __repr__(self):
-        return '<sdm.VaultTokenStore ' + \
+        return '<sdm.SSHCustomerKey ' + \
+            'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'server_address: ' + repr(self.server_address) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'allow_deprecated_key_exchanges':
+            self.allow_deprecated_key_exchanges,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
-            'server_address': self.server_address,
+            'port': self.port,
+            'port_forwarding': self.port_forwarding,
+            'private_key': self.private_key,
+            'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_key_exchanges=d.get(
+                'allow_deprecated_key_exchanges'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
-            server_address=d.get('server_address'),
+            port=d.get('port'),
+            port_forwarding=d.get('port_forwarding'),
+            private_key=d.get('private_key'),
+            secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 
@@ -8767,138 +7936,45 @@ class SecretStoreCreateResponse:
     """SecretStoreCreateResponse reports how the SecretStores were created in the system.
 
     :param meta: Reserved for future use.
-    :param secret_store: The created SecretStore.
     :param rate_limit: Rate limit information.
+    :param secret_store: The created SecretStore.
     """
     __slots__ = [
         'meta',
-        'secret_store',
         'rate_limit',
+        'secret_store',
     ]
 
     def __init__(
         self,
         meta=None,
-        secret_store=None,
         rate_limit=None,
+        secret_store=None,
     ):
         self.meta = meta
-        self.secret_store = secret_store
         self.rate_limit = rate_limit
+        self.secret_store = secret_store
 
     def __repr__(self):
         return '<sdm.SecretStoreCreateResponse ' + \
             'meta: ' + repr(self.meta) + ' ' +\
-            'secret_store: ' + repr(self.secret_store) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'meta': self.meta,
-            'secret_store': self.secret_store,
             'rate_limit': self.rate_limit,
+            'secret_store': self.secret_store,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             meta=d.get('meta'),
-            secret_store=d.get('secret_store'),
             rate_limit=d.get('rate_limit'),
-        )
-
-
-class SecretStoreGetResponse:
-    """SecretStoreGetResponse returns a requested SecretStore.
-
-    :param meta: Reserved for future use.
-    :param secret_store: The requested SecretStore.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'secret_store',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        secret_store=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.secret_store = secret_store
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.SecretStoreGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'secret_store: ' + repr(self.secret_store) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'secret_store': self.secret_store,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
             secret_store=d.get('secret_store'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class SecretStoreUpdateResponse:
-    """SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
- a SecretStoreUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param secret_store: The updated SecretStore.
-    :param rate_limit: Rate limit information.
-    """
-    __slots__ = [
-        'meta',
-        'secret_store',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        secret_store=None,
-        rate_limit=None,
-    ):
-        self.meta = meta
-        self.secret_store = secret_store
-        self.rate_limit = rate_limit
-
-    def __repr__(self):
-        return '<sdm.SecretStoreUpdateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'secret_store: ' + repr(self.secret_store) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'secret_store': self.secret_store,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            secret_store=d.get('secret_store'),
-            rate_limit=d.get('rate_limit'),
         )
 
 
@@ -8938,4 +8014,942 @@ class SecretStoreDeleteResponse:
         return cls(
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
+        )
+
+
+class SecretStoreGetResponse:
+    """SecretStoreGetResponse returns a requested SecretStore.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param secret_store: The requested SecretStore.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'secret_store',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        secret_store=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.secret_store = secret_store
+
+    def __repr__(self):
+        return '<sdm.SecretStoreGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'secret_store': self.secret_store,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            secret_store=d.get('secret_store'),
+        )
+
+
+class SecretStoreUpdateResponse:
+    """SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
+ a SecretStoreUpdateRequest.
+
+    :param meta: Reserved for future use.
+    :param rate_limit: Rate limit information.
+    :param secret_store: The updated SecretStore.
+    """
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'secret_store',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        secret_store=None,
+    ):
+        self.meta = meta
+        self.rate_limit = rate_limit
+        self.secret_store = secret_store
+
+    def __repr__(self):
+        return '<sdm.SecretStoreUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'secret_store': self.secret_store,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            secret_store=d.get('secret_store'),
+        )
+
+
+class Service:
+    """A Service is a service account that can connect to resources they are granted
+ directly, or granted via roles. Services are typically automated jobs.
+
+    :param id: Unique identifier of the Service.
+    :param name: Unique human-readable name of the Service.
+    :param suspended: The Service's suspended state.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'suspended',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        suspended=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.suspended = suspended
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.Service ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'suspended': self.suspended,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            suspended=d.get('suspended'),
+            tags=d.get('tags'),
+        )
+
+
+class SingleStore:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.SingleStore ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Snowflake:
+    """
+
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port_override: 
+    :param schema: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port_override',
+        'schema',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port_override=None,
+        schema=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port_override = port_override
+        self.schema = schema
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Snowflake ' + \
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port_override': self.port_override,
+            'schema': self.schema,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            schema=d.get('schema'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Sybase:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Sybase ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class SybaseIQ:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.SybaseIQ ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Tag:
+    """
+
+    :param name: 
+    :param value: 
+    """
+    __slots__ = [
+        'name',
+        'value',
+    ]
+
+    def __init__(
+        self,
+        name=None,
+        value=None,
+    ):
+        self.name = name
+        self.value = value
+
+    def __repr__(self):
+        return '<sdm.Tag ' + \
+            'name: ' + repr(self.name) + ' ' +\
+            'value: ' + repr(self.value) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'value': self.value,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            name=d.get('name'),
+            value=d.get('value'),
+        )
+
+
+class Teradata:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        username=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.Teradata ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class UpdateResponseMetadata:
+    """UpdateResponseMetadata is reserved for future use."""
+    __slots__ = []
+
+    def __init__(self, ):
+        pass
+
+    def __repr__(self):
+        return '<sdm.UpdateResponseMetadata ' + \
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
+
+
+class User:
+    """A User can connect to resources they are granted directly, or granted
+ via roles.
+
+    :param email: The User's email address. Must be unique.
+    :param first_name: The User's first name.
+    :param id: Unique identifier of the User.
+    :param last_name: The User's last name.
+    :param suspended: The User's suspended state.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'email',
+        'first_name',
+        'id',
+        'last_name',
+        'suspended',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        email=None,
+        first_name=None,
+        id=None,
+        last_name=None,
+        suspended=None,
+        tags=None,
+    ):
+        self.email = email
+        self.first_name = first_name
+        self.id = id
+        self.last_name = last_name
+        self.suspended = suspended
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.User ' + \
+            'email: ' + repr(self.email) + ' ' +\
+            'first_name: ' + repr(self.first_name) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'last_name: ' + repr(self.last_name) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'email': self.email,
+            'first_name': self.first_name,
+            'id': self.id,
+            'last_name': self.last_name,
+            'suspended': self.suspended,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            email=d.get('email'),
+            first_name=d.get('first_name'),
+            id=d.get('id'),
+            last_name=d.get('last_name'),
+            suspended=d.get('suspended'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultTLSStore:
+    """
+
+    :param ca_cert_path: 
+    :param client_cert_path: 
+    :param client_key_path: 
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param namespace: 
+    :param server_address: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'ca_cert_path',
+        'client_cert_path',
+        'client_key_path',
+        'id',
+        'name',
+        'namespace',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        ca_cert_path=None,
+        client_cert_path=None,
+        client_key_path=None,
+        id=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.ca_cert_path = ca_cert_path
+        self.client_cert_path = client_cert_path
+        self.client_key_path = client_key_path
+        self.id = id
+        self.name = name
+        self.namespace = namespace
+        self.server_address = server_address
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.VaultTLSStore ' + \
+            'ca_cert_path: ' + repr(self.ca_cert_path) + ' ' +\
+            'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
+            'client_key_path: ' + repr(self.client_key_path) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'ca_cert_path': self.ca_cert_path,
+            'client_cert_path': self.client_cert_path,
+            'client_key_path': self.client_key_path,
+            'id': self.id,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            ca_cert_path=d.get('ca_cert_path'),
+            client_cert_path=d.get('client_cert_path'),
+            client_key_path=d.get('client_key_path'),
+            id=d.get('id'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultTokenStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param namespace: 
+    :param server_address: 
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'namespace',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.id = id
+        self.name = name
+        self.namespace = namespace
+        self.server_address = server_address
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.VaultTokenStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
         )
