@@ -31,7 +31,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/1.0.28'
+USER_AGENT = 'strongdm-sdk-python/1.0.29'
 
 
 class Client:
