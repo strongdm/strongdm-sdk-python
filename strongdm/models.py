@@ -3621,6 +3621,87 @@ class ElasticacheRedis:
         )
 
 
+class GCP:
+    """
+
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param keyfile: 
+    :param name: Unique human-readable name of the Resource.
+    :param scopes: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    """
+    __slots__ = [
+        'egress_filter',
+        'healthy',
+        'id',
+        'keyfile',
+        'name',
+        'scopes',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        keyfile=None,
+        name=None,
+        scopes=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.id = id
+        self.keyfile = keyfile
+        self.name = name
+        self.scopes = scopes
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+
+    def __repr__(self):
+        return '<sdm.GCP ' + \
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'keyfile: ' + repr(self.keyfile) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'scopes: ' + repr(self.scopes) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'keyfile': self.keyfile,
+            'name': self.name,
+            'scopes': self.scopes,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            keyfile=d.get('keyfile'),
+            name=d.get('name'),
+            scopes=d.get('scopes'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
 class Gateway:
     """Gateway represents a StrongDM CLI installation running in gateway mode.
 

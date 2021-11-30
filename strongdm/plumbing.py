@@ -2400,6 +2400,52 @@ def convert_repeated_elasticache_redis_to_porcelain(plumbings):
     ]
 
 
+def convert_gcp_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GCP()
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.keyfile = (plumbing.keyfile)
+    porcelain.name = (plumbing.name)
+    porcelain.scopes = (plumbing.scopes)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_gcp_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = GCP()
+    if porcelain.egress_filter is not None:
+        plumbing.egress_filter = (porcelain.egress_filter)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.keyfile is not None:
+        plumbing.keyfile = (porcelain.keyfile)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.scopes is not None:
+        plumbing.scopes = (porcelain.scopes)
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_gcp_to_plumbing(porcelains):
+    return [convert_gcp_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_gcp_to_porcelain(plumbings):
+    return [convert_gcp_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_gateway_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4570,6 +4616,8 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.ElasticacheRedis):
         plumbing.elasticache_redis.CopyFrom(
             convert_elasticache_redis_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GCP):
+        plumbing.gcp.CopyFrom(convert_gcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKE):
         plumbing.google_gke.CopyFrom(convert_google_gke_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKEUserImpersonation):
@@ -4726,6 +4774,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('elasticache_redis'):
         return convert_elasticache_redis_to_porcelain(
             plumbing.elasticache_redis)
+    if plumbing.HasField('gcp'):
+        return convert_gcp_to_porcelain(plumbing.gcp)
     if plumbing.HasField('google_gke'):
         return convert_google_gke_to_porcelain(plumbing.google_gke)
     if plumbing.HasField('google_gke_user_impersonation'):
