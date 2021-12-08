@@ -1479,7 +1479,7 @@ def convert_azure_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Azure()
-    porcelain.appid = (plumbing.appID)
+    porcelain.app_id = (plumbing.app_id)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
@@ -1487,7 +1487,7 @@ def convert_azure_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.tenantid = (plumbing.tenantID)
+    porcelain.tenant_id = (plumbing.tenant_id)
     return porcelain
 
 
@@ -1495,8 +1495,8 @@ def convert_azure_to_plumbing(porcelain):
     if porcelain is None:
         return None
     plumbing = Azure()
-    if porcelain.appid is not None:
-        plumbing.appID = (porcelain.appid)
+    if porcelain.app_id is not None:
+        plumbing.app_id = (porcelain.app_id)
     if porcelain.egress_filter is not None:
         plumbing.egress_filter = (porcelain.egress_filter)
     if porcelain.healthy is not None:
@@ -1511,8 +1511,8 @@ def convert_azure_to_plumbing(porcelain):
         plumbing.secret_store_id = (porcelain.secret_store_id)
     if porcelain.tags is not None:
         plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    if porcelain.tenantid is not None:
-        plumbing.tenantID = (porcelain.tenantid)
+    if porcelain.tenant_id is not None:
+        plumbing.tenant_id = (porcelain.tenant_id)
     return plumbing
 
 
@@ -1522,6 +1522,61 @@ def convert_repeated_azure_to_plumbing(porcelains):
 
 def convert_repeated_azure_to_porcelain(plumbings):
     return [convert_azure_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_azure_certificate_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzureCertificate()
+    porcelain.app_id = (plumbing.app_id)
+    porcelain.client_certificate = (plumbing.client_certificate)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tenant_id = (plumbing.tenant_id)
+    return porcelain
+
+
+def convert_azure_certificate_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AzureCertificate()
+    if porcelain.app_id is not None:
+        plumbing.app_id = (porcelain.app_id)
+    if porcelain.client_certificate is not None:
+        plumbing.client_certificate = (porcelain.client_certificate)
+    if porcelain.egress_filter is not None:
+        plumbing.egress_filter = (porcelain.egress_filter)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.tenant_id is not None:
+        plumbing.tenant_id = (porcelain.tenant_id)
+    return plumbing
+
+
+def convert_repeated_azure_certificate_to_plumbing(porcelains):
+    return [
+        convert_azure_certificate_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_certificate_to_porcelain(plumbings):
+    return [
+        convert_azure_certificate_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_azure_postgres_to_porcelain(plumbing):
@@ -4704,6 +4759,9 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.aws.CopyFrom(convert_aws_to_plumbing(porcelain))
     if isinstance(porcelain, models.Azure):
         plumbing.azure.CopyFrom(convert_azure_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzureCertificate):
+        plumbing.azure_certificate.CopyFrom(
+            convert_azure_certificate_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzurePostgres):
         plumbing.azure_postgres.CopyFrom(
             convert_azure_postgres_to_plumbing(porcelain))
@@ -4868,6 +4926,9 @@ def convert_resource_to_porcelain(plumbing):
         return convert_aws_to_porcelain(plumbing.aws)
     if plumbing.HasField('azure'):
         return convert_azure_to_porcelain(plumbing.azure)
+    if plumbing.HasField('azure_certificate'):
+        return convert_azure_certificate_to_porcelain(
+            plumbing.azure_certificate)
     if plumbing.HasField('azure_postgres'):
         return convert_azure_postgres_to_porcelain(plumbing.azure_postgres)
     if plumbing.HasField('big_query'):

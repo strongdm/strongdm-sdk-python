@@ -2068,7 +2068,7 @@ class AuroraPostgres:
 class Azure:
     """
 
-    :param appid: 
+    :param app_id: 
     :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param id: Unique identifier of the Resource.
@@ -2076,10 +2076,10 @@ class Azure:
     :param password: 
     :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
     :param tags: Tags is a map of key, value pairs.
-    :param tenantid: 
+    :param tenant_id: 
     """
     __slots__ = [
-        'appid',
+        'app_id',
         'egress_filter',
         'healthy',
         'id',
@@ -2087,12 +2087,12 @@ class Azure:
         'password',
         'secret_store_id',
         'tags',
-        'tenantid',
+        'tenant_id',
     ]
 
     def __init__(
         self,
-        appid=None,
+        app_id=None,
         egress_filter=None,
         healthy=None,
         id=None,
@@ -2100,9 +2100,9 @@ class Azure:
         password=None,
         secret_store_id=None,
         tags=None,
-        tenantid=None,
+        tenant_id=None,
     ):
-        self.appid = appid
+        self.app_id = app_id
         self.egress_filter = egress_filter
         self.healthy = healthy
         self.id = id
@@ -2110,11 +2110,11 @@ class Azure:
         self.password = password
         self.secret_store_id = secret_store_id
         self.tags = tags
-        self.tenantid = tenantid
+        self.tenant_id = tenant_id
 
     def __repr__(self):
         return '<sdm.Azure ' + \
-            'appid: ' + repr(self.appid) + ' ' +\
+            'app_id: ' + repr(self.app_id) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -2122,12 +2122,12 @@ class Azure:
             'password: ' + repr(self.password) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
-            'tenantid: ' + repr(self.tenantid) + ' ' +\
+            'tenant_id: ' + repr(self.tenant_id) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'appid': self.appid,
+            'app_id': self.app_id,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'id': self.id,
@@ -2135,13 +2135,13 @@ class Azure:
             'password': self.password,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
-            'tenantid': self.tenantid,
+            'tenant_id': self.tenant_id,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            appid=d.get('appid'),
+            app_id=d.get('app_id'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             id=d.get('id'),
@@ -2149,7 +2149,95 @@ class Azure:
             password=d.get('password'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
-            tenantid=d.get('tenantid'),
+            tenant_id=d.get('tenant_id'),
+        )
+
+
+class AzureCertificate:
+    """
+
+    :param app_id: 
+    :param client_certificate: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tenant_id: 
+    """
+    __slots__ = [
+        'app_id',
+        'client_certificate',
+        'egress_filter',
+        'healthy',
+        'id',
+        'name',
+        'secret_store_id',
+        'tags',
+        'tenant_id',
+    ]
+
+    def __init__(
+        self,
+        app_id=None,
+        client_certificate=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        name=None,
+        secret_store_id=None,
+        tags=None,
+        tenant_id=None,
+    ):
+        self.app_id = app_id
+        self.client_certificate = client_certificate
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.id = id
+        self.name = name
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tenant_id = tenant_id
+
+    def __repr__(self):
+        return '<sdm.AzureCertificate ' + \
+            'app_id: ' + repr(self.app_id) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tenant_id: ' + repr(self.tenant_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'app_id': self.app_id,
+            'client_certificate': self.client_certificate,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tenant_id': self.tenant_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            app_id=d.get('app_id'),
+            client_certificate=d.get('client_certificate'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tenant_id=d.get('tenant_id'),
         )
 
 
