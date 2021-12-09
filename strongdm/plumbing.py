@@ -3805,6 +3805,70 @@ def convert_repeated_mongo_replica_set_to_porcelain(plumbings):
     ]
 
 
+def convert_mongo_sharded_cluster_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MongoShardedCluster()
+    porcelain.auth_database = (plumbing.auth_database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_mongo_sharded_cluster_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = MongoShardedCluster()
+    if porcelain.auth_database is not None:
+        plumbing.auth_database = (porcelain.auth_database)
+    if porcelain.egress_filter is not None:
+        plumbing.egress_filter = (porcelain.egress_filter)
+    if porcelain.healthy is not None:
+        plumbing.healthy = (porcelain.healthy)
+    if porcelain.hostname is not None:
+        plumbing.hostname = (porcelain.hostname)
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.password is not None:
+        plumbing.password = (porcelain.password)
+    if porcelain.port_override is not None:
+        plumbing.port_override = (porcelain.port_override)
+    if porcelain.secret_store_id is not None:
+        plumbing.secret_store_id = (porcelain.secret_store_id)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.tls_required is not None:
+        plumbing.tls_required = (porcelain.tls_required)
+    if porcelain.username is not None:
+        plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_mongo_sharded_cluster_to_plumbing(porcelains):
+    return [
+        convert_mongo_sharded_cluster_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_mongo_sharded_cluster_to_porcelain(plumbings):
+    return [
+        convert_mongo_sharded_cluster_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4843,6 +4907,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.MongoReplicaSet):
         plumbing.mongo_replica_set.CopyFrom(
             convert_mongo_replica_set_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MongoShardedCluster):
+        plumbing.mongo_sharded_cluster.CopyFrom(
+            convert_mongo_sharded_cluster_to_plumbing(porcelain))
     if isinstance(porcelain, models.Mysql):
         plumbing.mysql.CopyFrom(convert_mysql_to_plumbing(porcelain))
     if isinstance(porcelain, models.Neptune):
@@ -5005,6 +5072,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('mongo_replica_set'):
         return convert_mongo_replica_set_to_porcelain(
             plumbing.mongo_replica_set)
+    if plumbing.HasField('mongo_sharded_cluster'):
+        return convert_mongo_sharded_cluster_to_porcelain(
+            plumbing.mongo_sharded_cluster)
     if plumbing.HasField('mysql'):
         return convert_mysql_to_porcelain(plumbing.mysql)
     if plumbing.HasField('neptune'):
