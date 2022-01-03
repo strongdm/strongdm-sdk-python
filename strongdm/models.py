@@ -6038,6 +6038,115 @@ class MongoReplicaSet:
         )
 
 
+class MongoShardedCluster:
+    """
+
+    :param auth_database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param password: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param tags: Tags is a map of key, value pairs.
+    :param tls_required: 
+    :param username: 
+    """
+    __slots__ = [
+        'auth_database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port_override',
+        'secret_store_id',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        auth_database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port_override=None,
+        secret_store_id=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.auth_database = auth_database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.password = password
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.tags = tags
+        self.tls_required = tls_required
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MongoShardedCluster ' + \
+            'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_database': self.auth_database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_database=d.get('auth_database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
 class Mysql:
     """
 
