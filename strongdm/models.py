@@ -2357,6 +2357,59 @@ class AzurePostgres:
         )
 
 
+class AzureStore:
+    """
+
+    :param id: Unique identifier of the SecretStore.
+    :param name: Unique human-readable name of the SecretStore.
+    :param tags: Tags is a map of key, value pairs.
+    :param vault_uri: 
+    """
+    __slots__ = [
+        'id',
+        'name',
+        'tags',
+        'vault_uri',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        tags=None,
+        vault_uri=None,
+    ):
+        self.id = id
+        self.name = name
+        self.tags = tags
+        self.vault_uri = vault_uri
+
+    def __repr__(self):
+        return '<sdm.AzureStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'vault_uri: ' + repr(self.vault_uri) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+            'vault_uri': self.vault_uri,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+            vault_uri=d.get('vault_uri'),
+        )
+
+
 class BigQuery:
     """
 
@@ -7004,6 +7057,7 @@ class Presto:
 class RDP:
     """
 
+    :param downgrade_nla_connections: 
     :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
     :param healthy: True if the datasource is reachable and the credentials are valid.
     :param hostname: 
@@ -7017,6 +7071,7 @@ class RDP:
     :param username: 
     """
     __slots__ = [
+        'downgrade_nla_connections',
         'egress_filter',
         'healthy',
         'hostname',
@@ -7032,6 +7087,7 @@ class RDP:
 
     def __init__(
         self,
+        downgrade_nla_connections=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -7044,6 +7100,7 @@ class RDP:
         tags=None,
         username=None,
     ):
+        self.downgrade_nla_connections = downgrade_nla_connections
         self.egress_filter = egress_filter
         self.healthy = healthy
         self.hostname = hostname
@@ -7058,6 +7115,7 @@ class RDP:
 
     def __repr__(self):
         return '<sdm.RDP ' + \
+            'downgrade_nla_connections: ' + repr(self.downgrade_nla_connections) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -7073,6 +7131,7 @@ class RDP:
 
     def to_dict(self):
         return {
+            'downgrade_nla_connections': self.downgrade_nla_connections,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -7089,6 +7148,7 @@ class RDP:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            downgrade_nla_connections=d.get('downgrade_nla_connections'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),

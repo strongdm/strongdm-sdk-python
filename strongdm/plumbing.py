@@ -1645,6 +1645,44 @@ def convert_repeated_azure_postgres_to_porcelain(plumbings):
     ]
 
 
+def convert_azure_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzureStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.vault_uri = (plumbing.vault_uri)
+    return porcelain
+
+
+def convert_azure_store_to_plumbing(porcelain):
+    if porcelain is None:
+        return None
+    plumbing = AzureStore()
+    if porcelain.id is not None:
+        plumbing.id = (porcelain.id)
+    if porcelain.name is not None:
+        plumbing.name = (porcelain.name)
+    if porcelain.tags is not None:
+        plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    if porcelain.vault_uri is not None:
+        plumbing.vault_uri = (porcelain.vault_uri)
+    return plumbing
+
+
+def convert_repeated_azure_store_to_plumbing(porcelains):
+    return [
+        convert_azure_store_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_store_to_porcelain(plumbings):
+    return [
+        convert_azure_store_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_big_query_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4425,6 +4463,7 @@ def convert_rdp_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.RDP()
+    porcelain.downgrade_nla_connections = (plumbing.downgrade_nla_connections)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -4443,6 +4482,9 @@ def convert_rdp_to_plumbing(porcelain):
     if porcelain is None:
         return None
     plumbing = RDP()
+    if porcelain.downgrade_nla_connections is not None:
+        plumbing.downgrade_nla_connections = (
+            porcelain.downgrade_nla_connections)
     if porcelain.egress_filter is not None:
         plumbing.egress_filter = (porcelain.egress_filter)
     if porcelain.healthy is not None:
@@ -6064,6 +6106,8 @@ def convert_secret_store_to_plumbing(porcelain):
     plumbing = SecretStore()
     if isinstance(porcelain, models.AWSStore):
         plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzureStore):
+        plumbing.azure.CopyFrom(convert_azure_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultTLSStore):
         plumbing.vault_tls.CopyFrom(
             convert_vault_tls_store_to_plumbing(porcelain))
@@ -6078,6 +6122,8 @@ def convert_secret_store_to_porcelain(plumbing):
         return None
     if plumbing.HasField('aws'):
         return convert_aws_store_to_porcelain(plumbing.aws)
+    if plumbing.HasField('azure'):
+        return convert_azure_store_to_porcelain(plumbing.azure)
     if plumbing.HasField('vault_tls'):
         return convert_vault_tls_store_to_porcelain(plumbing.vault_tls)
     if plumbing.HasField('vault_token'):
