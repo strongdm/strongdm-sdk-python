@@ -17,7 +17,7 @@ import random
 import strongdm as sdm
 
 
-def create_example_resources(client):
+def create_example_resource(client):
     # create a redis
     redis = sdm.Redis(
         name="exampleRedis-%s" % random.randint(0, 100000),
@@ -25,7 +25,7 @@ def create_example_resources(client):
         port_override=random.randint(3000, 20000),
         tags={"env": "staging"},
     )
-    return client.resources.create(redis).resource
+    return client.resources.create(redis).resource.id
 
 
 def create_example_role(client, access_rules):
@@ -34,46 +34,57 @@ def create_example_role(client, access_rules):
             name="exampleRole-%s" % random.randint(0, 100000),
             access_rules=access_rules,
         ))
-    return resp.role
+    return resp.role.id
 
 
 def create_and_update_access_rules(client):
-    redis = create_example_resources(client)
+    redis_id = create_example_resource(client)
 
     # create a role with initial access rule
-    access_rules = [{"ids": [redis.id]}]
-    role = create_example_role(client, access_rules)
+    access_rules = [{"ids": [redis_id]}]
+    role_id = client.roles.create(
+        sdm.Role(
+            name="exampleRole-%s" % random.randint(0, 100000),
+            access_rules=access_rules,
+        )).role.id
+
     # update access rules
+    role = client.roles.get(role_id).role
     role.access_rules = [{"tags": {"env": "staging"}}, {"type": "redis"}]
 
     client.roles.update(role)
 
 
 def create_role_grant_via_access_rules(client):
-    resource1 = create_example_resources(client)
-    resource2 = create_example_resources(client)
-    role = create_example_role(client, [{"ids": [resource1.id]}])
+    resource1_id = create_example_resource(client)
+    resource2_id = create_example_resource(client)
+    role_id = create_example_role(client, [{"ids": [resource1_id]}])
 
     # add resource2's id to the role's access rules
-    role.access_rules[0]["ids"].append(resource2.id)
+    role = client.roles.get(role_id).role
+    role.access_rules[0]["ids"].append(resource2_id)
     client.roles.update(role).role
 
 
 def delete_role_grant_via_access_rules(client):
-    resource1 = create_example_resources(client)
-    resource2 = create_example_resources(client)
-    role = create_example_role(client, [{"ids": [resource1.id, resource2.id]}])
+    resource1_id = create_example_resource(client)
+    resource2_id = create_example_resource(client)
+    role_id = create_example_role(client, [{
+        "ids": [resource1_id, resource2_id]
+    }])
 
     # remove the ID of the second resource
-    role.access_rules[0]["ids"].remove(resource2.id)
+    role = client.roles.get(role_id).role
+    role.access_rules[0]["ids"].remove(resource2_id)
     client.roles.update(role)
 
 
 def list_role_grants_via_access_rules(client):
-    resource = create_example_resources(client)
-    role = create_example_role(client, [{"ids": [resource.id]}])
+    resource_id = create_example_resource(client)
+    role_id = create_example_role(client, [{"ids": [resource_id]}])
 
     # role.access_rules contains each AccessRule associated with the role
+    role = client.roles.get(role_id).role
     print(role.access_rules[0]["ids"])
 
 
