@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\027RoleAttachmentsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16role_attachments.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"\x7f\n\x1bRoleAttachmentCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xda\x01\n\x1cRoleAttachmentCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x18RoleAttachmentGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd4\x01\n\x19RoleAttachmentGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"^\n\x1bRoleAttachmentDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa1\x01\n\x1cRoleAttachmentDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"^\n\x19RoleAttachmentListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbf\x01\n\x1aRoleAttachmentListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x38\n\x10role_attachments\x18\x02 \x03(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01\"\xed\x01\n\x0eRoleAttachment\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x11\x63omposite_role_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12)\n\x10\x61ttached_role_id\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:l\xfa\xf8\xb3\x07g\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07]\xa2\xf3\xb3\x07(tf_examples/role_attachment_resource.txt\xaa\xf3\xb3\x07+tf_examples/role_attachment_data_source.txt2\xa0\x04\n\x0fRoleAttachments\x12y\n\x06\x43reate\x12\x1f.v1.RoleAttachmentCreateRequest\x1a .v1.RoleAttachmentCreateResponse\",\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role-attachments\x12t\n\x03Get\x12\x1c.v1.RoleAttachmentGetRequest\x1a\x1d.v1.RoleAttachmentGetResponse\"0\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/role-attachments/{id}\x12\x80\x01\n\x06\x44\x65lete\x12\x1f.v1.RoleAttachmentDeleteRequest\x1a .v1.RoleAttachmentDeleteResponse\"3\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/role-attachments/{id}\x12r\n\x04List\x12\x1d.v1.RoleAttachmentListRequest\x1a\x1e.v1.RoleAttachmentListResponse\"+\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role-attachments\x1a%\xca\xf9\xb3\x07\x13\xc2\xf9\xb3\x07\x0eRoleAttachment\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ra-Bk\n\x1c\x63om.strongdm.api.v1.plumbingB\x17RoleAttachmentsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x16role_attachments.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"\x83\x01\n\x1bRoleAttachmentCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x02\x18\x01\"\xdc\x01\n\x1cRoleAttachmentCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x0c\x18\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x18RoleAttachmentGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x02\x18\x01\"\xd6\x01\n\x19RoleAttachmentGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x0frole_attachment\x18\x02 \x01(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x0c\x18\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"b\n\x1bRoleAttachmentDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x02\x18\x01\"\xa3\x01\n\x1cRoleAttachmentDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x0c\x18\x01\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"b\n\x19RoleAttachmentListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x02\x18\x01\"\xc3\x01\n\x1aRoleAttachmentListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x38\n\x10role_attachments\x18\x02 \x03(\x0b\x32\x12.v1.RoleAttachmentB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\x02\x18\x01\"\xef\x01\n\x0eRoleAttachment\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x11\x63omposite_role_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12)\n\x10\x61ttached_role_id\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:n\x18\x01\xfa\xf8\xb3\x07g\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07]\xa2\xf3\xb3\x07(tf_examples/role_attachment_resource.txt\xaa\xf3\xb3\x07+tf_examples/role_attachment_data_source.txt2\x82\x05\n\x0fRoleAttachments\x12\x90\x01\n\x06\x43reate\x12\x1f.v1.RoleAttachmentCreateRequest\x1a .v1.RoleAttachmentCreateResponse\"C\x88\x02\x01\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role-attachments\x82\xf9\xb3\x07\x0f\xb2\xf3\xb3\x07\n2022-06-01\x12\x8b\x01\n\x03Get\x12\x1c.v1.RoleAttachmentGetRequest\x1a\x1d.v1.RoleAttachmentGetResponse\"G\x88\x02\x01\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/role-attachments/{id}\x82\xf9\xb3\x07\x0f\xb2\xf3\xb3\x07\n2022-06-01\x12\x97\x01\n\x06\x44\x65lete\x12\x1f.v1.RoleAttachmentDeleteRequest\x1a .v1.RoleAttachmentDeleteResponse\"J\x88\x02\x01\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/role-attachments/{id}\x82\xf9\xb3\x07\x0f\xb2\xf3\xb3\x07\n2022-06-01\x12\x89\x01\n\x04List\x12\x1d.v1.RoleAttachmentListRequest\x1a\x1e.v1.RoleAttachmentListResponse\"B\x88\x02\x01\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x19\xaa\xf3\xb3\x07\x14/v1/role-attachments\x82\xf9\xb3\x07\x0f\xb2\xf3\xb3\x07\n2022-06-01\x1a(\x88\x02\x01\xca\xf9\xb3\x07\x13\xc2\xf9\xb3\x07\x0eRoleAttachment\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ra-Bk\n\x1c\x63om.strongdm.api.v1.plumbingB\x17RoleAttachmentsPlumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -70,14 +70,14 @@ _ROLEATTACHMENTCREATEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=57,
-  serialized_end=184,
+  serialized_start=58,
+  serialized_end=189,
 )
 
 
@@ -116,14 +116,14 @@ _ROLEATTACHMENTCREATERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
+  serialized_options=b'\030\001\372\370\263\007\005\250\363\263\007\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=405,
+  serialized_start=192,
+  serialized_end=412,
 )
 
 
@@ -155,14 +155,14 @@ _ROLEATTACHMENTGETREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=407,
-  serialized_end=495,
+  serialized_start=414,
+  serialized_end=506,
 )
 
 
@@ -201,14 +201,14 @@ _ROLEATTACHMENTGETRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
+  serialized_options=b'\030\001\372\370\263\007\005\250\363\263\007\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=498,
-  serialized_end=710,
+  serialized_start=509,
+  serialized_end=723,
 )
 
 
@@ -240,14 +240,14 @@ _ROLEATTACHMENTDELETEREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=712,
-  serialized_end=806,
+  serialized_start=725,
+  serialized_end=823,
 )
 
 
@@ -279,14 +279,14 @@ _ROLEATTACHMENTDELETERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
+  serialized_options=b'\030\001\372\370\263\007\005\250\363\263\007\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=809,
-  serialized_end=970,
+  serialized_start=826,
+  serialized_end=989,
 )
 
 
@@ -318,14 +318,14 @@ _ROLEATTACHMENTLISTREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=972,
-  serialized_end=1066,
+  serialized_start=991,
+  serialized_end=1089,
 )
 
 
@@ -364,14 +364,14 @@ _ROLEATTACHMENTLISTRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1260,
+  serialized_start=1092,
+  serialized_end=1287,
 )
 
 
@@ -410,14 +410,14 @@ _ROLEATTACHMENT = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007g\250\363\263\007\001\302\363\263\007]\242\363\263\007(tf_examples/role_attachment_resource.txt\252\363\263\007+tf_examples/role_attachment_data_source.txt',
+  serialized_options=b'\030\001\372\370\263\007g\250\363\263\007\001\302\363\263\007]\242\363\263\007(tf_examples/role_attachment_resource.txt\252\363\263\007+tf_examples/role_attachment_data_source.txt',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1263,
-  serialized_end=1500,
+  serialized_start=1290,
+  serialized_end=1529,
 )
 
 _ROLEATTACHMENTCREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -513,22 +513,27 @@ _sym_db.RegisterMessage(RoleAttachment)
 
 DESCRIPTOR._options = None
 _ROLEATTACHMENTCREATEREQUEST.fields_by_name['role_attachment']._options = None
+_ROLEATTACHMENTCREATEREQUEST._options = None
 _ROLEATTACHMENTCREATERESPONSE.fields_by_name['meta']._options = None
 _ROLEATTACHMENTCREATERESPONSE.fields_by_name['role_attachment']._options = None
 _ROLEATTACHMENTCREATERESPONSE.fields_by_name['rate_limit']._options = None
 _ROLEATTACHMENTCREATERESPONSE._options = None
 _ROLEATTACHMENTGETREQUEST.fields_by_name['id']._options = None
+_ROLEATTACHMENTGETREQUEST._options = None
 _ROLEATTACHMENTGETRESPONSE.fields_by_name['meta']._options = None
 _ROLEATTACHMENTGETRESPONSE.fields_by_name['role_attachment']._options = None
 _ROLEATTACHMENTGETRESPONSE.fields_by_name['rate_limit']._options = None
 _ROLEATTACHMENTGETRESPONSE._options = None
 _ROLEATTACHMENTDELETEREQUEST.fields_by_name['id']._options = None
+_ROLEATTACHMENTDELETEREQUEST._options = None
 _ROLEATTACHMENTDELETERESPONSE.fields_by_name['meta']._options = None
 _ROLEATTACHMENTDELETERESPONSE.fields_by_name['rate_limit']._options = None
 _ROLEATTACHMENTDELETERESPONSE._options = None
 _ROLEATTACHMENTLISTREQUEST.fields_by_name['filter']._options = None
+_ROLEATTACHMENTLISTREQUEST._options = None
 _ROLEATTACHMENTLISTRESPONSE.fields_by_name['role_attachments']._options = None
 _ROLEATTACHMENTLISTRESPONSE.fields_by_name['rate_limit']._options = None
+_ROLEATTACHMENTLISTRESPONSE._options = None
 _ROLEATTACHMENT.fields_by_name['id']._options = None
 _ROLEATTACHMENT.fields_by_name['composite_role_id']._options = None
 _ROLEATTACHMENT.fields_by_name['attached_role_id']._options = None
@@ -539,10 +544,10 @@ _ROLEATTACHMENTS = _descriptor.ServiceDescriptor(
   full_name='v1.RoleAttachments',
   file=DESCRIPTOR,
   index=0,
-  serialized_options=b'\312\371\263\007\023\302\371\263\007\016RoleAttachment\312\371\263\007\010\322\371\263\007\003ra-',
+  serialized_options=b'\210\002\001\312\371\263\007\023\302\371\263\007\016RoleAttachment\312\371\263\007\010\322\371\263\007\003ra-',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1503,
-  serialized_end=2047,
+  serialized_start=1532,
+  serialized_end=2174,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -551,7 +556,7 @@ _ROLEATTACHMENTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEATTACHMENTCREATEREQUEST,
     output_type=_ROLEATTACHMENTCREATERESPONSE,
-    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\031\252\363\263\007\024/v1/role-attachments',
+    serialized_options=b'\210\002\001\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\031\252\363\263\007\024/v1/role-attachments\202\371\263\007\017\262\363\263\007\n2022-06-01',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -561,7 +566,7 @@ _ROLEATTACHMENTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEATTACHMENTGETREQUEST,
     output_type=_ROLEATTACHMENTGETRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\036\252\363\263\007\031/v1/role-attachments/{id}',
+    serialized_options=b'\210\002\001\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\036\252\363\263\007\031/v1/role-attachments/{id}\202\371\263\007\017\262\363\263\007\n2022-06-01',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -571,7 +576,7 @@ _ROLEATTACHMENTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEATTACHMENTDELETEREQUEST,
     output_type=_ROLEATTACHMENTDELETERESPONSE,
-    serialized_options=b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\036\252\363\263\007\031/v1/role-attachments/{id}',
+    serialized_options=b'\210\002\001\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\036\252\363\263\007\031/v1/role-attachments/{id}\202\371\263\007\017\262\363\263\007\n2022-06-01',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -581,7 +586,7 @@ _ROLEATTACHMENTS = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ROLEATTACHMENTLISTREQUEST,
     output_type=_ROLEATTACHMENTLISTRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\031\252\363\263\007\024/v1/role-attachments',
+    serialized_options=b'\210\002\001\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\031\252\363\263\007\024/v1/role-attachments\202\371\263\007\017\262\363\263\007\n2022-06-01',
     create_key=_descriptor._internal_create_key,
   ),
 ])

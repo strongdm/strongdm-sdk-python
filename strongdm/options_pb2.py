@@ -34,7 +34,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"0\n\rMethodOptions\x12\x10\n\x06method\x18\xb4\xbev \x01(\t\x12\r\n\x03url\x18\xb5\xbev \x01(\t\"$\n\x0b\x46ileOptions\x12\x15\n\x0bprivate_sdk\x18\xc4\xc1v \x01(\x08\"\xc6\x03\n\x0c\x46ieldOptions\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\x12\x12\n\x08required\x18\xb8\xbev \x01(\x08\x12\x14\n\nwrite_only\x18\xbd\xbev \x01(\x08\x12\x13\n\tread_only\x18\xc3\xbev \x01(\x08\x12\x17\n\ris_credential\x18\xc4\xbev \x01(\x08\x12\x15\n\x0bprivate_sdk\x18\xc6\xbev \x01(\x08\x12\x1c\n\x12terraform_computed\x18\xbb\xbev \x01(\t\x12\x1d\n\x13terraform_force_new\x18\xbc\xbev \x01(\x08\x12\x1d\n\x13terraform_sensitive\x18\xbe\xbev \x01(\x08\x12&\n\x1cterraform_diff_suppress_func\x18\xc7\xbev \x01(\t\x12$\n\x1aterraform_comment_override\x18\xc8\xbev \x01(\t\x12\x12\n\x08\x63li_name\x18\xbf\xbev \x01(\t\x12\x17\n\rcli_json_name\x18\xc0\xbev \x01(\t\x12\x1b\n\x11json_gateway_name\x18\xc1\xbev \x01(\t\x12 \n\x16hide_from_json_gateway\x18\xc2\xbev \x01(\x08\"\xd7\x02\n\x0eMessageOptions\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x05\x12\x17\n\roptions_field\x18\xb7\xbev \x01(\t\x12\x33\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32!.v1.CustomPorcelainMessageOptions\x12\x15\n\x0bprivate_sdk\x18\xba\xbev \x01(\x08\x12\x12\n\x08\x63li_name\x18\xbb\xbev \x01(\t\x12\x17\n\rcli_json_name\x18\xbc\xbev \x01(\t\x12\x1b\n\x11json_gateway_name\x18\xbd\xbev \x01(\t\x12 \n\x16hide_from_json_gateway\x18\xbe\xbev \x01(\x08\x12+\n\x0eterraform_docs\x18\xb8\xbev \x01(\x0b\x32\x11.v1.TerraformDocs\x12!\n\x17terraform_provider_name\x18\xbf\xbev \x01(\t\"\xb6\x01\n\x1d\x43ustomPorcelainMessageOptions\x12\x13\n\tconverter\x18\xbd\xbev \x01(\t\x12\x1b\n\x11go_porcelain_type\x18\xbe\xbev \x01(\t\x12\x1d\n\x13java_porcelain_type\x18\xbf\xbev \x01(\t\x12\"\n\x18terraform_porcelain_type\x18\xc0\xbev \x01(\t\x12 \n\x16openapi_porcelain_type\x18\xc1\xbev \x01(\t\"T\n\rTerraformDocs\x12\x1f\n\x15resource_example_path\x18\xb4\xbev \x01(\t\x12\"\n\x18\x64\x61ta_source_example_path\x18\xb5\xbev \x01(\t\"\'\n\x0cOneofOptions\x12\x17\n\rcommon_fields\x18\x85\xbfv \x03(\t\"Q\n\x0eServiceOptions\x12\x13\n\tmain_noun\x18\x98\xbfv \x01(\t\x12\x13\n\tid_prefix\x18\x9a\xbfv \x01(\t\x12\x15\n\x0bprivate_sdk\x18\x99\xbfv \x01(\x08:K\n\x0emethod_options\x12\x1e.google.protobuf.MethodOptions\x18\x90\xbfv \x01(\x0b\x32\x11.v1.MethodOptions:E\n\x0c\x66ile_options\x12\x1c.google.protobuf.FileOptions\x18\xa8\xc2v \x01(\x0b\x32\x0f.v1.FileOptions:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptions:N\n\x0fservice_options\x12\x1f.google.protobuf.ServiceOptions\x18\x99\xbfv \x01(\x0b\x32\x12.v1.ServiceOptionsBR\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"L\n\rMethodOptions\x12\x10\n\x06method\x18\xb4\xbev \x01(\t\x12\r\n\x03url\x18\xb5\xbev \x01(\t\x12\x1a\n\x10\x64\x65precation_date\x18\xb6\xbev \x01(\t\" \n\x0b\x46ileOptions\x12\x11\n\x07targets\x18\xc4\xc1v \x03(\t\"\xf4\x03\n\x0c\x46ieldOptions\x12\x1d\n\x13\x65xpose_as_porcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\x12\x12\n\x08required\x18\xb8\xbev \x01(\x08\x12\x14\n\nwrite_only\x18\xbd\xbev \x01(\x08\x12\x13\n\tread_only\x18\xc3\xbev \x01(\x08\x12\x17\n\ris_credential\x18\xc4\xbev \x01(\x08\x12\x11\n\x07targets\x18\xc6\xbev \x03(\t\x12\x1c\n\x12terraform_computed\x18\xbb\xbev \x01(\t\x12\x1d\n\x13terraform_force_new\x18\xbc\xbev \x01(\x08\x12\x1d\n\x13terraform_sensitive\x18\xbe\xbev \x01(\x08\x12&\n\x1cterraform_diff_suppress_func\x18\xc7\xbev \x01(\t\x12$\n\x1aterraform_comment_override\x18\xc8\xbev \x01(\t\x12\x12\n\x08\x63li_name\x18\xbf\xbev \x01(\t\x12\x17\n\rcli_json_name\x18\xc0\xbev \x01(\t\x12\x1b\n\x11json_gateway_name\x18\xc1\xbev \x01(\t\x12 \n\x16hide_from_json_gateway\x18\xc2\xbev \x01(\x08\x12\x30\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x1e.v1.CustomPorcelainTypeOptions\"\xd0\x02\n\x0eMessageOptions\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x05\x12\x17\n\roptions_field\x18\xb7\xbev \x01(\t\x12\x30\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x1e.v1.CustomPorcelainTypeOptions\x12\x11\n\x07targets\x18\xba\xbev \x03(\t\x12\x12\n\x08\x63li_name\x18\xbb\xbev \x01(\t\x12\x17\n\rcli_json_name\x18\xbc\xbev \x01(\t\x12\x1b\n\x11json_gateway_name\x18\xbd\xbev \x01(\t\x12 \n\x16hide_from_json_gateway\x18\xbe\xbev \x01(\x08\x12+\n\x0eterraform_docs\x18\xb8\xbev \x01(\x0b\x32\x11.v1.TerraformDocs\x12!\n\x17terraform_provider_name\x18\xbf\xbev \x01(\t\"\xf9\x01\n\x1a\x43ustomPorcelainTypeOptions\x12\x13\n\tconverter\x18\xbd\xbev \x01(\t\x12\x1b\n\x11go_porcelain_type\x18\xbe\xbev \x01(\t\x12\x1d\n\x13java_porcelain_type\x18\xbf\xbev \x01(\t\x12\"\n\x18terraform_porcelain_type\x18\xc0\xbev \x01(\t\x12\x1d\n\x13terraform_elem_type\x18\xc2\xbev \x01(\t\x12 \n\x16openapi_porcelain_type\x18\xc1\xbev \x01(\t\x12%\n\x1bjson_gateway_porcelain_type\x18\xc3\xbev \x01(\t\"T\n\rTerraformDocs\x12\x1f\n\x15resource_example_path\x18\xb4\xbev \x01(\t\x12\"\n\x18\x64\x61ta_source_example_path\x18\xb5\xbev \x01(\t\"\'\n\x0cOneofOptions\x12\x17\n\rcommon_fields\x18\x85\xbfv \x03(\t\"M\n\x0eServiceOptions\x12\x13\n\tmain_noun\x18\x98\xbfv \x01(\t\x12\x13\n\tid_prefix\x18\x9a\xbfv \x01(\t\x12\x11\n\x07targets\x18\x99\xbfv \x03(\t:K\n\x0emethod_options\x12\x1e.google.protobuf.MethodOptions\x18\x90\xbfv \x01(\x0b\x32\x11.v1.MethodOptions:E\n\x0c\x66ile_options\x12\x1c.google.protobuf.FileOptions\x18\xa8\xc2v \x01(\x0b\x32\x0f.v1.FileOptions:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptions:N\n\x0fservice_options\x12\x1f.google.protobuf.ServiceOptions\x18\x99\xbfv \x01(\x0b\x32\x12.v1.ServiceOptionsBR\n\x1c\x63om.strongdm.api.v1.plumbingZ2github.com/strongdm/strongdm-sdk-go/internal/v1;v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -111,35 +111,10 @@ _METHODOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=55,
-  serialized_end=103,
-)
-
-
-_FILEOPTIONS = _descriptor.Descriptor(
-  name='FileOptions',
-  full_name='v1.FileOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='private_sdk', full_name='v1.FileOptions.private_sdk', index=0,
-      number=1941700, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='deprecation_date', full_name='v1.MethodOptions.deprecation_date', index=2,
+      number=1941302, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -155,8 +130,40 @@ _FILEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=105,
-  serialized_end=141,
+  serialized_start=55,
+  serialized_end=131,
+)
+
+
+_FILEOPTIONS = _descriptor.Descriptor(
+  name='FileOptions',
+  full_name='v1.FileOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='targets', full_name='v1.FileOptions.targets', index=0,
+      number=1941700, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=133,
+  serialized_end=165,
 )
 
 
@@ -211,9 +218,9 @@ _FIELDOPTIONS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='private_sdk', full_name='v1.FieldOptions.private_sdk', index=6,
-      number=1941318, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='targets', full_name='v1.FieldOptions.targets', index=6,
+      number=1941318, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -280,6 +287,13 @@ _FIELDOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='custom', full_name='v1.FieldOptions.custom', index=16,
+      number=1941305, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -292,8 +306,8 @@ _FIELDOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=144,
-  serialized_end=598,
+  serialized_start=168,
+  serialized_end=668,
 )
 
 
@@ -334,9 +348,9 @@ _MESSAGEOPTIONS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='private_sdk', full_name='v1.MessageOptions.private_sdk', index=4,
-      number=1941306, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='targets', full_name='v1.MessageOptions.targets', index=4,
+      number=1941306, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -394,50 +408,64 @@ _MESSAGEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=601,
-  serialized_end=944,
+  serialized_start=671,
+  serialized_end=1007,
 )
 
 
-_CUSTOMPORCELAINMESSAGEOPTIONS = _descriptor.Descriptor(
-  name='CustomPorcelainMessageOptions',
-  full_name='v1.CustomPorcelainMessageOptions',
+_CUSTOMPORCELAINTYPEOPTIONS = _descriptor.Descriptor(
+  name='CustomPorcelainTypeOptions',
+  full_name='v1.CustomPorcelainTypeOptions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='converter', full_name='v1.CustomPorcelainMessageOptions.converter', index=0,
+      name='converter', full_name='v1.CustomPorcelainTypeOptions.converter', index=0,
       number=1941309, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='go_porcelain_type', full_name='v1.CustomPorcelainMessageOptions.go_porcelain_type', index=1,
+      name='go_porcelain_type', full_name='v1.CustomPorcelainTypeOptions.go_porcelain_type', index=1,
       number=1941310, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='java_porcelain_type', full_name='v1.CustomPorcelainMessageOptions.java_porcelain_type', index=2,
+      name='java_porcelain_type', full_name='v1.CustomPorcelainTypeOptions.java_porcelain_type', index=2,
       number=1941311, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='terraform_porcelain_type', full_name='v1.CustomPorcelainMessageOptions.terraform_porcelain_type', index=3,
+      name='terraform_porcelain_type', full_name='v1.CustomPorcelainTypeOptions.terraform_porcelain_type', index=3,
       number=1941312, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='openapi_porcelain_type', full_name='v1.CustomPorcelainMessageOptions.openapi_porcelain_type', index=4,
+      name='terraform_elem_type', full_name='v1.CustomPorcelainTypeOptions.terraform_elem_type', index=4,
+      number=1941314, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='openapi_porcelain_type', full_name='v1.CustomPorcelainTypeOptions.openapi_porcelain_type', index=5,
       number=1941313, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='json_gateway_porcelain_type', full_name='v1.CustomPorcelainTypeOptions.json_gateway_porcelain_type', index=6,
+      number=1941315, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -454,8 +482,8 @@ _CUSTOMPORCELAINMESSAGEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=1129,
+  serialized_start=1010,
+  serialized_end=1259,
 )
 
 
@@ -493,8 +521,8 @@ _TERRAFORMDOCS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1131,
-  serialized_end=1215,
+  serialized_start=1261,
+  serialized_end=1345,
 )
 
 
@@ -525,8 +553,8 @@ _ONEOFOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1217,
-  serialized_end=1256,
+  serialized_start=1347,
+  serialized_end=1386,
 )
 
 
@@ -553,9 +581,9 @@ _SERVICEOPTIONS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='private_sdk', full_name='v1.ServiceOptions.private_sdk', index=2,
-      number=1941401, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='targets', full_name='v1.ServiceOptions.targets', index=2,
+      number=1941401, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -571,17 +599,18 @@ _SERVICEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1258,
-  serialized_end=1339,
+  serialized_start=1388,
+  serialized_end=1465,
 )
 
-_MESSAGEOPTIONS.fields_by_name['custom'].message_type = _CUSTOMPORCELAINMESSAGEOPTIONS
+_FIELDOPTIONS.fields_by_name['custom'].message_type = _CUSTOMPORCELAINTYPEOPTIONS
+_MESSAGEOPTIONS.fields_by_name['custom'].message_type = _CUSTOMPORCELAINTYPEOPTIONS
 _MESSAGEOPTIONS.fields_by_name['terraform_docs'].message_type = _TERRAFORMDOCS
 DESCRIPTOR.message_types_by_name['MethodOptions'] = _METHODOPTIONS
 DESCRIPTOR.message_types_by_name['FileOptions'] = _FILEOPTIONS
 DESCRIPTOR.message_types_by_name['FieldOptions'] = _FIELDOPTIONS
 DESCRIPTOR.message_types_by_name['MessageOptions'] = _MESSAGEOPTIONS
-DESCRIPTOR.message_types_by_name['CustomPorcelainMessageOptions'] = _CUSTOMPORCELAINMESSAGEOPTIONS
+DESCRIPTOR.message_types_by_name['CustomPorcelainTypeOptions'] = _CUSTOMPORCELAINTYPEOPTIONS
 DESCRIPTOR.message_types_by_name['TerraformDocs'] = _TERRAFORMDOCS
 DESCRIPTOR.message_types_by_name['OneofOptions'] = _ONEOFOPTIONS
 DESCRIPTOR.message_types_by_name['ServiceOptions'] = _SERVICEOPTIONS
@@ -621,12 +650,12 @@ MessageOptions = _reflection.GeneratedProtocolMessageType('MessageOptions', (_me
   })
 _sym_db.RegisterMessage(MessageOptions)
 
-CustomPorcelainMessageOptions = _reflection.GeneratedProtocolMessageType('CustomPorcelainMessageOptions', (_message.Message,), {
-  'DESCRIPTOR' : _CUSTOMPORCELAINMESSAGEOPTIONS,
+CustomPorcelainTypeOptions = _reflection.GeneratedProtocolMessageType('CustomPorcelainTypeOptions', (_message.Message,), {
+  'DESCRIPTOR' : _CUSTOMPORCELAINTYPEOPTIONS,
   '__module__' : 'options_pb2'
-  # @@protoc_insertion_point(class_scope:v1.CustomPorcelainMessageOptions)
+  # @@protoc_insertion_point(class_scope:v1.CustomPorcelainTypeOptions)
   })
-_sym_db.RegisterMessage(CustomPorcelainMessageOptions)
+_sym_db.RegisterMessage(CustomPorcelainTypeOptions)
 
 TerraformDocs = _reflection.GeneratedProtocolMessageType('TerraformDocs', (_message.Message,), {
   'DESCRIPTOR' : _TERRAFORMDOCS,

@@ -7871,8 +7871,10 @@ class ResourceUpdateResponse:
 class Role:
     """A Role is a collection of access grants, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
 
-    :param access_rules: AccessRules JSON encoded access rules data.
-    :param composite: True if the Role is a composite role.
+    :param access_rules: AccessRules is a list of access rules defining the resources this Role has access to.
+    :param composite: Composite is true if the Role is a composite role.
+
+ Deprecated: composite roles are deprecated, use multi-role instead.
     :param id: Unique identifier of the Role.
     :param name: Unique human-readable name of the Role.
     :param tags: Tags is a map of key, value pairs.
@@ -7930,6 +7932,8 @@ class Role:
 
 class RoleAttachment:
     """A RoleAttachment assigns a role to a composite role.
+ 
+ Deprecated: use multi-role instead.
 
     :param attached_role_id: The id of the attached role of this RoleAttachment.
     :param composite_role_id: The id of the composite role of this RoleAttachment.
@@ -7976,6 +7980,8 @@ class RoleAttachment:
 
 class RoleAttachmentCreateResponse:
     """RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
+ 
+ Deprecated: use multi-role instead.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
@@ -8022,6 +8028,8 @@ class RoleAttachmentCreateResponse:
 
 class RoleAttachmentDeleteResponse:
     """RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
+ 
+ Deprecated: use multi-role instead.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
@@ -8061,6 +8069,8 @@ class RoleAttachmentDeleteResponse:
 
 class RoleAttachmentGetResponse:
     """RoleAttachmentGetResponse returns a requested RoleAttachment.
+ 
+ Deprecated: use multi-role instead.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
@@ -8240,6 +8250,8 @@ class RoleGetResponse:
 class RoleGrant:
     """A RoleGrant connects a resource to a role, granting members of the role access to that resource.
 
+ Deprecated: use access rules instead.
+
     :param id: Unique identifier of the RoleGrant.
     :param resource_id: The id of the resource of this RoleGrant.
     :param role_id: The id of the attached role of this RoleGrant.
@@ -8285,6 +8297,8 @@ class RoleGrant:
 
 class RoleGrantCreateResponse:
     """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
+
+ Deprecated: use access rules instead.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
@@ -8332,6 +8346,8 @@ class RoleGrantCreateResponse:
 class RoleGrantDeleteResponse:
     """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
 
+ Deprecated: use access rules instead.
+
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.
     """
@@ -8370,6 +8386,8 @@ class RoleGrantDeleteResponse:
 
 class RoleGrantGetResponse:
     """RoleGrantGetResponse returns a requested RoleGrant.
+
+ Deprecated: use access rules instead.
 
     :param meta: Reserved for future use.
     :param rate_limit: Rate limit information.

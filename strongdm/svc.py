@@ -48,6 +48,22 @@ from .secret_store_types_pb2 import *
 from .secret_store_types_pb2_grpc import *
 from .secret_stores_pb2 import *
 from .secret_stores_pb2_grpc import *
+import warnings
+import functools
+
+
+def deprecated(func):
+    """This is a decorator which can be used to mark functions
+    as deprecated. It will result in a warning being emitted
+    when the function is used."""
+    @functools.wraps(func)
+    def new_func(*args, **kwargs):
+        warnings.warn("Call to deprecated function {}.".format(func.__name__),
+                      category=DeprecationWarning,
+                      stacklevel=2)
+        return func(*args, **kwargs)
+
+    return new_func
 
 
 class AccountAttachments:
@@ -911,13 +927,18 @@ class RoleAttachments:
     """RoleAttachments represent relationships between composite roles and the roles
  that make up those composite roles. When a composite role is attached to another
  role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role."""
+ include the permissions granted to members of the attached role.
+ 
+ Deprecated: use multi-role instead."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleAttachmentsStub(channel)
 
+    @deprecated
     def create(self, role_attachment, timeout=None):
-        """Create registers a new RoleAttachment."""
+        """Create registers a new RoleAttachment.
+ 
+ Deprecated: use multi-role instead."""
         req = RoleAttachmentCreateRequest()
 
         if role_attachment is not None:
@@ -949,8 +970,11 @@ class RoleAttachments:
             plumbing_response.role_attachment)
         return resp
 
+    @deprecated
     def get(self, id, timeout=None):
-        """Get reads one RoleAttachment by ID."""
+        """Get reads one RoleAttachment by ID.
+ 
+ Deprecated: use multi-role instead."""
         req = RoleAttachmentGetRequest()
 
         req.id = (id)
@@ -980,8 +1004,11 @@ class RoleAttachments:
             plumbing_response.role_attachment)
         return resp
 
+    @deprecated
     def delete(self, id, timeout=None):
-        """Delete removes a RoleAttachment by ID."""
+        """Delete removes a RoleAttachment by ID.
+ 
+ Deprecated: use multi-role instead."""
         req = RoleAttachmentDeleteRequest()
 
         req.id = (id)
@@ -1009,8 +1036,11 @@ class RoleAttachments:
             plumbing_response.rate_limit)
         return resp
 
+    @deprecated
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleAttachments matching a given set of criteria."""
+        """List gets a list of RoleAttachments matching a given set of criteria.
+ 
+ Deprecated: use multi-role instead."""
         req = RoleAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -1049,13 +1079,18 @@ class RoleGrants:
     """RoleGrants represent relationships between composite roles and the roles
  that make up those composite roles. When a composite role is attached to another
  role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role."""
+ include the permissions granted to members of the attached role.
+
+ Deprecated: use access rules instead."""
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleGrantsStub(channel)
 
+    @deprecated
     def create(self, role_grant, timeout=None):
-        """Create registers a new RoleGrant."""
+        """Create registers a new RoleGrant.
+
+ Deprecated: use access rules instead."""
         req = RoleGrantCreateRequest()
 
         if role_grant is not None:
@@ -1087,8 +1122,11 @@ class RoleGrants:
             plumbing_response.role_grant)
         return resp
 
+    @deprecated
     def get(self, id, timeout=None):
-        """Get reads one RoleGrant by ID."""
+        """Get reads one RoleGrant by ID.
+
+ Deprecated: use access rules instead."""
         req = RoleGrantGetRequest()
 
         req.id = (id)
@@ -1117,8 +1155,11 @@ class RoleGrants:
             plumbing_response.role_grant)
         return resp
 
+    @deprecated
     def delete(self, id, timeout=None):
-        """Delete removes a RoleGrant by ID."""
+        """Delete removes a RoleGrant by ID.
+
+ Deprecated: use access rules instead."""
         req = RoleGrantDeleteRequest()
 
         req.id = (id)
@@ -1146,8 +1187,11 @@ class RoleGrants:
             plumbing_response.rate_limit)
         return resp
 
+    @deprecated
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleGrants matching a given set of criteria."""
+        """List gets a list of RoleGrants matching a given set of criteria.
+
+ Deprecated: use access rules instead."""
         req = RoleGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')

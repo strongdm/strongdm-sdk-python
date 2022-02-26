@@ -94,6 +94,18 @@ def convert_tags_to_plumbing(t):
     return tags
 
 
+def convert_access_rules_to_porcelain(access_rules_json):
+    if access_rules_json is None:
+        return None
+    if access_rules_json == "":
+        return None
+    return json.loads(access_rules_json)
+
+
+def convert_access_rules_to_plumbing(access_rules):
+    return json.dumps(access_rules)
+
+
 def convert_aks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5338,7 +5350,8 @@ def convert_role_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Role()
-    porcelain.access_rules = (plumbing.access_rules)
+    porcelain.access_rules = convert_access_rules_to_porcelain(
+        plumbing.access_rules)
     porcelain.composite = (plumbing.composite)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
@@ -5351,7 +5364,8 @@ def convert_role_to_plumbing(porcelain):
         return None
     plumbing = Role()
     if porcelain.access_rules is not None:
-        plumbing.access_rules = (porcelain.access_rules)
+        plumbing.access_rules = convert_access_rules_to_plumbing(
+            porcelain.access_rules)
     if porcelain.composite is not None:
         plumbing.composite = (porcelain.composite)
     if porcelain.id is not None:
