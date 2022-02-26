@@ -5286,6 +5286,150 @@ class KubernetesUserImpersonation:
         )
 
 
+class MTLSPostgres:
+    """
+
+    :param certificate_authority: 
+    :param client_certificate: 
+    :param client_key: 
+    :param database: 
+    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
+    :param healthy: True if the datasource is reachable and the credentials are valid.
+    :param hostname: 
+    :param id: Unique identifier of the Resource.
+    :param name: Unique human-readable name of the Resource.
+    :param override_database: 
+    :param password: 
+    :param port: 
+    :param port_override: 
+    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
+    :param server_name: 
+    :param tags: Tags is a map of key, value pairs.
+    :param username: 
+    """
+    __slots__ = [
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'server_name',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        server_name=None,
+        tags=None,
+        username=None,
+    ):
+        self.certificate_authority = certificate_authority
+        self.client_certificate = client_certificate
+        self.client_key = client_key
+        self.database = database
+        self.egress_filter = egress_filter
+        self.healthy = healthy
+        self.hostname = hostname
+        self.id = id
+        self.name = name
+        self.override_database = override_database
+        self.password = password
+        self.port = port
+        self.port_override = port_override
+        self.secret_store_id = secret_store_id
+        self.server_name = server_name
+        self.tags = tags
+        self.username = username
+
+    def __repr__(self):
+        return '<sdm.MTLSPostgres ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'server_name: ' + repr(self.server_name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'server_name': self.server_name,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            server_name=d.get('server_name'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
 class Maria:
     """
 
