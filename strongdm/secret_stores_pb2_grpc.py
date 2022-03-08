@@ -74,7 +74,7 @@ class SecretStoresServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update patches a SecretStore by ID.
+        """Update replaces all the fields of a SecretStore by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

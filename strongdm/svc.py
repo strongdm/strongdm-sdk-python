@@ -67,13 +67,18 @@ def deprecated(func):
 
 
 class AccountAttachments:
-    """AccountAttachments assign an account to a role or composite role."""
+    '''
+     AccountAttachments assign an account to a role.
+    See `strongdm.models.AccountAttachment`.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountAttachmentsStub(channel)
 
     def create(self, account_attachment, timeout=None):
-        """Create registers a new AccountAttachment."""
+        '''
+         Create registers a new AccountAttachment.
+        '''
         req = AccountAttachmentCreateRequest()
 
         if account_attachment is not None:
@@ -107,7 +112,9 @@ class AccountAttachments:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one AccountAttachment by ID."""
+        '''
+         Get reads one AccountAttachment by ID.
+        '''
         req = AccountAttachmentGetRequest()
 
         req.id = (id)
@@ -138,7 +145,9 @@ class AccountAttachments:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a AccountAttachment by ID."""
+        '''
+         Delete removes a AccountAttachment by ID.
+        '''
         req = AccountAttachmentDeleteRequest()
 
         req.id = (id)
@@ -167,7 +176,9 @@ class AccountAttachments:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of AccountAttachments matching a given set of criteria."""
+        '''
+         List gets a list of AccountAttachments matching a given set of criteria.
+        '''
         req = AccountAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -203,13 +214,18 @@ class AccountAttachments:
 
 
 class AccountGrants:
-    """AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource."""
+    '''
+     AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource.
+    See `strongdm.models.AccountGrant`.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountGrantsStub(channel)
 
     def create(self, account_grant, timeout=None):
-        """Create registers a new AccountGrant."""
+        '''
+         Create registers a new AccountGrant.
+        '''
         req = AccountGrantCreateRequest()
 
         if account_grant is not None:
@@ -242,7 +258,9 @@ class AccountGrants:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one AccountGrant by ID."""
+        '''
+         Get reads one AccountGrant by ID.
+        '''
         req = AccountGrantGetRequest()
 
         req.id = (id)
@@ -273,7 +291,9 @@ class AccountGrants:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a AccountGrant by ID."""
+        '''
+         Delete removes a AccountGrant by ID.
+        '''
         req = AccountGrantDeleteRequest()
 
         req.id = (id)
@@ -302,7 +322,9 @@ class AccountGrants:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of AccountGrants matching a given set of criteria."""
+        '''
+         List gets a list of AccountGrants matching a given set of criteria.
+        '''
         req = AccountGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -338,15 +360,22 @@ class AccountGrants:
 
 
 class Accounts:
-    """Accounts are users that have access to strongDM. There are two types of accounts:
- 1. **Users:** humans who are authenticated through username and password or SSO.
- 2. **Service Accounts:** machines that are authenticated using a service token."""
+    '''
+     Accounts are users that have access to strongDM. There are two types of accounts:
+     1. **Users:** humans who are authenticated through username and password or SSO.
+     2. **Service Accounts:** machines that are authenticated using a service token.
+    See:
+    `strongdm.models.Service`
+    `strongdm.models.User`
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = AccountsStub(channel)
 
     def create(self, account, timeout=None):
-        """Create registers a new Account."""
+        '''
+         Create registers a new Account.
+        '''
         req = AccountCreateRequest()
 
         if account is not None:
@@ -378,7 +407,9 @@ class Accounts:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one Account by ID."""
+        '''
+         Get reads one Account by ID.
+        '''
         req = AccountGetRequest()
 
         req.id = (id)
@@ -408,7 +439,9 @@ class Accounts:
         return resp
 
     def update(self, account, timeout=None):
-        """Update patches a Account by ID."""
+        '''
+         Update replaces all the fields of an Account by ID.
+        '''
         req = AccountUpdateRequest()
 
         if account is not None:
@@ -439,7 +472,9 @@ class Accounts:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a Account by ID."""
+        '''
+         Delete removes an Account by ID.
+        '''
         req = AccountDeleteRequest()
 
         req.id = (id)
@@ -467,7 +502,9 @@ class Accounts:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Accounts matching a given set of criteria."""
+        '''
+         List gets a list of Accounts matching a given set of criteria.
+        '''
         req = AccountListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -501,13 +538,17 @@ class Accounts:
 
 
 class ControlPanel:
-    """ControlPanel contains all administrative controls."""
+    '''
+     ControlPanel contains all administrative controls.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = ControlPanelStub(channel)
 
     def get_sshca_public_key(self, timeout=None):
-        """GetSSHCAPublicKey retrieves the SSH CA public key."""
+        '''
+         GetSSHCAPublicKey retrieves the SSH CA public key.
+        '''
         req = ControlPanelGetSSHCAPublicKeyRequest()
 
         tries = 0
@@ -536,7 +577,9 @@ class ControlPanel:
         return resp
 
     def verify_jwt(self, token, timeout=None):
-        """VerifyJWT reports whether the given JWT token (x-sdm-token) is valid."""
+        '''
+         VerifyJWT reports whether the given JWT token (x-sdm-token) is valid.
+        '''
         req = ControlPanelVerifyJWTRequest()
 
         req.token = (token)
@@ -567,15 +610,22 @@ class ControlPanel:
 
 
 class Nodes:
-    """Nodes make up the strongDM network, and allow your users to connect securely to your resources. There are two types of nodes:
- - **Gateways** are the entry points into network. They listen for connection from the strongDM client, and provide access to databases and servers.
- - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections."""
+    '''
+     Nodes make up the strongDM network, and allow your users to connect securely to your resources. There are two types of nodes:
+     - **Gateways** are the entry points into network. They listen for connection from the strongDM client, and provide access to databases and servers.
+     - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
+    See:
+    `strongdm.models.Gateway`
+    `strongdm.models.Relay`
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = NodesStub(channel)
 
     def create(self, node, timeout=None):
-        """Create registers a new Node."""
+        '''
+         Create registers a new Node.
+        '''
         req = NodeCreateRequest()
 
         if node is not None:
@@ -606,7 +656,9 @@ class Nodes:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one Node by ID."""
+        '''
+         Get reads one Node by ID.
+        '''
         req = NodeGetRequest()
 
         req.id = (id)
@@ -635,7 +687,9 @@ class Nodes:
         return resp
 
     def update(self, node, timeout=None):
-        """Update patches a Node by ID."""
+        '''
+         Update replaces all the fields of a Node by ID.
+        '''
         req = NodeUpdateRequest()
 
         if node is not None:
@@ -665,7 +719,9 @@ class Nodes:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a Node by ID."""
+        '''
+         Delete removes a Node by ID.
+        '''
         req = NodeDeleteRequest()
 
         req.id = (id)
@@ -693,7 +749,9 @@ class Nodes:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Nodes matching a given set of criteria."""
+        '''
+         List gets a list of Nodes matching a given set of criteria.
+        '''
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -727,13 +785,89 @@ class Nodes:
 
 
 class Resources:
-    """"""
+    '''
+     Resources are databases, servers, clusters, websites, or clouds that strongDM
+     delegates access to.
+    See:
+    `strongdm.models.AKS`
+    `strongdm.models.AKSBasicAuth`
+    `strongdm.models.AKSServiceAccount`
+    `strongdm.models.AKSServiceAccountUserImpersonation`
+    `strongdm.models.AKSUserImpersonation`
+    `strongdm.models.AmazonEKS`
+    `strongdm.models.AmazonEKSUserImpersonation`
+    `strongdm.models.AmazonES`
+    `strongdm.models.AmazonMQAMQP091`
+    `strongdm.models.Athena`
+    `strongdm.models.AuroraMysql`
+    `strongdm.models.AuroraPostgres`
+    `strongdm.models.AWS`
+    `strongdm.models.Azure`
+    `strongdm.models.AzureCertificate`
+    `strongdm.models.AzurePostgres`
+    `strongdm.models.BigQuery`
+    `strongdm.models.Cassandra`
+    `strongdm.models.Citus`
+    `strongdm.models.Clustrix`
+    `strongdm.models.Cockroach`
+    `strongdm.models.DB2I`
+    `strongdm.models.DB2LUW`
+    `strongdm.models.DocumentDBHost`
+    `strongdm.models.DocumentDBReplicaSet`
+    `strongdm.models.Druid`
+    `strongdm.models.DynamoDB`
+    `strongdm.models.Elastic`
+    `strongdm.models.ElasticacheRedis`
+    `strongdm.models.GCP`
+    `strongdm.models.GoogleGKE`
+    `strongdm.models.GoogleGKEUserImpersonation`
+    `strongdm.models.Greenplum`
+    `strongdm.models.HTTPAuth`
+    `strongdm.models.HTTPBasicAuth`
+    `strongdm.models.HTTPNoAuth`
+    `strongdm.models.Kubernetes`
+    `strongdm.models.KubernetesBasicAuth`
+    `strongdm.models.KubernetesServiceAccount`
+    `strongdm.models.KubernetesServiceAccountUserImpersonation`
+    `strongdm.models.KubernetesUserImpersonation`
+    `strongdm.models.Maria`
+    `strongdm.models.Memcached`
+    `strongdm.models.Memsql`
+    `strongdm.models.MongoHost`
+    `strongdm.models.MongoLegacyHost`
+    `strongdm.models.MongoLegacyReplicaset`
+    `strongdm.models.MongoReplicaSet`
+    `strongdm.models.MongoShardedCluster`
+    `strongdm.models.MTLSPostgres`
+    `strongdm.models.Mysql`
+    `strongdm.models.Neptune`
+    `strongdm.models.NeptuneIAM`
+    `strongdm.models.Oracle`
+    `strongdm.models.Postgres`
+    `strongdm.models.Presto`
+    `strongdm.models.RabbitMQAMQP091`
+    `strongdm.models.RawTCP`
+    `strongdm.models.RDP`
+    `strongdm.models.Redis`
+    `strongdm.models.Redshift`
+    `strongdm.models.SingleStore`
+    `strongdm.models.Snowflake`
+    `strongdm.models.SQLServer`
+    `strongdm.models.SSH`
+    `strongdm.models.SSHCert`
+    `strongdm.models.SSHCustomerKey`
+    `strongdm.models.Sybase`
+    `strongdm.models.SybaseIQ`
+    `strongdm.models.Teradata`
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = ResourcesStub(channel)
 
     def enumerate_tags(self, filter, *args, timeout=None):
-        """EnumerateTags gets a list of the filter matching tags."""
+        '''
+         EnumerateTags gets a list of the filter matching tags.
+        '''
         req = EnumerateTagsRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -767,7 +901,9 @@ class Resources:
         return generator(self, req)
 
     def create(self, resource, timeout=None):
-        """Create registers a new Resource."""
+        '''
+         Create registers a new Resource.
+        '''
         req = ResourceCreateRequest()
 
         if resource is not None:
@@ -799,7 +935,9 @@ class Resources:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one Resource by ID."""
+        '''
+         Get reads one Resource by ID.
+        '''
         req = ResourceGetRequest()
 
         req.id = (id)
@@ -829,7 +967,9 @@ class Resources:
         return resp
 
     def update(self, resource, timeout=None):
-        """Update patches a Resource by ID."""
+        '''
+         Update replaces all the fields of a Resource by ID.
+        '''
         req = ResourceUpdateRequest()
 
         if resource is not None:
@@ -861,7 +1001,9 @@ class Resources:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a Resource by ID."""
+        '''
+         Delete removes a Resource by ID.
+        '''
         req = ResourceDeleteRequest()
 
         req.id = (id)
@@ -889,7 +1031,9 @@ class Resources:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Resources matching a given set of criteria."""
+        '''
+         List gets a list of Resources matching a given set of criteria.
+        '''
         req = ResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -924,21 +1068,26 @@ class Resources:
 
 
 class RoleAttachments:
-    """RoleAttachments represent relationships between composite roles and the roles
- that make up those composite roles. When a composite role is attached to another
- role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role.
- 
- Deprecated: use multi-role instead."""
+    '''
+     RoleAttachments represent relationships between composite roles and the roles
+     that make up those composite roles. When a composite role is attached to another
+     role, the permissions granted to members of the composite role are augmented to
+     include the permissions granted to members of the attached role.
+     
+     Deprecated: use multi-role via AccountAttachments instead.
+    See `strongdm.models.RoleAttachment`.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleAttachmentsStub(channel)
 
     @deprecated
     def create(self, role_attachment, timeout=None):
-        """Create registers a new RoleAttachment.
- 
- Deprecated: use multi-role instead."""
+        '''
+         Create registers a new RoleAttachment.
+         
+         Deprecated: use multi-role via AccountAttachments instead.
+        '''
         req = RoleAttachmentCreateRequest()
 
         if role_attachment is not None:
@@ -972,9 +1121,11 @@ class RoleAttachments:
 
     @deprecated
     def get(self, id, timeout=None):
-        """Get reads one RoleAttachment by ID.
- 
- Deprecated: use multi-role instead."""
+        '''
+         Get reads one RoleAttachment by ID.
+         
+         Deprecated: use multi-role via AccountAttachments instead.
+        '''
         req = RoleAttachmentGetRequest()
 
         req.id = (id)
@@ -1006,9 +1157,11 @@ class RoleAttachments:
 
     @deprecated
     def delete(self, id, timeout=None):
-        """Delete removes a RoleAttachment by ID.
- 
- Deprecated: use multi-role instead."""
+        '''
+         Delete removes a RoleAttachment by ID.
+         
+         Deprecated: use multi-role via AccountAttachments instead.
+        '''
         req = RoleAttachmentDeleteRequest()
 
         req.id = (id)
@@ -1038,9 +1191,11 @@ class RoleAttachments:
 
     @deprecated
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleAttachments matching a given set of criteria.
- 
- Deprecated: use multi-role instead."""
+        '''
+         List gets a list of RoleAttachments matching a given set of criteria.
+         
+         Deprecated: use multi-role via AccountAttachments instead.
+        '''
         req = RoleAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -1076,21 +1231,26 @@ class RoleAttachments:
 
 
 class RoleGrants:
-    """RoleGrants represent relationships between composite roles and the roles
- that make up those composite roles. When a composite role is attached to another
- role, the permissions granted to members of the composite role are augmented to
- include the permissions granted to members of the attached role.
-
- Deprecated: use access rules instead."""
+    '''
+     RoleGrants represent relationships between composite roles and the roles
+     that make up those composite roles. When a composite role is attached to another
+     role, the permissions granted to members of the composite role are augmented to
+     include the permissions granted to members of the attached role.
+     
+     Deprecated: use Role access rules instead.
+    See `strongdm.models.RoleGrant`.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RoleGrantsStub(channel)
 
     @deprecated
     def create(self, role_grant, timeout=None):
-        """Create registers a new RoleGrant.
-
- Deprecated: use access rules instead."""
+        '''
+         Create registers a new RoleGrant.
+         
+         Deprecated: use Role access rules instead.
+        '''
         req = RoleGrantCreateRequest()
 
         if role_grant is not None:
@@ -1124,9 +1284,11 @@ class RoleGrants:
 
     @deprecated
     def get(self, id, timeout=None):
-        """Get reads one RoleGrant by ID.
-
- Deprecated: use access rules instead."""
+        '''
+         Get reads one RoleGrant by ID.
+         
+         Deprecated: use Role access rules instead.
+        '''
         req = RoleGrantGetRequest()
 
         req.id = (id)
@@ -1157,9 +1319,11 @@ class RoleGrants:
 
     @deprecated
     def delete(self, id, timeout=None):
-        """Delete removes a RoleGrant by ID.
-
- Deprecated: use access rules instead."""
+        '''
+         Delete removes a RoleGrant by ID.
+         
+         Deprecated: use Role access rules instead.
+        '''
         req = RoleGrantDeleteRequest()
 
         req.id = (id)
@@ -1189,9 +1353,11 @@ class RoleGrants:
 
     @deprecated
     def list(self, filter, *args, timeout=None):
-        """List gets a list of RoleGrants matching a given set of criteria.
-
- Deprecated: use access rules instead."""
+        '''
+         List gets a list of RoleGrants matching a given set of criteria.
+         
+         Deprecated: use Role access rules instead.
+        '''
         req = RoleGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -1227,17 +1393,20 @@ class RoleGrants:
 
 
 class Roles:
-    """Roles are tools for controlling user access to resources. Each Role holds a
- list of resources which they grant access to. Composite roles are a special
- type of Role which have no resource associations of their own, but instead
- grant access to the combined resources associated with a set of child roles.
- Each user can be a member of one Role or composite role."""
+    '''
+     A Role has a list of access rules which determine which Resources the members
+     of the Role have access to. An Account can be a member of multiple Roles via
+     AccountAttachments.
+    See `strongdm.models.Role`.
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = RolesStub(channel)
 
     def create(self, role, timeout=None):
-        """Create registers a new Role."""
+        '''
+         Create registers a new Role.
+        '''
         req = RoleCreateRequest()
 
         if role is not None:
@@ -1267,7 +1436,9 @@ class Roles:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one Role by ID."""
+        '''
+         Get reads one Role by ID.
+        '''
         req = RoleGetRequest()
 
         req.id = (id)
@@ -1296,7 +1467,9 @@ class Roles:
         return resp
 
     def update(self, role, timeout=None):
-        """Update patches a Role by ID."""
+        '''
+         Update replaces all the fields of a Role by ID.
+        '''
         req = RoleUpdateRequest()
 
         if role is not None:
@@ -1326,7 +1499,9 @@ class Roles:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a Role by ID."""
+        '''
+         Delete removes a Role by ID.
+        '''
         req = RoleDeleteRequest()
 
         req.id = (id)
@@ -1354,7 +1529,9 @@ class Roles:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of Roles matching a given set of criteria."""
+        '''
+         List gets a list of Roles matching a given set of criteria.
+        '''
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')
@@ -1388,7 +1565,14 @@ class Roles:
 
 
 class SecretStores:
-    """SecretStores are servers where resource secrets (passwords, keys) are stored."""
+    '''
+     SecretStores are servers where resource secrets (passwords, keys) are stored.
+    See:
+    `strongdm.models.AWSStore`
+    `strongdm.models.AzureStore`
+    `strongdm.models.VaultTLSStore`
+    `strongdm.models.VaultTokenStore`
+    '''
     def __init__(self, channel, client):
         self.parent = client
         self.stub = SecretStoresStub(channel)
@@ -1426,7 +1610,9 @@ class SecretStores:
         return resp
 
     def get(self, id, timeout=None):
-        """Get reads one SecretStore by ID."""
+        '''
+         Get reads one SecretStore by ID.
+        '''
         req = SecretStoreGetRequest()
 
         req.id = (id)
@@ -1456,7 +1642,9 @@ class SecretStores:
         return resp
 
     def update(self, secret_store, timeout=None):
-        """Update patches a SecretStore by ID."""
+        '''
+         Update replaces all the fields of a SecretStore by ID.
+        '''
         req = SecretStoreUpdateRequest()
 
         if secret_store is not None:
@@ -1489,7 +1677,9 @@ class SecretStores:
         return resp
 
     def delete(self, id, timeout=None):
-        """Delete removes a SecretStore by ID."""
+        '''
+         Delete removes a SecretStore by ID.
+        '''
         req = SecretStoreDeleteRequest()
 
         req.id = (id)
@@ -1518,7 +1708,9 @@ class SecretStores:
         return resp
 
     def list(self, filter, *args, timeout=None):
-        """List gets a list of SecretStores matching a given set of criteria."""
+        '''
+         List gets a list of SecretStores matching a given set of criteria.
+        '''
         req = SecretStoreListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         page_size_option = self.parent._test_options.get('PageSize')

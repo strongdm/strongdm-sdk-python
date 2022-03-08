@@ -35,21 +35,24 @@ USER_AGENT = 'strongdm-sdk-python/2.0.0'
 
 
 class Client:
-    """Client interacts with the strongDM API.
-
-    :param api_access_key: the access key to authenticate with strongDM
-    :param api_secret: the secret key to authenticate with strongDM
-    """
+    '''Client interacts with the strongDM API.'''
     def __init__(self,
                  api_access_key,
                  api_secret,
                  host='api.strongdm.com:443',
                  insecure=False):
+        '''
+        Create a new Client.
+
+        - api_access_key: the access key to authenticate with strongDM
+        - api_secret: the secret key to authenticate with strongDM
+        '''
         self.api_access_key = api_access_key.strip()
         self.api_secret = base64.b64decode(api_secret.strip())
         self.max_retries = DEFAULT_MAX_RETRIES
         self.base_retry_delay = DEFAULT_BASE_RETRY_DELAY
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
+        self._test_options = {}
 
         try:
             if insecure:
@@ -57,19 +60,85 @@ class Client:
             else:
                 creds = grpc.ssl_channel_credentials()
                 channel = grpc.secure_channel(host, creds)
-            self.account_attachments = svc.AccountAttachments(channel, self)
-            self.account_grants = svc.AccountGrants(channel, self)
-            self.accounts = svc.Accounts(channel, self)
-            self.control_panel = svc.ControlPanel(channel, self)
-            self.nodes = svc.Nodes(channel, self)
-            self.resources = svc.Resources(channel, self)
-            self.role_attachments = svc.RoleAttachments(channel, self)
-            self.role_grants = svc.RoleGrants(channel, self)
-            self.roles = svc.Roles(channel, self)
-            self.secret_stores = svc.SecretStores(channel, self)
         except Exception as e:
             raise plumbing.convert_error_to_porcelain(e) from e
-        self._test_options = {}
+        self.account_attachments = svc.AccountAttachments(channel, self)
+        '''
+         AccountAttachments assign an account to a role.
+
+        See `strongdm.svc.AccountAttachments`.
+        '''
+        self.account_grants = svc.AccountGrants(channel, self)
+        '''
+         AccountGrants assign a resource directly to an account, giving the account the permission to connect to that resource.
+
+        See `strongdm.svc.AccountGrants`.
+        '''
+        self.accounts = svc.Accounts(channel, self)
+        '''
+         Accounts are users that have access to strongDM. There are two types of accounts:
+         1. **Users:** humans who are authenticated through username and password or SSO.
+         2. **Service Accounts:** machines that are authenticated using a service token.
+
+        See `strongdm.svc.Accounts`.
+        '''
+        self.control_panel = svc.ControlPanel(channel, self)
+        '''
+         ControlPanel contains all administrative controls.
+
+        See `strongdm.svc.ControlPanel`.
+        '''
+        self.nodes = svc.Nodes(channel, self)
+        '''
+         Nodes make up the strongDM network, and allow your users to connect securely to your resources. There are two types of nodes:
+         - **Gateways** are the entry points into network. They listen for connection from the strongDM client, and provide access to databases and servers.
+         - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
+
+        See `strongdm.svc.Nodes`.
+        '''
+        self.resources = svc.Resources(channel, self)
+        '''
+         Resources are databases, servers, clusters, websites, or clouds that strongDM
+         delegates access to.
+
+        See `strongdm.svc.Resources`.
+        '''
+        self.role_attachments = svc.RoleAttachments(channel, self)
+        '''
+         RoleAttachments represent relationships between composite roles and the roles
+         that make up those composite roles. When a composite role is attached to another
+         role, the permissions granted to members of the composite role are augmented to
+         include the permissions granted to members of the attached role.
+         
+         Deprecated: use multi-role via AccountAttachments instead.
+
+        See `strongdm.svc.RoleAttachments`.
+        '''
+        self.role_grants = svc.RoleGrants(channel, self)
+        '''
+         RoleGrants represent relationships between composite roles and the roles
+         that make up those composite roles. When a composite role is attached to another
+         role, the permissions granted to members of the composite role are augmented to
+         include the permissions granted to members of the attached role.
+         
+         Deprecated: use Role access rules instead.
+
+        See `strongdm.svc.RoleGrants`.
+        '''
+        self.roles = svc.Roles(channel, self)
+        '''
+         A Role has a list of access rules which determine which Resources the members
+         of the Role have access to. An Account can be a member of multiple Roles via
+         AccountAttachments.
+
+        See `strongdm.svc.Roles`.
+        '''
+        self.secret_stores = svc.SecretStores(channel, self)
+        '''
+         SecretStores are servers where resource secrets (passwords, keys) are stored.
+
+        See `strongdm.svc.SecretStores`.
+        '''
 
     def get_metadata(self, method_name, req):
         return [

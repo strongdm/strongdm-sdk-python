@@ -25,7 +25,7 @@ class RoleGrantsStub(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use access rules instead.
+    Deprecated: use Role access rules instead.
     """
 
     def __init__(self, channel):
@@ -62,13 +62,13 @@ class RoleGrantsServicer(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use access rules instead.
+    Deprecated: use Role access rules instead.
     """
 
     def Create(self, request, context):
         """Create registers a new RoleGrant.
 
-        Deprecated: use access rules instead.
+        Deprecated: use Role access rules instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,7 +77,7 @@ class RoleGrantsServicer(object):
     def Get(self, request, context):
         """Get reads one RoleGrant by ID.
 
-        Deprecated: use access rules instead.
+        Deprecated: use Role access rules instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,7 +86,7 @@ class RoleGrantsServicer(object):
     def Delete(self, request, context):
         """Delete removes a RoleGrant by ID.
 
-        Deprecated: use access rules instead.
+        Deprecated: use Role access rules instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,7 +95,7 @@ class RoleGrantsServicer(object):
     def List(self, request, context):
         """List gets a list of RoleGrants matching a given set of criteria.
 
-        Deprecated: use access rules instead.
+        Deprecated: use Role access rules instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -137,7 +137,7 @@ class RoleGrants(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use access rules instead.
+    Deprecated: use Role access rules instead.
     """
 
     @staticmethod

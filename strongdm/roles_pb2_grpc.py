@@ -20,11 +20,9 @@ from . import roles_pb2 as roles__pb2
 
 
 class RolesStub(object):
-    """Roles are tools for controlling user access to resources. Each Role holds a
-    list of resources which they grant access to. Composite roles are a special
-    type of Role which have no resource associations of their own, but instead
-    grant access to the combined resources associated with a set of child roles.
-    Each user can be a member of one Role or composite role.
+    """A Role has a list of access rules which determine which Resources the members
+    of the Role have access to. An Account can be a member of multiple Roles via
+    AccountAttachments.
     """
 
     def __init__(self, channel):
@@ -61,11 +59,9 @@ class RolesStub(object):
 
 
 class RolesServicer(object):
-    """Roles are tools for controlling user access to resources. Each Role holds a
-    list of resources which they grant access to. Composite roles are a special
-    type of Role which have no resource associations of their own, but instead
-    grant access to the combined resources associated with a set of child roles.
-    Each user can be a member of one Role or composite role.
+    """A Role has a list of access rules which determine which Resources the members
+    of the Role have access to. An Account can be a member of multiple Roles via
+    AccountAttachments.
     """
 
     def Create(self, request, context):
@@ -83,7 +79,7 @@ class RolesServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update patches a Role by ID.
+        """Update replaces all the fields of a Role by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -139,11 +135,9 @@ def add_RolesServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Roles(object):
-    """Roles are tools for controlling user access to resources. Each Role holds a
-    list of resources which they grant access to. Composite roles are a special
-    type of Role which have no resource associations of their own, but instead
-    grant access to the combined resources associated with a set of child roles.
-    Each user can be a member of one Role or composite role.
+    """A Role has a list of access rules which determine which Resources the members
+    of the Role have access to. An Account can be a member of multiple Roles via
+    AccountAttachments.
     """
 
     @staticmethod

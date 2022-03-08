@@ -20,7 +20,9 @@ from . import resources_pb2 as resources__pb2
 
 
 class ResourcesStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Resources are databases, servers, clusters, websites, or clouds that strongDM
+    delegates access to.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -61,7 +63,9 @@ class ResourcesStub(object):
 
 
 class ResourcesServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Resources are databases, servers, clusters, websites, or clouds that strongDM
+    delegates access to.
+    """
 
     def EnumerateTags(self, request, context):
         """EnumerateTags gets a list of the filter matching tags.
@@ -85,7 +89,7 @@ class ResourcesServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update patches a Resource by ID.
+        """Update replaces all the fields of a Resource by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -146,7 +150,9 @@ def add_ResourcesServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Resources(object):
-    """Missing associated documentation comment in .proto file."""
+    """Resources are databases, servers, clusters, websites, or clouds that strongDM
+    delegates access to.
+    """
 
     @staticmethod
     def EnumerateTags(request,

@@ -25,7 +25,7 @@ class RoleAttachmentsStub(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use multi-role instead.
+    Deprecated: use multi-role via AccountAttachments instead.
     """
 
     def __init__(self, channel):
@@ -62,13 +62,13 @@ class RoleAttachmentsServicer(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use multi-role instead.
+    Deprecated: use multi-role via AccountAttachments instead.
     """
 
     def Create(self, request, context):
         """Create registers a new RoleAttachment.
 
-        Deprecated: use multi-role instead.
+        Deprecated: use multi-role via AccountAttachments instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,7 +77,7 @@ class RoleAttachmentsServicer(object):
     def Get(self, request, context):
         """Get reads one RoleAttachment by ID.
 
-        Deprecated: use multi-role instead.
+        Deprecated: use multi-role via AccountAttachments instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,7 +86,7 @@ class RoleAttachmentsServicer(object):
     def Delete(self, request, context):
         """Delete removes a RoleAttachment by ID.
 
-        Deprecated: use multi-role instead.
+        Deprecated: use multi-role via AccountAttachments instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,7 +95,7 @@ class RoleAttachmentsServicer(object):
     def List(self, request, context):
         """List gets a list of RoleAttachments matching a given set of criteria.
 
-        Deprecated: use multi-role instead.
+        Deprecated: use multi-role via AccountAttachments instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -137,7 +137,7 @@ class RoleAttachments(object):
     role, the permissions granted to members of the composite role are augmented to
     include the permissions granted to members of the attached role.
 
-    Deprecated: use multi-role instead.
+    Deprecated: use multi-role via AccountAttachments instead.
     """
 
     @staticmethod

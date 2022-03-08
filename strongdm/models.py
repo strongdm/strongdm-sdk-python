@@ -19,21 +19,9 @@ import collections
 
 
 class AKS:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'client_certificate',
@@ -65,17 +53,53 @@ class AKS:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.client_key = client_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AKS ' + \
@@ -128,20 +152,9 @@ class AKS:
 
 
 class AKSBasicAuth:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -171,16 +184,49 @@ class AKSBasicAuth:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
@@ -230,19 +276,9 @@ class AKSBasicAuth:
 
 
 class AKSServiceAccount:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param token: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -270,15 +306,45 @@ class AKSServiceAccount:
         token=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.token = token
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
@@ -325,19 +391,9 @@ class AKSServiceAccount:
 
 
 class AKSServiceAccountUserImpersonation:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param token: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -365,15 +421,45 @@ class AKSServiceAccountUserImpersonation:
         token=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.token = token
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccountUserImpersonation ' + \
@@ -420,21 +506,9 @@ class AKSServiceAccountUserImpersonation:
 
 
 class AKSUserImpersonation:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'client_certificate',
@@ -466,17 +540,53 @@ class AKSUserImpersonation:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.client_key = client_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AKSUserImpersonation ' + \
@@ -529,20 +639,9 @@ class AKSUserImpersonation:
 
 
 class AWS:
-    """
+    '''
 
-    :param access_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_region: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'egress_filter',
@@ -572,16 +671,49 @@ class AWS:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_region = healthcheck_region
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AWS ' + \
@@ -631,13 +763,9 @@ class AWS:
 
 
 class AWSStore:
-    """
+    '''
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param region: 
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'id',
         'name',
@@ -653,9 +781,21 @@ class AWSStore:
         tags=None,
     ):
         self.id = id
+        '''
+         Unique identifier of the SecretStore.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
         self.region = region
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AWSStore ' + \
@@ -684,12 +824,9 @@ class AWSStore:
 
 
 class AccountAttachment:
-    """AccountAttachments assign an account to a role or composite role.
-
-    :param account_id: The id of the account of this AccountAttachment.
-    :param id: Unique identifier of the AccountAttachment.
-    :param role_id: The id of the attached role of this AccountAttachment.
-    """
+    '''
+     AccountAttachments assign an account to a role.
+    '''
     __slots__ = [
         'account_id',
         'id',
@@ -703,8 +840,17 @@ class AccountAttachment:
         role_id=None,
     ):
         self.account_id = account_id
+        '''
+         The id of the account of this AccountAttachment.
+        '''
         self.id = id
+        '''
+         Unique identifier of the AccountAttachment.
+        '''
         self.role_id = role_id
+        '''
+         The id of the attached role of this AccountAttachment.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountAttachment ' + \
@@ -730,12 +876,9 @@ class AccountAttachment:
 
 
 class AccountAttachmentCreateResponse:
-    """AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
-
-    :param account_attachment: The created AccountAttachment.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
+    '''
     __slots__ = [
         'account_attachment',
         'meta',
@@ -749,8 +892,17 @@ class AccountAttachmentCreateResponse:
         rate_limit=None,
     ):
         self.account_attachment = account_attachment
+        '''
+         The created AccountAttachment.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountAttachmentCreateResponse ' + \
@@ -776,11 +928,9 @@ class AccountAttachmentCreateResponse:
 
 
 class AccountAttachmentDeleteResponse:
-    """AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -792,7 +942,13 @@ class AccountAttachmentDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountAttachmentDeleteResponse ' + \
@@ -815,12 +971,9 @@ class AccountAttachmentDeleteResponse:
 
 
 class AccountAttachmentGetResponse:
-    """AccountAttachmentGetResponse returns a requested AccountAttachment.
-
-    :param account_attachment: The requested AccountAttachment.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountAttachmentGetResponse returns a requested AccountAttachment.
+    '''
     __slots__ = [
         'account_attachment',
         'meta',
@@ -834,8 +987,17 @@ class AccountAttachmentGetResponse:
         rate_limit=None,
     ):
         self.account_attachment = account_attachment
+        '''
+         The requested AccountAttachment.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountAttachmentGetResponse ' + \
@@ -861,14 +1023,9 @@ class AccountAttachmentGetResponse:
 
 
 class AccountCreateResponse:
-    """AccountCreateResponse reports how the Accounts were created in the system.
-
-    :param account: The created Account.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param token: The auth token generated for the Account. The Account will use this token to
- authenticate with the strongDM API.
-    """
+    '''
+     AccountCreateResponse reports how the Accounts were created in the system.
+    '''
     __slots__ = [
         'account',
         'meta',
@@ -884,9 +1041,22 @@ class AccountCreateResponse:
         token=None,
     ):
         self.account = account
+        '''
+         The created Account.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.token = token
+        '''
+         The auth token generated for the Account. The Account will use this token to
+         authenticate with the strongDM API.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountCreateResponse ' + \
@@ -915,11 +1085,9 @@ class AccountCreateResponse:
 
 
 class AccountDeleteResponse:
-    """AccountDeleteResponse returns information about a Account that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountDeleteResponse returns information about a Account that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -931,7 +1099,13 @@ class AccountDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountDeleteResponse ' + \
@@ -954,12 +1128,9 @@ class AccountDeleteResponse:
 
 
 class AccountGetResponse:
-    """AccountGetResponse returns a requested Account.
-
-    :param account: The requested Account.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountGetResponse returns a requested Account.
+    '''
     __slots__ = [
         'account',
         'meta',
@@ -973,8 +1144,17 @@ class AccountGetResponse:
         rate_limit=None,
     ):
         self.account = account
+        '''
+         The requested Account.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountGetResponse ' + \
@@ -1000,16 +1180,9 @@ class AccountGetResponse:
 
 
 class AccountGrant:
-    """AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
-
-    :param account_id: The id of the attached role of this AccountGrant.
-    :param id: Unique identifier of the AccountGrant.
-    :param resource_id: The id of the composite role of this AccountGrant.
-    :param start_from: The timestamp when the resource will be granted. Optional. Both start_at
- and end_at must be defined together, or not defined at all.
-    :param valid_until: The timestamp when the resource grant will expire. Optional. Both
- start_at and end_at must be defined together, or not defined at all.
-    """
+    '''
+     AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
+    '''
     __slots__ = [
         'account_id',
         'id',
@@ -1027,10 +1200,27 @@ class AccountGrant:
         valid_until=None,
     ):
         self.account_id = account_id
+        '''
+         The id of the attached role of this AccountGrant.
+        '''
         self.id = id
+        '''
+         Unique identifier of the AccountGrant.
+        '''
         self.resource_id = resource_id
+        '''
+         The id of the composite role of this AccountGrant.
+        '''
         self.start_from = start_from
+        '''
+         The timestamp when the resource will be granted. Optional. Both start_at
+         and end_at must be defined together, or not defined at all.
+        '''
         self.valid_until = valid_until
+        '''
+         The timestamp when the resource grant will expire. Optional. Both
+         start_at and end_at must be defined together, or not defined at all.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
@@ -1062,12 +1252,9 @@ class AccountGrant:
 
 
 class AccountGrantCreateResponse:
-    """AccountGrantCreateResponse reports how the AccountGrants were created in the system.
-
-    :param account_grant: The created AccountGrant.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountGrantCreateResponse reports how the AccountGrants were created in the system.
+    '''
     __slots__ = [
         'account_grant',
         'meta',
@@ -1081,8 +1268,17 @@ class AccountGrantCreateResponse:
         rate_limit=None,
     ):
         self.account_grant = account_grant
+        '''
+         The created AccountGrant.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountGrantCreateResponse ' + \
@@ -1108,11 +1304,9 @@ class AccountGrantCreateResponse:
 
 
 class AccountGrantDeleteResponse:
-    """AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -1124,7 +1318,13 @@ class AccountGrantDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountGrantDeleteResponse ' + \
@@ -1147,12 +1347,9 @@ class AccountGrantDeleteResponse:
 
 
 class AccountGrantGetResponse:
-    """AccountGrantGetResponse returns a requested AccountGrant.
-
-    :param account_grant: The requested AccountGrant.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountGrantGetResponse returns a requested AccountGrant.
+    '''
     __slots__ = [
         'account_grant',
         'meta',
@@ -1166,8 +1363,17 @@ class AccountGrantGetResponse:
         rate_limit=None,
     ):
         self.account_grant = account_grant
+        '''
+         The requested AccountGrant.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountGrantGetResponse ' + \
@@ -1193,13 +1399,10 @@ class AccountGrantGetResponse:
 
 
 class AccountUpdateResponse:
-    """AccountUpdateResponse returns the fields of a Account after it has been updated by
- a AccountUpdateRequest.
-
-    :param account: The updated Account.
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     AccountUpdateResponse returns the fields of a Account after it has been updated by
+     a AccountUpdateRequest.
+    '''
     __slots__ = [
         'account',
         'meta',
@@ -1213,8 +1416,17 @@ class AccountUpdateResponse:
         rate_limit=None,
     ):
         self.account = account
+        '''
+         The updated Account.
+        '''
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.AccountUpdateResponse ' + \
@@ -1240,24 +1452,9 @@ class AccountUpdateResponse:
 
 
 class AmazonEKS:
-    """
+    '''
 
-    :param access_key: 
-    :param certificate_authority: 
-    :param cluster_name: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'certificate_authority',
@@ -1295,20 +1492,65 @@ class AmazonEKS:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.cluster_name = cluster_name
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
@@ -1370,24 +1612,9 @@ class AmazonEKS:
 
 
 class AmazonEKSUserImpersonation:
-    """
+    '''
 
-    :param access_key: 
-    :param certificate_authority: 
-    :param cluster_name: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'certificate_authority',
@@ -1425,20 +1652,65 @@ class AmazonEKSUserImpersonation:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.cluster_name = cluster_name
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AmazonEKSUserImpersonation ' + \
@@ -1500,22 +1772,9 @@ class AmazonEKSUserImpersonation:
 
 
 class AmazonES:
-    """
+    '''
 
-    :param access_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port_override: 
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'egress_filter',
@@ -1549,18 +1808,57 @@ class AmazonES:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.AmazonES ' + \
@@ -1616,21 +1914,9 @@ class AmazonES:
 
 
 class AmazonMQAMQP091:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -1662,17 +1948,53 @@ class AmazonMQAMQP091:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AmazonMQAMQP091 ' + \
@@ -1725,22 +2047,9 @@ class AmazonMQAMQP091:
 
 
 class Athena:
-    """
+    '''
 
-    :param access_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param output: 
-    :param port_override: 
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'egress_filter',
@@ -1774,18 +2083,57 @@ class Athena:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.output = output
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Athena ' + \
@@ -1841,21 +2189,9 @@ class Athena:
 
 
 class AuroraMysql:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -1887,17 +2223,53 @@ class AuroraMysql:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
@@ -1950,22 +2322,9 @@ class AuroraMysql:
 
 
 class AuroraPostgres:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -1999,18 +2358,57 @@ class AuroraPostgres:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
@@ -2066,18 +2464,9 @@ class AuroraPostgres:
 
 
 class Azure:
-    """
+    '''
 
-    :param app_id: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tenant_id: 
-    """
+    '''
     __slots__ = [
         'app_id',
         'egress_filter',
@@ -2103,14 +2492,41 @@ class Azure:
         tenant_id=None,
     ):
         self.app_id = app_id
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tenant_id = tenant_id
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Azure ' + \
@@ -2154,18 +2570,9 @@ class Azure:
 
 
 class AzureCertificate:
-    """
+    '''
 
-    :param app_id: 
-    :param client_certificate: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tenant_id: 
-    """
+    '''
     __slots__ = [
         'app_id',
         'client_certificate',
@@ -2191,14 +2598,41 @@ class AzureCertificate:
         tenant_id=None,
     ):
         self.app_id = app_id
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tenant_id = tenant_id
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AzureCertificate ' + \
@@ -2242,22 +2676,9 @@ class AzureCertificate:
 
 
 class AzurePostgres:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -2291,18 +2712,57 @@ class AzurePostgres:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AzurePostgres ' + \
@@ -2358,13 +2818,9 @@ class AzurePostgres:
 
 
 class AzureStore:
-    """
+    '''
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param tags: Tags is a map of key, value pairs.
-    :param vault_uri: 
-    """
+    '''
     __slots__ = [
         'id',
         'name',
@@ -2380,9 +2836,21 @@ class AzureStore:
         vault_uri=None,
     ):
         self.id = id
+        '''
+         Unique identifier of the SecretStore.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.vault_uri = vault_uri
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.AzureStore ' + \
@@ -2411,20 +2879,9 @@ class AzureStore:
 
 
 class BigQuery:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port_override: 
-    :param private_key: 
-    :param project: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'endpoint',
@@ -2454,16 +2911,49 @@ class BigQuery:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.private_key = private_key
+        '''
+
+        '''
         self.project = project
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
@@ -2513,21 +3003,9 @@ class BigQuery:
 
 
 class Cassandra:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -2559,17 +3037,53 @@ class Cassandra:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
@@ -2622,22 +3136,9 @@ class Cassandra:
 
 
 class Citus:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -2671,18 +3172,57 @@ class Citus:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Citus ' + \
@@ -2738,21 +3278,9 @@ class Citus:
 
 
 class Clustrix:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -2784,17 +3312,53 @@ class Clustrix:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
@@ -2847,22 +3411,9 @@ class Clustrix:
 
 
 class Cockroach:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -2896,18 +3447,57 @@ class Cockroach:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
@@ -2963,14 +3553,10 @@ class Cockroach:
 
 
 class ControlPanelGetSSHCAPublicKeyResponse:
-    """ControlPanelGetSSHCAPublicKeyResponse represents a request for an
- organization's SSH Certificate Authority public key.
-
-    :param meta: Reserved for future use.
-    :param public_key: The public key of the SSH Certificate Authority, in OpenSSH RSA public
- key format.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     ControlPanelGetSSHCAPublicKeyResponse represents a request for an
+     organization's SSH Certificate Authority public key.
+    '''
     __slots__ = [
         'meta',
         'public_key',
@@ -2984,8 +3570,18 @@ class ControlPanelGetSSHCAPublicKeyResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.public_key = public_key
+        '''
+         The public key of the SSH Certificate Authority, in OpenSSH RSA public
+         key format.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.ControlPanelGetSSHCAPublicKeyResponse ' + \
@@ -3011,12 +3607,9 @@ class ControlPanelGetSSHCAPublicKeyResponse:
 
 
 class ControlPanelVerifyJWTResponse:
-    """ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param valid: Reports if the given token is valid.
-    """
+    '''
+     ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -3030,8 +3623,17 @@ class ControlPanelVerifyJWTResponse:
         valid=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.valid = valid
+        '''
+         Reports if the given token is valid.
+        '''
 
     def __repr__(self):
         return '<sdm.ControlPanelVerifyJWTResponse ' + \
@@ -3057,7 +3659,9 @@ class ControlPanelVerifyJWTResponse:
 
 
 class CreateResponseMetadata:
-    """CreateResponseMetadata is reserved for future use."""
+    '''
+     CreateResponseMetadata is reserved for future use.
+    '''
     __slots__ = []
 
     def __init__(self, ):
@@ -3076,21 +3680,9 @@ class CreateResponseMetadata:
 
 
 class DB2I:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -3122,17 +3714,53 @@ class DB2I:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.DB2I ' + \
@@ -3185,21 +3813,9 @@ class DB2I:
 
 
 class DB2LUW:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -3231,17 +3847,53 @@ class DB2LUW:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.DB2LUW ' + \
@@ -3294,7 +3946,9 @@ class DB2LUW:
 
 
 class DeleteResponseMetadata:
-    """DeleteResponseMetadata is reserved for future use."""
+    '''
+     DeleteResponseMetadata is reserved for future use.
+    '''
     __slots__ = []
 
     def __init__(self, ):
@@ -3313,21 +3967,9 @@ class DeleteResponseMetadata:
 
 
 class DocumentDBHost:
-    """
+    '''
 
-    :param auth_database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'egress_filter',
@@ -3359,17 +4001,53 @@ class DocumentDBHost:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBHost ' + \
@@ -3422,22 +4100,9 @@ class DocumentDBHost:
 
 
 class DocumentDBReplicaSet:
-    """
+    '''
 
-    :param auth_database: 
-    :param connect_to_replica: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: Hostname must contain the hostname/port pairs of all instances in the replica set separated by commas.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port_override: 
-    :param replica_set: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'connect_to_replica',
@@ -3471,18 +4136,57 @@ class DocumentDBReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.connect_to_replica = connect_to_replica
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+         Hostname must contain the hostname/port pairs of all instances in the replica set separated by commas.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.replica_set = replica_set
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBReplicaSet ' + \
@@ -3538,20 +4242,9 @@ class DocumentDBReplicaSet:
 
 
 class Druid:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -3581,16 +4274,49 @@ class Druid:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Druid ' + \
@@ -3640,22 +4366,9 @@ class Druid:
 
 
 class DynamoDB:
-    """
+    '''
 
-    :param access_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port_override: 
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'egress_filter',
@@ -3689,18 +4402,57 @@ class DynamoDB:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
@@ -3756,21 +4508,9 @@ class DynamoDB:
 
 
 class Elastic:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -3802,17 +4542,53 @@ class Elastic:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
@@ -3865,20 +4641,9 @@ class Elastic:
 
 
 class ElasticacheRedis:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -3908,16 +4673,49 @@ class ElasticacheRedis:
         tls_required=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
@@ -3967,17 +4765,9 @@ class ElasticacheRedis:
 
 
 class GCP:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param keyfile: 
-    :param name: Unique human-readable name of the Resource.
-    :param scopes: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -4001,13 +4791,37 @@ class GCP:
         tags=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.keyfile = keyfile
+        '''
+
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.scopes = scopes
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.GCP ' + \
@@ -4048,19 +4862,9 @@ class GCP:
 
 
 class Gateway:
-    """Gateway represents a StrongDM CLI installation running in gateway mode.
-
-    :param bind_address: The hostname/port tuple which the gateway daemon will bind to.
- If not provided on create, set to "0.0.0.0:<listen_address_port>".
-    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
- gateways.
-    :param id: Unique identifier of the Gateway.
-    :param listen_address: The public hostname/port tuple at which the gateway will be accessible to clients.
-    :param name: Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
-    :param state: The current state of the gateway. One of: "new", "verifying_restart",
- "restarting", "started", "stopped", "dead", "unknown"
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
+     Gateway represents a StrongDM CLI installation running in gateway mode.
+    '''
     __slots__ = [
         'bind_address',
         'gateway_filter',
@@ -4082,12 +4886,36 @@ class Gateway:
         tags=None,
     ):
         self.bind_address = bind_address
+        '''
+         The hostname/port tuple which the gateway daemon will bind to.
+         If not provided on create, set to "0.0.0.0:listen_address_port".
+        '''
         self.gateway_filter = gateway_filter
+        '''
+         GatewayFilter can be used to restrict the peering between relays and
+         gateways.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Gateway.
+        '''
         self.listen_address = listen_address
+        '''
+         The public hostname/port tuple at which the gateway will be accessible to clients.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
+        '''
         self.state = state
+        '''
+         The current state of the gateway. One of: "new", "verifying_restart",
+         "restarting", "started", "stopped", "dead", "unknown"
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
@@ -4125,7 +4953,9 @@ class Gateway:
 
 
 class GetResponseMetadata:
-    """GetResponseMetadata is reserved for future use."""
+    '''
+     GetResponseMetadata is reserved for future use.
+    '''
     __slots__ = []
 
     def __init__(self, ):
@@ -4144,19 +4974,9 @@ class GetResponseMetadata:
 
 
 class GoogleGKE:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param service_account_key: 
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'egress_filter',
@@ -4184,15 +5004,45 @@ class GoogleGKE:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.service_account_key = service_account_key
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
@@ -4239,19 +5089,9 @@ class GoogleGKE:
 
 
 class GoogleGKEUserImpersonation:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param service_account_key: 
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'egress_filter',
@@ -4279,15 +5119,45 @@ class GoogleGKEUserImpersonation:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.service_account_key = service_account_key
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.GoogleGKEUserImpersonation ' + \
@@ -4334,22 +5204,9 @@ class GoogleGKEUserImpersonation:
 
 
 class Greenplum:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -4383,18 +5240,57 @@ class Greenplum:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
@@ -4450,21 +5346,9 @@ class Greenplum:
 
 
 class HTTPAuth:
-    """
+    '''
 
-    :param auth_header: 
-    :param default_path: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param headers_blacklist: 
-    :param healthcheck_path: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param subdomain: 
-    :param tags: Tags is a map of key, value pairs.
-    :param url: 
-    """
+    '''
     __slots__ = [
         'auth_header',
         'default_path',
@@ -4496,17 +5380,53 @@ class HTTPAuth:
         url=None,
     ):
         self.auth_header = auth_header
+        '''
+
+        '''
         self.default_path = default_path
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.headers_blacklist = headers_blacklist
+        '''
+
+        '''
         self.healthcheck_path = healthcheck_path
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.subdomain = subdomain
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.url = url
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
@@ -4559,22 +5479,9 @@ class HTTPAuth:
 
 
 class HTTPBasicAuth:
-    """
+    '''
 
-    :param default_path: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param headers_blacklist: 
-    :param healthcheck_path: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param subdomain: 
-    :param tags: Tags is a map of key, value pairs.
-    :param url: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'default_path',
         'egress_filter',
@@ -4608,18 +5515,57 @@ class HTTPBasicAuth:
         username=None,
     ):
         self.default_path = default_path
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.headers_blacklist = headers_blacklist
+        '''
+
+        '''
         self.healthcheck_path = healthcheck_path
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.subdomain = subdomain
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.url = url
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
@@ -4675,20 +5621,9 @@ class HTTPBasicAuth:
 
 
 class HTTPNoAuth:
-    """
+    '''
 
-    :param default_path: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param headers_blacklist: 
-    :param healthcheck_path: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param subdomain: 
-    :param tags: Tags is a map of key, value pairs.
-    :param url: 
-    """
+    '''
     __slots__ = [
         'default_path',
         'egress_filter',
@@ -4718,16 +5653,49 @@ class HTTPNoAuth:
         url=None,
     ):
         self.default_path = default_path
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.headers_blacklist = headers_blacklist
+        '''
+
+        '''
         self.healthcheck_path = healthcheck_path
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.subdomain = subdomain
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.url = url
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
@@ -4777,21 +5745,9 @@ class HTTPNoAuth:
 
 
 class Kubernetes:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'client_certificate',
@@ -4823,17 +5779,53 @@ class Kubernetes:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.client_key = client_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
@@ -4886,20 +5878,9 @@ class Kubernetes:
 
 
 class KubernetesBasicAuth:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -4929,16 +5910,49 @@ class KubernetesBasicAuth:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -4988,19 +6002,9 @@ class KubernetesBasicAuth:
 
 
 class KubernetesServiceAccount:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param token: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -5028,15 +6032,45 @@ class KubernetesServiceAccount:
         token=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.token = token
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
@@ -5083,19 +6117,9 @@ class KubernetesServiceAccount:
 
 
 class KubernetesServiceAccountUserImpersonation:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param token: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthcheck_namespace',
@@ -5123,15 +6147,45 @@ class KubernetesServiceAccountUserImpersonation:
         token=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.token = token
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
@@ -5178,21 +6232,9 @@ class KubernetesServiceAccountUserImpersonation:
 
 
 class KubernetesUserImpersonation:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthcheck_namespace: The path used to check the health of your connection.  Defaults to `default`.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'client_certificate',
@@ -5224,17 +6266,53 @@ class KubernetesUserImpersonation:
         tags=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.client_key = client_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthcheck_namespace = healthcheck_namespace
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesUserImpersonation ' + \
@@ -5287,26 +6365,9 @@ class KubernetesUserImpersonation:
 
 
 class MTLSPostgres:
-    """
+    '''
 
-    :param certificate_authority: 
-    :param client_certificate: 
-    :param client_key: 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param server_name: 
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'certificate_authority',
         'client_certificate',
@@ -5348,22 +6409,73 @@ class MTLSPostgres:
         username=None,
     ):
         self.certificate_authority = certificate_authority
+        '''
+
+        '''
         self.client_certificate = client_certificate
+        '''
+
+        '''
         self.client_key = client_key
+        '''
+
+        '''
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.server_name = server_name
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MTLSPostgres ' + \
@@ -5431,21 +6543,9 @@ class MTLSPostgres:
 
 
 class Maria:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -5477,17 +6577,53 @@ class Maria:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Maria ' + \
@@ -5540,18 +6676,9 @@ class Maria:
 
 
 class Memcached:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -5577,14 +6704,41 @@ class Memcached:
         tags=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
@@ -5628,21 +6782,9 @@ class Memcached:
 
 
 class Memsql:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -5674,17 +6816,53 @@ class Memsql:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
@@ -5737,22 +6915,9 @@ class Memsql:
 
 
 class MongoHost:
-    """
+    '''
 
-    :param auth_database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'egress_filter',
@@ -5786,18 +6951,57 @@ class MongoHost:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
@@ -5853,23 +7057,9 @@ class MongoHost:
 
 
 class MongoLegacyHost:
-    """
+    '''
 
-    :param auth_database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param replica_set: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'egress_filter',
@@ -5905,19 +7095,61 @@ class MongoLegacyHost:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.replica_set = replica_set
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
@@ -5976,24 +7208,9 @@ class MongoLegacyHost:
 
 
 class MongoLegacyReplicaset:
-    """
+    '''
 
-    :param auth_database: 
-    :param connect_to_replica: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param replica_set: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'connect_to_replica',
@@ -6031,20 +7248,65 @@ class MongoLegacyReplicaset:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.connect_to_replica = connect_to_replica
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.replica_set = replica_set
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
@@ -6106,24 +7368,9 @@ class MongoLegacyReplicaset:
 
 
 class MongoReplicaSet:
-    """
+    '''
 
-    :param auth_database: 
-    :param connect_to_replica: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param replica_set: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'connect_to_replica',
@@ -6161,20 +7408,65 @@ class MongoReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.connect_to_replica = connect_to_replica
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.replica_set = replica_set
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
@@ -6236,21 +7528,9 @@ class MongoReplicaSet:
 
 
 class MongoShardedCluster:
-    """
+    '''
 
-    :param auth_database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'auth_database',
         'egress_filter',
@@ -6282,17 +7562,53 @@ class MongoShardedCluster:
         username=None,
     ):
         self.auth_database = auth_database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.MongoShardedCluster ' + \
@@ -6345,21 +7661,9 @@ class MongoShardedCluster:
 
 
 class Mysql:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -6391,17 +7695,53 @@ class Mysql:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
@@ -6454,18 +7794,9 @@ class Mysql:
 
 
 class Neptune:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'endpoint',
@@ -6491,14 +7822,41 @@ class Neptune:
         tags=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Neptune ' + \
@@ -6542,23 +7900,9 @@ class Neptune:
 
 
 class NeptuneIAM:
-    """
+    '''
 
-    :param access_key: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param endpoint: 
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_override: 
-    :param region: 
-    :param role_arn: 
-    :param role_external_id: 
-    :param secret_access_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'access_key',
         'egress_filter',
@@ -6594,19 +7938,61 @@ class NeptuneIAM:
         tags=None,
     ):
         self.access_key = access_key
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.endpoint = endpoint
+        '''
+
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.region = region
+        '''
+
+        '''
         self.role_arn = role_arn
+        '''
+
+        '''
         self.role_external_id = role_external_id
+        '''
+
+        '''
         self.secret_access_key = secret_access_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.NeptuneIAM ' + \
@@ -6665,14 +8051,9 @@ class NeptuneIAM:
 
 
 class NodeCreateResponse:
-    """NodeCreateResponse reports how the Nodes were created in the system.
-
-    :param meta: Reserved for future use.
-    :param node: The created Node.
-    :param rate_limit: Rate limit information.
-    :param token: The auth token generated for the Node. The Node will use this token to
- authenticate with the strongDM API.
-    """
+    '''
+     NodeCreateResponse reports how the Nodes were created in the system.
+    '''
     __slots__ = [
         'meta',
         'node',
@@ -6688,9 +8069,22 @@ class NodeCreateResponse:
         token=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.node = node
+        '''
+         The created Node.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.token = token
+        '''
+         The auth token generated for the Node. The Node will use this token to
+         authenticate with the strongDM API.
+        '''
 
     def __repr__(self):
         return '<sdm.NodeCreateResponse ' + \
@@ -6719,11 +8113,9 @@ class NodeCreateResponse:
 
 
 class NodeDeleteResponse:
-    """NodeDeleteResponse returns information about a Node that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     NodeDeleteResponse returns information about a Node that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -6735,7 +8127,13 @@ class NodeDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.NodeDeleteResponse ' + \
@@ -6758,12 +8156,9 @@ class NodeDeleteResponse:
 
 
 class NodeGetResponse:
-    """NodeGetResponse returns a requested Node.
-
-    :param meta: Reserved for future use.
-    :param node: The requested Node.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     NodeGetResponse returns a requested Node.
+    '''
     __slots__ = [
         'meta',
         'node',
@@ -6777,8 +8172,17 @@ class NodeGetResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.node = node
+        '''
+         The requested Node.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.NodeGetResponse ' + \
@@ -6804,13 +8208,10 @@ class NodeGetResponse:
 
 
 class NodeUpdateResponse:
-    """NodeUpdateResponse returns the fields of a Node after it has been updated by
- a NodeUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param node: The updated Node.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     NodeUpdateResponse returns the fields of a Node after it has been updated by
+     a NodeUpdateRequest.
+    '''
     __slots__ = [
         'meta',
         'node',
@@ -6824,8 +8225,17 @@ class NodeUpdateResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.node = node
+        '''
+         The updated Node.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.NodeUpdateResponse ' + \
@@ -6851,22 +8261,9 @@ class NodeUpdateResponse:
 
 
 class Oracle:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -6900,18 +8297,57 @@ class Oracle:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
@@ -6967,22 +8403,9 @@ class Oracle:
 
 
 class Postgres:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -7016,18 +8439,57 @@ class Postgres:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
@@ -7083,22 +8545,9 @@ class Postgres:
 
 
 class Presto:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -7132,18 +8581,57 @@ class Presto:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Presto ' + \
@@ -7199,21 +8687,9 @@ class Presto:
 
 
 class RDP:
-    """
+    '''
 
-    :param downgrade_nla_connections: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'downgrade_nla_connections',
         'egress_filter',
@@ -7245,17 +8721,53 @@ class RDP:
         username=None,
     ):
         self.downgrade_nla_connections = downgrade_nla_connections
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.RDP ' + \
@@ -7308,21 +8820,9 @@ class RDP:
 
 
 class RabbitMQAMQP091:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param tls_required: 
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -7354,17 +8854,53 @@ class RabbitMQAMQP091:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.tls_required = tls_required
+        '''
+
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.RabbitMQAMQP091 ' + \
@@ -7417,16 +8953,10 @@ class RabbitMQAMQP091:
 
 
 class RateLimitMetadata:
-    """RateLimitMetadata contains information about remaining requests avaialable
- to the user over some timeframe.
-
-    :param bucket: The bucket this user/token is associated with, which may be shared between
- multiple users/tokens.
-    :param limit: How many total requests the user/token is authorized to make before being
- rate limited.
-    :param remaining: How many remaining requests out of the limit are still avaialable.
-    :param reset_at: The time when remaining will be reset to limit.
-    """
+    '''
+     RateLimitMetadata contains information about remaining requests avaialable
+     to the user over some timeframe.
+    '''
     __slots__ = [
         'bucket',
         'limit',
@@ -7442,9 +8972,23 @@ class RateLimitMetadata:
         reset_at=None,
     ):
         self.bucket = bucket
+        '''
+         The bucket this user/token is associated with, which may be shared between
+         multiple users/tokens.
+        '''
         self.limit = limit
+        '''
+         How many total requests the user/token is authorized to make before being
+         rate limited.
+        '''
         self.remaining = remaining
+        '''
+         How many remaining requests out of the limit are still avaialable.
+        '''
         self.reset_at = reset_at
+        '''
+         The time when remaining will be reset to limit.
+        '''
 
     def __repr__(self):
         return '<sdm.RateLimitMetadata ' + \
@@ -7473,18 +9017,9 @@ class RateLimitMetadata:
 
 
 class RawTCP:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -7510,14 +9045,41 @@ class RawTCP:
         tags=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.RawTCP ' + \
@@ -7561,19 +9123,9 @@ class RawTCP:
 
 
 class Redis:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -7601,15 +9153,45 @@ class Redis:
         tags=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Redis ' + \
@@ -7656,22 +9238,9 @@ class Redis:
 
 
 class Redshift:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -7705,18 +9274,57 @@ class Redshift:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
@@ -7772,17 +9380,9 @@ class Redshift:
 
 
 class Relay:
-    """Relay represents a StrongDM CLI installation running in relay mode.
-
-    :param gateway_filter: GatewayFilter can be used to restrict the peering between relays and
- gateways.
-    :param id: Unique identifier of the Relay.
-    :param name: Unique human-readable name of the Relay. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
-    :param state: The current state of the relay. One of: "new", "verifying_restart",
- "awaiting_restart", "restarting", "started", "stopped", "dead",
- "unknown".
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
+     Relay represents a StrongDM CLI installation running in relay mode.
+    '''
     __slots__ = [
         'gateway_filter',
         'id',
@@ -7800,10 +9400,28 @@ class Relay:
         tags=None,
     ):
         self.gateway_filter = gateway_filter
+        '''
+         GatewayFilter can be used to restrict the peering between relays and
+         gateways.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Relay.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Relay. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
+        '''
         self.state = state
+        '''
+         The current state of the relay. One of: "new", "verifying_restart",
+         "awaiting_restart", "restarting", "started", "stopped", "dead",
+         "unknown".
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Relay ' + \
@@ -7835,12 +9453,9 @@ class Relay:
 
 
 class ResourceCreateResponse:
-    """ResourceCreateResponse reports how the Resources were created in the system.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param resource: The created Resource.
-    """
+    '''
+     ResourceCreateResponse reports how the Resources were created in the system.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -7854,8 +9469,17 @@ class ResourceCreateResponse:
         resource=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.resource = resource
+        '''
+         The created Resource.
+        '''
 
     def __repr__(self):
         return '<sdm.ResourceCreateResponse ' + \
@@ -7881,11 +9505,9 @@ class ResourceCreateResponse:
 
 
 class ResourceDeleteResponse:
-    """ResourceDeleteResponse returns information about a Resource that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     ResourceDeleteResponse returns information about a Resource that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -7897,7 +9519,13 @@ class ResourceDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.ResourceDeleteResponse ' + \
@@ -7920,12 +9548,9 @@ class ResourceDeleteResponse:
 
 
 class ResourceGetResponse:
-    """ResourceGetResponse returns a requested Resource.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param resource: The requested Resource.
-    """
+    '''
+     ResourceGetResponse returns a requested Resource.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -7939,8 +9564,17 @@ class ResourceGetResponse:
         resource=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.resource = resource
+        '''
+         The requested Resource.
+        '''
 
     def __repr__(self):
         return '<sdm.ResourceGetResponse ' + \
@@ -7966,13 +9600,10 @@ class ResourceGetResponse:
 
 
 class ResourceUpdateResponse:
-    """ResourceUpdateResponse returns the fields of a Resource after it has been updated by
- a ResourceUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param resource: The updated Resource.
-    """
+    '''
+     ResourceUpdateResponse returns the fields of a Resource after it has been updated by
+     a ResourceUpdateRequest.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -7986,8 +9617,17 @@ class ResourceUpdateResponse:
         resource=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.resource = resource
+        '''
+         The updated Resource.
+        '''
 
     def __repr__(self):
         return '<sdm.ResourceUpdateResponse ' + \
@@ -8013,16 +9653,11 @@ class ResourceUpdateResponse:
 
 
 class Role:
-    """A Role is a collection of access grants, and typically corresponds to a team, Active Directory OU, or other organizational unit. Users are granted access to resources by assigning them to roles.
-
-    :param access_rules: AccessRules is a list of access rules defining the resources this Role has access to.
-    :param composite: Composite is true if the Role is a composite role.
-
- Deprecated: composite roles are deprecated, use multi-role instead.
-    :param id: Unique identifier of the Role.
-    :param name: Unique human-readable name of the Role.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
+     A Role has a list of access rules which determine which Resources the members
+     of the Role have access to. An Account can be a member of multiple Roles via
+     AccountAttachments.
+    '''
     __slots__ = [
         'access_rules',
         'composite',
@@ -8040,10 +9675,28 @@ class Role:
         tags=None,
     ):
         self.access_rules = access_rules
+        '''
+         AccessRules is a list of access rules defining the resources this Role has access to.
+        '''
         self.composite = composite
+        '''
+         Composite is true if the Role is a composite role.
+         
+         Deprecated: composite roles are deprecated, use multi-role via
+         AccountAttachments instead.
+        '''
         self.id = id
+        '''
+         Unique identifier of the Role.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Role.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Role ' + \
@@ -8075,14 +9728,11 @@ class Role:
 
 
 class RoleAttachment:
-    """A RoleAttachment assigns a role to a composite role.
- 
- Deprecated: use multi-role instead.
-
-    :param attached_role_id: The id of the attached role of this RoleAttachment.
-    :param composite_role_id: The id of the composite role of this RoleAttachment.
-    :param id: Unique identifier of the RoleAttachment.
-    """
+    '''
+     A RoleAttachment assigns a role to a composite role.
+     
+     Deprecated: use multi-role via AccountAttachments instead.
+    '''
     __slots__ = [
         'attached_role_id',
         'composite_role_id',
@@ -8096,8 +9746,17 @@ class RoleAttachment:
         id=None,
     ):
         self.attached_role_id = attached_role_id
+        '''
+         The id of the attached role of this RoleAttachment.
+        '''
         self.composite_role_id = composite_role_id
+        '''
+         The id of the composite role of this RoleAttachment.
+        '''
         self.id = id
+        '''
+         Unique identifier of the RoleAttachment.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleAttachment ' + \
@@ -8123,14 +9782,11 @@ class RoleAttachment:
 
 
 class RoleAttachmentCreateResponse:
-    """RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
- 
- Deprecated: use multi-role instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role_attachment: The created RoleAttachment.
-    """
+    '''
+     RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
+     
+     Deprecated: use multi-role via AccountAttachments instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8144,8 +9800,17 @@ class RoleAttachmentCreateResponse:
         role_attachment=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role_attachment = role_attachment
+        '''
+         The created RoleAttachment.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleAttachmentCreateResponse ' + \
@@ -8171,13 +9836,11 @@ class RoleAttachmentCreateResponse:
 
 
 class RoleAttachmentDeleteResponse:
-    """RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
- 
- Deprecated: use multi-role instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
+     
+     Deprecated: use multi-role via AccountAttachments instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8189,7 +9852,13 @@ class RoleAttachmentDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleAttachmentDeleteResponse ' + \
@@ -8212,14 +9881,11 @@ class RoleAttachmentDeleteResponse:
 
 
 class RoleAttachmentGetResponse:
-    """RoleAttachmentGetResponse returns a requested RoleAttachment.
- 
- Deprecated: use multi-role instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role_attachment: The requested RoleAttachment.
-    """
+    '''
+     RoleAttachmentGetResponse returns a requested RoleAttachment.
+     
+     Deprecated: use multi-role via AccountAttachments instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8233,8 +9899,17 @@ class RoleAttachmentGetResponse:
         role_attachment=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role_attachment = role_attachment
+        '''
+         The requested RoleAttachment.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleAttachmentGetResponse ' + \
@@ -8260,13 +9935,10 @@ class RoleAttachmentGetResponse:
 
 
 class RoleCreateResponse:
-    """RoleCreateResponse reports how the Roles were created in the system. It can
- communicate partial successes or failures.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role: The created Role.
-    """
+    '''
+     RoleCreateResponse reports how the Roles were created in the system. It can
+     communicate partial successes or failures.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8280,8 +9952,17 @@ class RoleCreateResponse:
         role=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role = role
+        '''
+         The created Role.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleCreateResponse ' + \
@@ -8307,11 +9988,9 @@ class RoleCreateResponse:
 
 
 class RoleDeleteResponse:
-    """RoleDeleteResponse returns information about a Role that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     RoleDeleteResponse returns information about a Role that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8323,7 +10002,13 @@ class RoleDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleDeleteResponse ' + \
@@ -8346,12 +10031,9 @@ class RoleDeleteResponse:
 
 
 class RoleGetResponse:
-    """RoleGetResponse returns a requested Role.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role: The requested Role.
-    """
+    '''
+     RoleGetResponse returns a requested Role.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8365,8 +10047,17 @@ class RoleGetResponse:
         role=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role = role
+        '''
+         The requested Role.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleGetResponse ' + \
@@ -8392,14 +10083,11 @@ class RoleGetResponse:
 
 
 class RoleGrant:
-    """A RoleGrant connects a resource to a role, granting members of the role access to that resource.
-
- Deprecated: use access rules instead.
-
-    :param id: Unique identifier of the RoleGrant.
-    :param resource_id: The id of the resource of this RoleGrant.
-    :param role_id: The id of the attached role of this RoleGrant.
-    """
+    '''
+     A RoleGrant connects a resource to a role, granting members of the role access to that resource.
+     
+     Deprecated: use Role access rules instead.
+    '''
     __slots__ = [
         'id',
         'resource_id',
@@ -8413,8 +10101,17 @@ class RoleGrant:
         role_id=None,
     ):
         self.id = id
+        '''
+         Unique identifier of the RoleGrant.
+        '''
         self.resource_id = resource_id
+        '''
+         The id of the resource of this RoleGrant.
+        '''
         self.role_id = role_id
+        '''
+         The id of the attached role of this RoleGrant.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleGrant ' + \
@@ -8440,14 +10137,11 @@ class RoleGrant:
 
 
 class RoleGrantCreateResponse:
-    """RoleGrantCreateResponse reports how the RoleGrants were created in the system.
-
- Deprecated: use access rules instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role_grant: The created RoleGrant.
-    """
+    '''
+     RoleGrantCreateResponse reports how the RoleGrants were created in the system.
+     
+     Deprecated: use Role access rules instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8461,8 +10155,17 @@ class RoleGrantCreateResponse:
         role_grant=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role_grant = role_grant
+        '''
+         The created RoleGrant.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleGrantCreateResponse ' + \
@@ -8488,13 +10191,11 @@ class RoleGrantCreateResponse:
 
 
 class RoleGrantDeleteResponse:
-    """RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
-
- Deprecated: use access rules instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
+     
+     Deprecated: use Role access rules instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8506,7 +10207,13 @@ class RoleGrantDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleGrantDeleteResponse ' + \
@@ -8529,14 +10236,11 @@ class RoleGrantDeleteResponse:
 
 
 class RoleGrantGetResponse:
-    """RoleGrantGetResponse returns a requested RoleGrant.
-
- Deprecated: use access rules instead.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role_grant: The requested RoleGrant.
-    """
+    '''
+     RoleGrantGetResponse returns a requested RoleGrant.
+     
+     Deprecated: use Role access rules instead.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8550,8 +10254,17 @@ class RoleGrantGetResponse:
         role_grant=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role_grant = role_grant
+        '''
+         The requested RoleGrant.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleGrantGetResponse ' + \
@@ -8577,13 +10290,10 @@ class RoleGrantGetResponse:
 
 
 class RoleUpdateResponse:
-    """RoleUpdateResponse returns the fields of a Role after it has been updated by
- a RoleUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param role: The updated Role.
-    """
+    '''
+     RoleUpdateResponse returns the fields of a Role after it has been updated by
+     a RoleUpdateRequest.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -8597,8 +10307,17 @@ class RoleUpdateResponse:
         role=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.role = role
+        '''
+         The updated Role.
+        '''
 
     def __repr__(self):
         return '<sdm.RoleUpdateResponse ' + \
@@ -8624,23 +10343,9 @@ class RoleUpdateResponse:
 
 
 class SQLServer:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param override_database: 
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param schema: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -8676,19 +10381,61 @@ class SQLServer:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.override_database = override_database
+        '''
+
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.schema = schema
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
@@ -8747,21 +10494,9 @@ class SQLServer:
 
 
 class SSH:
-    """
+    '''
 
-    :param allow_deprecated_key_exchanges: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_forwarding: 
-    :param public_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'egress_filter',
@@ -8793,17 +10528,53 @@ class SSH:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_forwarding = port_forwarding
+        '''
+
+        '''
         self.public_key = public_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -8858,20 +10629,9 @@ class SSH:
 
 
 class SSHCert:
-    """
+    '''
 
-    :param allow_deprecated_key_exchanges: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_forwarding: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'egress_filter',
@@ -8901,16 +10661,49 @@ class SSHCert:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_forwarding = port_forwarding
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SSHCert ' + \
@@ -8962,21 +10755,9 @@ class SSHCert:
 
 
 class SSHCustomerKey:
-    """
+    '''
 
-    :param allow_deprecated_key_exchanges: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param port: 
-    :param port_forwarding: 
-    :param private_key: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'egress_filter',
@@ -9008,17 +10789,53 @@ class SSHCustomerKey:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_forwarding = port_forwarding
+        '''
+
+        '''
         self.private_key = private_key
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SSHCustomerKey ' + \
@@ -9073,12 +10890,9 @@ class SSHCustomerKey:
 
 
 class SecretStoreCreateResponse:
-    """SecretStoreCreateResponse reports how the SecretStores were created in the system.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param secret_store: The created SecretStore.
-    """
+    '''
+     SecretStoreCreateResponse reports how the SecretStores were created in the system.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -9092,8 +10906,17 @@ class SecretStoreCreateResponse:
         secret_store=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.secret_store = secret_store
+        '''
+         The created SecretStore.
+        '''
 
     def __repr__(self):
         return '<sdm.SecretStoreCreateResponse ' + \
@@ -9119,11 +10942,9 @@ class SecretStoreCreateResponse:
 
 
 class SecretStoreDeleteResponse:
-    """SecretStoreDeleteResponse returns information about a SecretStore that was deleted.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    """
+    '''
+     SecretStoreDeleteResponse returns information about a SecretStore that was deleted.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -9135,7 +10956,13 @@ class SecretStoreDeleteResponse:
         rate_limit=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
 
     def __repr__(self):
         return '<sdm.SecretStoreDeleteResponse ' + \
@@ -9158,12 +10985,9 @@ class SecretStoreDeleteResponse:
 
 
 class SecretStoreGetResponse:
-    """SecretStoreGetResponse returns a requested SecretStore.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param secret_store: The requested SecretStore.
-    """
+    '''
+     SecretStoreGetResponse returns a requested SecretStore.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -9177,8 +11001,17 @@ class SecretStoreGetResponse:
         secret_store=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.secret_store = secret_store
+        '''
+         The requested SecretStore.
+        '''
 
     def __repr__(self):
         return '<sdm.SecretStoreGetResponse ' + \
@@ -9204,13 +11037,10 @@ class SecretStoreGetResponse:
 
 
 class SecretStoreUpdateResponse:
-    """SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
- a SecretStoreUpdateRequest.
-
-    :param meta: Reserved for future use.
-    :param rate_limit: Rate limit information.
-    :param secret_store: The updated SecretStore.
-    """
+    '''
+     SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
+     a SecretStoreUpdateRequest.
+    '''
     __slots__ = [
         'meta',
         'rate_limit',
@@ -9224,8 +11054,17 @@ class SecretStoreUpdateResponse:
         secret_store=None,
     ):
         self.meta = meta
+        '''
+         Reserved for future use.
+        '''
         self.rate_limit = rate_limit
+        '''
+         Rate limit information.
+        '''
         self.secret_store = secret_store
+        '''
+         The updated SecretStore.
+        '''
 
     def __repr__(self):
         return '<sdm.SecretStoreUpdateResponse ' + \
@@ -9251,14 +11090,10 @@ class SecretStoreUpdateResponse:
 
 
 class Service:
-    """A Service is a service account that can connect to resources they are granted
- directly, or granted via roles. Services are typically automated jobs.
-
-    :param id: Unique identifier of the Service.
-    :param name: Unique human-readable name of the Service.
-    :param suspended: The Service's suspended state.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
+     A Service is a service account that can connect to resources they are granted
+     directly, or granted via roles. Services are typically automated jobs.
+    '''
     __slots__ = [
         'id',
         'name',
@@ -9274,9 +11109,21 @@ class Service:
         tags=None,
     ):
         self.id = id
+        '''
+         Unique identifier of the Service.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Service.
+        '''
         self.suspended = suspended
+        '''
+         The Service's suspended state.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.Service ' + \
@@ -9305,21 +11152,9 @@ class Service:
 
 
 class SingleStore:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -9351,17 +11186,53 @@ class SingleStore:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SingleStore ' + \
@@ -9414,21 +11285,9 @@ class SingleStore:
 
 
 class Snowflake:
-    """
+    '''
 
-    :param database: 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port_override: 
-    :param schema: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'database',
         'egress_filter',
@@ -9460,17 +11319,53 @@ class Snowflake:
         username=None,
     ):
         self.database = database
+        '''
+
+        '''
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.schema = schema
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
@@ -9523,20 +11418,9 @@ class Snowflake:
 
 
 class Sybase:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -9566,16 +11450,49 @@ class Sybase:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
@@ -9625,20 +11542,9 @@ class Sybase:
 
 
 class SybaseIQ:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -9668,16 +11574,49 @@ class SybaseIQ:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
@@ -9727,11 +11666,9 @@ class SybaseIQ:
 
 
 class Tag:
-    """
+    '''
 
-    :param name: 
-    :param value: 
-    """
+    '''
     __slots__ = [
         'name',
         'value',
@@ -9743,7 +11680,13 @@ class Tag:
         value=None,
     ):
         self.name = name
+        '''
+
+        '''
         self.value = value
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Tag ' + \
@@ -9766,20 +11709,9 @@ class Tag:
 
 
 class Teradata:
-    """
+    '''
 
-    :param egress_filter: A filter applied to the routing logic to pin datasource to nodes.
-    :param healthy: True if the datasource is reachable and the credentials are valid.
-    :param hostname: 
-    :param id: Unique identifier of the Resource.
-    :param name: Unique human-readable name of the Resource.
-    :param password: 
-    :param port: 
-    :param port_override: 
-    :param secret_store_id: ID of the secret store containing credentials for this resource, if any.
-    :param tags: Tags is a map of key, value pairs.
-    :param username: 
-    """
+    '''
     __slots__ = [
         'egress_filter',
         'healthy',
@@ -9809,16 +11741,49 @@ class Teradata:
         username=None,
     ):
         self.egress_filter = egress_filter
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
         self.healthy = healthy
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
         self.hostname = hostname
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the Resource.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the Resource.
+        '''
         self.password = password
+        '''
+
+        '''
         self.port = port
+        '''
+
+        '''
         self.port_override = port_override
+        '''
+
+        '''
         self.secret_store_id = secret_store_id
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
         self.username = username
+        '''
+
+        '''
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
@@ -9868,7 +11833,9 @@ class Teradata:
 
 
 class UpdateResponseMetadata:
-    """UpdateResponseMetadata is reserved for future use."""
+    '''
+     UpdateResponseMetadata is reserved for future use.
+    '''
     __slots__ = []
 
     def __init__(self, ):
@@ -9887,16 +11854,10 @@ class UpdateResponseMetadata:
 
 
 class User:
-    """A User can connect to resources they are granted directly, or granted
- via roles.
-
-    :param email: The User's email address. Must be unique.
-    :param first_name: The User's first name.
-    :param id: Unique identifier of the User.
-    :param last_name: The User's last name.
-    :param suspended: The User's suspended state.
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
+     A User can connect to resources they are granted directly, or granted
+     via roles.
+    '''
     __slots__ = [
         'email',
         'first_name',
@@ -9916,11 +11877,29 @@ class User:
         tags=None,
     ):
         self.email = email
+        '''
+         The User's email address. Must be unique.
+        '''
         self.first_name = first_name
+        '''
+         The User's first name.
+        '''
         self.id = id
+        '''
+         Unique identifier of the User.
+        '''
         self.last_name = last_name
+        '''
+         The User's last name.
+        '''
         self.suspended = suspended
+        '''
+         The User's suspended state.
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.User ' + \
@@ -9955,17 +11934,9 @@ class User:
 
 
 class VaultTLSStore:
-    """
+    '''
 
-    :param ca_cert_path: 
-    :param client_cert_path: 
-    :param client_key_path: 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param namespace: 
-    :param server_address: 
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'ca_cert_path',
         'client_cert_path',
@@ -9989,13 +11960,37 @@ class VaultTLSStore:
         tags=None,
     ):
         self.ca_cert_path = ca_cert_path
+        '''
+
+        '''
         self.client_cert_path = client_cert_path
+        '''
+
+        '''
         self.client_key_path = client_key_path
+        '''
+
+        '''
         self.id = id
+        '''
+         Unique identifier of the SecretStore.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
         self.namespace = namespace
+        '''
+
+        '''
         self.server_address = server_address
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.VaultTLSStore ' + \
@@ -10036,14 +12031,9 @@ class VaultTLSStore:
 
 
 class VaultTokenStore:
-    """
+    '''
 
-    :param id: Unique identifier of the SecretStore.
-    :param name: Unique human-readable name of the SecretStore.
-    :param namespace: 
-    :param server_address: 
-    :param tags: Tags is a map of key, value pairs.
-    """
+    '''
     __slots__ = [
         'id',
         'name',
@@ -10061,10 +12051,25 @@ class VaultTokenStore:
         tags=None,
     ):
         self.id = id
+        '''
+         Unique identifier of the SecretStore.
+        '''
         self.name = name
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
         self.namespace = namespace
+        '''
+
+        '''
         self.server_address = server_address
+        '''
+
+        '''
         self.tags = tags
+        '''
+         Tags is a map of key, value pairs.
+        '''
 
     def __repr__(self):
         return '<sdm.VaultTokenStore ' + \
