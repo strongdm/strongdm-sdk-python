@@ -52,51 +52,51 @@ class AKS:
         secret_store_id=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.client_key = client_key
+        self.client_key = client_key if client_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -183,47 +183,47 @@ class AKSBasicAuth:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -305,43 +305,43 @@ class AKSServiceAccount:
         tags=None,
         token=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
 
         '''
@@ -420,43 +420,43 @@ class AKSServiceAccountUserImpersonation:
         tags=None,
         token=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
 
         '''
@@ -539,51 +539,51 @@ class AKSUserImpersonation:
         secret_store_id=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.client_key = client_key
+        self.client_key = client_key if client_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -670,47 +670,47 @@ class AWS:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_region = healthcheck_region
+        self.healthcheck_region = healthcheck_region if healthcheck_region is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -780,19 +780,19 @@ class AWSStore:
         region=None,
         tags=None,
     ):
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the SecretStore.
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -839,15 +839,15 @@ class AccountAttachment:
         id=None,
         role_id=None,
     ):
-        self.account_id = account_id
+        self.account_id = account_id if account_id is not None else ''
         '''
          The id of the account of this AccountAttachment.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the AccountAttachment.
         '''
-        self.role_id = role_id
+        self.role_id = role_id if role_id is not None else ''
         '''
          The id of the attached role of this AccountAttachment.
         '''
@@ -891,15 +891,15 @@ class AccountAttachmentCreateResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account_attachment = account_attachment
+        self.account_attachment = account_attachment if account_attachment is not None else None
         '''
          The created AccountAttachment.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -941,11 +941,11 @@ class AccountAttachmentDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -986,15 +986,15 @@ class AccountAttachmentGetResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account_attachment = account_attachment
+        self.account_attachment = account_attachment if account_attachment is not None else None
         '''
          The requested AccountAttachment.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1040,19 +1040,19 @@ class AccountCreateResponse:
         rate_limit=None,
         token=None,
     ):
-        self.account = account
+        self.account = account if account is not None else None
         '''
          The created Account.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
          The auth token generated for the Account. The Account will use this token to
          authenticate with the strongDM API.
@@ -1098,11 +1098,11 @@ class AccountDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1143,15 +1143,15 @@ class AccountGetResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account = account
+        self.account = account if account is not None else None
         '''
          The requested Account.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1199,24 +1199,24 @@ class AccountGrant:
         start_from=None,
         valid_until=None,
     ):
-        self.account_id = account_id
+        self.account_id = account_id if account_id is not None else ''
         '''
          The id of the attached role of this AccountGrant.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the AccountGrant.
         '''
-        self.resource_id = resource_id
+        self.resource_id = resource_id if resource_id is not None else ''
         '''
          The id of the composite role of this AccountGrant.
         '''
-        self.start_from = start_from
+        self.start_from = start_from if start_from is not None else None
         '''
          The timestamp when the resource will be granted. Optional. Both start_at
          and end_at must be defined together, or not defined at all.
         '''
-        self.valid_until = valid_until
+        self.valid_until = valid_until if valid_until is not None else None
         '''
          The timestamp when the resource grant will expire. Optional. Both
          start_at and end_at must be defined together, or not defined at all.
@@ -1267,15 +1267,15 @@ class AccountGrantCreateResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account_grant = account_grant
+        self.account_grant = account_grant if account_grant is not None else None
         '''
          The created AccountGrant.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1317,11 +1317,11 @@ class AccountGrantDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1362,15 +1362,15 @@ class AccountGrantGetResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account_grant = account_grant
+        self.account_grant = account_grant if account_grant is not None else None
         '''
          The requested AccountGrant.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1415,15 +1415,15 @@ class AccountUpdateResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.account = account
+        self.account = account if account is not None else None
         '''
          The updated Account.
         '''
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -1491,63 +1491,63 @@ class AmazonEKS:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.cluster_name = cluster_name
+        self.cluster_name = cluster_name if cluster_name is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -1651,63 +1651,63 @@ class AmazonEKSUserImpersonation:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.cluster_name = cluster_name
+        self.cluster_name = cluster_name if cluster_name is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -1807,55 +1807,55 @@ class AmazonES:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -1947,51 +1947,51 @@ class AmazonMQAMQP091:
         tls_required=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -2082,55 +2082,55 @@ class Athena:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.output = output
+        self.output = output if output is not None else ''
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -2222,51 +2222,51 @@ class AuroraMysql:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -2357,55 +2357,55 @@ class AuroraPostgres:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -2491,39 +2491,39 @@ class Azure:
         tags=None,
         tenant_id=None,
     ):
-        self.app_id = app_id
+        self.app_id = app_id if app_id is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tenant_id = tenant_id
+        self.tenant_id = tenant_id if tenant_id is not None else ''
         '''
 
         '''
@@ -2597,39 +2597,39 @@ class AzureCertificate:
         tags=None,
         tenant_id=None,
     ):
-        self.app_id = app_id
+        self.app_id = app_id if app_id is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tenant_id = tenant_id
+        self.tenant_id = tenant_id if tenant_id is not None else ''
         '''
 
         '''
@@ -2711,55 +2711,55 @@ class AzurePostgres:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -2835,19 +2835,19 @@ class AzureStore:
         tags=None,
         vault_uri=None,
     ):
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the SecretStore.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.vault_uri = vault_uri
+        self.vault_uri = vault_uri if vault_uri is not None else ''
         '''
 
         '''
@@ -2910,47 +2910,47 @@ class BigQuery:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.private_key = private_key
+        self.private_key = private_key if private_key is not None else ''
         '''
 
         '''
-        self.project = project
+        self.project = project if project is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3036,51 +3036,51 @@ class Cassandra:
         tls_required=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3171,55 +3171,55 @@ class Citus:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3311,51 +3311,51 @@ class Clustrix:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3446,55 +3446,55 @@ class Cockroach:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3569,16 +3569,16 @@ class ControlPanelGetSSHCAPublicKeyResponse:
         public_key=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.public_key = public_key
+        self.public_key = public_key if public_key is not None else ''
         '''
          The public key of the SSH Certificate Authority, in OpenSSH RSA public
          key format.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -3622,15 +3622,15 @@ class ControlPanelVerifyJWTResponse:
         rate_limit=None,
         valid=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.valid = valid
+        self.valid = valid if valid is not None else False
         '''
          Reports if the given token is valid.
         '''
@@ -3713,51 +3713,51 @@ class DB2I:
         tls_required=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -3846,51 +3846,51 @@ class DB2LUW:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -4000,51 +4000,51 @@ class DocumentDBHost:
         tags=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -4135,55 +4135,55 @@ class DocumentDBReplicaSet:
         tags=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.connect_to_replica = connect_to_replica
+        self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
          Hostname must contain the hostname/port pairs of all instances in the replica set separated by commas.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.replica_set = replica_set
+        self.replica_set = replica_set if replica_set is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -4273,47 +4273,47 @@ class Druid:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -4401,55 +4401,55 @@ class DynamoDB:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -4541,51 +4541,51 @@ class Elastic:
         tls_required=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -4672,47 +4672,47 @@ class ElasticacheRedis:
         tags=None,
         tls_required=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
@@ -4790,35 +4790,35 @@ class GCP:
         secret_store_id=None,
         tags=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.keyfile = keyfile
+        self.keyfile = keyfile if keyfile is not None else ''
         '''
 
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.scopes = scopes
+        self.scopes = scopes if scopes is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -4861,6 +4861,67 @@ class GCP:
         )
 
 
+class GCPStore:
+    '''
+
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'projectid',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        projectid=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.projectid = projectid if projectid is not None else ''
+        '''
+
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GCPStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'projectid: ' + repr(self.projectid) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'projectid': self.projectid,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            projectid=d.get('projectid'),
+            tags=d.get('tags'),
+        )
+
+
 class Gateway:
     '''
      Gateway represents a StrongDM CLI installation running in gateway mode.
@@ -4885,34 +4946,34 @@ class Gateway:
         state=None,
         tags=None,
     ):
-        self.bind_address = bind_address
+        self.bind_address = bind_address if bind_address is not None else ''
         '''
          The hostname/port tuple which the gateway daemon will bind to.
          If not provided on create, set to "0.0.0.0:listen_address_port".
         '''
-        self.gateway_filter = gateway_filter
+        self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
          GatewayFilter can be used to restrict the peering between relays and
          gateways.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Gateway.
         '''
-        self.listen_address = listen_address
+        self.listen_address = listen_address if listen_address is not None else ''
         '''
          The public hostname/port tuple at which the gateway will be accessible to clients.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
         '''
-        self.state = state
+        self.state = state if state is not None else ''
         '''
          The current state of the gateway. One of: "new", "verifying_restart",
          "restarting", "started", "stopped", "dead", "unknown"
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -5003,43 +5064,43 @@ class GoogleGKE:
         service_account_key=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.service_account_key = service_account_key
+        self.service_account_key = service_account_key if service_account_key is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -5118,43 +5179,43 @@ class GoogleGKEUserImpersonation:
         service_account_key=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.service_account_key = service_account_key
+        self.service_account_key = service_account_key if service_account_key is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -5239,55 +5300,55 @@ class Greenplum:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -5379,51 +5440,51 @@ class HTTPAuth:
         tags=None,
         url=None,
     ):
-        self.auth_header = auth_header
+        self.auth_header = auth_header if auth_header is not None else ''
         '''
 
         '''
-        self.default_path = default_path
+        self.default_path = default_path if default_path is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.headers_blacklist = headers_blacklist
+        self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
         '''
 
         '''
-        self.healthcheck_path = healthcheck_path
+        self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.subdomain = subdomain
+        self.subdomain = subdomain if subdomain is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.url = url
+        self.url = url if url is not None else ''
         '''
 
         '''
@@ -5514,55 +5575,55 @@ class HTTPBasicAuth:
         url=None,
         username=None,
     ):
-        self.default_path = default_path
+        self.default_path = default_path if default_path is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.headers_blacklist = headers_blacklist
+        self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
         '''
 
         '''
-        self.healthcheck_path = healthcheck_path
+        self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.subdomain = subdomain
+        self.subdomain = subdomain if subdomain is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.url = url
+        self.url = url if url is not None else ''
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -5652,47 +5713,47 @@ class HTTPNoAuth:
         tags=None,
         url=None,
     ):
-        self.default_path = default_path
+        self.default_path = default_path if default_path is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.headers_blacklist = headers_blacklist
+        self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
         '''
 
         '''
-        self.healthcheck_path = healthcheck_path
+        self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.subdomain = subdomain
+        self.subdomain = subdomain if subdomain is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.url = url
+        self.url = url if url is not None else ''
         '''
 
         '''
@@ -5778,51 +5839,51 @@ class Kubernetes:
         secret_store_id=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.client_key = client_key
+        self.client_key = client_key if client_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -5909,47 +5970,47 @@ class KubernetesBasicAuth:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -6031,43 +6092,43 @@ class KubernetesServiceAccount:
         tags=None,
         token=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
 
         '''
@@ -6146,43 +6207,43 @@ class KubernetesServiceAccountUserImpersonation:
         tags=None,
         token=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
 
         '''
@@ -6265,51 +6326,51 @@ class KubernetesUserImpersonation:
         secret_store_id=None,
         tags=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.client_key = client_key
+        self.client_key = client_key if client_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthcheck_namespace = healthcheck_namespace
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -6408,71 +6469,71 @@ class MTLSPostgres:
         tags=None,
         username=None,
     ):
-        self.certificate_authority = certificate_authority
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
         '''
-        self.client_certificate = client_certificate
+        self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
 
         '''
-        self.client_key = client_key
+        self.client_key = client_key if client_key is not None else ''
         '''
 
         '''
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.server_name = server_name
+        self.server_name = server_name if server_name is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -6576,51 +6637,51 @@ class Maria:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -6703,39 +6764,39 @@ class Memcached:
         secret_store_id=None,
         tags=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -6815,51 +6876,51 @@ class Memsql:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -6950,55 +7011,55 @@ class MongoHost:
         tls_required=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7094,59 +7155,59 @@ class MongoLegacyHost:
         tls_required=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.replica_set = replica_set
+        self.replica_set = replica_set if replica_set is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7247,63 +7308,63 @@ class MongoLegacyReplicaset:
         tls_required=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.connect_to_replica = connect_to_replica
+        self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.replica_set = replica_set
+        self.replica_set = replica_set if replica_set is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7407,63 +7468,63 @@ class MongoReplicaSet:
         tls_required=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.connect_to_replica = connect_to_replica
+        self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.replica_set = replica_set
+        self.replica_set = replica_set if replica_set is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7561,51 +7622,51 @@ class MongoShardedCluster:
         tls_required=None,
         username=None,
     ):
-        self.auth_database = auth_database
+        self.auth_database = auth_database if auth_database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7694,51 +7755,51 @@ class Mysql:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -7821,39 +7882,39 @@ class Neptune:
         secret_store_id=None,
         tags=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -7937,59 +7998,59 @@ class NeptuneIAM:
         secret_store_id=None,
         tags=None,
     ):
-        self.access_key = access_key
+        self.access_key = access_key if access_key is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.endpoint = endpoint
+        self.endpoint = endpoint if endpoint is not None else ''
         '''
 
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.region = region
+        self.region = region if region is not None else ''
         '''
 
         '''
-        self.role_arn = role_arn
+        self.role_arn = role_arn if role_arn is not None else ''
         '''
 
         '''
-        self.role_external_id = role_external_id
+        self.role_external_id = role_external_id if role_external_id is not None else ''
         '''
 
         '''
-        self.secret_access_key = secret_access_key
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -8068,19 +8129,19 @@ class NodeCreateResponse:
         rate_limit=None,
         token=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.node = node
+        self.node = node if node is not None else None
         '''
          The created Node.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.token = token
+        self.token = token if token is not None else ''
         '''
          The auth token generated for the Node. The Node will use this token to
          authenticate with the strongDM API.
@@ -8126,11 +8187,11 @@ class NodeDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -8171,15 +8232,15 @@ class NodeGetResponse:
         node=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.node = node
+        self.node = node if node is not None else None
         '''
          The requested Node.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -8224,15 +8285,15 @@ class NodeUpdateResponse:
         node=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.node = node
+        self.node = node if node is not None else None
         '''
          The updated Node.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -8296,55 +8357,55 @@ class Oracle:
         tls_required=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -8438,55 +8499,55 @@ class Postgres:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -8580,55 +8641,55 @@ class Presto:
         tls_required=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -8720,51 +8781,51 @@ class RDP:
         tags=None,
         username=None,
     ):
-        self.downgrade_nla_connections = downgrade_nla_connections
+        self.downgrade_nla_connections = downgrade_nla_connections if downgrade_nla_connections is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -8853,51 +8914,51 @@ class RabbitMQAMQP091:
         tls_required=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.tls_required = tls_required
+        self.tls_required = tls_required if tls_required is not None else False
         '''
 
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -8971,21 +9032,21 @@ class RateLimitMetadata:
         remaining=None,
         reset_at=None,
     ):
-        self.bucket = bucket
+        self.bucket = bucket if bucket is not None else ''
         '''
          The bucket this user/token is associated with, which may be shared between
          multiple users/tokens.
         '''
-        self.limit = limit
+        self.limit = limit if limit is not None else 0
         '''
          How many total requests the user/token is authorized to make before being
          rate limited.
         '''
-        self.remaining = remaining
+        self.remaining = remaining if remaining is not None else 0
         '''
          How many remaining requests out of the limit are still avaialable.
         '''
-        self.reset_at = reset_at
+        self.reset_at = reset_at if reset_at is not None else None
         '''
          The time when remaining will be reset to limit.
         '''
@@ -9044,39 +9105,39 @@ class RawTCP:
         secret_store_id=None,
         tags=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -9152,43 +9213,43 @@ class Redis:
         secret_store_id=None,
         tags=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -9273,55 +9334,55 @@ class Redshift:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -9399,26 +9460,26 @@ class Relay:
         state=None,
         tags=None,
     ):
-        self.gateway_filter = gateway_filter
+        self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
          GatewayFilter can be used to restrict the peering between relays and
          gateways.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Relay.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Relay. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
         '''
-        self.state = state
+        self.state = state if state is not None else ''
         '''
          The current state of the relay. One of: "new", "verifying_restart",
          "awaiting_restart", "restarting", "started", "stopped", "dead",
          "unknown".
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -9468,15 +9529,15 @@ class ResourceCreateResponse:
         rate_limit=None,
         resource=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.resource = resource
+        self.resource = resource if resource is not None else None
         '''
          The created Resource.
         '''
@@ -9518,11 +9579,11 @@ class ResourceDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -9563,15 +9624,15 @@ class ResourceGetResponse:
         rate_limit=None,
         resource=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.resource = resource
+        self.resource = resource if resource is not None else None
         '''
          The requested Resource.
         '''
@@ -9616,15 +9677,15 @@ class ResourceUpdateResponse:
         rate_limit=None,
         resource=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.resource = resource
+        self.resource = resource if resource is not None else None
         '''
          The updated Resource.
         '''
@@ -9674,26 +9735,27 @@ class Role:
         name=None,
         tags=None,
     ):
-        self.access_rules = access_rules
+        self.access_rules = access_rules if access_rules is not None else _porcelain_zero_value_access_rules(
+        )
         '''
          AccessRules is a list of access rules defining the resources this Role has access to.
         '''
-        self.composite = composite
+        self.composite = composite if composite is not None else False
         '''
          Composite is true if the Role is a composite role.
          
          Deprecated: composite roles are deprecated, use multi-role via
          AccountAttachments instead.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Role.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Role.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -9745,15 +9807,15 @@ class RoleAttachment:
         composite_role_id=None,
         id=None,
     ):
-        self.attached_role_id = attached_role_id
+        self.attached_role_id = attached_role_id if attached_role_id is not None else ''
         '''
          The id of the attached role of this RoleAttachment.
         '''
-        self.composite_role_id = composite_role_id
+        self.composite_role_id = composite_role_id if composite_role_id is not None else ''
         '''
          The id of the composite role of this RoleAttachment.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the RoleAttachment.
         '''
@@ -9799,15 +9861,15 @@ class RoleAttachmentCreateResponse:
         rate_limit=None,
         role_attachment=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role_attachment = role_attachment
+        self.role_attachment = role_attachment if role_attachment is not None else None
         '''
          The created RoleAttachment.
         '''
@@ -9851,11 +9913,11 @@ class RoleAttachmentDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -9898,15 +9960,15 @@ class RoleAttachmentGetResponse:
         rate_limit=None,
         role_attachment=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role_attachment = role_attachment
+        self.role_attachment = role_attachment if role_attachment is not None else None
         '''
          The requested RoleAttachment.
         '''
@@ -9951,15 +10013,15 @@ class RoleCreateResponse:
         rate_limit=None,
         role=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role = role
+        self.role = role if role is not None else None
         '''
          The created Role.
         '''
@@ -10001,11 +10063,11 @@ class RoleDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -10046,15 +10108,15 @@ class RoleGetResponse:
         rate_limit=None,
         role=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role = role
+        self.role = role if role is not None else None
         '''
          The requested Role.
         '''
@@ -10100,15 +10162,15 @@ class RoleGrant:
         resource_id=None,
         role_id=None,
     ):
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the RoleGrant.
         '''
-        self.resource_id = resource_id
+        self.resource_id = resource_id if resource_id is not None else ''
         '''
          The id of the resource of this RoleGrant.
         '''
-        self.role_id = role_id
+        self.role_id = role_id if role_id is not None else ''
         '''
          The id of the attached role of this RoleGrant.
         '''
@@ -10154,15 +10216,15 @@ class RoleGrantCreateResponse:
         rate_limit=None,
         role_grant=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role_grant = role_grant
+        self.role_grant = role_grant if role_grant is not None else None
         '''
          The created RoleGrant.
         '''
@@ -10206,11 +10268,11 @@ class RoleGrantDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -10253,15 +10315,15 @@ class RoleGrantGetResponse:
         rate_limit=None,
         role_grant=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role_grant = role_grant
+        self.role_grant = role_grant if role_grant is not None else None
         '''
          The requested RoleGrant.
         '''
@@ -10306,15 +10368,15 @@ class RoleUpdateResponse:
         rate_limit=None,
         role=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.role = role
+        self.role = role if role is not None else None
         '''
          The updated Role.
         '''
@@ -10380,59 +10442,59 @@ class SQLServer:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.override_database = override_database
+        self.override_database = override_database if override_database is not None else False
         '''
 
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.schema = schema
+        self.schema = schema if schema is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -10527,51 +10589,51 @@ class SSH:
         tags=None,
         username=None,
     ):
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_forwarding = port_forwarding
+        self.port_forwarding = port_forwarding if port_forwarding is not None else False
         '''
 
         '''
-        self.public_key = public_key
+        self.public_key = public_key if public_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -10660,47 +10722,47 @@ class SSHCert:
         tags=None,
         username=None,
     ):
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_forwarding = port_forwarding
+        self.port_forwarding = port_forwarding if port_forwarding is not None else False
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -10788,51 +10850,51 @@ class SSHCustomerKey:
         tags=None,
         username=None,
     ):
-        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges
+        self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_forwarding = port_forwarding
+        self.port_forwarding = port_forwarding if port_forwarding is not None else False
         '''
 
         '''
-        self.private_key = private_key
+        self.private_key = private_key if private_key is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -10905,15 +10967,15 @@ class SecretStoreCreateResponse:
         rate_limit=None,
         secret_store=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.secret_store = secret_store
+        self.secret_store = secret_store if secret_store is not None else None
         '''
          The created SecretStore.
         '''
@@ -10955,11 +11017,11 @@ class SecretStoreDeleteResponse:
         meta=None,
         rate_limit=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
@@ -11000,15 +11062,15 @@ class SecretStoreGetResponse:
         rate_limit=None,
         secret_store=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.secret_store = secret_store
+        self.secret_store = secret_store if secret_store is not None else None
         '''
          The requested SecretStore.
         '''
@@ -11053,15 +11115,15 @@ class SecretStoreUpdateResponse:
         rate_limit=None,
         secret_store=None,
     ):
-        self.meta = meta
+        self.meta = meta if meta is not None else None
         '''
          Reserved for future use.
         '''
-        self.rate_limit = rate_limit
+        self.rate_limit = rate_limit if rate_limit is not None else None
         '''
          Rate limit information.
         '''
-        self.secret_store = secret_store
+        self.secret_store = secret_store if secret_store is not None else None
         '''
          The updated SecretStore.
         '''
@@ -11108,19 +11170,19 @@ class Service:
         suspended=None,
         tags=None,
     ):
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Service.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Service.
         '''
-        self.suspended = suspended
+        self.suspended = suspended if suspended is not None else False
         '''
          The Service's suspended state.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -11185,51 +11247,51 @@ class SingleStore:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -11318,51 +11380,51 @@ class Snowflake:
         tags=None,
         username=None,
     ):
-        self.database = database
+        self.database = database if database is not None else ''
         '''
 
         '''
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.schema = schema
+        self.schema = schema if schema is not None else ''
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -11449,47 +11511,47 @@ class Sybase:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -11573,47 +11635,47 @@ class SybaseIQ:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -11679,11 +11741,11 @@ class Tag:
         name=None,
         value=None,
     ):
-        self.name = name
+        self.name = name if name is not None else ''
         '''
 
         '''
-        self.value = value
+        self.value = value if value is not None else ''
         '''
 
         '''
@@ -11740,47 +11802,47 @@ class Teradata:
         tags=None,
         username=None,
     ):
-        self.egress_filter = egress_filter
+        self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
-        self.healthy = healthy
+        self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
-        self.hostname = hostname
+        self.hostname = hostname if hostname is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
-        self.password = password
+        self.password = password if password is not None else ''
         '''
 
         '''
-        self.port = port
+        self.port = port if port is not None else 0
         '''
 
         '''
-        self.port_override = port_override
+        self.port_override = port_override if port_override is not None else 0
         '''
 
         '''
-        self.secret_store_id = secret_store_id
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username
+        self.username = username if username is not None else ''
         '''
 
         '''
@@ -11876,27 +11938,27 @@ class User:
         suspended=None,
         tags=None,
     ):
-        self.email = email
+        self.email = email if email is not None else ''
         '''
          The User's email address. Must be unique.
         '''
-        self.first_name = first_name
+        self.first_name = first_name if first_name is not None else ''
         '''
          The User's first name.
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the User.
         '''
-        self.last_name = last_name
+        self.last_name = last_name if last_name is not None else ''
         '''
          The User's last name.
         '''
-        self.suspended = suspended
+        self.suspended = suspended if suspended is not None else False
         '''
          The User's suspended state.
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -11933,6 +11995,76 @@ class User:
         )
 
 
+class VaultAppRoleStore:
+    '''
+
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'namespace',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAppRoleStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
 class VaultTLSStore:
     '''
 
@@ -11959,35 +12091,35 @@ class VaultTLSStore:
         server_address=None,
         tags=None,
     ):
-        self.ca_cert_path = ca_cert_path
+        self.ca_cert_path = ca_cert_path if ca_cert_path is not None else ''
         '''
 
         '''
-        self.client_cert_path = client_cert_path
+        self.client_cert_path = client_cert_path if client_cert_path is not None else ''
         '''
 
         '''
-        self.client_key_path = client_key_path
+        self.client_key_path = client_key_path if client_key_path is not None else ''
         '''
 
         '''
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the SecretStore.
         '''
-        self.namespace = namespace
+        self.namespace = namespace if namespace is not None else ''
         '''
 
         '''
-        self.server_address = server_address
+        self.server_address = server_address if server_address is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -12050,23 +12182,23 @@ class VaultTokenStore:
         server_address=None,
         tags=None,
     ):
-        self.id = id
+        self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
         '''
-        self.name = name
+        self.name = name if name is not None else ''
         '''
          Unique human-readable name of the SecretStore.
         '''
-        self.namespace = namespace
+        self.namespace = namespace if namespace is not None else ''
         '''
 
         '''
-        self.server_address = server_address
+        self.server_address = server_address if server_address is not None else ''
         '''
 
         '''
-        self.tags = tags
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
@@ -12098,3 +12230,11 @@ class VaultTokenStore:
             server_address=d.get('server_address'),
             tags=d.get('tags'),
         )
+
+
+def _porcelain_zero_value_tags():
+    return {}
+
+
+def _porcelain_zero_value_access_rules():
+    return []

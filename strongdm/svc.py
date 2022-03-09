@@ -1570,6 +1570,8 @@ class SecretStores:
     See:
     `strongdm.models.AWSStore`
     `strongdm.models.AzureStore`
+    `strongdm.models.GCPStore`
+    `strongdm.models.VaultAppRoleStore`
     `strongdm.models.VaultTLSStore`
     `strongdm.models.VaultTokenStore`
     '''
