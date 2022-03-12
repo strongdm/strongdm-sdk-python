@@ -36,7 +36,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\025AccountGrantsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x63\x63ount_grants.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"y\n\x19\x41\x63\x63ountGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd4\x01\n\x1a\x41\x63\x63ountGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"V\n\x16\x41\x63\x63ountGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xce\x01\n\x17\x41\x63\x63ountGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x19\x41\x63\x63ountGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9f\x01\n\x1a\x41\x63\x63ountGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x17\x41\x63\x63ountGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb9\x01\n\x18\x41\x63\x63ountGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x34\n\x0e\x61\x63\x63ount_grants\x18\x02 \x03(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01\"\xd9\x02\n\x0c\x41\x63\x63ountGrant\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x0bresource_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12#\n\naccount_id\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12:\n\nstart_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12;\n\x0bvalid_until\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:m\xfa\xf8\xb3\x07h\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07Y\xa2\xf3\xb3\x07&tf_examples/account_grant_resource.txt\xaa\xf3\xb3\x07)tf_examples/account_grant_data_source.txt\x80\xf4\xb3\x07\x01\x32\x83\x04\n\rAccountGrants\x12s\n\x06\x43reate\x12\x1d.v1.AccountGrantCreateRequest\x1a\x1e.v1.AccountGrantCreateResponse\"*\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/account-grants\x12n\n\x03Get\x12\x1a.v1.AccountGrantGetRequest\x1a\x1b.v1.AccountGrantGetResponse\".\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-grants/{id}\x12z\n\x06\x44\x65lete\x12\x1d.v1.AccountGrantDeleteRequest\x1a\x1e.v1.AccountGrantDeleteResponse\"1\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-grants/{id}\x12l\n\x04List\x12\x1b.v1.AccountGrantListRequest\x1a\x1c.v1.AccountGrantListResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/account-grants\x1a#\xca\xf9\xb3\x07\x11\xc2\xf9\xb3\x07\x0c\x41\x63\x63ountGrant\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61g-Bl\n\x1c\x63om.strongdm.api.v1.plumbingB\x15\x41\x63\x63ountGrantsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x14\x61\x63\x63ount_grants.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"y\n\x19\x41\x63\x63ountGrantCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd0\x02\n\x1a\x41\x63\x63ountGrantCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"V\n\x16\x41\x63\x63ountGrantGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xca\x02\n\x17\x41\x63\x63ountGrantGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x33\n\raccount_grant\x18\x02 \x01(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x19\x41\x63\x63ountGrantDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9b\x02\n\x1a\x41\x63\x63ountGrantDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\\\n\x17\x41\x63\x63ountGrantListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb5\x02\n\x18\x41\x63\x63ountGrantListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x34\n\x0e\x61\x63\x63ount_grants\x18\x02 \x03(\x0b\x32\x10.v1.AccountGrantB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript\"\xf0\x02\n\x0c\x41\x63\x63ountGrant\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x0bresource_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12#\n\naccount_id\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12:\n\nstart_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12;\n\x0bvalid_until\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x83\x01\xfa\xf8\xb3\x07~\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07Y\xa2\xf3\xb3\x07&tf_examples/account_grant_resource.txt\xaa\xf3\xb3\x07)tf_examples/account_grant_data_source.txt\x82\xf4\xb3\x07\x16\n\x12terraform-provider\x10\x01\x32\x83\x04\n\rAccountGrants\x12s\n\x06\x43reate\x12\x1d.v1.AccountGrantCreateRequest\x1a\x1e.v1.AccountGrantCreateResponse\"*\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/account-grants\x12n\n\x03Get\x12\x1a.v1.AccountGrantGetRequest\x1a\x1b.v1.AccountGrantGetResponse\".\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-grants/{id}\x12z\n\x06\x44\x65lete\x12\x1d.v1.AccountGrantDeleteRequest\x1a\x1e.v1.AccountGrantDeleteResponse\"1\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-grants/{id}\x12l\n\x04List\x12\x1b.v1.AccountGrantListRequest\x1a\x1c.v1.AccountGrantListResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/account-grants\x1a#\xca\xf9\xb3\x07\x11\xc2\xf9\xb3\x07\x0c\x41\x63\x63ountGrant\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61g-Bl\n\x1c\x63om.strongdm.api.v1.plumbingB\x15\x41\x63\x63ountGrantsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -110,7 +110,7 @@ _ACCOUNTGRANTCREATERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -124,7 +124,7 @@ _ACCOUNTGRANTCREATERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=212,
-  serialized_end=424,
+  serialized_end=548,
 )
 
 
@@ -162,8 +162,8 @@ _ACCOUNTGRANTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=512,
+  serialized_start=550,
+  serialized_end=636,
 )
 
 
@@ -195,7 +195,7 @@ _ACCOUNTGRANTGETRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -208,8 +208,8 @@ _ACCOUNTGRANTGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=515,
-  serialized_end=721,
+  serialized_start=639,
+  serialized_end=969,
 )
 
 
@@ -247,8 +247,8 @@ _ACCOUNTGRANTDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=723,
-  serialized_end=815,
+  serialized_start=971,
+  serialized_end=1063,
 )
 
 
@@ -273,7 +273,7 @@ _ACCOUNTGRANTDELETERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -286,8 +286,8 @@ _ACCOUNTGRANTDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=818,
-  serialized_end=977,
+  serialized_start=1066,
+  serialized_end=1349,
 )
 
 
@@ -325,8 +325,8 @@ _ACCOUNTGRANTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=979,
-  serialized_end=1071,
+  serialized_start=1351,
+  serialized_end=1443,
 )
 
 
@@ -358,7 +358,7 @@ _ACCOUNTGRANTLISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -371,8 +371,8 @@ _ACCOUNTGRANTLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1074,
-  serialized_end=1259,
+  serialized_start=1446,
+  serialized_end=1755,
 )
 
 
@@ -425,14 +425,14 @@ _ACCOUNTGRANT = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007h\250\363\263\007\001\302\363\263\007Y\242\363\263\007&tf_examples/account_grant_resource.txt\252\363\263\007)tf_examples/account_grant_data_source.txt\200\364\263\007\001',
+  serialized_options=b'\372\370\263\007~\250\363\263\007\001\302\363\263\007Y\242\363\263\007&tf_examples/account_grant_resource.txt\252\363\263\007)tf_examples/account_grant_data_source.txt\202\364\263\007\026\n\022terraform-provider\020\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1262,
-  serialized_end=1607,
+  serialized_start=1758,
+  serialized_end=2126,
 )
 
 _ACCOUNTGRANTCREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -560,8 +560,8 @@ _ACCOUNTGRANTS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\021\302\371\263\007\014AccountGrant\312\371\263\007\010\322\371\263\007\003ag-',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1610,
-  serialized_end=2125,
+  serialized_start=2129,
+  serialized_end=2644,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

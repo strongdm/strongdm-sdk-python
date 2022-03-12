@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"]\n\x0eRateLimitError\x12?\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"\xd9\x01\n\x0eRateLimitError\x12\xba\x01\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -220,7 +220,7 @@ _RATELIMITERROR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -233,8 +233,8 @@ _RATELIMITERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=404,
+  serialized_start=312,
+  serialized_end=529,
 )
 
 
@@ -258,8 +258,8 @@ _CREATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=406,
-  serialized_end=429,
+  serialized_start=531,
+  serialized_end=554,
 )
 
 
@@ -283,8 +283,8 @@ _CREATERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=431,
-  serialized_end=467,
+  serialized_start=556,
+  serialized_end=592,
 )
 
 
@@ -308,8 +308,8 @@ _GETREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=489,
+  serialized_start=594,
+  serialized_end=614,
 )
 
 
@@ -333,8 +333,8 @@ _GETRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=491,
-  serialized_end=524,
+  serialized_start=616,
+  serialized_end=649,
 )
 
 
@@ -358,8 +358,8 @@ _UPDATEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=526,
-  serialized_end=549,
+  serialized_start=651,
+  serialized_end=674,
 )
 
 
@@ -383,8 +383,8 @@ _UPDATERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=551,
-  serialized_end=587,
+  serialized_start=676,
+  serialized_end=712,
 )
 
 
@@ -408,8 +408,8 @@ _DELETEREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=589,
-  serialized_end=612,
+  serialized_start=714,
+  serialized_end=737,
 )
 
 
@@ -433,8 +433,8 @@ _DELETERESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=650,
+  serialized_start=739,
+  serialized_end=775,
 )
 
 
@@ -486,8 +486,8 @@ _LISTREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=652,
-  serialized_end=736,
+  serialized_start=777,
+  serialized_end=861,
 )
 
 
@@ -525,8 +525,8 @@ _LISTRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=738,
-  serialized_end=796,
+  serialized_start=863,
+  serialized_end=921,
 )
 
 
@@ -578,8 +578,8 @@ _RATELIMITMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=799,
-  serialized_end=974,
+  serialized_start=924,
+  serialized_end=1099,
 )
 
 
@@ -603,8 +603,8 @@ _GENERICREQUESTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1000,
+  serialized_start=1101,
+  serialized_end=1125,
 )
 
 
@@ -628,8 +628,8 @@ _GENERICRESPONSEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1002,
-  serialized_end=1027,
+  serialized_start=1127,
+  serialized_end=1152,
 )
 
 _RATELIMITERROR.fields_by_name['rate_limit'].message_type = _RATELIMITMETADATA

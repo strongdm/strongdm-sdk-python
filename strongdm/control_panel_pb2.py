@@ -35,7 +35,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\024ControlPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xc7\x01\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xba\x01\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xb4\x02\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBk\n\x1c\x63om.strongdm.api.v1.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xc3\x02\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb6\x02\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xb4\x02\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBk\n\x1c\x63om.strongdm.api.v1.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,])
 
@@ -102,7 +102,7 @@ _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -116,7 +116,7 @@ _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=133,
-  serialized_end=332,
+  serialized_end=456,
 )
 
 
@@ -154,8 +154,8 @@ _CONTROLPANELVERIFYJWTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=334,
-  serialized_end=429,
+  serialized_start=458,
+  serialized_end=553,
 )
 
 
@@ -187,7 +187,7 @@ _CONTROLPANELVERIFYJWTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -200,8 +200,8 @@ _CONTROLPANELVERIFYJWTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=618,
+  serialized_start=556,
+  serialized_end=866,
 )
 
 _CONTROLPANELGETSSHCAPUBLICKEYREQUEST.fields_by_name['meta'].message_type = spec__pb2._GETREQUESTMETADATA
@@ -263,8 +263,8 @@ _CONTROLPANEL = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=621,
-  serialized_end=929,
+  serialized_start=869,
+  serialized_end=1177,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetSSHCAPublicKey',

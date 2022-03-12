@@ -34,7 +34,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\x90\x02\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a/\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\n\xfa\xf8\xb3\x07\x05\xf0\xf3\xb3\x07\x01:\xb8\x01\xfa\xf8\xb3\x07\xb2\x01\xca\xf3\xb3\x07\xa7\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\x92\xf4\xb3\x07\x0ctagsElemType\x9a\xf4\xb3\x07\x11map[string]string\xf0\xf3\xb3\x07\x01\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xb3\x03\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a\x80\x01\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:[\xfa\xf8\xb3\x07V\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private:\x89\x02\xfa\xf8\xb3\x07\x83\x02\xca\xf3\xb3\x07\xa7\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\x92\xf4\xb3\x07\x0ctagsElemType\x9a\xf4\xb3\x07\x11map[string]string\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 
@@ -69,14 +69,14 @@ _TAGS_PAIR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\005\360\363\263\007\001',
+  serialized_options=b'\372\370\263\007V\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=72,
-  serialized_end=119,
+  serialized_start=73,
+  serialized_end=201,
 )
 
 _TAGS = _descriptor.Descriptor(
@@ -100,14 +100,14 @@ _TAGS = _descriptor.Descriptor(
   nested_types=[_TAGS_PAIR, ],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\262\001\312\363\263\007\247\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\222\364\263\007\014tagsElemType\232\364\263\007\021map[string]string\360\363\263\007\001',
+  serialized_options=b'\372\370\263\007\203\002\312\363\263\007\247\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\222\364\263\007\014tagsElemType\232\364\263\007\021map[string]string\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=306,
+  serialized_end=469,
 )
 
 
@@ -145,8 +145,8 @@ _TAG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=378,
+  serialized_start=471,
+  serialized_end=541,
 )
 
 _TAGS_PAIR.containing_type = _TAGS

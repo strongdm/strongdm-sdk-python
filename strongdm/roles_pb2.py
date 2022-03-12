@@ -36,7 +36,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\rRolesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0broles.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"`\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbb\x01\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb5\x01\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"l\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbb\x01\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x97\x01\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa0\x01\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12?\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x14\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x05\x90\xf4\xb3\x07\x01\"\xff\x02\n\x04Role\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x9d\x01\n\x0c\x61\x63\x63\x65ss_rules\x18\x05 \x01(\tB\x86\x01\xf2\xf8\xb3\x07\x80\x01\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07M\xea\xf3\xb3\x07\x0c\x61\x63\x63\x65ss_rules\xf2\xf3\xb3\x07\x0b\x41\x63\x63\x65ssRules\xfa\xf3\xb3\x07\x10List<AccessRule>\x9a\xf4\xb3\x07\x12models.AccessRules\xda\xf3\xb3\x07\x08optional\xba\xf4\xb3\x07\x17\x61\x63\x63\x65ssRulesDiffSuppress\x12$\n\tcomposite\x18\x03 \x01(\x08\x42\x11\x18\x01\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xe0\xf3\xb3\x07\x01\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:V\xfa\xf8\xb3\x07Q\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07G\xa2\xf3\xb3\x07\x1dtf_examples/role_resource.txt\xaa\xf3\xb3\x07 tf_examples/role_data_source.txt2\xee\x03\n\x05Roles\x12Z\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"!\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x0e\xaa\xf3\xb3\x07\t/v1/roles\x12U\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12^\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12\x61\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"(\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12S\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\" \x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x0e\xaa\xf3\xb3\x07\t/v1/roles\x1a\x1a\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04Role\xca\xf9\xb3\x07\x07\xd2\xf9\xb3\x07\x02r-Bd\n\x1c\x63om.strongdm.api.v1.plumbingB\rRolesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\x0broles.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"`\n\x11RoleCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb7\x02\n\x12RoleCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"N\n\x0eRoleGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb1\x02\n\x0fRoleGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"l\n\x11RoleUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\"\n\x04role\x18\x03 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb7\x02\n\x12RoleUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04role\x18\x02 \x01(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x11RoleDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x93\x02\n\x12RoleDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x0fRoleListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9c\x02\n\x10RoleListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12#\n\x05roles\x18\x02 \x03(\x0b\x32\x08.v1.RoleB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript\"\xf5\x02\n\x04Role\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x93\x01\n\x0c\x61\x63\x63\x65ss_rules\x18\x05 \x01(\tB}\xf2\xf8\xb3\x07x\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07M\xea\xf3\xb3\x07\x0c\x61\x63\x63\x65ss_rules\xf2\xf3\xb3\x07\x0b\x41\x63\x63\x65ssRules\xfa\xf3\xb3\x07\x10List<AccessRule>\x9a\xf4\xb3\x07\x12models.AccessRules\xba\xf4\xb3\x07\x17\x61\x63\x63\x65ssRulesDiffSuppress\xd0\xf4\xb3\x07\x01\x12$\n\tcomposite\x18\x03 \x01(\x08\x42\x11\x18\x01\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xe0\xf3\xb3\x07\x01\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:V\xfa\xf8\xb3\x07Q\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07G\xa2\xf3\xb3\x07\x1dtf_examples/role_resource.txt\xaa\xf3\xb3\x07 tf_examples/role_data_source.txt2\xee\x03\n\x05Roles\x12Z\n\x06\x43reate\x12\x15.v1.RoleCreateRequest\x1a\x16.v1.RoleCreateResponse\"!\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x0e\xaa\xf3\xb3\x07\t/v1/roles\x12U\n\x03Get\x12\x12.v1.RoleGetRequest\x1a\x13.v1.RoleGetResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12^\n\x06Update\x12\x15.v1.RoleUpdateRequest\x1a\x16.v1.RoleUpdateResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12\x61\n\x06\x44\x65lete\x12\x15.v1.RoleDeleteRequest\x1a\x16.v1.RoleDeleteResponse\"(\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/roles/{id}\x12S\n\x04List\x12\x13.v1.RoleListRequest\x1a\x14.v1.RoleListResponse\" \x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x0e\xaa\xf3\xb3\x07\t/v1/roles\x1a\x1a\xca\xf9\xb3\x07\t\xc2\xf9\xb3\x07\x04Role\xca\xf9\xb3\x07\x07\xd2\xf9\xb3\x07\x02r-Bd\n\x1c\x63om.strongdm.api.v1.plumbingB\rRolesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
 
@@ -110,7 +110,7 @@ _ROLECREATERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -124,7 +124,7 @@ _ROLECREATERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=157,
-  serialized_end=344,
+  serialized_end=468,
 )
 
 
@@ -162,8 +162,8 @@ _ROLEGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=424,
+  serialized_start=470,
+  serialized_end=548,
 )
 
 
@@ -195,7 +195,7 @@ _ROLEGETRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -208,8 +208,8 @@ _ROLEGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=608,
+  serialized_start=551,
+  serialized_end=856,
 )
 
 
@@ -254,8 +254,8 @@ _ROLEUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=610,
-  serialized_end=718,
+  serialized_start=858,
+  serialized_end=966,
 )
 
 
@@ -287,7 +287,7 @@ _ROLEUPDATERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -300,8 +300,8 @@ _ROLEUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=908,
+  serialized_start=969,
+  serialized_end=1280,
 )
 
 
@@ -339,8 +339,8 @@ _ROLEDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=910,
-  serialized_end=994,
+  serialized_start=1282,
+  serialized_end=1366,
 )
 
 
@@ -365,7 +365,7 @@ _ROLEDELETERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -378,8 +378,8 @@ _ROLEDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=997,
-  serialized_end=1148,
+  serialized_start=1369,
+  serialized_end=1644,
 )
 
 
@@ -417,8 +417,8 @@ _ROLELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1150,
-  serialized_end=1234,
+  serialized_start=1646,
+  serialized_end=1730,
 )
 
 
@@ -450,7 +450,7 @@ _ROLELISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\005\220\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -463,8 +463,8 @@ _ROLELISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1237,
-  serialized_end=1397,
+  serialized_start=1733,
+  serialized_end=2017,
 )
 
 
@@ -496,7 +496,7 @@ _ROLE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\200\001\260\363\263\007\001\312\363\263\007M\352\363\263\007\014access_rules\362\363\263\007\013AccessRules\372\363\263\007\020List<AccessRule>\232\364\263\007\022models.AccessRules\332\363\263\007\010optional\272\364\263\007\027accessRulesDiffSuppress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\370\263\007x\260\363\263\007\001\312\363\263\007M\352\363\263\007\014access_rules\362\363\263\007\013AccessRules\372\363\263\007\020List<AccessRule>\232\364\263\007\022models.AccessRules\272\364\263\007\027accessRulesDiffSuppress\320\364\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='composite', full_name='v1.Role.composite', index=3,
       number=3, type=8, cpp_type=7, label=1,
@@ -523,8 +523,8 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1400,
-  serialized_end=1783,
+  serialized_start=2020,
+  serialized_end=2393,
 )
 
 _ROLECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
@@ -677,8 +677,8 @@ _ROLES = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\312\371\263\007\t\302\371\263\007\004Role\312\371\263\007\007\322\371\263\007\002r-',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1786,
-  serialized_end=2280,
+  serialized_start=2396,
+  serialized_end=2890,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
