@@ -34,7 +34,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xb3\x03\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a\x80\x01\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:[\xfa\xf8\xb3\x07V\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private:\x89\x02\xfa\xf8\xb3\x07\x83\x02\xca\xf3\xb3\x07\xa7\x01\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\x04Tags\xfa\xf3\xb3\x07\x1djava.util.Map<String, String>\x82\xf4\xb3\x07\x07TypeMap\x8a\xf4\xb3\x07;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\x92\xf4\xb3\x07\x0ctagsElemType\x9a\xf4\xb3\x07\x11map[string]string\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
+  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd0\x04\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a\x80\x01\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:[\xfa\xf8\xb3\x07V\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private:\xa6\x03\xfa\xf8\xb3\x07\xa0\x03\xca\xf3\xb3\x07\xc4\x02\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\n\n\x02go\x12\x04Tags\xf2\xf3\xb3\x07\x12\n\ngo_private\x12\x04Tags\xf2\xf3\xb3\x07\x14\n\x0cgo_terraform\x12\x04Tags\xf2\xf3\xb3\x07%\n\x04java\x12\x1djava.util.Map<String, String>\xf2\xf3\xb3\x07\x1d\n\x12terraform-provider\x12\x07TypeMap\xf2\xf3\xb3\x07\x46\n\x07openapi\x12;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf2\xf3\xb3\x07!\n\x0cjson_gateway\x12\x11map[string]string\xf2\xf3\xb3\x07)\n\x14json_gateway_private\x12\x11map[string]string\xfa\xf3\xb3\x07\x0ctagsElemType\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
   ,
   dependencies=[options__pb2.DESCRIPTOR,])
 
@@ -100,14 +100,14 @@ _TAGS = _descriptor.Descriptor(
   nested_types=[_TAGS_PAIR, ],
   enum_types=[
   ],
-  serialized_options=b'\372\370\263\007\203\002\312\363\263\007\247\001\352\363\263\007\004tags\362\363\263\007\004Tags\372\363\263\007\035java.util.Map<String, String>\202\364\263\007\007TypeMap\212\364\263\007;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\222\364\263\007\014tagsElemType\232\364\263\007\021map[string]string\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
+  serialized_options=b'\372\370\263\007\240\003\312\363\263\007\304\002\352\363\263\007\004tags\362\363\263\007\n\n\002go\022\004Tags\362\363\263\007\022\n\ngo_private\022\004Tags\362\363\263\007\024\n\014go_terraform\022\004Tags\362\363\263\007%\n\004java\022\035java.util.Map<String, String>\362\363\263\007\035\n\022terraform-provider\022\007TypeMap\362\363\263\007F\n\007openapi\022;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\362\363\263\007!\n\014json_gateway\022\021map[string]string\362\363\263\007)\n\024json_gateway_private\022\021map[string]string\372\363\263\007\014tagsElemType\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=469,
+  serialized_end=626,
 )
 
 
@@ -145,8 +145,8 @@ _TAG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=541,
+  serialized_start=628,
+  serialized_end=698,
 )
 
 _TAGS_PAIR.containing_type = _TAGS
