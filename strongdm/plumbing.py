@@ -2892,6 +2892,64 @@ def convert_repeated_kubernetes_user_impersonation_to_porcelain(plumbings):
     ]
 
 
+def convert_mtls_mysql_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MTLSMysql()
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.client_certificate = (plumbing.client_certificate)
+    porcelain.client_key = (plumbing.client_key)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.server_name = (plumbing.server_name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_mtls_mysql_to_plumbing(porcelain):
+    plumbing = MTLSMysql()
+    if porcelain is None:
+        return plumbing
+    plumbing.certificate_authority = (porcelain.certificate_authority)
+    plumbing.client_certificate = (porcelain.client_certificate)
+    plumbing.client_key = (porcelain.client_key)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.server_name = (porcelain.server_name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_mtls_mysql_to_plumbing(porcelains):
+    return [
+        convert_mtls_mysql_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_mtls_mysql_to_porcelain(plumbings):
+    return [
+        convert_mtls_mysql_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_mtls_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4256,6 +4314,8 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.MongoShardedCluster):
         plumbing.mongo_sharded_cluster.CopyFrom(
             convert_mongo_sharded_cluster_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MTLSMysql):
+        plumbing.mtls_mysql.CopyFrom(convert_mtls_mysql_to_plumbing(porcelain))
     if isinstance(porcelain, models.MTLSPostgres):
         plumbing.mtls_postgres.CopyFrom(
             convert_mtls_postgres_to_plumbing(porcelain))
@@ -4424,6 +4484,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('mongo_sharded_cluster'):
         return convert_mongo_sharded_cluster_to_porcelain(
             plumbing.mongo_sharded_cluster)
+    if plumbing.HasField('mtls_mysql'):
+        return convert_mtls_mysql_to_porcelain(plumbing.mtls_mysql)
     if plumbing.HasField('mtls_postgres'):
         return convert_mtls_postgres_to_porcelain(plumbing.mtls_postgres)
     if plumbing.HasField('mysql'):

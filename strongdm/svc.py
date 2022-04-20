@@ -838,6 +838,7 @@ class Resources:
     `strongdm.models.MongoLegacyReplicaset`
     `strongdm.models.MongoReplicaSet`
     `strongdm.models.MongoShardedCluster`
+    `strongdm.models.MTLSMysql`
     `strongdm.models.MTLSPostgres`
     `strongdm.models.Mysql`
     `strongdm.models.Neptune`

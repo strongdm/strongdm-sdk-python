@@ -6425,6 +6425,175 @@ class KubernetesUserImpersonation:
         )
 
 
+class MTLSMysql:
+    '''
+
+    '''
+    __slots__ = [
+        'certificate_authority',
+        'client_certificate',
+        'client_key',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'server_name',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        certificate_authority=None,
+        client_certificate=None,
+        client_key=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        server_name=None,
+        tags=None,
+        username=None,
+    ):
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+
+        '''
+        self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+
+        '''
+        self.client_key = client_key if client_key is not None else ''
+        '''
+
+        '''
+        self.database = database if database is not None else ''
+        '''
+
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        '''
+
+        '''
+        self.port = port if port is not None else 0
+        '''
+
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.server_name = server_name if server_name is not None else ''
+        '''
+
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+
+        '''
+
+    def __repr__(self):
+        return '<sdm.MTLSMysql ' + \
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'client_certificate: ' + repr(self.client_certificate) + ' ' +\
+            'client_key: ' + repr(self.client_key) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'server_name: ' + repr(self.server_name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'certificate_authority': self.certificate_authority,
+            'client_certificate': self.client_certificate,
+            'client_key': self.client_key,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'server_name': self.server_name,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            certificate_authority=d.get('certificate_authority'),
+            client_certificate=d.get('client_certificate'),
+            client_key=d.get('client_key'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            server_name=d.get('server_name'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
 class MTLSPostgres:
     '''
 
