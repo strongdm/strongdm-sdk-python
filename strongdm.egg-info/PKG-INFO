@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: strongdm
-Version: 2.0.0
+Version: 2.1.0
 Summary: strongDM SDK for the Python programming language.
 Home-page: https://github.com/strongdm/strongdm-sdk-python
 Author: strongDM Team
 Author-email: sdk-feedback@strongdm.com
 License: apache-2.0
-Download-URL: https://github.com/strongdm/strongdm-sdk-python/archive/v2.0.0.tar.gz
+Download-URL: https://github.com/strongdm/strongdm-sdk-python/archive/v2.1.0.tar.gz
 Description: # strongDM SDK for Python
         
         This is the official [strongDM](https://www.strongdm.com/) SDK for the Python
