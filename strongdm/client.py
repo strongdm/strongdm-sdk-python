@@ -31,7 +31,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/2.1.0'
+USER_AGENT = 'strongdm-sdk-python/2.2.0'
 
 
 class Client:
@@ -40,7 +40,8 @@ class Client:
                  api_access_key,
                  api_secret,
                  host='api.strongdm.com:443',
-                 insecure=False):
+                 insecure=False,
+                 retry_rate_limit_errors=True):
         '''
         Create a new Client.
 
@@ -52,6 +53,7 @@ class Client:
         self.max_retries = DEFAULT_MAX_RETRIES
         self.base_retry_delay = DEFAULT_BASE_RETRY_DELAY
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
+        self.expose_rate_limit_errors = (not retry_rate_limit_errors)
         self._test_options = {}
 
         try:
@@ -178,5 +180,13 @@ class Client:
         if (iter >= self.max_retries - 1):
             return False
         if not isinstance(err, grpc.RpcError):
+            return True
+        if (not self.expose_rate_limit_errors
+            ) and err.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
+            porcelain_err = plumbing.convert_error_to_porcelain(err)
+            wait_until = porcelain_err.rate_limit.reset_at
+            now = datetime.datetime.now(datetime.timezone.utc)
+            sleep_for = (wait_until - now).total_seconds()
+            time.sleep(sleep_for)
             return True
         return err.code() == grpc.StatusCode.INTERNAL
