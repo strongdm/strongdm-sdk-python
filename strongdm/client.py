@@ -187,6 +187,10 @@ class Client:
             wait_until = porcelain_err.rate_limit.reset_at
             now = datetime.datetime.now(datetime.timezone.utc)
             sleep_for = (wait_until - now).total_seconds()
+            # If timezones or clock drift causes this calculation to fail,
+            # wait at most one minute.
+            if sleep_for < 0 or sleep_for > 60:
+                sleep_for = 60
             time.sleep(sleep_for)
             return True
         return err.code() == grpc.StatusCode.INTERNAL
