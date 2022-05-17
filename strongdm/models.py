@@ -23,6 +23,7 @@ class AKS:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -39,6 +40,7 @@ class AKS:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -52,6 +54,10 @@ class AKS:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -103,6 +109,7 @@ class AKS:
 
     def __repr__(self):
         return '<sdm.AKS ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -119,6 +126,7 @@ class AKS:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -136,6 +144,7 @@ class AKS:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -156,6 +165,7 @@ class AKSBasicAuth:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -171,6 +181,7 @@ class AKSBasicAuth:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -183,6 +194,10 @@ class AKSBasicAuth:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -230,6 +245,7 @@ class AKSBasicAuth:
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -245,6 +261,7 @@ class AKSBasicAuth:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -261,6 +278,7 @@ class AKSBasicAuth:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -280,6 +298,7 @@ class AKSServiceAccount:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -294,6 +313,7 @@ class AKSServiceAccount:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -305,6 +325,10 @@ class AKSServiceAccount:
         tags=None,
         token=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -348,6 +372,7 @@ class AKSServiceAccount:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -362,6 +387,7 @@ class AKSServiceAccount:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -377,6 +403,7 @@ class AKSServiceAccount:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -395,6 +422,7 @@ class AKSServiceAccountUserImpersonation:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -409,6 +437,7 @@ class AKSServiceAccountUserImpersonation:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -420,6 +449,10 @@ class AKSServiceAccountUserImpersonation:
         tags=None,
         token=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -463,6 +496,7 @@ class AKSServiceAccountUserImpersonation:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccountUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -477,6 +511,7 @@ class AKSServiceAccountUserImpersonation:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -492,6 +527,7 @@ class AKSServiceAccountUserImpersonation:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -510,6 +546,7 @@ class AKSUserImpersonation:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -526,6 +563,7 @@ class AKSUserImpersonation:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -539,6 +577,10 @@ class AKSUserImpersonation:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -590,6 +632,7 @@ class AKSUserImpersonation:
 
     def __repr__(self):
         return '<sdm.AKSUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -606,6 +649,7 @@ class AKSUserImpersonation:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -623,6 +667,7 @@ class AKSUserImpersonation:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -644,6 +689,7 @@ class AWS:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'egress_filter',
         'healthcheck_region',
         'healthy',
@@ -659,6 +705,7 @@ class AWS:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_region=None,
         healthy=None,
@@ -673,6 +720,10 @@ class AWS:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -718,6 +769,7 @@ class AWS:
     def __repr__(self):
         return '<sdm.AWS ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_region: ' + repr(self.healthcheck_region) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -733,6 +785,7 @@ class AWS:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_region': self.healthcheck_region,
             'healthy': self.healthy,
@@ -749,6 +802,7 @@ class AWS:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_region=d.get('healthcheck_region'),
             healthy=d.get('healthy'),
@@ -1457,6 +1511,7 @@ class AmazonEKS:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'certificate_authority',
         'cluster_name',
         'egress_filter',
@@ -1476,6 +1531,7 @@ class AmazonEKS:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
         egress_filter=None,
@@ -1494,6 +1550,10 @@ class AmazonEKS:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -1555,6 +1615,7 @@ class AmazonEKS:
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -1574,6 +1635,7 @@ class AmazonEKS:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
             'egress_filter': self.egress_filter,
@@ -1594,6 +1656,7 @@ class AmazonEKS:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
             egress_filter=d.get('egress_filter'),
@@ -1617,6 +1680,7 @@ class AmazonEKSUserImpersonation:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'certificate_authority',
         'cluster_name',
         'egress_filter',
@@ -1636,6 +1700,7 @@ class AmazonEKSUserImpersonation:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
         egress_filter=None,
@@ -1654,6 +1719,10 @@ class AmazonEKSUserImpersonation:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -1715,6 +1784,7 @@ class AmazonEKSUserImpersonation:
     def __repr__(self):
         return '<sdm.AmazonEKSUserImpersonation ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -1734,6 +1804,7 @@ class AmazonEKSUserImpersonation:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
             'egress_filter': self.egress_filter,
@@ -1754,6 +1825,7 @@ class AmazonEKSUserImpersonation:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
             egress_filter=d.get('egress_filter'),
@@ -1777,6 +1849,7 @@ class AmazonES:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'egress_filter',
         'endpoint',
         'healthy',
@@ -1794,6 +1867,7 @@ class AmazonES:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         egress_filter=None,
         endpoint=None,
         healthy=None,
@@ -1810,6 +1884,10 @@ class AmazonES:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1863,6 +1941,7 @@ class AmazonES:
     def __repr__(self):
         return '<sdm.AmazonES ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -1880,6 +1959,7 @@ class AmazonES:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthy': self.healthy,
@@ -1898,6 +1978,7 @@ class AmazonES:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthy=d.get('healthy'),
@@ -1918,6 +1999,7 @@ class AmazonMQAMQP091:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -1934,6 +2016,7 @@ class AmazonMQAMQP091:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -1947,6 +2030,10 @@ class AmazonMQAMQP091:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -1998,6 +2085,7 @@ class AmazonMQAMQP091:
 
     def __repr__(self):
         return '<sdm.AmazonMQAMQP091 ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -2014,6 +2102,7 @@ class AmazonMQAMQP091:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -2031,6 +2120,7 @@ class AmazonMQAMQP091:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -2052,6 +2142,7 @@ class Athena:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'id',
@@ -2069,6 +2160,7 @@ class Athena:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         id=None,
@@ -2085,6 +2177,10 @@ class Athena:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -2138,6 +2234,7 @@ class Athena:
     def __repr__(self):
         return '<sdm.Athena ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -2155,6 +2252,7 @@ class Athena:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'id': self.id,
@@ -2173,6 +2271,7 @@ class Athena:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             id=d.get('id'),
@@ -2193,6 +2292,7 @@ class AuroraMysql:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -2209,6 +2309,7 @@ class AuroraMysql:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -2222,6 +2323,10 @@ class AuroraMysql:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -2273,6 +2378,7 @@ class AuroraMysql:
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2289,6 +2395,7 @@ class AuroraMysql:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -2306,6 +2413,7 @@ class AuroraMysql:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -2326,6 +2434,7 @@ class AuroraPostgres:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -2343,6 +2452,7 @@ class AuroraPostgres:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -2357,6 +2467,10 @@ class AuroraPostgres:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -2412,6 +2526,7 @@ class AuroraPostgres:
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2429,6 +2544,7 @@ class AuroraPostgres:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -2447,6 +2563,7 @@ class AuroraPostgres:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -2469,6 +2586,7 @@ class Azure:
     '''
     __slots__ = [
         'app_id',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'id',
@@ -2482,6 +2600,7 @@ class Azure:
     def __init__(
         self,
         app_id=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         id=None,
@@ -2494,6 +2613,10 @@ class Azure:
         self.app_id = app_id if app_id is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -2531,6 +2654,7 @@ class Azure:
     def __repr__(self):
         return '<sdm.Azure ' + \
             'app_id: ' + repr(self.app_id) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -2544,6 +2668,7 @@ class Azure:
     def to_dict(self):
         return {
             'app_id': self.app_id,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'id': self.id,
@@ -2558,6 +2683,7 @@ class Azure:
     def from_dict(cls, d):
         return cls(
             app_id=d.get('app_id'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             id=d.get('id'),
@@ -2575,6 +2701,7 @@ class AzureCertificate:
     '''
     __slots__ = [
         'app_id',
+        'bind_interface',
         'client_certificate',
         'egress_filter',
         'healthy',
@@ -2588,6 +2715,7 @@ class AzureCertificate:
     def __init__(
         self,
         app_id=None,
+        bind_interface=None,
         client_certificate=None,
         egress_filter=None,
         healthy=None,
@@ -2600,6 +2728,10 @@ class AzureCertificate:
         self.app_id = app_id if app_id is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
@@ -2637,6 +2769,7 @@ class AzureCertificate:
     def __repr__(self):
         return '<sdm.AzureCertificate ' + \
             'app_id: ' + repr(self.app_id) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2650,6 +2783,7 @@ class AzureCertificate:
     def to_dict(self):
         return {
             'app_id': self.app_id,
+            'bind_interface': self.bind_interface,
             'client_certificate': self.client_certificate,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -2664,6 +2798,7 @@ class AzureCertificate:
     def from_dict(cls, d):
         return cls(
             app_id=d.get('app_id'),
+            bind_interface=d.get('bind_interface'),
             client_certificate=d.get('client_certificate'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -2680,6 +2815,7 @@ class AzurePostgres:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -2697,6 +2833,7 @@ class AzurePostgres:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -2711,6 +2848,10 @@ class AzurePostgres:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -2766,6 +2907,7 @@ class AzurePostgres:
 
     def __repr__(self):
         return '<sdm.AzurePostgres ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2783,6 +2925,7 @@ class AzurePostgres:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -2801,6 +2944,7 @@ class AzurePostgres:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -2883,6 +3027,7 @@ class BigQuery:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'endpoint',
         'healthy',
@@ -2898,6 +3043,7 @@ class BigQuery:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         endpoint=None,
         healthy=None,
@@ -2910,6 +3056,10 @@ class BigQuery:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -2957,6 +3107,7 @@ class BigQuery:
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -2972,6 +3123,7 @@ class BigQuery:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthy': self.healthy,
@@ -2988,6 +3140,7 @@ class BigQuery:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthy=d.get('healthy'),
@@ -3007,6 +3160,7 @@ class Cassandra:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -3023,6 +3177,7 @@ class Cassandra:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -3036,6 +3191,10 @@ class Cassandra:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3087,6 +3246,7 @@ class Cassandra:
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -3103,6 +3263,7 @@ class Cassandra:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -3120,6 +3281,7 @@ class Cassandra:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -3140,6 +3302,7 @@ class Citus:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -3157,6 +3320,7 @@ class Citus:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -3171,6 +3335,10 @@ class Citus:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -3226,6 +3394,7 @@ class Citus:
 
     def __repr__(self):
         return '<sdm.Citus ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -3243,6 +3412,7 @@ class Citus:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -3261,6 +3431,7 @@ class Citus:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -3282,6 +3453,7 @@ class Clustrix:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -3298,6 +3470,7 @@ class Clustrix:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -3311,6 +3484,10 @@ class Clustrix:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -3362,6 +3539,7 @@ class Clustrix:
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -3378,6 +3556,7 @@ class Clustrix:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -3395,6 +3574,7 @@ class Clustrix:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -3415,6 +3595,7 @@ class Cockroach:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -3432,6 +3613,7 @@ class Cockroach:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -3446,6 +3628,10 @@ class Cockroach:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -3501,6 +3687,7 @@ class Cockroach:
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -3518,6 +3705,7 @@ class Cockroach:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -3536,6 +3724,7 @@ class Cockroach:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -3684,6 +3873,7 @@ class DB2I:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -3700,6 +3890,7 @@ class DB2I:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -3713,6 +3904,10 @@ class DB2I:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3764,6 +3959,7 @@ class DB2I:
 
     def __repr__(self):
         return '<sdm.DB2I ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -3780,6 +3976,7 @@ class DB2I:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -3797,6 +3994,7 @@ class DB2I:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -3817,6 +4015,7 @@ class DB2LUW:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -3833,6 +4032,7 @@ class DB2LUW:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -3846,6 +4046,10 @@ class DB2LUW:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -3897,6 +4101,7 @@ class DB2LUW:
 
     def __repr__(self):
         return '<sdm.DB2LUW ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -3913,6 +4118,7 @@ class DB2LUW:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -3930,6 +4136,7 @@ class DB2LUW:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -3972,6 +4179,7 @@ class DocumentDBHost:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -3988,6 +4196,7 @@ class DocumentDBHost:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -4003,6 +4212,10 @@ class DocumentDBHost:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -4052,6 +4265,7 @@ class DocumentDBHost:
     def __repr__(self):
         return '<sdm.DocumentDBHost ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -4068,6 +4282,7 @@ class DocumentDBHost:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -4085,6 +4300,7 @@ class DocumentDBHost:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -4105,6 +4321,7 @@ class DocumentDBReplicaSet:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'connect_to_replica',
         'egress_filter',
         'healthy',
@@ -4122,6 +4339,7 @@ class DocumentDBReplicaSet:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         connect_to_replica=None,
         egress_filter=None,
         healthy=None,
@@ -4138,6 +4356,10 @@ class DocumentDBReplicaSet:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -4191,6 +4413,7 @@ class DocumentDBReplicaSet:
     def __repr__(self):
         return '<sdm.DocumentDBReplicaSet ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -4208,6 +4431,7 @@ class DocumentDBReplicaSet:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'connect_to_replica': self.connect_to_replica,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -4226,6 +4450,7 @@ class DocumentDBReplicaSet:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             connect_to_replica=d.get('connect_to_replica'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -4246,6 +4471,7 @@ class Druid:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -4261,6 +4487,7 @@ class Druid:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -4273,6 +4500,10 @@ class Druid:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4320,6 +4551,7 @@ class Druid:
 
     def __repr__(self):
         return '<sdm.Druid ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -4335,6 +4567,7 @@ class Druid:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -4351,6 +4584,7 @@ class Druid:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -4371,6 +4605,7 @@ class DynamoDB:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'egress_filter',
         'endpoint',
         'healthy',
@@ -4388,6 +4623,7 @@ class DynamoDB:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         egress_filter=None,
         endpoint=None,
         healthy=None,
@@ -4404,6 +4640,10 @@ class DynamoDB:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -4457,6 +4697,7 @@ class DynamoDB:
     def __repr__(self):
         return '<sdm.DynamoDB ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -4474,6 +4715,7 @@ class DynamoDB:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthy': self.healthy,
@@ -4492,6 +4734,7 @@ class DynamoDB:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthy=d.get('healthy'),
@@ -4512,6 +4755,7 @@ class Elastic:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -4528,6 +4772,7 @@ class Elastic:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -4541,6 +4786,10 @@ class Elastic:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4592,6 +4841,7 @@ class Elastic:
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -4608,6 +4858,7 @@ class Elastic:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -4625,6 +4876,7 @@ class Elastic:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -4645,6 +4897,7 @@ class ElasticacheRedis:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -4660,6 +4913,7 @@ class ElasticacheRedis:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -4672,6 +4926,10 @@ class ElasticacheRedis:
         tags=None,
         tls_required=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4719,6 +4977,7 @@ class ElasticacheRedis:
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -4734,6 +4993,7 @@ class ElasticacheRedis:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -4750,6 +5010,7 @@ class ElasticacheRedis:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -4769,6 +5030,7 @@ class GCP:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'id',
@@ -4781,6 +5043,7 @@ class GCP:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         id=None,
@@ -4790,6 +5053,10 @@ class GCP:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4825,6 +5092,7 @@ class GCP:
 
     def __repr__(self):
         return '<sdm.GCP ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -4837,6 +5105,7 @@ class GCP:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'id': self.id,
@@ -4850,6 +5119,7 @@ class GCP:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             id=d.get('id'),
@@ -5039,6 +5309,7 @@ class GoogleGKE:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'egress_filter',
         'endpoint',
@@ -5053,6 +5324,7 @@ class GoogleGKE:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         egress_filter=None,
         endpoint=None,
@@ -5064,6 +5336,10 @@ class GoogleGKE:
         service_account_key=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -5107,6 +5383,7 @@ class GoogleGKE:
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
@@ -5121,6 +5398,7 @@ class GoogleGKE:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
@@ -5136,6 +5414,7 @@ class GoogleGKE:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
@@ -5154,6 +5433,7 @@ class GoogleGKEUserImpersonation:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'egress_filter',
         'endpoint',
@@ -5168,6 +5448,7 @@ class GoogleGKEUserImpersonation:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         egress_filter=None,
         endpoint=None,
@@ -5179,6 +5460,10 @@ class GoogleGKEUserImpersonation:
         service_account_key=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -5222,6 +5507,7 @@ class GoogleGKEUserImpersonation:
 
     def __repr__(self):
         return '<sdm.GoogleGKEUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
@@ -5236,6 +5522,7 @@ class GoogleGKEUserImpersonation:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
@@ -5251,6 +5538,7 @@ class GoogleGKEUserImpersonation:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
@@ -5269,6 +5557,7 @@ class Greenplum:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -5286,6 +5575,7 @@ class Greenplum:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -5300,6 +5590,10 @@ class Greenplum:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -5355,6 +5649,7 @@ class Greenplum:
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -5372,6 +5667,7 @@ class Greenplum:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -5390,6 +5686,7 @@ class Greenplum:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -5412,6 +5709,7 @@ class HTTPAuth:
     '''
     __slots__ = [
         'auth_header',
+        'bind_interface',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -5428,6 +5726,7 @@ class HTTPAuth:
     def __init__(
         self,
         auth_header=None,
+        bind_interface=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -5443,6 +5742,10 @@ class HTTPAuth:
         self.auth_header = auth_header if auth_header is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -5492,6 +5795,7 @@ class HTTPAuth:
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
             'auth_header: ' + repr(self.auth_header) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -5508,6 +5812,7 @@ class HTTPAuth:
     def to_dict(self):
         return {
             'auth_header': self.auth_header,
+            'bind_interface': self.bind_interface,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -5525,6 +5830,7 @@ class HTTPAuth:
     def from_dict(cls, d):
         return cls(
             auth_header=d.get('auth_header'),
+            bind_interface=d.get('bind_interface'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -5544,6 +5850,7 @@ class HTTPBasicAuth:
 
     '''
     __slots__ = [
+        'bind_interface',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -5561,6 +5868,7 @@ class HTTPBasicAuth:
 
     def __init__(
         self,
+        bind_interface=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -5575,6 +5883,10 @@ class HTTPBasicAuth:
         url=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.default_path = default_path if default_path is not None else ''
         '''
 
@@ -5630,6 +5942,7 @@ class HTTPBasicAuth:
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -5647,6 +5960,7 @@ class HTTPBasicAuth:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -5665,6 +5979,7 @@ class HTTPBasicAuth:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -5686,6 +6001,7 @@ class HTTPNoAuth:
 
     '''
     __slots__ = [
+        'bind_interface',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -5701,6 +6017,7 @@ class HTTPNoAuth:
 
     def __init__(
         self,
+        bind_interface=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -5713,6 +6030,10 @@ class HTTPNoAuth:
         tags=None,
         url=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.default_path = default_path if default_path is not None else ''
         '''
 
@@ -5760,6 +6081,7 @@ class HTTPNoAuth:
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -5775,6 +6097,7 @@ class HTTPNoAuth:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -5791,6 +6114,7 @@ class HTTPNoAuth:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -5810,6 +6134,7 @@ class Kubernetes:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -5826,6 +6151,7 @@ class Kubernetes:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -5839,6 +6165,10 @@ class Kubernetes:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -5890,6 +6220,7 @@ class Kubernetes:
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -5906,6 +6237,7 @@ class Kubernetes:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -5923,6 +6255,7 @@ class Kubernetes:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -5943,6 +6276,7 @@ class KubernetesBasicAuth:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -5958,6 +6292,7 @@ class KubernetesBasicAuth:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -5970,6 +6305,10 @@ class KubernetesBasicAuth:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6017,6 +6356,7 @@ class KubernetesBasicAuth:
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -6032,6 +6372,7 @@ class KubernetesBasicAuth:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -6048,6 +6389,7 @@ class KubernetesBasicAuth:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -6067,6 +6409,7 @@ class KubernetesServiceAccount:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -6081,6 +6424,7 @@ class KubernetesServiceAccount:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -6092,6 +6436,10 @@ class KubernetesServiceAccount:
         tags=None,
         token=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6135,6 +6483,7 @@ class KubernetesServiceAccount:
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -6149,6 +6498,7 @@ class KubernetesServiceAccount:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -6164,6 +6514,7 @@ class KubernetesServiceAccount:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -6182,6 +6533,7 @@ class KubernetesServiceAccountUserImpersonation:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -6196,6 +6548,7 @@ class KubernetesServiceAccountUserImpersonation:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -6207,6 +6560,10 @@ class KubernetesServiceAccountUserImpersonation:
         tags=None,
         token=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6250,6 +6607,7 @@ class KubernetesServiceAccountUserImpersonation:
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -6264,6 +6622,7 @@ class KubernetesServiceAccountUserImpersonation:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -6279,6 +6638,7 @@ class KubernetesServiceAccountUserImpersonation:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -6297,6 +6657,7 @@ class KubernetesUserImpersonation:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -6313,6 +6674,7 @@ class KubernetesUserImpersonation:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -6326,6 +6688,10 @@ class KubernetesUserImpersonation:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -6377,6 +6743,7 @@ class KubernetesUserImpersonation:
 
     def __repr__(self):
         return '<sdm.KubernetesUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -6393,6 +6760,7 @@ class KubernetesUserImpersonation:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -6410,6 +6778,7 @@ class KubernetesUserImpersonation:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -6430,6 +6799,7 @@ class MTLSMysql:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -6450,6 +6820,7 @@ class MTLSMysql:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -6467,6 +6838,10 @@ class MTLSMysql:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -6534,6 +6909,7 @@ class MTLSMysql:
 
     def __repr__(self):
         return '<sdm.MTLSMysql ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -6554,6 +6930,7 @@ class MTLSMysql:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -6575,6 +6952,7 @@ class MTLSMysql:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -6599,6 +6977,7 @@ class MTLSPostgres:
 
     '''
     __slots__ = [
+        'bind_interface',
         'certificate_authority',
         'client_certificate',
         'client_key',
@@ -6620,6 +6999,7 @@ class MTLSPostgres:
 
     def __init__(
         self,
+        bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
@@ -6638,6 +7018,10 @@ class MTLSPostgres:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
 
@@ -6709,6 +7093,7 @@ class MTLSPostgres:
 
     def __repr__(self):
         return '<sdm.MTLSPostgres ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
@@ -6730,6 +7115,7 @@ class MTLSPostgres:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
@@ -6752,6 +7138,7 @@ class MTLSPostgres:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
@@ -6777,6 +7164,7 @@ class Maria:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -6793,6 +7181,7 @@ class Maria:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -6806,6 +7195,10 @@ class Maria:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -6857,6 +7250,7 @@ class Maria:
 
     def __repr__(self):
         return '<sdm.Maria ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -6873,6 +7267,7 @@ class Maria:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -6890,6 +7285,7 @@ class Maria:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -6910,6 +7306,7 @@ class Memcached:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -6923,6 +7320,7 @@ class Memcached:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -6933,6 +7331,10 @@ class Memcached:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6972,6 +7374,7 @@ class Memcached:
 
     def __repr__(self):
         return '<sdm.Memcached ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -6985,6 +7388,7 @@ class Memcached:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -6999,6 +7403,7 @@ class Memcached:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -7016,6 +7421,7 @@ class Memsql:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -7032,6 +7438,7 @@ class Memsql:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -7045,6 +7452,10 @@ class Memsql:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -7096,6 +7507,7 @@ class Memsql:
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -7112,6 +7524,7 @@ class Memsql:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -7129,6 +7542,7 @@ class Memsql:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -7150,6 +7564,7 @@ class MongoHost:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -7167,6 +7582,7 @@ class MongoHost:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -7183,6 +7599,10 @@ class MongoHost:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7236,6 +7656,7 @@ class MongoHost:
     def __repr__(self):
         return '<sdm.MongoHost ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -7253,6 +7674,7 @@ class MongoHost:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -7271,6 +7693,7 @@ class MongoHost:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -7292,6 +7715,7 @@ class MongoLegacyHost:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -7310,6 +7734,7 @@ class MongoLegacyHost:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -7327,6 +7752,10 @@ class MongoLegacyHost:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7384,6 +7813,7 @@ class MongoLegacyHost:
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -7402,6 +7832,7 @@ class MongoLegacyHost:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -7421,6 +7852,7 @@ class MongoLegacyHost:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -7443,6 +7875,7 @@ class MongoLegacyReplicaset:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'connect_to_replica',
         'egress_filter',
         'healthy',
@@ -7462,6 +7895,7 @@ class MongoLegacyReplicaset:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         connect_to_replica=None,
         egress_filter=None,
         healthy=None,
@@ -7480,6 +7914,10 @@ class MongoLegacyReplicaset:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -7541,6 +7979,7 @@ class MongoLegacyReplicaset:
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -7560,6 +7999,7 @@ class MongoLegacyReplicaset:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'connect_to_replica': self.connect_to_replica,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -7580,6 +8020,7 @@ class MongoLegacyReplicaset:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             connect_to_replica=d.get('connect_to_replica'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -7603,6 +8044,7 @@ class MongoReplicaSet:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'connect_to_replica',
         'egress_filter',
         'healthy',
@@ -7622,6 +8064,7 @@ class MongoReplicaSet:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         connect_to_replica=None,
         egress_filter=None,
         healthy=None,
@@ -7640,6 +8083,10 @@ class MongoReplicaSet:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -7701,6 +8148,7 @@ class MongoReplicaSet:
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'connect_to_replica: ' + repr(self.connect_to_replica) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -7720,6 +8168,7 @@ class MongoReplicaSet:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'connect_to_replica': self.connect_to_replica,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -7740,6 +8189,7 @@ class MongoReplicaSet:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             connect_to_replica=d.get('connect_to_replica'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -7763,6 +8213,7 @@ class MongoShardedCluster:
     '''
     __slots__ = [
         'auth_database',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -7779,6 +8230,7 @@ class MongoShardedCluster:
     def __init__(
         self,
         auth_database=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -7794,6 +8246,10 @@ class MongoShardedCluster:
         self.auth_database = auth_database if auth_database is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7843,6 +8299,7 @@ class MongoShardedCluster:
     def __repr__(self):
         return '<sdm.MongoShardedCluster ' + \
             'auth_database: ' + repr(self.auth_database) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -7859,6 +8316,7 @@ class MongoShardedCluster:
     def to_dict(self):
         return {
             'auth_database': self.auth_database,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -7876,6 +8334,7 @@ class MongoShardedCluster:
     def from_dict(cls, d):
         return cls(
             auth_database=d.get('auth_database'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -7895,6 +8354,7 @@ class Mysql:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -7911,6 +8371,7 @@ class Mysql:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -7924,6 +8385,10 @@ class Mysql:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -7975,6 +8440,7 @@ class Mysql:
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -7991,6 +8457,7 @@ class Mysql:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -8008,6 +8475,7 @@ class Mysql:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -8028,6 +8496,7 @@ class Neptune:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'endpoint',
         'healthy',
@@ -8041,6 +8510,7 @@ class Neptune:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         endpoint=None,
         healthy=None,
@@ -8051,6 +8521,10 @@ class Neptune:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8090,6 +8564,7 @@ class Neptune:
 
     def __repr__(self):
         return '<sdm.Neptune ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -8103,6 +8578,7 @@ class Neptune:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthy': self.healthy,
@@ -8117,6 +8593,7 @@ class Neptune:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthy=d.get('healthy'),
@@ -8135,6 +8612,7 @@ class NeptuneIAM:
     '''
     __slots__ = [
         'access_key',
+        'bind_interface',
         'egress_filter',
         'endpoint',
         'healthy',
@@ -8153,6 +8631,7 @@ class NeptuneIAM:
     def __init__(
         self,
         access_key=None,
+        bind_interface=None,
         egress_filter=None,
         endpoint=None,
         healthy=None,
@@ -8170,6 +8649,10 @@ class NeptuneIAM:
         self.access_key = access_key if access_key is not None else ''
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -8227,6 +8710,7 @@ class NeptuneIAM:
     def __repr__(self):
         return '<sdm.NeptuneIAM ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -8245,6 +8729,7 @@ class NeptuneIAM:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthy': self.healthy,
@@ -8264,6 +8749,7 @@ class NeptuneIAM:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthy=d.get('healthy'),
@@ -8495,6 +8981,7 @@ class Oracle:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -8512,6 +8999,7 @@ class Oracle:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -8526,6 +9014,10 @@ class Oracle:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -8581,6 +9073,7 @@ class Oracle:
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -8598,6 +9091,7 @@ class Oracle:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -8616,6 +9110,7 @@ class Oracle:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -8637,6 +9132,7 @@ class Postgres:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -8654,6 +9150,7 @@ class Postgres:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -8668,6 +9165,10 @@ class Postgres:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -8723,6 +9224,7 @@ class Postgres:
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -8740,6 +9242,7 @@ class Postgres:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -8758,6 +9261,7 @@ class Postgres:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -8779,6 +9283,7 @@ class Presto:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -8796,6 +9301,7 @@ class Presto:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -8810,6 +9316,10 @@ class Presto:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -8865,6 +9375,7 @@ class Presto:
 
     def __repr__(self):
         return '<sdm.Presto ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -8882,6 +9393,7 @@ class Presto:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -8900,6 +9412,7 @@ class Presto:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -8921,6 +9434,7 @@ class RDP:
 
     '''
     __slots__ = [
+        'bind_interface',
         'downgrade_nla_connections',
         'egress_filter',
         'healthy',
@@ -8937,6 +9451,7 @@ class RDP:
 
     def __init__(
         self,
+        bind_interface=None,
         downgrade_nla_connections=None,
         egress_filter=None,
         healthy=None,
@@ -8950,6 +9465,10 @@ class RDP:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.downgrade_nla_connections = downgrade_nla_connections if downgrade_nla_connections is not None else False
         '''
 
@@ -9001,6 +9520,7 @@ class RDP:
 
     def __repr__(self):
         return '<sdm.RDP ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'downgrade_nla_connections: ' + repr(self.downgrade_nla_connections) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -9017,6 +9537,7 @@ class RDP:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'downgrade_nla_connections': self.downgrade_nla_connections,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -9034,6 +9555,7 @@ class RDP:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             downgrade_nla_connections=d.get('downgrade_nla_connections'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -9054,6 +9576,7 @@ class RabbitMQAMQP091:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -9070,6 +9593,7 @@ class RabbitMQAMQP091:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -9083,6 +9607,10 @@ class RabbitMQAMQP091:
         tls_required=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9134,6 +9662,7 @@ class RabbitMQAMQP091:
 
     def __repr__(self):
         return '<sdm.RabbitMQAMQP091 ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -9150,6 +9679,7 @@ class RabbitMQAMQP091:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -9167,6 +9697,7 @@ class RabbitMQAMQP091:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -9251,6 +9782,7 @@ class RawTCP:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -9264,6 +9796,7 @@ class RawTCP:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -9274,6 +9807,10 @@ class RawTCP:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9313,6 +9850,7 @@ class RawTCP:
 
     def __repr__(self):
         return '<sdm.RawTCP ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -9326,6 +9864,7 @@ class RawTCP:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -9340,6 +9879,7 @@ class RawTCP:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -9357,6 +9897,7 @@ class Redis:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -9371,6 +9912,7 @@ class Redis:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -9382,6 +9924,10 @@ class Redis:
         secret_store_id=None,
         tags=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9425,6 +9971,7 @@ class Redis:
 
     def __repr__(self):
         return '<sdm.Redis ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -9439,6 +9986,7 @@ class Redis:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -9454,6 +10002,7 @@ class Redis:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -9472,6 +10021,7 @@ class Redshift:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -9489,6 +10039,7 @@ class Redshift:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -9503,6 +10054,10 @@ class Redshift:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -9558,6 +10113,7 @@ class Redshift:
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -9575,6 +10131,7 @@ class Redshift:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -9593,6 +10150,7 @@ class Redshift:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -10578,6 +11136,7 @@ class SQLServer:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -10596,6 +11155,7 @@ class SQLServer:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -10611,6 +11171,10 @@ class SQLServer:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -10670,6 +11234,7 @@ class SQLServer:
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -10688,6 +11253,7 @@ class SQLServer:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -10707,6 +11273,7 @@ class SQLServer:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -10730,6 +11297,7 @@ class SSH:
     '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -10746,6 +11314,7 @@ class SSH:
     def __init__(
         self,
         allow_deprecated_key_exchanges=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -10761,6 +11330,10 @@ class SSH:
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10810,6 +11383,7 @@ class SSH:
     def __repr__(self):
         return '<sdm.SSH ' + \
             'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -10827,6 +11401,7 @@ class SSH:
         return {
             'allow_deprecated_key_exchanges':
             self.allow_deprecated_key_exchanges,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -10845,6 +11420,7 @@ class SSH:
         return cls(
             allow_deprecated_key_exchanges=d.get(
                 'allow_deprecated_key_exchanges'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -10865,6 +11441,7 @@ class SSHCert:
     '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -10880,6 +11457,7 @@ class SSHCert:
     def __init__(
         self,
         allow_deprecated_key_exchanges=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -10894,6 +11472,10 @@ class SSHCert:
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10939,6 +11521,7 @@ class SSHCert:
     def __repr__(self):
         return '<sdm.SSHCert ' + \
             'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -10955,6 +11538,7 @@ class SSHCert:
         return {
             'allow_deprecated_key_exchanges':
             self.allow_deprecated_key_exchanges,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -10972,6 +11556,7 @@ class SSHCert:
         return cls(
             allow_deprecated_key_exchanges=d.get(
                 'allow_deprecated_key_exchanges'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -10991,6 +11576,7 @@ class SSHCustomerKey:
     '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -11007,6 +11593,7 @@ class SSHCustomerKey:
     def __init__(
         self,
         allow_deprecated_key_exchanges=None,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -11022,6 +11609,10 @@ class SSHCustomerKey:
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
         '''
 
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11071,6 +11662,7 @@ class SSHCustomerKey:
     def __repr__(self):
         return '<sdm.SSHCustomerKey ' + \
             'allow_deprecated_key_exchanges: ' + repr(self.allow_deprecated_key_exchanges) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -11088,6 +11680,7 @@ class SSHCustomerKey:
         return {
             'allow_deprecated_key_exchanges':
             self.allow_deprecated_key_exchanges,
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -11106,6 +11699,7 @@ class SSHCustomerKey:
         return cls(
             allow_deprecated_key_exchanges=d.get(
                 'allow_deprecated_key_exchanges'),
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -11387,6 +11981,7 @@ class SingleStore:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -11403,6 +11998,7 @@ class SingleStore:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -11416,6 +12012,10 @@ class SingleStore:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -11467,6 +12067,7 @@ class SingleStore:
 
     def __repr__(self):
         return '<sdm.SingleStore ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -11483,6 +12084,7 @@ class SingleStore:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -11500,6 +12102,7 @@ class SingleStore:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -11520,6 +12123,7 @@ class Snowflake:
 
     '''
     __slots__ = [
+        'bind_interface',
         'database',
         'egress_filter',
         'healthy',
@@ -11536,6 +12140,7 @@ class Snowflake:
 
     def __init__(
         self,
+        bind_interface=None,
         database=None,
         egress_filter=None,
         healthy=None,
@@ -11549,6 +12154,10 @@ class Snowflake:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.database = database if database is not None else ''
         '''
 
@@ -11600,6 +12209,7 @@ class Snowflake:
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -11616,6 +12226,7 @@ class Snowflake:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
@@ -11633,6 +12244,7 @@ class Snowflake:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
@@ -11653,6 +12265,7 @@ class Sybase:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -11668,6 +12281,7 @@ class Sybase:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -11680,6 +12294,10 @@ class Sybase:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -11727,6 +12345,7 @@ class Sybase:
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -11742,6 +12361,7 @@ class Sybase:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -11758,6 +12378,7 @@ class Sybase:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -11777,6 +12398,7 @@ class SybaseIQ:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -11792,6 +12414,7 @@ class SybaseIQ:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -11804,6 +12427,10 @@ class SybaseIQ:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -11851,6 +12478,7 @@ class SybaseIQ:
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -11866,6 +12494,7 @@ class SybaseIQ:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -11882,6 +12511,7 @@ class SybaseIQ:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
@@ -11944,6 +12574,7 @@ class Teradata:
 
     '''
     __slots__ = [
+        'bind_interface',
         'egress_filter',
         'healthy',
         'hostname',
@@ -11959,6 +12590,7 @@ class Teradata:
 
     def __init__(
         self,
+        bind_interface=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -11971,6 +12603,10 @@ class Teradata:
         tags=None,
         username=None,
     ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -12018,6 +12654,7 @@ class Teradata:
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -12033,6 +12670,7 @@ class Teradata:
 
     def to_dict(self):
         return {
+            'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -12049,6 +12687,7 @@ class Teradata:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),

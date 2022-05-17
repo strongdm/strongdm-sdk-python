@@ -104,6 +104,7 @@ def convert_aks_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKS()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -123,6 +124,7 @@ def convert_aks_to_plumbing(porcelain):
     plumbing = AKS()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -150,6 +152,7 @@ def convert_aks_basic_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKSBasicAuth()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -168,6 +171,7 @@ def convert_aks_basic_auth_to_plumbing(porcelain):
     plumbing = AKSBasicAuth()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -199,6 +203,7 @@ def convert_aks_service_account_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKSServiceAccount()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -216,6 +221,7 @@ def convert_aks_service_account_to_plumbing(porcelain):
     plumbing = AKSServiceAccount()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -247,6 +253,7 @@ def convert_aks_service_account_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKSServiceAccountUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -264,6 +271,7 @@ def convert_aks_service_account_user_impersonation_to_plumbing(porcelain):
     plumbing = AKSServiceAccountUserImpersonation()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -297,6 +305,7 @@ def convert_aks_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKSUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -316,6 +325,7 @@ def convert_aks_user_impersonation_to_plumbing(porcelain):
     plumbing = AKSUserImpersonation()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -350,6 +360,7 @@ def convert_aws_to_porcelain(plumbing):
         return None
     porcelain = models.AWS()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_region = (plumbing.healthcheck_region)
     porcelain.healthy = (plumbing.healthy)
@@ -368,6 +379,7 @@ def convert_aws_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_region = (porcelain.healthcheck_region)
     plumbing.healthy = (porcelain.healthy)
@@ -914,6 +926,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
         return None
     porcelain = models.AmazonEKS()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.cluster_name = (plumbing.cluster_name)
     porcelain.egress_filter = (plumbing.egress_filter)
@@ -936,6 +949,7 @@ def convert_amazon_eks_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.cluster_name = (porcelain.cluster_name)
     plumbing.egress_filter = (porcelain.egress_filter)
@@ -970,6 +984,7 @@ def convert_amazon_eks_user_impersonation_to_porcelain(plumbing):
         return None
     porcelain = models.AmazonEKSUserImpersonation()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.cluster_name = (plumbing.cluster_name)
     porcelain.egress_filter = (plumbing.egress_filter)
@@ -992,6 +1007,7 @@ def convert_amazon_eks_user_impersonation_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.cluster_name = (porcelain.cluster_name)
     plumbing.egress_filter = (porcelain.egress_filter)
@@ -1028,6 +1044,7 @@ def convert_amazon_es_to_porcelain(plumbing):
         return None
     porcelain = models.AmazonES()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.healthy = (plumbing.healthy)
@@ -1048,6 +1065,7 @@ def convert_amazon_es_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
     plumbing.healthy = (porcelain.healthy)
@@ -1077,6 +1095,7 @@ def convert_amazon_mqamqp_091_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AmazonMQAMQP091()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -1096,6 +1115,7 @@ def convert_amazon_mqamqp_091_to_plumbing(porcelain):
     plumbing = AmazonMQAMQP091()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -1130,6 +1150,7 @@ def convert_athena_to_porcelain(plumbing):
         return None
     porcelain = models.Athena()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
@@ -1150,6 +1171,7 @@ def convert_athena_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
@@ -1177,6 +1199,7 @@ def convert_aurora_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AuroraMysql()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1196,6 +1219,7 @@ def convert_aurora_mysql_to_plumbing(porcelain):
     plumbing = AuroraMysql()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1227,6 +1251,7 @@ def convert_aurora_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AuroraPostgres()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1247,6 +1272,7 @@ def convert_aurora_postgres_to_plumbing(porcelain):
     plumbing = AuroraPostgres()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1282,6 +1308,7 @@ def convert_azure_to_porcelain(plumbing):
         return None
     porcelain = models.Azure()
     porcelain.app_id = (plumbing.app_id)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
@@ -1298,6 +1325,7 @@ def convert_azure_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.app_id = (porcelain.app_id)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
@@ -1322,6 +1350,7 @@ def convert_azure_certificate_to_porcelain(plumbing):
         return None
     porcelain = models.AzureCertificate()
     porcelain.app_id = (plumbing.app_id)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1338,6 +1367,7 @@ def convert_azure_certificate_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.app_id = (porcelain.app_id)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1367,6 +1397,7 @@ def convert_azure_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AzurePostgres()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1387,6 +1418,7 @@ def convert_azure_postgres_to_plumbing(porcelain):
     plumbing = AzurePostgres()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1454,6 +1486,7 @@ def convert_big_query_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.BigQuery()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.healthy = (plumbing.healthy)
@@ -1472,6 +1505,7 @@ def convert_big_query_to_plumbing(porcelain):
     plumbing = BigQuery()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
     plumbing.healthy = (porcelain.healthy)
@@ -1500,6 +1534,7 @@ def convert_cassandra_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Cassandra()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -1519,6 +1554,7 @@ def convert_cassandra_to_plumbing(porcelain):
     plumbing = Cassandra()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -1548,6 +1584,7 @@ def convert_citus_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Citus()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1568,6 +1605,7 @@ def convert_citus_to_plumbing(porcelain):
     plumbing = Citus()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1596,6 +1634,7 @@ def convert_clustrix_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Clustrix()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1615,6 +1654,7 @@ def convert_clustrix_to_plumbing(porcelain):
     plumbing = Clustrix()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1644,6 +1684,7 @@ def convert_cockroach_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Cockroach()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1664,6 +1705,7 @@ def convert_cockroach_to_plumbing(porcelain):
     plumbing = Cockroach()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1798,6 +1840,7 @@ def convert_db_2_i_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.DB2I()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -1817,6 +1860,7 @@ def convert_db_2_i_to_plumbing(porcelain):
     plumbing = DB2I()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -1844,6 +1888,7 @@ def convert_db_2_luw_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.DB2LUW()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1863,6 +1908,7 @@ def convert_db_2_luw_to_plumbing(porcelain):
     plumbing = DB2LUW()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -1921,6 +1967,7 @@ def convert_document_db_host_to_porcelain(plumbing):
         return None
     porcelain = models.DocumentDBHost()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -1940,6 +1987,7 @@ def convert_document_db_host_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -1973,6 +2021,7 @@ def convert_document_db_replica_set_to_porcelain(plumbing):
         return None
     porcelain = models.DocumentDBReplicaSet()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.connect_to_replica = (plumbing.connect_to_replica)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -1993,6 +2042,7 @@ def convert_document_db_replica_set_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.connect_to_replica = (porcelain.connect_to_replica)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -2026,6 +2076,7 @@ def convert_druid_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Druid()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -2044,6 +2095,7 @@ def convert_druid_to_plumbing(porcelain):
     plumbing = Druid()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -2071,6 +2123,7 @@ def convert_dynamo_db_to_porcelain(plumbing):
         return None
     porcelain = models.DynamoDB()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.healthy = (plumbing.healthy)
@@ -2091,6 +2144,7 @@ def convert_dynamo_db_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
     plumbing.healthy = (porcelain.healthy)
@@ -2120,6 +2174,7 @@ def convert_elastic_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Elastic()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -2139,6 +2194,7 @@ def convert_elastic_to_plumbing(porcelain):
     plumbing = Elastic()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -2166,6 +2222,7 @@ def convert_elasticache_redis_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.ElasticacheRedis()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -2184,6 +2241,7 @@ def convert_elasticache_redis_to_plumbing(porcelain):
     plumbing = ElasticacheRedis()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -2216,6 +2274,7 @@ def convert_gcp_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.GCP()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
@@ -2231,6 +2290,7 @@ def convert_gcp_to_plumbing(porcelain):
     plumbing = GCP()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
@@ -2350,6 +2410,7 @@ def convert_google_gke_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.GoogleGKE()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
@@ -2367,6 +2428,7 @@ def convert_google_gke_to_plumbing(porcelain):
     plumbing = GoogleGKE()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
@@ -2396,6 +2458,7 @@ def convert_google_gke_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.GoogleGKEUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
@@ -2413,6 +2476,7 @@ def convert_google_gke_user_impersonation_to_plumbing(porcelain):
     plumbing = GoogleGKEUserImpersonation()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
@@ -2444,6 +2508,7 @@ def convert_greenplum_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Greenplum()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -2464,6 +2529,7 @@ def convert_greenplum_to_plumbing(porcelain):
     plumbing = Greenplum()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -2495,6 +2561,7 @@ def convert_http_auth_to_porcelain(plumbing):
         return None
     porcelain = models.HTTPAuth()
     porcelain.auth_header = (plumbing.auth_header)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -2514,6 +2581,7 @@ def convert_http_auth_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_header = (porcelain.auth_header)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -2542,6 +2610,7 @@ def convert_http_basic_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.HTTPBasicAuth()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -2562,6 +2631,7 @@ def convert_http_basic_auth_to_plumbing(porcelain):
     plumbing = HTTPBasicAuth()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -2596,6 +2666,7 @@ def convert_http_no_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.HTTPNoAuth()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -2614,6 +2685,7 @@ def convert_http_no_auth_to_plumbing(porcelain):
     plumbing = HTTPNoAuth()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -2644,6 +2716,7 @@ def convert_kubernetes_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Kubernetes()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -2663,6 +2736,7 @@ def convert_kubernetes_to_plumbing(porcelain):
     plumbing = Kubernetes()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -2694,6 +2768,7 @@ def convert_kubernetes_basic_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.KubernetesBasicAuth()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -2712,6 +2787,7 @@ def convert_kubernetes_basic_auth_to_plumbing(porcelain):
     plumbing = KubernetesBasicAuth()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -2744,6 +2820,7 @@ def convert_kubernetes_service_account_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.KubernetesServiceAccount()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -2761,6 +2838,7 @@ def convert_kubernetes_service_account_to_plumbing(porcelain):
     plumbing = KubernetesServiceAccount()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -2793,6 +2871,7 @@ def convert_kubernetes_service_account_user_impersonation_to_porcelain(
     if plumbing is None:
         return None
     porcelain = models.KubernetesServiceAccountUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
@@ -2811,6 +2890,7 @@ def convert_kubernetes_service_account_user_impersonation_to_plumbing(
     plumbing = KubernetesServiceAccountUserImpersonation()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
@@ -2844,6 +2924,7 @@ def convert_kubernetes_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.KubernetesUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -2863,6 +2944,7 @@ def convert_kubernetes_user_impersonation_to_plumbing(porcelain):
     plumbing = KubernetesUserImpersonation()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -2896,6 +2978,7 @@ def convert_mtls_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.MTLSMysql()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -2919,6 +3002,7 @@ def convert_mtls_mysql_to_plumbing(porcelain):
     plumbing = MTLSMysql()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -2954,6 +3038,7 @@ def convert_mtls_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.MTLSPostgres()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
     porcelain.client_key = (plumbing.client_key)
@@ -2978,6 +3063,7 @@ def convert_mtls_postgres_to_plumbing(porcelain):
     plumbing = MTLSPostgres()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
     plumbing.client_key = (porcelain.client_key)
@@ -3015,6 +3101,7 @@ def convert_maria_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Maria()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3034,6 +3121,7 @@ def convert_maria_to_plumbing(porcelain):
     plumbing = Maria()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3061,6 +3149,7 @@ def convert_memcached_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Memcached()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -3077,6 +3166,7 @@ def convert_memcached_to_plumbing(porcelain):
     plumbing = Memcached()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -3103,6 +3193,7 @@ def convert_memsql_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Memsql()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3122,6 +3213,7 @@ def convert_memsql_to_plumbing(porcelain):
     plumbing = Memsql()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3150,6 +3242,7 @@ def convert_mongo_host_to_porcelain(plumbing):
         return None
     porcelain = models.MongoHost()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -3170,6 +3263,7 @@ def convert_mongo_host_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -3202,6 +3296,7 @@ def convert_mongo_legacy_host_to_porcelain(plumbing):
         return None
     porcelain = models.MongoLegacyHost()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -3223,6 +3318,7 @@ def convert_mongo_legacy_host_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -3258,6 +3354,7 @@ def convert_mongo_legacy_replicaset_to_porcelain(plumbing):
         return None
     porcelain = models.MongoLegacyReplicaset()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.connect_to_replica = (plumbing.connect_to_replica)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3280,6 +3377,7 @@ def convert_mongo_legacy_replicaset_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.connect_to_replica = (porcelain.connect_to_replica)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3316,6 +3414,7 @@ def convert_mongo_replica_set_to_porcelain(plumbing):
         return None
     porcelain = models.MongoReplicaSet()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.connect_to_replica = (plumbing.connect_to_replica)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3338,6 +3437,7 @@ def convert_mongo_replica_set_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.connect_to_replica = (porcelain.connect_to_replica)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3374,6 +3474,7 @@ def convert_mongo_sharded_cluster_to_porcelain(plumbing):
         return None
     porcelain = models.MongoShardedCluster()
     porcelain.auth_database = (plumbing.auth_database)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -3393,6 +3494,7 @@ def convert_mongo_sharded_cluster_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.auth_database = (porcelain.auth_database)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -3425,6 +3527,7 @@ def convert_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Mysql()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3444,6 +3547,7 @@ def convert_mysql_to_plumbing(porcelain):
     plumbing = Mysql()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3471,6 +3575,7 @@ def convert_neptune_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Neptune()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.healthy = (plumbing.healthy)
@@ -3487,6 +3592,7 @@ def convert_neptune_to_plumbing(porcelain):
     plumbing = Neptune()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
     plumbing.healthy = (porcelain.healthy)
@@ -3512,6 +3618,7 @@ def convert_neptune_iam_to_porcelain(plumbing):
         return None
     porcelain = models.NeptuneIAM()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.endpoint = (plumbing.endpoint)
     porcelain.healthy = (plumbing.healthy)
@@ -3533,6 +3640,7 @@ def convert_neptune_iam_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.endpoint = (porcelain.endpoint)
     plumbing.healthy = (porcelain.healthy)
@@ -3745,6 +3853,7 @@ def convert_oracle_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Oracle()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3765,6 +3874,7 @@ def convert_oracle_to_plumbing(porcelain):
     plumbing = Oracle()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3793,6 +3903,7 @@ def convert_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Postgres()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3813,6 +3924,7 @@ def convert_postgres_to_plumbing(porcelain):
     plumbing = Postgres()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3843,6 +3955,7 @@ def convert_presto_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Presto()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3863,6 +3976,7 @@ def convert_presto_to_plumbing(porcelain):
     plumbing = Presto()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3891,6 +4005,7 @@ def convert_rdp_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.RDP()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.downgrade_nla_connections = (plumbing.downgrade_nla_connections)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -3910,6 +4025,7 @@ def convert_rdp_to_plumbing(porcelain):
     plumbing = RDP()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.downgrade_nla_connections = (porcelain.downgrade_nla_connections)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -3937,6 +4053,7 @@ def convert_rabbit_mqamqp_091_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.RabbitMQAMQP091()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -3956,6 +4073,7 @@ def convert_rabbit_mqamqp_091_to_plumbing(porcelain):
     plumbing = RabbitMQAMQP091()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -4026,6 +4144,7 @@ def convert_raw_tcp_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.RawTCP()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -4042,6 +4161,7 @@ def convert_raw_tcp_to_plumbing(porcelain):
     plumbing = RawTCP()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -4066,6 +4186,7 @@ def convert_redis_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Redis()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -4083,6 +4204,7 @@ def convert_redis_to_plumbing(porcelain):
     plumbing = Redis()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -4108,6 +4230,7 @@ def convert_redshift_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Redshift()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -4128,6 +4251,7 @@ def convert_redshift_to_plumbing(porcelain):
     plumbing = Redshift()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -5175,6 +5299,7 @@ def convert_sql_server_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SQLServer()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -5196,6 +5321,7 @@ def convert_sql_server_to_plumbing(porcelain):
     plumbing = SQLServer()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -5231,6 +5357,7 @@ def convert_ssh_to_porcelain(plumbing):
     porcelain = models.SSH()
     porcelain.allow_deprecated_key_exchanges = (
         plumbing.allow_deprecated_key_exchanges)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5251,6 +5378,7 @@ def convert_ssh_to_plumbing(porcelain):
         return plumbing
     plumbing.allow_deprecated_key_exchanges = (
         porcelain.allow_deprecated_key_exchanges)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -5279,6 +5407,7 @@ def convert_ssh_cert_to_porcelain(plumbing):
     porcelain = models.SSHCert()
     porcelain.allow_deprecated_key_exchanges = (
         plumbing.allow_deprecated_key_exchanges)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5298,6 +5427,7 @@ def convert_ssh_cert_to_plumbing(porcelain):
         return plumbing
     plumbing.allow_deprecated_key_exchanges = (
         porcelain.allow_deprecated_key_exchanges)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -5327,6 +5457,7 @@ def convert_ssh_customer_key_to_porcelain(plumbing):
     porcelain = models.SSHCustomerKey()
     porcelain.allow_deprecated_key_exchanges = (
         plumbing.allow_deprecated_key_exchanges)
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5347,6 +5478,7 @@ def convert_ssh_customer_key_to_plumbing(porcelain):
         return plumbing
     plumbing.allow_deprecated_key_exchanges = (
         porcelain.allow_deprecated_key_exchanges)
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -5617,6 +5749,7 @@ def convert_single_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SingleStore()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -5636,6 +5769,7 @@ def convert_single_store_to_plumbing(porcelain):
     plumbing = SingleStore()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -5667,6 +5801,7 @@ def convert_snowflake_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Snowflake()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
@@ -5686,6 +5821,7 @@ def convert_snowflake_to_plumbing(porcelain):
     plumbing = Snowflake()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
@@ -5715,6 +5851,7 @@ def convert_sybase_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Sybase()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5733,6 +5870,7 @@ def convert_sybase_to_plumbing(porcelain):
     plumbing = Sybase()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -5759,6 +5897,7 @@ def convert_sybase_iq_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SybaseIQ()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5777,6 +5916,7 @@ def convert_sybase_iq_to_plumbing(porcelain):
     plumbing = SybaseIQ()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -5831,6 +5971,7 @@ def convert_teradata_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Teradata()
+    porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -5849,6 +5990,7 @@ def convert_teradata_to_plumbing(porcelain):
     plumbing = Teradata()
     if porcelain is None:
         return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
