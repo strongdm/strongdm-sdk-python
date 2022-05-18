@@ -11305,6 +11305,7 @@ class SSH:
         'name',
         'port',
         'port_forwarding',
+        'port_override',
         'public_key',
         'secret_store_id',
         'tags',
@@ -11322,6 +11323,7 @@ class SSH:
         name=None,
         port=None,
         port_forwarding=None,
+        port_override=None,
         public_key=None,
         secret_store_id=None,
         tags=None,
@@ -11363,6 +11365,10 @@ class SSH:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.public_key = public_key if public_key is not None else ''
         '''
 
@@ -11391,6 +11397,7 @@ class SSH:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -11409,6 +11416,7 @@ class SSH:
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
+            'port_override': self.port_override,
             'public_key': self.public_key,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
@@ -11428,6 +11436,7 @@ class SSH:
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
+            port_override=d.get('port_override'),
             public_key=d.get('public_key'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
@@ -11449,6 +11458,7 @@ class SSHCert:
         'name',
         'port',
         'port_forwarding',
+        'port_override',
         'secret_store_id',
         'tags',
         'username',
@@ -11465,6 +11475,7 @@ class SSHCert:
         name=None,
         port=None,
         port_forwarding=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
         username=None,
@@ -11505,6 +11516,10 @@ class SSHCert:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11529,6 +11544,7 @@ class SSHCert:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -11546,6 +11562,7 @@ class SSHCert:
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'username': self.username,
@@ -11564,6 +11581,7 @@ class SSHCert:
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             username=d.get('username'),
@@ -11584,6 +11602,7 @@ class SSHCustomerKey:
         'name',
         'port',
         'port_forwarding',
+        'port_override',
         'private_key',
         'secret_store_id',
         'tags',
@@ -11601,6 +11620,7 @@ class SSHCustomerKey:
         name=None,
         port=None,
         port_forwarding=None,
+        port_override=None,
         private_key=None,
         secret_store_id=None,
         tags=None,
@@ -11642,6 +11662,10 @@ class SSHCustomerKey:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.private_key = private_key if private_key is not None else ''
         '''
 
@@ -11670,6 +11694,7 @@ class SSHCustomerKey:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -11688,6 +11713,7 @@ class SSHCustomerKey:
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
+            'port_override': self.port_override,
             'private_key': self.private_key,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
@@ -11707,6 +11733,7 @@ class SSHCustomerKey:
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
+            port_override=d.get('port_override'),
             private_key=d.get('private_key'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
