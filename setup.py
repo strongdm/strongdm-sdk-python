@@ -15,17 +15,15 @@
 
 # read the contents of your README file
 from os import path
-
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 from setuptools import setup
-
 setup(
     name='strongdm',
     packages=['strongdm'],
-    version='2.4.0',
+    version='2.5.0',
     license='apache-2.0',
     description='strongDM SDK for the Python programming language.',
     long_description=long_description,
@@ -34,7 +32,7 @@ setup(
     author_email='sdk-feedback@strongdm.com',
     url='https://github.com/strongdm/strongdm-sdk-python',
     download_url=
-    'https://github.com/strongdm/strongdm-sdk-python/archive/v2.4.0.tar.gz',
+    'https://github.com/strongdm/strongdm-sdk-python/archive/v2.5.0.tar.gz',
     keywords=[
         'strongDM', 'sdm', 'api', 'automation', 'security', 'audit',
         'database', 'server', 'ssh', 'rdp'

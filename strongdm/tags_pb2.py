@@ -17,6 +17,7 @@
 # source: tags.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -28,133 +29,13 @@ _sym_db = _symbol_database.Default()
 from . import options_pb2 as options__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='tags.proto',
-  package='v1',
-  syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd0\x04\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a\x80\x01\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:[\xfa\xf8\xb3\x07V\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private:\xa6\x03\xfa\xf8\xb3\x07\xa0\x03\xca\xf3\xb3\x07\xc4\x02\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\n\n\x02go\x12\x04Tags\xf2\xf3\xb3\x07\x12\n\ngo_private\x12\x04Tags\xf2\xf3\xb3\x07\x14\n\x0cgo_terraform\x12\x04Tags\xf2\xf3\xb3\x07%\n\x04java\x12\x1djava.util.Map<String, String>\xf2\xf3\xb3\x07\x1d\n\x12terraform-provider\x12\x07TypeMap\xf2\xf3\xb3\x07\x46\n\x07openapi\x12;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf2\xf3\xb3\x07!\n\x0cjson_gateway\x12\x11map[string]string\xf2\xf3\xb3\x07)\n\x14json_gateway_private\x12\x11map[string]string\xfa\xf3\xb3\x07\x0ctagsElemType\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
-  ,
-  dependencies=[options__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ntags.proto\x12\x02v1\x1a\roptions.proto\"\xd0\x04\n\x04Tags\x12\x1c\n\x05pairs\x18\x01 \x03(\x0b\x32\r.v1.Tags.Pair\x1a\x80\x01\n\x04Pair\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:[\xfa\xf8\xb3\x07V\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private:\xa6\x03\xfa\xf8\xb3\x07\xa0\x03\xca\xf3\xb3\x07\xc4\x02\xea\xf3\xb3\x07\x04tags\xf2\xf3\xb3\x07\n\n\x02go\x12\x04Tags\xf2\xf3\xb3\x07\x12\n\ngo_private\x12\x04Tags\xf2\xf3\xb3\x07\x14\n\x0cgo_terraform\x12\x04Tags\xf2\xf3\xb3\x07%\n\x04java\x12\x1djava.util.Map<String, String>\xf2\xf3\xb3\x07\x1d\n\x12terraform-provider\x12\x07TypeMap\xf2\xf3\xb3\x07\x46\n\x07openapi\x12;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\xf2\xf3\xb3\x07!\n\x0cjson_gateway\x12\x11map[string]string\xf2\xf3\xb3\x07)\n\x14json_gateway_private\x12\x11map[string]string\xfa\xf3\xb3\x07\x0ctagsElemType\xd2\xf3\xb3\x07\x01*\xd2\xf3\xb3\x07\t!jopenapi\xd2\xf3\xb3\x07\x11!jopenapi_private\xd2\xf3\xb3\x07\r!json_gateway\xd2\xf3\xb3\x07\x15!json_gateway_private\"F\n\x03Tag\x12\x18\n\x04name\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05value\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42\x63\n\x1c\x63om.strongdm.api.v1.plumbingB\x0cTagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3')
 
 
 
-
-_TAGS_PAIR = _descriptor.Descriptor(
-  name='Pair',
-  full_name='v1.Tags.Pair',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.Tags.Pair.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.Tags.Pair.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007V\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=73,
-  serialized_end=201,
-)
-
-_TAGS = _descriptor.Descriptor(
-  name='Tags',
-  full_name='v1.Tags',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='pairs', full_name='v1.Tags.pairs', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_TAGS_PAIR, ],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\240\003\312\363\263\007\304\002\352\363\263\007\004tags\362\363\263\007\n\n\002go\022\004Tags\362\363\263\007\022\n\ngo_private\022\004Tags\362\363\263\007\024\n\014go_terraform\022\004Tags\362\363\263\007%\n\004java\022\035java.util.Map<String, String>\362\363\263\007\035\n\022terraform-provider\022\007TypeMap\362\363\263\007F\n\007openapi\022;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\362\363\263\007!\n\014json_gateway\022\021map[string]string\362\363\263\007)\n\024json_gateway_private\022\021map[string]string\372\363\263\007\014tagsElemType\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=34,
-  serialized_end=626,
-)
-
-
-_TAG = _descriptor.Descriptor(
-  name='Tag',
-  full_name='v1.Tag',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.Tag.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.Tag.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=628,
-  serialized_end=698,
-)
-
-_TAGS_PAIR.containing_type = _TAGS
-_TAGS.fields_by_name['pairs'].message_type = _TAGS_PAIR
-DESCRIPTOR.message_types_by_name['Tags'] = _TAGS
-DESCRIPTOR.message_types_by_name['Tag'] = _TAG
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_TAGS = DESCRIPTOR.message_types_by_name['Tags']
+_TAGS_PAIR = _TAGS.nested_types_by_name['Pair']
+_TAG = DESCRIPTOR.message_types_by_name['Tag']
 Tags = _reflection.GeneratedProtocolMessageType('Tags', (_message.Message,), {
 
   'Pair' : _reflection.GeneratedProtocolMessageType('Pair', (_message.Message,), {
@@ -177,11 +58,24 @@ Tag = _reflection.GeneratedProtocolMessageType('Tag', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Tag)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_TAGS_PAIR._options = None
-_TAGS._options = None
-_TAG.fields_by_name['name']._options = None
-_TAG.fields_by_name['value']._options = None
-_TAG._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\014TagsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1'
+  _TAGS_PAIR._options = None
+  _TAGS_PAIR._serialized_options = b'\372\370\263\007V\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private'
+  _TAGS._options = None
+  _TAGS._serialized_options = b'\372\370\263\007\240\003\312\363\263\007\304\002\352\363\263\007\004tags\362\363\263\007\n\n\002go\022\004Tags\362\363\263\007\022\n\ngo_private\022\004Tags\362\363\263\007\024\n\014go_terraform\022\004Tags\362\363\263\007%\n\004java\022\035java.util.Map<String, String>\362\363\263\007\035\n\022terraform-provider\022\007TypeMap\362\363\263\007F\n\007openapi\022;{\"type\":\"object\", \"additionalProperties\":{\"type\":\"string\"}}\362\363\263\007!\n\014json_gateway\022\021map[string]string\362\363\263\007)\n\024json_gateway_private\022\021map[string]string\372\363\263\007\014tagsElemType\322\363\263\007\001*\322\363\263\007\t!jopenapi\322\363\263\007\021!jopenapi_private\322\363\263\007\r!json_gateway\322\363\263\007\025!json_gateway_private'
+  _TAG.fields_by_name['name']._options = None
+  _TAG.fields_by_name['name']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _TAG.fields_by_name['value']._options = None
+  _TAG.fields_by_name['value']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _TAG._options = None
+  _TAG._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _TAGS._serialized_start=34
+  _TAGS._serialized_end=626
+  _TAGS_PAIR._serialized_start=73
+  _TAGS_PAIR._serialized_end=201
+  _TAG._serialized_start=628
+  _TAG._serialized_end=698
 # @@protoc_insertion_point(module_scope)

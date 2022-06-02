@@ -17,6 +17,7 @@
 # source: options.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -28,730 +29,35 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='options.proto',
-  package='v1',
-  syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"X\n\x0b\x46ileOptions\x12\x11\n\x07targets\x18\xc4\xc1v \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x85\x01\n\x0eServiceOptions\x12\x13\n\tmain_noun\x18\x98\xbfv \x01(\t\x12\x13\n\tid_prefix\x18\x9a\xbfv \x01(\t\x12\x11\n\x07targets\x18\x99\xbfv \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x84\x01\n\rMethodOptions\x12\x10\n\x06method\x18\xb4\xbev \x01(\t\x12\r\n\x03url\x18\xb5\xbev \x01(\t\x12\x1a\n\x10\x64\x65precation_date\x18\xb6\xbev \x01(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\xec\x01\n\x0eMessageOptions\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x05\x12\x17\n\roptions_field\x18\xb7\xbev \x01(\t\x12\x11\n\x07targets\x18\xba\xbev \x03(\t\x12+\n\x0eterraform_docs\x18\xb8\xbev \x01(\x0b\x32\x11.v1.TerraformDocs\x12#\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x11.v1.CustomOptions:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"_\n\x0cOneofOptions\x12\x17\n\rcommon_fields\x18\x85\xbfv \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x82\x04\n\x0c\x46ieldOptions\x12\x13\n\tporcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\x12\x12\n\x08required\x18\xb8\xbev \x01(\x08\x12\x14\n\nwrite_only\x18\xbd\xbev \x01(\x08\x12\x13\n\tread_only\x18\xc3\xbev \x01(\x08\x12\x17\n\ris_credential\x18\xc4\xbev \x01(\x08\x12\x11\n\x07targets\x18\xc6\xbev \x03(\t\x12\x1d\n\x13terraform_force_new\x18\xbc\xbev \x01(\x08\x12\x1d\n\x13terraform_sensitive\x18\xbe\xbev \x01(\x08\x12&\n\x1cterraform_diff_suppress_func\x18\xc7\xbev \x01(\t\x12\x1c\n\x12terraform_computed\x18\xca\xbev \x01(\x08\x12#\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x11.v1.CustomOptions\x12\x44\n\x12read_only_override\x18\xc0\xbev \x03(\x0b\x32&.v1.FieldOptions.ReadOnlyOverrideEntry\x1a\x37\n\x15ReadOnlyOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x9a\x05\n\rCustomOptions\x12\x13\n\tconverter\x18\xbd\xbev \x01(\t\x12O\n\x17porcelain_type_override\x18\xbe\xbev \x03(\x0b\x32,.v1.CustomOptions.PorcelainTypeOverrideEntry\x12O\n\x17porcelain_name_override\x18\xc8\xbev \x03(\x0b\x32,.v1.CustomOptions.PorcelainNameOverrideEntry\x12\x42\n\x10\x63omment_override\x18\xd3\xbev \x03(\x0b\x32&.v1.CustomOptions.CommentOverrideEntry\x12H\n\x13\x64\x65precated_override\x18\xc0\xbev \x03(\x0b\x32).v1.CustomOptions.DeprecatedOverrideEntry\x12\x1d\n\x13terraform_elem_type\x18\xbf\xbev \x01(\t\x1a<\n\x1aPorcelainTypeOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a<\n\x1aPorcelainNameOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14\x43ommentOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x39\n\x17\x44\x65precatedOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x8c\x01\n\rTerraformDocs\x12\x1f\n\x15resource_example_path\x18\xb4\xbev \x01(\t\x12\"\n\x18\x64\x61ta_source_example_path\x18\xb5\xbev \x01(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private:E\n\x0c\x66ile_options\x12\x1c.google.protobuf.FileOptions\x18\xa8\xc2v \x01(\x0b\x32\x0f.v1.FileOptions:N\n\x0fservice_options\x12\x1f.google.protobuf.ServiceOptions\x18\x99\xbfv \x01(\x0b\x32\x12.v1.ServiceOptions:K\n\x0emethod_options\x12\x1e.google.protobuf.MethodOptions\x18\x90\xbfv \x01(\x0b\x32\x11.v1.MethodOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptions:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptionsBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\roptions.proto\x12\x02v1\x1a google/protobuf/descriptor.proto\"X\n\x0b\x46ileOptions\x12\x11\n\x07targets\x18\xc4\xc1v \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x85\x01\n\x0eServiceOptions\x12\x13\n\tmain_noun\x18\x98\xbfv \x01(\t\x12\x13\n\tid_prefix\x18\x9a\xbfv \x01(\t\x12\x11\n\x07targets\x18\x99\xbfv \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x84\x01\n\rMethodOptions\x12\x10\n\x06method\x18\xb4\xbev \x01(\t\x12\r\n\x03url\x18\xb5\xbev \x01(\t\x12\x1a\n\x10\x64\x65precation_date\x18\xb6\xbev \x01(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\xec\x01\n\x0eMessageOptions\x12\x13\n\tporcelain\x18\xb5\xbev \x01(\x08\x12\x0f\n\x05\x65rror\x18\xb6\xbev \x01(\x05\x12\x17\n\roptions_field\x18\xb7\xbev \x01(\t\x12\x11\n\x07targets\x18\xba\xbev \x03(\t\x12+\n\x0eterraform_docs\x18\xb8\xbev \x01(\x0b\x32\x11.v1.TerraformDocs\x12#\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x11.v1.CustomOptions:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"_\n\x0cOneofOptions\x12\x17\n\rcommon_fields\x18\x85\xbfv \x03(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x82\x04\n\x0c\x46ieldOptions\x12\x13\n\tporcelain\x18\xb6\xbev \x01(\x08\x12\x12\n\x08iterable\x18\xb7\xbev \x01(\x08\x12\x12\n\x08required\x18\xb8\xbev \x01(\x08\x12\x14\n\nwrite_only\x18\xbd\xbev \x01(\x08\x12\x13\n\tread_only\x18\xc3\xbev \x01(\x08\x12\x17\n\ris_credential\x18\xc4\xbev \x01(\x08\x12\x11\n\x07targets\x18\xc6\xbev \x03(\t\x12\x1d\n\x13terraform_force_new\x18\xbc\xbev \x01(\x08\x12\x1d\n\x13terraform_sensitive\x18\xbe\xbev \x01(\x08\x12&\n\x1cterraform_diff_suppress_func\x18\xc7\xbev \x01(\t\x12\x1c\n\x12terraform_computed\x18\xca\xbev \x01(\x08\x12#\n\x06\x63ustom\x18\xb9\xbev \x01(\x0b\x32\x11.v1.CustomOptions\x12\x44\n\x12read_only_override\x18\xc0\xbev \x03(\x0b\x32&.v1.FieldOptions.ReadOnlyOverrideEntry\x1a\x37\n\x15ReadOnlyOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x9a\x05\n\rCustomOptions\x12\x13\n\tconverter\x18\xbd\xbev \x01(\t\x12O\n\x17porcelain_type_override\x18\xbe\xbev \x03(\x0b\x32,.v1.CustomOptions.PorcelainTypeOverrideEntry\x12O\n\x17porcelain_name_override\x18\xc8\xbev \x03(\x0b\x32,.v1.CustomOptions.PorcelainNameOverrideEntry\x12\x42\n\x10\x63omment_override\x18\xd3\xbev \x03(\x0b\x32&.v1.CustomOptions.CommentOverrideEntry\x12H\n\x13\x64\x65precated_override\x18\xc0\xbev \x03(\x0b\x32).v1.CustomOptions.DeprecatedOverrideEntry\x12\x1d\n\x13terraform_elem_type\x18\xbf\xbev \x01(\t\x1a<\n\x1aPorcelainTypeOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a<\n\x1aPorcelainNameOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14\x43ommentOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x39\n\x17\x44\x65precatedOverrideEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private\"\x8c\x01\n\rTerraformDocs\x12\x1f\n\x15resource_example_path\x18\xb4\xbev \x01(\t\x12\"\n\x18\x64\x61ta_source_example_path\x18\xb5\xbev \x01(\t:6\xfa\xf8\xb3\x07\x12\xd2\xf3\xb3\x07\r!json_gateway\xfa\xf8\xb3\x07\x1a\xd2\xf3\xb3\x07\x15!json_gateway_private:E\n\x0c\x66ile_options\x12\x1c.google.protobuf.FileOptions\x18\xa8\xc2v \x01(\x0b\x32\x0f.v1.FileOptions:N\n\x0fservice_options\x12\x1f.google.protobuf.ServiceOptions\x18\x99\xbfv \x01(\x0b\x32\x12.v1.ServiceOptions:K\n\x0emethod_options\x12\x1e.google.protobuf.MethodOptions\x18\x90\xbfv \x01(\x0b\x32\x11.v1.MethodOptions:N\n\x0fmessage_options\x12\x1f.google.protobuf.MessageOptions\x18\x8f\xbfv \x01(\x0b\x32\x12.v1.MessageOptions:H\n\roneof_options\x12\x1d.google.protobuf.OneofOptions\x18\x85\xbfv \x01(\x0b\x32\x10.v1.OneofOptions:H\n\rfield_options\x12\x1d.google.protobuf.FieldOptions\x18\x8e\xbfv \x01(\x0b\x32\x10.v1.FieldOptionsBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3')
 
 
 FILE_OPTIONS_FIELD_NUMBER = 1941800
-file_options = _descriptor.FieldDescriptor(
-  name='file_options', full_name='v1.file_options', index=0,
-  number=1941800, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+file_options = DESCRIPTOR.extensions_by_name['file_options']
 SERVICE_OPTIONS_FIELD_NUMBER = 1941401
-service_options = _descriptor.FieldDescriptor(
-  name='service_options', full_name='v1.service_options', index=1,
-  number=1941401, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+service_options = DESCRIPTOR.extensions_by_name['service_options']
 METHOD_OPTIONS_FIELD_NUMBER = 1941392
-method_options = _descriptor.FieldDescriptor(
-  name='method_options', full_name='v1.method_options', index=2,
-  number=1941392, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+method_options = DESCRIPTOR.extensions_by_name['method_options']
 MESSAGE_OPTIONS_FIELD_NUMBER = 1941391
-message_options = _descriptor.FieldDescriptor(
-  name='message_options', full_name='v1.message_options', index=3,
-  number=1941391, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+message_options = DESCRIPTOR.extensions_by_name['message_options']
 ONEOF_OPTIONS_FIELD_NUMBER = 1941381
-oneof_options = _descriptor.FieldDescriptor(
-  name='oneof_options', full_name='v1.oneof_options', index=4,
-  number=1941381, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+oneof_options = DESCRIPTOR.extensions_by_name['oneof_options']
 FIELD_OPTIONS_FIELD_NUMBER = 1941390
-field_options = _descriptor.FieldDescriptor(
-  name='field_options', full_name='v1.field_options', index=5,
-  number=1941390, type=11, cpp_type=10, label=1,
-  has_default_value=False, default_value=None,
-  message_type=None, enum_type=None, containing_type=None,
-  is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+field_options = DESCRIPTOR.extensions_by_name['field_options']
 
-
-_FILEOPTIONS = _descriptor.Descriptor(
-  name='FileOptions',
-  full_name='v1.FileOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='v1.FileOptions.targets', index=0,
-      number=1941700, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=55,
-  serialized_end=143,
-)
-
-
-_SERVICEOPTIONS = _descriptor.Descriptor(
-  name='ServiceOptions',
-  full_name='v1.ServiceOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='main_noun', full_name='v1.ServiceOptions.main_noun', index=0,
-      number=1941400, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id_prefix', full_name='v1.ServiceOptions.id_prefix', index=1,
-      number=1941402, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='v1.ServiceOptions.targets', index=2,
-      number=1941401, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=146,
-  serialized_end=279,
-)
-
-
-_METHODOPTIONS = _descriptor.Descriptor(
-  name='MethodOptions',
-  full_name='v1.MethodOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='method', full_name='v1.MethodOptions.method', index=0,
-      number=1941300, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='url', full_name='v1.MethodOptions.url', index=1,
-      number=1941301, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deprecation_date', full_name='v1.MethodOptions.deprecation_date', index=2,
-      number=1941302, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=282,
-  serialized_end=414,
-)
-
-
-_MESSAGEOPTIONS = _descriptor.Descriptor(
-  name='MessageOptions',
-  full_name='v1.MessageOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='porcelain', full_name='v1.MessageOptions.porcelain', index=0,
-      number=1941301, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='v1.MessageOptions.error', index=1,
-      number=1941302, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='options_field', full_name='v1.MessageOptions.options_field', index=2,
-      number=1941303, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='v1.MessageOptions.targets', index=3,
-      number=1941306, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_docs', full_name='v1.MessageOptions.terraform_docs', index=4,
-      number=1941304, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='custom', full_name='v1.MessageOptions.custom', index=5,
-      number=1941305, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=417,
-  serialized_end=653,
-)
-
-
-_ONEOFOPTIONS = _descriptor.Descriptor(
-  name='OneofOptions',
-  full_name='v1.OneofOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='common_fields', full_name='v1.OneofOptions.common_fields', index=0,
-      number=1941381, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=655,
-  serialized_end=750,
-)
-
-
-_FIELDOPTIONS_READONLYOVERRIDEENTRY = _descriptor.Descriptor(
-  name='ReadOnlyOverrideEntry',
-  full_name='v1.FieldOptions.ReadOnlyOverrideEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='v1.FieldOptions.ReadOnlyOverrideEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.FieldOptions.ReadOnlyOverrideEntry.value', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1156,
-  serialized_end=1211,
-)
-
-_FIELDOPTIONS = _descriptor.Descriptor(
-  name='FieldOptions',
-  full_name='v1.FieldOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='porcelain', full_name='v1.FieldOptions.porcelain', index=0,
-      number=1941302, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='iterable', full_name='v1.FieldOptions.iterable', index=1,
-      number=1941303, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='required', full_name='v1.FieldOptions.required', index=2,
-      number=1941304, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='write_only', full_name='v1.FieldOptions.write_only', index=3,
-      number=1941309, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='read_only', full_name='v1.FieldOptions.read_only', index=4,
-      number=1941315, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='is_credential', full_name='v1.FieldOptions.is_credential', index=5,
-      number=1941316, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='v1.FieldOptions.targets', index=6,
-      number=1941318, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_force_new', full_name='v1.FieldOptions.terraform_force_new', index=7,
-      number=1941308, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_sensitive', full_name='v1.FieldOptions.terraform_sensitive', index=8,
-      number=1941310, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_diff_suppress_func', full_name='v1.FieldOptions.terraform_diff_suppress_func', index=9,
-      number=1941319, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_computed', full_name='v1.FieldOptions.terraform_computed', index=10,
-      number=1941322, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='custom', full_name='v1.FieldOptions.custom', index=11,
-      number=1941305, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='read_only_override', full_name='v1.FieldOptions.read_only_override', index=12,
-      number=1941312, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_FIELDOPTIONS_READONLYOVERRIDEENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=753,
-  serialized_end=1267,
-)
-
-
-_CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY = _descriptor.Descriptor(
-  name='PorcelainTypeOverrideEntry',
-  full_name='v1.CustomOptions.PorcelainTypeOverrideEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='v1.CustomOptions.PorcelainTypeOverrideEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.CustomOptions.PorcelainTypeOverrideEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1643,
-  serialized_end=1703,
-)
-
-_CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY = _descriptor.Descriptor(
-  name='PorcelainNameOverrideEntry',
-  full_name='v1.CustomOptions.PorcelainNameOverrideEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='v1.CustomOptions.PorcelainNameOverrideEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.CustomOptions.PorcelainNameOverrideEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1705,
-  serialized_end=1765,
-)
-
-_CUSTOMOPTIONS_COMMENTOVERRIDEENTRY = _descriptor.Descriptor(
-  name='CommentOverrideEntry',
-  full_name='v1.CustomOptions.CommentOverrideEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='v1.CustomOptions.CommentOverrideEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.CustomOptions.CommentOverrideEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1767,
-  serialized_end=1821,
-)
-
-_CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY = _descriptor.Descriptor(
-  name='DeprecatedOverrideEntry',
-  full_name='v1.CustomOptions.DeprecatedOverrideEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='v1.CustomOptions.DeprecatedOverrideEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='v1.CustomOptions.DeprecatedOverrideEntry.value', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1823,
-  serialized_end=1880,
-)
-
-_CUSTOMOPTIONS = _descriptor.Descriptor(
-  name='CustomOptions',
-  full_name='v1.CustomOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='converter', full_name='v1.CustomOptions.converter', index=0,
-      number=1941309, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='porcelain_type_override', full_name='v1.CustomOptions.porcelain_type_override', index=1,
-      number=1941310, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='porcelain_name_override', full_name='v1.CustomOptions.porcelain_name_override', index=2,
-      number=1941320, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='comment_override', full_name='v1.CustomOptions.comment_override', index=3,
-      number=1941331, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deprecated_override', full_name='v1.CustomOptions.deprecated_override', index=4,
-      number=1941312, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='terraform_elem_type', full_name='v1.CustomOptions.terraform_elem_type', index=5,
-      number=1941311, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY, _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY, _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY, _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1270,
-  serialized_end=1936,
-)
-
-
-_TERRAFORMDOCS = _descriptor.Descriptor(
-  name='TerraformDocs',
-  full_name='v1.TerraformDocs',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='resource_example_path', full_name='v1.TerraformDocs.resource_example_path', index=0,
-      number=1941300, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data_source_example_path', full_name='v1.TerraformDocs.data_source_example_path', index=1,
-      number=1941301, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1939,
-  serialized_end=2079,
-)
-
-_MESSAGEOPTIONS.fields_by_name['terraform_docs'].message_type = _TERRAFORMDOCS
-_MESSAGEOPTIONS.fields_by_name['custom'].message_type = _CUSTOMOPTIONS
-_FIELDOPTIONS_READONLYOVERRIDEENTRY.containing_type = _FIELDOPTIONS
-_FIELDOPTIONS.fields_by_name['custom'].message_type = _CUSTOMOPTIONS
-_FIELDOPTIONS.fields_by_name['read_only_override'].message_type = _FIELDOPTIONS_READONLYOVERRIDEENTRY
-_CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY.containing_type = _CUSTOMOPTIONS
-_CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY.containing_type = _CUSTOMOPTIONS
-_CUSTOMOPTIONS_COMMENTOVERRIDEENTRY.containing_type = _CUSTOMOPTIONS
-_CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY.containing_type = _CUSTOMOPTIONS
-_CUSTOMOPTIONS.fields_by_name['porcelain_type_override'].message_type = _CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY
-_CUSTOMOPTIONS.fields_by_name['porcelain_name_override'].message_type = _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY
-_CUSTOMOPTIONS.fields_by_name['comment_override'].message_type = _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY
-_CUSTOMOPTIONS.fields_by_name['deprecated_override'].message_type = _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY
-DESCRIPTOR.message_types_by_name['FileOptions'] = _FILEOPTIONS
-DESCRIPTOR.message_types_by_name['ServiceOptions'] = _SERVICEOPTIONS
-DESCRIPTOR.message_types_by_name['MethodOptions'] = _METHODOPTIONS
-DESCRIPTOR.message_types_by_name['MessageOptions'] = _MESSAGEOPTIONS
-DESCRIPTOR.message_types_by_name['OneofOptions'] = _ONEOFOPTIONS
-DESCRIPTOR.message_types_by_name['FieldOptions'] = _FIELDOPTIONS
-DESCRIPTOR.message_types_by_name['CustomOptions'] = _CUSTOMOPTIONS
-DESCRIPTOR.message_types_by_name['TerraformDocs'] = _TERRAFORMDOCS
-DESCRIPTOR.extensions_by_name['file_options'] = file_options
-DESCRIPTOR.extensions_by_name['service_options'] = service_options
-DESCRIPTOR.extensions_by_name['method_options'] = method_options
-DESCRIPTOR.extensions_by_name['message_options'] = message_options
-DESCRIPTOR.extensions_by_name['oneof_options'] = oneof_options
-DESCRIPTOR.extensions_by_name['field_options'] = field_options
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_FILEOPTIONS = DESCRIPTOR.message_types_by_name['FileOptions']
+_SERVICEOPTIONS = DESCRIPTOR.message_types_by_name['ServiceOptions']
+_METHODOPTIONS = DESCRIPTOR.message_types_by_name['MethodOptions']
+_MESSAGEOPTIONS = DESCRIPTOR.message_types_by_name['MessageOptions']
+_ONEOFOPTIONS = DESCRIPTOR.message_types_by_name['OneofOptions']
+_FIELDOPTIONS = DESCRIPTOR.message_types_by_name['FieldOptions']
+_FIELDOPTIONS_READONLYOVERRIDEENTRY = _FIELDOPTIONS.nested_types_by_name['ReadOnlyOverrideEntry']
+_CUSTOMOPTIONS = DESCRIPTOR.message_types_by_name['CustomOptions']
+_CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY = _CUSTOMOPTIONS.nested_types_by_name['PorcelainTypeOverrideEntry']
+_CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY = _CUSTOMOPTIONS.nested_types_by_name['PorcelainNameOverrideEntry']
+_CUSTOMOPTIONS_COMMENTOVERRIDEENTRY = _CUSTOMOPTIONS.nested_types_by_name['CommentOverrideEntry']
+_CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY = _CUSTOMOPTIONS.nested_types_by_name['DeprecatedOverrideEntry']
+_TERRAFORMDOCS = DESCRIPTOR.message_types_by_name['TerraformDocs']
 FileOptions = _reflection.GeneratedProtocolMessageType('FileOptions', (_message.Message,), {
   'DESCRIPTOR' : _FILEOPTIONS,
   '__module__' : 'options_pb2'
@@ -848,31 +154,66 @@ TerraformDocs = _reflection.GeneratedProtocolMessageType('TerraformDocs', (_mess
   })
 _sym_db.RegisterMessage(TerraformDocs)
 
-file_options.message_type = _FILEOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.FileOptions.RegisterExtension(file_options)
-service_options.message_type = _SERVICEOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.ServiceOptions.RegisterExtension(service_options)
-method_options.message_type = _METHODOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.MethodOptions.RegisterExtension(method_options)
-message_options.message_type = _MESSAGEOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.MessageOptions.RegisterExtension(message_options)
-oneof_options.message_type = _ONEOFOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.OneofOptions.RegisterExtension(oneof_options)
-field_options.message_type = _FIELDOPTIONS
-google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(field_options)
+if _descriptor._USE_C_DESCRIPTORS == False:
+  google_dot_protobuf_dot_descriptor__pb2.FileOptions.RegisterExtension(file_options)
+  google_dot_protobuf_dot_descriptor__pb2.ServiceOptions.RegisterExtension(service_options)
+  google_dot_protobuf_dot_descriptor__pb2.MethodOptions.RegisterExtension(method_options)
+  google_dot_protobuf_dot_descriptor__pb2.MessageOptions.RegisterExtension(message_options)
+  google_dot_protobuf_dot_descriptor__pb2.OneofOptions.RegisterExtension(oneof_options)
+  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(field_options)
 
-DESCRIPTOR._options = None
-_FILEOPTIONS._options = None
-_SERVICEOPTIONS._options = None
-_METHODOPTIONS._options = None
-_MESSAGEOPTIONS._options = None
-_ONEOFOPTIONS._options = None
-_FIELDOPTIONS_READONLYOVERRIDEENTRY._options = None
-_FIELDOPTIONS._options = None
-_CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY._options = None
-_CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY._options = None
-_CUSTOMOPTIONS_COMMENTOVERRIDEENTRY._options = None
-_CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY._options = None
-_CUSTOMOPTIONS._options = None
-_TERRAFORMDOCS._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1'
+  _FILEOPTIONS._options = None
+  _FILEOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _SERVICEOPTIONS._options = None
+  _SERVICEOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _METHODOPTIONS._options = None
+  _METHODOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _MESSAGEOPTIONS._options = None
+  _MESSAGEOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _ONEOFOPTIONS._options = None
+  _ONEOFOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _FIELDOPTIONS_READONLYOVERRIDEENTRY._options = None
+  _FIELDOPTIONS_READONLYOVERRIDEENTRY._serialized_options = b'8\001'
+  _FIELDOPTIONS._options = None
+  _FIELDOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY._options = None
+  _CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY._serialized_options = b'8\001'
+  _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY._options = None
+  _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY._serialized_options = b'8\001'
+  _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY._options = None
+  _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY._serialized_options = b'8\001'
+  _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY._options = None
+  _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY._serialized_options = b'8\001'
+  _CUSTOMOPTIONS._options = None
+  _CUSTOMOPTIONS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _TERRAFORMDOCS._options = None
+  _TERRAFORMDOCS._serialized_options = b'\372\370\263\007\022\322\363\263\007\r!json_gateway\372\370\263\007\032\322\363\263\007\025!json_gateway_private'
+  _FILEOPTIONS._serialized_start=55
+  _FILEOPTIONS._serialized_end=143
+  _SERVICEOPTIONS._serialized_start=146
+  _SERVICEOPTIONS._serialized_end=279
+  _METHODOPTIONS._serialized_start=282
+  _METHODOPTIONS._serialized_end=414
+  _MESSAGEOPTIONS._serialized_start=417
+  _MESSAGEOPTIONS._serialized_end=653
+  _ONEOFOPTIONS._serialized_start=655
+  _ONEOFOPTIONS._serialized_end=750
+  _FIELDOPTIONS._serialized_start=753
+  _FIELDOPTIONS._serialized_end=1267
+  _FIELDOPTIONS_READONLYOVERRIDEENTRY._serialized_start=1156
+  _FIELDOPTIONS_READONLYOVERRIDEENTRY._serialized_end=1211
+  _CUSTOMOPTIONS._serialized_start=1270
+  _CUSTOMOPTIONS._serialized_end=1936
+  _CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY._serialized_start=1643
+  _CUSTOMOPTIONS_PORCELAINTYPEOVERRIDEENTRY._serialized_end=1703
+  _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY._serialized_start=1705
+  _CUSTOMOPTIONS_PORCELAINNAMEOVERRIDEENTRY._serialized_end=1765
+  _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY._serialized_start=1767
+  _CUSTOMOPTIONS_COMMENTOVERRIDEENTRY._serialized_end=1821
+  _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY._serialized_start=1823
+  _CUSTOMOPTIONS_DEPRECATEDOVERRIDEENTRY._serialized_end=1880
+  _TERRAFORMDOCS._serialized_start=1939
+  _TERRAFORMDOCS._serialized_end=2079
 # @@protoc_insertion_point(module_scope)

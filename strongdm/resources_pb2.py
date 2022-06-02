@@ -17,6 +17,7 @@
 # source: resources.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -31,567 +32,22 @@ from . import drivers_pb2 as drivers__pb2
 from . import tags_pb2 as tags__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='resources.proto',
-  package='v1',
-  syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\021ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0fresources.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\x1a\ntags.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x02\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x97\x02\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa8\x02\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript\"Y\n\x14\x45numerateTagsRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x02\n\x15\x45numerateTagsResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12$\n\x07matches\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript2\xa5\x05\n\tResources\x12p\n\rEnumerateTags\x12\x18.v1.EnumerateTagsRequest\x1a\x19.v1.EnumerateTagsResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/resources/tags/\x12\x66\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"%\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x12\x61\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12j\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12m\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\",\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12_\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"$\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x1a\x1f\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08Resource\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03rs-Bh\n\x1c\x63om.strongdm.api.v1.plumbingB\x11ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
-  ,
-  dependencies=[options__pb2.DESCRIPTOR,spec__pb2.DESCRIPTOR,drivers__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fresources.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\x1a\ntags.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x02\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x97\x02\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa8\x02\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript\"Y\n\x14\x45numerateTagsRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x02\n\x15\x45numerateTagsResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12$\n\x07matches\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript2\xa5\x05\n\tResources\x12p\n\rEnumerateTags\x12\x18.v1.EnumerateTagsRequest\x1a\x19.v1.EnumerateTagsResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/resources/tags/\x12\x66\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"%\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x12\x61\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12j\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12m\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\",\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12_\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"$\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x1a\x1f\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08Resource\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03rs-Bh\n\x1c\x63om.strongdm.api.v1.plumbingB\x11ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3')
 
 
 
-
-_RESOURCECREATEREQUEST = _descriptor.Descriptor(
-  name='ResourceCreateRequest',
-  full_name='v1.ResourceCreateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceCreateRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='v1.ResourceCreateRequest.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=77,
-  serialized_end=185,
-)
-
-
-_RESOURCECREATERESPONSE = _descriptor.Descriptor(
-  name='ResourceCreateResponse',
-  full_name='v1.ResourceCreateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceCreateResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='v1.ResourceCreateResponse.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.ResourceCreateResponse.rate_limit', index=2,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=188,
-  serialized_end=511,
-)
-
-
-_RESOURCEGETREQUEST = _descriptor.Descriptor(
-  name='ResourceGetRequest',
-  full_name='v1.ResourceGetRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceGetRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.ResourceGetRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=513,
-  serialized_end=595,
-)
-
-
-_RESOURCEGETRESPONSE = _descriptor.Descriptor(
-  name='ResourceGetResponse',
-  full_name='v1.ResourceGetResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceGetResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='v1.ResourceGetResponse.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.ResourceGetResponse.rate_limit', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=598,
-  serialized_end=915,
-)
-
-
-_RESOURCEUPDATEREQUEST = _descriptor.Descriptor(
-  name='ResourceUpdateRequest',
-  full_name='v1.ResourceUpdateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceUpdateRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.ResourceUpdateRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='v1.ResourceUpdateRequest.resource', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=917,
-  serialized_end=1037,
-)
-
-
-_RESOURCEUPDATERESPONSE = _descriptor.Descriptor(
-  name='ResourceUpdateResponse',
-  full_name='v1.ResourceUpdateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceUpdateResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='v1.ResourceUpdateResponse.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.ResourceUpdateResponse.rate_limit', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1040,
-  serialized_end=1363,
-)
-
-
-_RESOURCEDELETEREQUEST = _descriptor.Descriptor(
-  name='ResourceDeleteRequest',
-  full_name='v1.ResourceDeleteRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceDeleteRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.ResourceDeleteRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1365,
-  serialized_end=1453,
-)
-
-
-_RESOURCEDELETERESPONSE = _descriptor.Descriptor(
-  name='ResourceDeleteResponse',
-  full_name='v1.ResourceDeleteResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceDeleteResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.ResourceDeleteResponse.rate_limit', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1456,
-  serialized_end=1735,
-)
-
-
-_RESOURCELISTREQUEST = _descriptor.Descriptor(
-  name='ResourceListRequest',
-  full_name='v1.ResourceListRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceListRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='v1.ResourceListRequest.filter', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1737,
-  serialized_end=1825,
-)
-
-
-_RESOURCELISTRESPONSE = _descriptor.Descriptor(
-  name='ResourceListResponse',
-  full_name='v1.ResourceListResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.ResourceListResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resources', full_name='v1.ResourceListResponse.resources', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\270\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.ResourceListResponse.rate_limit', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1828,
-  serialized_end=2124,
-)
-
-
-_ENUMERATETAGSREQUEST = _descriptor.Descriptor(
-  name='EnumerateTagsRequest',
-  full_name='v1.EnumerateTagsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.EnumerateTagsRequest.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='v1.EnumerateTagsRequest.filter', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2126,
-  serialized_end=2215,
-)
-
-
-_ENUMERATETAGSRESPONSE = _descriptor.Descriptor(
-  name='EnumerateTagsResponse',
-  full_name='v1.EnumerateTagsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='v1.EnumerateTagsResponse.meta', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='matches', full_name='v1.EnumerateTagsResponse.matches', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\270\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.EnumerateTagsResponse.rate_limit', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2218,
-  serialized_end=2508,
-)
-
-_RESOURCECREATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._CREATEREQUESTMETADATA
-_RESOURCECREATEREQUEST.fields_by_name['resource'].message_type = drivers__pb2._RESOURCE
-_RESOURCECREATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._CREATERESPONSEMETADATA
-_RESOURCECREATERESPONSE.fields_by_name['resource'].message_type = drivers__pb2._RESOURCE
-_RESOURCECREATERESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_RESOURCEGETREQUEST.fields_by_name['meta'].message_type = spec__pb2._GETREQUESTMETADATA
-_RESOURCEGETRESPONSE.fields_by_name['meta'].message_type = spec__pb2._GETRESPONSEMETADATA
-_RESOURCEGETRESPONSE.fields_by_name['resource'].message_type = drivers__pb2._RESOURCE
-_RESOURCEGETRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_RESOURCEUPDATEREQUEST.fields_by_name['meta'].message_type = spec__pb2._UPDATEREQUESTMETADATA
-_RESOURCEUPDATEREQUEST.fields_by_name['resource'].message_type = drivers__pb2._RESOURCE
-_RESOURCEUPDATERESPONSE.fields_by_name['meta'].message_type = spec__pb2._UPDATERESPONSEMETADATA
-_RESOURCEUPDATERESPONSE.fields_by_name['resource'].message_type = drivers__pb2._RESOURCE
-_RESOURCEUPDATERESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_RESOURCEDELETEREQUEST.fields_by_name['meta'].message_type = spec__pb2._DELETEREQUESTMETADATA
-_RESOURCEDELETERESPONSE.fields_by_name['meta'].message_type = spec__pb2._DELETERESPONSEMETADATA
-_RESOURCEDELETERESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_RESOURCELISTREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMETADATA
-_RESOURCELISTRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
-_RESOURCELISTRESPONSE.fields_by_name['resources'].message_type = drivers__pb2._RESOURCE
-_RESOURCELISTRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-_ENUMERATETAGSREQUEST.fields_by_name['meta'].message_type = spec__pb2._LISTREQUESTMETADATA
-_ENUMERATETAGSRESPONSE.fields_by_name['meta'].message_type = spec__pb2._LISTRESPONSEMETADATA
-_ENUMERATETAGSRESPONSE.fields_by_name['matches'].message_type = tags__pb2._TAG
-_ENUMERATETAGSRESPONSE.fields_by_name['rate_limit'].message_type = spec__pb2._RATELIMITMETADATA
-DESCRIPTOR.message_types_by_name['ResourceCreateRequest'] = _RESOURCECREATEREQUEST
-DESCRIPTOR.message_types_by_name['ResourceCreateResponse'] = _RESOURCECREATERESPONSE
-DESCRIPTOR.message_types_by_name['ResourceGetRequest'] = _RESOURCEGETREQUEST
-DESCRIPTOR.message_types_by_name['ResourceGetResponse'] = _RESOURCEGETRESPONSE
-DESCRIPTOR.message_types_by_name['ResourceUpdateRequest'] = _RESOURCEUPDATEREQUEST
-DESCRIPTOR.message_types_by_name['ResourceUpdateResponse'] = _RESOURCEUPDATERESPONSE
-DESCRIPTOR.message_types_by_name['ResourceDeleteRequest'] = _RESOURCEDELETEREQUEST
-DESCRIPTOR.message_types_by_name['ResourceDeleteResponse'] = _RESOURCEDELETERESPONSE
-DESCRIPTOR.message_types_by_name['ResourceListRequest'] = _RESOURCELISTREQUEST
-DESCRIPTOR.message_types_by_name['ResourceListResponse'] = _RESOURCELISTRESPONSE
-DESCRIPTOR.message_types_by_name['EnumerateTagsRequest'] = _ENUMERATETAGSREQUEST
-DESCRIPTOR.message_types_by_name['EnumerateTagsResponse'] = _ENUMERATETAGSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_RESOURCECREATEREQUEST = DESCRIPTOR.message_types_by_name['ResourceCreateRequest']
+_RESOURCECREATERESPONSE = DESCRIPTOR.message_types_by_name['ResourceCreateResponse']
+_RESOURCEGETREQUEST = DESCRIPTOR.message_types_by_name['ResourceGetRequest']
+_RESOURCEGETRESPONSE = DESCRIPTOR.message_types_by_name['ResourceGetResponse']
+_RESOURCEUPDATEREQUEST = DESCRIPTOR.message_types_by_name['ResourceUpdateRequest']
+_RESOURCEUPDATERESPONSE = DESCRIPTOR.message_types_by_name['ResourceUpdateResponse']
+_RESOURCEDELETEREQUEST = DESCRIPTOR.message_types_by_name['ResourceDeleteRequest']
+_RESOURCEDELETERESPONSE = DESCRIPTOR.message_types_by_name['ResourceDeleteResponse']
+_RESOURCELISTREQUEST = DESCRIPTOR.message_types_by_name['ResourceListRequest']
+_RESOURCELISTRESPONSE = DESCRIPTOR.message_types_by_name['ResourceListResponse']
+_ENUMERATETAGSREQUEST = DESCRIPTOR.message_types_by_name['EnumerateTagsRequest']
+_ENUMERATETAGSRESPONSE = DESCRIPTOR.message_types_by_name['EnumerateTagsResponse']
 ResourceCreateRequest = _reflection.GeneratedProtocolMessageType('ResourceCreateRequest', (_message.Message,), {
   'DESCRIPTOR' : _RESOURCECREATEREQUEST,
   '__module__' : 'resources_pb2'
@@ -676,107 +132,99 @@ EnumerateTagsResponse = _reflection.GeneratedProtocolMessageType('EnumerateTagsR
   })
 _sym_db.RegisterMessage(EnumerateTagsResponse)
 
+_RESOURCES = DESCRIPTOR.services_by_name['Resources']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_RESOURCECREATEREQUEST.fields_by_name['resource']._options = None
-_RESOURCECREATERESPONSE.fields_by_name['meta']._options = None
-_RESOURCECREATERESPONSE.fields_by_name['resource']._options = None
-_RESOURCECREATERESPONSE.fields_by_name['rate_limit']._options = None
-_RESOURCECREATERESPONSE._options = None
-_RESOURCEGETREQUEST.fields_by_name['id']._options = None
-_RESOURCEGETRESPONSE.fields_by_name['meta']._options = None
-_RESOURCEGETRESPONSE.fields_by_name['resource']._options = None
-_RESOURCEGETRESPONSE.fields_by_name['rate_limit']._options = None
-_RESOURCEGETRESPONSE._options = None
-_RESOURCEUPDATEREQUEST.fields_by_name['resource']._options = None
-_RESOURCEUPDATERESPONSE.fields_by_name['meta']._options = None
-_RESOURCEUPDATERESPONSE.fields_by_name['resource']._options = None
-_RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._options = None
-_RESOURCEUPDATERESPONSE._options = None
-_RESOURCEDELETEREQUEST.fields_by_name['id']._options = None
-_RESOURCEDELETERESPONSE.fields_by_name['meta']._options = None
-_RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._options = None
-_RESOURCEDELETERESPONSE._options = None
-_RESOURCELISTREQUEST.fields_by_name['filter']._options = None
-_RESOURCELISTRESPONSE.fields_by_name['resources']._options = None
-_RESOURCELISTRESPONSE.fields_by_name['rate_limit']._options = None
-_ENUMERATETAGSREQUEST.fields_by_name['filter']._options = None
-_ENUMERATETAGSRESPONSE.fields_by_name['matches']._options = None
-_ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._options = None
-
-_RESOURCES = _descriptor.ServiceDescriptor(
-  name='Resources',
-  full_name='v1.Resources',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=b'\312\371\263\007\r\302\371\263\007\010Resource\312\371\263\007\010\322\371\263\007\003rs-',
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2511,
-  serialized_end=3188,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='EnumerateTags',
-    full_name='v1.Resources.EnumerateTags',
-    index=0,
-    containing_service=None,
-    input_type=_ENUMERATETAGSREQUEST,
-    output_type=_ENUMERATETAGSRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\030\252\363\263\007\023/v1/resources/tags/',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='v1.Resources.Create',
-    index=1,
-    containing_service=None,
-    input_type=_RESOURCECREATEREQUEST,
-    output_type=_RESOURCECREATERESPONSE,
-    serialized_options=b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\022\252\363\263\007\r/v1/resources',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='v1.Resources.Get',
-    index=2,
-    containing_service=None,
-    input_type=_RESOURCEGETREQUEST,
-    output_type=_RESOURCEGETRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='v1.Resources.Update',
-    index=3,
-    containing_service=None,
-    input_type=_RESOURCEUPDATEREQUEST,
-    output_type=_RESOURCEUPDATERESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='v1.Resources.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_RESOURCEDELETEREQUEST,
-    output_type=_RESOURCEDELETERESPONSE,
-    serialized_options=b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='v1.Resources.List',
-    index=5,
-    containing_service=None,
-    input_type=_RESOURCELISTREQUEST,
-    output_type=_RESOURCELISTRESPONSE,
-    serialized_options=b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\022\252\363\263\007\r/v1/resources',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_RESOURCES)
-
-DESCRIPTOR.services_by_name['Resources'] = _RESOURCES
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\021ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1'
+  _RESOURCECREATEREQUEST.fields_by_name['resource']._options = None
+  _RESOURCECREATEREQUEST.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCECREATERESPONSE.fields_by_name['meta']._options = None
+  _RESOURCECREATERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCECREATERESPONSE.fields_by_name['resource']._options = None
+  _RESOURCECREATERESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCECREATERESPONSE.fields_by_name['rate_limit']._options = None
+  _RESOURCECREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCECREATERESPONSE._options = None
+  _RESOURCECREATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RESOURCEGETREQUEST.fields_by_name['id']._options = None
+  _RESOURCEGETREQUEST.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEGETRESPONSE.fields_by_name['meta']._options = None
+  _RESOURCEGETRESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEGETRESPONSE.fields_by_name['resource']._options = None
+  _RESOURCEGETRESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEGETRESPONSE.fields_by_name['rate_limit']._options = None
+  _RESOURCEGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEGETRESPONSE._options = None
+  _RESOURCEGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RESOURCEUPDATEREQUEST.fields_by_name['resource']._options = None
+  _RESOURCEUPDATEREQUEST.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEUPDATERESPONSE.fields_by_name['meta']._options = None
+  _RESOURCEUPDATERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEUPDATERESPONSE.fields_by_name['resource']._options = None
+  _RESOURCEUPDATERESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._options = None
+  _RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEUPDATERESPONSE._options = None
+  _RESOURCEUPDATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RESOURCEDELETEREQUEST.fields_by_name['id']._options = None
+  _RESOURCEDELETEREQUEST.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEDELETERESPONSE.fields_by_name['meta']._options = None
+  _RESOURCEDELETERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._options = None
+  _RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEDELETERESPONSE._options = None
+  _RESOURCEDELETERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RESOURCELISTREQUEST.fields_by_name['filter']._options = None
+  _RESOURCELISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCELISTRESPONSE.fields_by_name['resources']._options = None
+  _RESOURCELISTRESPONSE.fields_by_name['resources']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
+  _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._options = None
+  _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _ENUMERATETAGSREQUEST.fields_by_name['filter']._options = None
+  _ENUMERATETAGSREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ENUMERATETAGSRESPONSE.fields_by_name['matches']._options = None
+  _ENUMERATETAGSRESPONSE.fields_by_name['matches']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
+  _ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._options = None
+  _ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCES._options = None
+  _RESOURCES._serialized_options = b'\312\371\263\007\r\302\371\263\007\010Resource\312\371\263\007\010\322\371\263\007\003rs-'
+  _RESOURCES.methods_by_name['EnumerateTags']._options = None
+  _RESOURCES.methods_by_name['EnumerateTags']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\030\252\363\263\007\023/v1/resources/tags/'
+  _RESOURCES.methods_by_name['Create']._options = None
+  _RESOURCES.methods_by_name['Create']._serialized_options = b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\022\252\363\263\007\r/v1/resources'
+  _RESOURCES.methods_by_name['Get']._options = None
+  _RESOURCES.methods_by_name['Get']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}'
+  _RESOURCES.methods_by_name['Update']._options = None
+  _RESOURCES.methods_by_name['Update']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}'
+  _RESOURCES.methods_by_name['Delete']._options = None
+  _RESOURCES.methods_by_name['Delete']._serialized_options = b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\027\252\363\263\007\022/v1/resources/{id}'
+  _RESOURCES.methods_by_name['List']._options = None
+  _RESOURCES.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\022\252\363\263\007\r/v1/resources'
+  _RESOURCECREATEREQUEST._serialized_start=77
+  _RESOURCECREATEREQUEST._serialized_end=185
+  _RESOURCECREATERESPONSE._serialized_start=188
+  _RESOURCECREATERESPONSE._serialized_end=511
+  _RESOURCEGETREQUEST._serialized_start=513
+  _RESOURCEGETREQUEST._serialized_end=595
+  _RESOURCEGETRESPONSE._serialized_start=598
+  _RESOURCEGETRESPONSE._serialized_end=915
+  _RESOURCEUPDATEREQUEST._serialized_start=917
+  _RESOURCEUPDATEREQUEST._serialized_end=1037
+  _RESOURCEUPDATERESPONSE._serialized_start=1040
+  _RESOURCEUPDATERESPONSE._serialized_end=1363
+  _RESOURCEDELETEREQUEST._serialized_start=1365
+  _RESOURCEDELETEREQUEST._serialized_end=1453
+  _RESOURCEDELETERESPONSE._serialized_start=1456
+  _RESOURCEDELETERESPONSE._serialized_end=1735
+  _RESOURCELISTREQUEST._serialized_start=1737
+  _RESOURCELISTREQUEST._serialized_end=1825
+  _RESOURCELISTRESPONSE._serialized_start=1828
+  _RESOURCELISTRESPONSE._serialized_end=2124
+  _ENUMERATETAGSREQUEST._serialized_start=2126
+  _ENUMERATETAGSREQUEST._serialized_end=2215
+  _ENUMERATETAGSRESPONSE._serialized_start=2218
+  _ENUMERATETAGSRESPONSE._serialized_end=2508
+  _RESOURCES._serialized_start=2511
+  _RESOURCES._serialized_end=3188
 # @@protoc_insertion_point(module_scope)

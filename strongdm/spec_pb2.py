@@ -17,6 +17,7 @@
 # source: spec.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -29,633 +30,30 @@ from . import options_pb2 as options__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='spec.proto',
-  package='v1',
-  syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"\xd9\x01\n\x0eRateLimitError\x12\xba\x01\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
-  ,
-  dependencies=[options__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"\xd9\x01\n\x0eRateLimitError\x12\xba\x01\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBU\n\x1c\x63om.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3')
 
 
 
-
-_ALREADYEXISTSERROR = _descriptor.Descriptor(
-  name='AlreadyExistsError',
-  full_name='v1.AlreadyExistsError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='entity', full_name='v1.AlreadyExistsError.entity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\006',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=66,
-  serialized_end=126,
-)
-
-
-_NOTFOUNDERROR = _descriptor.Descriptor(
-  name='NotFoundError',
-  full_name='v1.NotFoundError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='entity', full_name='v1.NotFoundError.entity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\005',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=128,
-  serialized_end=183,
-)
-
-
-_BADREQUESTERROR = _descriptor.Descriptor(
-  name='BadRequestError',
-  full_name='v1.BadRequestError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\003',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=185,
-  serialized_end=214,
-)
-
-
-_AUTHENTICATIONERROR = _descriptor.Descriptor(
-  name='AuthenticationError',
-  full_name='v1.AuthenticationError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\020',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=216,
-  serialized_end=249,
-)
-
-
-_PERMISSIONERROR = _descriptor.Descriptor(
-  name='PermissionError',
-  full_name='v1.PermissionError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\007',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=251,
-  serialized_end=280,
-)
-
-
-_INTERNALERROR = _descriptor.Descriptor(
-  name='InternalError',
-  full_name='v1.InternalError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\r',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=282,
-  serialized_end=309,
-)
-
-
-_RATELIMITERROR = _descriptor.Descriptor(
-  name='RateLimitError',
-  full_name='v1.RateLimitError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='rate_limit', full_name='v1.RateLimitError.rate_limit', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\260\363\263\007\010',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=312,
-  serialized_end=529,
-)
-
-
-_CREATEREQUESTMETADATA = _descriptor.Descriptor(
-  name='CreateRequestMetadata',
-  full_name='v1.CreateRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=531,
-  serialized_end=554,
-)
-
-
-_CREATERESPONSEMETADATA = _descriptor.Descriptor(
-  name='CreateResponseMetadata',
-  full_name='v1.CreateResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=556,
-  serialized_end=592,
-)
-
-
-_GETREQUESTMETADATA = _descriptor.Descriptor(
-  name='GetRequestMetadata',
-  full_name='v1.GetRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=594,
-  serialized_end=614,
-)
-
-
-_GETRESPONSEMETADATA = _descriptor.Descriptor(
-  name='GetResponseMetadata',
-  full_name='v1.GetResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=616,
-  serialized_end=649,
-)
-
-
-_UPDATEREQUESTMETADATA = _descriptor.Descriptor(
-  name='UpdateRequestMetadata',
-  full_name='v1.UpdateRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=651,
-  serialized_end=674,
-)
-
-
-_UPDATERESPONSEMETADATA = _descriptor.Descriptor(
-  name='UpdateResponseMetadata',
-  full_name='v1.UpdateResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=676,
-  serialized_end=712,
-)
-
-
-_DELETEREQUESTMETADATA = _descriptor.Descriptor(
-  name='DeleteRequestMetadata',
-  full_name='v1.DeleteRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=714,
-  serialized_end=737,
-)
-
-
-_DELETERESPONSEMETADATA = _descriptor.Descriptor(
-  name='DeleteResponseMetadata',
-  full_name='v1.DeleteResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=739,
-  serialized_end=775,
-)
-
-
-_LISTREQUESTMETADATA = _descriptor.Descriptor(
-  name='ListRequestMetadata',
-  full_name='v1.ListRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cursor', full_name='v1.ListRequestMetadata.cursor', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page', full_name='v1.ListRequestMetadata.page', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='limit', full_name='v1.ListRequestMetadata.limit', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='v1.ListRequestMetadata.order_by', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=777,
-  serialized_end=861,
-)
-
-
-_LISTRESPONSEMETADATA = _descriptor.Descriptor(
-  name='ListResponseMetadata',
-  full_name='v1.ListResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='next_cursor', full_name='v1.ListResponseMetadata.next_cursor', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='total', full_name='v1.ListResponseMetadata.total', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=863,
-  serialized_end=921,
-)
-
-
-_RATELIMITMETADATA = _descriptor.Descriptor(
-  name='RateLimitMetadata',
-  full_name='v1.RateLimitMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='limit', full_name='v1.RateLimitMetadata.limit', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='remaining', full_name='v1.RateLimitMetadata.remaining', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reset_at', full_name='v1.RateLimitMetadata.reset_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='v1.RateLimitMetadata.bucket', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=924,
-  serialized_end=1099,
-)
-
-
-_GENERICREQUESTMETADATA = _descriptor.Descriptor(
-  name='GenericRequestMetadata',
-  full_name='v1.GenericRequestMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1101,
-  serialized_end=1125,
-)
-
-
-_GENERICRESPONSEMETADATA = _descriptor.Descriptor(
-  name='GenericResponseMetadata',
-  full_name='v1.GenericResponseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1127,
-  serialized_end=1152,
-)
-
-_RATELIMITERROR.fields_by_name['rate_limit'].message_type = _RATELIMITMETADATA
-_RATELIMITMETADATA.fields_by_name['reset_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-DESCRIPTOR.message_types_by_name['AlreadyExistsError'] = _ALREADYEXISTSERROR
-DESCRIPTOR.message_types_by_name['NotFoundError'] = _NOTFOUNDERROR
-DESCRIPTOR.message_types_by_name['BadRequestError'] = _BADREQUESTERROR
-DESCRIPTOR.message_types_by_name['AuthenticationError'] = _AUTHENTICATIONERROR
-DESCRIPTOR.message_types_by_name['PermissionError'] = _PERMISSIONERROR
-DESCRIPTOR.message_types_by_name['InternalError'] = _INTERNALERROR
-DESCRIPTOR.message_types_by_name['RateLimitError'] = _RATELIMITERROR
-DESCRIPTOR.message_types_by_name['CreateRequestMetadata'] = _CREATEREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['CreateResponseMetadata'] = _CREATERESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['GetRequestMetadata'] = _GETREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['GetResponseMetadata'] = _GETRESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['UpdateRequestMetadata'] = _UPDATEREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['UpdateResponseMetadata'] = _UPDATERESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['DeleteRequestMetadata'] = _DELETEREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['DeleteResponseMetadata'] = _DELETERESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['ListRequestMetadata'] = _LISTREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['ListResponseMetadata'] = _LISTRESPONSEMETADATA
-DESCRIPTOR.message_types_by_name['RateLimitMetadata'] = _RATELIMITMETADATA
-DESCRIPTOR.message_types_by_name['GenericRequestMetadata'] = _GENERICREQUESTMETADATA
-DESCRIPTOR.message_types_by_name['GenericResponseMetadata'] = _GENERICRESPONSEMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_ALREADYEXISTSERROR = DESCRIPTOR.message_types_by_name['AlreadyExistsError']
+_NOTFOUNDERROR = DESCRIPTOR.message_types_by_name['NotFoundError']
+_BADREQUESTERROR = DESCRIPTOR.message_types_by_name['BadRequestError']
+_AUTHENTICATIONERROR = DESCRIPTOR.message_types_by_name['AuthenticationError']
+_PERMISSIONERROR = DESCRIPTOR.message_types_by_name['PermissionError']
+_INTERNALERROR = DESCRIPTOR.message_types_by_name['InternalError']
+_RATELIMITERROR = DESCRIPTOR.message_types_by_name['RateLimitError']
+_CREATEREQUESTMETADATA = DESCRIPTOR.message_types_by_name['CreateRequestMetadata']
+_CREATERESPONSEMETADATA = DESCRIPTOR.message_types_by_name['CreateResponseMetadata']
+_GETREQUESTMETADATA = DESCRIPTOR.message_types_by_name['GetRequestMetadata']
+_GETRESPONSEMETADATA = DESCRIPTOR.message_types_by_name['GetResponseMetadata']
+_UPDATEREQUESTMETADATA = DESCRIPTOR.message_types_by_name['UpdateRequestMetadata']
+_UPDATERESPONSEMETADATA = DESCRIPTOR.message_types_by_name['UpdateResponseMetadata']
+_DELETEREQUESTMETADATA = DESCRIPTOR.message_types_by_name['DeleteRequestMetadata']
+_DELETERESPONSEMETADATA = DESCRIPTOR.message_types_by_name['DeleteResponseMetadata']
+_LISTREQUESTMETADATA = DESCRIPTOR.message_types_by_name['ListRequestMetadata']
+_LISTRESPONSEMETADATA = DESCRIPTOR.message_types_by_name['ListResponseMetadata']
+_RATELIMITMETADATA = DESCRIPTOR.message_types_by_name['RateLimitMetadata']
+_GENERICREQUESTMETADATA = DESCRIPTOR.message_types_by_name['GenericRequestMetadata']
+_GENERICRESPONSEMETADATA = DESCRIPTOR.message_types_by_name['GenericResponseMetadata']
 AlreadyExistsError = _reflection.GeneratedProtocolMessageType('AlreadyExistsError', (_message.Message,), {
   'DESCRIPTOR' : _ALREADYEXISTSERROR,
   '__module__' : 'spec_pb2'
@@ -796,25 +194,86 @@ GenericResponseMetadata = _reflection.GeneratedProtocolMessageType('GenericRespo
   })
 _sym_db.RegisterMessage(GenericResponseMetadata)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_ALREADYEXISTSERROR.fields_by_name['entity']._options = None
-_ALREADYEXISTSERROR._options = None
-_NOTFOUNDERROR.fields_by_name['entity']._options = None
-_NOTFOUNDERROR._options = None
-_BADREQUESTERROR._options = None
-_AUTHENTICATIONERROR._options = None
-_PERMISSIONERROR._options = None
-_INTERNALERROR._options = None
-_RATELIMITERROR.fields_by_name['rate_limit']._options = None
-_RATELIMITERROR._options = None
-_CREATERESPONSEMETADATA._options = None
-_GETRESPONSEMETADATA._options = None
-_UPDATERESPONSEMETADATA._options = None
-_DELETERESPONSEMETADATA._options = None
-_RATELIMITMETADATA.fields_by_name['limit']._options = None
-_RATELIMITMETADATA.fields_by_name['remaining']._options = None
-_RATELIMITMETADATA.fields_by_name['reset_at']._options = None
-_RATELIMITMETADATA.fields_by_name['bucket']._options = None
-_RATELIMITMETADATA._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1'
+  _ALREADYEXISTSERROR.fields_by_name['entity']._options = None
+  _ALREADYEXISTSERROR.fields_by_name['entity']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ALREADYEXISTSERROR._options = None
+  _ALREADYEXISTSERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\006'
+  _NOTFOUNDERROR.fields_by_name['entity']._options = None
+  _NOTFOUNDERROR.fields_by_name['entity']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _NOTFOUNDERROR._options = None
+  _NOTFOUNDERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\005'
+  _BADREQUESTERROR._options = None
+  _BADREQUESTERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\003'
+  _AUTHENTICATIONERROR._options = None
+  _AUTHENTICATIONERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\020'
+  _PERMISSIONERROR._options = None
+  _PERMISSIONERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\007'
+  _INTERNALERROR._options = None
+  _INTERNALERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\r'
+  _RATELIMITERROR.fields_by_name['rate_limit']._options = None
+  _RATELIMITERROR.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RATELIMITERROR._options = None
+  _RATELIMITERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\010'
+  _CREATERESPONSEMETADATA._options = None
+  _CREATERESPONSEMETADATA._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _GETRESPONSEMETADATA._options = None
+  _GETRESPONSEMETADATA._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _UPDATERESPONSEMETADATA._options = None
+  _UPDATERESPONSEMETADATA._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _DELETERESPONSEMETADATA._options = None
+  _DELETERESPONSEMETADATA._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RATELIMITMETADATA.fields_by_name['limit']._options = None
+  _RATELIMITMETADATA.fields_by_name['limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RATELIMITMETADATA.fields_by_name['remaining']._options = None
+  _RATELIMITMETADATA.fields_by_name['remaining']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RATELIMITMETADATA.fields_by_name['reset_at']._options = None
+  _RATELIMITMETADATA.fields_by_name['reset_at']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RATELIMITMETADATA.fields_by_name['bucket']._options = None
+  _RATELIMITMETADATA.fields_by_name['bucket']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RATELIMITMETADATA._options = None
+  _RATELIMITMETADATA._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ALREADYEXISTSERROR._serialized_start=66
+  _ALREADYEXISTSERROR._serialized_end=126
+  _NOTFOUNDERROR._serialized_start=128
+  _NOTFOUNDERROR._serialized_end=183
+  _BADREQUESTERROR._serialized_start=185
+  _BADREQUESTERROR._serialized_end=214
+  _AUTHENTICATIONERROR._serialized_start=216
+  _AUTHENTICATIONERROR._serialized_end=249
+  _PERMISSIONERROR._serialized_start=251
+  _PERMISSIONERROR._serialized_end=280
+  _INTERNALERROR._serialized_start=282
+  _INTERNALERROR._serialized_end=309
+  _RATELIMITERROR._serialized_start=312
+  _RATELIMITERROR._serialized_end=529
+  _CREATEREQUESTMETADATA._serialized_start=531
+  _CREATEREQUESTMETADATA._serialized_end=554
+  _CREATERESPONSEMETADATA._serialized_start=556
+  _CREATERESPONSEMETADATA._serialized_end=592
+  _GETREQUESTMETADATA._serialized_start=594
+  _GETREQUESTMETADATA._serialized_end=614
+  _GETRESPONSEMETADATA._serialized_start=616
+  _GETRESPONSEMETADATA._serialized_end=649
+  _UPDATEREQUESTMETADATA._serialized_start=651
+  _UPDATEREQUESTMETADATA._serialized_end=674
+  _UPDATERESPONSEMETADATA._serialized_start=676
+  _UPDATERESPONSEMETADATA._serialized_end=712
+  _DELETEREQUESTMETADATA._serialized_start=714
+  _DELETEREQUESTMETADATA._serialized_end=737
+  _DELETERESPONSEMETADATA._serialized_start=739
+  _DELETERESPONSEMETADATA._serialized_end=775
+  _LISTREQUESTMETADATA._serialized_start=777
+  _LISTREQUESTMETADATA._serialized_end=861
+  _LISTRESPONSEMETADATA._serialized_start=863
+  _LISTRESPONSEMETADATA._serialized_end=921
+  _RATELIMITMETADATA._serialized_start=924
+  _RATELIMITMETADATA._serialized_end=1099
+  _GENERICREQUESTMETADATA._serialized_start=1101
+  _GENERICREQUESTMETADATA._serialized_end=1125
+  _GENERICRESPONSEMETADATA._serialized_start=1127
+  _GENERICRESPONSEMETADATA._serialized_end=1152
 # @@protoc_insertion_point(module_scope)

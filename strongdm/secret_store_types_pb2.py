@@ -17,6 +17,7 @@
 # source: secret_store_types.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -29,489 +30,17 @@ from . import options_pb2 as options__pb2
 from . import tags_pb2 as tags__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='secret_store_types.proto',
-  package='v1',
-  syntax='proto3',
-  serialized_options=b'\n\034com.strongdm.api.v1.plumbingB\031SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\x8c\x07\n\x0bSecretStore\x12u\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreBX\xf2\xf8\xb3\x07S\xca\xf3\xb3\x07N\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03\x61ws\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03\x61wsH\x00\x12\x7f\n\x05\x61zure\x18\x65 \x01(\x0b\x32\x0e.v1.AzureStoreB^\xf2\xf8\xb3\x07Y\xca\xf3\xb3\x07T\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\xc2\xf4\xb3\x07\x1d\n\x14json_gateway_private\x12\x05\x61zure\xc2\xf4\xb3\x07\x13\n\ntypescript\x12\x05\x61zureH\x00\x12v\n\x03gcp\x18\xc9\x01 \x01(\x0b\x32\x0c.v1.GCPStoreBX\xf2\xf8\xb3\x07S\xca\xf3\xb3\x07N\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03gcp\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03gcpH\x00\x12\xa4\x01\n\x0evault_app_role\x18\x04 \x01(\x0b\x32\x15.v1.VaultAppRoleStoreBs\xf2\xf8\xb3\x07n\xca\xf3\xb3\x07i\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07$\n\x14json_gateway_private\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1a\n\ntypescript\x12\x0cvaultAppRoleH\x00\x12\x8f\x01\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreBg\xf2\xf8\xb3\x07\x62\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultTLS\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultTLSH\x00\x12\x99\x01\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreBm\xf2\xf8\xb3\x07h\xca\xf3\xb3\x07\x63\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\nvaultToken\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\nvaultTokenH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42,\n\x0csecret_store\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xf0\x02\n\x08\x41WSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12{\n\x06region\x18\x03 \x01(\tBk\xf2\xf8\xb3\x07\x66\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07W\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06region\xc2\xf4\xb3\x07\x1e\n\x14json_gateway_private\x12\x06region\xc2\xf4\xb3\x07\x14\n\ntypescript\x12\x06region\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x8b\x01\xfa\xf8\xb3\x07\x85\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07{\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03\x61ws\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03\x61ws\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03\x61ws\xc2\xf4\xb3\x07\x19\n\x12terraform-provider\x12\x03\x61ws\"\xe6\x02\n\nAzureStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x84\x01\n\tvault_uri\x18\x03 \x01(\tBq\xf2\xf8\xb3\x07l\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultUri\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultUri\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultUri\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:t\xfa\xf8\xb3\x07o\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x65\xc2\xf4\xb3\x07\x0c\n\x03\x63li\x12\x05\x61zure\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\xc2\xf4\xb3\x07\x1d\n\x14json_gateway_private\x12\x05\x61zure\xc2\xf4\xb3\x07\x13\n\ntypescript\x12\x05\x61zure\"\xdf\x02\n\x08GCPStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x87\x01\n\tprojectID\x18\x03 \x01(\tBt\xf2\xf8\xb3\x07o\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tprojectId\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tprojectId\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tprojectId\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:l\xfa\xf8\xb3\x07g\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03gcp\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03gcp\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03gcp\"\xcc\x04\n\x11VaultAppRoleStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x82\x01\n\tnamespace\x18\x05 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xba\x01\xfa\xf8\xb3\x07\xb4\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\xa9\x01\xc2\xf4\xb3\x07\x13\n\x03\x63li\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07$\n\x14json_gateway_private\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1a\n\ntypescript\x12\x0cvaultAppRole\xc2\xf4\xb3\x07#\n\x12terraform-provider\x12\rvault_approle\"\xfd\x07\n\rVaultTLSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x88\x01\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tBr\xf2\xf8\xb3\x07m\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x63\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\ncaCertPath\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\ncaCertPath\x12\x9e\x01\n\x10\x63lient_cert_path\x18\x05 \x01(\tB\x83\x01\xf2\xf8\xb3\x07~\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07o\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\xc2\xf4\xb3\x07&\n\x14json_gateway_private\x12\x0e\x63lientCertPath\xc2\xf4\xb3\x07\x1c\n\ntypescript\x12\x0e\x63lientCertPath\x12\x9a\x01\n\x0f\x63lient_key_path\x18\x06 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rclientKeyPath\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rclientKeyPath\x12\x82\x01\n\tnamespace\x18\x08 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xa6\x01\xfa\xf8\xb3\x07\xa0\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x95\x01\xc2\xf4\xb3\x07\x0f\n\x03\x63li\x12\x08vaultTLS\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultTLS\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultTLS\xc2\xf4\xb3\x07\x1f\n\x12terraform-provider\x12\tvault_tls\"\xc0\x04\n\x0fVaultTokenStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x82\x01\n\tnamespace\x18\x05 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xb0\x01\xfa\xf8\xb3\x07\xaa\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x9f\x01\xc2\xf4\xb3\x07\x11\n\x03\x63li\x12\nvaultToken\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\nvaultToken\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\nvaultToken\xc2\xf4\xb3\x07!\n\x12terraform-provider\x12\x0bvault_tokenBp\n\x1c\x63om.strongdm.api.v1.plumbingB\x19SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3'
-  ,
-  dependencies=[options__pb2.DESCRIPTOR,tags__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\x8c\x07\n\x0bSecretStore\x12u\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreBX\xf2\xf8\xb3\x07S\xca\xf3\xb3\x07N\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03\x61ws\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03\x61wsH\x00\x12\x7f\n\x05\x61zure\x18\x65 \x01(\x0b\x32\x0e.v1.AzureStoreB^\xf2\xf8\xb3\x07Y\xca\xf3\xb3\x07T\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\xc2\xf4\xb3\x07\x1d\n\x14json_gateway_private\x12\x05\x61zure\xc2\xf4\xb3\x07\x13\n\ntypescript\x12\x05\x61zureH\x00\x12v\n\x03gcp\x18\xc9\x01 \x01(\x0b\x32\x0c.v1.GCPStoreBX\xf2\xf8\xb3\x07S\xca\xf3\xb3\x07N\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03gcp\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03gcpH\x00\x12\xa4\x01\n\x0evault_app_role\x18\x04 \x01(\x0b\x32\x15.v1.VaultAppRoleStoreBs\xf2\xf8\xb3\x07n\xca\xf3\xb3\x07i\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07$\n\x14json_gateway_private\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1a\n\ntypescript\x12\x0cvaultAppRoleH\x00\x12\x8f\x01\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreBg\xf2\xf8\xb3\x07\x62\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultTLS\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultTLSH\x00\x12\x99\x01\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreBm\xf2\xf8\xb3\x07h\xca\xf3\xb3\x07\x63\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\nvaultToken\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\nvaultTokenH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42,\n\x0csecret_store\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xf0\x02\n\x08\x41WSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12{\n\x06region\x18\x03 \x01(\tBk\xf2\xf8\xb3\x07\x66\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07W\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06region\xc2\xf4\xb3\x07\x1e\n\x14json_gateway_private\x12\x06region\xc2\xf4\xb3\x07\x14\n\ntypescript\x12\x06region\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x8b\x01\xfa\xf8\xb3\x07\x85\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07{\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03\x61ws\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03\x61ws\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03\x61ws\xc2\xf4\xb3\x07\x19\n\x12terraform-provider\x12\x03\x61ws\"\xe6\x02\n\nAzureStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x84\x01\n\tvault_uri\x18\x03 \x01(\tBq\xf2\xf8\xb3\x07l\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultUri\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultUri\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultUri\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:t\xfa\xf8\xb3\x07o\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x65\xc2\xf4\xb3\x07\x0c\n\x03\x63li\x12\x05\x61zure\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\xc2\xf4\xb3\x07\x1d\n\x14json_gateway_private\x12\x05\x61zure\xc2\xf4\xb3\x07\x13\n\ntypescript\x12\x05\x61zure\"\xdf\x02\n\x08GCPStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x87\x01\n\tprojectID\x18\x03 \x01(\tBt\xf2\xf8\xb3\x07o\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tprojectId\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tprojectId\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tprojectId\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:l\xfa\xf8\xb3\x07g\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07]\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03gcp\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\xc2\xf4\xb3\x07\x1b\n\x14json_gateway_private\x12\x03gcp\xc2\xf4\xb3\x07\x11\n\ntypescript\x12\x03gcp\"\xcc\x04\n\x11VaultAppRoleStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x82\x01\n\tnamespace\x18\x05 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xba\x01\xfa\xf8\xb3\x07\xb4\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\xa9\x01\xc2\xf4\xb3\x07\x13\n\x03\x63li\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07$\n\x14json_gateway_private\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1a\n\ntypescript\x12\x0cvaultAppRole\xc2\xf4\xb3\x07#\n\x12terraform-provider\x12\rvault_approle\"\xfd\x07\n\rVaultTLSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x88\x01\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tBr\xf2\xf8\xb3\x07m\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x63\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\ncaCertPath\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\ncaCertPath\x12\x9e\x01\n\x10\x63lient_cert_path\x18\x05 \x01(\tB\x83\x01\xf2\xf8\xb3\x07~\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07o\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\xc2\xf4\xb3\x07&\n\x14json_gateway_private\x12\x0e\x63lientCertPath\xc2\xf4\xb3\x07\x1c\n\ntypescript\x12\x0e\x63lientCertPath\x12\x9a\x01\n\x0f\x63lient_key_path\x18\x06 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rclientKeyPath\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rclientKeyPath\x12\x82\x01\n\tnamespace\x18\x08 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xa6\x01\xfa\xf8\xb3\x07\xa0\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x95\x01\xc2\xf4\xb3\x07\x0f\n\x03\x63li\x12\x08vaultTLS\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07 \n\x14json_gateway_private\x12\x08vaultTLS\xc2\xf4\xb3\x07\x16\n\ntypescript\x12\x08vaultTLS\xc2\xf4\xb3\x07\x1f\n\x12terraform-provider\x12\tvault_tls\"\xc0\x04\n\x0fVaultTokenStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x82\x01\n\tnamespace\x18\x05 \x01(\tBo\xf2\xf8\xb3\x07j\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07`\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\xc2\xf4\xb3\x07!\n\x14json_gateway_private\x12\tnamespace\xc2\xf4\xb3\x07\x17\n\ntypescript\x12\tnamespace\x12\x99\x01\n\x0eserver_address\x18\x03 \x01(\tB\x80\x01\xf2\xf8\xb3\x07{\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07l\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\xc2\xf4\xb3\x07%\n\x14json_gateway_private\x12\rserverAddress\xc2\xf4\xb3\x07\x1b\n\ntypescript\x12\rserverAddress\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\xb0\x01\xfa\xf8\xb3\x07\xaa\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x9f\x01\xc2\xf4\xb3\x07\x11\n\x03\x63li\x12\nvaultToken\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07\"\n\x14json_gateway_private\x12\nvaultToken\xc2\xf4\xb3\x07\x18\n\ntypescript\x12\nvaultToken\xc2\xf4\xb3\x07!\n\x12terraform-provider\x12\x0bvault_tokenBp\n\x1c\x63om.strongdm.api.v1.plumbingB\x19SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1b\x06proto3')
 
 
 
-
-_SECRETSTORE = _descriptor.Descriptor(
-  name='SecretStore',
-  full_name='v1.SecretStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='aws', full_name='v1.SecretStore.aws', index=0,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007S\312\363\263\007N\302\364\263\007\023\n\014json_gateway\022\003aws\302\364\263\007\033\n\024json_gateway_private\022\003aws\302\364\263\007\021\n\ntypescript\022\003aws', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='azure', full_name='v1.SecretStore.azure', index=1,
-      number=101, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007Y\312\363\263\007T\302\364\263\007\025\n\014json_gateway\022\005azure\302\364\263\007\035\n\024json_gateway_private\022\005azure\302\364\263\007\023\n\ntypescript\022\005azure', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='gcp', full_name='v1.SecretStore.gcp', index=2,
-      number=201, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007S\312\363\263\007N\302\364\263\007\023\n\014json_gateway\022\003gcp\302\364\263\007\033\n\024json_gateway_private\022\003gcp\302\364\263\007\021\n\ntypescript\022\003gcp', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='vault_app_role', full_name='v1.SecretStore.vault_app_role', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007n\312\363\263\007i\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole\302\364\263\007$\n\024json_gateway_private\022\014vaultAppRole\302\364\263\007\032\n\ntypescript\022\014vaultAppRole', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='vault_tls', full_name='v1.SecretStore.vault_tls', index=4,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007b\312\363\263\007]\302\364\263\007\030\n\014json_gateway\022\010vaultTLS\302\364\263\007 \n\024json_gateway_private\022\010vaultTLS\302\364\263\007\026\n\ntypescript\022\010vaultTLS', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='vault_token', full_name='v1.SecretStore.vault_token', index=5,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007h\312\363\263\007c\302\364\263\007\032\n\014json_gateway\022\nvaultToken\302\364\263\007\"\n\024json_gateway_private\022\nvaultToken\302\364\263\007\030\n\ntypescript\022\nvaultToken', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\005\250\363\263\007\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='secret_store', full_name='v1.SecretStore.secret_store',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\252\370\263\007\t\252\370\263\007\004tags\252\370\263\007\t\252\370\263\007\004name'),
-  ],
-  serialized_start=60,
-  serialized_end=968,
-)
-
-
-_AWSSTORE = _descriptor.Descriptor(
-  name='AWSStore',
-  full_name='v1.AWSStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.AWSStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.AWSStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='region', full_name='v1.AWSStore.region', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007f\260\363\263\007\001\300\363\263\007\001\312\363\263\007W\302\364\263\007\026\n\014json_gateway\022\006region\302\364\263\007\036\n\024json_gateway_private\022\006region\302\364\263\007\024\n\ntypescript\022\006region', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.AWSStore.tags', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\205\001\250\363\263\007\001\312\363\263\007{\302\364\263\007\n\n\003cli\022\003aws\302\364\263\007\023\n\014json_gateway\022\003aws\302\364\263\007\033\n\024json_gateway_private\022\003aws\302\364\263\007\021\n\ntypescript\022\003aws\302\364\263\007\031\n\022terraform-provider\022\003aws',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=971,
-  serialized_end=1339,
-)
-
-
-_AZURESTORE = _descriptor.Descriptor(
-  name='AzureStore',
-  full_name='v1.AzureStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.AzureStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.AzureStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='vault_uri', full_name='v1.AzureStore.vault_uri', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007l\260\363\263\007\001\300\363\263\007\001\312\363\263\007]\302\364\263\007\030\n\014json_gateway\022\010vaultUri\302\364\263\007 \n\024json_gateway_private\022\010vaultUri\302\364\263\007\026\n\ntypescript\022\010vaultUri', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.AzureStore.tags', index=3,
-      number=32771, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007o\250\363\263\007\001\312\363\263\007e\302\364\263\007\014\n\003cli\022\005azure\302\364\263\007\025\n\014json_gateway\022\005azure\302\364\263\007\035\n\024json_gateway_private\022\005azure\302\364\263\007\023\n\ntypescript\022\005azure',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1342,
-  serialized_end=1700,
-)
-
-
-_GCPSTORE = _descriptor.Descriptor(
-  name='GCPStore',
-  full_name='v1.GCPStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.GCPStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.GCPStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='projectID', full_name='v1.GCPStore.projectID', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007o\260\363\263\007\001\300\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tprojectId\302\364\263\007!\n\024json_gateway_private\022\tprojectId\302\364\263\007\027\n\ntypescript\022\tprojectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.GCPStore.tags', index=3,
-      number=32771, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007g\250\363\263\007\001\312\363\263\007]\302\364\263\007\n\n\003cli\022\003gcp\302\364\263\007\023\n\014json_gateway\022\003gcp\302\364\263\007\033\n\024json_gateway_private\022\003gcp\302\364\263\007\021\n\ntypescript\022\003gcp',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1703,
-  serialized_end=2054,
-)
-
-
-_VAULTAPPROLESTORE = _descriptor.Descriptor(
-  name='VaultAppRoleStore',
-  full_name='v1.VaultAppRoleStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.VaultAppRoleStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.VaultAppRoleStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='v1.VaultAppRoleStore.namespace', index=2,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='server_address', full_name='v1.VaultAppRoleStore.server_address', index=3,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.VaultAppRoleStore.tags', index=4,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\264\001\250\363\263\007\001\312\363\263\007\251\001\302\364\263\007\023\n\003cli\022\014vaultAppRole\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole\302\364\263\007$\n\024json_gateway_private\022\014vaultAppRole\302\364\263\007\032\n\ntypescript\022\014vaultAppRole\302\364\263\007#\n\022terraform-provider\022\rvault_approle',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2057,
-  serialized_end=2645,
-)
-
-
-_VAULTTLSSTORE = _descriptor.Descriptor(
-  name='VaultTLSStore',
-  full_name='v1.VaultTLSStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.VaultTLSStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.VaultTLSStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='CA_cert_path', full_name='v1.VaultTLSStore.CA_cert_path', index=2,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007m\260\363\263\007\001\312\363\263\007c\302\364\263\007\032\n\014json_gateway\022\ncaCertPath\302\364\263\007\"\n\024json_gateway_private\022\ncaCertPath\302\364\263\007\030\n\ntypescript\022\ncaCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='client_cert_path', full_name='v1.VaultTLSStore.client_cert_path', index=3,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007~\260\363\263\007\001\300\363\263\007\001\312\363\263\007o\302\364\263\007\036\n\014json_gateway\022\016clientCertPath\302\364\263\007&\n\024json_gateway_private\022\016clientCertPath\302\364\263\007\034\n\ntypescript\022\016clientCertPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='client_key_path', full_name='v1.VaultTLSStore.client_key_path', index=4,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rclientKeyPath\302\364\263\007%\n\024json_gateway_private\022\rclientKeyPath\302\364\263\007\033\n\ntypescript\022\rclientKeyPath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='v1.VaultTLSStore.namespace', index=5,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='server_address', full_name='v1.VaultTLSStore.server_address', index=6,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.VaultTLSStore.tags', index=7,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\240\001\250\363\263\007\001\312\363\263\007\225\001\302\364\263\007\017\n\003cli\022\010vaultTLS\302\364\263\007\030\n\014json_gateway\022\010vaultTLS\302\364\263\007 \n\024json_gateway_private\022\010vaultTLS\302\364\263\007\026\n\ntypescript\022\010vaultTLS\302\364\263\007\037\n\022terraform-provider\022\tvault_tls',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2648,
-  serialized_end=3669,
-)
-
-
-_VAULTTOKENSTORE = _descriptor.Descriptor(
-  name='VaultTokenStore',
-  full_name='v1.VaultTokenStore',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.VaultTokenStore.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='v1.VaultTokenStore.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='v1.VaultTokenStore.namespace', index=2,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='server_address', full_name='v1.VaultTokenStore.server_address', index=3,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='v1.VaultTokenStore.tags', index=4,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\370\263\007\005\260\363\263\007\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\372\370\263\007\252\001\250\363\263\007\001\312\363\263\007\237\001\302\364\263\007\021\n\003cli\022\nvaultToken\302\364\263\007\032\n\014json_gateway\022\nvaultToken\302\364\263\007\"\n\024json_gateway_private\022\nvaultToken\302\364\263\007\030\n\ntypescript\022\nvaultToken\302\364\263\007!\n\022terraform-provider\022\013vault_token',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3672,
-  serialized_end=4248,
-)
-
-_SECRETSTORE.fields_by_name['aws'].message_type = _AWSSTORE
-_SECRETSTORE.fields_by_name['azure'].message_type = _AZURESTORE
-_SECRETSTORE.fields_by_name['gcp'].message_type = _GCPSTORE
-_SECRETSTORE.fields_by_name['vault_app_role'].message_type = _VAULTAPPROLESTORE
-_SECRETSTORE.fields_by_name['vault_tls'].message_type = _VAULTTLSSTORE
-_SECRETSTORE.fields_by_name['vault_token'].message_type = _VAULTTOKENSTORE
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['aws'])
-_SECRETSTORE.fields_by_name['aws'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['azure'])
-_SECRETSTORE.fields_by_name['azure'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['gcp'])
-_SECRETSTORE.fields_by_name['gcp'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['vault_app_role'])
-_SECRETSTORE.fields_by_name['vault_app_role'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['vault_tls'])
-_SECRETSTORE.fields_by_name['vault_tls'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_SECRETSTORE.oneofs_by_name['secret_store'].fields.append(
-  _SECRETSTORE.fields_by_name['vault_token'])
-_SECRETSTORE.fields_by_name['vault_token'].containing_oneof = _SECRETSTORE.oneofs_by_name['secret_store']
-_AWSSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-_AZURESTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-_GCPSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-_VAULTAPPROLESTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-_VAULTTLSSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-_VAULTTOKENSTORE.fields_by_name['tags'].message_type = tags__pb2._TAGS
-DESCRIPTOR.message_types_by_name['SecretStore'] = _SECRETSTORE
-DESCRIPTOR.message_types_by_name['AWSStore'] = _AWSSTORE
-DESCRIPTOR.message_types_by_name['AzureStore'] = _AZURESTORE
-DESCRIPTOR.message_types_by_name['GCPStore'] = _GCPSTORE
-DESCRIPTOR.message_types_by_name['VaultAppRoleStore'] = _VAULTAPPROLESTORE
-DESCRIPTOR.message_types_by_name['VaultTLSStore'] = _VAULTTLSSTORE
-DESCRIPTOR.message_types_by_name['VaultTokenStore'] = _VAULTTOKENSTORE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_SECRETSTORE = DESCRIPTOR.message_types_by_name['SecretStore']
+_AWSSTORE = DESCRIPTOR.message_types_by_name['AWSStore']
+_AZURESTORE = DESCRIPTOR.message_types_by_name['AzureStore']
+_GCPSTORE = DESCRIPTOR.message_types_by_name['GCPStore']
+_VAULTAPPROLESTORE = DESCRIPTOR.message_types_by_name['VaultAppRoleStore']
+_VAULTTLSSTORE = DESCRIPTOR.message_types_by_name['VaultTLSStore']
+_VAULTTOKENSTORE = DESCRIPTOR.message_types_by_name['VaultTokenStore']
 SecretStore = _reflection.GeneratedProtocolMessageType('SecretStore', (_message.Message,), {
   'DESCRIPTOR' : _SECRETSTORE,
   '__module__' : 'secret_store_types_pb2'
@@ -561,50 +90,110 @@ VaultTokenStore = _reflection.GeneratedProtocolMessageType('VaultTokenStore', (_
   })
 _sym_db.RegisterMessage(VaultTokenStore)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_SECRETSTORE.oneofs_by_name['secret_store']._options = None
-_SECRETSTORE.fields_by_name['aws']._options = None
-_SECRETSTORE.fields_by_name['azure']._options = None
-_SECRETSTORE.fields_by_name['gcp']._options = None
-_SECRETSTORE.fields_by_name['vault_app_role']._options = None
-_SECRETSTORE.fields_by_name['vault_tls']._options = None
-_SECRETSTORE.fields_by_name['vault_token']._options = None
-_SECRETSTORE._options = None
-_AWSSTORE.fields_by_name['id']._options = None
-_AWSSTORE.fields_by_name['name']._options = None
-_AWSSTORE.fields_by_name['region']._options = None
-_AWSSTORE.fields_by_name['tags']._options = None
-_AWSSTORE._options = None
-_AZURESTORE.fields_by_name['id']._options = None
-_AZURESTORE.fields_by_name['name']._options = None
-_AZURESTORE.fields_by_name['vault_uri']._options = None
-_AZURESTORE.fields_by_name['tags']._options = None
-_AZURESTORE._options = None
-_GCPSTORE.fields_by_name['id']._options = None
-_GCPSTORE.fields_by_name['name']._options = None
-_GCPSTORE.fields_by_name['projectID']._options = None
-_GCPSTORE.fields_by_name['tags']._options = None
-_GCPSTORE._options = None
-_VAULTAPPROLESTORE.fields_by_name['id']._options = None
-_VAULTAPPROLESTORE.fields_by_name['name']._options = None
-_VAULTAPPROLESTORE.fields_by_name['namespace']._options = None
-_VAULTAPPROLESTORE.fields_by_name['server_address']._options = None
-_VAULTAPPROLESTORE.fields_by_name['tags']._options = None
-_VAULTAPPROLESTORE._options = None
-_VAULTTLSSTORE.fields_by_name['id']._options = None
-_VAULTTLSSTORE.fields_by_name['name']._options = None
-_VAULTTLSSTORE.fields_by_name['CA_cert_path']._options = None
-_VAULTTLSSTORE.fields_by_name['client_cert_path']._options = None
-_VAULTTLSSTORE.fields_by_name['client_key_path']._options = None
-_VAULTTLSSTORE.fields_by_name['namespace']._options = None
-_VAULTTLSSTORE.fields_by_name['server_address']._options = None
-_VAULTTLSSTORE.fields_by_name['tags']._options = None
-_VAULTTLSSTORE._options = None
-_VAULTTOKENSTORE.fields_by_name['id']._options = None
-_VAULTTOKENSTORE.fields_by_name['name']._options = None
-_VAULTTOKENSTORE.fields_by_name['namespace']._options = None
-_VAULTTOKENSTORE.fields_by_name['server_address']._options = None
-_VAULTTOKENSTORE.fields_by_name['tags']._options = None
-_VAULTTOKENSTORE._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\031SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v2/internal/v1;v1'
+  _SECRETSTORE.oneofs_by_name['secret_store']._options = None
+  _SECRETSTORE.oneofs_by_name['secret_store']._serialized_options = b'\252\370\263\007\t\252\370\263\007\004tags\252\370\263\007\t\252\370\263\007\004name'
+  _SECRETSTORE.fields_by_name['aws']._options = None
+  _SECRETSTORE.fields_by_name['aws']._serialized_options = b'\362\370\263\007S\312\363\263\007N\302\364\263\007\023\n\014json_gateway\022\003aws\302\364\263\007\033\n\024json_gateway_private\022\003aws\302\364\263\007\021\n\ntypescript\022\003aws'
+  _SECRETSTORE.fields_by_name['azure']._options = None
+  _SECRETSTORE.fields_by_name['azure']._serialized_options = b'\362\370\263\007Y\312\363\263\007T\302\364\263\007\025\n\014json_gateway\022\005azure\302\364\263\007\035\n\024json_gateway_private\022\005azure\302\364\263\007\023\n\ntypescript\022\005azure'
+  _SECRETSTORE.fields_by_name['gcp']._options = None
+  _SECRETSTORE.fields_by_name['gcp']._serialized_options = b'\362\370\263\007S\312\363\263\007N\302\364\263\007\023\n\014json_gateway\022\003gcp\302\364\263\007\033\n\024json_gateway_private\022\003gcp\302\364\263\007\021\n\ntypescript\022\003gcp'
+  _SECRETSTORE.fields_by_name['vault_app_role']._options = None
+  _SECRETSTORE.fields_by_name['vault_app_role']._serialized_options = b'\362\370\263\007n\312\363\263\007i\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole\302\364\263\007$\n\024json_gateway_private\022\014vaultAppRole\302\364\263\007\032\n\ntypescript\022\014vaultAppRole'
+  _SECRETSTORE.fields_by_name['vault_tls']._options = None
+  _SECRETSTORE.fields_by_name['vault_tls']._serialized_options = b'\362\370\263\007b\312\363\263\007]\302\364\263\007\030\n\014json_gateway\022\010vaultTLS\302\364\263\007 \n\024json_gateway_private\022\010vaultTLS\302\364\263\007\026\n\ntypescript\022\010vaultTLS'
+  _SECRETSTORE.fields_by_name['vault_token']._options = None
+  _SECRETSTORE.fields_by_name['vault_token']._serialized_options = b'\362\370\263\007h\312\363\263\007c\302\364\263\007\032\n\014json_gateway\022\nvaultToken\302\364\263\007\"\n\024json_gateway_private\022\nvaultToken\302\364\263\007\030\n\ntypescript\022\nvaultToken'
+  _SECRETSTORE._options = None
+  _SECRETSTORE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _AWSSTORE.fields_by_name['id']._options = None
+  _AWSSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AWSSTORE.fields_by_name['name']._options = None
+  _AWSSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _AWSSTORE.fields_by_name['region']._options = None
+  _AWSSTORE.fields_by_name['region']._serialized_options = b'\362\370\263\007f\260\363\263\007\001\300\363\263\007\001\312\363\263\007W\302\364\263\007\026\n\014json_gateway\022\006region\302\364\263\007\036\n\024json_gateway_private\022\006region\302\364\263\007\024\n\ntypescript\022\006region'
+  _AWSSTORE.fields_by_name['tags']._options = None
+  _AWSSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AWSSTORE._options = None
+  _AWSSTORE._serialized_options = b'\372\370\263\007\205\001\250\363\263\007\001\312\363\263\007{\302\364\263\007\n\n\003cli\022\003aws\302\364\263\007\023\n\014json_gateway\022\003aws\302\364\263\007\033\n\024json_gateway_private\022\003aws\302\364\263\007\021\n\ntypescript\022\003aws\302\364\263\007\031\n\022terraform-provider\022\003aws'
+  _AZURESTORE.fields_by_name['id']._options = None
+  _AZURESTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AZURESTORE.fields_by_name['name']._options = None
+  _AZURESTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _AZURESTORE.fields_by_name['vault_uri']._options = None
+  _AZURESTORE.fields_by_name['vault_uri']._serialized_options = b'\362\370\263\007l\260\363\263\007\001\300\363\263\007\001\312\363\263\007]\302\364\263\007\030\n\014json_gateway\022\010vaultUri\302\364\263\007 \n\024json_gateway_private\022\010vaultUri\302\364\263\007\026\n\ntypescript\022\010vaultUri'
+  _AZURESTORE.fields_by_name['tags']._options = None
+  _AZURESTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AZURESTORE._options = None
+  _AZURESTORE._serialized_options = b'\372\370\263\007o\250\363\263\007\001\312\363\263\007e\302\364\263\007\014\n\003cli\022\005azure\302\364\263\007\025\n\014json_gateway\022\005azure\302\364\263\007\035\n\024json_gateway_private\022\005azure\302\364\263\007\023\n\ntypescript\022\005azure'
+  _GCPSTORE.fields_by_name['id']._options = None
+  _GCPSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _GCPSTORE.fields_by_name['name']._options = None
+  _GCPSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _GCPSTORE.fields_by_name['projectID']._options = None
+  _GCPSTORE.fields_by_name['projectID']._serialized_options = b'\362\370\263\007o\260\363\263\007\001\300\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tprojectId\302\364\263\007!\n\024json_gateway_private\022\tprojectId\302\364\263\007\027\n\ntypescript\022\tprojectId'
+  _GCPSTORE.fields_by_name['tags']._options = None
+  _GCPSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _GCPSTORE._options = None
+  _GCPSTORE._serialized_options = b'\372\370\263\007g\250\363\263\007\001\312\363\263\007]\302\364\263\007\n\n\003cli\022\003gcp\302\364\263\007\023\n\014json_gateway\022\003gcp\302\364\263\007\033\n\024json_gateway_private\022\003gcp\302\364\263\007\021\n\ntypescript\022\003gcp'
+  _VAULTAPPROLESTORE.fields_by_name['id']._options = None
+  _VAULTAPPROLESTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLESTORE.fields_by_name['name']._options = None
+  _VAULTAPPROLESTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTAPPROLESTORE.fields_by_name['namespace']._options = None
+  _VAULTAPPROLESTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace'
+  _VAULTAPPROLESTORE.fields_by_name['server_address']._options = None
+  _VAULTAPPROLESTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress'
+  _VAULTAPPROLESTORE.fields_by_name['tags']._options = None
+  _VAULTAPPROLESTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLESTORE._options = None
+  _VAULTAPPROLESTORE._serialized_options = b'\372\370\263\007\264\001\250\363\263\007\001\312\363\263\007\251\001\302\364\263\007\023\n\003cli\022\014vaultAppRole\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole\302\364\263\007$\n\024json_gateway_private\022\014vaultAppRole\302\364\263\007\032\n\ntypescript\022\014vaultAppRole\302\364\263\007#\n\022terraform-provider\022\rvault_approle'
+  _VAULTTLSSTORE.fields_by_name['id']._options = None
+  _VAULTTLSSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSSTORE.fields_by_name['name']._options = None
+  _VAULTTLSSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTLSSTORE.fields_by_name['CA_cert_path']._options = None
+  _VAULTTLSSTORE.fields_by_name['CA_cert_path']._serialized_options = b'\362\370\263\007m\260\363\263\007\001\312\363\263\007c\302\364\263\007\032\n\014json_gateway\022\ncaCertPath\302\364\263\007\"\n\024json_gateway_private\022\ncaCertPath\302\364\263\007\030\n\ntypescript\022\ncaCertPath'
+  _VAULTTLSSTORE.fields_by_name['client_cert_path']._options = None
+  _VAULTTLSSTORE.fields_by_name['client_cert_path']._serialized_options = b'\362\370\263\007~\260\363\263\007\001\300\363\263\007\001\312\363\263\007o\302\364\263\007\036\n\014json_gateway\022\016clientCertPath\302\364\263\007&\n\024json_gateway_private\022\016clientCertPath\302\364\263\007\034\n\ntypescript\022\016clientCertPath'
+  _VAULTTLSSTORE.fields_by_name['client_key_path']._options = None
+  _VAULTTLSSTORE.fields_by_name['client_key_path']._serialized_options = b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rclientKeyPath\302\364\263\007%\n\024json_gateway_private\022\rclientKeyPath\302\364\263\007\033\n\ntypescript\022\rclientKeyPath'
+  _VAULTTLSSTORE.fields_by_name['namespace']._options = None
+  _VAULTTLSSTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace'
+  _VAULTTLSSTORE.fields_by_name['server_address']._options = None
+  _VAULTTLSSTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress'
+  _VAULTTLSSTORE.fields_by_name['tags']._options = None
+  _VAULTTLSSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSSTORE._options = None
+  _VAULTTLSSTORE._serialized_options = b'\372\370\263\007\240\001\250\363\263\007\001\312\363\263\007\225\001\302\364\263\007\017\n\003cli\022\010vaultTLS\302\364\263\007\030\n\014json_gateway\022\010vaultTLS\302\364\263\007 \n\024json_gateway_private\022\010vaultTLS\302\364\263\007\026\n\ntypescript\022\010vaultTLS\302\364\263\007\037\n\022terraform-provider\022\tvault_tls'
+  _VAULTTOKENSTORE.fields_by_name['id']._options = None
+  _VAULTTOKENSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENSTORE.fields_by_name['name']._options = None
+  _VAULTTOKENSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTOKENSTORE.fields_by_name['namespace']._options = None
+  _VAULTTOKENSTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007j\260\363\263\007\001\312\363\263\007`\302\364\263\007\031\n\014json_gateway\022\tnamespace\302\364\263\007!\n\024json_gateway_private\022\tnamespace\302\364\263\007\027\n\ntypescript\022\tnamespace'
+  _VAULTTOKENSTORE.fields_by_name['server_address']._options = None
+  _VAULTTOKENSTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\007{\260\363\263\007\001\300\363\263\007\001\312\363\263\007l\302\364\263\007\035\n\014json_gateway\022\rserverAddress\302\364\263\007%\n\024json_gateway_private\022\rserverAddress\302\364\263\007\033\n\ntypescript\022\rserverAddress'
+  _VAULTTOKENSTORE.fields_by_name['tags']._options = None
+  _VAULTTOKENSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENSTORE._options = None
+  _VAULTTOKENSTORE._serialized_options = b'\372\370\263\007\252\001\250\363\263\007\001\312\363\263\007\237\001\302\364\263\007\021\n\003cli\022\nvaultToken\302\364\263\007\032\n\014json_gateway\022\nvaultToken\302\364\263\007\"\n\024json_gateway_private\022\nvaultToken\302\364\263\007\030\n\ntypescript\022\nvaultToken\302\364\263\007!\n\022terraform-provider\022\013vault_token'
+  _SECRETSTORE._serialized_start=60
+  _SECRETSTORE._serialized_end=968
+  _AWSSTORE._serialized_start=971
+  _AWSSTORE._serialized_end=1339
+  _AZURESTORE._serialized_start=1342
+  _AZURESTORE._serialized_end=1700
+  _GCPSTORE._serialized_start=1703
+  _GCPSTORE._serialized_end=2054
+  _VAULTAPPROLESTORE._serialized_start=2057
+  _VAULTAPPROLESTORE._serialized_end=2645
+  _VAULTTLSSTORE._serialized_start=2648
+  _VAULTTLSSTORE._serialized_end=3669
+  _VAULTTOKENSTORE._serialized_start=3672
+  _VAULTTOKENSTORE._serialized_end=4248
 # @@protoc_insertion_point(module_scope)
