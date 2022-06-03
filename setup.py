@@ -39,7 +39,7 @@ setup(
     ],
     install_requires=[
         'grpcio==1.42.0',
-        'googleapis-common-protos==1.52.0',
+        'googleapis-common-protos>=1.52.0,<2',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',  # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
