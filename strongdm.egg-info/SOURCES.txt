@@ -19,6 +19,8 @@ strongdm/nodes_pb2_grpc.py
 strongdm/options_pb2.py
 strongdm/options_pb2_grpc.py
 strongdm/plumbing.py
+strongdm/remote_identity_groups_pb2.py
+strongdm/remote_identity_groups_pb2_grpc.py
 strongdm/resources_pb2.py
 strongdm/resources_pb2_grpc.py
 strongdm/role_attachments_pb2.py

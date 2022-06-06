@@ -32,6 +32,7 @@ from .accounts_pb2 import *
 from .control_panel_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
+from .remote_identity_groups_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
 from .role_grants_pb2 import *
@@ -4308,6 +4309,80 @@ def convert_repeated_relay_to_plumbing(porcelains):
 
 def convert_repeated_relay_to_porcelain(plumbings):
     return [convert_relay_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_remote_identity_group_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityGroup()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    return porcelain
+
+
+def convert_remote_identity_group_to_plumbing(porcelain):
+    plumbing = RemoteIdentityGroup()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    return plumbing
+
+
+def convert_repeated_remote_identity_group_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_group_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_group_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_group_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_remote_identity_group_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityGroupGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.remote_identity_group = convert_remote_identity_group_to_porcelain(
+        plumbing.remote_identity_group)
+    return porcelain
+
+
+def convert_remote_identity_group_get_response_to_plumbing(porcelain):
+    plumbing = RemoteIdentityGroupGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.remote_identity_group.CopyFrom(
+        convert_remote_identity_group_to_plumbing(
+            porcelain.remote_identity_group))
+    return plumbing
+
+
+def convert_repeated_remote_identity_group_get_response_to_plumbing(
+        porcelains):
+    return [
+        convert_remote_identity_group_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_group_get_response_to_porcelain(
+        plumbings):
+    return [
+        convert_remote_identity_group_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_resource_to_plumbing(porcelain):

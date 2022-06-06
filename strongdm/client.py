@@ -98,6 +98,13 @@ class Client:
 
         See `strongdm.svc.Nodes`.
         '''
+        self.remote_identity_groups = svc.RemoteIdentityGroups(channel, self)
+        '''
+         A RemoteIdentityGroup is a named grouping of Remote Identities for Accounts.
+         An Account's relationship to a RemoteIdentityGroup is defined via RemoteIdentity objects.
+
+        See `strongdm.svc.RemoteIdentityGroups`.
+        '''
         self.resources = svc.Resources(channel, self)
         '''
          Resources are databases, servers, clusters, websites, or clouds that strongDM

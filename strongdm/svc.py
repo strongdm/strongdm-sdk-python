@@ -36,6 +36,8 @@ from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .remote_identity_groups_pb2 import *
+from .remote_identity_groups_pb2_grpc import *
 from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .role_attachments_pb2 import *
@@ -777,6 +779,87 @@ class Nodes:
                 tries = 0
                 for plumbing_item in plumbing_response.nodes:
                     yield plumbing.convert_node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class RemoteIdentityGroups:
+    '''
+     A RemoteIdentityGroup is a named grouping of Remote Identities for Accounts.
+     An Account's relationship to a RemoteIdentityGroup is defined via RemoteIdentity objects.
+    See `strongdm.models.RemoteIdentityGroup`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RemoteIdentityGroupsStub(channel)
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one RemoteIdentityGroup by ID.
+        '''
+        req = RemoteIdentityGroupGetRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'RemoteIdentityGroups.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RemoteIdentityGroupGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.remote_identity_group = plumbing.convert_remote_identity_group_to_porcelain(
+            plumbing_response.remote_identity_group)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentityGroups matching a given set of criteria.
+        '''
+        req = RemoteIdentityGroupListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RemoteIdentityGroups.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.remote_identity_groups:
+                    yield plumbing.convert_remote_identity_group_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

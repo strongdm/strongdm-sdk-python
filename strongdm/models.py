@@ -10240,6 +10240,103 @@ class Relay:
         )
 
 
+class RemoteIdentityGroup:
+    '''
+     A RemoteIdentityGroup has a list of access rules which determine which Resources the members
+     of the RemoteIdentityGroup have access to. An Account can be a member of multiple RemoteIdentityGroups via
+     AccountAttachments.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the RemoteIdentityGroup.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the RemoteIdentityGroup.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityGroup ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+        )
+
+
+class RemoteIdentityGroupGetResponse:
+    '''
+     RemoteIdentityGroupGetResponse returns a requested RemoteIdentityGroup.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'remote_identity_group',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        remote_identity_group=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.remote_identity_group = remote_identity_group if remote_identity_group is not None else None
+        '''
+         The requested RemoteIdentityGroup.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityGroupGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'remote_identity_group: ' + repr(self.remote_identity_group) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'remote_identity_group': self.remote_identity_group,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            remote_identity_group=d.get('remote_identity_group'),
+        )
+
+
 class ResourceCreateResponse:
     '''
      ResourceCreateResponse reports how the Resources were created in the system.
