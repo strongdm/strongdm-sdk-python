@@ -865,6 +865,41 @@ class RemoteIdentities:
             plumbing_response.remote_identity)
         return resp
 
+    def update(self, remote_identity, timeout=None):
+        '''
+         Update replaces all the fields of a RemoteIdentity by ID.
+        '''
+        req = RemoteIdentityUpdateRequest()
+
+        if remote_identity is not None:
+            req.remote_identity.CopyFrom(
+                plumbing.convert_remote_identity_to_plumbing(remote_identity))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'RemoteIdentities.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RemoteIdentityUpdateResponse()
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.remote_identity = plumbing.convert_remote_identity_to_porcelain(
+            plumbing_response.remote_identity)
+        return resp
+
     def delete(self, id, timeout=None):
         '''
          Delete removes a RemoteIdentity by ID.

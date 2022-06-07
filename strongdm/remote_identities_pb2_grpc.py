@@ -39,6 +39,11 @@ class RemoteIdentitiesStub(object):
                 request_serializer=remote__identities__pb2.RemoteIdentityGetRequest.SerializeToString,
                 response_deserializer=remote__identities__pb2.RemoteIdentityGetResponse.FromString,
                 )
+        self.Update = channel.unary_unary(
+                '/v1.RemoteIdentities/Update',
+                request_serializer=remote__identities__pb2.RemoteIdentityUpdateRequest.SerializeToString,
+                response_deserializer=remote__identities__pb2.RemoteIdentityUpdateResponse.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/v1.RemoteIdentities/Delete',
                 request_serializer=remote__identities__pb2.RemoteIdentityDeleteRequest.SerializeToString,
@@ -64,6 +69,13 @@ class RemoteIdentitiesServicer(object):
 
     def Get(self, request, context):
         """Get reads one RemoteIdentity by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Update replaces all the fields of a RemoteIdentity by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,6 +107,11 @@ def add_RemoteIdentitiesServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=remote__identities__pb2.RemoteIdentityGetRequest.FromString,
                     response_serializer=remote__identities__pb2.RemoteIdentityGetResponse.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=remote__identities__pb2.RemoteIdentityUpdateRequest.FromString,
+                    response_serializer=remote__identities__pb2.RemoteIdentityUpdateResponse.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
@@ -148,6 +165,23 @@ class RemoteIdentities(object):
         return grpc.experimental.unary_unary(request, target, '/v1.RemoteIdentities/Get',
             remote__identities__pb2.RemoteIdentityGetRequest.SerializeToString,
             remote__identities__pb2.RemoteIdentityGetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.RemoteIdentities/Update',
+            remote__identities__pb2.RemoteIdentityUpdateRequest.SerializeToString,
+            remote__identities__pb2.RemoteIdentityUpdateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
