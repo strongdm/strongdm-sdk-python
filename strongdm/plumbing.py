@@ -32,6 +32,7 @@ from .accounts_pb2 import *
 from .control_panel_pb2 import *
 from .drivers_pb2 import *
 from .nodes_pb2 import *
+from .remote_identities_pb2 import *
 from .remote_identity_groups_pb2 import *
 from .resources_pb2 import *
 from .role_attachments_pb2 import *
@@ -4311,6 +4312,157 @@ def convert_repeated_relay_to_porcelain(plumbings):
     return [convert_relay_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_remote_identity_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentity()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.id = (plumbing.id)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_remote_identity_to_plumbing(porcelain):
+    plumbing = RemoteIdentity()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.id = (porcelain.id)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_remote_identity_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_remote_identity_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.remote_identity = convert_remote_identity_to_porcelain(
+        plumbing.remote_identity)
+    return porcelain
+
+
+def convert_remote_identity_create_response_to_plumbing(porcelain):
+    plumbing = RemoteIdentityCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.remote_identity.CopyFrom(
+        convert_remote_identity_to_plumbing(porcelain.remote_identity))
+    return plumbing
+
+
+def convert_repeated_remote_identity_create_response_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_create_response_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_remote_identity_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_remote_identity_delete_response_to_plumbing(porcelain):
+    plumbing = RemoteIdentityDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_remote_identity_delete_response_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_delete_response_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_remote_identity_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.remote_identity = convert_remote_identity_to_porcelain(
+        plumbing.remote_identity)
+    return porcelain
+
+
+def convert_remote_identity_get_response_to_plumbing(porcelain):
+    plumbing = RemoteIdentityGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.remote_identity.CopyFrom(
+        convert_remote_identity_to_plumbing(porcelain.remote_identity))
+    return plumbing
+
+
+def convert_repeated_remote_identity_get_response_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_get_response_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_remote_identity_group_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4381,6 +4533,46 @@ def convert_repeated_remote_identity_group_get_response_to_porcelain(
         plumbings):
     return [
         convert_remote_identity_group_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_remote_identity_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RemoteIdentityUpdateResponse()
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.remote_identity = convert_remote_identity_to_porcelain(
+        plumbing.remote_identity)
+    return porcelain
+
+
+def convert_remote_identity_update_response_to_plumbing(porcelain):
+    plumbing = RemoteIdentityUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.remote_identity.CopyFrom(
+        convert_remote_identity_to_plumbing(porcelain.remote_identity))
+    return plumbing
+
+
+def convert_repeated_remote_identity_update_response_to_plumbing(porcelains):
+    return [
+        convert_remote_identity_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_remote_identity_update_response_to_porcelain(plumbings):
+    return [
+        convert_remote_identity_update_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

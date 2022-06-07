@@ -1255,7 +1255,7 @@ class AccountGrant:
     ):
         self.account_id = account_id if account_id is not None else ''
         '''
-         The id of the attached role of this AccountGrant.
+         The account id of this AccountGrant.
         '''
         self.id = id if id is not None else ''
         '''
@@ -1263,7 +1263,7 @@ class AccountGrant:
         '''
         self.resource_id = resource_id if resource_id is not None else ''
         '''
-         The id of the composite role of this AccountGrant.
+         The resource id of this AccountGrant.
         '''
         self.start_from = start_from if start_from is not None else None
         '''
@@ -10240,11 +10240,218 @@ class Relay:
         )
 
 
+class RemoteIdentity:
+    '''
+     RemoteIdentities define the username to be used for a specific account
+     when connecting to a remote resource using that group.
+    '''
+    __slots__ = [
+        'account_id',
+        'id',
+        'remote_identity_group_id',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        id=None,
+        remote_identity_group_id=None,
+        username=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The account for this remote identity.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the RemoteIdentity.
+        '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The remote identity group.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to be used as the remote identity for this account.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentity ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'id': self.id,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            id=d.get('id'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            username=d.get('username'),
+        )
+
+
+class RemoteIdentityCreateResponse:
+    '''
+     RemoteIdentityCreateResponse reports how the RemoteIdentities were created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'remote_identity',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        remote_identity=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.remote_identity = remote_identity if remote_identity is not None else None
+        '''
+         The created RemoteIdentity.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'remote_identity: ' + repr(self.remote_identity) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'remote_identity': self.remote_identity,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            remote_identity=d.get('remote_identity'),
+        )
+
+
+class RemoteIdentityDeleteResponse:
+    '''
+     RemoteIdentityDeleteResponse returns information about a RemoteIdentity that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class RemoteIdentityGetResponse:
+    '''
+     RemoteIdentityGetResponse returns a requested RemoteIdentity.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'remote_identity',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        remote_identity=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.remote_identity = remote_identity if remote_identity is not None else None
+        '''
+         The requested RemoteIdentity.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'remote_identity: ' + repr(self.remote_identity) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'remote_identity': self.remote_identity,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            remote_identity=d.get('remote_identity'),
+        )
+
+
 class RemoteIdentityGroup:
     '''
-     A RemoteIdentityGroup has a list of access rules which determine which Resources the members
-     of the RemoteIdentityGroup have access to. An Account can be a member of multiple RemoteIdentityGroups via
-     AccountAttachments.
+     A RemoteIdentityGroup defines a group of remote identities.
     '''
     __slots__ = [
         'id',
@@ -10334,6 +10541,59 @@ class RemoteIdentityGroupGetResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             remote_identity_group=d.get('remote_identity_group'),
+        )
+
+
+class RemoteIdentityUpdateResponse:
+    '''
+     RemoteIdentityUpdateResponse returns the fields of a RemoteIdentity after it has been updated by
+     a RemoteIdentityUpdateRequest.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'remote_identity',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        remote_identity=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.remote_identity = remote_identity if remote_identity is not None else None
+        '''
+         The updated RemoteIdentity.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'remote_identity: ' + repr(self.remote_identity) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'remote_identity': self.remote_identity,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            remote_identity=d.get('remote_identity'),
         )
 
 

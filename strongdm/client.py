@@ -98,6 +98,12 @@ class Client:
 
         See `strongdm.svc.Nodes`.
         '''
+        self.remote_identities = svc.RemoteIdentities(channel, self)
+        '''
+         RemoteIdentities assign a resource directly to an account, giving the account the permission to connect to that resource.
+
+        See `strongdm.svc.RemoteIdentities`.
+        '''
         self.remote_identity_groups = svc.RemoteIdentityGroups(channel, self)
         '''
          A RemoteIdentityGroup is a named grouping of Remote Identities for Accounts.

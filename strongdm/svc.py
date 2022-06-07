@@ -36,6 +36,8 @@ from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .remote_identities_pb2 import *
+from .remote_identities_pb2_grpc import *
 from .remote_identity_groups_pb2 import *
 from .remote_identity_groups_pb2_grpc import *
 from .resources_pb2 import *
@@ -779,6 +781,152 @@ class Nodes:
                 tries = 0
                 for plumbing_item in plumbing_response.nodes:
                     yield plumbing.convert_node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class RemoteIdentities:
+    '''
+     RemoteIdentities assign a resource directly to an account, giving the account the permission to connect to that resource.
+    See `strongdm.models.RemoteIdentity`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RemoteIdentitiesStub(channel)
+
+    def create(self, remote_identity, timeout=None):
+        '''
+         Create registers a new RemoteIdentity.
+        '''
+        req = RemoteIdentityCreateRequest()
+
+        if remote_identity is not None:
+            req.remote_identity.CopyFrom(
+                plumbing.convert_remote_identity_to_plumbing(remote_identity))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'RemoteIdentities.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RemoteIdentityCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.remote_identity = plumbing.convert_remote_identity_to_porcelain(
+            plumbing_response.remote_identity)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one RemoteIdentity by ID.
+        '''
+        req = RemoteIdentityGetRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('RemoteIdentities.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RemoteIdentityGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.remote_identity = plumbing.convert_remote_identity_to_porcelain(
+            plumbing_response.remote_identity)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a RemoteIdentity by ID.
+        '''
+        req = RemoteIdentityDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'RemoteIdentities.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RemoteIdentityDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentities matching a given set of criteria.
+        '''
+        req = RemoteIdentityListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RemoteIdentities.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.remote_identities:
+                    yield plumbing.convert_remote_identity_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
