@@ -34,6 +34,8 @@ class AKS:
         'id',
         'name',
         'port',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'tags',
     ]
@@ -51,6 +53,8 @@ class AKS:
         id=None,
         name=None,
         port=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         tags=None,
     ):
@@ -98,6 +102,14 @@ class AKS:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -120,6 +132,8 @@ class AKS:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -137,6 +151,9 @@ class AKS:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
         }
@@ -155,6 +172,9 @@ class AKS:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
         )
@@ -306,6 +326,8 @@ class AKSServiceAccount:
         'id',
         'name',
         'port',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'tags',
         'token',
@@ -321,6 +343,8 @@ class AKSServiceAccount:
         id=None,
         name=None,
         port=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         tags=None,
         token=None,
@@ -357,6 +381,14 @@ class AKSServiceAccount:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -380,6 +412,8 @@ class AKSServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -395,6 +429,9 @@ class AKSServiceAccount:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'token': self.token,
@@ -411,6 +448,9 @@ class AKSServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             token=d.get('token'),
@@ -1521,6 +1561,8 @@ class AmazonEKS:
         'id',
         'name',
         'region',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_access_key',
@@ -1541,6 +1583,8 @@ class AmazonEKS:
         id=None,
         name=None,
         region=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_access_key=None,
@@ -1591,6 +1635,14 @@ class AmazonEKS:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
 
@@ -1625,6 +1677,8 @@ class AmazonEKS:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -1645,6 +1699,9 @@ class AmazonEKS:
             'id': self.id,
             'name': self.name,
             'region': self.region,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_access_key': self.secret_access_key,
@@ -1666,6 +1723,9 @@ class AmazonEKS:
             id=d.get('id'),
             name=d.get('name'),
             region=d.get('region'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_access_key=d.get('secret_access_key'),
@@ -5317,6 +5377,8 @@ class GoogleGKE:
         'healthy',
         'id',
         'name',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'service_account_key',
         'tags',
@@ -5332,6 +5394,8 @@ class GoogleGKE:
         healthy=None,
         id=None,
         name=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         service_account_key=None,
         tags=None,
@@ -5368,6 +5432,14 @@ class GoogleGKE:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5391,6 +5463,8 @@ class GoogleGKE:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -5406,6 +5480,9 @@ class GoogleGKE:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'service_account_key': self.service_account_key,
             'tags': self.tags,
@@ -5422,6 +5499,9 @@ class GoogleGKE:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
             tags=d.get('tags'),
@@ -6145,6 +6225,8 @@ class Kubernetes:
         'id',
         'name',
         'port',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'tags',
     ]
@@ -6162,6 +6244,8 @@ class Kubernetes:
         id=None,
         name=None,
         port=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         tags=None,
     ):
@@ -6209,6 +6293,14 @@ class Kubernetes:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6231,6 +6323,8 @@ class Kubernetes:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -6248,6 +6342,9 @@ class Kubernetes:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
         }
@@ -6266,6 +6363,9 @@ class Kubernetes:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
         )
@@ -6417,6 +6517,8 @@ class KubernetesServiceAccount:
         'id',
         'name',
         'port',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'tags',
         'token',
@@ -6432,6 +6534,8 @@ class KubernetesServiceAccount:
         id=None,
         name=None,
         port=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         tags=None,
         token=None,
@@ -6468,6 +6572,14 @@ class KubernetesServiceAccount:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6491,6 +6603,8 @@ class KubernetesServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -6506,6 +6620,9 @@ class KubernetesServiceAccount:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'token': self.token,
@@ -6522,6 +6639,9 @@ class KubernetesServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             token=d.get('token'),
@@ -11816,6 +11936,8 @@ class SSHCert:
         'port',
         'port_forwarding',
         'port_override',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
         'secret_store_id',
         'tags',
         'username',
@@ -11833,6 +11955,8 @@ class SSHCert:
         port=None,
         port_forwarding=None,
         port_override=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         tags=None,
         username=None,
@@ -11877,6 +12001,14 @@ class SSHCert:
         '''
 
         '''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+
+        '''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11902,6 +12034,8 @@ class SSHCert:
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -11920,6 +12054,9 @@ class SSHCert:
             'port': self.port,
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'username': self.username,
@@ -11939,6 +12076,9 @@ class SSHCert:
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             username=d.get('username'),
