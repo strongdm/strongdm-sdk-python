@@ -11779,6 +11779,7 @@ class SSH:
         'healthy',
         'hostname',
         'id',
+        'key_type',
         'name',
         'port',
         'port_forwarding',
@@ -11797,6 +11798,7 @@ class SSH:
         healthy=None,
         hostname=None,
         id=None,
+        key_type=None,
         name=None,
         port=None,
         port_forwarding=None,
@@ -11829,6 +11831,10 @@ class SSH:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.key_type = key_type if key_type is not None else ''
+        '''
+
         '''
         self.name = name if name is not None else ''
         '''
@@ -11871,6 +11877,7 @@ class SSH:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'key_type: ' + repr(self.key_type) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
@@ -11890,6 +11897,7 @@ class SSH:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'key_type': self.key_type,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
@@ -11910,6 +11918,7 @@ class SSH:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            key_type=d.get('key_type'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
