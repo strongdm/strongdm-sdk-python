@@ -194,6 +194,7 @@ class AKSBasicAuth:
         'name',
         'password',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
         'username',
@@ -210,6 +211,7 @@ class AKSBasicAuth:
         name=None,
         password=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
         username=None,
@@ -250,6 +252,10 @@ class AKSBasicAuth:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -274,6 +280,7 @@ class AKSBasicAuth:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -290,6 +297,7 @@ class AKSBasicAuth:
             'name': self.name,
             'password': self.password,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'username': self.username,
@@ -307,6 +315,7 @@ class AKSBasicAuth:
             name=d.get('name'),
             password=d.get('password'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             username=d.get('username'),
@@ -6385,6 +6394,7 @@ class KubernetesBasicAuth:
         'name',
         'password',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
         'username',
@@ -6401,6 +6411,7 @@ class KubernetesBasicAuth:
         name=None,
         password=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
         username=None,
@@ -6441,6 +6452,10 @@ class KubernetesBasicAuth:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6465,6 +6480,7 @@ class KubernetesBasicAuth:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -6481,6 +6497,7 @@ class KubernetesBasicAuth:
             'name': self.name,
             'password': self.password,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'username': self.username,
@@ -6498,6 +6515,7 @@ class KubernetesBasicAuth:
             name=d.get('name'),
             password=d.get('password'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             username=d.get('username'),
