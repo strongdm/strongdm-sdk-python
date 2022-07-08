@@ -34,6 +34,7 @@ class AKS:
         'id',
         'name',
         'port',
+        'port_override',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
         'secret_store_id',
@@ -53,6 +54,7 @@ class AKS:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
         secret_store_id=None,
@@ -102,6 +104,10 @@ class AKS:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         '''
 
@@ -132,6 +138,7 @@ class AKS:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -151,6 +158,7 @@ class AKS:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
             self.remote_identity_healthcheck_username,
@@ -172,6 +180,7 @@ class AKS:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
                 'remote_identity_healthcheck_username'),
@@ -335,6 +344,7 @@ class AKSServiceAccount:
         'id',
         'name',
         'port',
+        'port_override',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
         'secret_store_id',
@@ -352,6 +362,7 @@ class AKSServiceAccount:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
         secret_store_id=None,
@@ -390,6 +401,10 @@ class AKSServiceAccount:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         '''
 
@@ -421,6 +436,7 @@ class AKSServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -438,6 +454,7 @@ class AKSServiceAccount:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
             self.remote_identity_healthcheck_username,
@@ -457,6 +474,7 @@ class AKSServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
                 'remote_identity_healthcheck_username'),
@@ -479,6 +497,7 @@ class AKSServiceAccountUserImpersonation:
         'id',
         'name',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
         'token',
@@ -494,6 +513,7 @@ class AKSServiceAccountUserImpersonation:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
         token=None,
@@ -530,6 +550,10 @@ class AKSServiceAccountUserImpersonation:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -553,6 +577,7 @@ class AKSServiceAccountUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -568,6 +593,7 @@ class AKSServiceAccountUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'token': self.token,
@@ -584,6 +610,7 @@ class AKSServiceAccountUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             token=d.get('token'),
@@ -606,6 +633,7 @@ class AKSUserImpersonation:
         'id',
         'name',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
     ]
@@ -623,6 +651,7 @@ class AKSUserImpersonation:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
     ):
@@ -670,6 +699,10 @@ class AKSUserImpersonation:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -692,6 +725,7 @@ class AKSUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -709,6 +743,7 @@ class AKSUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
         }
@@ -727,6 +762,7 @@ class AKSUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
         )
@@ -6234,6 +6270,7 @@ class Kubernetes:
         'id',
         'name',
         'port',
+        'port_override',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
         'secret_store_id',
@@ -6253,6 +6290,7 @@ class Kubernetes:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
         secret_store_id=None,
@@ -6302,6 +6340,10 @@ class Kubernetes:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         '''
 
@@ -6332,6 +6374,7 @@ class Kubernetes:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -6351,6 +6394,7 @@ class Kubernetes:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
             self.remote_identity_healthcheck_username,
@@ -6372,6 +6416,7 @@ class Kubernetes:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
                 'remote_identity_healthcheck_username'),
@@ -6535,6 +6580,7 @@ class KubernetesServiceAccount:
         'id',
         'name',
         'port',
+        'port_override',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
         'secret_store_id',
@@ -6552,6 +6598,7 @@ class KubernetesServiceAccount:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
         secret_store_id=None,
@@ -6590,6 +6637,10 @@ class KubernetesServiceAccount:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         '''
 
@@ -6621,6 +6672,7 @@ class KubernetesServiceAccount:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -6638,6 +6690,7 @@ class KubernetesServiceAccount:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
             self.remote_identity_healthcheck_username,
@@ -6657,6 +6710,7 @@ class KubernetesServiceAccount:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
                 'remote_identity_healthcheck_username'),
@@ -6679,6 +6733,7 @@ class KubernetesServiceAccountUserImpersonation:
         'id',
         'name',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
         'token',
@@ -6694,6 +6749,7 @@ class KubernetesServiceAccountUserImpersonation:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
         token=None,
@@ -6730,6 +6786,10 @@ class KubernetesServiceAccountUserImpersonation:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6753,6 +6813,7 @@ class KubernetesServiceAccountUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
@@ -6768,6 +6829,7 @@ class KubernetesServiceAccountUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'token': self.token,
@@ -6784,6 +6846,7 @@ class KubernetesServiceAccountUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             token=d.get('token'),
@@ -6806,6 +6869,7 @@ class KubernetesUserImpersonation:
         'id',
         'name',
         'port',
+        'port_override',
         'secret_store_id',
         'tags',
     ]
@@ -6823,6 +6887,7 @@ class KubernetesUserImpersonation:
         id=None,
         name=None,
         port=None,
+        port_override=None,
         secret_store_id=None,
         tags=None,
     ):
@@ -6870,6 +6935,10 @@ class KubernetesUserImpersonation:
         '''
 
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6892,6 +6961,7 @@ class KubernetesUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -6909,6 +6979,7 @@ class KubernetesUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port': self.port,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
         }
@@ -6927,6 +6998,7 @@ class KubernetesUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port=d.get('port'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
         )
