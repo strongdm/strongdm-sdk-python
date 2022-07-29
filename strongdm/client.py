@@ -118,28 +118,6 @@ class Client:
 
         See `strongdm.svc.Resources`.
         '''
-        self.role_attachments = svc.RoleAttachments(channel, self)
-        '''
-         RoleAttachments represent relationships between composite roles and the roles
-         that make up those composite roles. When a composite role is attached to another
-         role, the permissions granted to members of the composite role are augmented to
-         include the permissions granted to members of the attached role.
-         
-         Deprecated: use multi-role via AccountAttachments instead.
-
-        See `strongdm.svc.RoleAttachments`.
-        '''
-        self.role_grants = svc.RoleGrants(channel, self)
-        '''
-         RoleGrants represent relationships between composite roles and the roles
-         that make up those composite roles. When a composite role is attached to another
-         role, the permissions granted to members of the composite role are augmented to
-         include the permissions granted to members of the attached role.
-         
-         Deprecated: use Role access rules instead.
-
-        See `strongdm.svc.RoleGrants`.
-        '''
         self.roles = svc.Roles(channel, self)
         '''
          A Role has a list of access rules which determine which Resources the members

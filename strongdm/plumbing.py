@@ -35,8 +35,6 @@ from .nodes_pb2 import *
 from .remote_identities_pb2 import *
 from .remote_identity_groups_pb2 import *
 from .resources_pb2 import *
-from .role_attachments_pb2 import *
-from .role_grants_pb2 import *
 from .roles_pb2 import *
 from .secret_store_types_pb2 import *
 from .secret_stores_pb2 import *
@@ -5147,7 +5145,6 @@ def convert_role_to_porcelain(plumbing):
     porcelain = models.Role()
     porcelain.access_rules = convert_access_rules_to_porcelain(
         plumbing.access_rules)
-    porcelain.composite = (plumbing.composite)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -5160,7 +5157,6 @@ def convert_role_to_plumbing(porcelain):
         return plumbing
     plumbing.access_rules = convert_access_rules_to_plumbing(
         porcelain.access_rules)
-    plumbing.composite = (porcelain.composite)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -5173,155 +5169,6 @@ def convert_repeated_role_to_plumbing(porcelains):
 
 def convert_repeated_role_to_porcelain(plumbings):
     return [convert_role_to_porcelain(plumbing) for plumbing in plumbings]
-
-
-def convert_role_attachment_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleAttachment()
-    porcelain.attached_role_id = (plumbing.attached_role_id)
-    porcelain.composite_role_id = (plumbing.composite_role_id)
-    porcelain.id = (plumbing.id)
-    return porcelain
-
-
-def convert_role_attachment_to_plumbing(porcelain):
-    plumbing = RoleAttachment()
-    if porcelain is None:
-        return plumbing
-    plumbing.attached_role_id = (porcelain.attached_role_id)
-    plumbing.composite_role_id = (porcelain.composite_role_id)
-    plumbing.id = (porcelain.id)
-    return plumbing
-
-
-def convert_repeated_role_attachment_to_plumbing(porcelains):
-    return [
-        convert_role_attachment_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_attachment_to_porcelain(plumbings):
-    return [
-        convert_role_attachment_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_attachment_create_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleAttachmentCreateResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    porcelain.role_attachment = convert_role_attachment_to_porcelain(
-        plumbing.role_attachment)
-    return porcelain
-
-
-def convert_role_attachment_create_response_to_plumbing(porcelain):
-    plumbing = RoleAttachmentCreateResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    plumbing.role_attachment.CopyFrom(
-        convert_role_attachment_to_plumbing(porcelain.role_attachment))
-    return plumbing
-
-
-def convert_repeated_role_attachment_create_response_to_plumbing(porcelains):
-    return [
-        convert_role_attachment_create_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_attachment_create_response_to_porcelain(plumbings):
-    return [
-        convert_role_attachment_create_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_attachment_delete_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleAttachmentDeleteResponse()
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    return porcelain
-
-
-def convert_role_attachment_delete_response_to_plumbing(porcelain):
-    plumbing = RoleAttachmentDeleteResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    return plumbing
-
-
-def convert_repeated_role_attachment_delete_response_to_plumbing(porcelains):
-    return [
-        convert_role_attachment_delete_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_attachment_delete_response_to_porcelain(plumbings):
-    return [
-        convert_role_attachment_delete_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_attachment_get_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleAttachmentGetResponse()
-    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    porcelain.role_attachment = convert_role_attachment_to_porcelain(
-        plumbing.role_attachment)
-    return porcelain
-
-
-def convert_role_attachment_get_response_to_plumbing(porcelain):
-    plumbing = RoleAttachmentGetResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_get_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    plumbing.role_attachment.CopyFrom(
-        convert_role_attachment_to_plumbing(porcelain.role_attachment))
-    return plumbing
-
-
-def convert_repeated_role_attachment_get_response_to_plumbing(porcelains):
-    return [
-        convert_role_attachment_get_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_attachment_get_response_to_porcelain(plumbings):
-    return [
-        convert_role_attachment_get_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
 
 
 def convert_role_create_response_to_porcelain(plumbing):
@@ -5431,151 +5278,6 @@ def convert_repeated_role_get_response_to_plumbing(porcelains):
 def convert_repeated_role_get_response_to_porcelain(plumbings):
     return [
         convert_role_get_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_grant_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleGrant()
-    porcelain.id = (plumbing.id)
-    porcelain.resource_id = (plumbing.resource_id)
-    porcelain.role_id = (plumbing.role_id)
-    return porcelain
-
-
-def convert_role_grant_to_plumbing(porcelain):
-    plumbing = RoleGrant()
-    if porcelain is None:
-        return plumbing
-    plumbing.id = (porcelain.id)
-    plumbing.resource_id = (porcelain.resource_id)
-    plumbing.role_id = (porcelain.role_id)
-    return plumbing
-
-
-def convert_repeated_role_grant_to_plumbing(porcelains):
-    return [
-        convert_role_grant_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_grant_to_porcelain(plumbings):
-    return [
-        convert_role_grant_to_porcelain(plumbing) for plumbing in plumbings
-    ]
-
-
-def convert_role_grant_create_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleGrantCreateResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    porcelain.role_grant = convert_role_grant_to_porcelain(plumbing.role_grant)
-    return porcelain
-
-
-def convert_role_grant_create_response_to_plumbing(porcelain):
-    plumbing = RoleGrantCreateResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    plumbing.role_grant.CopyFrom(
-        convert_role_grant_to_plumbing(porcelain.role_grant))
-    return plumbing
-
-
-def convert_repeated_role_grant_create_response_to_plumbing(porcelains):
-    return [
-        convert_role_grant_create_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_grant_create_response_to_porcelain(plumbings):
-    return [
-        convert_role_grant_create_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_grant_delete_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleGrantDeleteResponse()
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    return porcelain
-
-
-def convert_role_grant_delete_response_to_plumbing(porcelain):
-    plumbing = RoleGrantDeleteResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    return plumbing
-
-
-def convert_repeated_role_grant_delete_response_to_plumbing(porcelains):
-    return [
-        convert_role_grant_delete_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_grant_delete_response_to_porcelain(plumbings):
-    return [
-        convert_role_grant_delete_response_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_role_grant_get_response_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.RoleGrantGetResponse()
-    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
-    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
-        plumbing.rate_limit)
-    porcelain.role_grant = convert_role_grant_to_porcelain(plumbing.role_grant)
-    return porcelain
-
-
-def convert_role_grant_get_response_to_plumbing(porcelain):
-    plumbing = RoleGrantGetResponse()
-    if porcelain is None:
-        return plumbing
-    plumbing.meta.CopyFrom(
-        convert_get_response_metadata_to_plumbing(porcelain.meta))
-    plumbing.rate_limit.CopyFrom(
-        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    plumbing.role_grant.CopyFrom(
-        convert_role_grant_to_plumbing(porcelain.role_grant))
-    return plumbing
-
-
-def convert_repeated_role_grant_get_response_to_plumbing(porcelains):
-    return [
-        convert_role_grant_get_response_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_role_grant_get_response_to_porcelain(plumbings):
-    return [
-        convert_role_grant_get_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

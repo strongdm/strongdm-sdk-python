@@ -26,10 +26,6 @@ strongdm/remote_identity_groups_pb2.py
 strongdm/remote_identity_groups_pb2_grpc.py
 strongdm/resources_pb2.py
 strongdm/resources_pb2_grpc.py
-strongdm/role_attachments_pb2.py
-strongdm/role_attachments_pb2_grpc.py
-strongdm/role_grants_pb2.py
-strongdm/role_grants_pb2_grpc.py
 strongdm/roles_pb2.py
 strongdm/roles_pb2_grpc.py
 strongdm/secret_store_types_pb2.py

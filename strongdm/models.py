@@ -11015,7 +11015,6 @@ class Role:
     '''
     __slots__ = [
         'access_rules',
-        'composite',
         'id',
         'name',
         'tags',
@@ -11024,7 +11023,6 @@ class Role:
     def __init__(
         self,
         access_rules=None,
-        composite=None,
         id=None,
         name=None,
         tags=None,
@@ -11033,13 +11031,6 @@ class Role:
         )
         '''
          AccessRules is a list of access rules defining the resources this Role has access to.
-        '''
-        self.composite = composite if composite is not None else False
-        '''
-         Composite is true if the Role is a composite role.
-         
-         Deprecated: composite roles are deprecated, use multi-role via
-         AccountAttachments instead.
         '''
         self.id = id if id is not None else ''
         '''
@@ -11057,7 +11048,6 @@ class Role:
     def __repr__(self):
         return '<sdm.Role ' + \
             'access_rules: ' + repr(self.access_rules) + ' ' +\
-            'composite: ' + repr(self.composite) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -11066,7 +11056,6 @@ class Role:
     def to_dict(self):
         return {
             'access_rules': self.access_rules,
-            'composite': self.composite,
             'id': self.id,
             'name': self.name,
             'tags': self.tags,
@@ -11076,217 +11065,9 @@ class Role:
     def from_dict(cls, d):
         return cls(
             access_rules=d.get('access_rules'),
-            composite=d.get('composite'),
             id=d.get('id'),
             name=d.get('name'),
             tags=d.get('tags'),
-        )
-
-
-class RoleAttachment:
-    '''
-     A RoleAttachment assigns a role to a composite role.
-     
-     Deprecated: use multi-role via AccountAttachments instead.
-    '''
-    __slots__ = [
-        'attached_role_id',
-        'composite_role_id',
-        'id',
-    ]
-
-    def __init__(
-        self,
-        attached_role_id=None,
-        composite_role_id=None,
-        id=None,
-    ):
-        self.attached_role_id = attached_role_id if attached_role_id is not None else ''
-        '''
-         The id of the attached role of this RoleAttachment.
-        '''
-        self.composite_role_id = composite_role_id if composite_role_id is not None else ''
-        '''
-         The id of the composite role of this RoleAttachment.
-        '''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the RoleAttachment.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleAttachment ' + \
-            'attached_role_id: ' + repr(self.attached_role_id) + ' ' +\
-            'composite_role_id: ' + repr(self.composite_role_id) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'attached_role_id': self.attached_role_id,
-            'composite_role_id': self.composite_role_id,
-            'id': self.id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            attached_role_id=d.get('attached_role_id'),
-            composite_role_id=d.get('composite_role_id'),
-            id=d.get('id'),
-        )
-
-
-class RoleAttachmentCreateResponse:
-    '''
-     RoleAttachmentCreateResponse reports how the RoleAttachments were created in the system.
-     
-     Deprecated: use multi-role via AccountAttachments instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-        'role_attachment',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-        role_attachment=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-        self.role_attachment = role_attachment if role_attachment is not None else None
-        '''
-         The created RoleAttachment.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleAttachmentCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-            'role_attachment': self.role_attachment,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-            role_attachment=d.get('role_attachment'),
-        )
-
-
-class RoleAttachmentDeleteResponse:
-    '''
-     RoleAttachmentDeleteResponse returns information about a RoleAttachment that was deleted.
-     
-     Deprecated: use multi-role via AccountAttachments instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleAttachmentDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class RoleAttachmentGetResponse:
-    '''
-     RoleAttachmentGetResponse returns a requested RoleAttachment.
-     
-     Deprecated: use multi-role via AccountAttachments instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-        'role_attachment',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-        role_attachment=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-        self.role_attachment = role_attachment if role_attachment is not None else None
-        '''
-         The requested RoleAttachment.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleAttachmentGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            'role_attachment: ' + repr(self.role_attachment) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-            'role_attachment': self.role_attachment,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-            role_attachment=d.get('role_attachment'),
         )
 
 
@@ -11435,213 +11216,6 @@ class RoleGetResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             role=d.get('role'),
-        )
-
-
-class RoleGrant:
-    '''
-     A RoleGrant connects a resource to a role, granting members of the role access to that resource.
-     
-     Deprecated: use Role access rules instead.
-    '''
-    __slots__ = [
-        'id',
-        'resource_id',
-        'role_id',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        resource_id=None,
-        role_id=None,
-    ):
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the RoleGrant.
-        '''
-        self.resource_id = resource_id if resource_id is not None else ''
-        '''
-         The id of the resource of this RoleGrant.
-        '''
-        self.role_id = role_id if role_id is not None else ''
-        '''
-         The id of the attached role of this RoleGrant.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleGrant ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'resource_id: ' + repr(self.resource_id) + ' ' +\
-            'role_id: ' + repr(self.role_id) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'resource_id': self.resource_id,
-            'role_id': self.role_id,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            resource_id=d.get('resource_id'),
-            role_id=d.get('role_id'),
-        )
-
-
-class RoleGrantCreateResponse:
-    '''
-     RoleGrantCreateResponse reports how the RoleGrants were created in the system.
-     
-     Deprecated: use Role access rules instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-        'role_grant',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-        role_grant=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-        self.role_grant = role_grant if role_grant is not None else None
-        '''
-         The created RoleGrant.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleGrantCreateResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-            'role_grant': self.role_grant,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-            role_grant=d.get('role_grant'),
-        )
-
-
-class RoleGrantDeleteResponse:
-    '''
-     RoleGrantDeleteResponse returns information about a RoleGrant that was deleted.
-     
-     Deprecated: use Role access rules instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleGrantDeleteResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-        )
-
-
-class RoleGrantGetResponse:
-    '''
-     RoleGrantGetResponse returns a requested RoleGrant.
-     
-     Deprecated: use Role access rules instead.
-    '''
-    __slots__ = [
-        'meta',
-        'rate_limit',
-        'role_grant',
-    ]
-
-    def __init__(
-        self,
-        meta=None,
-        rate_limit=None,
-        role_grant=None,
-    ):
-        self.meta = meta if meta is not None else None
-        '''
-         Reserved for future use.
-        '''
-        self.rate_limit = rate_limit if rate_limit is not None else None
-        '''
-         Rate limit information.
-        '''
-        self.role_grant = role_grant if role_grant is not None else None
-        '''
-         The requested RoleGrant.
-        '''
-
-    def __repr__(self):
-        return '<sdm.RoleGrantGetResponse ' + \
-            'meta: ' + repr(self.meta) + ' ' +\
-            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
-            'role_grant: ' + repr(self.role_grant) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'meta': self.meta,
-            'rate_limit': self.rate_limit,
-            'role_grant': self.role_grant,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            meta=d.get('meta'),
-            rate_limit=d.get('rate_limit'),
-            role_grant=d.get('role_grant'),
         )
 
 
