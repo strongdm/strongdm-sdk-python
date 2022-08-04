@@ -1340,7 +1340,7 @@ class AccountGrant:
     ):
         self.account_id = account_id if account_id is not None else ''
         '''
-         The account id of this AccountGrant.
+         The account ID of this AccountGrant.
         '''
         self.id = id if id is not None else ''
         '''
@@ -1348,17 +1348,15 @@ class AccountGrant:
         '''
         self.resource_id = resource_id if resource_id is not None else ''
         '''
-         The resource id of this AccountGrant.
+         The resource ID of this AccountGrant.
         '''
         self.start_from = start_from if start_from is not None else None
         '''
-         The timestamp when the resource will be granted. Optional. Both start_at
-         and end_at must be defined together, or not defined at all.
+         The timestamp when the resource will be granted. When creating an AccountGrant, if this field is not specified, it will default to the current time.
         '''
         self.valid_until = valid_until if valid_until is not None else None
         '''
-         The timestamp when the resource grant will expire. Optional. Both
-         start_at and end_at must be defined together, or not defined at all.
+         The timestamp when the resource grant will expire.
         '''
 
     def __repr__(self):
