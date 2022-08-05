@@ -32,7 +32,7 @@ from . import drivers_pb2 as drivers__pb2
 from . import tags_pb2 as tags__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fresources.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\x1a\ntags.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xbd\x02\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc3\x02\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x97\x02\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa8\x02\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript\"Y\n\x14\x45numerateTagsRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xa2\x02\n\x15\x45numerateTagsResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12$\n\x07matches\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript2\xa5\x05\n\tResources\x12p\n\rEnumerateTags\x12\x18.v1.EnumerateTagsRequest\x1a\x19.v1.EnumerateTagsResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/resources/tags/\x12\x66\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"%\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x12\x61\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12j\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12m\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\",\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12_\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"$\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x1a\x1f\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08Resource\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03rs-Bh\n\x1c\x63om.strongdm.api.v1.plumbingB\x11ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fresources.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\rdrivers.proto\x1a\ntags.proto\"l\n\x15ResourceCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xfe\x01\n\x16ResourceCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x04 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"R\n\x12ResourceGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf8\x01\n\x13ResourceGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"x\n\x15ResourceUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xfe\x01\n\x16ResourceUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x02 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x15ResourceDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd2\x01\n\x16ResourceDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13ResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe3\x01\n\x14ResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12+\n\tresources\x18\x02 \x03(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"Y\n\x14\x45numerateTagsRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xdd\x01\n\x15\x45numerateTagsResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12$\n\x07matches\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway2\xa5\x05\n\tResources\x12p\n\rEnumerateTags\x12\x18.v1.EnumerateTagsRequest\x1a\x19.v1.EnumerateTagsResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/resources/tags/\x12\x66\n\x06\x43reate\x12\x19.v1.ResourceCreateRequest\x1a\x1a.v1.ResourceCreateResponse\"%\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x12\x61\n\x03Get\x12\x16.v1.ResourceGetRequest\x1a\x17.v1.ResourceGetResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12j\n\x06Update\x12\x19.v1.ResourceUpdateRequest\x1a\x1a.v1.ResourceUpdateResponse\")\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12m\n\x06\x44\x65lete\x12\x19.v1.ResourceDeleteRequest\x1a\x1a.v1.ResourceDeleteResponse\",\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x17\xaa\xf3\xb3\x07\x12/v1/resources/{id}\x12_\n\x04List\x12\x17.v1.ResourceListRequest\x1a\x18.v1.ResourceListResponse\"$\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x12\xaa\xf3\xb3\x07\r/v1/resources\x1a\x1f\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08Resource\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03rs-Be\n\x19\x63om.strongdm.api.plumbingB\x11ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -136,7 +136,7 @@ _RESOURCES = DESCRIPTOR.services_by_name['Resources']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\021ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\021ResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
   _RESOURCECREATEREQUEST.fields_by_name['resource']._options = None
   _RESOURCECREATEREQUEST.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCECREATERESPONSE.fields_by_name['meta']._options = None
@@ -144,7 +144,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCECREATERESPONSE.fields_by_name['resource']._options = None
   _RESOURCECREATERESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCECREATERESPONSE.fields_by_name['rate_limit']._options = None
-  _RESOURCECREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCECREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RESOURCECREATERESPONSE._options = None
   _RESOURCECREATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _RESOURCEGETREQUEST.fields_by_name['id']._options = None
@@ -154,7 +154,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCEGETRESPONSE.fields_by_name['resource']._options = None
   _RESOURCEGETRESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCEGETRESPONSE.fields_by_name['rate_limit']._options = None
-  _RESOURCEGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RESOURCEGETRESPONSE._options = None
   _RESOURCEGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _RESOURCEUPDATEREQUEST.fields_by_name['resource']._options = None
@@ -164,7 +164,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCEUPDATERESPONSE.fields_by_name['resource']._options = None
   _RESOURCEUPDATERESPONSE.fields_by_name['resource']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._options = None
-  _RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RESOURCEUPDATERESPONSE._options = None
   _RESOURCEUPDATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _RESOURCEDELETEREQUEST.fields_by_name['id']._options = None
@@ -172,7 +172,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCEDELETERESPONSE.fields_by_name['meta']._options = None
   _RESOURCEDELETERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._options = None
-  _RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCEDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RESOURCEDELETERESPONSE._options = None
   _RESOURCEDELETERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _RESOURCELISTREQUEST.fields_by_name['filter']._options = None
@@ -180,13 +180,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCELISTRESPONSE.fields_by_name['resources']._options = None
   _RESOURCELISTRESPONSE.fields_by_name['resources']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._options = None
-  _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _RESOURCELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _ENUMERATETAGSREQUEST.fields_by_name['filter']._options = None
   _ENUMERATETAGSREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ENUMERATETAGSRESPONSE.fields_by_name['matches']._options = None
   _ENUMERATETAGSRESPONSE.fields_by_name['matches']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._options = None
-  _ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _ENUMERATETAGSRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RESOURCES._options = None
   _RESOURCES._serialized_options = b'\312\371\263\007\r\302\371\263\007\010Resource\312\371\263\007\010\322\371\263\007\003rs-'
   _RESOURCES.methods_by_name['EnumerateTags']._options = None
@@ -204,27 +204,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCECREATEREQUEST._serialized_start=77
   _RESOURCECREATEREQUEST._serialized_end=185
   _RESOURCECREATERESPONSE._serialized_start=188
-  _RESOURCECREATERESPONSE._serialized_end=511
-  _RESOURCEGETREQUEST._serialized_start=513
-  _RESOURCEGETREQUEST._serialized_end=595
-  _RESOURCEGETRESPONSE._serialized_start=598
-  _RESOURCEGETRESPONSE._serialized_end=915
-  _RESOURCEUPDATEREQUEST._serialized_start=917
-  _RESOURCEUPDATEREQUEST._serialized_end=1037
-  _RESOURCEUPDATERESPONSE._serialized_start=1040
-  _RESOURCEUPDATERESPONSE._serialized_end=1363
-  _RESOURCEDELETEREQUEST._serialized_start=1365
-  _RESOURCEDELETEREQUEST._serialized_end=1453
-  _RESOURCEDELETERESPONSE._serialized_start=1456
-  _RESOURCEDELETERESPONSE._serialized_end=1735
-  _RESOURCELISTREQUEST._serialized_start=1737
-  _RESOURCELISTREQUEST._serialized_end=1825
-  _RESOURCELISTRESPONSE._serialized_start=1828
-  _RESOURCELISTRESPONSE._serialized_end=2124
-  _ENUMERATETAGSREQUEST._serialized_start=2126
-  _ENUMERATETAGSREQUEST._serialized_end=2215
-  _ENUMERATETAGSRESPONSE._serialized_start=2218
-  _ENUMERATETAGSRESPONSE._serialized_end=2508
-  _RESOURCES._serialized_start=2511
-  _RESOURCES._serialized_end=3188
+  _RESOURCECREATERESPONSE._serialized_end=442
+  _RESOURCEGETREQUEST._serialized_start=444
+  _RESOURCEGETREQUEST._serialized_end=526
+  _RESOURCEGETRESPONSE._serialized_start=529
+  _RESOURCEGETRESPONSE._serialized_end=777
+  _RESOURCEUPDATEREQUEST._serialized_start=779
+  _RESOURCEUPDATEREQUEST._serialized_end=899
+  _RESOURCEUPDATERESPONSE._serialized_start=902
+  _RESOURCEUPDATERESPONSE._serialized_end=1156
+  _RESOURCEDELETEREQUEST._serialized_start=1158
+  _RESOURCEDELETEREQUEST._serialized_end=1246
+  _RESOURCEDELETERESPONSE._serialized_start=1249
+  _RESOURCEDELETERESPONSE._serialized_end=1459
+  _RESOURCELISTREQUEST._serialized_start=1461
+  _RESOURCELISTREQUEST._serialized_end=1549
+  _RESOURCELISTRESPONSE._serialized_start=1552
+  _RESOURCELISTRESPONSE._serialized_end=1779
+  _ENUMERATETAGSREQUEST._serialized_start=1781
+  _ENUMERATETAGSREQUEST._serialized_end=1870
+  _ENUMERATETAGSRESPONSE._serialized_start=1873
+  _ENUMERATETAGSRESPONSE._serialized_end=2094
+  _RESOURCES._serialized_start=2097
+  _RESOURCES._serialized_end=2774
 # @@protoc_insertion_point(module_scope)

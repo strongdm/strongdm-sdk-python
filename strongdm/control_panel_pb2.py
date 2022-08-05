@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xc3\x02\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb6\x02\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xb4\x02\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBk\n\x1c\x63om.strongdm.api.v1.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xfe\x01\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf1\x01\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xb4\x02\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBh\n\x19\x63om.strongdm.api.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -70,13 +70,13 @@ _CONTROLPANEL = DESCRIPTOR.services_by_name['ControlPanel']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\024ControlPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\024ControlPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['meta']._options = None
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['public_key']._options = None
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['public_key']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['rate_limit']._options = None
-  _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE._options = None
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _CONTROLPANELVERIFYJWTREQUEST.fields_by_name['token']._options = None
@@ -86,7 +86,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['valid']._options = None
   _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['valid']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['rate_limit']._options = None
-  _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _CONTROLPANELVERIFYJWTRESPONSE._options = None
   _CONTROLPANELVERIFYJWTRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _CONTROLPANEL.methods_by_name['GetSSHCAPublicKey']._options = None
@@ -96,11 +96,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONTROLPANELGETSSHCAPUBLICKEYREQUEST._serialized_start=54
   _CONTROLPANELGETSSHCAPUBLICKEYREQUEST._serialized_end=130
   _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE._serialized_start=133
-  _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE._serialized_end=456
-  _CONTROLPANELVERIFYJWTREQUEST._serialized_start=458
-  _CONTROLPANELVERIFYJWTREQUEST._serialized_end=553
-  _CONTROLPANELVERIFYJWTRESPONSE._serialized_start=556
-  _CONTROLPANELVERIFYJWTRESPONSE._serialized_end=866
-  _CONTROLPANEL._serialized_start=869
-  _CONTROLPANEL._serialized_end=1177
+  _CONTROLPANELGETSSHCAPUBLICKEYRESPONSE._serialized_end=387
+  _CONTROLPANELVERIFYJWTREQUEST._serialized_start=389
+  _CONTROLPANELVERIFYJWTREQUEST._serialized_end=484
+  _CONTROLPANELVERIFYJWTRESPONSE._serialized_start=487
+  _CONTROLPANELVERIFYJWTRESPONSE._serialized_end=728
+  _CONTROLPANEL._serialized_start=731
+  _CONTROLPANEL._serialized_end=1039
 # @@protoc_insertion_point(module_scope)

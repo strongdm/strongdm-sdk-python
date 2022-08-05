@@ -31,7 +31,7 @@ from . import spec_pb2 as spec__pb2
 from . import secret_store_types_pb2 as secret__store__types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13secret_stores.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\x18secret_store_types.proto\"v\n\x18SecretStoreCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xcd\x02\n\x19SecretStoreCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"U\n\x15SecretStoreGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x02\n\x16SecretStoreGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x18SecretStoreUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xcd\x02\n\x19SecretStoreUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x18SecretStoreDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9a\x02\n\x19SecretStoreDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16SecretStoreListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb2\x02\n\x17SecretStoreListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\rsecret_stores\x18\x02 \x03(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\xba\x01\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x8e\x01\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x0e\xb2\xf4\xb3\x07\t!jopenapi\xf2\xf8\xb3\x07\x16\xb2\xf4\xb3\x07\x11!jopenapi_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x10\xb2\xf4\xb3\x07\x0b!typescript2\xeb\x04\n\x0cSecretStores\x12p\n\x06\x43reate\x12\x1c.v1.SecretStoreCreateRequest\x1a\x1d.v1.SecretStoreCreateResponse\")\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/secret-stores\x12k\n\x03Get\x12\x19.v1.SecretStoreGetRequest\x1a\x1a.v1.SecretStoreGetResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12t\n\x06Update\x12\x1c.v1.SecretStoreUpdateRequest\x1a\x1d.v1.SecretStoreUpdateResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12w\n\x06\x44\x65lete\x12\x1c.v1.SecretStoreDeleteRequest\x1a\x1d.v1.SecretStoreDeleteResponse\"0\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12i\n\x04List\x12\x1a.v1.SecretStoreListRequest\x1a\x1b.v1.SecretStoreListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/secret-stores\x1a\"\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bSecretStore\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03se-Bk\n\x1c\x63om.strongdm.api.v1.plumbingB\x14SecretStoresPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13secret_stores.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\x18secret_store_types.proto\"v\n\x18SecretStoreCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x88\x02\n\x19SecretStoreCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"U\n\x15SecretStoreGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x82\x02\n\x16SecretStoreGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x18SecretStoreUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x88\x02\n\x19SecretStoreUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x02 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x18SecretStoreDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd5\x01\n\x19SecretStoreDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16SecretStoreListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xed\x01\n\x17SecretStoreListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\rsecret_stores\x18\x02 \x03(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway2\xeb\x04\n\x0cSecretStores\x12p\n\x06\x43reate\x12\x1c.v1.SecretStoreCreateRequest\x1a\x1d.v1.SecretStoreCreateResponse\")\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/secret-stores\x12k\n\x03Get\x12\x19.v1.SecretStoreGetRequest\x1a\x1a.v1.SecretStoreGetResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12t\n\x06Update\x12\x1c.v1.SecretStoreUpdateRequest\x1a\x1d.v1.SecretStoreUpdateResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12w\n\x06\x44\x65lete\x12\x1c.v1.SecretStoreDeleteRequest\x1a\x1d.v1.SecretStoreDeleteResponse\"0\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/secret-stores/{id}\x12i\n\x04List\x12\x1a.v1.SecretStoreListRequest\x1a\x1b.v1.SecretStoreListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/secret-stores\x1a\"\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bSecretStore\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03se-Bh\n\x19\x63om.strongdm.api.plumbingB\x14SecretStoresPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -119,7 +119,7 @@ _SECRETSTORES = DESCRIPTOR.services_by_name['SecretStores']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\034com.strongdm.api.v1.plumbingB\024SecretStoresPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\024SecretStoresPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
   _SECRETSTORECREATEREQUEST.fields_by_name['secret_store']._options = None
   _SECRETSTORECREATEREQUEST.fields_by_name['secret_store']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTORECREATERESPONSE.fields_by_name['meta']._options = None
@@ -127,7 +127,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTORECREATERESPONSE.fields_by_name['secret_store']._options = None
   _SECRETSTORECREATERESPONSE.fields_by_name['secret_store']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTORECREATERESPONSE.fields_by_name['rate_limit']._options = None
-  _SECRETSTORECREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _SECRETSTORECREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _SECRETSTORECREATERESPONSE._options = None
   _SECRETSTORECREATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _SECRETSTOREGETREQUEST.fields_by_name['id']._options = None
@@ -137,7 +137,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTOREGETRESPONSE.fields_by_name['secret_store']._options = None
   _SECRETSTOREGETRESPONSE.fields_by_name['secret_store']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTOREGETRESPONSE.fields_by_name['rate_limit']._options = None
-  _SECRETSTOREGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _SECRETSTOREGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _SECRETSTOREGETRESPONSE._options = None
   _SECRETSTOREGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _SECRETSTOREUPDATEREQUEST.fields_by_name['secret_store']._options = None
@@ -147,7 +147,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTOREUPDATERESPONSE.fields_by_name['secret_store']._options = None
   _SECRETSTOREUPDATERESPONSE.fields_by_name['secret_store']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTOREUPDATERESPONSE.fields_by_name['rate_limit']._options = None
-  _SECRETSTOREUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _SECRETSTOREUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _SECRETSTOREUPDATERESPONSE._options = None
   _SECRETSTOREUPDATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _SECRETSTOREDELETEREQUEST.fields_by_name['id']._options = None
@@ -155,7 +155,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTOREDELETERESPONSE.fields_by_name['meta']._options = None
   _SECRETSTOREDELETERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTOREDELETERESPONSE.fields_by_name['rate_limit']._options = None
-  _SECRETSTOREDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _SECRETSTOREDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _SECRETSTOREDELETERESPONSE._options = None
   _SECRETSTOREDELETERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _SECRETSTORELISTREQUEST.fields_by_name['filter']._options = None
@@ -163,7 +163,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTORELISTRESPONSE.fields_by_name['secret_stores']._options = None
   _SECRETSTORELISTRESPONSE.fields_by_name['secret_stores']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _SECRETSTORELISTRESPONSE.fields_by_name['rate_limit']._options = None
-  _SECRETSTORELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\016\262\364\263\007\t!jopenapi\362\370\263\007\026\262\364\263\007\021!jopenapi_private\362\370\263\007\022\262\364\263\007\r!json_gateway\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\020\262\364\263\007\013!typescript'
+  _SECRETSTORELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _SECRETSTORES._options = None
   _SECRETSTORES._serialized_options = b'\312\371\263\007\020\302\371\263\007\013SecretStore\312\371\263\007\010\322\371\263\007\003se-'
   _SECRETSTORES.methods_by_name['Create']._options = None
@@ -179,23 +179,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTORECREATEREQUEST._serialized_start=80
   _SECRETSTORECREATEREQUEST._serialized_end=198
   _SECRETSTORECREATERESPONSE._serialized_start=201
-  _SECRETSTORECREATERESPONSE._serialized_end=534
-  _SECRETSTOREGETREQUEST._serialized_start=536
-  _SECRETSTOREGETREQUEST._serialized_end=621
-  _SECRETSTOREGETRESPONSE._serialized_start=624
-  _SECRETSTOREGETRESPONSE._serialized_end=951
-  _SECRETSTOREUPDATEREQUEST._serialized_start=954
-  _SECRETSTOREUPDATEREQUEST._serialized_end=1084
-  _SECRETSTOREUPDATERESPONSE._serialized_start=1087
-  _SECRETSTOREUPDATERESPONSE._serialized_end=1420
-  _SECRETSTOREDELETEREQUEST._serialized_start=1422
-  _SECRETSTOREDELETEREQUEST._serialized_end=1513
-  _SECRETSTOREDELETERESPONSE._serialized_start=1516
-  _SECRETSTOREDELETERESPONSE._serialized_end=1798
-  _SECRETSTORELISTREQUEST._serialized_start=1800
-  _SECRETSTORELISTREQUEST._serialized_end=1891
-  _SECRETSTORELISTRESPONSE._serialized_start=1894
-  _SECRETSTORELISTRESPONSE._serialized_end=2200
-  _SECRETSTORES._serialized_start=2203
-  _SECRETSTORES._serialized_end=2822
+  _SECRETSTORECREATERESPONSE._serialized_end=465
+  _SECRETSTOREGETREQUEST._serialized_start=467
+  _SECRETSTOREGETREQUEST._serialized_end=552
+  _SECRETSTOREGETRESPONSE._serialized_start=555
+  _SECRETSTOREGETRESPONSE._serialized_end=813
+  _SECRETSTOREUPDATEREQUEST._serialized_start=816
+  _SECRETSTOREUPDATEREQUEST._serialized_end=946
+  _SECRETSTOREUPDATERESPONSE._serialized_start=949
+  _SECRETSTOREUPDATERESPONSE._serialized_end=1213
+  _SECRETSTOREDELETEREQUEST._serialized_start=1215
+  _SECRETSTOREDELETEREQUEST._serialized_end=1306
+  _SECRETSTOREDELETERESPONSE._serialized_start=1309
+  _SECRETSTOREDELETERESPONSE._serialized_end=1522
+  _SECRETSTORELISTREQUEST._serialized_start=1524
+  _SECRETSTORELISTREQUEST._serialized_end=1615
+  _SECRETSTORELISTRESPONSE._serialized_start=1618
+  _SECRETSTORELISTRESPONSE._serialized_end=1855
+  _SECRETSTORES._serialized_start=1858
+  _SECRETSTORES._serialized_end=2477
 # @@protoc_insertion_point(module_scope)
