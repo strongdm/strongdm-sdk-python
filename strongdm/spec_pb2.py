@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"\x94\x01\n\x0eRateLimitError\x12v\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBR\n\x19\x63om.strongdm.api.plumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"u\n\x0eRateLimitError\x12W\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x14\n\x12GetRequestMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"T\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\":\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\r\n\x05total\x18\x02 \x01(\x05\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"\x19\n\x17GenericResponseMetadataBR\n\x19\x63om.strongdm.api.plumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -215,7 +215,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _INTERNALERROR._options = None
   _INTERNALERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\r'
   _RATELIMITERROR.fields_by_name['rate_limit']._options = None
-  _RATELIMITERROR.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _RATELIMITERROR.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _RATELIMITERROR._options = None
   _RATELIMITERROR._serialized_options = b'\372\370\263\007\005\260\363\263\007\010'
   _CREATERESPONSEMETADATA._options = None
@@ -248,32 +248,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PERMISSIONERROR._serialized_end=280
   _INTERNALERROR._serialized_start=282
   _INTERNALERROR._serialized_end=309
-  _RATELIMITERROR._serialized_start=312
-  _RATELIMITERROR._serialized_end=460
-  _CREATEREQUESTMETADATA._serialized_start=462
-  _CREATEREQUESTMETADATA._serialized_end=485
-  _CREATERESPONSEMETADATA._serialized_start=487
-  _CREATERESPONSEMETADATA._serialized_end=523
-  _GETREQUESTMETADATA._serialized_start=525
-  _GETREQUESTMETADATA._serialized_end=545
-  _GETRESPONSEMETADATA._serialized_start=547
-  _GETRESPONSEMETADATA._serialized_end=580
-  _UPDATEREQUESTMETADATA._serialized_start=582
-  _UPDATEREQUESTMETADATA._serialized_end=605
-  _UPDATERESPONSEMETADATA._serialized_start=607
-  _UPDATERESPONSEMETADATA._serialized_end=643
-  _DELETEREQUESTMETADATA._serialized_start=645
-  _DELETEREQUESTMETADATA._serialized_end=668
-  _DELETERESPONSEMETADATA._serialized_start=670
-  _DELETERESPONSEMETADATA._serialized_end=706
-  _LISTREQUESTMETADATA._serialized_start=708
-  _LISTREQUESTMETADATA._serialized_end=792
-  _LISTRESPONSEMETADATA._serialized_start=794
-  _LISTRESPONSEMETADATA._serialized_end=852
-  _RATELIMITMETADATA._serialized_start=855
-  _RATELIMITMETADATA._serialized_end=1030
-  _GENERICREQUESTMETADATA._serialized_start=1032
-  _GENERICREQUESTMETADATA._serialized_end=1056
-  _GENERICRESPONSEMETADATA._serialized_start=1058
-  _GENERICRESPONSEMETADATA._serialized_end=1083
+  _RATELIMITERROR._serialized_start=311
+  _RATELIMITERROR._serialized_end=428
+  _CREATEREQUESTMETADATA._serialized_start=430
+  _CREATEREQUESTMETADATA._serialized_end=453
+  _CREATERESPONSEMETADATA._serialized_start=455
+  _CREATERESPONSEMETADATA._serialized_end=491
+  _GETREQUESTMETADATA._serialized_start=493
+  _GETREQUESTMETADATA._serialized_end=513
+  _GETRESPONSEMETADATA._serialized_start=515
+  _GETRESPONSEMETADATA._serialized_end=548
+  _UPDATEREQUESTMETADATA._serialized_start=550
+  _UPDATEREQUESTMETADATA._serialized_end=573
+  _UPDATERESPONSEMETADATA._serialized_start=575
+  _UPDATERESPONSEMETADATA._serialized_end=611
+  _DELETEREQUESTMETADATA._serialized_start=613
+  _DELETEREQUESTMETADATA._serialized_end=636
+  _DELETERESPONSEMETADATA._serialized_start=638
+  _DELETERESPONSEMETADATA._serialized_end=674
+  _LISTREQUESTMETADATA._serialized_start=676
+  _LISTREQUESTMETADATA._serialized_end=760
+  _LISTRESPONSEMETADATA._serialized_start=762
+  _LISTRESPONSEMETADATA._serialized_end=820
+  _RATELIMITMETADATA._serialized_start=823
+  _RATELIMITMETADATA._serialized_end=998
+  _GENERICREQUESTMETADATA._serialized_start=1000
+  _GENERICREQUESTMETADATA._serialized_end=1024
+  _GENERICRESPONSEMETADATA._serialized_start=1026
+  _GENERICRESPONSEMETADATA._serialized_end=1051
 # @@protoc_insertion_point(module_scope)

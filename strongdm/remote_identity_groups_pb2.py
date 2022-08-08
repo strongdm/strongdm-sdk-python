@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cremote_identity_groups.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"]\n\x1dRemoteIdentityGroupGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x9b\x02\n\x1eRemoteIdentityGroupGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x42\n\x15remote_identity_group\x18\x02 \x01(\x0b\x32\x17.v1.RemoteIdentityGroupB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"c\n\x1eRemoteIdentityGroupListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\x86\x02\n\x1fRemoteIdentityGroupListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x43\n\x16remote_identity_groups\x18\x02 \x03(\x0b\x32\x17.v1.RemoteIdentityGroupB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12v\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataBK\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x1a\xb2\xf4\xb3\x07\x15!json_gateway_private\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\x93\x01\n\x13RemoteIdentityGroup\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:E\xfa\xf8\xb3\x07@\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x36\xaa\xf3\xb3\x07\x31tf_examples/remote_identity_group_data_source.txt2\xce\x02\n\x14RemoteIdentityGroups\x12\x84\x01\n\x03Get\x12!.v1.RemoteIdentityGroupGetRequest\x1a\".v1.RemoteIdentityGroupGetResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/remote-identity-groups/{id}\x12\x82\x01\n\x04List\x12\".v1.RemoteIdentityGroupListRequest\x1a#.v1.RemoteIdentityGroupListResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/remote-identity-groups\x1a*\xca\xf9\xb3\x07\x18\xc2\xf9\xb3\x07\x13RemoteIdentityGroup\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ig-Bp\n\x19\x63om.strongdm.api.plumbingB\x1cRemoteIdentityGroupsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cremote_identity_groups.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"]\n\x1dRemoteIdentityGroupGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xfc\x01\n\x1eRemoteIdentityGroupGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x42\n\x15remote_identity_group\x18\x02 \x01(\x0b\x32\x17.v1.RemoteIdentityGroupB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"c\n\x1eRemoteIdentityGroupListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe7\x01\n\x1fRemoteIdentityGroupListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x43\n\x16remote_identity_groups\x18\x02 \x03(\x0b\x32\x17.v1.RemoteIdentityGroupB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\x93\x01\n\x13RemoteIdentityGroup\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:E\xfa\xf8\xb3\x07@\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x36\xaa\xf3\xb3\x07\x31tf_examples/remote_identity_group_data_source.txt2\xce\x02\n\x14RemoteIdentityGroups\x12\x84\x01\n\x03Get\x12!.v1.RemoteIdentityGroupGetRequest\x1a\".v1.RemoteIdentityGroupGetResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/remote-identity-groups/{id}\x12\x82\x01\n\x04List\x12\".v1.RemoteIdentityGroupListRequest\x1a#.v1.RemoteIdentityGroupListResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/remote-identity-groups\x1a*\xca\xf9\xb3\x07\x18\xc2\xf9\xb3\x07\x13RemoteIdentityGroup\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ig-Bp\n\x19\x63om.strongdm.api.plumbingB\x1cRemoteIdentityGroupsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -86,7 +86,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REMOTEIDENTITYGROUPGETRESPONSE.fields_by_name['remote_identity_group']._options = None
   _REMOTEIDENTITYGROUPGETRESPONSE.fields_by_name['remote_identity_group']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _REMOTEIDENTITYGROUPGETRESPONSE.fields_by_name['rate_limit']._options = None
-  _REMOTEIDENTITYGROUPGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _REMOTEIDENTITYGROUPGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _REMOTEIDENTITYGROUPGETRESPONSE._options = None
   _REMOTEIDENTITYGROUPGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _REMOTEIDENTITYGROUPLISTREQUEST.fields_by_name['filter']._options = None
@@ -94,7 +94,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REMOTEIDENTITYGROUPLISTRESPONSE.fields_by_name['remote_identity_groups']._options = None
   _REMOTEIDENTITYGROUPLISTRESPONSE.fields_by_name['remote_identity_groups']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _REMOTEIDENTITYGROUPLISTRESPONSE.fields_by_name['rate_limit']._options = None
-  _REMOTEIDENTITYGROUPLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\032\262\364\263\007\025!json_gateway_private\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _REMOTEIDENTITYGROUPLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _REMOTEIDENTITYGROUP.fields_by_name['id']._options = None
   _REMOTEIDENTITYGROUP.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _REMOTEIDENTITYGROUP.fields_by_name['name']._options = None
@@ -110,13 +110,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REMOTEIDENTITYGROUPGETREQUEST._serialized_start=63
   _REMOTEIDENTITYGROUPGETREQUEST._serialized_end=156
   _REMOTEIDENTITYGROUPGETRESPONSE._serialized_start=159
-  _REMOTEIDENTITYGROUPGETRESPONSE._serialized_end=442
-  _REMOTEIDENTITYGROUPLISTREQUEST._serialized_start=444
-  _REMOTEIDENTITYGROUPLISTREQUEST._serialized_end=543
-  _REMOTEIDENTITYGROUPLISTRESPONSE._serialized_start=546
-  _REMOTEIDENTITYGROUPLISTRESPONSE._serialized_end=808
-  _REMOTEIDENTITYGROUP._serialized_start=811
-  _REMOTEIDENTITYGROUP._serialized_end=958
-  _REMOTEIDENTITYGROUPS._serialized_start=961
-  _REMOTEIDENTITYGROUPS._serialized_end=1295
+  _REMOTEIDENTITYGROUPGETRESPONSE._serialized_end=411
+  _REMOTEIDENTITYGROUPLISTREQUEST._serialized_start=413
+  _REMOTEIDENTITYGROUPLISTREQUEST._serialized_end=512
+  _REMOTEIDENTITYGROUPLISTRESPONSE._serialized_start=515
+  _REMOTEIDENTITYGROUPLISTRESPONSE._serialized_end=746
+  _REMOTEIDENTITYGROUP._serialized_start=749
+  _REMOTEIDENTITYGROUP._serialized_end=896
+  _REMOTEIDENTITYGROUPS._serialized_start=899
+  _REMOTEIDENTITYGROUPS._serialized_end=1233
 # @@protoc_insertion_point(module_scope)
