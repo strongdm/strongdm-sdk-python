@@ -19,9 +19,6 @@ import collections
 
 
 class AKS:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -65,17 +62,8 @@ class AKS:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -89,9 +77,6 @@ class AKS:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -101,21 +86,9 @@ class AKS:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -190,9 +163,6 @@ class AKS:
 
 
 class AKSBasicAuth:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -242,9 +212,6 @@ class AKSBasicAuth:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -254,17 +221,8 @@ class AKSBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -274,9 +232,6 @@ class AKSBasicAuth:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
@@ -332,9 +287,6 @@ class AKSBasicAuth:
 
 
 class AKSServiceAccount:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -386,9 +338,6 @@ class AKSServiceAccount:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -398,21 +347,9 @@ class AKSServiceAccount:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -422,9 +359,6 @@ class AKSServiceAccount:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
@@ -485,9 +419,6 @@ class AKSServiceAccount:
 
 
 class AKSServiceAccountUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -535,9 +466,6 @@ class AKSServiceAccountUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -547,13 +475,7 @@ class AKSServiceAccountUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -563,9 +485,6 @@ class AKSServiceAccountUserImpersonation:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccountUserImpersonation ' + \
@@ -618,9 +537,6 @@ class AKSServiceAccountUserImpersonation:
 
 
 class AKSUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -660,17 +576,8 @@ class AKSUserImpersonation:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -684,9 +591,6 @@ class AKSUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -696,13 +600,7 @@ class AKSUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -769,9 +667,6 @@ class AKSUserImpersonation:
 
 
 class AWS:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -803,9 +698,6 @@ class AWS:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -815,9 +707,6 @@ class AWS:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.healthcheck_region = healthcheck_region if healthcheck_region is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -831,17 +720,8 @@ class AWS:
          Unique human-readable name of the Resource.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -902,9 +782,6 @@ class AWS:
 
 
 class AWSStore:
-    '''
-
-    '''
     __slots__ = [
         'id',
         'name',
@@ -928,9 +805,6 @@ class AWSStore:
          Unique human-readable name of the SecretStore.
         '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -964,7 +838,7 @@ class AWSStore:
 
 class AccountAttachment:
     '''
-     AccountAttachments assign an account to a role.
+         AccountAttachments assign an account to a role.
     '''
     __slots__ = [
         'account_id',
@@ -1016,7 +890,7 @@ class AccountAttachment:
 
 class AccountAttachmentCreateResponse:
     '''
-     AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
+         AccountAttachmentCreateResponse reports how the AccountAttachments were created in the system.
     '''
     __slots__ = [
         'account_attachment',
@@ -1068,7 +942,7 @@ class AccountAttachmentCreateResponse:
 
 class AccountAttachmentDeleteResponse:
     '''
-     AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
+         AccountAttachmentDeleteResponse returns information about a AccountAttachment that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -1111,7 +985,7 @@ class AccountAttachmentDeleteResponse:
 
 class AccountAttachmentGetResponse:
     '''
-     AccountAttachmentGetResponse returns a requested AccountAttachment.
+         AccountAttachmentGetResponse returns a requested AccountAttachment.
     '''
     __slots__ = [
         'account_attachment',
@@ -1163,7 +1037,7 @@ class AccountAttachmentGetResponse:
 
 class AccountCreateResponse:
     '''
-     AccountCreateResponse reports how the Accounts were created in the system.
+         AccountCreateResponse reports how the Accounts were created in the system.
     '''
     __slots__ = [
         'account',
@@ -1225,7 +1099,7 @@ class AccountCreateResponse:
 
 class AccountDeleteResponse:
     '''
-     AccountDeleteResponse returns information about a Account that was deleted.
+         AccountDeleteResponse returns information about a Account that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -1268,7 +1142,7 @@ class AccountDeleteResponse:
 
 class AccountGetResponse:
     '''
-     AccountGetResponse returns a requested Account.
+         AccountGetResponse returns a requested Account.
     '''
     __slots__ = [
         'account',
@@ -1320,7 +1194,7 @@ class AccountGetResponse:
 
 class AccountGrant:
     '''
-     AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
+         AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
     '''
     __slots__ = [
         'account_id',
@@ -1390,7 +1264,7 @@ class AccountGrant:
 
 class AccountGrantCreateResponse:
     '''
-     AccountGrantCreateResponse reports how the AccountGrants were created in the system.
+         AccountGrantCreateResponse reports how the AccountGrants were created in the system.
     '''
     __slots__ = [
         'account_grant',
@@ -1442,7 +1316,7 @@ class AccountGrantCreateResponse:
 
 class AccountGrantDeleteResponse:
     '''
-     AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
+         AccountGrantDeleteResponse returns information about a AccountGrant that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -1485,7 +1359,7 @@ class AccountGrantDeleteResponse:
 
 class AccountGrantGetResponse:
     '''
-     AccountGrantGetResponse returns a requested AccountGrant.
+         AccountGrantGetResponse returns a requested AccountGrant.
     '''
     __slots__ = [
         'account_grant',
@@ -1537,7 +1411,7 @@ class AccountGrantGetResponse:
 
 class AccountUpdateResponse:
     '''
-     AccountUpdateResponse returns the fields of a Account after it has been updated by
+         AccountUpdateResponse returns the fields of a Account after it has been updated by
      a AccountUpdateRequest.
     '''
     __slots__ = [
@@ -1589,9 +1463,6 @@ class AccountUpdateResponse:
 
 
 class AmazonEKS:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -1635,29 +1506,17 @@ class AmazonEKS:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -1675,29 +1534,11 @@ class AmazonEKS:
          Unique human-readable name of the Resource.
         '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -1778,9 +1619,6 @@ class AmazonEKS:
 
 
 class AmazonEKSUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -1820,29 +1658,17 @@ class AmazonEKSUserImpersonation:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -1860,21 +1686,9 @@ class AmazonEKSUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -1947,9 +1761,6 @@ class AmazonEKSUserImpersonation:
 
 
 class AmazonES:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -1985,9 +1796,6 @@ class AmazonES:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -1997,9 +1805,6 @@ class AmazonES:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -2013,25 +1818,10 @@ class AmazonES:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2098,9 +1888,6 @@ class AmazonES:
 
 
 class AmazonMQAMQP091:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -2146,9 +1933,6 @@ class AmazonMQAMQP091:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -2158,17 +1942,8 @@ class AmazonMQAMQP091:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2178,13 +1953,7 @@ class AmazonMQAMQP091:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AmazonMQAMQP091 ' + \
@@ -2240,9 +2009,6 @@ class AmazonMQAMQP091:
 
 
 class Athena:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -2278,9 +2044,6 @@ class Athena:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -2302,29 +2065,11 @@ class Athena:
          Unique human-readable name of the Resource.
         '''
         self.output = output if output is not None else ''
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2391,9 +2136,6 @@ class Athena:
 
 
 class AuroraMysql:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -2431,9 +2173,6 @@ class AuroraMysql:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -2443,9 +2182,6 @@ class AuroraMysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -2455,17 +2191,8 @@ class AuroraMysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2475,9 +2202,6 @@ class AuroraMysql:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
@@ -2533,9 +2257,6 @@ class AuroraMysql:
 
 
 class AuroraPostgres:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -2575,9 +2296,6 @@ class AuroraPostgres:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -2587,9 +2305,6 @@ class AuroraPostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -2599,21 +2314,9 @@ class AuroraPostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2623,9 +2326,6 @@ class AuroraPostgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
@@ -2684,9 +2384,6 @@ class AuroraPostgres:
 
 
 class Azure:
-    '''
-
-    '''
     __slots__ = [
         'app_id',
         'bind_interface',
@@ -2714,9 +2411,6 @@ class Azure:
         tenant_id=None,
     ):
         self.app_id = app_id if app_id is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -2738,9 +2432,6 @@ class Azure:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2750,9 +2441,6 @@ class Azure:
          Tags is a map of key, value pairs.
         '''
         self.tenant_id = tenant_id if tenant_id is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Azure ' + \
@@ -2799,9 +2487,6 @@ class Azure:
 
 
 class AzureCertificate:
-    '''
-
-    '''
     __slots__ = [
         'app_id',
         'bind_interface',
@@ -2829,17 +2514,11 @@ class AzureCertificate:
         tenant_id=None,
     ):
         self.app_id = app_id if app_id is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -2865,9 +2544,6 @@ class AzureCertificate:
          Tags is a map of key, value pairs.
         '''
         self.tenant_id = tenant_id if tenant_id is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AzureCertificate ' + \
@@ -2914,9 +2590,6 @@ class AzureCertificate:
 
 
 class AzurePostgres:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -2956,9 +2629,6 @@ class AzurePostgres:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -2968,9 +2638,6 @@ class AzurePostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -2980,21 +2647,9 @@ class AzurePostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3004,9 +2659,6 @@ class AzurePostgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AzurePostgres ' + \
@@ -3065,9 +2717,6 @@ class AzurePostgres:
 
 
 class AzureStore:
-    '''
-
-    '''
     __slots__ = [
         'id',
         'name',
@@ -3095,9 +2744,6 @@ class AzureStore:
          Tags is a map of key, value pairs.
         '''
         self.vault_uri = vault_uri if vault_uri is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.AzureStore ' + \
@@ -3126,9 +2772,6 @@ class AzureStore:
 
 
 class BigQuery:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -3168,9 +2811,6 @@ class BigQuery:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -3184,17 +2824,8 @@ class BigQuery:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.private_key = private_key if private_key is not None else ''
-        '''
-
-        '''
         self.project = project if project is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3204,9 +2835,6 @@ class BigQuery:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
@@ -3259,9 +2887,6 @@ class BigQuery:
 
 
 class Cassandra:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -3307,9 +2932,6 @@ class Cassandra:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3319,17 +2941,8 @@ class Cassandra:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3339,13 +2952,7 @@ class Cassandra:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
@@ -3401,9 +3008,6 @@ class Cassandra:
 
 
 class Citus:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -3443,9 +3047,6 @@ class Citus:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3455,9 +3056,6 @@ class Citus:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3467,21 +3065,9 @@ class Citus:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3491,9 +3077,6 @@ class Citus:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Citus ' + \
@@ -3552,9 +3135,6 @@ class Citus:
 
 
 class Clustrix:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -3592,9 +3172,6 @@ class Clustrix:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3604,9 +3181,6 @@ class Clustrix:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3616,17 +3190,8 @@ class Clustrix:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3636,9 +3201,6 @@ class Clustrix:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
@@ -3694,9 +3256,6 @@ class Clustrix:
 
 
 class Cockroach:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -3736,9 +3295,6 @@ class Cockroach:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3748,9 +3304,6 @@ class Cockroach:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3760,21 +3313,9 @@ class Cockroach:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3784,9 +3325,6 @@ class Cockroach:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
@@ -3844,9 +3382,68 @@ class Cockroach:
         )
 
 
+class ConjurClientStore:
+    '''
+    ConjurClientStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'appurl',
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        appurl=None,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.appurl = appurl if appurl is not None else ''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConjurClientStore ' + \
+            'appurl: ' + repr(self.appurl) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'appurl': self.appurl,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            appurl=d.get('appurl'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
 class ControlPanelGetSSHCAPublicKeyResponse:
     '''
-     ControlPanelGetSSHCAPublicKeyResponse represents a request for an
+         ControlPanelGetSSHCAPublicKeyResponse represents a request for an
      organization's SSH Certificate Authority public key.
     '''
     __slots__ = [
@@ -3900,7 +3497,7 @@ class ControlPanelGetSSHCAPublicKeyResponse:
 
 class ControlPanelVerifyJWTResponse:
     '''
-     ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
+         ControlPanelVerifyJWTResponse reports whether x-sdm-token is valid.
     '''
     __slots__ = [
         'meta',
@@ -3952,7 +3549,7 @@ class ControlPanelVerifyJWTResponse:
 
 class CreateResponseMetadata:
     '''
-     CreateResponseMetadata is reserved for future use.
+         CreateResponseMetadata is reserved for future use.
     '''
     __slots__ = []
 
@@ -3972,9 +3569,6 @@ class CreateResponseMetadata:
 
 
 class DB2I:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -4020,9 +3614,6 @@ class DB2I:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4032,17 +3623,8 @@ class DB2I:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4052,13 +3634,7 @@ class DB2I:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.DB2I ' + \
@@ -4114,9 +3690,6 @@ class DB2I:
 
 
 class DB2LUW:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -4154,9 +3727,6 @@ class DB2LUW:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4166,9 +3736,6 @@ class DB2LUW:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4178,17 +3745,8 @@ class DB2LUW:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4198,9 +3756,6 @@ class DB2LUW:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.DB2LUW ' + \
@@ -4257,7 +3812,7 @@ class DB2LUW:
 
 class DeleteResponseMetadata:
     '''
-     DeleteResponseMetadata is reserved for future use.
+         DeleteResponseMetadata is reserved for future use.
     '''
     __slots__ = []
 
@@ -4276,10 +3831,72 @@ class DeleteResponseMetadata:
         return cls()
 
 
-class DocumentDBHost:
+class DelineaStore:
     '''
+    DelineaStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'server_url',
+        'tags',
+        'tenant_name',
+    ]
 
-    '''
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        server_url=None,
+        tags=None,
+        tenant_name=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.server_url = server_url if server_url is not None else ''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tenant_name = tenant_name if tenant_name is not None else ''
+
+    def __repr__(self):
+        return '<sdm.DelineaStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_url: ' + repr(self.server_url) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tenant_name: ' + repr(self.tenant_name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'server_url': self.server_url,
+            'tags': self.tags,
+            'tenant_name': self.tenant_name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            server_url=d.get('server_url'),
+            tags=d.get('tags'),
+            tenant_name=d.get('tenant_name'),
+        )
+
+
+class DocumentDBHost:
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -4313,9 +3930,6 @@ class DocumentDBHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -4329,9 +3943,6 @@ class DocumentDBHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4341,17 +3952,8 @@ class DocumentDBHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4361,9 +3963,6 @@ class DocumentDBHost:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBHost ' + \
@@ -4419,9 +4018,6 @@ class DocumentDBHost:
 
 
 class DocumentDBReplicaSet:
-    '''
-
-    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -4457,17 +4053,11 @@ class DocumentDBReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4489,17 +4079,8 @@ class DocumentDBReplicaSet:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.replica_set = replica_set if replica_set is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4509,9 +4090,6 @@ class DocumentDBReplicaSet:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBReplicaSet ' + \
@@ -4570,9 +4148,6 @@ class DocumentDBReplicaSet:
 
 
 class Druid:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -4616,9 +4191,6 @@ class Druid:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4628,17 +4200,8 @@ class Druid:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4648,9 +4211,6 @@ class Druid:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Druid ' + \
@@ -4703,9 +4263,6 @@ class Druid:
 
 
 class DynamoDB:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -4741,9 +4298,6 @@ class DynamoDB:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -4753,9 +4307,6 @@ class DynamoDB:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -4769,25 +4320,10 @@ class DynamoDB:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4854,9 +4390,6 @@ class DynamoDB:
 
 
 class Elastic:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -4902,9 +4435,6 @@ class Elastic:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4914,17 +4444,8 @@ class Elastic:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4934,13 +4455,7 @@ class Elastic:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
@@ -4996,9 +4511,6 @@ class Elastic:
 
 
 class ElasticacheRedis:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -5042,9 +4554,6 @@ class ElasticacheRedis:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5054,17 +4563,8 @@ class ElasticacheRedis:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5074,9 +4574,6 @@ class ElasticacheRedis:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
@@ -5128,10 +4625,60 @@ class ElasticacheRedis:
         )
 
 
-class GCP:
+class EnvStore:
     '''
+    EnvStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'tags',
+    ]
 
-    '''
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.EnvStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
+class GCP:
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -5173,17 +4720,11 @@ class GCP:
          Unique identifier of the Resource.
         '''
         self.keyfile = keyfile if keyfile is not None else ''
-        '''
-
-        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.scopes = scopes if scopes is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5235,9 +4776,6 @@ class GCP:
 
 
 class GCPStore:
-    '''
-
-    '''
     __slots__ = [
         'id',
         'name',
@@ -5261,9 +4799,6 @@ class GCPStore:
          Unique human-readable name of the SecretStore.
         '''
         self.projectid = projectid if projectid is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -5297,7 +4832,7 @@ class GCPStore:
 
 class Gateway:
     '''
-     Gateway represents a StrongDM CLI installation running in gateway mode.
+         Gateway represents a StrongDM CLI installation running in gateway mode.
     '''
     __slots__ = [
         'bind_address',
@@ -5388,7 +4923,7 @@ class Gateway:
 
 class GetResponseMetadata:
     '''
-     GetResponseMetadata is reserved for future use.
+         GetResponseMetadata is reserved for future use.
     '''
     __slots__ = []
 
@@ -5408,9 +4943,6 @@ class GetResponseMetadata:
 
 
 class GoogleGKE:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -5448,17 +4980,11 @@ class GoogleGKE:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -5476,21 +5002,12 @@ class GoogleGKE:
          Unique human-readable name of the Resource.
         '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.service_account_key = service_account_key if service_account_key is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -5552,9 +5069,6 @@ class GoogleGKE:
 
 
 class GoogleGKEUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -5588,17 +5102,11 @@ class GoogleGKEUserImpersonation:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -5620,9 +5128,6 @@ class GoogleGKEUserImpersonation:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.service_account_key = service_account_key if service_account_key is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -5676,9 +5181,6 @@ class GoogleGKEUserImpersonation:
 
 
 class Greenplum:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -5718,9 +5220,6 @@ class Greenplum:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -5730,9 +5229,6 @@ class Greenplum:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5742,21 +5238,9 @@ class Greenplum:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5766,9 +5250,6 @@ class Greenplum:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
@@ -5827,9 +5308,6 @@ class Greenplum:
 
 
 class HTTPAuth:
-    '''
-
-    '''
     __slots__ = [
         'auth_header',
         'bind_interface',
@@ -5863,29 +5341,17 @@ class HTTPAuth:
         url=None,
     ):
         self.auth_header = auth_header if auth_header is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.default_path = default_path if default_path is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
-        '''
-
-        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -5903,17 +5369,11 @@ class HTTPAuth:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
@@ -5969,9 +5429,6 @@ class HTTPAuth:
 
 
 class HTTPBasicAuth:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'default_path',
@@ -6011,21 +5468,12 @@ class HTTPBasicAuth:
          Bind interface
         '''
         self.default_path = default_path if default_path is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
-        '''
-
-        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -6039,29 +5487,17 @@ class HTTPBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
@@ -6120,9 +5556,6 @@ class HTTPBasicAuth:
 
 
 class HTTPNoAuth:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'default_path',
@@ -6158,21 +5591,12 @@ class HTTPNoAuth:
          Bind interface
         '''
         self.default_path = default_path if default_path is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
-        '''
-
-        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -6190,17 +5614,11 @@ class HTTPNoAuth:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
@@ -6253,9 +5671,6 @@ class HTTPNoAuth:
 
 
 class Kubernetes:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -6299,17 +5714,8 @@ class Kubernetes:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6323,9 +5729,6 @@ class Kubernetes:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6335,21 +5738,9 @@ class Kubernetes:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6424,9 +5815,6 @@ class Kubernetes:
 
 
 class KubernetesBasicAuth:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -6476,9 +5864,6 @@ class KubernetesBasicAuth:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6488,17 +5873,8 @@ class KubernetesBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6508,9 +5884,6 @@ class KubernetesBasicAuth:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -6566,9 +5939,6 @@ class KubernetesBasicAuth:
 
 
 class KubernetesServiceAccount:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -6620,9 +5990,6 @@ class KubernetesServiceAccount:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6632,21 +5999,9 @@ class KubernetesServiceAccount:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6656,9 +6011,6 @@ class KubernetesServiceAccount:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
@@ -6719,9 +6071,6 @@ class KubernetesServiceAccount:
 
 
 class KubernetesServiceAccountUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -6769,9 +6118,6 @@ class KubernetesServiceAccountUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6781,13 +6127,7 @@ class KubernetesServiceAccountUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6797,9 +6137,6 @@ class KubernetesServiceAccountUserImpersonation:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
@@ -6852,9 +6189,6 @@ class KubernetesServiceAccountUserImpersonation:
 
 
 class KubernetesUserImpersonation:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -6894,17 +6228,8 @@ class KubernetesUserImpersonation:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -6918,9 +6243,6 @@ class KubernetesUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6930,13 +6252,7 @@ class KubernetesUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7004,7 +6320,8 @@ class KubernetesUserImpersonation:
 
 class MTLSMysql:
     '''
-
+    MTLSMysql is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
     '''
     __slots__ = [
         'bind_interface',
@@ -7051,21 +6368,9 @@ class MTLSMysql:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7075,9 +6380,6 @@ class MTLSMysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7087,33 +6389,18 @@ class MTLSMysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.server_name = server_name if server_name is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MTLSMysql ' + \
@@ -7181,9 +6468,6 @@ class MTLSMysql:
 
 
 class MTLSPostgres:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'certificate_authority',
@@ -7231,21 +6515,9 @@ class MTLSPostgres:
          Bind interface
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
-        '''
-
-        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
-        '''
-
-        '''
         self.client_key = client_key if client_key is not None else ''
-        '''
-
-        '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7255,9 +6527,6 @@ class MTLSPostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7267,37 +6536,19 @@ class MTLSPostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.server_name = server_name if server_name is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MTLSPostgres ' + \
@@ -7368,9 +6619,6 @@ class MTLSPostgres:
 
 
 class Maria:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -7408,9 +6656,6 @@ class Maria:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7420,9 +6665,6 @@ class Maria:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7432,17 +6674,8 @@ class Maria:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7452,9 +6685,6 @@ class Maria:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Maria ' + \
@@ -7510,9 +6740,6 @@ class Maria:
 
 
 class Memcached:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -7552,9 +6779,6 @@ class Memcached:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7564,13 +6788,7 @@ class Memcached:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7625,9 +6843,6 @@ class Memcached:
 
 
 class Memsql:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -7665,9 +6880,6 @@ class Memsql:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7677,9 +6889,6 @@ class Memsql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7689,17 +6898,8 @@ class Memsql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7709,9 +6909,6 @@ class Memsql:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
@@ -7768,7 +6965,8 @@ class Memsql:
 
 class MongoHost:
     '''
-
+    MongoHost is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
     '''
     __slots__ = [
         'auth_database',
@@ -7805,9 +7003,6 @@ class MongoHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -7821,9 +7016,6 @@ class MongoHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7833,17 +7025,8 @@ class MongoHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7853,13 +7036,7 @@ class MongoHost:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
@@ -7918,9 +7095,6 @@ class MongoHost:
 
 
 class MongoLegacyHost:
-    '''
-
-    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -7958,9 +7132,6 @@ class MongoLegacyHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -7974,9 +7145,6 @@ class MongoLegacyHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7986,21 +7154,9 @@ class MongoLegacyHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.replica_set = replica_set if replica_set is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8010,13 +7166,7 @@ class MongoLegacyHost:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
@@ -8078,9 +7228,6 @@ class MongoLegacyHost:
 
 
 class MongoLegacyReplicaset:
-    '''
-
-    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -8120,17 +7267,11 @@ class MongoLegacyReplicaset:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8140,9 +7281,6 @@ class MongoLegacyReplicaset:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8152,21 +7290,9 @@ class MongoLegacyReplicaset:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.replica_set = replica_set if replica_set is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8176,13 +7302,7 @@ class MongoLegacyReplicaset:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
@@ -8248,7 +7368,8 @@ class MongoLegacyReplicaset:
 
 class MongoReplicaSet:
     '''
-
+    MongoReplicaSet is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
     '''
     __slots__ = [
         'auth_database',
@@ -8289,17 +7410,11 @@ class MongoReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8309,9 +7424,6 @@ class MongoReplicaSet:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8321,21 +7433,9 @@ class MongoReplicaSet:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.replica_set = replica_set if replica_set is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8345,13 +7445,7 @@ class MongoReplicaSet:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
@@ -8417,7 +7511,8 @@ class MongoReplicaSet:
 
 class MongoShardedCluster:
     '''
-
+    MongoShardedCluster is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
     '''
     __slots__ = [
         'auth_database',
@@ -8452,9 +7547,6 @@ class MongoShardedCluster:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -8468,9 +7560,6 @@ class MongoShardedCluster:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8480,13 +7569,7 @@ class MongoShardedCluster:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8496,13 +7579,7 @@ class MongoShardedCluster:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.MongoShardedCluster ' + \
@@ -8558,9 +7635,6 @@ class MongoShardedCluster:
 
 
 class Mysql:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -8598,9 +7672,6 @@ class Mysql:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8610,9 +7681,6 @@ class Mysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8622,17 +7690,8 @@ class Mysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8642,9 +7701,6 @@ class Mysql:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
@@ -8700,9 +7756,6 @@ class Mysql:
 
 
 class Neptune:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -8738,9 +7791,6 @@ class Neptune:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -8754,13 +7804,7 @@ class Neptune:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8815,9 +7859,6 @@ class Neptune:
 
 
 class NeptuneIAM:
-    '''
-
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -8855,9 +7896,6 @@ class NeptuneIAM:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -8867,9 +7905,6 @@ class NeptuneIAM:
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
-        '''
-
-        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -8883,29 +7918,11 @@ class NeptuneIAM:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.region = region if region is not None else ''
-        '''
-
-        '''
         self.role_arn = role_arn if role_arn is not None else ''
-        '''
-
-        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
-        '''
-
-        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8976,7 +7993,7 @@ class NeptuneIAM:
 
 class NodeCreateResponse:
     '''
-     NodeCreateResponse reports how the Nodes were created in the system.
+         NodeCreateResponse reports how the Nodes were created in the system.
     '''
     __slots__ = [
         'meta',
@@ -9038,7 +8055,7 @@ class NodeCreateResponse:
 
 class NodeDeleteResponse:
     '''
-     NodeDeleteResponse returns information about a Node that was deleted.
+         NodeDeleteResponse returns information about a Node that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -9081,7 +8098,7 @@ class NodeDeleteResponse:
 
 class NodeGetResponse:
     '''
-     NodeGetResponse returns a requested Node.
+         NodeGetResponse returns a requested Node.
     '''
     __slots__ = [
         'meta',
@@ -9133,7 +8150,7 @@ class NodeGetResponse:
 
 class NodeUpdateResponse:
     '''
-     NodeUpdateResponse returns the fields of a Node after it has been updated by
+         NodeUpdateResponse returns the fields of a Node after it has been updated by
      a NodeUpdateRequest.
     '''
     __slots__ = [
@@ -9186,7 +8203,8 @@ class NodeUpdateResponse:
 
 class Oracle:
     '''
-
+    Oracle is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
     '''
     __slots__ = [
         'bind_interface',
@@ -9227,9 +8245,6 @@ class Oracle:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9239,9 +8254,6 @@ class Oracle:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9251,17 +8263,8 @@ class Oracle:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9271,13 +8274,7 @@ class Oracle:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
@@ -9336,9 +8333,6 @@ class Oracle:
 
 
 class Postgres:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -9378,9 +8372,6 @@ class Postgres:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9390,9 +8381,6 @@ class Postgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9402,21 +8390,9 @@ class Postgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9426,9 +8402,6 @@ class Postgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
@@ -9487,9 +8460,6 @@ class Postgres:
 
 
 class Presto:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -9529,9 +8499,6 @@ class Presto:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9541,9 +8508,6 @@ class Presto:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9553,17 +8517,8 @@ class Presto:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9573,13 +8528,7 @@ class Presto:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Presto ' + \
@@ -9638,9 +8587,6 @@ class Presto:
 
 
 class RDP:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'downgrade_nla_connections',
@@ -9678,9 +8624,6 @@ class RDP:
          Bind interface
         '''
         self.downgrade_nla_connections = downgrade_nla_connections if downgrade_nla_connections is not None else False
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9690,9 +8633,6 @@ class RDP:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9702,17 +8642,8 @@ class RDP:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9722,9 +8653,6 @@ class RDP:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.RDP ' + \
@@ -9780,9 +8708,6 @@ class RDP:
 
 
 class RabbitMQAMQP091:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -9828,9 +8753,6 @@ class RabbitMQAMQP091:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9840,17 +8762,8 @@ class RabbitMQAMQP091:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9860,13 +8773,7 @@ class RabbitMQAMQP091:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
-        '''
-
-        '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.RabbitMQAMQP091 ' + \
@@ -9923,7 +8830,7 @@ class RabbitMQAMQP091:
 
 class RateLimitMetadata:
     '''
-     RateLimitMetadata contains information about remaining requests avaialable
+         RateLimitMetadata contains information about remaining requests avaialable
      to the user over some timeframe.
     '''
     __slots__ = [
@@ -9986,9 +8893,6 @@ class RateLimitMetadata:
 
 
 class RawTCP:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -10028,9 +8932,6 @@ class RawTCP:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -10040,13 +8941,7 @@ class RawTCP:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10101,9 +8996,6 @@ class RawTCP:
 
 
 class Redis:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -10145,9 +9037,6 @@ class Redis:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -10157,17 +9046,8 @@ class Redis:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10225,9 +9105,6 @@ class Redis:
 
 
 class Redshift:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -10267,9 +9144,6 @@ class Redshift:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -10279,9 +9153,6 @@ class Redshift:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -10291,21 +9162,9 @@ class Redshift:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10315,9 +9174,6 @@ class Redshift:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
@@ -10377,7 +9233,7 @@ class Redshift:
 
 class Relay:
     '''
-     Relay represents a StrongDM CLI installation running in relay mode.
+         Relay represents a StrongDM CLI installation running in relay mode.
     '''
     __slots__ = [
         'gateway_filter',
@@ -10450,7 +9306,7 @@ class Relay:
 
 class RemoteIdentity:
     '''
-     RemoteIdentities define the username to be used for a specific account
+         RemoteIdentities define the username to be used for a specific account
      when connecting to a remote resource using that group.
     '''
     __slots__ = [
@@ -10512,7 +9368,7 @@ class RemoteIdentity:
 
 class RemoteIdentityCreateResponse:
     '''
-     RemoteIdentityCreateResponse reports how the RemoteIdentities were created in the system.
+         RemoteIdentityCreateResponse reports how the RemoteIdentities were created in the system.
     '''
     __slots__ = [
         'meta',
@@ -10564,7 +9420,7 @@ class RemoteIdentityCreateResponse:
 
 class RemoteIdentityDeleteResponse:
     '''
-     RemoteIdentityDeleteResponse returns information about a RemoteIdentity that was deleted.
+         RemoteIdentityDeleteResponse returns information about a RemoteIdentity that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -10607,7 +9463,7 @@ class RemoteIdentityDeleteResponse:
 
 class RemoteIdentityGetResponse:
     '''
-     RemoteIdentityGetResponse returns a requested RemoteIdentity.
+         RemoteIdentityGetResponse returns a requested RemoteIdentity.
     '''
     __slots__ = [
         'meta',
@@ -10659,7 +9515,7 @@ class RemoteIdentityGetResponse:
 
 class RemoteIdentityGroup:
     '''
-     A RemoteIdentityGroup defines a group of remote identities.
+         A RemoteIdentityGroup defines a group of remote identities.
     '''
     __slots__ = [
         'id',
@@ -10702,7 +9558,7 @@ class RemoteIdentityGroup:
 
 class RemoteIdentityGroupGetResponse:
     '''
-     RemoteIdentityGroupGetResponse returns a requested RemoteIdentityGroup.
+         RemoteIdentityGroupGetResponse returns a requested RemoteIdentityGroup.
     '''
     __slots__ = [
         'meta',
@@ -10754,7 +9610,7 @@ class RemoteIdentityGroupGetResponse:
 
 class RemoteIdentityUpdateResponse:
     '''
-     RemoteIdentityUpdateResponse returns the fields of a RemoteIdentity after it has been updated by
+         RemoteIdentityUpdateResponse returns the fields of a RemoteIdentity after it has been updated by
      a RemoteIdentityUpdateRequest.
     '''
     __slots__ = [
@@ -10807,7 +9663,7 @@ class RemoteIdentityUpdateResponse:
 
 class ResourceCreateResponse:
     '''
-     ResourceCreateResponse reports how the Resources were created in the system.
+         ResourceCreateResponse reports how the Resources were created in the system.
     '''
     __slots__ = [
         'meta',
@@ -10859,7 +9715,7 @@ class ResourceCreateResponse:
 
 class ResourceDeleteResponse:
     '''
-     ResourceDeleteResponse returns information about a Resource that was deleted.
+         ResourceDeleteResponse returns information about a Resource that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -10902,7 +9758,7 @@ class ResourceDeleteResponse:
 
 class ResourceGetResponse:
     '''
-     ResourceGetResponse returns a requested Resource.
+         ResourceGetResponse returns a requested Resource.
     '''
     __slots__ = [
         'meta',
@@ -10954,7 +9810,7 @@ class ResourceGetResponse:
 
 class ResourceUpdateResponse:
     '''
-     ResourceUpdateResponse returns the fields of a Resource after it has been updated by
+         ResourceUpdateResponse returns the fields of a Resource after it has been updated by
      a ResourceUpdateRequest.
     '''
     __slots__ = [
@@ -11007,7 +9863,7 @@ class ResourceUpdateResponse:
 
 class Role:
     '''
-     A Role has a list of access rules which determine which Resources the members
+         A Role has a list of access rules which determine which Resources the members
      of the Role have access to. An Account can be a member of multiple Roles via
      AccountAttachments.
     '''
@@ -11071,7 +9927,7 @@ class Role:
 
 class RoleCreateResponse:
     '''
-     RoleCreateResponse reports how the Roles were created in the system. It can
+         RoleCreateResponse reports how the Roles were created in the system. It can
      communicate partial successes or failures.
     '''
     __slots__ = [
@@ -11124,7 +9980,7 @@ class RoleCreateResponse:
 
 class RoleDeleteResponse:
     '''
-     RoleDeleteResponse returns information about a Role that was deleted.
+         RoleDeleteResponse returns information about a Role that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -11167,7 +10023,7 @@ class RoleDeleteResponse:
 
 class RoleGetResponse:
     '''
-     RoleGetResponse returns a requested Role.
+         RoleGetResponse returns a requested Role.
     '''
     __slots__ = [
         'meta',
@@ -11219,7 +10075,7 @@ class RoleGetResponse:
 
 class RoleUpdateResponse:
     '''
-     RoleUpdateResponse returns the fields of a Role after it has been updated by
+         RoleUpdateResponse returns the fields of a Role after it has been updated by
      a RoleUpdateRequest.
     '''
     __slots__ = [
@@ -11271,9 +10127,6 @@ class RoleUpdateResponse:
 
 
 class SQLServer:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -11315,9 +10168,6 @@ class SQLServer:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -11327,9 +10177,6 @@ class SQLServer:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11339,25 +10186,10 @@ class SQLServer:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
-        '''
-
-        '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.schema = schema if schema is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11367,9 +10199,6 @@ class SQLServer:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
@@ -11431,9 +10260,6 @@ class SQLServer:
 
 
 class SSH:
-    '''
-
-    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'bind_interface',
@@ -11471,9 +10297,6 @@ class SSH:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -11487,37 +10310,19 @@ class SSH:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
         self.key_type = key_type if key_type is not None else ''
-        '''
-
-        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.public_key = public_key if public_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11527,9 +10332,6 @@ class SSH:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -11593,9 +10395,6 @@ class SSH:
 
 
 class SSHCert:
-    '''
-
-    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'bind_interface',
@@ -11635,9 +10434,6 @@ class SSHCert:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -11651,41 +10447,20 @@ class SSHCert:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
         self.key_type = key_type if key_type is not None else ''
-        '''
-
-        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-
-        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11695,9 +10470,6 @@ class SSHCert:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SSHCert ' + \
@@ -11766,9 +10538,6 @@ class SSHCert:
 
 
 class SSHCustomerKey:
-    '''
-
-    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'bind_interface',
@@ -11804,9 +10573,6 @@ class SSHCustomerKey:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
-        '''
-
-        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          Bind interface
@@ -11820,9 +10586,6 @@ class SSHCustomerKey:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11832,21 +10595,9 @@ class SSHCustomerKey:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.private_key = private_key if private_key is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11856,9 +10607,6 @@ class SSHCustomerKey:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SSHCustomerKey ' + \
@@ -11920,7 +10668,7 @@ class SSHCustomerKey:
 
 class SecretStoreCreateResponse:
     '''
-     SecretStoreCreateResponse reports how the SecretStores were created in the system.
+         SecretStoreCreateResponse reports how the SecretStores were created in the system.
     '''
     __slots__ = [
         'meta',
@@ -11972,7 +10720,7 @@ class SecretStoreCreateResponse:
 
 class SecretStoreDeleteResponse:
     '''
-     SecretStoreDeleteResponse returns information about a SecretStore that was deleted.
+         SecretStoreDeleteResponse returns information about a SecretStore that was deleted.
     '''
     __slots__ = [
         'meta',
@@ -12015,7 +10763,7 @@ class SecretStoreDeleteResponse:
 
 class SecretStoreGetResponse:
     '''
-     SecretStoreGetResponse returns a requested SecretStore.
+         SecretStoreGetResponse returns a requested SecretStore.
     '''
     __slots__ = [
         'meta',
@@ -12067,7 +10815,7 @@ class SecretStoreGetResponse:
 
 class SecretStoreUpdateResponse:
     '''
-     SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
+         SecretStoreUpdateResponse returns the fields of a SecretStore after it has been updated by
      a SecretStoreUpdateRequest.
     '''
     __slots__ = [
@@ -12120,7 +10868,7 @@ class SecretStoreUpdateResponse:
 
 class Service:
     '''
-     A Service is a service account that can connect to resources they are granted
+         A Service is a service account that can connect to resources they are granted
      directly, or granted via roles. Services are typically automated jobs.
     '''
     __slots__ = [
@@ -12181,9 +10929,6 @@ class Service:
 
 
 class SingleStore:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -12221,9 +10966,6 @@ class SingleStore:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -12233,9 +10975,6 @@ class SingleStore:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12245,17 +10984,8 @@ class SingleStore:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12265,9 +10995,6 @@ class SingleStore:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SingleStore ' + \
@@ -12323,9 +11050,6 @@ class SingleStore:
 
 
 class Snowflake:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -12363,9 +11087,6 @@ class Snowflake:
          Bind interface
         '''
         self.database = database if database is not None else ''
-        '''
-
-        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -12375,9 +11096,6 @@ class Snowflake:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12387,17 +11105,8 @@ class Snowflake:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.schema = schema if schema is not None else ''
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12407,9 +11116,6 @@ class Snowflake:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
@@ -12465,9 +11171,6 @@ class Snowflake:
 
 
 class Sybase:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -12511,9 +11214,6 @@ class Sybase:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12523,17 +11223,8 @@ class Sybase:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12543,9 +11234,6 @@ class Sybase:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
@@ -12598,9 +11286,6 @@ class Sybase:
 
 
 class SybaseIQ:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -12644,9 +11329,6 @@ class SybaseIQ:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12656,17 +11338,8 @@ class SybaseIQ:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12676,9 +11349,6 @@ class SybaseIQ:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
@@ -12731,9 +11401,6 @@ class SybaseIQ:
 
 
 class Tag:
-    '''
-
-    '''
     __slots__ = [
         'name',
         'value',
@@ -12745,13 +11412,7 @@ class Tag:
         value=None,
     ):
         self.name = name if name is not None else ''
-        '''
-
-        '''
         self.value = value if value is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Tag ' + \
@@ -12774,9 +11435,6 @@ class Tag:
 
 
 class Teradata:
-    '''
-
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -12820,9 +11478,6 @@ class Teradata:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12832,17 +11487,8 @@ class Teradata:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
-        '''
-
-        '''
         self.port = port if port is not None else 0
-        '''
-
-        '''
         self.port_override = port_override if port_override is not None else 0
-        '''
-
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12852,9 +11498,6 @@ class Teradata:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
-        '''
-
-        '''
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
@@ -12908,7 +11551,7 @@ class Teradata:
 
 class UpdateResponseMetadata:
     '''
-     UpdateResponseMetadata is reserved for future use.
+         UpdateResponseMetadata is reserved for future use.
     '''
     __slots__ = []
 
@@ -12929,7 +11572,7 @@ class UpdateResponseMetadata:
 
 class User:
     '''
-     A User can connect to resources they are granted directly, or granted
+         A User can connect to resources they are granted directly, or granted
      via roles.
     '''
     __slots__ = [
@@ -13008,9 +11651,6 @@ class User:
 
 
 class VaultAppRoleStore:
-    '''
-
-    '''
     __slots__ = [
         'id',
         'name',
@@ -13036,13 +11676,7 @@ class VaultAppRoleStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
-        '''
-
-        '''
         self.server_address = server_address if server_address is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -13078,9 +11712,6 @@ class VaultAppRoleStore:
 
 
 class VaultTLSStore:
-    '''
-
-    '''
     __slots__ = [
         'ca_cert_path',
         'client_cert_path',
@@ -13104,17 +11735,8 @@ class VaultTLSStore:
         tags=None,
     ):
         self.ca_cert_path = ca_cert_path if ca_cert_path is not None else ''
-        '''
-
-        '''
         self.client_cert_path = client_cert_path if client_cert_path is not None else ''
-        '''
-
-        '''
         self.client_key_path = client_key_path if client_key_path is not None else ''
-        '''
-
-        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
@@ -13124,13 +11746,7 @@ class VaultTLSStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
-        '''
-
-        '''
         self.server_address = server_address if server_address is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -13175,9 +11791,6 @@ class VaultTLSStore:
 
 
 class VaultTokenStore:
-    '''
-
-    '''
     __slots__ = [
         'id',
         'name',
@@ -13203,13 +11816,7 @@ class VaultTokenStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
-        '''
-
-        '''
         self.server_address = server_address if server_address is not None else ''
-        '''
-
-        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.

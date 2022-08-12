@@ -1760,6 +1760,42 @@ def convert_repeated_cockroach_to_porcelain(plumbings):
     return [convert_cockroach_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_conjur_client_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConjurClientStore()
+    porcelain.appurl = (plumbing.appURL)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_conjur_client_store_to_plumbing(porcelain):
+    plumbing = ConjurClientStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.appURL = (porcelain.appurl)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_conjur_client_store_to_plumbing(porcelains):
+    return [
+        convert_conjur_client_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_conjur_client_store_to_porcelain(plumbings):
+    return [
+        convert_conjur_client_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_control_panel_get_sshca_public_key_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -1987,6 +2023,43 @@ def convert_repeated_delete_response_metadata_to_porcelain(plumbings):
     return [
         convert_delete_response_metadata_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_delinea_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.DelineaStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.server_url = (plumbing.server_url)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tenant_name = (plumbing.tenant_name)
+    return porcelain
+
+
+def convert_delinea_store_to_plumbing(porcelain):
+    plumbing = DelineaStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.server_url = (porcelain.server_url)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tenant_name = (porcelain.tenant_name)
+    return plumbing
+
+
+def convert_repeated_delinea_store_to_plumbing(porcelains):
+    return [
+        convert_delinea_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_delinea_store_to_porcelain(plumbings):
+    return [
+        convert_delinea_store_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
@@ -2296,6 +2369,36 @@ def convert_repeated_elasticache_redis_to_porcelain(plumbings):
         convert_elasticache_redis_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
+
+
+def convert_env_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.EnvStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_env_store_to_plumbing(porcelain):
+    plumbing = EnvStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_env_store_to_plumbing(porcelains):
+    return [
+        convert_env_store_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_env_store_to_porcelain(plumbings):
+    return [convert_env_store_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_gcp_to_porcelain(plumbing):
