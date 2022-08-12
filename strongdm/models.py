@@ -3382,9 +3382,9 @@ class Cockroach:
         )
 
 
-class ConjurClientStore:
+class ConjurStore:
     '''
-    ConjurClientStore is currently unstable, and its API may change, or it may be removed,
+    ConjurStore is currently unstable, and its API may change, or it may be removed,
     without a major version bump.
     '''
     __slots__ = [
@@ -3416,7 +3416,7 @@ class ConjurClientStore:
         '''
 
     def __repr__(self):
-        return '<sdm.ConjurClientStore ' + \
+        return '<sdm.ConjurStore ' + \
             'appurl: ' + repr(self.appurl) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
@@ -4622,59 +4622,6 @@ class ElasticacheRedis:
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
-        )
-
-
-class EnvStore:
-    '''
-    EnvStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'id',
-        'name',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        id=None,
-        name=None,
-        tags=None,
-    ):
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the SecretStore.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the SecretStore.
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-
-    def __repr__(self):
-        return '<sdm.EnvStore ' + \
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            name=d.get('name'),
-            tags=d.get('tags'),
         )
 
 

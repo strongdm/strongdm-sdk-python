@@ -1508,6 +1508,8 @@ class SecretStores:
     See:
     `strongdm.models.AWSStore`
     `strongdm.models.AzureStore`
+    `strongdm.models.ConjurStore`
+    `strongdm.models.DelineaStore`
     `strongdm.models.GCPStore`
     `strongdm.models.VaultAppRoleStore`
     `strongdm.models.VaultTLSStore`

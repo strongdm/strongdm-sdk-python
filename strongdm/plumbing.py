@@ -1760,10 +1760,10 @@ def convert_repeated_cockroach_to_porcelain(plumbings):
     return [convert_cockroach_to_porcelain(plumbing) for plumbing in plumbings]
 
 
-def convert_conjur_client_store_to_porcelain(plumbing):
+def convert_conjur_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
-    porcelain = models.ConjurClientStore()
+    porcelain = models.ConjurStore()
     porcelain.appurl = (plumbing.appURL)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
@@ -1771,8 +1771,8 @@ def convert_conjur_client_store_to_porcelain(plumbing):
     return porcelain
 
 
-def convert_conjur_client_store_to_plumbing(porcelain):
-    plumbing = ConjurClientStore()
+def convert_conjur_store_to_plumbing(porcelain):
+    plumbing = ConjurStore()
     if porcelain is None:
         return plumbing
     plumbing.appURL = (porcelain.appurl)
@@ -1782,17 +1782,15 @@ def convert_conjur_client_store_to_plumbing(porcelain):
     return plumbing
 
 
-def convert_repeated_conjur_client_store_to_plumbing(porcelains):
+def convert_repeated_conjur_store_to_plumbing(porcelains):
     return [
-        convert_conjur_client_store_to_plumbing(porcelain)
-        for porcelain in porcelains
+        convert_conjur_store_to_plumbing(porcelain) for porcelain in porcelains
     ]
 
 
-def convert_repeated_conjur_client_store_to_porcelain(plumbings):
+def convert_repeated_conjur_store_to_porcelain(plumbings):
     return [
-        convert_conjur_client_store_to_porcelain(plumbing)
-        for plumbing in plumbings
+        convert_conjur_store_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
@@ -2369,36 +2367,6 @@ def convert_repeated_elasticache_redis_to_porcelain(plumbings):
         convert_elasticache_redis_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
-
-
-def convert_env_store_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.EnvStore()
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    return porcelain
-
-
-def convert_env_store_to_plumbing(porcelain):
-    plumbing = EnvStore()
-    if porcelain is None:
-        return plumbing
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    return plumbing
-
-
-def convert_repeated_env_store_to_plumbing(porcelains):
-    return [
-        convert_env_store_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_env_store_to_porcelain(plumbings):
-    return [convert_env_store_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_gcp_to_porcelain(plumbing):
@@ -5659,6 +5627,10 @@ def convert_secret_store_to_plumbing(porcelain):
         plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureStore):
         plumbing.azure.CopyFrom(convert_azure_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ConjurStore):
+        plumbing.conjur.CopyFrom(convert_conjur_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.DelineaStore):
+        plumbing.delinea.CopyFrom(convert_delinea_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPStore):
         plumbing.gcp.CopyFrom(convert_gcp_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultAppRoleStore):
@@ -5680,6 +5652,10 @@ def convert_secret_store_to_porcelain(plumbing):
         return convert_aws_store_to_porcelain(plumbing.aws)
     if plumbing.HasField('azure'):
         return convert_azure_store_to_porcelain(plumbing.azure)
+    if plumbing.HasField('conjur'):
+        return convert_conjur_store_to_porcelain(plumbing.conjur)
+    if plumbing.HasField('delinea'):
+        return convert_delinea_store_to_porcelain(plumbing.delinea)
     if plumbing.HasField('gcp'):
         return convert_gcp_store_to_porcelain(plumbing.gcp)
     if plumbing.HasField('vault_app_role'):
