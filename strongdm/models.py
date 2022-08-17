@@ -781,6 +781,302 @@ class AWS:
         )
 
 
+class AWSConsole:
+    '''
+    AWSConsole is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'enable_env_variables',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'region',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
+        'role_arn',
+        'role_external_id',
+        'secret_store_id',
+        'session_expiry',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        enable_env_variables=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        region=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_store_id=None,
+        session_expiry=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.enable_env_variables = enable_env_variables if enable_env_variables is not None else False
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        self.region = region if region is not None else ''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        self.role_arn = role_arn if role_arn is not None else ''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.session_expiry = session_expiry if session_expiry is not None else ''
+        self.subdomain = subdomain if subdomain is not None else ''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AWSConsole ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'enable_env_variables: ' + repr(self.enable_env_variables) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'session_expiry: ' + repr(self.session_expiry) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'enable_env_variables': self.enable_env_variables,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'region': self.region,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_store_id': self.secret_store_id,
+            'session_expiry': self.session_expiry,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            enable_env_variables=d.get('enable_env_variables'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            session_expiry=d.get('session_expiry'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
+class AWSConsoleStaticKeyPair:
+    '''
+    AWSConsoleStaticKeyPair is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'access_key',
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'region',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
+        'role_arn',
+        'role_external_id',
+        'secret_access_key',
+        'secret_store_id',
+        'session_expiry',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_key=None,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        region=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_access_key=None,
+        secret_store_id=None,
+        session_expiry=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.access_key = access_key if access_key is not None else ''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        self.region = region if region is not None else ''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        self.role_arn = role_arn if role_arn is not None else ''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.session_expiry = session_expiry if session_expiry is not None else ''
+        self.subdomain = subdomain if subdomain is not None else ''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AWSConsoleStaticKeyPair ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'session_expiry: ' + repr(self.session_expiry) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_key': self.access_key,
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'region': self.region,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_access_key': self.secret_access_key,
+            'secret_store_id': self.secret_store_id,
+            'session_expiry': self.session_expiry,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_key=d.get('access_key'),
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_access_key=d.get('secret_access_key'),
+            secret_store_id=d.get('secret_store_id'),
+            session_expiry=d.get('session_expiry'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
 class AWSStore:
     __slots__ = [
         'id',
@@ -3382,65 +3678,6 @@ class Cockroach:
         )
 
 
-class ConjurStore:
-    '''
-    ConjurStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'appurl',
-        'id',
-        'name',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        appurl=None,
-        id=None,
-        name=None,
-        tags=None,
-    ):
-        self.appurl = appurl if appurl is not None else ''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the SecretStore.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the SecretStore.
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-
-    def __repr__(self):
-        return '<sdm.ConjurStore ' + \
-            'appurl: ' + repr(self.appurl) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'appurl': self.appurl,
-            'id': self.id,
-            'name': self.name,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            appurl=d.get('appurl'),
-            id=d.get('id'),
-            name=d.get('name'),
-            tags=d.get('tags'),
-        )
-
-
 class ControlPanelGetSSHCAPublicKeyResponse:
     '''
          ControlPanelGetSSHCAPublicKeyResponse represents a request for an
@@ -3566,6 +3803,124 @@ class CreateResponseMetadata:
     @classmethod
     def from_dict(cls, d):
         return cls()
+
+
+class CyberarkConjurStore:
+    '''
+    CyberarkConjurStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'appurl',
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        appurl=None,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.appurl = appurl if appurl is not None else ''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CyberarkConjurStore ' + \
+            'appurl: ' + repr(self.appurl) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'appurl': self.appurl,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            appurl=d.get('appurl'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
+class CyberarkPAMExperimentalStore:
+    '''
+    CyberarkPAMExperimentalStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'appurl',
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        appurl=None,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.appurl = appurl if appurl is not None else ''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CyberarkPAMExperimentalStore ' + \
+            'appurl: ' + repr(self.appurl) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'appurl': self.appurl,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            appurl=d.get('appurl'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
 
 
 class DB2I:

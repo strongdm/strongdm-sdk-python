@@ -423,6 +423,130 @@ def convert_repeated_aws_to_porcelain(plumbings):
     return [convert_aws_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_aws_console_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSConsole()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.enable_env_variables = (plumbing.enable_env_variables)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.region = (plumbing.region)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.remote_identity_healthcheck_username = (
+        plumbing.remote_identity_healthcheck_username)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.session_expiry = (plumbing.session_expiry)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_aws_console_to_plumbing(porcelain):
+    plumbing = AWSConsole()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.enable_env_variables = (porcelain.enable_env_variables)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.region = (porcelain.region)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.remote_identity_healthcheck_username = (
+        porcelain.remote_identity_healthcheck_username)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.session_expiry = (porcelain.session_expiry)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_aws_console_to_plumbing(porcelains):
+    return [
+        convert_aws_console_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_console_to_porcelain(plumbings):
+    return [
+        convert_aws_console_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_aws_console_static_key_pair_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSConsoleStaticKeyPair()
+    porcelain.access_key = (plumbing.access_key)
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.region = (plumbing.region)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.remote_identity_healthcheck_username = (
+        plumbing.remote_identity_healthcheck_username)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_access_key = (plumbing.secret_access_key)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.session_expiry = (plumbing.session_expiry)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_aws_console_static_key_pair_to_plumbing(porcelain):
+    plumbing = AWSConsoleStaticKeyPair()
+    if porcelain is None:
+        return plumbing
+    plumbing.access_key = (porcelain.access_key)
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.region = (porcelain.region)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.remote_identity_healthcheck_username = (
+        porcelain.remote_identity_healthcheck_username)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_access_key = (porcelain.secret_access_key)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.session_expiry = (porcelain.session_expiry)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_aws_console_static_key_pair_to_plumbing(porcelains):
+    return [
+        convert_aws_console_static_key_pair_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_console_static_key_pair_to_porcelain(plumbings):
+    return [
+        convert_aws_console_static_key_pair_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_aws_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -1760,40 +1884,6 @@ def convert_repeated_cockroach_to_porcelain(plumbings):
     return [convert_cockroach_to_porcelain(plumbing) for plumbing in plumbings]
 
 
-def convert_conjur_store_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.ConjurStore()
-    porcelain.appurl = (plumbing.appURL)
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    return porcelain
-
-
-def convert_conjur_store_to_plumbing(porcelain):
-    plumbing = ConjurStore()
-    if porcelain is None:
-        return plumbing
-    plumbing.appURL = (porcelain.appurl)
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    return plumbing
-
-
-def convert_repeated_conjur_store_to_plumbing(porcelains):
-    return [
-        convert_conjur_store_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_conjur_store_to_porcelain(plumbings):
-    return [
-        convert_conjur_store_to_porcelain(plumbing) for plumbing in plumbings
-    ]
-
-
 def convert_control_panel_get_sshca_public_key_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -1894,6 +1984,78 @@ def convert_repeated_create_response_metadata_to_plumbing(porcelains):
 def convert_repeated_create_response_metadata_to_porcelain(plumbings):
     return [
         convert_create_response_metadata_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_cyberark_conjur_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CyberarkConjurStore()
+    porcelain.appurl = (plumbing.appURL)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_cyberark_conjur_store_to_plumbing(porcelain):
+    plumbing = CyberarkConjurStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.appURL = (porcelain.appurl)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_cyberark_conjur_store_to_plumbing(porcelains):
+    return [
+        convert_cyberark_conjur_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_cyberark_conjur_store_to_porcelain(plumbings):
+    return [
+        convert_cyberark_conjur_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_cyberark_pam_experimental_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CyberarkPAMExperimentalStore()
+    porcelain.appurl = (plumbing.appURL)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_cyberark_pam_experimental_store_to_plumbing(porcelain):
+    plumbing = CyberarkPAMExperimentalStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.appURL = (porcelain.appurl)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_cyberark_pam_experimental_store_to_plumbing(porcelains):
+    return [
+        convert_cyberark_pam_experimental_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_cyberark_pam_experimental_store_to_porcelain(plumbings):
+    return [
+        convert_cyberark_pam_experimental_store_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -4741,6 +4903,12 @@ def convert_resource_to_plumbing(porcelain):
             convert_aurora_postgres_to_plumbing(porcelain))
     if isinstance(porcelain, models.AWS):
         plumbing.aws.CopyFrom(convert_aws_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AWSConsole):
+        plumbing.aws_console.CopyFrom(
+            convert_aws_console_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AWSConsoleStaticKeyPair):
+        plumbing.aws_console_static_key_pair.CopyFrom(
+            convert_aws_console_static_key_pair_to_plumbing(porcelain))
     if isinstance(porcelain, models.Azure):
         plumbing.azure.CopyFrom(convert_azure_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureCertificate):
@@ -4916,6 +5084,11 @@ def convert_resource_to_porcelain(plumbing):
         return convert_aurora_postgres_to_porcelain(plumbing.aurora_postgres)
     if plumbing.HasField('aws'):
         return convert_aws_to_porcelain(plumbing.aws)
+    if plumbing.HasField('aws_console'):
+        return convert_aws_console_to_porcelain(plumbing.aws_console)
+    if plumbing.HasField('aws_console_static_key_pair'):
+        return convert_aws_console_static_key_pair_to_porcelain(
+            plumbing.aws_console_static_key_pair)
     if plumbing.HasField('azure'):
         return convert_azure_to_porcelain(plumbing.azure)
     if plumbing.HasField('azure_certificate'):
@@ -5627,8 +5800,12 @@ def convert_secret_store_to_plumbing(porcelain):
         plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureStore):
         plumbing.azure.CopyFrom(convert_azure_store_to_plumbing(porcelain))
-    if isinstance(porcelain, models.ConjurStore):
-        plumbing.conjur.CopyFrom(convert_conjur_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.CyberarkConjurStore):
+        plumbing.cyberark_conjur.CopyFrom(
+            convert_cyberark_conjur_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.CyberarkPAMExperimentalStore):
+        plumbing.cyberark_pam_experimental.CopyFrom(
+            convert_cyberark_pam_experimental_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.DelineaStore):
         plumbing.delinea.CopyFrom(convert_delinea_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPStore):
@@ -5652,8 +5829,12 @@ def convert_secret_store_to_porcelain(plumbing):
         return convert_aws_store_to_porcelain(plumbing.aws)
     if plumbing.HasField('azure'):
         return convert_azure_store_to_porcelain(plumbing.azure)
-    if plumbing.HasField('conjur'):
-        return convert_conjur_store_to_porcelain(plumbing.conjur)
+    if plumbing.HasField('cyberark_conjur'):
+        return convert_cyberark_conjur_store_to_porcelain(
+            plumbing.cyberark_conjur)
+    if plumbing.HasField('cyberark_pam_experimental'):
+        return convert_cyberark_pam_experimental_store_to_porcelain(
+            plumbing.cyberark_pam_experimental)
     if plumbing.HasField('delinea'):
         return convert_delinea_store_to_porcelain(plumbing.delinea)
     if plumbing.HasField('gcp'):

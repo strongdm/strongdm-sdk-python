@@ -1064,6 +1064,8 @@ class Resources:
     `strongdm.models.AuroraMysql`
     `strongdm.models.AuroraPostgres`
     `strongdm.models.AWS`
+    `strongdm.models.AWSConsole`
+    `strongdm.models.AWSConsoleStaticKeyPair`
     `strongdm.models.Azure`
     `strongdm.models.AzureCertificate`
     `strongdm.models.AzurePostgres`
@@ -1508,7 +1510,8 @@ class SecretStores:
     See:
     `strongdm.models.AWSStore`
     `strongdm.models.AzureStore`
-    `strongdm.models.ConjurStore`
+    `strongdm.models.CyberarkConjurStore`
+    `strongdm.models.CyberarkPAMExperimentalStore`
     `strongdm.models.DelineaStore`
     `strongdm.models.GCPStore`
     `strongdm.models.VaultAppRoleStore`
