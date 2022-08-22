@@ -855,7 +855,7 @@ class AWSConsole:
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.session_expiry = session_expiry if session_expiry is not None else ''
+        self.session_expiry = session_expiry if session_expiry is not None else 0
         self.subdomain = subdomain if subdomain is not None else ''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -1003,7 +1003,7 @@ class AWSConsoleStaticKeyPair:
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
-        self.session_expiry = session_expiry if session_expiry is not None else ''
+        self.session_expiry = session_expiry if session_expiry is not None else 0
         self.subdomain = subdomain if subdomain is not None else ''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
