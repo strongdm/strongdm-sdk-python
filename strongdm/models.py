@@ -793,6 +793,7 @@ class AWSConsole:
         'healthy',
         'id',
         'name',
+        'port',
         'port_override',
         'region',
         'remote_identity_group_id',
@@ -813,6 +814,7 @@ class AWSConsole:
         healthy=None,
         id=None,
         name=None,
+        port=None,
         port_override=None,
         region=None,
         remote_identity_group_id=None,
@@ -845,6 +847,7 @@ class AWSConsole:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
@@ -870,6 +873,7 @@ class AWSConsole:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
@@ -890,6 +894,7 @@ class AWSConsole:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port': self.port,
             'port_override': self.port_override,
             'region': self.region,
             'remote_identity_group_id': self.remote_identity_group_id,
@@ -912,6 +917,7 @@ class AWSConsole:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port=d.get('port'),
             port_override=d.get('port_override'),
             region=d.get('region'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
