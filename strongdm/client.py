@@ -184,5 +184,5 @@ class Client:
                 sleep_for = 60
             time.sleep(sleep_for)
             return True
-        return err.code() == grpc.StatusCode.INTERNAL or err.Code(
+        return err.code() == grpc.StatusCode.INTERNAL or err.code(
         ) == grpc.StatusCode.UNAVAILABLE
