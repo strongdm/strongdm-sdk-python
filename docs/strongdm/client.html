@@ -135,7 +135,7 @@
 </span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="n">DEFAULT_BASE_RETRY_DELAY</span> <span class="o">=</span> <span class="mf">0.0030</span>  <span class="c1"># 30 ms</span>
 </span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="n">DEFAULT_MAX_RETRY_DELAY</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># 300 seconds</span>
 </span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a><span class="n">API_VERSION</span> <span class="o">=</span> <span class="s1">&#39;2021-08-23&#39;</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="n">USER_AGENT</span> <span class="o">=</span> <span class="s1">&#39;strongdm-sdk-python/3.2.2&#39;</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="n">USER_AGENT</span> <span class="o">=</span> <span class="s1">&#39;strongdm-sdk-python/3.2.3&#39;</span>
 </span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>
 </span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>
 </span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="k">class</span> <span class="nc">Client</span><span class="p">:</span>
@@ -288,7 +288,8 @@
 </span><span id="L-184"><a href="#L-184"><span class="linenos">184</span></a>                <span class="n">sleep_for</span> <span class="o">=</span> <span class="mi">60</span>
 </span><span id="L-185"><a href="#L-185"><span class="linenos">185</span></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_for</span><span class="p">)</span>
 </span><span id="L-186"><a href="#L-186"><span class="linenos">186</span></a>            <span class="k">return</span> <span class="kc">True</span>
-</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span>
+</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span> <span class="ow">or</span> <span class="n">err</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span>
+</span><span id="L-188"><a href="#L-188"><span class="linenos">188</span></a>        <span class="p">)</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">UNAVAILABLE</span>
 </span></pre></div>
 
 
@@ -454,7 +455,8 @@
 </span><span id="Client-185"><a href="#Client-185"><span class="linenos">185</span></a>                <span class="n">sleep_for</span> <span class="o">=</span> <span class="mi">60</span>
 </span><span id="Client-186"><a href="#Client-186"><span class="linenos">186</span></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_for</span><span class="p">)</span>
 </span><span id="Client-187"><a href="#Client-187"><span class="linenos">187</span></a>            <span class="k">return</span> <span class="kc">True</span>
-</span><span id="Client-188"><a href="#Client-188"><span class="linenos">188</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span>
+</span><span id="Client-188"><a href="#Client-188"><span class="linenos">188</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span> <span class="ow">or</span> <span class="n">err</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span>
+</span><span id="Client-189"><a href="#Client-189"><span class="linenos">189</span></a>        <span class="p">)</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">UNAVAILABLE</span>
 </span></pre></div>
 
 
@@ -855,7 +857,8 @@
 </span><span id="Client.shouldRetry-185"><a href="#Client.shouldRetry-185"><span class="linenos">185</span></a>                <span class="n">sleep_for</span> <span class="o">=</span> <span class="mi">60</span>
 </span><span id="Client.shouldRetry-186"><a href="#Client.shouldRetry-186"><span class="linenos">186</span></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_for</span><span class="p">)</span>
 </span><span id="Client.shouldRetry-187"><a href="#Client.shouldRetry-187"><span class="linenos">187</span></a>            <span class="k">return</span> <span class="kc">True</span>
-</span><span id="Client.shouldRetry-188"><a href="#Client.shouldRetry-188"><span class="linenos">188</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span>
+</span><span id="Client.shouldRetry-188"><a href="#Client.shouldRetry-188"><span class="linenos">188</span></a>        <span class="k">return</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span><span class="p">()</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">INTERNAL</span> <span class="ow">or</span> <span class="n">err</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span>
+</span><span id="Client.shouldRetry-189"><a href="#Client.shouldRetry-189"><span class="linenos">189</span></a>        <span class="p">)</span> <span class="o">==</span> <span class="n">grpc</span><span class="o">.</span><span class="n">StatusCode</span><span class="o">.</span><span class="n">UNAVAILABLE</span>
 </span></pre></div>
 
 
