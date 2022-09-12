@@ -31,7 +31,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/3.2.2'
+USER_AGENT = 'strongdm-sdk-python/3.2.3'
 
 
 class Client:
@@ -184,4 +184,5 @@ class Client:
                 sleep_for = 60
             time.sleep(sleep_for)
             return True
-        return err.code() == grpc.StatusCode.INTERNAL
+        return err.code() == grpc.StatusCode.INTERNAL or err.code(
+        ) == grpc.StatusCode.UNAVAILABLE
