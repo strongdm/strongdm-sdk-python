@@ -433,7 +433,6 @@ def convert_aws_console_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
-    porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
     porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
@@ -458,7 +457,6 @@ def convert_aws_console_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
-    plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
     plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
@@ -5034,6 +5032,8 @@ def convert_resource_to_plumbing(porcelain):
             convert_single_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.Snowflake):
         plumbing.snowflake.CopyFrom(convert_snowflake_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Snowsight):
+        plumbing.snowsight.CopyFrom(convert_snowsight_to_plumbing(porcelain))
     if isinstance(porcelain, models.SQLServer):
         plumbing.sql_server.CopyFrom(convert_sql_server_to_plumbing(porcelain))
     if isinstance(porcelain, models.SSH):
@@ -5206,6 +5206,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_single_store_to_porcelain(plumbing.single_store)
     if plumbing.HasField('snowflake'):
         return convert_snowflake_to_porcelain(plumbing.snowflake)
+    if plumbing.HasField('snowsight'):
+        return convert_snowsight_to_porcelain(plumbing.snowsight)
     if plumbing.HasField('sql_server'):
         return convert_sql_server_to_porcelain(plumbing.sql_server)
     if plumbing.HasField('ssh'):
@@ -6148,6 +6150,52 @@ def convert_repeated_snowflake_to_plumbing(porcelains):
 
 def convert_repeated_snowflake_to_porcelain(plumbings):
     return [convert_snowflake_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_snowsight_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Snowsight()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthcheck_username = (plumbing.healthcheck_username)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.samlmetadata = (plumbing.samlMetadata)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_snowsight_to_plumbing(porcelain):
+    plumbing = Snowsight()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthcheck_username = (porcelain.healthcheck_username)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.samlMetadata = (porcelain.samlmetadata)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_snowsight_to_plumbing(porcelains):
+    return [
+        convert_snowsight_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_snowsight_to_porcelain(plumbings):
+    return [convert_snowsight_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_sybase_to_porcelain(plumbing):

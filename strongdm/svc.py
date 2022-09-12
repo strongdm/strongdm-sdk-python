@@ -1117,6 +1117,7 @@ class Resources:
     `strongdm.models.Redshift`
     `strongdm.models.SingleStore`
     `strongdm.models.Snowflake`
+    `strongdm.models.Snowsight`
     `strongdm.models.SQLServer`
     `strongdm.models.SSH`
     `strongdm.models.SSHCert`

@@ -793,7 +793,6 @@ class AWSConsole:
         'healthy',
         'id',
         'name',
-        'port',
         'port_override',
         'region',
         'remote_identity_group_id',
@@ -814,7 +813,6 @@ class AWSConsole:
         healthy=None,
         id=None,
         name=None,
-        port=None,
         port_override=None,
         region=None,
         remote_identity_group_id=None,
@@ -847,7 +845,6 @@ class AWSConsole:
         '''
          Unique human-readable name of the Resource.
         '''
-        self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
@@ -873,7 +870,6 @@ class AWSConsole:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
@@ -894,7 +890,6 @@ class AWSConsole:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
-            'port': self.port,
             'port_override': self.port_override,
             'region': self.region,
             'remote_identity_group_id': self.remote_identity_group_id,
@@ -917,7 +912,6 @@ class AWSConsole:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
-            port=d.get('port'),
             port_override=d.get('port_override'),
             region=d.get('region'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
@@ -11475,6 +11469,119 @@ class Snowflake:
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             username=d.get('username'),
+        )
+
+
+class Snowsight:
+    '''
+    Snowsight is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthcheck_username',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'samlmetadata',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthcheck_username=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        samlmetadata=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthcheck_username = healthcheck_username if healthcheck_username is not None else ''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        self.samlmetadata = samlmetadata if samlmetadata is not None else ''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Snowsight ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_username: ' + repr(self.healthcheck_username) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'samlmetadata: ' + repr(self.samlmetadata) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthcheck_username': self.healthcheck_username,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'samlmetadata': self.samlmetadata,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_username=d.get('healthcheck_username'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            samlmetadata=d.get('samlmetadata'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
         )
 
 
