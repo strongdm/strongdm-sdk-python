@@ -5618,6 +5618,7 @@ class HTTPAuth:
         'headers_blacklist',
         'healthcheck_path',
         'healthy',
+        'host_override',
         'id',
         'name',
         'secret_store_id',
@@ -5635,6 +5636,7 @@ class HTTPAuth:
         headers_blacklist=None,
         healthcheck_path=None,
         healthy=None,
+        host_override=None,
         id=None,
         name=None,
         secret_store_id=None,
@@ -5658,6 +5660,7 @@ class HTTPAuth:
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
+        self.host_override = host_override if host_override is not None else ''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5686,6 +5689,7 @@ class HTTPAuth:
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -5703,6 +5707,7 @@ class HTTPAuth:
             'headers_blacklist': self.headers_blacklist,
             'healthcheck_path': self.healthcheck_path,
             'healthy': self.healthy,
+            'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
             'secret_store_id': self.secret_store_id,
@@ -5721,6 +5726,7 @@ class HTTPAuth:
             headers_blacklist=d.get('headers_blacklist'),
             healthcheck_path=d.get('healthcheck_path'),
             healthy=d.get('healthy'),
+            host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
             secret_store_id=d.get('secret_store_id'),
@@ -5738,6 +5744,7 @@ class HTTPBasicAuth:
         'headers_blacklist',
         'healthcheck_path',
         'healthy',
+        'host_override',
         'id',
         'name',
         'password',
@@ -5756,6 +5763,7 @@ class HTTPBasicAuth:
         headers_blacklist=None,
         healthcheck_path=None,
         healthy=None,
+        host_override=None,
         id=None,
         name=None,
         password=None,
@@ -5780,6 +5788,7 @@ class HTTPBasicAuth:
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
+        self.host_override = host_override if host_override is not None else ''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5809,6 +5818,7 @@ class HTTPBasicAuth:
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -5827,6 +5837,7 @@ class HTTPBasicAuth:
             'headers_blacklist': self.headers_blacklist,
             'healthcheck_path': self.healthcheck_path,
             'healthy': self.healthy,
+            'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
             'password': self.password,
@@ -5846,6 +5857,7 @@ class HTTPBasicAuth:
             headers_blacklist=d.get('headers_blacklist'),
             healthcheck_path=d.get('healthcheck_path'),
             healthy=d.get('healthy'),
+            host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
             password=d.get('password'),
@@ -5865,6 +5877,7 @@ class HTTPNoAuth:
         'headers_blacklist',
         'healthcheck_path',
         'healthy',
+        'host_override',
         'id',
         'name',
         'secret_store_id',
@@ -5881,6 +5894,7 @@ class HTTPNoAuth:
         headers_blacklist=None,
         healthcheck_path=None,
         healthy=None,
+        host_override=None,
         id=None,
         name=None,
         secret_store_id=None,
@@ -5903,6 +5917,7 @@ class HTTPNoAuth:
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
+        self.host_override = host_override if host_override is not None else ''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5930,6 +5945,7 @@ class HTTPNoAuth:
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
             'healthcheck_path: ' + repr(self.healthcheck_path) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
+            'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -5946,6 +5962,7 @@ class HTTPNoAuth:
             'headers_blacklist': self.headers_blacklist,
             'healthcheck_path': self.healthcheck_path,
             'healthy': self.healthy,
+            'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
             'secret_store_id': self.secret_store_id,
@@ -5963,6 +5980,7 @@ class HTTPNoAuth:
             headers_blacklist=d.get('headers_blacklist'),
             healthcheck_path=d.get('healthcheck_path'),
             healthy=d.get('healthy'),
+            host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
             secret_store_id=d.get('secret_store_id'),
