@@ -38,7 +38,7 @@ setup(
         'database', 'server', 'ssh', 'rdp'
     ],
     install_requires=[
-        'grpcio==1.42.0',
+        'grpcio>=1.42.0',
         'googleapis-common-protos>1.56.2,<2',
     ],
     classifiers=[
