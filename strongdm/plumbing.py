@@ -1545,58 +1545,6 @@ def convert_repeated_azure_certificate_to_porcelain(plumbings):
     ]
 
 
-def convert_azure_mysql_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.AzureMysql()
-    porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.database = (plumbing.database)
-    porcelain.egress_filter = (plumbing.egress_filter)
-    porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.password = (plumbing.password)
-    porcelain.port = (plumbing.port)
-    porcelain.port_override = (plumbing.port_override)
-    porcelain.secret_store_id = (plumbing.secret_store_id)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.username = (plumbing.username)
-    return porcelain
-
-
-def convert_azure_mysql_to_plumbing(porcelain):
-    plumbing = AzureMysql()
-    if porcelain is None:
-        return plumbing
-    plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.database = (porcelain.database)
-    plumbing.egress_filter = (porcelain.egress_filter)
-    plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.password = (porcelain.password)
-    plumbing.port = (porcelain.port)
-    plumbing.port_override = (porcelain.port_override)
-    plumbing.secret_store_id = (porcelain.secret_store_id)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.username = (porcelain.username)
-    return plumbing
-
-
-def convert_repeated_azure_mysql_to_plumbing(porcelains):
-    return [
-        convert_azure_mysql_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_azure_mysql_to_porcelain(plumbings):
-    return [
-        convert_azure_mysql_to_porcelain(plumbing) for plumbing in plumbings
-    ]
-
-
 def convert_azure_postgres_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2547,7 +2495,6 @@ def convert_elasticache_redis_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     porcelain.tls_required = (plumbing.tls_required)
-    porcelain.username = (plumbing.username)
     return porcelain
 
 
@@ -2567,7 +2514,6 @@ def convert_elasticache_redis_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     plumbing.tls_required = (porcelain.tls_required)
-    plumbing.username = (porcelain.username)
     return plumbing
 
 
@@ -2662,15 +2608,12 @@ def convert_gateway_to_porcelain(plumbing):
         return None
     porcelain = models.Gateway()
     porcelain.bind_address = (plumbing.bind_address)
-    porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
     porcelain.listen_address = (plumbing.listen_address)
-    porcelain.location = (plumbing.location)
     porcelain.name = (plumbing.name)
     porcelain.state = (plumbing.state)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.version = (plumbing.version)
     return porcelain
 
 
@@ -2679,15 +2622,12 @@ def convert_gateway_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_address = (porcelain.bind_address)
-    plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)
     plumbing.listen_address = (porcelain.listen_address)
-    plumbing.location = (porcelain.location)
     plumbing.name = (porcelain.name)
     plumbing.state = (porcelain.state)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.version = (porcelain.version)
     return plumbing
 
 
@@ -4552,8 +4492,6 @@ def convert_redis_to_porcelain(plumbing):
     porcelain.port_override = (plumbing.port_override)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.tls_required = (plumbing.tls_required)
-    porcelain.username = (plumbing.username)
     return porcelain
 
 
@@ -4572,8 +4510,6 @@ def convert_redis_to_plumbing(porcelain):
     plumbing.port_override = (porcelain.port_override)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.tls_required = (porcelain.tls_required)
-    plumbing.username = (porcelain.username)
     return plumbing
 
 
@@ -4641,14 +4577,11 @@ def convert_relay_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Relay()
-    porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
-    porcelain.location = (plumbing.location)
     porcelain.name = (plumbing.name)
     porcelain.state = (plumbing.state)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.version = (plumbing.version)
     return porcelain
 
 
@@ -4656,14 +4589,11 @@ def convert_relay_to_plumbing(porcelain):
     plumbing = Relay()
     if porcelain is None:
         return plumbing
-    plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)
-    plumbing.location = (porcelain.location)
     plumbing.name = (porcelain.name)
     plumbing.state = (porcelain.state)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.version = (porcelain.version)
     return plumbing
 
 
@@ -4990,9 +4920,6 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AzureCertificate):
         plumbing.azure_certificate.CopyFrom(
             convert_azure_certificate_to_plumbing(porcelain))
-    if isinstance(porcelain, models.AzureMysql):
-        plumbing.azure_mysql.CopyFrom(
-            convert_azure_mysql_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzurePostgres):
         plumbing.azure_postgres.CopyFrom(
             convert_azure_postgres_to_plumbing(porcelain))
@@ -5175,8 +5102,6 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('azure_certificate'):
         return convert_azure_certificate_to_porcelain(
             plumbing.azure_certificate)
-    if plumbing.HasField('azure_mysql'):
-        return convert_azure_mysql_to_porcelain(plumbing.azure_mysql)
     if plumbing.HasField('azure_postgres'):
         return convert_azure_postgres_to_porcelain(plumbing.azure_postgres)
     if plumbing.HasField('big_query'):
@@ -5475,7 +5400,6 @@ def convert_role_to_porcelain(plumbing):
     porcelain.access_rules = convert_access_rules_to_porcelain(
         plumbing.access_rules)
     porcelain.id = (plumbing.id)
-    porcelain.managed_by = (plumbing.managed_by)
     porcelain.name = (plumbing.name)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -5488,7 +5412,6 @@ def convert_role_to_plumbing(porcelain):
     plumbing.access_rules = convert_access_rules_to_plumbing(
         porcelain.access_rules)
     plumbing.id = (porcelain.id)
-    plumbing.managed_by = (porcelain.managed_by)
     plumbing.name = (porcelain.name)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
@@ -6482,12 +6405,9 @@ def convert_user_to_porcelain(plumbing):
         return None
     porcelain = models.User()
     porcelain.email = (plumbing.email)
-    porcelain.external_id = (plumbing.external_id)
     porcelain.first_name = (plumbing.first_name)
     porcelain.id = (plumbing.id)
     porcelain.last_name = (plumbing.last_name)
-    porcelain.managed_by = (plumbing.managed_by)
-    porcelain.permission_level = (plumbing.permission_level)
     porcelain.suspended = (plumbing.suspended)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -6498,12 +6418,9 @@ def convert_user_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.email = (porcelain.email)
-    plumbing.external_id = (porcelain.external_id)
     plumbing.first_name = (porcelain.first_name)
     plumbing.id = (porcelain.id)
     plumbing.last_name = (porcelain.last_name)
-    plumbing.managed_by = (porcelain.managed_by)
-    plumbing.permission_level = (porcelain.permission_level)
     plumbing.suspended = (porcelain.suspended)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
