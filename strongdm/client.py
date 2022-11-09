@@ -64,6 +64,7 @@ class Client:
                 channel = grpc.secure_channel(host, creds)
         except Exception as e:
             raise plumbing.convert_error_to_porcelain(e) from e
+        self.channel = channel
         self.account_attachments = svc.AccountAttachments(channel, self)
         '''
          AccountAttachments assign an account to a role.
@@ -132,6 +133,16 @@ class Client:
 
         See `strongdm.svc.SecretStores`.
         '''
+
+    def close(self):
+        '''Closes this Client and releases all resources held by it.
+
+        Closing the Client will immediately terminate all RPCs active with the
+        Client and it is not valid to invoke new RPCs with the Client.
+
+        This method is idempotent.
+        '''
+        self.channel.close()
 
     def get_metadata(self, method_name, req):
         return [
