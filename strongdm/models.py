@@ -10371,6 +10371,7 @@ class Role:
     __slots__ = [
         'access_rules',
         'id',
+        'managed_by',
         'name',
         'tags',
     ]
@@ -10379,6 +10380,7 @@ class Role:
         self,
         access_rules=None,
         id=None,
+        managed_by=None,
         name=None,
         tags=None,
     ):
@@ -10390,6 +10392,10 @@ class Role:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Role.
+        '''
+        self.managed_by = managed_by if managed_by is not None else ''
+        '''
+         Managed By is a read only field for what service manages this role, e.g. StrongDM, Okta, Azure.
         '''
         self.name = name if name is not None else ''
         '''
@@ -10404,6 +10410,7 @@ class Role:
         return '<sdm.Role ' + \
             'access_rules: ' + repr(self.access_rules) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'managed_by: ' + repr(self.managed_by) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -10412,6 +10419,7 @@ class Role:
         return {
             'access_rules': self.access_rules,
             'id': self.id,
+            'managed_by': self.managed_by,
             'name': self.name,
             'tags': self.tags,
         }
@@ -10421,6 +10429,7 @@ class Role:
         return cls(
             access_rules=d.get('access_rules'),
             id=d.get('id'),
+            managed_by=d.get('managed_by'),
             name=d.get('name'),
             tags=d.get('tags'),
         )
@@ -12191,9 +12200,12 @@ class User:
     '''
     __slots__ = [
         'email',
+        'external_id',
         'first_name',
         'id',
         'last_name',
+        'managed_by',
+        'permission_level',
         'suspended',
         'tags',
     ]
@@ -12201,15 +12213,22 @@ class User:
     def __init__(
         self,
         email=None,
+        external_id=None,
         first_name=None,
         id=None,
         last_name=None,
+        managed_by=None,
+        permission_level=None,
         suspended=None,
         tags=None,
     ):
         self.email = email if email is not None else ''
         '''
          The User's email address. Must be unique.
+        '''
+        self.external_id = external_id if external_id is not None else ''
+        '''
+         External ID is an alternative unique ID this user is represented by within an external service.
         '''
         self.first_name = first_name if first_name is not None else ''
         '''
@@ -12223,6 +12242,14 @@ class User:
         '''
          The User's last name.
         '''
+        self.managed_by = managed_by if managed_by is not None else ''
+        '''
+         Managed By is a read only field for what service manages this user, e.g. StrongDM, Okta, Azure.
+        '''
+        self.permission_level = permission_level if permission_level is not None else ''
+        '''
+         PermissionLevel is a read only field for the user's permission level e.g. admin, DBA, user.
+        '''
         self.suspended = suspended if suspended is not None else False
         '''
          The User's suspended state.
@@ -12235,9 +12262,12 @@ class User:
     def __repr__(self):
         return '<sdm.User ' + \
             'email: ' + repr(self.email) + ' ' +\
+            'external_id: ' + repr(self.external_id) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
+            'managed_by: ' + repr(self.managed_by) + ' ' +\
+            'permission_level: ' + repr(self.permission_level) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -12245,9 +12275,12 @@ class User:
     def to_dict(self):
         return {
             'email': self.email,
+            'external_id': self.external_id,
             'first_name': self.first_name,
             'id': self.id,
             'last_name': self.last_name,
+            'managed_by': self.managed_by,
+            'permission_level': self.permission_level,
             'suspended': self.suspended,
             'tags': self.tags,
         }
@@ -12256,9 +12289,12 @@ class User:
     def from_dict(cls, d):
         return cls(
             email=d.get('email'),
+            external_id=d.get('external_id'),
             first_name=d.get('first_name'),
             id=d.get('id'),
             last_name=d.get('last_name'),
+            managed_by=d.get('managed_by'),
+            permission_level=d.get('permission_level'),
             suspended=d.get('suspended'),
             tags=d.get('tags'),
         )

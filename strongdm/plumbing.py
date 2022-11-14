@@ -5469,6 +5469,7 @@ def convert_role_to_porcelain(plumbing):
     porcelain.access_rules = convert_access_rules_to_porcelain(
         plumbing.access_rules)
     porcelain.id = (plumbing.id)
+    porcelain.managed_by = (plumbing.managed_by)
     porcelain.name = (plumbing.name)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -5481,6 +5482,7 @@ def convert_role_to_plumbing(porcelain):
     plumbing.access_rules = convert_access_rules_to_plumbing(
         porcelain.access_rules)
     plumbing.id = (porcelain.id)
+    plumbing.managed_by = (porcelain.managed_by)
     plumbing.name = (porcelain.name)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
@@ -6474,9 +6476,12 @@ def convert_user_to_porcelain(plumbing):
         return None
     porcelain = models.User()
     porcelain.email = (plumbing.email)
+    porcelain.external_id = (plumbing.external_id)
     porcelain.first_name = (plumbing.first_name)
     porcelain.id = (plumbing.id)
     porcelain.last_name = (plumbing.last_name)
+    porcelain.managed_by = (plumbing.managed_by)
+    porcelain.permission_level = (plumbing.permission_level)
     porcelain.suspended = (plumbing.suspended)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -6487,9 +6492,12 @@ def convert_user_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.email = (porcelain.email)
+    plumbing.external_id = (porcelain.external_id)
     plumbing.first_name = (porcelain.first_name)
     plumbing.id = (porcelain.id)
     plumbing.last_name = (porcelain.last_name)
+    plumbing.managed_by = (porcelain.managed_by)
+    plumbing.permission_level = (porcelain.permission_level)
     plumbing.suspended = (porcelain.suspended)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
