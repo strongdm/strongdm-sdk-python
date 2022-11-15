@@ -5263,28 +5263,39 @@ class Gateway:
     '''
     __slots__ = [
         'bind_address',
+        'device',
         'gateway_filter',
         'id',
         'listen_address',
+        'location',
         'name',
         'state',
         'tags',
+        'version',
     ]
 
     def __init__(
         self,
         bind_address=None,
+        device=None,
         gateway_filter=None,
         id=None,
         listen_address=None,
+        location=None,
         name=None,
         state=None,
         tags=None,
+        version=None,
     ):
         self.bind_address = bind_address if bind_address is not None else ''
         '''
          The hostname/port tuple which the gateway daemon will bind to.
          If not provided on create, set to "0.0.0.0:listen_address_port".
+        '''
+        self.device = device if device is not None else ''
+        '''
+         Device is a read only device name uploaded by the gateway process when 
+         it comes online.
         '''
         self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
@@ -5299,6 +5310,11 @@ class Gateway:
         '''
          The public hostname/port tuple at which the gateway will be accessible to clients.
         '''
+        self.location = location if location is not None else ''
+        '''
+         Location is a read only network location uploaded by the gateway process
+         when it comes online.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
@@ -5312,39 +5328,53 @@ class Gateway:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.version = version if version is not None else ''
+        '''
+         Version is a read only sdm binary version uploaded by the gateway process
+         when it comes online.
+        '''
 
     def __repr__(self):
         return '<sdm.Gateway ' + \
             'bind_address: ' + repr(self.bind_address) + ' ' +\
+            'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'listen_address: ' + repr(self.listen_address) + ' ' +\
+            'location: ' + repr(self.location) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'version: ' + repr(self.version) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'bind_address': self.bind_address,
+            'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
             'listen_address': self.listen_address,
+            'location': self.location,
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
+            'version': self.version,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
             bind_address=d.get('bind_address'),
+            device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
             listen_address=d.get('listen_address'),
+            location=d.get('location'),
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),
+            version=d.get('version'),
         )
 
 
@@ -9677,21 +9707,32 @@ class Relay:
          Relay represents a StrongDM CLI installation running in relay mode.
     '''
     __slots__ = [
+        'device',
         'gateway_filter',
         'id',
+        'location',
         'name',
         'state',
         'tags',
+        'version',
     ]
 
     def __init__(
         self,
+        device=None,
         gateway_filter=None,
         id=None,
+        location=None,
         name=None,
         state=None,
         tags=None,
+        version=None,
     ):
+        self.device = device if device is not None else ''
+        '''
+         Device is a read only device name uploaded by the gateway process when 
+         it comes online.
+        '''
         self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
          GatewayFilter can be used to restrict the peering between relays and
@@ -9700,6 +9741,11 @@ class Relay:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Relay.
+        '''
+        self.location = location if location is not None else ''
+        '''
+         Location is a read only network location uploaded by the gateway process
+         when it comes online.
         '''
         self.name = name if name is not None else ''
         '''
@@ -9715,33 +9761,47 @@ class Relay:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.version = version if version is not None else ''
+        '''
+         Version is a read only sdm binary version uploaded by the gateway process
+         when it comes online.
+        '''
 
     def __repr__(self):
         return '<sdm.Relay ' + \
+            'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'location: ' + repr(self.location) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'version: ' + repr(self.version) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
+            'location': self.location,
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
+            'version': self.version,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
+            location=d.get('location'),
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),
+            version=d.get('version'),
         )
 
 
@@ -10311,6 +10371,7 @@ class Role:
     __slots__ = [
         'access_rules',
         'id',
+        'managed_by',
         'name',
         'tags',
     ]
@@ -10319,6 +10380,7 @@ class Role:
         self,
         access_rules=None,
         id=None,
+        managed_by=None,
         name=None,
         tags=None,
     ):
@@ -10330,6 +10392,10 @@ class Role:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Role.
+        '''
+        self.managed_by = managed_by if managed_by is not None else ''
+        '''
+         Managed By is a read only field for what service manages this role, e.g. StrongDM, Okta, Azure.
         '''
         self.name = name if name is not None else ''
         '''
@@ -10344,6 +10410,7 @@ class Role:
         return '<sdm.Role ' + \
             'access_rules: ' + repr(self.access_rules) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'managed_by: ' + repr(self.managed_by) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -10352,6 +10419,7 @@ class Role:
         return {
             'access_rules': self.access_rules,
             'id': self.id,
+            'managed_by': self.managed_by,
             'name': self.name,
             'tags': self.tags,
         }
@@ -10361,6 +10429,7 @@ class Role:
         return cls(
             access_rules=d.get('access_rules'),
             id=d.get('id'),
+            managed_by=d.get('managed_by'),
             name=d.get('name'),
             tags=d.get('tags'),
         )
@@ -12131,9 +12200,12 @@ class User:
     '''
     __slots__ = [
         'email',
+        'external_id',
         'first_name',
         'id',
         'last_name',
+        'managed_by',
+        'permission_level',
         'suspended',
         'tags',
     ]
@@ -12141,15 +12213,22 @@ class User:
     def __init__(
         self,
         email=None,
+        external_id=None,
         first_name=None,
         id=None,
         last_name=None,
+        managed_by=None,
+        permission_level=None,
         suspended=None,
         tags=None,
     ):
         self.email = email if email is not None else ''
         '''
          The User's email address. Must be unique.
+        '''
+        self.external_id = external_id if external_id is not None else ''
+        '''
+         External ID is an alternative unique ID this user is represented by within an external service.
         '''
         self.first_name = first_name if first_name is not None else ''
         '''
@@ -12163,6 +12242,14 @@ class User:
         '''
          The User's last name.
         '''
+        self.managed_by = managed_by if managed_by is not None else ''
+        '''
+         Managed By is a read only field for what service manages this user, e.g. StrongDM, Okta, Azure.
+        '''
+        self.permission_level = permission_level if permission_level is not None else ''
+        '''
+         PermissionLevel is a read only field for the user's permission level e.g. admin, DBA, user.
+        '''
         self.suspended = suspended if suspended is not None else False
         '''
          The User's suspended state.
@@ -12175,9 +12262,12 @@ class User:
     def __repr__(self):
         return '<sdm.User ' + \
             'email: ' + repr(self.email) + ' ' +\
+            'external_id: ' + repr(self.external_id) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
+            'managed_by: ' + repr(self.managed_by) + ' ' +\
+            'permission_level: ' + repr(self.permission_level) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
@@ -12185,9 +12275,12 @@ class User:
     def to_dict(self):
         return {
             'email': self.email,
+            'external_id': self.external_id,
             'first_name': self.first_name,
             'id': self.id,
             'last_name': self.last_name,
+            'managed_by': self.managed_by,
+            'permission_level': self.permission_level,
             'suspended': self.suspended,
             'tags': self.tags,
         }
@@ -12196,9 +12289,12 @@ class User:
     def from_dict(cls, d):
         return cls(
             email=d.get('email'),
+            external_id=d.get('external_id'),
             first_name=d.get('first_name'),
             id=d.get('id'),
             last_name=d.get('last_name'),
+            managed_by=d.get('managed_by'),
+            permission_level=d.get('permission_level'),
             suspended=d.get('suspended'),
             tags=d.get('tags'),
         )
