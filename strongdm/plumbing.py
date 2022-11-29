@@ -2547,6 +2547,7 @@ def convert_elasticache_redis_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
     return porcelain
 
 
@@ -2566,6 +2567,7 @@ def convert_elasticache_redis_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     plumbing.tls_required = (porcelain.tls_required)
+    plumbing.username = (porcelain.username)
     return plumbing
 
 
@@ -4550,6 +4552,8 @@ def convert_redis_to_porcelain(plumbing):
     porcelain.port_override = (plumbing.port_override)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
     return porcelain
 
 
@@ -4568,6 +4572,8 @@ def convert_redis_to_plumbing(porcelain):
     plumbing.port_override = (porcelain.port_override)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
+    plumbing.username = (porcelain.username)
     return plumbing
 
 

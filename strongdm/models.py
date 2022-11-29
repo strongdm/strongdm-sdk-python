@@ -5004,6 +5004,7 @@ class ElasticacheRedis:
         'secret_store_id',
         'tags',
         'tls_required',
+        'username',
     ]
 
     def __init__(
@@ -5020,6 +5021,7 @@ class ElasticacheRedis:
         secret_store_id=None,
         tags=None,
         tls_required=None,
+        username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -5054,6 +5056,7 @@ class ElasticacheRedis:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        self.username = username if username is not None else ''
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
@@ -5069,6 +5072,7 @@ class ElasticacheRedis:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -5085,6 +5089,7 @@ class ElasticacheRedis:
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
             'tls_required': self.tls_required,
+            'username': self.username,
         }
 
     @classmethod
@@ -5102,6 +5107,7 @@ class ElasticacheRedis:
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
+            username=d.get('username'),
         )
 
 
@@ -9479,6 +9485,8 @@ class Redis:
         'port_override',
         'secret_store_id',
         'tags',
+        'tls_required',
+        'username',
     ]
 
     def __init__(
@@ -9494,6 +9502,8 @@ class Redis:
         port_override=None,
         secret_store_id=None,
         tags=None,
+        tls_required=None,
+        username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -9527,6 +9537,8 @@ class Redis:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        self.username = username if username is not None else ''
 
     def __repr__(self):
         return '<sdm.Redis ' + \
@@ -9541,6 +9553,8 @@ class Redis:
             'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -9556,6 +9570,8 @@ class Redis:
             'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
         }
 
     @classmethod
@@ -9572,6 +9588,8 @@ class Redis:
             port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
         )
 
 
