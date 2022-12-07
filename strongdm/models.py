@@ -4048,6 +4048,65 @@ class CyberarkPAMExperimentalStore:
         )
 
 
+class CyberarkPAMStore:
+    '''
+    CyberarkPAMStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'appurl',
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        appurl=None,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.appurl = appurl if appurl is not None else ''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CyberarkPAMStore ' + \
+            'appurl: ' + repr(self.appurl) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'appurl': self.appurl,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            appurl=d.get('appurl'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
 class DB2I:
     __slots__ = [
         'bind_interface',
