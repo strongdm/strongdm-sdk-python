@@ -1068,6 +1068,7 @@ class Resources:
     `strongdm.models.AWSConsoleStaticKeyPair`
     `strongdm.models.Azure`
     `strongdm.models.AzureCertificate`
+    `strongdm.models.AzureMysql`
     `strongdm.models.AzurePostgres`
     `strongdm.models.BigQuery`
     `strongdm.models.Cassandra`
