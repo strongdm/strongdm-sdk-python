@@ -2112,6 +2112,42 @@ def convert_repeated_cyberark_pam_experimental_store_to_porcelain(plumbings):
     ]
 
 
+def convert_cyberark_pam_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CyberarkPAMStore()
+    porcelain.appurl = (plumbing.appURL)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_cyberark_pam_store_to_plumbing(porcelain):
+    plumbing = CyberarkPAMStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.appURL = (porcelain.appurl)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_cyberark_pam_store_to_plumbing(porcelains):
+    return [
+        convert_cyberark_pam_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_cyberark_pam_store_to_porcelain(plumbings):
+    return [
+        convert_cyberark_pam_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_db_2_i_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5890,6 +5926,9 @@ def convert_secret_store_to_plumbing(porcelain):
     if isinstance(porcelain, models.CyberarkConjurStore):
         plumbing.cyberark_conjur.CopyFrom(
             convert_cyberark_conjur_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.CyberarkPAMStore):
+        plumbing.cyberark_pam.CopyFrom(
+            convert_cyberark_pam_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.CyberarkPAMExperimentalStore):
         plumbing.cyberark_pam_experimental.CopyFrom(
             convert_cyberark_pam_experimental_store_to_plumbing(porcelain))
@@ -5919,6 +5958,8 @@ def convert_secret_store_to_porcelain(plumbing):
     if plumbing.HasField('cyberark_conjur'):
         return convert_cyberark_conjur_store_to_porcelain(
             plumbing.cyberark_conjur)
+    if plumbing.HasField('cyberark_pam'):
+        return convert_cyberark_pam_store_to_porcelain(plumbing.cyberark_pam)
     if plumbing.HasField('cyberark_pam_experimental'):
         return convert_cyberark_pam_experimental_store_to_porcelain(
             plumbing.cyberark_pam_experimental)
