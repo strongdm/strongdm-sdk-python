@@ -1057,6 +1057,7 @@ class Resources:
     `strongdm.models.AKSServiceAccountUserImpersonation`
     `strongdm.models.AKSUserImpersonation`
     `strongdm.models.AmazonEKS`
+    `strongdm.models.AmazonEKSInstanceProfile`
     `strongdm.models.AmazonEKSUserImpersonation`
     `strongdm.models.AmazonES`
     `strongdm.models.AmazonMQAMQP091`
