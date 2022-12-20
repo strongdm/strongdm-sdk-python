@@ -111,6 +111,15 @@
                 </ul>
 
             </li>
+            <li>
+                    <a class="class" href="#UnknownError">UnknownError</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#UnknownError.__init__">UnknownError</a>
+                        </li>
+                </ul>
+
+            </li>
     </ul>
 
 
@@ -203,6 +212,12 @@
 </span><span id="L-69"><a href="#L-69"><span class="linenos">69</span></a>    <span class="sd">&#39;&#39;&#39;Used when a request takes too long&#39;&#39;&#39;</span>
 </span><span id="L-70"><a href="#L-70"><span class="linenos">70</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="L-71"><a href="#L-71"><span class="linenos">71</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;deadline exceeded&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos">72</span></a>
+</span><span id="L-73"><a href="#L-73"><span class="linenos">73</span></a>
+</span><span id="L-74"><a href="#L-74"><span class="linenos">74</span></a><span class="k">class</span> <span class="nc">UnknownError</span><span class="p">(</span><span class="n">RPCError</span><span class="p">):</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos">75</span></a>    <span class="sd">&#39;&#39;&#39;Generic wrapper that indicates an unknown internal error in the SDK.&#39;&#39;&#39;</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos">76</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos">77</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -665,6 +680,57 @@
                                     <div><dt>builtins.BaseException</dt>
                                 <dd id="TimeoutError.with_traceback" class="function">with_traceback</dd>
                 <dd id="TimeoutError.args" class="variable">args</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="UnknownError">
+                            <input id="UnknownError-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">UnknownError</span><wbr>(<span class="base"><a href="#RPCError">RPCError</a></span>):
+
+                <label class="view-source-button" for="UnknownError-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#UnknownError"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="UnknownError-75"><a href="#UnknownError-75"><span class="linenos">75</span></a><span class="k">class</span> <span class="nc">UnknownError</span><span class="p">(</span><span class="n">RPCError</span><span class="p">):</span>
+</span><span id="UnknownError-76"><a href="#UnknownError-76"><span class="linenos">76</span></a>    <span class="sd">&#39;&#39;&#39;Generic wrapper that indicates an unknown internal error in the SDK.&#39;&#39;&#39;</span>
+</span><span id="UnknownError-77"><a href="#UnknownError-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+</span><span id="UnknownError-78"><a href="#UnknownError-78"><span class="linenos">78</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Generic wrapper that indicates an unknown internal error in the SDK.</p>
+</div>
+
+
+                            <div id="UnknownError.__init__" class="classattr">
+                                        <input id="UnknownError.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">UnknownError</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">msg</span></span>)</span>
+
+                <label class="view-source-button" for="UnknownError.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#UnknownError.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="UnknownError.__init__-77"><a href="#UnknownError.__init__-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+</span><span id="UnknownError.__init__-78"><a href="#UnknownError.__init__-78"><span class="linenos">78</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>builtins.BaseException</dt>
+                                <dd id="UnknownError.with_traceback" class="function">with_traceback</dd>
+                <dd id="UnknownError.args" class="variable">args</dd>
 
             </div>
                                 </dl>

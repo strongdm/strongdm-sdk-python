@@ -597,7 +597,8 @@ def convert_account_to_porcelain(plumbing):
         return convert_service_to_porcelain(plumbing.service)
     if plumbing.HasField('user'):
         return convert_user_to_porcelain(plumbing.user)
-    return None
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
 
 
 def convert_repeated_account_to_plumbing(porcelains):
@@ -4078,7 +4079,8 @@ def convert_node_to_porcelain(plumbing):
         return convert_gateway_to_porcelain(plumbing.gateway)
     if plumbing.HasField('relay'):
         return convert_relay_to_porcelain(plumbing.relay)
-    return None
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
 
 
 def convert_repeated_node_to_plumbing(porcelains):
@@ -5339,7 +5341,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_sybase_iq_to_porcelain(plumbing.sybase_iq)
     if plumbing.HasField('teradata'):
         return convert_teradata_to_porcelain(plumbing.teradata)
-    return None
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
 
 
 def convert_repeated_resource_to_plumbing(porcelains):
@@ -5974,7 +5977,8 @@ def convert_secret_store_to_porcelain(plumbing):
         return convert_vault_tls_store_to_porcelain(plumbing.vault_tls)
     if plumbing.HasField('vault_token'):
         return convert_vault_token_store_to_porcelain(plumbing.vault_token)
-    return None
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
 
 
 def convert_repeated_secret_store_to_plumbing(porcelains):
@@ -6707,7 +6711,7 @@ def get_status_metadata(err):
 
 def convert_error_to_porcelain(err):
     if not isinstance(err, grpc.RpcError):
-        return errors.RPCError(str(err), 2)  # Unknown
+        return errors.UnknownError(str(err))
     # get_status_metadata fails for deadline exceeded
     if err.code().name == 'DEADLINE_EXCEEDED':
         return errors.TimeoutError()

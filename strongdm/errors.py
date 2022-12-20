@@ -69,3 +69,9 @@ class TimeoutError(RPCError):
     '''Used when a request takes too long'''
     def __init__(self):
         super().__init__('deadline exceeded', 4)
+
+
+class UnknownError(RPCError):
+    '''Generic wrapper that indicates an unknown internal error in the SDK.'''
+    def __init__(self, msg):
+        super().__init__(msg, 2)
