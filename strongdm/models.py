@@ -1914,6 +1914,150 @@ class AmazonEKS:
         )
 
 
+class AmazonEKSInstanceProfile:
+    __slots__ = [
+        'bind_interface',
+        'certificate_authority',
+        'cluster_name',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'region',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
+        'role_arn',
+        'role_external_id',
+        'secret_store_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        certificate_authority=None,
+        cluster_name=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        region=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_store_id=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        self.cluster_name = cluster_name if cluster_name is not None else ''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.endpoint = endpoint if endpoint is not None else ''
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.region = region if region is not None else ''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        self.role_arn = role_arn if role_arn is not None else ''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AmazonEKSInstanceProfile ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'certificate_authority': self.certificate_authority,
+            'cluster_name': self.cluster_name,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_store_id': self.secret_store_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            certificate_authority=d.get('certificate_authority'),
+            cluster_name=d.get('cluster_name'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            tags=d.get('tags'),
+        )
+
+
 class AmazonEKSUserImpersonation:
     __slots__ = [
         'access_key',

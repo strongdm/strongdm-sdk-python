@@ -1132,6 +1132,68 @@ def convert_repeated_amazon_eks_to_porcelain(plumbings):
     ]
 
 
+def convert_amazon_eks_instance_profile_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AmazonEKSInstanceProfile()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.cluster_name = (plumbing.cluster_name)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.region = (plumbing.region)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.remote_identity_healthcheck_username = (
+        plumbing.remote_identity_healthcheck_username)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_amazon_eks_instance_profile_to_plumbing(porcelain):
+    plumbing = AmazonEKSInstanceProfile()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.certificate_authority = (porcelain.certificate_authority)
+    plumbing.cluster_name = (porcelain.cluster_name)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.endpoint = (porcelain.endpoint)
+    plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.region = (porcelain.region)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.remote_identity_healthcheck_username = (
+        porcelain.remote_identity_healthcheck_username)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_amazon_eks_instance_profile_to_plumbing(porcelains):
+    return [
+        convert_amazon_eks_instance_profile_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_amazon_eks_instance_profile_to_porcelain(plumbings):
+    return [
+        convert_amazon_eks_instance_profile_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_amazon_eks_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4999,6 +5061,9 @@ def convert_resource_to_plumbing(porcelain):
             convert_aks_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEKS):
         plumbing.amazon_eks.CopyFrom(convert_amazon_eks_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AmazonEKSInstanceProfile):
+        plumbing.amazon_eks_instance_profile.CopyFrom(
+            convert_amazon_eks_instance_profile_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonEKSUserImpersonation):
         plumbing.amazon_eks_user_impersonation.CopyFrom(
             convert_amazon_eks_user_impersonation_to_plumbing(porcelain))
@@ -5187,6 +5252,9 @@ def convert_resource_to_porcelain(plumbing):
             plumbing.aks_user_impersonation)
     if plumbing.HasField('amazon_eks'):
         return convert_amazon_eks_to_porcelain(plumbing.amazon_eks)
+    if plumbing.HasField('amazon_eks_instance_profile'):
+        return convert_amazon_eks_instance_profile_to_porcelain(
+            plumbing.amazon_eks_instance_profile)
     if plumbing.HasField('amazon_eks_user_impersonation'):
         return convert_amazon_eks_user_impersonation_to_porcelain(
             plumbing.amazon_eks_user_impersonation)
