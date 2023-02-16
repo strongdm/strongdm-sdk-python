@@ -43,7 +43,20 @@ class NodeState:
 
 # Providers responsible for managing roles and users.
 # None, or an empty string, implies the user is managed by strongDM.
+# Deprecated: Please use SCIMProvider instead.
 class Provider:
+    NONE = ""
+    OKTA = "okta"
+    SAIL_POINT = "sailpoint"
+    AZURE = "azure"
+    GENERIC = "generic"
+    ONE_LOGIN = "onelogin"
+    GOOGLE = "google"
+
+
+# Providers responsible for managing roles and users.
+# None, or an empty string, implies the user is managed by strongDM.
+class SCIMProvider:
     NONE = ""
     OKTA = "okta"
     SAIL_POINT = "sailpoint"

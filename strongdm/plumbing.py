@@ -21,6 +21,7 @@ import json
 from google.rpc import status_pb2
 from . import errors
 from . import models
+from google.protobuf.duration_pb2 import Duration
 from google.protobuf.timestamp_pb2 import Timestamp
 import datetime
 from .options_pb2 import *
@@ -68,6 +69,17 @@ def convert_timestamp_to_plumbing(t):
         t = t.astimezone(datetime.timezone.utc)
     res = Timestamp()
     res.FromDatetime(t)
+    return res
+
+
+def convert_duration_to_porcelain(d):
+    return d.ToTimedelta()
+
+
+def convert_duration_to_plumbing(d):
+    res = Duration()
+    if d is not None:
+        res.FromTimedelta(d)
     return res
 
 
