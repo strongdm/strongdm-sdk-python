@@ -24,30 +24,64 @@ from .spec_pb2 import *
 from .spec_pb2_grpc import *
 from .account_attachments_pb2 import *
 from .account_attachments_pb2_grpc import *
+from .account_attachments_history_pb2 import *
+from .account_attachments_history_pb2_grpc import *
 from .account_grants_pb2 import *
 from .account_grants_pb2_grpc import *
+from .account_grants_history_pb2 import *
+from .account_grants_history_pb2_grpc import *
+from .account_permissions_pb2 import *
+from .account_permissions_pb2_grpc import *
+from .account_resources_pb2 import *
+from .account_resources_pb2_grpc import *
 from .tags_pb2 import *
 from .tags_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
+from .accounts_history_pb2 import *
+from .accounts_history_pb2_grpc import *
+from .activities_pb2 import *
+from .activities_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
+from .nodes_history_pb2 import *
+from .nodes_history_pb2_grpc import *
+from .organization_history_pb2 import *
+from .organization_history_pb2_grpc import *
+from .queries_pb2 import *
+from .queries_pb2_grpc import *
 from .remote_identities_pb2 import *
 from .remote_identities_pb2_grpc import *
+from .remote_identities_history_pb2 import *
+from .remote_identities_history_pb2_grpc import *
 from .remote_identity_groups_pb2 import *
 from .remote_identity_groups_pb2_grpc import *
+from .remote_identity_groups_history_pb2 import *
+from .remote_identity_groups_history_pb2_grpc import *
+from .replays_pb2 import *
+from .replays_pb2_grpc import *
 from .resources_pb2 import *
 from .resources_pb2_grpc import *
+from .resources_history_pb2 import *
+from .resources_history_pb2_grpc import *
+from .role_resources_pb2 import *
+from .role_resources_pb2_grpc import *
+from .role_resources_history_pb2 import *
+from .role_resources_history_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+from .roles_history_pb2 import *
+from .roles_history_pb2_grpc import *
 from .secret_store_types_pb2 import *
 from .secret_store_types_pb2_grpc import *
 from .secret_stores_pb2 import *
 from .secret_stores_pb2_grpc import *
+from .secret_stores_history_pb2 import *
+from .secret_stores_history_pb2_grpc import *
 import warnings
 import functools
 
@@ -116,6 +150,9 @@ class AccountAttachments:
          Get reads one AccountAttachment by ID.
         '''
         req = AccountAttachmentGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -184,6 +221,8 @@ class AccountAttachments:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -205,6 +244,76 @@ class AccountAttachments:
                 tries = 0
                 for plumbing_item in plumbing_response.account_attachments:
                     yield plumbing.convert_account_attachment_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccountAttachments:
+    '''
+    SnapshotAccountAttachments exposes the read only methods of the AccountAttachments
+    service for historical queries.
+    '''
+    def __init__(self, account_attachments):
+        self.account_attachments = account_attachments
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one AccountAttachment by ID.
+        '''
+        return self.account_attachments.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountAttachments matching a given set of criteria.
+        '''
+        return self.account_attachments.list(filter, *args, timeout=timeout)
+
+
+class AccountAttachmentsHistory:
+    '''
+     AccountAttachmentsHistory records all changes to the state of an AccountAttachment.
+    See `strongdm.models.AccountAttachmentHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountAttachmentsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountAttachmentHistory records matching a given set of criteria.
+        '''
+        req = AccountAttachmentHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountAttachmentsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_account_attachment_history_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -262,6 +371,9 @@ class AccountGrants:
          Get reads one AccountGrant by ID.
         '''
         req = AccountGrantGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -330,6 +442,8 @@ class AccountGrants:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -357,6 +471,206 @@ class AccountGrants:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class SnapshotAccountGrants:
+    '''
+    SnapshotAccountGrants exposes the read only methods of the AccountGrants
+    service for historical queries.
+    '''
+    def __init__(self, account_grants):
+        self.account_grants = account_grants
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one AccountGrant by ID.
+        '''
+        return self.account_grants.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountGrants matching a given set of criteria.
+        '''
+        return self.account_grants.list(filter, *args, timeout=timeout)
+
+
+class AccountGrantsHistory:
+    '''
+     AccountGrantsHistory records all changes to the state of an AccountGrant.
+    See `strongdm.models.AccountGrantHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountGrantsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountGrantHistory records matching a given set of criteria.
+        '''
+        req = AccountGrantHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountGrantsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_account_grant_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class AccountPermissions:
+    '''
+     AccountPermissions records the granular permissions accounts have, allowing them to execute
+     relevant commands via StrongDM's APIs.
+    See `strongdm.models.AccountPermission`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountPermissionsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Permission records matching a given set of criteria.
+        '''
+        req = AccountPermissionListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountPermissions.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.permissions:
+                    yield plumbing.convert_account_permission_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccountPermissions:
+    '''
+    SnapshotAccountPermissions exposes the read only methods of the AccountPermissions
+    service for historical queries.
+    '''
+    def __init__(self, account_permissions):
+        self.account_permissions = account_permissions
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Permission records matching a given set of criteria.
+        '''
+        return self.account_permissions.list(filter, *args, timeout=timeout)
+
+
+class AccountResources:
+    '''
+     AccountResources enumerates the resources to which accounts have access.
+     The AccountResources service is read-only.
+    See `strongdm.models.AccountResource`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountResourcesStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountResource records matching a given set of criteria.
+        '''
+        req = AccountResourceListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountResources.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.account_resources:
+                    yield plumbing.convert_account_resource_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccountResources:
+    '''
+    SnapshotAccountResources exposes the read only methods of the AccountResources
+    service for historical queries.
+    '''
+    def __init__(self, account_resources):
+        self.account_resources = account_resources
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountResource records matching a given set of criteria.
+        '''
+        return self.account_resources.list(filter, *args, timeout=timeout)
 
 
 class Accounts:
@@ -411,6 +725,9 @@ class Accounts:
          Get reads one Account by ID.
         '''
         req = AccountGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -510,6 +827,8 @@ class Accounts:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -530,6 +849,161 @@ class Accounts:
                 tries = 0
                 for plumbing_item in plumbing_response.accounts:
                     yield plumbing.convert_account_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccounts:
+    '''
+    SnapshotAccounts exposes the read only methods of the Accounts
+    service for historical queries.
+    '''
+    def __init__(self, accounts):
+        self.accounts = accounts
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Account by ID.
+        '''
+        return self.accounts.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Accounts matching a given set of criteria.
+        '''
+        return self.accounts.list(filter, *args, timeout=timeout)
+
+
+class AccountsHistory:
+    '''
+     AccountsHistory records all changes to the state of an Account.
+    See `strongdm.models.AccountHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountHistory records matching a given set of criteria.
+        '''
+        req = AccountHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_account_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Activities:
+    '''
+     An Activity is a record of an action taken against a strongDM deployment, e.g.
+     a user creation, resource deletion, sso configuration change, etc. The Activities
+     service is read-only.
+    See `strongdm.models.Activity`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ActivitiesStub(channel)
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Activity by ID.
+        '''
+        req = ActivityGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Activities.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ActivityGetResponse()
+        resp.activity = plumbing.convert_activity_to_porcelain(
+            plumbing_response.activity)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Activities matching a given set of criteria.
+        '''
+        req = ActivityListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'Activities.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.activities:
+                    yield plumbing.convert_activity_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
@@ -660,6 +1134,9 @@ class Nodes:
          Get reads one Node by ID.
         '''
         req = NodeGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -757,6 +1234,8 @@ class Nodes:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -777,6 +1256,174 @@ class Nodes:
                 tries = 0
                 for plumbing_item in plumbing_response.nodes:
                     yield plumbing.convert_node_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotNodes:
+    '''
+    SnapshotNodes exposes the read only methods of the Nodes
+    service for historical queries.
+    '''
+    def __init__(self, nodes):
+        self.nodes = nodes
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Node by ID.
+        '''
+        return self.nodes.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Nodes matching a given set of criteria.
+        '''
+        return self.nodes.list(filter, *args, timeout=timeout)
+
+
+class NodesHistory:
+    '''
+     NodesHistory records all changes to the state of a Node.
+    See `strongdm.models.NodeHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = NodesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of NodeHistory records matching a given set of criteria.
+        '''
+        req = NodeHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'NodesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_node_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class OrganizationHistory:
+    '''
+     OrganizationHistory records all changes to the state of an Organization.
+    See `strongdm.models.OrganizationHistoryRecord`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = OrganizationHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of OrganizationHistory records matching a given set of criteria.
+        '''
+        req = OrganizationHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'OrganizationHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_organization_history_record_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Queries:
+    '''
+     A Query is a record of a single client request to a resource, such as an SQL query.
+     Long-running SSH, RDP, or Kubernetes interactive sessions also count as queries.
+     The Queries service is read-only.
+    See `strongdm.models.Query`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = QueriesStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Queries matching a given set of criteria.
+        '''
+        req = QueryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Queries.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.queries:
+                    yield plumbing.convert_query_to_porcelain(plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
@@ -833,6 +1480,9 @@ class RemoteIdentities:
          Get reads one RemoteIdentity by ID.
         '''
         req = RemoteIdentityGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -936,6 +1586,8 @@ class RemoteIdentities:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -965,6 +1617,76 @@ class RemoteIdentities:
         return generator(self, req)
 
 
+class SnapshotRemoteIdentities:
+    '''
+    SnapshotRemoteIdentities exposes the read only methods of the RemoteIdentities
+    service for historical queries.
+    '''
+    def __init__(self, remote_identities):
+        self.remote_identities = remote_identities
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one RemoteIdentity by ID.
+        '''
+        return self.remote_identities.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentities matching a given set of criteria.
+        '''
+        return self.remote_identities.list(filter, *args, timeout=timeout)
+
+
+class RemoteIdentitiesHistory:
+    '''
+     RemoteIdentitiesHistory records all changes to the state of a RemoteIdentity.
+    See `strongdm.models.RemoteIdentityHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RemoteIdentitiesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentityHistory records matching a given set of criteria.
+        '''
+        req = RemoteIdentityHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RemoteIdentitiesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_remote_identity_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
 class RemoteIdentityGroups:
     '''
      A RemoteIdentityGroup is a named grouping of Remote Identities for Accounts.
@@ -980,6 +1702,9 @@ class RemoteIdentityGroups:
          Get reads one RemoteIdentityGroup by ID.
         '''
         req = RemoteIdentityGroupGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -1017,6 +1742,8 @@ class RemoteIdentityGroups:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -1038,6 +1765,125 @@ class RemoteIdentityGroups:
                 tries = 0
                 for plumbing_item in plumbing_response.remote_identity_groups:
                     yield plumbing.convert_remote_identity_group_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotRemoteIdentityGroups:
+    '''
+    SnapshotRemoteIdentityGroups exposes the read only methods of the RemoteIdentityGroups
+    service for historical queries.
+    '''
+    def __init__(self, remote_identity_groups):
+        self.remote_identity_groups = remote_identity_groups
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one RemoteIdentityGroup by ID.
+        '''
+        return self.remote_identity_groups.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentityGroups matching a given set of criteria.
+        '''
+        return self.remote_identity_groups.list(filter, *args, timeout=timeout)
+
+
+class RemoteIdentityGroupsHistory:
+    '''
+     RemoteIdentityGroupsHistory records all changes to the state of a RemoteIdentityGroup.
+    See `strongdm.models.RemoteIdentityGroupHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RemoteIdentityGroupsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RemoteIdentityGroupHistory records matching a given set of criteria.
+        '''
+        req = RemoteIdentityGroupHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RemoteIdentityGroupsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_remote_identity_group_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Replays:
+    '''
+     A Replay captures the data transferred over a long-running SSH, RDP, or Kubernetes interactive session
+     (otherwise referred to as a query). The Replays service is read-only.
+    See `strongdm.models.ReplayChunk`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ReplaysStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ReplayChunks for the Query ID specified by the filter criteria.
+        '''
+        req = ReplayListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Replays.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.chunks:
+                    yield plumbing.convert_replay_chunk_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -1141,6 +1987,8 @@ class Resources:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -1207,6 +2055,9 @@ class Resources:
          Get reads one Resource by ID.
         '''
         req = ResourceGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -1307,6 +2158,8 @@ class Resources:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -1328,6 +2181,190 @@ class Resources:
                 tries = 0
                 for plumbing_item in plumbing_response.resources:
                     yield plumbing.convert_resource_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotResources:
+    '''
+    SnapshotResources exposes the read only methods of the Resources
+    service for historical queries.
+    '''
+    def __init__(self, resources):
+        self.resources = resources
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Resource by ID.
+        '''
+        return self.resources.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Resources matching a given set of criteria.
+        '''
+        return self.resources.list(filter, *args, timeout=timeout)
+
+
+class ResourcesHistory:
+    '''
+     ResourcesHistory records all changes to the state of a Resource.
+    See `strongdm.models.ResourceHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ResourcesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ResourceHistory records matching a given set of criteria.
+        '''
+        req = ResourceHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ResourcesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_resource_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class RoleResources:
+    '''
+     RoleResources enumerates the resources to which roles have access.
+     The RoleResources service is read-only.
+    See `strongdm.models.RoleResource`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RoleResourcesStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RoleResource records matching a given set of criteria.
+        '''
+        req = RoleResourceListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RoleResources.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.role_resources:
+                    yield plumbing.convert_role_resource_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotRoleResources:
+    '''
+    SnapshotRoleResources exposes the read only methods of the RoleResources
+    service for historical queries.
+    '''
+    def __init__(self, role_resources):
+        self.role_resources = role_resources
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RoleResource records matching a given set of criteria.
+        '''
+        return self.role_resources.list(filter, *args, timeout=timeout)
+
+
+class RoleResourcesHistory:
+    '''
+     RoleResourcesHistory records all changes to the state of a RoleResource.
+    See `strongdm.models.RoleResourceHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RoleResourcesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RoleResourceHistory records matching a given set of criteria.
+        '''
+        req = RoleResourceHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RoleResourcesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_role_resource_history_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
@@ -1383,6 +2420,9 @@ class Roles:
          Get reads one Role by ID.
         '''
         req = RoleGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -1480,6 +2520,8 @@ class Roles:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -1500,6 +2542,76 @@ class Roles:
                 tries = 0
                 for plumbing_item in plumbing_response.roles:
                     yield plumbing.convert_role_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotRoles:
+    '''
+    SnapshotRoles exposes the read only methods of the Roles
+    service for historical queries.
+    '''
+    def __init__(self, roles):
+        self.roles = roles
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Role by ID.
+        '''
+        return self.roles.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Roles matching a given set of criteria.
+        '''
+        return self.roles.list(filter, *args, timeout=timeout)
+
+
+class RolesHistory:
+    '''
+     RolesHistory records all changes to the state of a Role.
+    See `strongdm.models.RoleHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RolesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of RoleHistory records matching a given set of criteria.
+        '''
+        req = RoleHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'RolesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_role_history_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
@@ -1563,6 +2675,9 @@ class SecretStores:
          Get reads one SecretStore by ID.
         '''
         req = SecretStoreGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.id = (id)
         tries = 0
@@ -1665,6 +2780,8 @@ class SecretStores:
         page_size_option = self.parent._test_options.get('PageSize')
         if isinstance(page_size_option, int):
             req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
         req.filter = plumbing.quote_filter_args(filter, *args)
 
@@ -1686,6 +2803,76 @@ class SecretStores:
                 tries = 0
                 for plumbing_item in plumbing_response.secret_stores:
                     yield plumbing.convert_secret_store_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotSecretStores:
+    '''
+    SnapshotSecretStores exposes the read only methods of the SecretStores
+    service for historical queries.
+    '''
+    def __init__(self, secret_stores):
+        self.secret_stores = secret_stores
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one SecretStore by ID.
+        '''
+        return self.secret_stores.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of SecretStores matching a given set of criteria.
+        '''
+        return self.secret_stores.list(filter, *args, timeout=timeout)
+
+
+class SecretStoresHistory:
+    '''
+     SecretStoresHistory records all changes to the state of a SecretStore.
+    See `strongdm.models.SecretStoreHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = SecretStoresHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of SecretStoreHistory records matching a given set of criteria.
+        '''
+        req = SecretStoreHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'SecretStoresHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_secret_store_history_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break

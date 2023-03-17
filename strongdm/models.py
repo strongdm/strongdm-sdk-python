@@ -1331,6 +1331,70 @@ class AccountAttachmentGetResponse:
         )
 
 
+class AccountAttachmentHistory:
+    '''
+         AccountAttachmentHistory records the state of an AccountAttachment at a given point in time,
+     where every change (create or delete) to an AccountAttachment produces an
+     AccountAttachmentHistory record.
+    '''
+    __slots__ = [
+        'account_attachment',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account_attachment=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.account_attachment = account_attachment if account_attachment is not None else None
+        '''
+         The complete AccountAttachment state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccountAttachment.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this AccountAttachment was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccountAttachment state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountAttachmentHistory ' + \
+            'account_attachment: ' + repr(self.account_attachment) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_attachment': self.account_attachment,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_attachment=d.get('account_attachment'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class AccountCreateResponse:
     '''
          AccountCreateResponse reports how the Accounts were created in the system.
@@ -1705,6 +1769,293 @@ class AccountGrantGetResponse:
         )
 
 
+class AccountGrantHistory:
+    '''
+         AccountGrantHistory records the state of an AccountGrant at a given point in time,
+     where every change (create or delete) to an AccountGrant produces an
+     AccountGrantHistory record.
+    '''
+    __slots__ = [
+        'account_grant',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account_grant=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.account_grant = account_grant if account_grant is not None else None
+        '''
+         The complete AccountGrant state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccountGrant.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this AccountGrant was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccountGrant state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGrantHistory ' + \
+            'account_grant: ' + repr(self.account_grant) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_grant': self.account_grant,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_grant=d.get('account_grant'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class AccountHistory:
+    '''
+         AccountHistory records the state of an Account at a given point in time,
+     where every change (create, update and delete) to an Account produces an
+     AccountHistory record.
+    '''
+    __slots__ = [
+        'account',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.account = account if account is not None else None
+        '''
+         The complete Account state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Account.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Account was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Account state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountHistory ' + \
+            'account: ' + repr(self.account) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account': self.account,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account=d.get('account'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class AccountPermission:
+    '''
+         AccountPermission represents an individual API action available to an account.
+    '''
+    __slots__ = [
+        'account_id',
+        'granted_at',
+        'permission',
+        'scope',
+        'scoped_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        granted_at=None,
+        permission=None,
+        scope=None,
+        scoped_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The unique identifier of the Account this permission belongs to.
+        '''
+        self.granted_at = granted_at if granted_at is not None else None
+        '''
+         The most recent time at which the permission was granted. If a permission was
+         granted, revoked, and granted again, this will reflect the later time.
+        '''
+        self.permission = permission if permission is not None else ''
+        '''
+         The value of this permission, split into vertical and action e.g.
+         'secretstore:List', 'role:update'
+        '''
+        self.scope = scope if scope is not None else ''
+        '''
+         The scope of this permission. A global scope means this action can be taken
+         on any entity; otherwise the action can only be taken on or in the scope of
+         the scoped id.
+        '''
+        self.scoped_id = scoped_id if scoped_id is not None else ''
+        '''
+         The ID to which or in whose context this operation is permitted. e.g. The ID of a
+         role that a team leader has the abillity to remove and add accounts to, or the
+         ID of a resource that a user has the permission to connect to. If Scope is global,
+         scoped id is not populated.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountPermission ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'granted_at: ' + repr(self.granted_at) + ' ' +\
+            'permission: ' + repr(self.permission) + ' ' +\
+            'scope: ' + repr(self.scope) + ' ' +\
+            'scoped_id: ' + repr(self.scoped_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'granted_at': self.granted_at,
+            'permission': self.permission,
+            'scope': self.scope,
+            'scoped_id': self.scoped_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            granted_at=d.get('granted_at'),
+            permission=d.get('permission'),
+            scope=d.get('scope'),
+            scoped_id=d.get('scoped_id'),
+        )
+
+
+class AccountResource:
+    '''
+         AccountResource represents an individual access grant of a Account to a Resource.
+    '''
+    __slots__ = [
+        'account_grant_id',
+        'account_id',
+        'expires_at',
+        'granted_at',
+        'resource_id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        account_grant_id=None,
+        account_id=None,
+        expires_at=None,
+        granted_at=None,
+        resource_id=None,
+        role_id=None,
+    ):
+        self.account_grant_id = account_grant_id if account_grant_id is not None else ''
+        '''
+         The unique identifier of the AccountGrant through which the Account was granted access to the Resource.
+         If empty, access was not granted through an AccountGrant.
+        '''
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The unique identifier of the Account to which access is granted.
+        '''
+        self.expires_at = expires_at if expires_at is not None else None
+        '''
+         The time at which access will expire. If empty, this access has no expiration.
+        '''
+        self.granted_at = granted_at if granted_at is not None else None
+        '''
+         The most recent time at which access was granted. If access was granted,
+         revoked, and granted again, this will reflect the later time.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which access is granted.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The unique identifier of the Role through which the Account was granted access to the Resource.
+         If empty, access was not granted through an AccountAttachment to a Role.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountResource ' + \
+            'account_grant_id: ' + repr(self.account_grant_id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'expires_at: ' + repr(self.expires_at) + ' ' +\
+            'granted_at: ' + repr(self.granted_at) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_grant_id': self.account_grant_id,
+            'account_id': self.account_id,
+            'expires_at': self.expires_at,
+            'granted_at': self.granted_at,
+            'resource_id': self.resource_id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_grant_id=d.get('account_grant_id'),
+            account_id=d.get('account_id'),
+            expires_at=d.get('expires_at'),
+            granted_at=d.get('granted_at'),
+            resource_id=d.get('resource_id'),
+            role_id=d.get('role_id'),
+        )
+
+
 class AccountUpdateResponse:
     '''
          AccountUpdateResponse returns the fields of a Account after it has been updated by
@@ -1753,6 +2104,285 @@ class AccountUpdateResponse:
     def from_dict(cls, d):
         return cls(
             account=d.get('account'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class Activity:
+    '''
+         An Activity is a record of an action taken against a strongDM deployment, e.g.
+     a user creation, resource deletion, sso configuration change, etc.
+    '''
+    __slots__ = [
+        'actor',
+        'completed_at',
+        'description',
+        'entities',
+        'id',
+        'ip_address',
+        'verb',
+    ]
+
+    def __init__(
+        self,
+        actor=None,
+        completed_at=None,
+        description=None,
+        entities=None,
+        id=None,
+        ip_address=None,
+        verb=None,
+    ):
+        self.actor = actor if actor is not None else None
+        '''
+         The account who executed this activity. If the actor later has a name or email change,
+         that change is not reflected here. Actor is a snapshot of the executing account at
+         the time an activity took place.
+        '''
+        self.completed_at = completed_at if completed_at is not None else None
+        '''
+         The time this activity took effect.
+        '''
+        self.description = description if description is not None else ''
+        '''
+         A humanized description of the activity.
+        '''
+        self.entities = entities if entities is not None else []
+        '''
+         The entities involved in this activity. These entities can be any first class
+         entity in the strongDM system, eg. a user, a role, a node, an account grant. Not
+         every activity affects explicit entities.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Activity.
+        '''
+        self.ip_address = ip_address if ip_address is not None else ''
+        '''
+         The IP from which this action was taken.
+        '''
+        self.verb = verb if verb is not None else ''
+        '''
+         The kind of activity which has taken place.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Activity ' + \
+            'actor: ' + repr(self.actor) + ' ' +\
+            'completed_at: ' + repr(self.completed_at) + ' ' +\
+            'description: ' + repr(self.description) + ' ' +\
+            'entities: ' + repr(self.entities) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'ip_address: ' + repr(self.ip_address) + ' ' +\
+            'verb: ' + repr(self.verb) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'actor': self.actor,
+            'completed_at': self.completed_at,
+            'description': self.description,
+            'entities': self.entities,
+            'id': self.id,
+            'ip_address': self.ip_address,
+            'verb': self.verb,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            actor=d.get('actor'),
+            completed_at=d.get('completed_at'),
+            description=d.get('description'),
+            entities=d.get('entities'),
+            id=d.get('id'),
+            ip_address=d.get('ip_address'),
+            verb=d.get('verb'),
+        )
+
+
+class ActivityActor:
+    __slots__ = [
+        'activity_external_id',
+        'email',
+        'first_name',
+        'id',
+        'last_name',
+    ]
+
+    def __init__(
+        self,
+        activity_external_id=None,
+        email=None,
+        first_name=None,
+        id=None,
+        last_name=None,
+    ):
+        self.activity_external_id = activity_external_id if activity_external_id is not None else ''
+        '''
+         The external ID of the actor at the time this activity occurred.
+        '''
+        self.email = email if email is not None else ''
+        '''
+         The email of the actor at the time this activity occurred.
+        '''
+        self.first_name = first_name if first_name is not None else ''
+        '''
+         The first name of the actor at the time this activity occurred.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the actor. Immutable.
+        '''
+        self.last_name = last_name if last_name is not None else ''
+        '''
+         The last name of the actor at the time this activity occurred.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ActivityActor ' + \
+            'activity_external_id: ' + repr(self.activity_external_id) + ' ' +\
+            'email: ' + repr(self.email) + ' ' +\
+            'first_name: ' + repr(self.first_name) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'last_name: ' + repr(self.last_name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_external_id': self.activity_external_id,
+            'email': self.email,
+            'first_name': self.first_name,
+            'id': self.id,
+            'last_name': self.last_name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_external_id=d.get('activity_external_id'),
+            email=d.get('email'),
+            first_name=d.get('first_name'),
+            id=d.get('id'),
+            last_name=d.get('last_name'),
+        )
+
+
+class ActivityEntity:
+    __slots__ = [
+        'email',
+        'external_id',
+        'id',
+        'name',
+        'type',
+    ]
+
+    def __init__(
+        self,
+        email=None,
+        external_id=None,
+        id=None,
+        name=None,
+        type=None,
+    ):
+        self.email = email if email is not None else ''
+        '''
+         The email of the affected entity, if it has one (for example, if it is an account).
+        '''
+        self.external_id = external_id if external_id is not None else ''
+        '''
+         The external ID of the affected entity, if it has one (for example, if it is an account).
+        '''
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the entity this activity affected.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         A display name representing the affected entity.
+        '''
+        self.type = type if type is not None else ''
+        '''
+         The type of entity affected, one of the Activity Entities constants.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ActivityEntity ' + \
+            'email: ' + repr(self.email) + ' ' +\
+            'external_id: ' + repr(self.external_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'type: ' + repr(self.type) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'email': self.email,
+            'external_id': self.external_id,
+            'id': self.id,
+            'name': self.name,
+            'type': self.type,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            email=d.get('email'),
+            external_id=d.get('external_id'),
+            id=d.get('id'),
+            name=d.get('name'),
+            type=d.get('type'),
+        )
+
+
+class ActivityGetResponse:
+    '''
+         ActivityGetResponse returns a requested Activity.
+    '''
+    __slots__ = [
+        'activity',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        activity=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.activity = activity if activity is not None else None
+        '''
+         The requested Activity.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ActivityGetResponse ' + \
+            'activity: ' + repr(self.activity) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity': self.activity,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity=d.get('activity'),
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
         )
@@ -8820,6 +9450,70 @@ class NodeGetResponse:
         )
 
 
+class NodeHistory:
+    '''
+         NodeHistory records the state of a Node at a given point in time,
+     where every change (create, update and delete) to a Node produces an
+     NodeHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'node',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        node=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Node.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Node was deleted, the time it was deleted.
+        '''
+        self.node = node if node is not None else None
+        '''
+         The complete Node state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Node state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.NodeHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'node: ' + repr(self.node) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'node': self.node,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            node=d.get('node'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class NodeUpdateResponse:
     '''
          NodeUpdateResponse returns the fields of a Node after it has been updated by
@@ -8997,6 +9691,302 @@ class Oracle:
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
             username=d.get('username'),
+        )
+
+
+class Organization:
+    __slots__ = [
+        'auth_provider',
+        'created_at',
+        'idle_timeout',
+        'idle_timeout_enabled',
+        'kind',
+        'log_local_encoder',
+        'log_local_format',
+        'log_local_storage',
+        'log_remote_encoder',
+        'log_socket_path',
+        'log_tcp_address',
+        'mfa_enabled',
+        'mfa_provider',
+        'name',
+        'require_secret_store',
+        'saml_metadata_url',
+        'scim_provider',
+        'sensitive_label',
+        'session_timeout',
+        'session_timeout_enabled',
+        'ssh_certificate_authority_public_key',
+        'ssh_certificate_authority_updated_at',
+        'updated_at',
+        'websites_subdomain',
+    ]
+
+    def __init__(
+        self,
+        auth_provider=None,
+        created_at=None,
+        idle_timeout=None,
+        idle_timeout_enabled=None,
+        kind=None,
+        log_local_encoder=None,
+        log_local_format=None,
+        log_local_storage=None,
+        log_remote_encoder=None,
+        log_socket_path=None,
+        log_tcp_address=None,
+        mfa_enabled=None,
+        mfa_provider=None,
+        name=None,
+        require_secret_store=None,
+        saml_metadata_url=None,
+        scim_provider=None,
+        sensitive_label=None,
+        session_timeout=None,
+        session_timeout_enabled=None,
+        ssh_certificate_authority_public_key=None,
+        ssh_certificate_authority_updated_at=None,
+        updated_at=None,
+        websites_subdomain=None,
+    ):
+        self.auth_provider = auth_provider if auth_provider is not None else ''
+        '''
+         The Organization's authentication provider.
+        '''
+        self.created_at = created_at if created_at is not None else None
+        '''
+         The time at which the Organization was created.
+        '''
+        self.idle_timeout = idle_timeout if idle_timeout is not None else None
+        '''
+         The Organization's idle timeout, if enabled.
+        '''
+        self.idle_timeout_enabled = idle_timeout_enabled if idle_timeout_enabled is not None else False
+        '''
+         Indicates if the Organization has idle timeouts enabled.
+        '''
+        self.kind = kind if kind is not None else ''
+        '''
+         The Organization's type.
+        '''
+        self.log_local_encoder = log_local_encoder if log_local_encoder is not None else ''
+        '''
+         The Organization's local log encryption encoder.
+        '''
+        self.log_local_format = log_local_format if log_local_format is not None else ''
+        '''
+         The Organization's local log format.
+        '''
+        self.log_local_storage = log_local_storage if log_local_storage is not None else ''
+        '''
+         The Organization's local log storage.
+        '''
+        self.log_remote_encoder = log_remote_encoder if log_remote_encoder is not None else ''
+        '''
+         The Organization's remote log encryption encoder.
+        '''
+        self.log_socket_path = log_socket_path if log_socket_path is not None else ''
+        '''
+         The Organization's socket path for Socket local log storage.
+        '''
+        self.log_tcp_address = log_tcp_address if log_tcp_address is not None else ''
+        '''
+         The Organization's TCP address for TCP or Syslog local log storage.
+        '''
+        self.mfa_enabled = mfa_enabled if mfa_enabled is not None else False
+        '''
+         Indicates if the Organization has multi-factor authentication enabled.
+        '''
+        self.mfa_provider = mfa_provider if mfa_provider is not None else ''
+        '''
+         The Organization's multi-factor authentication provider, if enabled.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         The Organization's name.
+        '''
+        self.require_secret_store = require_secret_store if require_secret_store is not None else False
+        '''
+         Indicates if the Organization requires secret stores.
+        '''
+        self.saml_metadata_url = saml_metadata_url if saml_metadata_url is not None else ''
+        '''
+         The Organization's URL for SAML metadata.
+        '''
+        self.scim_provider = scim_provider if scim_provider is not None else ''
+        '''
+         The Organization's SCIM provider.
+        '''
+        self.sensitive_label = sensitive_label if sensitive_label is not None else ''
+        '''
+         The Organization's label for sensitive resources.
+        '''
+        self.session_timeout = session_timeout if session_timeout is not None else None
+        '''
+         The Organization's session timeout, if enabled.
+        '''
+        self.session_timeout_enabled = session_timeout_enabled if session_timeout_enabled is not None else False
+        '''
+         Indicates if the Organization has session timeouts enabled.
+        '''
+        self.ssh_certificate_authority_public_key = ssh_certificate_authority_public_key if ssh_certificate_authority_public_key is not None else ''
+        '''
+         The Organization's SSH certificate authority public key.
+        '''
+        self.ssh_certificate_authority_updated_at = ssh_certificate_authority_updated_at if ssh_certificate_authority_updated_at is not None else None
+        '''
+         The time at which the Organization's SSH certificate authority was last updated.
+        '''
+        self.updated_at = updated_at if updated_at is not None else None
+        '''
+         The time at which the Organization was last updated.
+        '''
+        self.websites_subdomain = websites_subdomain if websites_subdomain is not None else ''
+        '''
+         The Organization's web site domain.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Organization ' + \
+            'auth_provider: ' + repr(self.auth_provider) + ' ' +\
+            'created_at: ' + repr(self.created_at) + ' ' +\
+            'idle_timeout: ' + repr(self.idle_timeout) + ' ' +\
+            'idle_timeout_enabled: ' + repr(self.idle_timeout_enabled) + ' ' +\
+            'kind: ' + repr(self.kind) + ' ' +\
+            'log_local_encoder: ' + repr(self.log_local_encoder) + ' ' +\
+            'log_local_format: ' + repr(self.log_local_format) + ' ' +\
+            'log_local_storage: ' + repr(self.log_local_storage) + ' ' +\
+            'log_remote_encoder: ' + repr(self.log_remote_encoder) + ' ' +\
+            'log_socket_path: ' + repr(self.log_socket_path) + ' ' +\
+            'log_tcp_address: ' + repr(self.log_tcp_address) + ' ' +\
+            'mfa_enabled: ' + repr(self.mfa_enabled) + ' ' +\
+            'mfa_provider: ' + repr(self.mfa_provider) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'require_secret_store: ' + repr(self.require_secret_store) + ' ' +\
+            'saml_metadata_url: ' + repr(self.saml_metadata_url) + ' ' +\
+            'scim_provider: ' + repr(self.scim_provider) + ' ' +\
+            'sensitive_label: ' + repr(self.sensitive_label) + ' ' +\
+            'session_timeout: ' + repr(self.session_timeout) + ' ' +\
+            'session_timeout_enabled: ' + repr(self.session_timeout_enabled) + ' ' +\
+            'ssh_certificate_authority_public_key: ' + repr(self.ssh_certificate_authority_public_key) + ' ' +\
+            'ssh_certificate_authority_updated_at: ' + repr(self.ssh_certificate_authority_updated_at) + ' ' +\
+            'updated_at: ' + repr(self.updated_at) + ' ' +\
+            'websites_subdomain: ' + repr(self.websites_subdomain) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'auth_provider': self.auth_provider,
+            'created_at': self.created_at,
+            'idle_timeout': self.idle_timeout,
+            'idle_timeout_enabled': self.idle_timeout_enabled,
+            'kind': self.kind,
+            'log_local_encoder': self.log_local_encoder,
+            'log_local_format': self.log_local_format,
+            'log_local_storage': self.log_local_storage,
+            'log_remote_encoder': self.log_remote_encoder,
+            'log_socket_path': self.log_socket_path,
+            'log_tcp_address': self.log_tcp_address,
+            'mfa_enabled': self.mfa_enabled,
+            'mfa_provider': self.mfa_provider,
+            'name': self.name,
+            'require_secret_store': self.require_secret_store,
+            'saml_metadata_url': self.saml_metadata_url,
+            'scim_provider': self.scim_provider,
+            'sensitive_label': self.sensitive_label,
+            'session_timeout': self.session_timeout,
+            'session_timeout_enabled': self.session_timeout_enabled,
+            'ssh_certificate_authority_public_key':
+            self.ssh_certificate_authority_public_key,
+            'ssh_certificate_authority_updated_at':
+            self.ssh_certificate_authority_updated_at,
+            'updated_at': self.updated_at,
+            'websites_subdomain': self.websites_subdomain,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            auth_provider=d.get('auth_provider'),
+            created_at=d.get('created_at'),
+            idle_timeout=d.get('idle_timeout'),
+            idle_timeout_enabled=d.get('idle_timeout_enabled'),
+            kind=d.get('kind'),
+            log_local_encoder=d.get('log_local_encoder'),
+            log_local_format=d.get('log_local_format'),
+            log_local_storage=d.get('log_local_storage'),
+            log_remote_encoder=d.get('log_remote_encoder'),
+            log_socket_path=d.get('log_socket_path'),
+            log_tcp_address=d.get('log_tcp_address'),
+            mfa_enabled=d.get('mfa_enabled'),
+            mfa_provider=d.get('mfa_provider'),
+            name=d.get('name'),
+            require_secret_store=d.get('require_secret_store'),
+            saml_metadata_url=d.get('saml_metadata_url'),
+            scim_provider=d.get('scim_provider'),
+            sensitive_label=d.get('sensitive_label'),
+            session_timeout=d.get('session_timeout'),
+            session_timeout_enabled=d.get('session_timeout_enabled'),
+            ssh_certificate_authority_public_key=d.get(
+                'ssh_certificate_authority_public_key'),
+            ssh_certificate_authority_updated_at=d.get(
+                'ssh_certificate_authority_updated_at'),
+            updated_at=d.get('updated_at'),
+            websites_subdomain=d.get('websites_subdomain'),
+        )
+
+
+class OrganizationHistoryRecord:
+    '''
+         OrganizationHistoryRecord records the state of an Organization at a given point in time,
+     where every change to an Organization produces an OrganizationHistoryRecord.
+    '''
+    __slots__ = [
+        'activity_id',
+        'organization',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        organization=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Organization.
+         May be empty for some system-initiated organization updates.
+        '''
+        self.organization = organization if organization is not None else None
+        '''
+         The complete Organization state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Organization state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.OrganizationHistoryRecord ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'organization: ' + repr(self.organization) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'organization': self.organization,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            organization=d.get('organization'),
+            timestamp=d.get('timestamp'),
         )
 
 
@@ -9251,6 +10241,231 @@ class Presto:
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
             username=d.get('username'),
+        )
+
+
+class Query:
+    '''
+         A Query is a record of a single client request to a resource, such as an SQL query.
+    '''
+    __slots__ = [
+        'account_email',
+        'account_first_name',
+        'account_id',
+        'account_last_name',
+        'account_tags',
+        'duration',
+        'egress_node_id',
+        'encrypted',
+        'id',
+        'query_body',
+        'query_category',
+        'query_hash',
+        'query_key',
+        'record_count',
+        'remote_identity_username',
+        'replayable',
+        'resource_id',
+        'resource_name',
+        'resource_tags',
+        'resource_type',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account_email=None,
+        account_first_name=None,
+        account_id=None,
+        account_last_name=None,
+        account_tags=None,
+        duration=None,
+        egress_node_id=None,
+        encrypted=None,
+        id=None,
+        query_body=None,
+        query_category=None,
+        query_hash=None,
+        query_key=None,
+        record_count=None,
+        remote_identity_username=None,
+        replayable=None,
+        resource_id=None,
+        resource_name=None,
+        resource_tags=None,
+        resource_type=None,
+        timestamp=None,
+    ):
+        self.account_email = account_email if account_email is not None else ''
+        '''
+         The email of the account performing this query, at the time the query was executed.
+         If the account email is later changed, that change will not be reflected via this field.
+        '''
+        self.account_first_name = account_first_name if account_first_name is not None else ''
+        '''
+         The given name of the account performing this query, at the time the query was executed.
+         If the account is later renamed, that change will not be reflected via this field.
+        '''
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         Unique identifier of the Account that performed the Query.
+        '''
+        self.account_last_name = account_last_name if account_last_name is not None else ''
+        '''
+         The family name of the account performing this query, at the time the query was executed.
+         If the account is later renamed, that change will not be reflected via this field.
+        '''
+        self.account_tags = account_tags if account_tags is not None else _porcelain_zero_value_tags(
+        )
+        '''
+         The tags of the account accessed, at the time the query was executed. If the account
+         tags are later changed, that change will not be reflected via this field.
+        '''
+        self.duration = duration if duration is not None else None
+        '''
+         The duration of the Query.
+        '''
+        self.egress_node_id = egress_node_id if egress_node_id is not None else ''
+        '''
+         The unique ID of the node through which the Resource was accessed.
+        '''
+        self.encrypted = encrypted if encrypted is not None else False
+        '''
+         Indicates that the body of the Query is encrypted.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Query.
+        '''
+        self.query_body = query_body if query_body is not None else ''
+        '''
+         The captured content of the Query.
+        '''
+        self.query_category = query_category if query_category is not None else ''
+        '''
+         The general category of Resource against which Query was performed, e.g. "web" or "cloud".
+        '''
+        self.query_hash = query_hash if query_hash is not None else ''
+        '''
+         The hash of the body of the Query.
+        '''
+        self.query_key = query_key if query_key is not None else ''
+        '''
+         The symmetric key used to encrypt the body of this Query and its replay if replayable.
+         If the Query is encrypted, this field contains an encrypted symmetric key in base64 encoding.
+         This key must be decrypted with the organization's private key to obtain the symmetric key needed to decrypt the body.
+         If the Query is not encrypted, this field is empty.
+        '''
+        self.record_count = record_count if record_count is not None else 0
+        '''
+         The number of records returned by the Query, for a database Resource.
+        '''
+        self.remote_identity_username = remote_identity_username if remote_identity_username is not None else ''
+        '''
+         The username of the RemoteIdentity used to access the Resource.
+        '''
+        self.replayable = replayable if replayable is not None else False
+        '''
+         Indicates that the Query is replayable, e.g. for some SSH or K8s sessions.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         Unique identifier of the Resource against which the Query was performed.
+        '''
+        self.resource_name = resource_name if resource_name is not None else ''
+        '''
+         The name of the resource accessed, at the time the query was executed. If the resource
+         is later renamed, that change will not be reflected via this field.
+        '''
+        self.resource_tags = resource_tags if resource_tags is not None else _porcelain_zero_value_tags(
+        )
+        '''
+         The tags of the resource accessed, at the time the query was executed. If the resource
+         tags are later changed, that change will not be reflected via this field.
+        '''
+        self.resource_type = resource_type if resource_type is not None else ''
+        '''
+         The specific type of Resource against which the Query was performed, e.g. "ssh" or "postgres".
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Query was performed.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Query ' + \
+            'account_email: ' + repr(self.account_email) + ' ' +\
+            'account_first_name: ' + repr(self.account_first_name) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'account_last_name: ' + repr(self.account_last_name) + ' ' +\
+            'account_tags: ' + repr(self.account_tags) + ' ' +\
+            'duration: ' + repr(self.duration) + ' ' +\
+            'egress_node_id: ' + repr(self.egress_node_id) + ' ' +\
+            'encrypted: ' + repr(self.encrypted) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'query_body: ' + repr(self.query_body) + ' ' +\
+            'query_category: ' + repr(self.query_category) + ' ' +\
+            'query_hash: ' + repr(self.query_hash) + ' ' +\
+            'query_key: ' + repr(self.query_key) + ' ' +\
+            'record_count: ' + repr(self.record_count) + ' ' +\
+            'remote_identity_username: ' + repr(self.remote_identity_username) + ' ' +\
+            'replayable: ' + repr(self.replayable) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'resource_name: ' + repr(self.resource_name) + ' ' +\
+            'resource_tags: ' + repr(self.resource_tags) + ' ' +\
+            'resource_type: ' + repr(self.resource_type) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_email': self.account_email,
+            'account_first_name': self.account_first_name,
+            'account_id': self.account_id,
+            'account_last_name': self.account_last_name,
+            'account_tags': self.account_tags,
+            'duration': self.duration,
+            'egress_node_id': self.egress_node_id,
+            'encrypted': self.encrypted,
+            'id': self.id,
+            'query_body': self.query_body,
+            'query_category': self.query_category,
+            'query_hash': self.query_hash,
+            'query_key': self.query_key,
+            'record_count': self.record_count,
+            'remote_identity_username': self.remote_identity_username,
+            'replayable': self.replayable,
+            'resource_id': self.resource_id,
+            'resource_name': self.resource_name,
+            'resource_tags': self.resource_tags,
+            'resource_type': self.resource_type,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_email=d.get('account_email'),
+            account_first_name=d.get('account_first_name'),
+            account_id=d.get('account_id'),
+            account_last_name=d.get('account_last_name'),
+            account_tags=d.get('account_tags'),
+            duration=d.get('duration'),
+            egress_node_id=d.get('egress_node_id'),
+            encrypted=d.get('encrypted'),
+            id=d.get('id'),
+            query_body=d.get('query_body'),
+            query_category=d.get('query_category'),
+            query_hash=d.get('query_hash'),
+            query_key=d.get('query_key'),
+            record_count=d.get('record_count'),
+            remote_identity_username=d.get('remote_identity_username'),
+            replayable=d.get('replayable'),
+            resource_id=d.get('resource_id'),
+            resource_name=d.get('resource_name'),
+            resource_tags=d.get('resource_tags'),
+            resource_type=d.get('resource_type'),
+            timestamp=d.get('timestamp'),
         )
 
 
@@ -10318,6 +11533,134 @@ class RemoteIdentityGroupGetResponse:
         )
 
 
+class RemoteIdentityGroupHistory:
+    '''
+         RemoteIdentityGroupHistory records the state of a RemoteIdentityGroup at a given point in time,
+     where every change (create, update and delete) to a RemoteIdentityGroup produces an
+     RemoteIdentityGroupHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'remote_identity_group',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        remote_identity_group=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the RemoteIdentityGroup.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this RemoteIdentityGroup was deleted, the time it was deleted.
+        '''
+        self.remote_identity_group = remote_identity_group if remote_identity_group is not None else None
+        '''
+         The complete RemoteIdentityGroup state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the RemoteIdentityGroup state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityGroupHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'remote_identity_group: ' + repr(self.remote_identity_group) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'remote_identity_group': self.remote_identity_group,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            remote_identity_group=d.get('remote_identity_group'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class RemoteIdentityHistory:
+    '''
+         RemoteIdentityHistory records the state of a RemoteIdentity at a given point in time,
+     where every change (create, update and delete) to a RemoteIdentity produces an
+     RemoteIdentityHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'remote_identity',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        remote_identity=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the RemoteIdentity.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this RemoteIdentity was deleted, the time it was deleted.
+        '''
+        self.remote_identity = remote_identity if remote_identity is not None else None
+        '''
+         The complete RemoteIdentity state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the RemoteIdentity state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RemoteIdentityHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'remote_identity: ' + repr(self.remote_identity) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'remote_identity': self.remote_identity,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            remote_identity=d.get('remote_identity'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class RemoteIdentityUpdateResponse:
     '''
          RemoteIdentityUpdateResponse returns the fields of a RemoteIdentity after it has been updated by
@@ -10368,6 +11711,94 @@ class RemoteIdentityUpdateResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             remote_identity=d.get('remote_identity'),
+        )
+
+
+class ReplayChunk:
+    '''
+         A ReplayChunk represents a single "chunk" of data from the query replay.
+    '''
+    __slots__ = [
+        'data',
+        'events',
+    ]
+
+    def __init__(
+        self,
+        data=None,
+        events=None,
+    ):
+        self.data = data if data is not None else b''
+        '''
+         The raw data of the ReplayChunk. The data is encrypted if the associated Query is encrypted.
+        '''
+        self.events = events if events is not None else []
+        '''
+         The list of events of the ReplayChunk. If the Query is encrypted, this field is always empty
+         and the events can be obtained by decrypting the data using the QueryKey returned with the Query.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ReplayChunk ' + \
+            'data: ' + repr(self.data) + ' ' +\
+            'events: ' + repr(self.events) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'data': self.data,
+            'events': self.events,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            data=d.get('data'),
+            events=d.get('events'),
+        )
+
+
+class ReplayChunkEvent:
+    '''
+         A ReplayChunkEvent represents a single event within a query replay.
+     The timing information included in each ReplayChunkEvent may be used to replay a session in real time.
+    '''
+    __slots__ = [
+        'data',
+        'duration',
+    ]
+
+    def __init__(
+        self,
+        data=None,
+        duration=None,
+    ):
+        self.data = data if data is not None else b''
+        '''
+         The raw data of the ReplayChunkEvent.
+        '''
+        self.duration = duration if duration is not None else None
+        '''
+         The time duration over which the data in this ReplayChunkEvent was transferred.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ReplayChunkEvent ' + \
+            'data: ' + repr(self.data) + ' ' +\
+            'duration: ' + repr(self.duration) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'data': self.data,
+            'duration': self.duration,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            data=d.get('data'),
+            duration=d.get('duration'),
         )
 
 
@@ -10515,6 +11946,70 @@ class ResourceGetResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             resource=d.get('resource'),
+        )
+
+
+class ResourceHistory:
+    '''
+         ResourceHistory records the state of a Resource at a given point in time,
+     where every change (create, update and delete) to a Resource produces an
+     ResourceHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'resource',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        resource=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Resource.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Resource was deleted, the time it was deleted.
+        '''
+        self.resource = resource if resource is not None else None
+        '''
+         The complete Resource state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Resource state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ResourceHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'resource: ' + repr(self.resource) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'resource': self.resource,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            resource=d.get('resource'),
+            timestamp=d.get('timestamp'),
         )
 
 
@@ -10789,6 +12284,187 @@ class RoleGetResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             role=d.get('role'),
+        )
+
+
+class RoleHistory:
+    '''
+         RoleHistory records the state of a Role at a given point in time,
+     where every change (create, update and delete) to a Role produces an
+     RoleHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'role',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        role=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Role.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Role was deleted, the time it was deleted.
+        '''
+        self.role = role if role is not None else None
+        '''
+         The complete Role state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Role state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RoleHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'role': self.role,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            role=d.get('role'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class RoleResource:
+    '''
+         RoleResource represents an individual access grant of a Role to a Resource.
+    '''
+    __slots__ = [
+        'granted_at',
+        'resource_id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        granted_at=None,
+        resource_id=None,
+        role_id=None,
+    ):
+        self.granted_at = granted_at if granted_at is not None else None
+        '''
+         The most recent time at which access was granted. If access was granted,
+         revoked, and granted again, this will reflect the later time.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which access is granted.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The unique identifier of the Role to which access is granted.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RoleResource ' + \
+            'granted_at: ' + repr(self.granted_at) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'granted_at': self.granted_at,
+            'resource_id': self.resource_id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            granted_at=d.get('granted_at'),
+            resource_id=d.get('resource_id'),
+            role_id=d.get('role_id'),
+        )
+
+
+class RoleResourceHistory:
+    '''
+         RoleResourceHistory records the state of a RoleResource at a given point in time,
+     where every change (create or delete) to a RoleResource produces an
+     RoleResourceHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'role_resource',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        role_resource=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the RoleResource.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this RoleResource was deleted, the time it was deleted.
+        '''
+        self.role_resource = role_resource if role_resource is not None else None
+        '''
+         The complete RoleResource state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the RoleResource state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RoleResourceHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'role_resource: ' + repr(self.role_resource) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'role_resource': self.role_resource,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            role_resource=d.get('role_resource'),
+            timestamp=d.get('timestamp'),
         )
 
 
@@ -11529,6 +13205,70 @@ class SecretStoreGetResponse:
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
             secret_store=d.get('secret_store'),
+        )
+
+
+class SecretStoreHistory:
+    '''
+         SecretStoreHistory records the state of a SecretStore at a given point in time,
+     where every change (create, update and delete) to a SecretStore produces an
+     SecretStoreHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'secret_store',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        secret_store=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the SecretStore.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this SecretStore was deleted, the time it was deleted.
+        '''
+        self.secret_store = secret_store if secret_store is not None else None
+        '''
+         The complete SecretStore state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the SecretStore state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretStoreHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'secret_store: ' + repr(self.secret_store) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'secret_store': self.secret_store,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            secret_store=d.get('secret_store'),
+            timestamp=d.get('timestamp'),
         )
 
 
