@@ -32,7 +32,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bsecret_stores_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x18secret_store_types.proto\x1a\roptions.proto\x1a\nspec.proto\"b\n\x1dSecretStoreHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd6\x01\n\x1eSecretStoreHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x33\n\x07history\x18\x02 \x03(\x0b\x32\x16.v1.SecretStoreHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xeb\x01\n\x12SecretStoreHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xbe\x01\n\x13SecretStoresHistory\x12\x7f\n\x04List\x12!.v1.SecretStoreHistoryListRequest\x1a\".v1.SecretStoreHistoryListResponse\"0\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/secret-stores-history\x1a&\xca\xf9\xb3\x07\x17\xc2\xf9\xb3\x07\x12SecretStoreHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42o\n\x19\x63om.strongdm.api.plumbingB\x1bSecretStoresHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bsecret_stores_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x18secret_store_types.proto\x1a\roptions.proto\x1a\nspec.proto\"\x8c\x01\n\x1dSecretStoreHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x80\x02\n\x1eSecretStoreHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x33\n\x07history\x18\x02 \x03(\x0b\x32\x16.v1.SecretStoreHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x93\x02\n\x12SecretStoreHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0csecret_store\x18\x03 \x01(\x0b\x32\x0f.v1.SecretStoreB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xe6\x01\n\x13SecretStoresHistory\x12\x7f\n\x04List\x12!.v1.SecretStoreHistoryListRequest\x1a\".v1.SecretStoreHistoryListResponse\"0\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1e\xaa\xf3\xb3\x07\x19/v1/secret-stores-history\x1aN\xca\xf9\xb3\x07\x17\xc2\xf9\xb3\x07\x12SecretStoreHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x97\x01\n\x19\x63om.strongdm.api.plumbingB\x1bSecretStoresHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -64,13 +64,17 @@ _SECRETSTORESHISTORY = DESCRIPTOR.services_by_name['SecretStoresHistory']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\033SecretStoresHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\033SecretStoresHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _SECRETSTOREHISTORYLISTREQUEST.fields_by_name['filter']._options = None
   _SECRETSTOREHISTORYLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _SECRETSTOREHISTORYLISTREQUEST._options = None
+  _SECRETSTOREHISTORYLISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _SECRETSTOREHISTORYLISTRESPONSE.fields_by_name['history']._options = None
   _SECRETSTOREHISTORYLISTRESPONSE.fields_by_name['history']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _SECRETSTOREHISTORYLISTRESPONSE.fields_by_name['rate_limit']._options = None
   _SECRETSTOREHISTORYLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _SECRETSTOREHISTORYLISTRESPONSE._options = None
+  _SECRETSTOREHISTORYLISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _SECRETSTOREHISTORY.fields_by_name['activity_id']._options = None
   _SECRETSTOREHISTORY.fields_by_name['activity_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTOREHISTORY.fields_by_name['timestamp']._options = None
@@ -80,17 +84,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTOREHISTORY.fields_by_name['deleted_at']._options = None
   _SECRETSTOREHISTORY.fields_by_name['deleted_at']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _SECRETSTOREHISTORY._options = None
-  _SECRETSTOREHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _SECRETSTOREHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _SECRETSTORESHISTORY._options = None
-  _SECRETSTORESHISTORY._serialized_options = b'\312\371\263\007\027\302\371\263\007\022SecretStoreHistory\312\371\263\007\005\330\371\263\007\001'
+  _SECRETSTORESHISTORY._serialized_options = b'\312\371\263\007\027\302\371\263\007\022SecretStoreHistory\312\371\263\007\005\330\371\263\007\001\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _SECRETSTORESHISTORY.methods_by_name['List']._options = None
   _SECRETSTORESHISTORY.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\036\252\363\263\007\031/v1/secret-stores-history'
-  _SECRETSTOREHISTORYLISTREQUEST._serialized_start=121
-  _SECRETSTOREHISTORYLISTREQUEST._serialized_end=219
-  _SECRETSTOREHISTORYLISTRESPONSE._serialized_start=222
-  _SECRETSTOREHISTORYLISTRESPONSE._serialized_end=436
-  _SECRETSTOREHISTORY._serialized_start=439
-  _SECRETSTOREHISTORY._serialized_end=674
-  _SECRETSTORESHISTORY._serialized_start=677
-  _SECRETSTORESHISTORY._serialized_end=867
+  _SECRETSTOREHISTORYLISTREQUEST._serialized_start=122
+  _SECRETSTOREHISTORYLISTREQUEST._serialized_end=262
+  _SECRETSTOREHISTORYLISTRESPONSE._serialized_start=265
+  _SECRETSTOREHISTORYLISTRESPONSE._serialized_end=521
+  _SECRETSTOREHISTORY._serialized_start=524
+  _SECRETSTOREHISTORY._serialized_end=799
+  _SECRETSTORESHISTORY._serialized_start=802
+  _SECRETSTORESHISTORY._serialized_end=1032
 # @@protoc_insertion_point(module_scope)

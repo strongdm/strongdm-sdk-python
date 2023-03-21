@@ -31,7 +31,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x61\x63tivities.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"R\n\x12\x41\x63tivityGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd9\x01\n\x13\x41\x63tivityGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08\x61\x63tivity\x18\x02 \x01(\x0b\x32\x0c.v1.ActivityB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"X\n\x13\x41\x63tivityListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc5\x01\n\x14\x41\x63tivityListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12,\n\nactivities\x18\x02 \x03(\x0b\x32\x0c.v1.ActivityB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xee\x02\n\x08\x41\x63tivity\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04verb\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12<\n\x0c\x63ompleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x08\x65ntities\x18\x05 \x03(\x0b\x32\x12.v1.ActivityEntityB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\nip_address\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x14\xc2\xf4\xb3\x07\x0f\n\x02go\x12\tIPAddress\x12,\n\x05\x61\x63tor\x18\x07 \x01(\x0b\x32\x11.v1.ActivityActorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:8\xfa\xf8\xb3\x07\x33\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07)\xaa\xf3\xb3\x07$tf_examples/activity_data_source.txt\"\xa4\x01\n\x0e\x41\x63tivityEntity\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04type\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04name\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05\x65mail\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65xternal_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb7\x01\n\rActivityActor\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05\x65mail\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nfirst_name\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tlast_name\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x14\x61\x63tivity_external_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xfd\x01\n\nActivities\x12\x62\n\x03Get\x12\x16.v1.ActivityGetRequest\x1a\x17.v1.ActivityGetResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/activities/{id}\x12`\n\x04List\x12\x17.v1.ActivityListRequest\x1a\x18.v1.ActivityListResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/activities\x1a)\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08\x41\x63tivity\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61t-\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42\x66\n\x19\x63om.strongdm.api.plumbingB\x12\x41\x63tivitiesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x61\x63tivities.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"|\n\x12\x41\x63tivityGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x81\x02\n\x13\x41\x63tivityGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08\x61\x63tivity\x18\x02 \x01(\x0b\x32\x0c.v1.ActivityB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:2\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x13\x41\x63tivityListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xef\x01\n\x14\x41\x63tivityListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12,\n\nactivities\x18\x02 \x03(\x0b\x32\x0c.v1.ActivityB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xe8\x02\n\x08\x41\x63tivity\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04verb\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12<\n\x0c\x63ompleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x30\n\x08\x65ntities\x18\x05 \x03(\x0b\x32\x12.v1.ActivityEntityB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\nip_address\x18\x06 \x01(\tB#\xf2\xf8\xb3\x07\x1e\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x14\xc2\xf4\xb3\x07\x0f\n\x02go\x12\tIPAddress\x12,\n\x05\x61\x63tor\x18\x07 \x01(\x0b\x32\x11.v1.ActivityActorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xcc\x01\n\x0e\x41\x63tivityEntity\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04type\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04name\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05\x65mail\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65xternal_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xdf\x01\n\rActivityActor\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05\x65mail\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nfirst_name\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tlast_name\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12(\n\x14\x61\x63tivity_external_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xa5\x02\n\nActivities\x12\x62\n\x03Get\x12\x16.v1.ActivityGetRequest\x1a\x17.v1.ActivityGetResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/activities/{id}\x12`\n\x04List\x12\x17.v1.ActivityListRequest\x1a\x18.v1.ActivityListResponse\"%\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x13\xaa\xf3\xb3\x07\x0e/v1/activities\x1aQ\xca\xf9\xb3\x07\r\xc2\xf9\xb3\x07\x08\x41\x63tivity\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61t-\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x8e\x01\n\x19\x63om.strongdm.api.plumbingB\x12\x41\x63tivitiesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -95,9 +95,11 @@ _ACTIVITIES = DESCRIPTOR.services_by_name['Activities']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\022ActivitiesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\022ActivitiesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _ACTIVITYGETREQUEST.fields_by_name['id']._options = None
   _ACTIVITYGETREQUEST.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACTIVITYGETREQUEST._options = None
+  _ACTIVITYGETREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITYGETRESPONSE.fields_by_name['meta']._options = None
   _ACTIVITYGETRESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITYGETRESPONSE.fields_by_name['activity']._options = None
@@ -105,13 +107,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACTIVITYGETRESPONSE.fields_by_name['rate_limit']._options = None
   _ACTIVITYGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _ACTIVITYGETRESPONSE._options = None
-  _ACTIVITYGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ACTIVITYGETRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider\372\370\263\007\005\250\363\263\007\001'
   _ACTIVITYLISTREQUEST.fields_by_name['filter']._options = None
   _ACTIVITYLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACTIVITYLISTREQUEST._options = None
+  _ACTIVITYLISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITYLISTRESPONSE.fields_by_name['activities']._options = None
   _ACTIVITYLISTRESPONSE.fields_by_name['activities']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _ACTIVITYLISTRESPONSE.fields_by_name['rate_limit']._options = None
   _ACTIVITYLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _ACTIVITYLISTRESPONSE._options = None
+  _ACTIVITYLISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITY.fields_by_name['id']._options = None
   _ACTIVITY.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITY.fields_by_name['verb']._options = None
@@ -127,7 +133,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACTIVITY.fields_by_name['actor']._options = None
   _ACTIVITY.fields_by_name['actor']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITY._options = None
-  _ACTIVITY._serialized_options = b'\372\370\263\0073\250\363\263\007\001\302\363\263\007)\252\363\263\007$tf_examples/activity_data_source.txt'
+  _ACTIVITY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITYENTITY.fields_by_name['id']._options = None
   _ACTIVITYENTITY.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITYENTITY.fields_by_name['type']._options = None
@@ -139,7 +145,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACTIVITYENTITY.fields_by_name['external_id']._options = None
   _ACTIVITYENTITY.fields_by_name['external_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITYENTITY._options = None
-  _ACTIVITYENTITY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ACTIVITYENTITY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITYACTOR.fields_by_name['id']._options = None
   _ACTIVITYACTOR.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITYACTOR.fields_by_name['email']._options = None
@@ -151,27 +157,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACTIVITYACTOR.fields_by_name['activity_external_id']._options = None
   _ACTIVITYACTOR.fields_by_name['activity_external_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACTIVITYACTOR._options = None
-  _ACTIVITYACTOR._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ACTIVITYACTOR._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACTIVITIES._options = None
-  _ACTIVITIES._serialized_options = b'\312\371\263\007\r\302\371\263\007\010Activity\312\371\263\007\010\322\371\263\007\003at-\312\371\263\007\005\330\371\263\007\001'
+  _ACTIVITIES._serialized_options = b'\312\371\263\007\r\302\371\263\007\010Activity\312\371\263\007\010\322\371\263\007\003at-\312\371\263\007\005\330\371\263\007\001\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _ACTIVITIES.methods_by_name['Get']._options = None
   _ACTIVITIES.methods_by_name['Get']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\030\252\363\263\007\023/v1/activities/{id}'
   _ACTIVITIES.methods_by_name['List']._options = None
   _ACTIVITIES.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\023\252\363\263\007\016/v1/activities'
   _ACTIVITYGETREQUEST._serialized_start=84
-  _ACTIVITYGETREQUEST._serialized_end=166
-  _ACTIVITYGETRESPONSE._serialized_start=169
-  _ACTIVITYGETRESPONSE._serialized_end=386
-  _ACTIVITYLISTREQUEST._serialized_start=388
-  _ACTIVITYLISTREQUEST._serialized_end=476
-  _ACTIVITYLISTRESPONSE._serialized_start=479
-  _ACTIVITYLISTRESPONSE._serialized_end=676
-  _ACTIVITY._serialized_start=679
-  _ACTIVITY._serialized_end=1045
-  _ACTIVITYENTITY._serialized_start=1048
-  _ACTIVITYENTITY._serialized_end=1212
-  _ACTIVITYACTOR._serialized_start=1215
-  _ACTIVITYACTOR._serialized_end=1398
-  _ACTIVITIES._serialized_start=1401
-  _ACTIVITIES._serialized_end=1654
+  _ACTIVITYGETREQUEST._serialized_end=208
+  _ACTIVITYGETRESPONSE._serialized_start=211
+  _ACTIVITYGETRESPONSE._serialized_end=468
+  _ACTIVITYLISTREQUEST._serialized_start=471
+  _ACTIVITYLISTREQUEST._serialized_end=601
+  _ACTIVITYLISTRESPONSE._serialized_start=604
+  _ACTIVITYLISTRESPONSE._serialized_end=843
+  _ACTIVITY._serialized_start=846
+  _ACTIVITY._serialized_end=1206
+  _ACTIVITYENTITY._serialized_start=1209
+  _ACTIVITYENTITY._serialized_end=1413
+  _ACTIVITYACTOR._serialized_start=1416
+  _ACTIVITYACTOR._serialized_end=1639
+  _ACTIVITIES._serialized_start=1642
+  _ACTIVITIES._serialized_end=1935
 # @@protoc_insertion_point(module_scope)

@@ -32,7 +32,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17resources_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rdrivers.proto\x1a\roptions.proto\x1a\nspec.proto\"_\n\x1aResourceHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd0\x01\n\x1bResourceHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x30\n\x07history\x18\x02 \x03(\x0b\x32\x13.v1.ResourceHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xe1\x01\n\x0fResourceHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xae\x01\n\x10ResourcesHistory\x12u\n\x04List\x12\x1e.v1.ResourceHistoryListRequest\x1a\x1f.v1.ResourceHistoryListResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/resources-history\x1a#\xca\xf9\xb3\x07\x14\xc2\xf9\xb3\x07\x0fResourceHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42l\n\x19\x63om.strongdm.api.plumbingB\x18ResourcesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17resources_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rdrivers.proto\x1a\roptions.proto\x1a\nspec.proto\"\x89\x01\n\x1aResourceHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xfa\x01\n\x1bResourceHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x30\n\x07history\x18\x02 \x03(\x0b\x32\x13.v1.ResourceHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x89\x02\n\x0fResourceHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12*\n\x08resource\x18\x03 \x01(\x0b\x32\x0c.v1.ResourceB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xd6\x01\n\x10ResourcesHistory\x12u\n\x04List\x12\x1e.v1.ResourceHistoryListRequest\x1a\x1f.v1.ResourceHistoryListResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/resources-history\x1aK\xca\xf9\xb3\x07\x14\xc2\xf9\xb3\x07\x0fResourceHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x94\x01\n\x19\x63om.strongdm.api.plumbingB\x18ResourcesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -64,13 +64,17 @@ _RESOURCESHISTORY = DESCRIPTOR.services_by_name['ResourcesHistory']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\030ResourcesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\030ResourcesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _RESOURCEHISTORYLISTREQUEST.fields_by_name['filter']._options = None
   _RESOURCEHISTORYLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _RESOURCEHISTORYLISTREQUEST._options = None
+  _RESOURCEHISTORYLISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _RESOURCEHISTORYLISTRESPONSE.fields_by_name['history']._options = None
   _RESOURCEHISTORYLISTRESPONSE.fields_by_name['history']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _RESOURCEHISTORYLISTRESPONSE.fields_by_name['rate_limit']._options = None
   _RESOURCEHISTORYLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _RESOURCEHISTORYLISTRESPONSE._options = None
+  _RESOURCEHISTORYLISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _RESOURCEHISTORY.fields_by_name['activity_id']._options = None
   _RESOURCEHISTORY.fields_by_name['activity_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCEHISTORY.fields_by_name['timestamp']._options = None
@@ -80,17 +84,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RESOURCEHISTORY.fields_by_name['deleted_at']._options = None
   _RESOURCEHISTORY.fields_by_name['deleted_at']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _RESOURCEHISTORY._options = None
-  _RESOURCEHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _RESOURCEHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _RESOURCESHISTORY._options = None
-  _RESOURCESHISTORY._serialized_options = b'\312\371\263\007\024\302\371\263\007\017ResourceHistory\312\371\263\007\005\330\371\263\007\001'
+  _RESOURCESHISTORY._serialized_options = b'\312\371\263\007\024\302\371\263\007\017ResourceHistory\312\371\263\007\005\330\371\263\007\001\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _RESOURCESHISTORY.methods_by_name['List']._options = None
   _RESOURCESHISTORY.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\032\252\363\263\007\025/v1/resources-history'
-  _RESOURCEHISTORYLISTREQUEST._serialized_start=106
-  _RESOURCEHISTORYLISTREQUEST._serialized_end=201
-  _RESOURCEHISTORYLISTRESPONSE._serialized_start=204
-  _RESOURCEHISTORYLISTRESPONSE._serialized_end=412
-  _RESOURCEHISTORY._serialized_start=415
-  _RESOURCEHISTORY._serialized_end=640
-  _RESOURCESHISTORY._serialized_start=643
-  _RESOURCESHISTORY._serialized_end=817
+  _RESOURCEHISTORYLISTREQUEST._serialized_start=107
+  _RESOURCEHISTORYLISTREQUEST._serialized_end=244
+  _RESOURCEHISTORYLISTRESPONSE._serialized_start=247
+  _RESOURCEHISTORYLISTRESPONSE._serialized_end=497
+  _RESOURCEHISTORY._serialized_start=500
+  _RESOURCEHISTORY._serialized_end=765
+  _RESOURCESHISTORY._serialized_start=768
+  _RESOURCESHISTORY._serialized_end=982
 # @@protoc_insertion_point(module_scope)

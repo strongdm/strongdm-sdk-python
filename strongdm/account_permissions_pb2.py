@@ -31,7 +31,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61\x63\x63ount_permissions.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"a\n\x1c\x41\x63\x63ountPermissionListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd8\x01\n\x1d\x41\x63\x63ountPermissionListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x36\n\x0bpermissions\x18\x02 \x03(\x0b\x32\x15.v1.AccountPermissionB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xd5\x01\n\x11\x41\x63\x63ountPermission\x12\x1e\n\naccount_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ngranted_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npermission\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05scope\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tscoped_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xae\x01\n\x12\x41\x63\x63ountPermissions\x12{\n\x04List\x12 .v1.AccountPermissionListRequest\x1a!.v1.AccountPermissionListResponse\".\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-permissions\x1a\x1b\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11\x41\x63\x63ountPermissionBn\n\x19\x63om.strongdm.api.plumbingB\x1a\x41\x63\x63ountPermissionsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61\x63\x63ount_permissions.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"\x8b\x01\n\x1c\x41\x63\x63ountPermissionListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x82\x02\n\x1d\x41\x63\x63ountPermissionListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x36\n\x0bpermissions\x18\x02 \x03(\x0b\x32\x15.v1.AccountPermissionB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xfd\x01\n\x11\x41\x63\x63ountPermission\x12\x1e\n\naccount_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ngranted_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npermission\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05scope\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tscoped_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xd6\x01\n\x12\x41\x63\x63ountPermissions\x12{\n\x04List\x12 .v1.AccountPermissionListRequest\x1a!.v1.AccountPermissionListResponse\".\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1c\xaa\xf3\xb3\x07\x17/v1/account-permissions\x1a\x43\xca\xf9\xb3\x07\x16\xc2\xf9\xb3\x07\x11\x41\x63\x63ountPermission\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x96\x01\n\x19\x63om.strongdm.api.plumbingB\x1a\x41\x63\x63ountPermissionsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -63,13 +63,17 @@ _ACCOUNTPERMISSIONS = DESCRIPTOR.services_by_name['AccountPermissions']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\032AccountPermissionsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\032AccountPermissionsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _ACCOUNTPERMISSIONLISTREQUEST.fields_by_name['filter']._options = None
   _ACCOUNTPERMISSIONLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACCOUNTPERMISSIONLISTREQUEST._options = None
+  _ACCOUNTPERMISSIONLISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTPERMISSIONLISTRESPONSE.fields_by_name['permissions']._options = None
   _ACCOUNTPERMISSIONLISTRESPONSE.fields_by_name['permissions']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _ACCOUNTPERMISSIONLISTRESPONSE.fields_by_name['rate_limit']._options = None
   _ACCOUNTPERMISSIONLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _ACCOUNTPERMISSIONLISTRESPONSE._options = None
+  _ACCOUNTPERMISSIONLISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTPERMISSION.fields_by_name['account_id']._options = None
   _ACCOUNTPERMISSION.fields_by_name['account_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACCOUNTPERMISSION.fields_by_name['granted_at']._options = None
@@ -81,17 +85,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACCOUNTPERMISSION.fields_by_name['scoped_id']._options = None
   _ACCOUNTPERMISSION.fields_by_name['scoped_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACCOUNTPERMISSION._options = None
-  _ACCOUNTPERMISSION._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ACCOUNTPERMISSION._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTPERMISSIONS._options = None
-  _ACCOUNTPERMISSIONS._serialized_options = b'\312\371\263\007\026\302\371\263\007\021AccountPermission'
+  _ACCOUNTPERMISSIONS._serialized_options = b'\312\371\263\007\026\302\371\263\007\021AccountPermission\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _ACCOUNTPERMISSIONS.methods_by_name['List']._options = None
   _ACCOUNTPERMISSIONS.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\034\252\363\263\007\027/v1/account-permissions'
-  _ACCOUNTPERMISSIONLISTREQUEST._serialized_start=93
-  _ACCOUNTPERMISSIONLISTREQUEST._serialized_end=190
-  _ACCOUNTPERMISSIONLISTRESPONSE._serialized_start=193
-  _ACCOUNTPERMISSIONLISTRESPONSE._serialized_end=409
-  _ACCOUNTPERMISSION._serialized_start=412
-  _ACCOUNTPERMISSION._serialized_end=625
-  _ACCOUNTPERMISSIONS._serialized_start=628
-  _ACCOUNTPERMISSIONS._serialized_end=802
+  _ACCOUNTPERMISSIONLISTREQUEST._serialized_start=94
+  _ACCOUNTPERMISSIONLISTREQUEST._serialized_end=233
+  _ACCOUNTPERMISSIONLISTRESPONSE._serialized_start=236
+  _ACCOUNTPERMISSIONLISTRESPONSE._serialized_end=494
+  _ACCOUNTPERMISSION._serialized_start=497
+  _ACCOUNTPERMISSION._serialized_end=750
+  _ACCOUNTPERMISSIONS._serialized_start=753
+  _ACCOUNTPERMISSIONS._serialized_end=967
 # @@protoc_insertion_point(module_scope)

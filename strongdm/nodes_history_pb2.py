@@ -32,7 +32,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13nodes_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x0bnodes.proto\x1a\roptions.proto\x1a\nspec.proto\"[\n\x16NodeHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc8\x01\n\x17NodeHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12,\n\x07history\x18\x02 \x03(\x0b\x32\x0f.v1.NodeHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xd5\x01\n\x0bNodeHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x03 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\x9a\x01\n\x0cNodesHistory\x12i\n\x04List\x12\x1a.v1.NodeHistoryListRequest\x1a\x1b.v1.NodeHistoryListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/nodes-history\x1a\x1f\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bNodeHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42h\n\x19\x63om.strongdm.api.plumbingB\x14NodesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13nodes_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x0bnodes.proto\x1a\roptions.proto\x1a\nspec.proto\"\x85\x01\n\x16NodeHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xf2\x01\n\x17NodeHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12,\n\x07history\x18\x02 \x03(\x0b\x32\x0f.v1.NodeHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xfd\x01\n\x0bNodeHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04node\x18\x03 \x01(\x0b\x32\x08.v1.NodeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xc2\x01\n\x0cNodesHistory\x12i\n\x04List\x12\x1a.v1.NodeHistoryListRequest\x1a\x1b.v1.NodeHistoryListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/nodes-history\x1aG\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bNodeHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x90\x01\n\x19\x63om.strongdm.api.plumbingB\x14NodesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -64,13 +64,17 @@ _NODESHISTORY = DESCRIPTOR.services_by_name['NodesHistory']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\024NodesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\024NodesHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _NODEHISTORYLISTREQUEST.fields_by_name['filter']._options = None
   _NODEHISTORYLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _NODEHISTORYLISTREQUEST._options = None
+  _NODEHISTORYLISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _NODEHISTORYLISTRESPONSE.fields_by_name['history']._options = None
   _NODEHISTORYLISTRESPONSE.fields_by_name['history']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _NODEHISTORYLISTRESPONSE.fields_by_name['rate_limit']._options = None
   _NODEHISTORYLISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _NODEHISTORYLISTRESPONSE._options = None
+  _NODEHISTORYLISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _NODEHISTORY.fields_by_name['activity_id']._options = None
   _NODEHISTORY.fields_by_name['activity_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _NODEHISTORY.fields_by_name['timestamp']._options = None
@@ -80,17 +84,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _NODEHISTORY.fields_by_name['deleted_at']._options = None
   _NODEHISTORY.fields_by_name['deleted_at']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _NODEHISTORY._options = None
-  _NODEHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _NODEHISTORY._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _NODESHISTORY._options = None
-  _NODESHISTORY._serialized_options = b'\312\371\263\007\020\302\371\263\007\013NodeHistory\312\371\263\007\005\330\371\263\007\001'
+  _NODESHISTORY._serialized_options = b'\312\371\263\007\020\302\371\263\007\013NodeHistory\312\371\263\007\005\330\371\263\007\001\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _NODESHISTORY.methods_by_name['List']._options = None
   _NODESHISTORY.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\026\252\363\263\007\021/v1/nodes-history'
-  _NODEHISTORYLISTREQUEST._serialized_start=100
-  _NODEHISTORYLISTREQUEST._serialized_end=191
-  _NODEHISTORYLISTRESPONSE._serialized_start=194
-  _NODEHISTORYLISTRESPONSE._serialized_end=394
-  _NODEHISTORY._serialized_start=397
-  _NODEHISTORY._serialized_end=610
-  _NODESHISTORY._serialized_start=613
-  _NODESHISTORY._serialized_end=767
+  _NODEHISTORYLISTREQUEST._serialized_start=101
+  _NODEHISTORYLISTREQUEST._serialized_end=234
+  _NODEHISTORYLISTRESPONSE._serialized_start=237
+  _NODEHISTORYLISTRESPONSE._serialized_end=479
+  _NODEHISTORY._serialized_start=482
+  _NODEHISTORY._serialized_end=735
+  _NODESHISTORY._serialized_start=738
+  _NODESHISTORY._serialized_end=932
 # @@protoc_insertion_point(module_scope)

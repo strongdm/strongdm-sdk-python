@@ -31,7 +31,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61\x63\x63ount_resources.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"_\n\x1a\x41\x63\x63ountResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xda\x01\n\x1b\x41\x63\x63ountResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12:\n\x11\x61\x63\x63ount_resources\x18\x02 \x03(\x0b\x32\x13.v1.AccountResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\x99\x02\n\x0f\x41\x63\x63ountResource\x12\x1e\n\naccount_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0bresource_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ngranted_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1b\n\x07role_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10\x61\x63\x63ount_grant_id\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xa4\x01\n\x10\x41\x63\x63ountResources\x12u\n\x04List\x12\x1e.v1.AccountResourceListRequest\x1a\x1f.v1.AccountResourceListResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/account-resources\x1a\x19\xca\xf9\xb3\x07\x14\xc2\xf9\xb3\x07\x0f\x41\x63\x63ountResourceBl\n\x19\x63om.strongdm.api.plumbingB\x18\x41\x63\x63ountResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61\x63\x63ount_resources.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"\x89\x01\n\x1a\x41\x63\x63ountResourceListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x84\x02\n\x1b\x41\x63\x63ountResourceListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12:\n\x11\x61\x63\x63ount_resources\x18\x02 \x03(\x0b\x32\x13.v1.AccountResourceB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xc1\x02\n\x0f\x41\x63\x63ountResource\x12\x1e\n\naccount_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0bresource_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ngranted_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1b\n\x07role_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x10\x61\x63\x63ount_grant_id\x18\x06 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\xcc\x01\n\x10\x41\x63\x63ountResources\x12u\n\x04List\x12\x1e.v1.AccountResourceListRequest\x1a\x1f.v1.AccountResourceListResponse\",\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1a\xaa\xf3\xb3\x07\x15/v1/account-resources\x1a\x41\xca\xf9\xb3\x07\x14\xc2\xf9\xb3\x07\x0f\x41\x63\x63ountResource\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x94\x01\n\x19\x63om.strongdm.api.plumbingB\x18\x41\x63\x63ountResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -63,13 +63,17 @@ _ACCOUNTRESOURCES = DESCRIPTOR.services_by_name['AccountResources']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\030AccountResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\030AccountResourcesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\302\222\264\007\006\242\214\264\007\001*\302\222\264\007\030\242\214\264\007\023!terraform-provider'
   _ACCOUNTRESOURCELISTREQUEST.fields_by_name['filter']._options = None
   _ACCOUNTRESOURCELISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACCOUNTRESOURCELISTREQUEST._options = None
+  _ACCOUNTRESOURCELISTREQUEST._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTRESOURCELISTRESPONSE.fields_by_name['account_resources']._options = None
   _ACCOUNTRESOURCELISTRESPONSE.fields_by_name['account_resources']._serialized_options = b'\362\370\263\007\005\270\363\263\007\001'
   _ACCOUNTRESOURCELISTRESPONSE.fields_by_name['rate_limit']._options = None
   _ACCOUNTRESOURCELISTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _ACCOUNTRESOURCELISTRESPONSE._options = None
+  _ACCOUNTRESOURCELISTRESPONSE._serialized_options = b'\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTRESOURCE.fields_by_name['account_id']._options = None
   _ACCOUNTRESOURCE.fields_by_name['account_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACCOUNTRESOURCE.fields_by_name['resource_id']._options = None
@@ -83,17 +87,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACCOUNTRESOURCE.fields_by_name['account_grant_id']._options = None
   _ACCOUNTRESOURCE.fields_by_name['account_grant_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACCOUNTRESOURCE._options = None
-  _ACCOUNTRESOURCE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _ACCOUNTRESOURCE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001\372\370\263\007\006\322\363\263\007\001*\372\370\263\007\030\322\363\263\007\023!terraform-provider'
   _ACCOUNTRESOURCES._options = None
-  _ACCOUNTRESOURCES._serialized_options = b'\312\371\263\007\024\302\371\263\007\017AccountResource'
+  _ACCOUNTRESOURCES._serialized_options = b'\312\371\263\007\024\302\371\263\007\017AccountResource\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _ACCOUNTRESOURCES.methods_by_name['List']._options = None
   _ACCOUNTRESOURCES.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\032\252\363\263\007\025/v1/account-resources'
-  _ACCOUNTRESOURCELISTREQUEST._serialized_start=91
-  _ACCOUNTRESOURCELISTREQUEST._serialized_end=186
-  _ACCOUNTRESOURCELISTRESPONSE._serialized_start=189
-  _ACCOUNTRESOURCELISTRESPONSE._serialized_end=407
-  _ACCOUNTRESOURCE._serialized_start=410
-  _ACCOUNTRESOURCE._serialized_end=691
-  _ACCOUNTRESOURCES._serialized_start=694
-  _ACCOUNTRESOURCES._serialized_end=858
+  _ACCOUNTRESOURCELISTREQUEST._serialized_start=92
+  _ACCOUNTRESOURCELISTREQUEST._serialized_end=229
+  _ACCOUNTRESOURCELISTRESPONSE._serialized_start=232
+  _ACCOUNTRESOURCELISTRESPONSE._serialized_end=492
+  _ACCOUNTRESOURCE._serialized_start=495
+  _ACCOUNTRESOURCE._serialized_end=816
+  _ACCOUNTRESOURCES._serialized_start=819
+  _ACCOUNTRESOURCES._serialized_end=1023
 # @@protoc_insertion_point(module_scope)
