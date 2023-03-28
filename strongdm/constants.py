@@ -245,6 +245,7 @@ class ActivityVerb:
     WORKFLOW_NOTIFICATION_OPTION_REMOVED = "workflow notification type removed"
     WORKFLOW_NOTIFICATION_OPTIONS_UPDATED = "workflow notification settings updated"
     ORG_VNM_SUBNET_UPDATED = "organization VNM subnet updated"
+    ORG_VNM_RESOURCES_ALLOCATED = "organization resources allocated within VNM subnet"
     DEPRECATED_ORG_ACTIVATE_DEVICE_APPROVAL = "activate device approval"
     DEPRECATED_ORG_DEACTIVATE_DEVICE_APPROVAL = "deactivate device approval"
     EMULATION_MIGRATION_COMPLETED = "emulation migration completed"

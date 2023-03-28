@@ -12,6 +12,8 @@ strongdm/account_grants_pb2.py
 strongdm/account_grants_pb2_grpc.py
 strongdm/account_permissions_pb2.py
 strongdm/account_permissions_pb2_grpc.py
+strongdm/account_resources_history_pb2.py
+strongdm/account_resources_history_pb2_grpc.py
 strongdm/account_resources_pb2.py
 strongdm/account_resources_pb2_grpc.py
 strongdm/accounts_history_pb2.py

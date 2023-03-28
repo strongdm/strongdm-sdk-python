@@ -2101,6 +2101,70 @@ class AccountResource:
         )
 
 
+class AccountResourceHistory:
+    '''
+         AccountResourceHistory records the state of a AccountResource at a given point in time,
+     where every change (create or delete) to a AccountResource produces an
+     AccountResourceHistory record.
+    '''
+    __slots__ = [
+        'account_resource',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account_resource=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.account_resource = account_resource if account_resource is not None else None
+        '''
+         The complete AccountResource state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccountResource.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this AccountResource was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccountResource state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountResourceHistory ' + \
+            'account_resource: ' + repr(self.account_resource) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_resource': self.account_resource,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_resource=d.get('account_resource'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class AccountUpdateResponse:
     '''
          AccountUpdateResponse returns the fields of a Account after it has been updated by

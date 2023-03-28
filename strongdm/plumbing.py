@@ -32,6 +32,7 @@ from .account_grants_pb2 import *
 from .account_grants_history_pb2 import *
 from .account_permissions_pb2 import *
 from .account_resources_pb2 import *
+from .account_resources_history_pb2 import *
 from .tags_pb2 import *
 from .accounts_pb2 import *
 from .accounts_history_pb2 import *
@@ -1264,6 +1265,46 @@ def convert_repeated_account_resource_to_plumbing(porcelains):
 def convert_repeated_account_resource_to_porcelain(plumbings):
     return [
         convert_account_resource_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_resource_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountResourceHistory()
+    porcelain.account_resource = convert_account_resource_to_porcelain(
+        plumbing.account_resource)
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_account_resource_history_to_plumbing(porcelain):
+    plumbing = AccountResourceHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_resource.CopyFrom(
+        convert_account_resource_to_plumbing(porcelain.account_resource))
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_account_resource_history_to_plumbing(porcelains):
+    return [
+        convert_account_resource_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_resource_history_to_porcelain(plumbings):
+    return [
+        convert_account_resource_history_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

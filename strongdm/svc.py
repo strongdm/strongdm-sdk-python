@@ -34,6 +34,8 @@ from .account_permissions_pb2 import *
 from .account_permissions_pb2_grpc import *
 from .account_resources_pb2 import *
 from .account_resources_pb2_grpc import *
+from .account_resources_history_pb2 import *
+from .account_resources_history_pb2_grpc import *
 from .tags_pb2 import *
 from .tags_pb2_grpc import *
 from .accounts_pb2 import *
@@ -671,6 +673,55 @@ class SnapshotAccountResources:
          List gets a list of AccountResource records matching a given set of criteria.
         '''
         return self.account_resources.list(filter, *args, timeout=timeout)
+
+
+class AccountResourcesHistory:
+    '''
+     AccountResourcesHistory records all changes to the state of a AccountResource.
+    See `strongdm.models.AccountResourceHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountResourcesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountResourceHistory records matching a given set of criteria.
+        '''
+        req = AccountResourceHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountResourcesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_account_resource_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class Accounts:
