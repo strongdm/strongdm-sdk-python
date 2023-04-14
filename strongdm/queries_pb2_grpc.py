@@ -20,7 +20,7 @@ from . import queries_pb2 as queries__pb2
 
 
 class QueriesStub(object):
-    """A Query is a record of a single client request to a resource, such as an SQL query.
+    """A Query is a record of a single client request to a resource, such as a SQL query.
     Long-running SSH, RDP, or Kubernetes interactive sessions also count as queries.
     The Queries service is read-only.
     """
@@ -39,7 +39,7 @@ class QueriesStub(object):
 
 
 class QueriesServicer(object):
-    """A Query is a record of a single client request to a resource, such as an SQL query.
+    """A Query is a record of a single client request to a resource, such as a SQL query.
     Long-running SSH, RDP, or Kubernetes interactive sessions also count as queries.
     The Queries service is read-only.
     """
@@ -67,7 +67,7 @@ def add_QueriesServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Queries(object):
-    """A Query is a record of a single client request to a resource, such as an SQL query.
+    """A Query is a record of a single client request to a resource, such as a SQL query.
     Long-running SSH, RDP, or Kubernetes interactive sessions also count as queries.
     The Queries service is read-only.
     """

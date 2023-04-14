@@ -1634,6 +1634,74 @@ def convert_repeated_amazon_eks_instance_profile_to_porcelain(plumbings):
     ]
 
 
+def convert_amazon_eks_instance_profile_user_impersonation_to_porcelain(
+        plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AmazonEKSInstanceProfileUserImpersonation()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.cluster_name = (plumbing.cluster_name)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.region = (plumbing.region)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.remote_identity_healthcheck_username = (
+        plumbing.remote_identity_healthcheck_username)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_amazon_eks_instance_profile_user_impersonation_to_plumbing(
+        porcelain):
+    plumbing = AmazonEKSInstanceProfileUserImpersonation()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.certificate_authority = (porcelain.certificate_authority)
+    plumbing.cluster_name = (porcelain.cluster_name)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.endpoint = (porcelain.endpoint)
+    plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.region = (porcelain.region)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.remote_identity_healthcheck_username = (
+        porcelain.remote_identity_healthcheck_username)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_amazon_eks_instance_profile_user_impersonation_to_plumbing(
+        porcelains):
+    return [
+        convert_amazon_eks_instance_profile_user_impersonation_to_plumbing(
+            porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_amazon_eks_instance_profile_user_impersonation_to_porcelain(
+        plumbings):
+    return [
+        convert_amazon_eks_instance_profile_user_impersonation_to_porcelain(
+            plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_amazon_eks_user_impersonation_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5153,6 +5221,8 @@ def convert_query_to_porcelain(plumbing):
     porcelain.account_id = (plumbing.account_id)
     porcelain.account_last_name = (plumbing.account_last_name)
     porcelain.account_tags = convert_tags_to_porcelain(plumbing.account_tags)
+    porcelain.completed_at = convert_timestamp_to_porcelain(
+        plumbing.completed_at)
     porcelain.duration = convert_duration_to_porcelain(plumbing.duration)
     porcelain.egress_node_id = (plumbing.egress_node_id)
     porcelain.encrypted = (plumbing.encrypted)
@@ -5182,6 +5252,8 @@ def convert_query_to_plumbing(porcelain):
     plumbing.account_last_name = (porcelain.account_last_name)
     plumbing.account_tags.CopyFrom(
         convert_tags_to_plumbing(porcelain.account_tags))
+    plumbing.completed_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.completed_at))
     plumbing.duration.CopyFrom(convert_duration_to_plumbing(
         porcelain.duration))
     plumbing.egress_node_id = (porcelain.egress_node_id)
@@ -5977,6 +6049,10 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AmazonEKSInstanceProfile):
         plumbing.amazon_eks_instance_profile.CopyFrom(
             convert_amazon_eks_instance_profile_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AmazonEKSInstanceProfileUserImpersonation):
+        plumbing.amazon_eks_instance_profile_user_impersonation.CopyFrom(
+            convert_amazon_eks_instance_profile_user_impersonation_to_plumbing(
+                porcelain))
     if isinstance(porcelain, models.AmazonEKSUserImpersonation):
         plumbing.amazon_eks_user_impersonation.CopyFrom(
             convert_amazon_eks_user_impersonation_to_plumbing(porcelain))
@@ -6144,6 +6220,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.sybase_iq.CopyFrom(convert_sybase_iq_to_plumbing(porcelain))
     if isinstance(porcelain, models.Teradata):
         plumbing.teradata.CopyFrom(convert_teradata_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Trino):
+        plumbing.trino.CopyFrom(convert_trino_to_plumbing(porcelain))
     return plumbing
 
 
@@ -6168,6 +6246,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('amazon_eks_instance_profile'):
         return convert_amazon_eks_instance_profile_to_porcelain(
             plumbing.amazon_eks_instance_profile)
+    if plumbing.HasField('amazon_eks_instance_profile_user_impersonation'):
+        return convert_amazon_eks_instance_profile_user_impersonation_to_porcelain(
+            plumbing.amazon_eks_instance_profile_user_impersonation)
     if plumbing.HasField('amazon_eks_user_impersonation'):
         return convert_amazon_eks_user_impersonation_to_porcelain(
             plumbing.amazon_eks_user_impersonation)
@@ -6322,6 +6403,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_sybase_iq_to_porcelain(plumbing.sybase_iq)
     if plumbing.HasField('teradata'):
         return convert_teradata_to_porcelain(plumbing.teradata)
+    if plumbing.HasField('trino'):
+        return convert_trino_to_porcelain(plumbing.trino)
     raise errors.UnknownError(
         "unknown polymorphic type, please upgrade your SDK")
 
@@ -7680,6 +7763,56 @@ def convert_repeated_teradata_to_plumbing(porcelains):
 
 def convert_repeated_teradata_to_porcelain(plumbings):
     return [convert_teradata_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_trino_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Trino()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_trino_to_plumbing(porcelain):
+    plumbing = Trino()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_trino_to_plumbing(porcelains):
+    return [convert_trino_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_trino_to_porcelain(plumbings):
+    return [convert_trino_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_update_response_metadata_to_porcelain(plumbing):

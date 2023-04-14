@@ -1435,7 +1435,7 @@ class OrganizationHistory:
 
 class Queries:
     '''
-     A Query is a record of a single client request to a resource, such as an SQL query.
+     A Query is a record of a single client request to a resource, such as a SQL query.
      Long-running SSH, RDP, or Kubernetes interactive sessions also count as queries.
      The Queries service is read-only.
     See `strongdm.models.Query`.
@@ -1955,6 +1955,7 @@ class Resources:
     `strongdm.models.AKSUserImpersonation`
     `strongdm.models.AmazonEKS`
     `strongdm.models.AmazonEKSInstanceProfile`
+    `strongdm.models.AmazonEKSInstanceProfileUserImpersonation`
     `strongdm.models.AmazonEKSUserImpersonation`
     `strongdm.models.AmazonES`
     `strongdm.models.AmazonMQAMQP091`
@@ -2024,6 +2025,7 @@ class Resources:
     `strongdm.models.Sybase`
     `strongdm.models.SybaseIQ`
     `strongdm.models.Teradata`
+    `strongdm.models.Trino`
     '''
     def __init__(self, channel, client):
         self.parent = client

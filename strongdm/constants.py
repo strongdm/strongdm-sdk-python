@@ -89,6 +89,7 @@ class AuthProvider:
 class MFAProvider:
     NONE = ""
     DUO = "duo"
+    TOTP = "totp"
 
 
 # Activity Entities, all entity types that can be part of an activity.
@@ -104,6 +105,7 @@ class ActivityEntityType:
     REMOTE_IDENTITY = "remote_identity"
     ACCESS_REQUEST = "access_request"
     WORKFLOW = "workflow"
+    NODE = "node"
 
 
 # Activity Verbs, describe which kind of activity has taken place.
@@ -237,6 +239,8 @@ class ActivityVerb:
     ACCESS_REQUEST_TO_RESOURCE_CANCELED = "access request to resource canceled"
     ACCESS_REQUEST_TO_RESOURCE_DENIED = "access request to resource denied"
     ACCESS_REQUEST_TO_RESOURCE_TIMED_OUT = "access request to resource timed out"
+    WORKFLOW_ADDED = "access workflow added"
+    WORKFLOW_DELETED = "access workflow deleted"
     WORKFLOW_RESOURCE_ASSIGNED = "resource assigned to workflow"
     WORKFLOW_RESOURCE_UNASSIGNED = "resource unassigned from workflow"
     WORKFLOW_RESOURCE_MULTIPLE_ASSIGNED = "multiple resources assigned to workflow"
@@ -244,6 +248,8 @@ class ActivityVerb:
     WORKFLOW_NOTIFICATION_OPTION_ADDED = "workflow notification type added"
     WORKFLOW_NOTIFICATION_OPTION_REMOVED = "workflow notification type removed"
     WORKFLOW_NOTIFICATION_OPTIONS_UPDATED = "workflow notification settings updated"
+    WORKFLOW_NAME_UPDATED = "workflow name updated"
+    WORKFLOW_DESCRIPTION_UPDATED = "workflow description updated"
     ORG_VNM_SUBNET_UPDATED = "organization VNM subnet updated"
     ORG_VNM_RESOURCES_ALLOCATED = "organization resources allocated within VNM subnet"
     DEPRECATED_ORG_ACTIVATE_DEVICE_APPROVAL = "activate device approval"

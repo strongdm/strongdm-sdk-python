@@ -2815,6 +2815,159 @@ class AmazonEKSInstanceProfile:
         )
 
 
+class AmazonEKSInstanceProfileUserImpersonation:
+    __slots__ = [
+        'bind_interface',
+        'certificate_authority',
+        'cluster_name',
+        'egress_filter',
+        'endpoint',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'region',
+        'remote_identity_group_id',
+        'remote_identity_healthcheck_username',
+        'role_arn',
+        'role_external_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        certificate_authority=None,
+        cluster_name=None,
+        egress_filter=None,
+        endpoint=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        region=None,
+        remote_identity_group_id=None,
+        remote_identity_healthcheck_username=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        self.cluster_name = cluster_name if cluster_name is not None else ''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.endpoint = endpoint if endpoint is not None else ''
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.region = region if region is not None else ''
+        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        self.role_arn = role_arn if role_arn is not None else ''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AmazonEKSInstanceProfileUserImpersonation ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
+            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'certificate_authority': self.certificate_authority,
+            'cluster_name': self.cluster_name,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'region': self.region,
+            'remote_identity_group_id': self.remote_identity_group_id,
+            'remote_identity_healthcheck_username':
+            self.remote_identity_healthcheck_username,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            certificate_authority=d.get('certificate_authority'),
+            cluster_name=d.get('cluster_name'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            region=d.get('region'),
+            remote_identity_group_id=d.get('remote_identity_group_id'),
+            remote_identity_healthcheck_username=d.get(
+                'remote_identity_healthcheck_username'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
 class AmazonEKSUserImpersonation:
     __slots__ = [
         'access_key',
@@ -3841,10 +3994,6 @@ class AzureCertificate:
 
 
 class AzureMysql:
-    '''
-    AzureMysql is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'database',
@@ -10778,7 +10927,11 @@ class Presto:
 
 class Query:
     '''
-         A Query is a record of a single client request to a resource, such as an SQL query.
+         A Query is a record of a single client request to a resource, such as a SQL query.
+     Longer-running queries including long-running SSH commands and SSH, RDP, or Kubernetes
+     interactive sessions will return two Query records with the same identifier, one record
+     at the start of the query and a second record upon the completion of the query with
+     additional detail.
     '''
     __slots__ = [
         'account_email',
@@ -10786,6 +10939,7 @@ class Query:
         'account_id',
         'account_last_name',
         'account_tags',
+        'completed_at',
         'duration',
         'egress_node_id',
         'encrypted',
@@ -10811,6 +10965,7 @@ class Query:
         account_id=None,
         account_last_name=None,
         account_tags=None,
+        completed_at=None,
         duration=None,
         egress_node_id=None,
         encrypted=None,
@@ -10852,6 +11007,11 @@ class Query:
         '''
          The tags of the account accessed, at the time the query was executed. If the account
          tags are later changed, that change will not be reflected via this field.
+        '''
+        self.completed_at = completed_at if completed_at is not None else None
+        '''
+         The time at which the Query was completed.
+         Empty if this record indicates the start of a long-running query.
         '''
         self.duration = duration if duration is not None else None
         '''
@@ -10921,7 +11081,7 @@ class Query:
         '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
-         The time at which the Query was performed.
+         The time at which the Query was started.
         '''
 
     def __repr__(self):
@@ -10931,6 +11091,7 @@ class Query:
             'account_id: ' + repr(self.account_id) + ' ' +\
             'account_last_name: ' + repr(self.account_last_name) + ' ' +\
             'account_tags: ' + repr(self.account_tags) + ' ' +\
+            'completed_at: ' + repr(self.completed_at) + ' ' +\
             'duration: ' + repr(self.duration) + ' ' +\
             'egress_node_id: ' + repr(self.egress_node_id) + ' ' +\
             'encrypted: ' + repr(self.encrypted) + ' ' +\
@@ -10956,6 +11117,7 @@ class Query:
             'account_id': self.account_id,
             'account_last_name': self.account_last_name,
             'account_tags': self.account_tags,
+            'completed_at': self.completed_at,
             'duration': self.duration,
             'egress_node_id': self.egress_node_id,
             'encrypted': self.encrypted,
@@ -10982,6 +11144,7 @@ class Query:
             account_id=d.get('account_id'),
             account_last_name=d.get('account_last_name'),
             account_tags=d.get('account_tags'),
+            completed_at=d.get('completed_at'),
             duration=d.get('duration'),
             egress_node_id=d.get('egress_node_id'),
             encrypted=d.get('encrypted'),
@@ -14764,6 +14927,140 @@ class Teradata:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class Trino:
+    '''
+    Trino is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         Bind interface
+        '''
+        self.database = database if database is not None else ''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        self.port = port if port is not None else 0
+        self.port_override = port_override if port_override is not None else 0
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+
+    def __repr__(self):
+        return '<sdm.Trino ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
