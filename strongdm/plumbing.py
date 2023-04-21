@@ -5221,6 +5221,7 @@ def convert_query_to_porcelain(plumbing):
     porcelain.account_id = (plumbing.account_id)
     porcelain.account_last_name = (plumbing.account_last_name)
     porcelain.account_tags = convert_tags_to_porcelain(plumbing.account_tags)
+    porcelain.capture = convert_query_capture_to_porcelain(plumbing.capture)
     porcelain.completed_at = convert_timestamp_to_porcelain(
         plumbing.completed_at)
     porcelain.duration = convert_duration_to_porcelain(plumbing.duration)
@@ -5252,6 +5253,8 @@ def convert_query_to_plumbing(porcelain):
     plumbing.account_last_name = (porcelain.account_last_name)
     plumbing.account_tags.CopyFrom(
         convert_tags_to_plumbing(porcelain.account_tags))
+    plumbing.capture.CopyFrom(
+        convert_query_capture_to_plumbing(porcelain.capture))
     plumbing.completed_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.completed_at))
     plumbing.duration.CopyFrom(convert_duration_to_plumbing(
@@ -5282,6 +5285,59 @@ def convert_repeated_query_to_plumbing(porcelains):
 
 def convert_repeated_query_to_porcelain(plumbings):
     return [convert_query_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_query_capture_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.QueryCapture()
+    porcelain.client_command = (plumbing.client_command)
+    porcelain.command = (plumbing.command)
+    porcelain.container = (plumbing.container)
+    porcelain.env = (plumbing.env)
+    porcelain.file_name = (plumbing.file_name)
+    porcelain.file_size = (plumbing.file_size)
+    porcelain.height = (plumbing.height)
+    porcelain.pod = (plumbing.pod)
+    porcelain.request_body = (plumbing.request_body)
+    porcelain.request_method = (plumbing.request_method)
+    porcelain.request_uri = (plumbing.request_uri)
+    porcelain.type = (plumbing.type)
+    porcelain.width = (plumbing.width)
+    return porcelain
+
+
+def convert_query_capture_to_plumbing(porcelain):
+    plumbing = QueryCapture()
+    if porcelain is None:
+        return plumbing
+    plumbing.client_command = (porcelain.client_command)
+    plumbing.command = (porcelain.command)
+    plumbing.container = (porcelain.container)
+    plumbing.env.CopyFrom((porcelain.env))
+    plumbing.file_name = (porcelain.file_name)
+    plumbing.file_size = (porcelain.file_size)
+    plumbing.height = (porcelain.height)
+    plumbing.pod = (porcelain.pod)
+    plumbing.request_body = (porcelain.request_body)
+    plumbing.request_method = (porcelain.request_method)
+    plumbing.request_uri = (porcelain.request_uri)
+    plumbing.type = (porcelain.type)
+    plumbing.width = (porcelain.width)
+    return plumbing
+
+
+def convert_repeated_query_capture_to_plumbing(porcelains):
+    return [
+        convert_query_capture_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_query_capture_to_porcelain(plumbings):
+    return [
+        convert_query_capture_to_porcelain(plumbing) for plumbing in plumbings
+    ]
 
 
 def convert_rdp_to_porcelain(plumbing):

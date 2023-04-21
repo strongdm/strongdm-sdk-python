@@ -392,3 +392,24 @@ class SSHKeyType:
     ECDSA_384 = "ecdsa-384"
     ECDSA_521 = "ecdsa-521"
     ED_25519 = "ed25519"
+
+
+# CaptureType designates what type of SSH/RDP/K8s capture we have.
+class CaptureType:
+    SHELL = "shell"
+    SCP_UPLOAD = "scp-upload"
+    SCP_DOWNLOAD = "scp-download"
+    COMMAND = "command"
+    RDP_BASIC = "rdp-basic"
+    RDP_ENHANCED = "rdp-enhanced"
+    K_8_S_EXEC = "k8s-exec"
+    K_8_S_EXEC_TTY = "k8s-execTTY"
+    K_8_S_PORT_FORWARD = "k8s-portForward"
+    K_8_SCP_UPLOAD = "k8s-cp-upload"
+    K_8_SCP_DOWNLOAD = "k8s-cp-download"
+    K_8_S_DESCRIBE = "k8s-describe"
+    K_8_S_GET = "k8s-get"
+    K_8_S_DELETE = "k8s-delete"
+    K_8_S_GENERIC = "k8s-generic"
+    K_8_S_APPLY = "k8s-apply"
+    SSH_PORT_FORWARD = "ssh-portForward"

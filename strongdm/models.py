@@ -10939,6 +10939,7 @@ class Query:
         'account_id',
         'account_last_name',
         'account_tags',
+        'capture',
         'completed_at',
         'duration',
         'egress_node_id',
@@ -10965,6 +10966,7 @@ class Query:
         account_id=None,
         account_last_name=None,
         account_tags=None,
+        capture=None,
         completed_at=None,
         duration=None,
         egress_node_id=None,
@@ -11008,6 +11010,11 @@ class Query:
          The tags of the account accessed, at the time the query was executed. If the account
          tags are later changed, that change will not be reflected via this field.
         '''
+        self.capture = capture if capture is not None else None
+        '''
+         For queries against SSH, Kubernetes, and RDP resources, this contains additional information
+         about the captured query.
+        '''
         self.completed_at = completed_at if completed_at is not None else None
         '''
          The time at which the Query was completed.
@@ -11032,6 +11039,7 @@ class Query:
         self.query_body = query_body if query_body is not None else ''
         '''
          The captured content of the Query.
+         For queries against SSH, Kubernetes, and RDP resources, this contains a JSON representation of the QueryCapture.
         '''
         self.query_category = query_category if query_category is not None else ''
         '''
@@ -11091,6 +11099,7 @@ class Query:
             'account_id: ' + repr(self.account_id) + ' ' +\
             'account_last_name: ' + repr(self.account_last_name) + ' ' +\
             'account_tags: ' + repr(self.account_tags) + ' ' +\
+            'capture: ' + repr(self.capture) + ' ' +\
             'completed_at: ' + repr(self.completed_at) + ' ' +\
             'duration: ' + repr(self.duration) + ' ' +\
             'egress_node_id: ' + repr(self.egress_node_id) + ' ' +\
@@ -11117,6 +11126,7 @@ class Query:
             'account_id': self.account_id,
             'account_last_name': self.account_last_name,
             'account_tags': self.account_tags,
+            'capture': self.capture,
             'completed_at': self.completed_at,
             'duration': self.duration,
             'egress_node_id': self.egress_node_id,
@@ -11144,6 +11154,7 @@ class Query:
             account_id=d.get('account_id'),
             account_last_name=d.get('account_last_name'),
             account_tags=d.get('account_tags'),
+            capture=d.get('capture'),
             completed_at=d.get('completed_at'),
             duration=d.get('duration'),
             egress_node_id=d.get('egress_node_id'),
@@ -11161,6 +11172,148 @@ class Query:
             resource_tags=d.get('resource_tags'),
             resource_type=d.get('resource_type'),
             timestamp=d.get('timestamp'),
+        )
+
+
+class QueryCapture:
+    '''
+         A QueryCapture contains additional information about queries against SSH, Kubernetes, and RDP resources.
+    '''
+    __slots__ = [
+        'client_command',
+        'command',
+        'container',
+        'env',
+        'file_name',
+        'file_size',
+        'height',
+        'pod',
+        'request_body',
+        'request_method',
+        'request_uri',
+        'type',
+        'width',
+    ]
+
+    def __init__(
+        self,
+        client_command=None,
+        command=None,
+        container=None,
+        env=None,
+        file_name=None,
+        file_size=None,
+        height=None,
+        pod=None,
+        request_body=None,
+        request_method=None,
+        request_uri=None,
+        type=None,
+        width=None,
+    ):
+        self.client_command = client_command if client_command is not None else ''
+        '''
+         The command executed on the client for a Kubernetes session.
+        '''
+        self.command = command if command is not None else ''
+        '''
+         The command executed over an SSH or Kubernetes session.
+        '''
+        self.container = container if container is not None else ''
+        '''
+         The target container of a Kubernetes operation.
+        '''
+        self.env = env if env is not None else {}
+        '''
+         The environment variables for an SSH or Kubernetes session.
+        '''
+        self.file_name = file_name if file_name is not None else ''
+        '''
+         The remote file name of an SCP operation.
+        '''
+        self.file_size = file_size if file_size is not None else 0
+        '''
+         The file size transferred for an SCP operation.
+        '''
+        self.height = height if height is not None else 0
+        '''
+         The height of the terminal or window for SSH, Kubernetes, and RDP interactive sessions.
+        '''
+        self.pod = pod if pod is not None else ''
+        '''
+         The target pod of a Kubernetes operation.
+        '''
+        self.request_body = request_body if request_body is not None else b''
+        '''
+         The HTTP request body of a Kubernetes operation.
+        '''
+        self.request_method = request_method if request_method is not None else ''
+        '''
+         The HTTP request method of a Kubernetes operation.
+        '''
+        self.request_uri = request_uri if request_uri is not None else ''
+        '''
+         The HTTP request URI of a Kubernetes operation.
+        '''
+        self.type = type if type is not None else ''
+        '''
+         The CaptureType of this query capture.
+        '''
+        self.width = width if width is not None else 0
+        '''
+         The width of the terminal or window for SSH, Kubernetes, and RDP interactive sessions.
+        '''
+
+    def __repr__(self):
+        return '<sdm.QueryCapture ' + \
+            'client_command: ' + repr(self.client_command) + ' ' +\
+            'command: ' + repr(self.command) + ' ' +\
+            'container: ' + repr(self.container) + ' ' +\
+            'env: ' + repr(self.env) + ' ' +\
+            'file_name: ' + repr(self.file_name) + ' ' +\
+            'file_size: ' + repr(self.file_size) + ' ' +\
+            'height: ' + repr(self.height) + ' ' +\
+            'pod: ' + repr(self.pod) + ' ' +\
+            'request_body: ' + repr(self.request_body) + ' ' +\
+            'request_method: ' + repr(self.request_method) + ' ' +\
+            'request_uri: ' + repr(self.request_uri) + ' ' +\
+            'type: ' + repr(self.type) + ' ' +\
+            'width: ' + repr(self.width) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'client_command': self.client_command,
+            'command': self.command,
+            'container': self.container,
+            'env': self.env,
+            'file_name': self.file_name,
+            'file_size': self.file_size,
+            'height': self.height,
+            'pod': self.pod,
+            'request_body': self.request_body,
+            'request_method': self.request_method,
+            'request_uri': self.request_uri,
+            'type': self.type,
+            'width': self.width,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            client_command=d.get('client_command'),
+            command=d.get('command'),
+            container=d.get('container'),
+            env=d.get('env'),
+            file_name=d.get('file_name'),
+            file_size=d.get('file_size'),
+            height=d.get('height'),
+            pod=d.get('pod'),
+            request_body=d.get('request_body'),
+            request_method=d.get('request_method'),
+            request_uri=d.get('request_uri'),
+            type=d.get('type'),
+            width=d.get('width'),
         )
 
 
