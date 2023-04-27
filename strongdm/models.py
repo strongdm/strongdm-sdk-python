@@ -720,10 +720,12 @@ class AWS:
         'healthy',
         'id',
         'name',
+        'port_override',
         'role_arn',
         'role_external_id',
         'secret_access_key',
         'secret_store_id',
+        'subdomain',
         'tags',
     ]
 
@@ -736,10 +738,12 @@ class AWS:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         role_arn=None,
         role_external_id=None,
         secret_access_key=None,
         secret_store_id=None,
+        subdomain=None,
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
@@ -764,12 +768,17 @@ class AWS:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.role_arn = role_arn if role_arn is not None else ''
         self.role_external_id = role_external_id if role_external_id is not None else ''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -785,10 +794,12 @@ class AWS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
@@ -801,10 +812,12 @@ class AWS:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_access_key': self.secret_access_key,
             'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
             'tags': self.tags,
         }
 
@@ -818,10 +831,12 @@ class AWS:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_access_key=d.get('secret_access_key'),
             secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
             tags=d.get('tags'),
         )
 
@@ -3796,7 +3811,9 @@ class Azure:
         'id',
         'name',
         'password',
+        'port_override',
         'secret_store_id',
+        'subdomain',
         'tags',
         'tenant_id',
     ]
@@ -3810,7 +3827,9 @@ class Azure:
         id=None,
         name=None,
         password=None,
+        port_override=None,
         secret_store_id=None,
+        subdomain=None,
         tags=None,
         tenant_id=None,
     ):
@@ -3836,9 +3855,14 @@ class Azure:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        self.port_override = port_override if port_override is not None else 0
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -3855,7 +3879,9 @@ class Azure:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'tenant_id: ' + repr(self.tenant_id) + ' ' +\
             '>'
@@ -3869,7 +3895,9 @@ class Azure:
             'id': self.id,
             'name': self.name,
             'password': self.password,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
             'tags': self.tags,
             'tenant_id': self.tenant_id,
         }
@@ -3884,7 +3912,9 @@ class Azure:
             id=d.get('id'),
             name=d.get('name'),
             password=d.get('password'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             tenant_id=d.get('tenant_id'),
         )
@@ -3899,7 +3929,9 @@ class AzureCertificate:
         'healthy',
         'id',
         'name',
+        'port_override',
         'secret_store_id',
+        'subdomain',
         'tags',
         'tenant_id',
     ]
@@ -3913,7 +3945,9 @@ class AzureCertificate:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         secret_store_id=None,
+        subdomain=None,
         tags=None,
         tenant_id=None,
     ):
@@ -3939,9 +3973,14 @@ class AzureCertificate:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -3958,7 +3997,9 @@ class AzureCertificate:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'tenant_id: ' + repr(self.tenant_id) + ' ' +\
             '>'
@@ -3972,7 +4013,9 @@ class AzureCertificate:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
             'tags': self.tags,
             'tenant_id': self.tenant_id,
         }
@@ -3987,7 +4030,9 @@ class AzureCertificate:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             tenant_id=d.get('tenant_id'),
         )
@@ -6405,8 +6450,10 @@ class GCP:
         'id',
         'keyfile',
         'name',
+        'port_override',
         'scopes',
         'secret_store_id',
+        'subdomain',
         'tags',
     ]
 
@@ -6418,8 +6465,10 @@ class GCP:
         id=None,
         keyfile=None,
         name=None,
+        port_override=None,
         scopes=None,
         secret_store_id=None,
+        subdomain=None,
         tags=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -6443,10 +6492,15 @@ class GCP:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.scopes = scopes if scopes is not None else ''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -6461,8 +6515,10 @@ class GCP:
             'id: ' + repr(self.id) + ' ' +\
             'keyfile: ' + repr(self.keyfile) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'scopes: ' + repr(self.scopes) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
@@ -6474,8 +6530,10 @@ class GCP:
             'id': self.id,
             'keyfile': self.keyfile,
             'name': self.name,
+            'port_override': self.port_override,
             'scopes': self.scopes,
             'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
             'tags': self.tags,
         }
 
@@ -6488,8 +6546,10 @@ class GCP:
             id=d.get('id'),
             keyfile=d.get('keyfile'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             scopes=d.get('scopes'),
             secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
             tags=d.get('tags'),
         )
 
