@@ -1237,6 +1237,7 @@ def convert_account_resource_to_porcelain(plumbing):
     porcelain = models.AccountResource()
     porcelain.account_grant_id = (plumbing.account_grant_id)
     porcelain.account_id = (plumbing.account_id)
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.expires_at = convert_timestamp_to_porcelain(plumbing.expires_at)
     porcelain.granted_at = convert_timestamp_to_porcelain(plumbing.granted_at)
     porcelain.resource_id = (plumbing.resource_id)
@@ -1250,6 +1251,8 @@ def convert_account_resource_to_plumbing(porcelain):
         return plumbing
     plumbing.account_grant_id = (porcelain.account_grant_id)
     plumbing.account_id = (porcelain.account_id)
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.expires_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.expires_at))
     plumbing.granted_at.CopyFrom(

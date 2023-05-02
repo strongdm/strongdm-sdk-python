@@ -2041,6 +2041,7 @@ class AccountResource:
     __slots__ = [
         'account_grant_id',
         'account_id',
+        'created_at',
         'expires_at',
         'granted_at',
         'resource_id',
@@ -2051,6 +2052,7 @@ class AccountResource:
         self,
         account_grant_id=None,
         account_id=None,
+        created_at=None,
         expires_at=None,
         granted_at=None,
         resource_id=None,
@@ -2064,6 +2066,11 @@ class AccountResource:
         self.account_id = account_id if account_id is not None else ''
         '''
          The unique identifier of the Account to which access is granted.
+        '''
+        self.created_at = created_at if created_at is not None else None
+        '''
+         The time this grant was created, distinct from 'granted at' in the case where access is scheduled
+         for the future. If access was granted, revoked, and granted again, this will reflect the later creation time.
         '''
         self.expires_at = expires_at if expires_at is not None else None
         '''
@@ -2088,6 +2095,7 @@ class AccountResource:
         return '<sdm.AccountResource ' + \
             'account_grant_id: ' + repr(self.account_grant_id) + ' ' +\
             'account_id: ' + repr(self.account_id) + ' ' +\
+            'created_at: ' + repr(self.created_at) + ' ' +\
             'expires_at: ' + repr(self.expires_at) + ' ' +\
             'granted_at: ' + repr(self.granted_at) + ' ' +\
             'resource_id: ' + repr(self.resource_id) + ' ' +\
@@ -2098,6 +2106,7 @@ class AccountResource:
         return {
             'account_grant_id': self.account_grant_id,
             'account_id': self.account_id,
+            'created_at': self.created_at,
             'expires_at': self.expires_at,
             'granted_at': self.granted_at,
             'resource_id': self.resource_id,
@@ -2109,6 +2118,7 @@ class AccountResource:
         return cls(
             account_grant_id=d.get('account_grant_id'),
             account_id=d.get('account_id'),
+            created_at=d.get('created_at'),
             expires_at=d.get('expires_at'),
             granted_at=d.get('granted_at'),
             resource_id=d.get('resource_id'),
