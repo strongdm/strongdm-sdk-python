@@ -1525,6 +1525,7 @@ def convert_amazon_eks_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
     porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
     porcelain.remote_identity_healthcheck_username = (
@@ -1552,6 +1553,7 @@ def convert_amazon_eks_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
     plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
     plumbing.remote_identity_healthcheck_username = (
@@ -1590,6 +1592,7 @@ def convert_amazon_eks_instance_profile_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
     porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
     porcelain.remote_identity_healthcheck_username = (
@@ -1615,6 +1618,7 @@ def convert_amazon_eks_instance_profile_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
     plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
     plumbing.remote_identity_healthcheck_username = (
@@ -1655,6 +1659,7 @@ def convert_amazon_eks_instance_profile_user_impersonation_to_porcelain(
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
     porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
     porcelain.remote_identity_healthcheck_username = (
@@ -1681,6 +1686,7 @@ def convert_amazon_eks_instance_profile_user_impersonation_to_plumbing(
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
     plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
     plumbing.remote_identity_healthcheck_username = (
@@ -1723,6 +1729,7 @@ def convert_amazon_eks_user_impersonation_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
@@ -1747,6 +1754,7 @@ def convert_amazon_eks_user_impersonation_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)

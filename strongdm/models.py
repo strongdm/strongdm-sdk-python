@@ -2534,6 +2534,7 @@ class AmazonEKS:
         'healthy',
         'id',
         'name',
+        'port_override',
         'region',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
@@ -2557,6 +2558,7 @@ class AmazonEKS:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         region=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
@@ -2595,6 +2597,7 @@ class AmazonEKS:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
@@ -2626,6 +2629,7 @@ class AmazonEKS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
@@ -2649,6 +2653,7 @@ class AmazonEKS:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'region': self.region,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
@@ -2674,6 +2679,7 @@ class AmazonEKS:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             region=d.get('region'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
@@ -2698,6 +2704,7 @@ class AmazonEKSInstanceProfile:
         'healthy',
         'id',
         'name',
+        'port_override',
         'region',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
@@ -2719,6 +2726,7 @@ class AmazonEKSInstanceProfile:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         region=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
@@ -2755,6 +2763,7 @@ class AmazonEKSInstanceProfile:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
@@ -2784,6 +2793,7 @@ class AmazonEKSInstanceProfile:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
@@ -2805,6 +2815,7 @@ class AmazonEKSInstanceProfile:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'region': self.region,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
@@ -2828,6 +2839,7 @@ class AmazonEKSInstanceProfile:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             region=d.get('region'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
@@ -2851,6 +2863,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         'healthy',
         'id',
         'name',
+        'port_override',
         'region',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
@@ -2872,6 +2885,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         region=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
@@ -2908,6 +2922,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
@@ -2937,6 +2952,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
@@ -2958,6 +2974,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'region': self.region,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
@@ -2981,6 +2998,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             region=d.get('region'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
@@ -3005,6 +3023,7 @@ class AmazonEKSUserImpersonation:
         'healthy',
         'id',
         'name',
+        'port_override',
         'region',
         'role_arn',
         'role_external_id',
@@ -3026,6 +3045,7 @@ class AmazonEKSUserImpersonation:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -3062,6 +3082,7 @@ class AmazonEKSUserImpersonation:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
         self.region = region if region is not None else ''
         self.role_arn = role_arn if role_arn is not None else ''
         self.role_external_id = role_external_id if role_external_id is not None else ''
@@ -3091,6 +3112,7 @@ class AmazonEKSUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -3112,6 +3134,7 @@ class AmazonEKSUserImpersonation:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -3134,6 +3157,7 @@ class AmazonEKSUserImpersonation:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
