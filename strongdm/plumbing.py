@@ -6290,6 +6290,12 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.snowsight.CopyFrom(convert_snowsight_to_plumbing(porcelain))
     if isinstance(porcelain, models.SQLServer):
         plumbing.sql_server.CopyFrom(convert_sql_server_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SQLServerAzureAD):
+        plumbing.sql_server_azure_ad.CopyFrom(
+            convert_sql_server_azure_ad_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SQLServerKerberosAD):
+        plumbing.sql_server_kerberos_ad.CopyFrom(
+            convert_sql_server_kerberos_ad_to_plumbing(porcelain))
     if isinstance(porcelain, models.SSH):
         plumbing.ssh.CopyFrom(convert_ssh_to_plumbing(porcelain))
     if isinstance(porcelain, models.SSHCert):
@@ -6474,6 +6480,12 @@ def convert_resource_to_porcelain(plumbing):
         return convert_snowsight_to_porcelain(plumbing.snowsight)
     if plumbing.HasField('sql_server'):
         return convert_sql_server_to_porcelain(plumbing.sql_server)
+    if plumbing.HasField('sql_server_azure_ad'):
+        return convert_sql_server_azure_ad_to_porcelain(
+            plumbing.sql_server_azure_ad)
+    if plumbing.HasField('sql_server_kerberos_ad'):
+        return convert_sql_server_kerberos_ad_to_porcelain(
+            plumbing.sql_server_kerberos_ad)
     if plumbing.HasField('ssh'):
         return convert_ssh_to_porcelain(plumbing.ssh)
     if plumbing.HasField('ssh_cert'):
@@ -7041,6 +7053,134 @@ def convert_repeated_sql_server_to_plumbing(porcelains):
 def convert_repeated_sql_server_to_porcelain(plumbings):
     return [
         convert_sql_server_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_sql_server_azure_ad_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SQLServerAzureAD()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.client_id = (plumbing.client_id)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.schema = (plumbing.schema)
+    porcelain.secret = (plumbing.secret)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tenant_id = (plumbing.tenant_id)
+    return porcelain
+
+
+def convert_sql_server_azure_ad_to_plumbing(porcelain):
+    plumbing = SQLServerAzureAD()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.client_id = (porcelain.client_id)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.schema = (porcelain.schema)
+    plumbing.secret = (porcelain.secret)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tenant_id = (porcelain.tenant_id)
+    return plumbing
+
+
+def convert_repeated_sql_server_azure_ad_to_plumbing(porcelains):
+    return [
+        convert_sql_server_azure_ad_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_sql_server_azure_ad_to_porcelain(plumbings):
+    return [
+        convert_sql_server_azure_ad_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_sql_server_kerberos_ad_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SQLServerKerberosAD()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.keytab = (plumbing.keytab)
+    porcelain.krb_config = (plumbing.krb_config)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.realm = (plumbing.realm)
+    porcelain.schema = (plumbing.schema)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.server_spn = (plumbing.server_spn)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_sql_server_kerberos_ad_to_plumbing(porcelain):
+    plumbing = SQLServerKerberosAD()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.keytab = (porcelain.keytab)
+    plumbing.krb_config = (porcelain.krb_config)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.realm = (porcelain.realm)
+    plumbing.schema = (porcelain.schema)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.server_spn = (porcelain.server_spn)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_sql_server_kerberos_ad_to_plumbing(porcelains):
+    return [
+        convert_sql_server_kerberos_ad_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_sql_server_kerberos_ad_to_porcelain(plumbings):
+    return [
+        convert_sql_server_kerberos_ad_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 

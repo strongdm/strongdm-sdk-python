@@ -241,6 +241,7 @@ class ActivityVerb:
     ACCESS_REQUEST_TO_RESOURCE_DENIED = "access request to resource denied"
     ACCESS_REQUEST_TO_RESOURCE_TIMED_OUT = "access request to resource timed out"
     ACCESS_REQUEST_TO_RESOURCE_GRANTED = "access request to resource granted"
+    ACCESS_REQUEST_TO_RESOURCE_GRANTED_AUTOMATICALLY = "access request to resource granted automatically"
     WORKFLOW_ADDED = "access workflow added"
     WORKFLOW_DELETED = "access workflow deleted"
     WORKFLOW_RESOURCE_ASSIGNED = "resource assigned to workflow"
@@ -248,9 +249,7 @@ class ActivityVerb:
     WORKFLOW_RESOURCE_MULTIPLE_ASSIGNED = "multiple resources assigned to workflow"
     WORKFLOW_RESOURCE_MULTIPLE_UNASSIGNED = "multiple resources unassigned from workflow"
     WORKFLOW_ROLES_UPDATED = "workflow roles updated"
-    WORKFLOW_NOTIFICATION_OPTION_ADDED = "workflow notification type added"
-    WORKFLOW_NOTIFICATION_OPTION_REMOVED = "workflow notification type removed"
-    WORKFLOW_NOTIFICATION_OPTIONS_UPDATED = "workflow approvers updated"
+    WORKFLOW_APPROVERS_UPDATED = "workflow approvers updated"
     WORKFLOW_NAME_UPDATED = "workflow name updated"
     WORKFLOW_DESCRIPTION_UPDATED = "workflow description updated"
     WORKFLOW_AUTO_GRANT_UPDATED = "workflow auto grant updated"
@@ -343,6 +342,7 @@ class Permission:
     GRANT_READ = "grant:read"
     GRANT_WRITE = "grant:write"
     REPORT_READ = "report:read"
+    BILLING_READ = "billing:read"
 
 
 # Query Categories, all the categories of resource against which queries are logged.

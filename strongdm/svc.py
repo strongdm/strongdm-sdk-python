@@ -2019,6 +2019,8 @@ class Resources:
     `strongdm.models.Snowflake`
     `strongdm.models.Snowsight`
     `strongdm.models.SQLServer`
+    `strongdm.models.SQLServerAzureAD`
+    `strongdm.models.SQLServerKerberosAD`
     `strongdm.models.SSH`
     `strongdm.models.SSHCert`
     `strongdm.models.SSHCustomerKey`
