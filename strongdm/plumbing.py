@@ -1955,9 +1955,12 @@ def convert_aurora_mysql_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -1976,9 +1979,12 @@ def convert_aurora_mysql_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -2165,9 +2171,12 @@ def convert_azure_mysql_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -2186,9 +2195,12 @@ def convert_azure_mysql_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -2464,9 +2476,12 @@ def convert_clustrix_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -2485,9 +2500,12 @@ def convert_clustrix_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -4038,10 +4056,13 @@ def convert_mtls_mysql_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.server_name = (plumbing.server_name)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -4063,10 +4084,13 @@ def convert_mtls_mysql_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.server_name = (porcelain.server_name)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -4162,9 +4186,12 @@ def convert_maria_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -4183,9 +4210,12 @@ def convert_maria_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -4258,9 +4288,12 @@ def convert_memsql_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -4279,9 +4312,12 @@ def convert_memsql_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -4604,9 +4640,12 @@ def convert_mysql_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -4625,9 +4664,12 @@ def convert_mysql_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -7676,9 +7718,12 @@ def convert_single_store_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.use_azure_single_server_usernames = (
+        plumbing.use_azure_single_server_usernames)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -7697,9 +7742,12 @@ def convert_single_store_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.use_azure_single_server_usernames = (
+        porcelain.use_azure_single_server_usernames)
     plumbing.username = (porcelain.username)
     return plumbing
 

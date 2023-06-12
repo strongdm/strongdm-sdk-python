@@ -3582,9 +3582,11 @@ class AuroraMysql:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -3600,9 +3602,11 @@ class AuroraMysql:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -3630,6 +3634,7 @@ class AuroraMysql:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3642,6 +3647,7 @@ class AuroraMysql:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -3656,9 +3662,11 @@ class AuroraMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -3674,9 +3682,12 @@ class AuroraMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -3693,9 +3704,12 @@ class AuroraMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -4084,9 +4098,11 @@ class AzureMysql:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -4102,9 +4118,11 @@ class AzureMysql:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -4132,6 +4150,7 @@ class AzureMysql:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4144,6 +4163,7 @@ class AzureMysql:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -4158,9 +4178,11 @@ class AzureMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -4176,9 +4198,12 @@ class AzureMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -4195,9 +4220,12 @@ class AzureMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -4795,9 +4823,11 @@ class Clustrix:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -4813,9 +4843,11 @@ class Clustrix:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -4843,6 +4875,7 @@ class Clustrix:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4855,6 +4888,7 @@ class Clustrix:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -4869,9 +4903,11 @@ class Clustrix:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -4887,9 +4923,12 @@ class Clustrix:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -4906,9 +4945,12 @@ class Clustrix:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -8270,10 +8312,12 @@ class MTLSMysql:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'server_name',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -8292,10 +8336,12 @@ class MTLSMysql:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         server_name=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -8326,6 +8372,7 @@ class MTLSMysql:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8339,6 +8386,7 @@ class MTLSMysql:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -8356,10 +8404,12 @@ class MTLSMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'server_name: ' + repr(self.server_name) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -8378,10 +8428,13 @@ class MTLSMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'server_name': self.server_name,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -8401,10 +8454,13 @@ class MTLSMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             server_name=d.get('server_name'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -8581,9 +8637,11 @@ class Maria:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -8599,9 +8657,11 @@ class Maria:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -8629,6 +8689,7 @@ class Maria:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8641,6 +8702,7 @@ class Maria:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -8655,9 +8717,11 @@ class Maria:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -8673,9 +8737,12 @@ class Maria:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -8692,9 +8759,12 @@ class Maria:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -8823,9 +8893,11 @@ class Memsql:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -8841,9 +8913,11 @@ class Memsql:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -8871,6 +8945,7 @@ class Memsql:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8883,6 +8958,7 @@ class Memsql:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -8897,9 +8973,11 @@ class Memsql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -8915,9 +8993,12 @@ class Memsql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -8934,9 +9015,12 @@ class Memsql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -9669,9 +9753,11 @@ class Mysql:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -9687,9 +9773,11 @@ class Mysql:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -9717,6 +9805,7 @@ class Mysql:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9729,6 +9818,7 @@ class Mysql:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -9743,9 +9833,11 @@ class Mysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -9761,9 +9853,12 @@ class Mysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -9780,9 +9875,12 @@ class Mysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -14730,9 +14828,11 @@ class SingleStore:
         'password',
         'port',
         'port_override',
+        'require_native_auth',
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -14748,9 +14848,11 @@ class SingleStore:
         password=None,
         port=None,
         port_override=None,
+        require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -14778,6 +14880,7 @@ class SingleStore:
         self.password = password if password is not None else ''
         self.port = port if port is not None else 0
         self.port_override = port_override if port_override is not None else 0
+        self.require_native_auth = require_native_auth if require_native_auth is not None else False
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14790,6 +14893,7 @@ class SingleStore:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
         self.username = username if username is not None else ''
 
     def __repr__(self):
@@ -14804,9 +14908,11 @@ class SingleStore:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -14822,9 +14928,12 @@ class SingleStore:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -14841,9 +14950,12 @@ class SingleStore:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
