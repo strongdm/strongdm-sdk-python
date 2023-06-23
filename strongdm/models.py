@@ -61,11 +61,20 @@ class AKS:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -79,6 +88,9 @@ class AKS:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -88,9 +100,21 @@ class AKS:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -208,7 +232,7 @@ class AKSBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -223,6 +247,9 @@ class AKSBasicAuth:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -232,8 +259,17 @@ class AKSBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -247,6 +283,9 @@ class AKSBasicAuth:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AKSBasicAuth ' + \
@@ -343,7 +382,7 @@ class AKSServiceAccount:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -358,6 +397,9 @@ class AKSServiceAccount:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -367,9 +409,21 @@ class AKSServiceAccount:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -383,6 +437,9 @@ class AKSServiceAccount:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
+        '''
+         The API token to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
@@ -480,7 +537,7 @@ class AKSServiceAccountUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -495,6 +552,9 @@ class AKSServiceAccountUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -504,7 +564,13 @@ class AKSServiceAccountUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -518,6 +584,9 @@ class AKSServiceAccountUserImpersonation:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
+        '''
+         The API token to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AKSServiceAccountUserImpersonation ' + \
@@ -611,11 +680,20 @@ class AKSUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -629,6 +707,9 @@ class AKSUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -638,7 +719,13 @@ class AKSUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -747,15 +834,21 @@ class AWS:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.healthcheck_region = healthcheck_region if healthcheck_region is not None else ''
+        '''
+         The AWS region healthcheck requests should attempt to connect to.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -769,9 +862,21 @@ class AWS:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -886,13 +991,16 @@ class AWSConsole:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.enable_env_variables = enable_env_variables if enable_env_variables is not None else False
+        '''
+         If true, prefer environment variables to authenticate connection even if EC2 roles are configured.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -906,17 +1014,41 @@ class AWSConsole:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.session_expiry = session_expiry if session_expiry is not None else 0
+        '''
+         The length of time in seconds AWS console sessions will live before needing to reauthenticate.
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -1032,9 +1164,12 @@ class AWSConsoleStaticKeyPair:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to authenticate with.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1053,18 +1188,45 @@ class AWSConsoleStaticKeyPair:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to authenticate with.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.session_expiry = session_expiry if session_expiry is not None else 0
+        '''
+         The length of time in seconds AWS console sessions will live before needing to reauthenticate.
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -1161,6 +1323,9 @@ class AWSStore:
          Unique human-readable name of the SecretStore.
         '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to target e.g. us-east-1
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -2570,17 +2735,29 @@ class AmazonEKS:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
+        '''
+         The name of the cluster to connect to.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -2598,12 +2775,33 @@ class AmazonEKS:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2738,15 +2936,24 @@ class AmazonEKSInstanceProfile:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
+        '''
+         The name of the cluster to connect to.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -2764,11 +2971,29 @@ class AmazonEKSInstanceProfile:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -2897,15 +3122,24 @@ class AmazonEKSInstanceProfileUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
+        '''
+         The name of the cluster to connect to.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -2923,11 +3157,29 @@ class AmazonEKSInstanceProfileUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3055,17 +3307,29 @@ class AmazonEKSUserImpersonation:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.cluster_name = cluster_name if cluster_name is not None else ''
+        '''
+         The name of the cluster to connect to.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -3083,10 +3347,25 @@ class AmazonEKSUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3206,15 +3485,21 @@ class AmazonES:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial e.g. search-?.region.es.amazonaws.com"
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -3228,10 +3513,25 @@ class AmazonES:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3341,7 +3641,7 @@ class AmazonMQAMQP091:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -3352,6 +3652,9 @@ class AmazonMQAMQP091:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3361,8 +3664,17 @@ class AmazonMQAMQP091:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3376,7 +3688,13 @@ class AmazonMQAMQP091:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AmazonMQAMQP091 ' + \
@@ -3472,9 +3790,12 @@ class Athena:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -3493,11 +3814,29 @@ class Athena:
          Unique human-readable name of the Resource.
         '''
         self.output = output if output is not None else ''
+        '''
+         The AWS S3 output location.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3611,9 +3950,12 @@ class AuroraMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3623,6 +3965,9 @@ class AuroraMysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3632,9 +3977,21 @@ class AuroraMysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3648,7 +4005,13 @@ class AuroraMysql:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AuroraMysql ' + \
@@ -3753,9 +4116,12 @@ class AuroraPostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -3765,6 +4131,9 @@ class AuroraPostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -3774,9 +4143,21 @@ class AuroraPostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3790,6 +4171,9 @@ class AuroraPostgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AuroraPostgres ' + \
@@ -3882,9 +4266,12 @@ class Azure:
         tenant_id=None,
     ):
         self.app_id = app_id if app_id is not None else ''
+        '''
+         The application ID to authenticate with.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -3903,7 +4290,13 @@ class Azure:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -3917,6 +4310,9 @@ class Azure:
          Tags is a map of key, value pairs.
         '''
         self.tenant_id = tenant_id if tenant_id is not None else ''
+        '''
+         The tenant ID to authenticate to.
+        '''
 
     def __repr__(self):
         return '<sdm.Azure ' + \
@@ -4000,11 +4396,17 @@ class AzureCertificate:
         tenant_id=None,
     ):
         self.app_id = app_id if app_id is not None else ''
+        '''
+         The application ID to authenticate with.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The service Principal certificate file, both private and public key included.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4022,6 +4424,9 @@ class AzureCertificate:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4035,6 +4440,9 @@ class AzureCertificate:
          Tags is a map of key, value pairs.
         '''
         self.tenant_id = tenant_id if tenant_id is not None else ''
+        '''
+         The tenant ID to authenticate to.
+        '''
 
     def __repr__(self):
         return '<sdm.AzureCertificate ' + \
@@ -4127,9 +4535,12 @@ class AzureMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4139,6 +4550,9 @@ class AzureMysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4148,9 +4562,21 @@ class AzureMysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4164,7 +4590,13 @@ class AzureMysql:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AzureMysql ' + \
@@ -4269,9 +4701,12 @@ class AzurePostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4281,6 +4716,9 @@ class AzurePostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4290,9 +4728,21 @@ class AzurePostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4306,9 +4756,334 @@ class AzurePostgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.AzurePostgres ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class AzurePostgresFlexible:
+    '''
+    AzurePostgresFlexible is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AzurePostgresFlexible ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class AzurePostgresSingle:
+    '''
+    AzurePostgresSingle is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AzurePostgresSingle ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -4394,6 +5169,9 @@ class AzureStore:
          Tags is a map of key, value pairs.
         '''
         self.vault_uri = vault_uri if vault_uri is not None else ''
+        '''
+         The URI of the key vault to target e.g. https://myvault.vault.azure.net
+        '''
 
     def __repr__(self):
         return '<sdm.AzureStore ' + \
@@ -4456,13 +5234,16 @@ class BigQuery:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -4476,8 +5257,17 @@ class BigQuery:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.private_key = private_key if private_key is not None else ''
+        '''
+         The JSON Private key to authenticate with.
+        '''
         self.project = project if project is not None else ''
+        '''
+         The project to connect to.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4491,6 +5281,9 @@ class BigQuery:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.BigQuery ' + \
@@ -4582,7 +5375,7 @@ class Cassandra:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -4593,6 +5386,9 @@ class Cassandra:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4602,8 +5398,17 @@ class Cassandra:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4617,7 +5422,13 @@ class Cassandra:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Cassandra ' + \
@@ -4714,9 +5525,12 @@ class Citus:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4726,6 +5540,9 @@ class Citus:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4735,9 +5552,21 @@ class Citus:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4751,6 +5580,9 @@ class Citus:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Citus ' + \
@@ -4852,9 +5684,12 @@ class Clustrix:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -4864,6 +5699,9 @@ class Clustrix:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -4873,9 +5711,21 @@ class Clustrix:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4889,7 +5739,13 @@ class Clustrix:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Clustrix ' + \
@@ -4994,9 +5850,12 @@ class Cockroach:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -5006,6 +5865,9 @@ class Cockroach:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5015,9 +5877,21 @@ class Cockroach:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5031,6 +5905,9 @@ class Cockroach:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Cockroach ' + \
@@ -5234,6 +6111,9 @@ class CyberarkConjurStore:
         tags=None,
     ):
         self.appurl = appurl if appurl is not None else ''
+        '''
+         The URL of the Cyberark instance
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
@@ -5293,6 +6173,9 @@ class CyberarkPAMExperimentalStore:
         tags=None,
     ):
         self.appurl = appurl if appurl is not None else ''
+        '''
+         The URL of the Cyberark instance
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
@@ -5348,6 +6231,9 @@ class CyberarkPAMStore:
         tags=None,
     ):
         self.appurl = appurl if appurl is not None else ''
+        '''
+         The URL of the Cyberark instance
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
@@ -5424,7 +6310,7 @@ class DB2I:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5435,6 +6321,9 @@ class DB2I:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5444,8 +6333,17 @@ class DB2I:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5459,7 +6357,13 @@ class DB2I:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.DB2I ' + \
@@ -5554,9 +6458,12 @@ class DB2LUW:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -5566,6 +6473,9 @@ class DB2LUW:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5575,8 +6485,17 @@ class DB2LUW:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5590,6 +6509,9 @@ class DB2LUW:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.DB2LUW ' + \
@@ -5694,11 +6616,17 @@ class DelineaStore:
          Unique human-readable name of the SecretStore.
         '''
         self.server_url = server_url if server_url is not None else ''
+        '''
+         The URL of the Delinea instance
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.tenant_name = tenant_name if tenant_name is not None else ''
+        '''
+         The tenant name to target
+        '''
 
     def __repr__(self):
         return '<sdm.DelineaStore ' + \
@@ -5765,9 +6693,12 @@ class DocumentDBHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5778,6 +6709,9 @@ class DocumentDBHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -5787,8 +6721,17 @@ class DocumentDBHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5802,6 +6745,9 @@ class DocumentDBHost:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBHost ' + \
@@ -5897,11 +6843,17 @@ class DocumentDBReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
+        '''
+         Set to connect to a replica instead of the primary node.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -5923,8 +6875,17 @@ class DocumentDBReplicaSet:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
+        '''
+         The name of the mongo replicaset.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5938,6 +6899,9 @@ class DocumentDBReplicaSet:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.DocumentDBReplicaSet ' + \
@@ -6033,7 +6997,7 @@ class Druid:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6044,6 +7008,9 @@ class Druid:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6053,8 +7020,17 @@ class Druid:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6068,6 +7044,9 @@ class Druid:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Druid ' + \
@@ -6160,15 +7139,21 @@ class DynamoDB:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial e.g. dynamodb.region.amazonaws.com
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -6182,10 +7167,25 @@ class DynamoDB:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The region to authenticate requests against e.g. us-east-1
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6295,7 +7295,7 @@ class Elastic:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6306,6 +7306,9 @@ class Elastic:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6315,8 +7318,17 @@ class Elastic:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6330,7 +7342,13 @@ class Elastic:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Elastic ' + \
@@ -6425,7 +7443,7 @@ class ElasticacheRedis:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6436,6 +7454,9 @@ class ElasticacheRedis:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -6445,8 +7466,17 @@ class ElasticacheRedis:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6460,7 +7490,13 @@ class ElasticacheRedis:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.ElasticacheRedis ' + \
@@ -6549,7 +7585,7 @@ class GCP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6564,12 +7600,21 @@ class GCP:
          Unique identifier of the Resource.
         '''
         self.keyfile = keyfile if keyfile is not None else ''
+        '''
+         The service account keyfile to authenticate with.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.scopes = scopes if scopes is not None else ''
+        '''
+         Space separated scopes that this login should assume into when authenticating.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6654,6 +7699,9 @@ class GCPStore:
          Unique human-readable name of the SecretStore.
         '''
         self.projectid = projectid if projectid is not None else ''
+        '''
+         The GCP project ID to target.
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -6691,6 +7739,7 @@ class Gateway:
     '''
     __slots__ = [
         'bind_address',
+        'connects_to',
         'device',
         'gateway_filter',
         'id',
@@ -6705,6 +7754,7 @@ class Gateway:
     def __init__(
         self,
         bind_address=None,
+        connects_to=None,
         device=None,
         gateway_filter=None,
         id=None,
@@ -6720,15 +7770,20 @@ class Gateway:
          The hostname/port tuple which the gateway daemon will bind to.
          If not provided on create, set to "0.0.0.0:listen_address_port".
         '''
+        self.connects_to = connects_to if connects_to is not None else ''
+        '''
+         ConnectsTo can be used to restrict the peering between relays and
+         gateways.
+        '''
         self.device = device if device is not None else ''
         '''
-         Device is a read only device name uploaded by the gateway process when 
+         Device is a read only device name uploaded by the gateway process when
          it comes online.
         '''
         self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
          GatewayFilter can be used to restrict the peering between relays and
-         gateways.
+         gateways. Deprecated.
         '''
         self.id = id if id is not None else ''
         '''
@@ -6765,6 +7820,7 @@ class Gateway:
     def __repr__(self):
         return '<sdm.Gateway ' + \
             'bind_address: ' + repr(self.bind_address) + ' ' +\
+            'connects_to: ' + repr(self.connects_to) + ' ' +\
             'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -6779,6 +7835,7 @@ class Gateway:
     def to_dict(self):
         return {
             'bind_address': self.bind_address,
+            'connects_to': self.connects_to,
             'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
@@ -6794,6 +7851,7 @@ class Gateway:
     def from_dict(cls, d):
         return cls(
             bind_address=d.get('bind_address'),
+            connects_to=d.get('connects_to'),
             device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
@@ -6864,14 +7922,20 @@ class GoogleGKE:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -6889,12 +7953,21 @@ class GoogleGKE:
          Unique human-readable name of the Resource.
         '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.service_account_key = service_account_key if service_account_key is not None else ''
+        '''
+         The service account key to authenticate with.
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -6995,14 +8068,20 @@ class GoogleGKEUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial.
+        '''
         self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
         '''
          The path used to check the health of your connection.  Defaults to `default`.
@@ -7024,6 +8103,9 @@ class GoogleGKEUserImpersonation:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.service_account_key = service_account_key if service_account_key is not None else ''
+        '''
+         The service account key to authenticate with.
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -7122,9 +8204,12 @@ class Greenplum:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7134,6 +8219,9 @@ class Greenplum:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7143,9 +8231,21 @@ class Greenplum:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7159,6 +8259,9 @@ class Greenplum:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Greenplum ' + \
@@ -7255,22 +8358,37 @@ class HTTPAuth:
         url=None,
     ):
         self.auth_header = auth_header if auth_header is not None else ''
+        '''
+         The content to set as the authorization header.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.default_path = default_path if default_path is not None else ''
+        '''
+         Automatically redirect to this path upon connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
+        '''
+         Header names (e.g. Authorization), to omit from logs.
+        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
+        '''
+         This path will be used to check the health of your site.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
         self.host_override = host_override if host_override is not None else ''
+        '''
+         The host header will be overwritten with this field if provided.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7284,11 +8402,17 @@ class HTTPAuth:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
+        '''
+         The base address of your website without the path.
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPAuth ' + \
@@ -7385,20 +8509,32 @@ class HTTPBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.default_path = default_path if default_path is not None else ''
+        '''
+         Automatically redirect to this path upon connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
+        '''
+         Header names (e.g. Authorization), to omit from logs.
+        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
+        '''
+         This path will be used to check the health of your site.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
         self.host_override = host_override if host_override is not None else ''
+        '''
+         The host header will be overwritten with this field if provided.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7408,17 +8544,29 @@ class HTTPBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
+        '''
+         The base address of your website without the path.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
@@ -7514,20 +8662,32 @@ class HTTPNoAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.default_path = default_path if default_path is not None else ''
+        '''
+         Automatically redirect to this path upon connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.headers_blacklist = headers_blacklist if headers_blacklist is not None else ''
+        '''
+         Header names (e.g. Authorization), to omit from logs.
+        '''
         self.healthcheck_path = healthcheck_path if healthcheck_path is not None else ''
+        '''
+         This path will be used to check the health of your site.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
         '''
         self.host_override = host_override if host_override is not None else ''
+        '''
+         The host header will be overwritten with this field if provided.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7541,11 +8701,17 @@ class HTTPNoAuth:
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
         '''
         self.url = url if url is not None else ''
+        '''
+         The base address of your website without the path.
+        '''
 
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
@@ -7643,11 +8809,20 @@ class Kubernetes:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -7661,6 +8836,9 @@ class Kubernetes:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7670,9 +8848,21 @@ class Kubernetes:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7790,7 +8980,7 @@ class KubernetesBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7805,6 +8995,9 @@ class KubernetesBasicAuth:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7814,8 +9007,17 @@ class KubernetesBasicAuth:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7829,6 +9031,9 @@ class KubernetesBasicAuth:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesBasicAuth ' + \
@@ -7925,7 +9130,7 @@ class KubernetesServiceAccount:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7940,6 +9145,9 @@ class KubernetesServiceAccount:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -7949,9 +9157,21 @@ class KubernetesServiceAccount:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7965,6 +9185,9 @@ class KubernetesServiceAccount:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
+        '''
+         The API token to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
@@ -8062,7 +9285,7 @@ class KubernetesServiceAccountUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -8077,6 +9300,9 @@ class KubernetesServiceAccountUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8086,7 +9312,13 @@ class KubernetesServiceAccountUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8100,6 +9332,9 @@ class KubernetesServiceAccountUserImpersonation:
          Tags is a map of key, value pairs.
         '''
         self.token = token if token is not None else ''
+        '''
+         The API token to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccountUserImpersonation ' + \
@@ -8193,11 +9428,20 @@ class KubernetesUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8211,6 +9455,9 @@ class KubernetesUserImpersonation:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8220,7 +9467,13 @@ class KubernetesUserImpersonation:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8346,12 +9599,24 @@ class MTLSMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8361,6 +9626,9 @@ class MTLSMysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8370,14 +9638,29 @@ class MTLSMysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.server_name = server_name if server_name is not None else ''
+        '''
+         Server name for TLS verification (unverified by StrongDM if empty)
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -8387,7 +9670,13 @@ class MTLSMysql:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MTLSMysql ' + \
@@ -8512,12 +9801,24 @@ class MTLSPostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
+        '''
+         The certificate to authenticate TLS connections with.
+        '''
         self.client_key = client_key if client_key is not None else ''
+        '''
+         The key to authenticate TLS connections with.
+        '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8527,6 +9828,9 @@ class MTLSPostgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8536,14 +9840,29 @@ class MTLSPostgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.server_name = server_name if server_name is not None else ''
+        '''
+         Server name for TLS verification (unverified by StrongDM if empty)
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -8553,6 +9872,9 @@ class MTLSPostgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MTLSPostgres ' + \
@@ -8666,9 +9988,12 @@ class Maria:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8678,6 +10003,9 @@ class Maria:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8687,9 +10015,21 @@ class Maria:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8703,7 +10043,13 @@ class Maria:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Maria ' + \
@@ -8800,7 +10146,7 @@ class Memcached:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -8811,6 +10157,9 @@ class Memcached:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8820,7 +10169,13 @@ class Memcached:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8922,9 +10277,12 @@ class Memsql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -8934,6 +10292,9 @@ class Memsql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -8943,9 +10304,21 @@ class Memsql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8959,7 +10332,13 @@ class Memsql:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Memsql ' + \
@@ -9067,9 +10446,12 @@ class MongoHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -9080,6 +10462,9 @@ class MongoHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9089,8 +10474,17 @@ class MongoHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9104,7 +10498,13 @@ class MongoHost:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MongoHost ' + \
@@ -9205,9 +10605,12 @@ class MongoLegacyHost:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -9218,6 +10621,9 @@ class MongoLegacyHost:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9227,9 +10633,21 @@ class MongoLegacyHost:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
+        '''
+         The name of the mongo replicaset.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9243,7 +10661,13 @@ class MongoLegacyHost:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyHost ' + \
@@ -9349,11 +10773,17 @@ class MongoLegacyReplicaset:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
+        '''
+         Set to connect to a replica instead of the primary node.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9363,6 +10793,9 @@ class MongoLegacyReplicaset:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9372,9 +10805,21 @@ class MongoLegacyReplicaset:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
+        '''
+         The name of the mongo replicaset.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9388,7 +10833,13 @@ class MongoLegacyReplicaset:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MongoLegacyReplicaset ' + \
@@ -9501,11 +10952,17 @@ class MongoReplicaSet:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
+        '''
+         Set to connect to a replica instead of the primary node.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9515,6 +10972,9 @@ class MongoReplicaSet:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9524,9 +10984,21 @@ class MongoReplicaSet:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
+        '''
+         The name of the mongo replicaset.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9540,7 +11012,13 @@ class MongoReplicaSet:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MongoReplicaSet ' + \
@@ -9647,9 +11125,12 @@ class MongoShardedCluster:
         username=None,
     ):
         self.auth_database = auth_database if auth_database is not None else ''
+        '''
+         The authentication database to use.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -9660,6 +11141,9 @@ class MongoShardedCluster:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9669,7 +11153,13 @@ class MongoShardedCluster:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9683,7 +11173,13 @@ class MongoShardedCluster:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.MongoShardedCluster ' + \
@@ -9782,9 +11278,12 @@ class Mysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -9794,6 +11293,9 @@ class Mysql:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -9803,9 +11305,21 @@ class Mysql:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9819,7 +11333,13 @@ class Mysql:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Mysql ' + \
@@ -9916,13 +11436,16 @@ class Neptune:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The neptune endpoint to connect to as in endpoint.region.neptune.amazonaws.com
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -9936,7 +11459,13 @@ class Neptune:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10037,15 +11566,21 @@ class NeptuneIAM:
         tags=None,
     ):
         self.access_key = access_key if access_key is not None else ''
+        '''
+         The Access Key ID to use to authenticate.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The neptune endpoint to connect to as in endpoint.region.neptune.amazonaws.com
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -10059,11 +11594,29 @@ class NeptuneIAM:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
         self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.secret_access_key = secret_access_key if secret_access_key is not None else ''
+        '''
+         The Secret Access Key to use to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10452,9 +12005,12 @@ class Oracle:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -10464,6 +12020,9 @@ class Oracle:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -10473,8 +12032,17 @@ class Oracle:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10488,7 +12056,13 @@ class Oracle:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Oracle ' + \
@@ -10884,9 +12458,12 @@ class Postgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -10896,6 +12473,9 @@ class Postgres:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -10905,9 +12485,21 @@ class Postgres:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10921,6 +12513,9 @@ class Postgres:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Postgres ' + \
@@ -11020,9 +12615,12 @@ class Presto:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -11032,6 +12630,9 @@ class Presto:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11041,8 +12642,17 @@ class Presto:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11056,7 +12666,13 @@ class Presto:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Presto ' + \
@@ -11546,9 +13162,12 @@ class RDP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.downgrade_nla_connections = downgrade_nla_connections if downgrade_nla_connections is not None else False
+        '''
+         When set, network level authentication will not be used. May resolve unexpected authentication errors to older servers. When set, healthchecks cannot detect if a provided username / password pair is correct.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -11558,6 +13177,9 @@ class RDP:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11567,8 +13189,17 @@ class RDP:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11582,6 +13213,9 @@ class RDP:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.RDP ' + \
@@ -11676,7 +13310,7 @@ class RabbitMQAMQP091:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11687,6 +13321,9 @@ class RabbitMQAMQP091:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11696,8 +13333,17 @@ class RabbitMQAMQP091:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11711,7 +13357,13 @@ class RabbitMQAMQP091:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.RabbitMQAMQP091 ' + \
@@ -11864,7 +13516,7 @@ class RawTCP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11875,6 +13527,9 @@ class RawTCP:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -11884,7 +13539,13 @@ class RawTCP:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -11982,7 +13643,7 @@ class Redis:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11993,6 +13654,9 @@ class Redis:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12002,8 +13666,17 @@ class Redis:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12017,7 +13690,13 @@ class Redis:
          Tags is a map of key, value pairs.
         '''
         self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Redis ' + \
@@ -12114,9 +13793,12 @@ class Redshift:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -12126,6 +13808,9 @@ class Redshift:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -12135,9 +13820,21 @@ class Redshift:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12151,6 +13848,9 @@ class Redshift:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Redshift ' + \
@@ -12216,6 +13916,7 @@ class Relay:
          Relay represents a StrongDM CLI installation running in relay mode.
     '''
     __slots__ = [
+        'connects_to',
         'device',
         'gateway_filter',
         'id',
@@ -12228,6 +13929,7 @@ class Relay:
 
     def __init__(
         self,
+        connects_to=None,
         device=None,
         gateway_filter=None,
         id=None,
@@ -12237,15 +13939,20 @@ class Relay:
         tags=None,
         version=None,
     ):
+        self.connects_to = connects_to if connects_to is not None else ''
+        '''
+         ConnectsTo can be used to restrict the peering between relays and
+         gateways.
+        '''
         self.device = device if device is not None else ''
         '''
-         Device is a read only device name uploaded by the gateway process when 
+         Device is a read only device name uploaded by the gateway process when
          it comes online.
         '''
         self.gateway_filter = gateway_filter if gateway_filter is not None else ''
         '''
          GatewayFilter can be used to restrict the peering between relays and
-         gateways.
+         gateways. Deprecated.
         '''
         self.id = id if id is not None else ''
         '''
@@ -12278,6 +13985,7 @@ class Relay:
 
     def __repr__(self):
         return '<sdm.Relay ' + \
+            'connects_to: ' + repr(self.connects_to) + ' ' +\
             'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -12290,6 +13998,7 @@ class Relay:
 
     def to_dict(self):
         return {
+            'connects_to': self.connects_to,
             'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
@@ -12303,6 +14012,7 @@ class Relay:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            connects_to=d.get('connects_to'),
             device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
@@ -13647,9 +15357,12 @@ class SQLServer:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -13659,6 +15372,9 @@ class SQLServer:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -13668,10 +15384,25 @@ class SQLServer:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.schema = schema if schema is not None else ''
+        '''
+         The Schema to use to direct initial requests.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13685,6 +15416,9 @@ class SQLServer:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
@@ -13791,10 +15525,16 @@ class SQLServerAzureAD:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.client_id = client_id if client_id is not None else ''
+        '''
+         The Azure AD application (client) ID with which to authenticate.
+        '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -13804,6 +15544,9 @@ class SQLServerAzureAD:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -13813,10 +15556,25 @@ class SQLServerAzureAD:
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.schema = schema if schema is not None else ''
+        '''
+         The Schema to use to direct initial requests.
+        '''
         self.secret = secret if secret is not None else ''
+        '''
+         The Azure AD client secret (application password) with which to authenticate.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13830,6 +15588,9 @@ class SQLServerAzureAD:
          Tags is a map of key, value pairs.
         '''
         self.tenant_id = tenant_id if tenant_id is not None else ''
+        '''
+         The Azure AD directory (tenant) ID with which to authenticate.
+        '''
 
     def __repr__(self):
         return '<sdm.SQLServerAzureAD ' + \
@@ -13943,9 +15704,12 @@ class SQLServerKerberosAD:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -13955,26 +15719,53 @@ class SQLServerKerberosAD:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
         self.keytab = keytab if keytab is not None else ''
+        '''
+         The keytab file in base64 format containing an entry with the principal name (username@realm) and key version number with which to authenticate.
+        '''
         self.krb_config = krb_config if krb_config is not None else ''
+        '''
+         The Kerberos 5 configuration file (krb5.conf) specifying the Active Directory server (KDC) for the configured realm.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.realm = realm if realm is not None else ''
+        '''
+         The Active Directory domain (realm) to which the configured username belongs.
+        '''
         self.schema = schema if schema is not None else ''
+        '''
+         The Schema to use to direct initial requests.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.server_spn = server_spn if server_spn is not None else ''
+        '''
+         The Service Principal Name of the Microsoft SQL Server instance in Active Directory.
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -13984,6 +15775,9 @@ class SQLServerKerberosAD:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SQLServerKerberosAD ' + \
@@ -14096,9 +15890,12 @@ class SSH:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
+        '''
+         Whether deprecated, insecure key exchanges are allowed for use to connect to the target ssh server.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -14109,19 +15906,37 @@ class SSH:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
         self.key_type = key_type if key_type is not None else ''
+        '''
+         The key type to use e.g. rsa-2048 or ed25519
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
+        '''
+         Whether port forwarding is allowed through this server.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.public_key = public_key if public_key is not None else ''
+        '''
+         The public key to append to a server's authorized keys. This will be generated after resource creation.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14135,6 +15950,9 @@ class SSH:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SSH ' + \
@@ -14242,9 +16060,12 @@ class SSHCert:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
+        '''
+         Whether deprecated, insecure key exchanges are allowed for use to connect to the target ssh server.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -14255,20 +16076,41 @@ class SSHCert:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
         '''
         self.key_type = key_type if key_type is not None else ''
+        '''
+         The key type to use e.g. rsa-2048 or ed25519
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
+        '''
+         Whether port forwarding is allowed through this server.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
+        '''
+         The ID of the remote identity group to use for remote identity connections.
+        '''
         self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14282,6 +16124,9 @@ class SSHCert:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SSHCert ' + \
@@ -14390,9 +16235,12 @@ class SSHCustomerKey:
         username=None,
     ):
         self.allow_deprecated_key_exchanges = allow_deprecated_key_exchanges if allow_deprecated_key_exchanges is not None else False
+        '''
+         Whether deprecated, insecure key exchanges are allowed for use to connect to the target ssh server.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -14403,6 +16251,9 @@ class SSHCustomerKey:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -14412,9 +16263,21 @@ class SSHCustomerKey:
          Unique human-readable name of the Resource.
         '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_forwarding = port_forwarding if port_forwarding is not None else False
+        '''
+         Whether port forwarding is allowed through this server.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.private_key = private_key if private_key is not None else ''
+        '''
+         The private key used to authenticate with the server.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14428,6 +16291,9 @@ class SSHCustomerKey:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SSHCustomerKey ' + \
@@ -14857,9 +16723,12 @@ class SingleStore:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -14869,6 +16738,9 @@ class SingleStore:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -14878,9 +16750,21 @@ class SingleStore:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
+        '''
+         Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14894,7 +16778,13 @@ class SingleStore:
          Tags is a map of key, value pairs.
         '''
         self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SingleStore ' + \
@@ -14997,9 +16887,12 @@ class Snowflake:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -15009,6 +16902,9 @@ class Snowflake:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -15018,8 +16914,17 @@ class Snowflake:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.schema = schema if schema is not None else ''
+        '''
+         The schema to provide on authentication.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15033,6 +16938,9 @@ class Snowflake:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Snowflake ' + \
@@ -15125,13 +17033,16 @@ class Snowsight:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
         '''
         self.healthcheck_username = healthcheck_username if healthcheck_username is not None else ''
+        '''
+         The StrongDM user email to use for healthchecks.
+        '''
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
@@ -15145,12 +17056,21 @@ class Snowsight:
          Unique human-readable name of the Resource.
         '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.samlmetadata = samlmetadata if samlmetadata is not None else ''
+        '''
+         The Metadata for your snowflake IDP integration
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -15238,7 +17158,7 @@ class Sybase:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -15249,6 +17169,9 @@ class Sybase:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -15258,8 +17181,17 @@ class Sybase:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15273,6 +17205,9 @@ class Sybase:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Sybase ' + \
@@ -15362,7 +17297,7 @@ class SybaseIQ:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -15373,6 +17308,9 @@ class SybaseIQ:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -15382,8 +17320,17 @@ class SybaseIQ:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15397,6 +17344,9 @@ class SybaseIQ:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.SybaseIQ ' + \
@@ -15463,7 +17413,13 @@ class Tag:
         value=None,
     ):
         self.name = name if name is not None else ''
+        '''
+         The name or key of this tag. Each name can only refer to one value on a tagged entity.
+        '''
         self.value = value if value is not None else ''
+        '''
+         The value of this tag.
+        '''
 
     def __repr__(self):
         return '<sdm.Tag ' + \
@@ -15520,7 +17476,7 @@ class Teradata:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -15531,6 +17487,9 @@ class Teradata:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -15540,8 +17499,17 @@ class Teradata:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15555,6 +17523,9 @@ class Teradata:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Teradata ' + \
@@ -15650,9 +17621,12 @@ class Trino:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         Bind interface
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
         '''
         self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
@@ -15662,6 +17636,9 @@ class Trino:
          True if the datasource is reachable and the credentials are valid.
         '''
         self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
@@ -15671,8 +17648,17 @@ class Trino:
          Unique human-readable name of the Resource.
         '''
         self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
         self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15686,6 +17672,9 @@ class Trino:
          Tags is a map of key, value pairs.
         '''
         self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
 
     def __repr__(self):
         return '<sdm.Trino ' + \
@@ -15897,7 +17886,13 @@ class VaultAppRoleStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
         self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -15956,8 +17951,17 @@ class VaultTLSStore:
         tags=None,
     ):
         self.ca_cert_path = ca_cert_path if ca_cert_path is not None else ''
+        '''
+         A path to a CA file accessible by a Node
+        '''
         self.client_cert_path = client_cert_path if client_cert_path is not None else ''
+        '''
+         A path to a client certificate file accessible by a Node
+        '''
         self.client_key_path = client_key_path if client_key_path is not None else ''
+        '''
+         A path to a client key file accessible by a Node
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
@@ -15967,7 +17971,13 @@ class VaultTLSStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
         self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -16037,7 +18047,13 @@ class VaultTokenStore:
          Unique human-readable name of the SecretStore.
         '''
         self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
         self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.

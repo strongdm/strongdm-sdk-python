@@ -1969,6 +1969,8 @@ class Resources:
     `strongdm.models.AzureCertificate`
     `strongdm.models.AzureMysql`
     `strongdm.models.AzurePostgres`
+    `strongdm.models.AzurePostgresFlexible`
+    `strongdm.models.AzurePostgresSingle`
     `strongdm.models.BigQuery`
     `strongdm.models.Cassandra`
     `strongdm.models.Citus`

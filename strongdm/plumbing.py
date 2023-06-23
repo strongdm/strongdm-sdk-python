@@ -2274,6 +2274,122 @@ def convert_repeated_azure_postgres_to_porcelain(plumbings):
     ]
 
 
+def convert_azure_postgres_flexible_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzurePostgresFlexible()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_azure_postgres_flexible_to_plumbing(porcelain):
+    plumbing = AzurePostgresFlexible()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_azure_postgres_flexible_to_plumbing(porcelains):
+    return [
+        convert_azure_postgres_flexible_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_postgres_flexible_to_porcelain(plumbings):
+    return [
+        convert_azure_postgres_flexible_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_azure_postgres_single_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzurePostgresSingle()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_azure_postgres_single_to_plumbing(porcelain):
+    plumbing = AzurePostgresSingle()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_azure_postgres_single_to_plumbing(porcelains):
+    return [
+        convert_azure_postgres_single_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_postgres_single_to_porcelain(plumbings):
+    return [
+        convert_azure_postgres_single_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_azure_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -3356,6 +3472,7 @@ def convert_gateway_to_porcelain(plumbing):
         return None
     porcelain = models.Gateway()
     porcelain.bind_address = (plumbing.bind_address)
+    porcelain.connects_to = (plumbing.connects_to)
     porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
@@ -3373,6 +3490,7 @@ def convert_gateway_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_address = (porcelain.bind_address)
+    plumbing.connects_to = (porcelain.connects_to)
     plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)
@@ -5704,6 +5822,7 @@ def convert_relay_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Relay()
+    porcelain.connects_to = (plumbing.connects_to)
     porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
@@ -5719,6 +5838,7 @@ def convert_relay_to_plumbing(porcelain):
     plumbing = Relay()
     if porcelain is None:
         return plumbing
+    plumbing.connects_to = (porcelain.connects_to)
     plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)
@@ -6213,6 +6333,12 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AzurePostgres):
         plumbing.azure_postgres.CopyFrom(
             convert_azure_postgres_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzurePostgresFlexible):
+        plumbing.azure_postgres_flexible.CopyFrom(
+            convert_azure_postgres_flexible_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzurePostgresSingle):
+        plumbing.azure_postgres_single.CopyFrom(
+            convert_azure_postgres_single_to_plumbing(porcelain))
     if isinstance(porcelain, models.BigQuery):
         plumbing.big_query.CopyFrom(convert_big_query_to_plumbing(porcelain))
     if isinstance(porcelain, models.Cassandra):
@@ -6410,6 +6536,12 @@ def convert_resource_to_porcelain(plumbing):
         return convert_azure_mysql_to_porcelain(plumbing.azure_mysql)
     if plumbing.HasField('azure_postgres'):
         return convert_azure_postgres_to_porcelain(plumbing.azure_postgres)
+    if plumbing.HasField('azure_postgres_flexible'):
+        return convert_azure_postgres_flexible_to_porcelain(
+            plumbing.azure_postgres_flexible)
+    if plumbing.HasField('azure_postgres_single'):
+        return convert_azure_postgres_single_to_porcelain(
+            plumbing.azure_postgres_single)
     if plumbing.HasField('big_query'):
         return convert_big_query_to_porcelain(plumbing.big_query)
     if plumbing.HasField('cassandra'):
