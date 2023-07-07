@@ -2420,6 +2420,7 @@ class Activity:
         'entities',
         'id',
         'ip_address',
+        'user_agent',
         'verb',
     ]
 
@@ -2431,6 +2432,7 @@ class Activity:
         entities=None,
         id=None,
         ip_address=None,
+        user_agent=None,
         verb=None,
     ):
         self.actor = actor if actor is not None else None
@@ -2461,6 +2463,11 @@ class Activity:
         '''
          The IP from which this action was taken.
         '''
+        self.user_agent = user_agent if user_agent is not None else ''
+        '''
+         The User Agent present when this request was executed. Generally a client type and version
+         like strongdm-cli/55.66.77
+        '''
         self.verb = verb if verb is not None else ''
         '''
          The kind of activity which has taken place.
@@ -2474,6 +2481,7 @@ class Activity:
             'entities: ' + repr(self.entities) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'ip_address: ' + repr(self.ip_address) + ' ' +\
+            'user_agent: ' + repr(self.user_agent) + ' ' +\
             'verb: ' + repr(self.verb) + ' ' +\
             '>'
 
@@ -2485,6 +2493,7 @@ class Activity:
             'entities': self.entities,
             'id': self.id,
             'ip_address': self.ip_address,
+            'user_agent': self.user_agent,
             'verb': self.verb,
         }
 
@@ -2497,6 +2506,7 @@ class Activity:
             entities=d.get('entities'),
             id=d.get('id'),
             ip_address=d.get('ip_address'),
+            user_agent=d.get('user_agent'),
             verb=d.get('verb'),
         )
 
@@ -4819,9 +4829,9 @@ class AzurePostgres:
         )
 
 
-class AzurePostgresFlexible:
+class AzurePostgresManagedIdentity:
     '''
-    AzurePostgresFlexible is currently unstable, and its API may change, or it may be removed,
+    AzurePostgresManagedIdentity is currently unstable, and its API may change, or it may be removed,
     without a major version bump.
     '''
     __slots__ = [
@@ -4839,6 +4849,7 @@ class AzurePostgresFlexible:
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_azure_single_server_usernames',
         'username',
     ]
 
@@ -4858,6 +4869,7 @@ class AzurePostgresFlexible:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_azure_single_server_usernames=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -4916,13 +4928,17 @@ class AzurePostgresFlexible:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_azure_single_server_usernames = use_azure_single_server_usernames if use_azure_single_server_usernames is not None else False
+        '''
+         If true, appends the hostname to the username when hitting a database.azure.com address
+        '''
         self.username = username if username is not None else ''
         '''
          The username to authenticate with.
         '''
 
     def __repr__(self):
-        return '<sdm.AzurePostgresFlexible ' + \
+        return '<sdm.AzurePostgresManagedIdentity ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -4937,6 +4953,7 @@ class AzurePostgresFlexible:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_azure_single_server_usernames: ' + repr(self.use_azure_single_server_usernames) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -4956,6 +4973,8 @@ class AzurePostgresFlexible:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_azure_single_server_usernames':
+            self.use_azure_single_server_usernames,
             'username': self.username,
         }
 
@@ -4976,167 +4995,8 @@ class AzurePostgresFlexible:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
-            username=d.get('username'),
-        )
-
-
-class AzurePostgresSingle:
-    '''
-    AzurePostgresSingle is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'bind_interface',
-        'database',
-        'egress_filter',
-        'healthy',
-        'hostname',
-        'id',
-        'name',
-        'override_database',
-        'password',
-        'port',
-        'port_override',
-        'secret_store_id',
-        'subdomain',
-        'tags',
-        'username',
-    ]
-
-    def __init__(
-        self,
-        bind_interface=None,
-        database=None,
-        egress_filter=None,
-        healthy=None,
-        hostname=None,
-        id=None,
-        name=None,
-        override_database=None,
-        password=None,
-        port=None,
-        port_override=None,
-        secret_store_id=None,
-        subdomain=None,
-        tags=None,
-        username=None,
-    ):
-        self.bind_interface = bind_interface if bind_interface is not None else ''
-        '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
-        '''
-        self.database = database if database is not None else ''
-        '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
-        '''
-        self.egress_filter = egress_filter if egress_filter is not None else ''
-        '''
-         A filter applied to the routing logic to pin datasource to nodes.
-        '''
-        self.healthy = healthy if healthy is not None else False
-        '''
-         True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
-        '''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the Resource.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the Resource.
-        '''
-        self.override_database = override_database if override_database is not None else False
-        '''
-         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
-        '''
-        self.password = password if password is not None else ''
-        '''
-         The password to authenticate with.
-        '''
-        self.port = port if port is not None else 0
-        '''
-         The port to dial to initiate a connection from the egress node to this resource.
-        '''
-        self.port_override = port_override if port_override is not None else 0
-        '''
-         The local port used by clients to connect to this resource.
-        '''
-        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
-        '''
-         ID of the secret store containing credentials for this resource, if any.
-        '''
-        self.subdomain = subdomain if subdomain is not None else ''
-        '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-        self.username = username if username is not None else ''
-        '''
-         The username to authenticate with.
-        '''
-
-    def __repr__(self):
-        return '<sdm.AzurePostgresSingle ' + \
-            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'override_database: ' + repr(self.override_database) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port: ' + repr(self.port) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'bind_interface': self.bind_interface,
-            'database': self.database,
-            'egress_filter': self.egress_filter,
-            'healthy': self.healthy,
-            'hostname': self.hostname,
-            'id': self.id,
-            'name': self.name,
-            'override_database': self.override_database,
-            'password': self.password,
-            'port': self.port,
-            'port_override': self.port_override,
-            'secret_store_id': self.secret_store_id,
-            'subdomain': self.subdomain,
-            'tags': self.tags,
-            'username': self.username,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            bind_interface=d.get('bind_interface'),
-            database=d.get('database'),
-            egress_filter=d.get('egress_filter'),
-            healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
-            id=d.get('id'),
-            name=d.get('name'),
-            override_database=d.get('override_database'),
-            password=d.get('password'),
-            port=d.get('port'),
-            port_override=d.get('port_override'),
-            secret_store_id=d.get('secret_store_id'),
-            subdomain=d.get('subdomain'),
-            tags=d.get('tags'),
+            use_azure_single_server_usernames=d.get(
+                'use_azure_single_server_usernames'),
             username=d.get('username'),
         )
 
@@ -7745,6 +7605,7 @@ class Gateway:
         'id',
         'listen_address',
         'location',
+        'maintenance_windows',
         'name',
         'state',
         'tags',
@@ -7760,6 +7621,7 @@ class Gateway:
         id=None,
         listen_address=None,
         location=None,
+        maintenance_windows=None,
         name=None,
         state=None,
         tags=None,
@@ -7798,6 +7660,21 @@ class Gateway:
          Location is a read only network location uploaded by the gateway process
          when it comes online.
         '''
+        self.maintenance_windows = maintenance_windows if maintenance_windows is not None else []
+        '''
+         Maintenance Windows define when this node is allowed to restart. If a node
+         is requested to restart, it will check each window to determine if any of
+         them permit it to restart, and if any do, it will. This check is repeated
+         per window until the restart is successfully completed.
+         
+         If not set here, may be set on the command line or via an environment variable
+         on the process itself; any server setting will take precedence over local
+         settings. This setting is ineffective for nodes below version 38.44.0.
+         
+         If this setting is not applied via this remote configuration or via local
+         configuration, the default setting is used: always allow restarts if serving
+         no connections, and allow a restart even if serving connections between 7-8 UTC, any day.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Gateway. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
@@ -7826,6 +7703,7 @@ class Gateway:
             'id: ' + repr(self.id) + ' ' +\
             'listen_address: ' + repr(self.listen_address) + ' ' +\
             'location: ' + repr(self.location) + ' ' +\
+            'maintenance_windows: ' + repr(self.maintenance_windows) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -7841,6 +7719,7 @@ class Gateway:
             'id': self.id,
             'listen_address': self.listen_address,
             'location': self.location,
+            'maintenance_windows': self.maintenance_windows,
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
@@ -7857,6 +7736,7 @@ class Gateway:
             id=d.get('id'),
             listen_address=d.get('listen_address'),
             location=d.get('location'),
+            maintenance_windows=d.get('maintenance_windows'),
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),
@@ -11913,6 +11793,55 @@ class NodeHistory:
         )
 
 
+class NodeMaintenanceWindow:
+    __slots__ = [
+        'cron_schedule',
+        'require_idleness',
+    ]
+
+    def __init__(
+        self,
+        cron_schedule=None,
+        require_idleness=None,
+    ):
+        self.cron_schedule = cron_schedule if cron_schedule is not None else ''
+        '''
+         Cron job syntax for when this maintenance window is active. On this schedule, associated
+         nodes will restart if requested, provided other checks allow the restart to proceed. Times
+         are represented in UTC.
+         e.g. * 7 * * 0,6 to check for a restart at every minute from 7:00 to 8:00 UTC on Sunday and
+         Saturday. Not all possible inputs are supported: the month and day of month selections
+         must be '*'.
+        '''
+        self.require_idleness = require_idleness if require_idleness is not None else False
+        '''
+         Require Idleness defines whether this window can sever live connections. If true,
+         this window will not allow a node to be restarted unless it is serving no connections.
+         If false, given a restart of the node has been requested (for an update, usually), the
+         node will restart as soon as it enters an allowed day / hour combination. At least one
+         maintenance window, out of all configured windows for a node, must have this as false.
+        '''
+
+    def __repr__(self):
+        return '<sdm.NodeMaintenanceWindow ' + \
+            'cron_schedule: ' + repr(self.cron_schedule) + ' ' +\
+            'require_idleness: ' + repr(self.require_idleness) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'cron_schedule': self.cron_schedule,
+            'require_idleness': self.require_idleness,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            cron_schedule=d.get('cron_schedule'),
+            require_idleness=d.get('require_idleness'),
+        )
+
+
 class NodeUpdateResponse:
     '''
          NodeUpdateResponse returns the fields of a Node after it has been updated by
@@ -13921,6 +13850,7 @@ class Relay:
         'gateway_filter',
         'id',
         'location',
+        'maintenance_windows',
         'name',
         'state',
         'tags',
@@ -13934,6 +13864,7 @@ class Relay:
         gateway_filter=None,
         id=None,
         location=None,
+        maintenance_windows=None,
         name=None,
         state=None,
         tags=None,
@@ -13963,6 +13894,21 @@ class Relay:
          Location is a read only network location uploaded by the gateway process
          when it comes online.
         '''
+        self.maintenance_windows = maintenance_windows if maintenance_windows is not None else []
+        '''
+         Maintenance Windows define when this node is allowed to restart. If a node
+         is requested to restart, it will check each window to determine if any of
+         them permit it to restart, and if any do, it will. This check is repeated
+         per window until the restart is successfully completed.
+         
+         If not set here, may be set on the command line or via an environment variable
+         on the process itself; any server setting will take precedence over local
+         settings. This setting is ineffective for nodes below version 38.44.0.
+         
+         If this setting is not applied via this remote configuration or via local
+         configuration, the default setting is used: always allow restarts if serving
+         no connections, and allow a restart even if serving connections between 7-8 UTC, any day.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Relay. Node names must include only letters, numbers, and hyphens (no spaces, underscores, or other special characters). Generated if not provided on create.
@@ -13990,6 +13936,7 @@ class Relay:
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'location: ' + repr(self.location) + ' ' +\
+            'maintenance_windows: ' + repr(self.maintenance_windows) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'state: ' + repr(self.state) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -14003,6 +13950,7 @@ class Relay:
             'gateway_filter': self.gateway_filter,
             'id': self.id,
             'location': self.location,
+            'maintenance_windows': self.maintenance_windows,
             'name': self.name,
             'state': self.state,
             'tags': self.tags,
@@ -14017,6 +13965,7 @@ class Relay:
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
             location=d.get('location'),
+            maintenance_windows=d.get('maintenance_windows'),
             name=d.get('name'),
             state=d.get('state'),
             tags=d.get('tags'),

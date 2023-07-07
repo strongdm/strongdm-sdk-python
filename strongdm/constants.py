@@ -254,6 +254,9 @@ class ActivityVerb:
     WORKFLOW_DESCRIPTION_UPDATED = "workflow description updated"
     WORKFLOW_AUTO_GRANT_UPDATED = "workflow auto grant updated"
     WORKFLOW_REQUIRES_REASON_UPDATED = "workflow requires reason updated"
+    WORKFLOW_ACCESS_RULES_UPDATED = "workflow access rules updated"
+    WORKFLOW_ACCESS_RULES_DELETED = "workflow access rules deleted"
+    WORKFLOW_ACCESS_RULES_CREATED = "workflow access rules created"
     ORG_VNM_SUBNET_UPDATED = "organization VNM subnet updated"
     ORG_VNM_RESOURCES_ALLOCATED = "organization resources allocated within VNM subnet"
     DEPRECATED_ORG_ACTIVATE_DEVICE_APPROVAL = "activate device approval"
@@ -264,6 +267,9 @@ class ActivityVerb:
     TOTP_ENROLLMENT_ADDED = "user enrolled a totp device"
     TOTP_ENROLLMENT_DELETED = "user reset their totp enrollment"
     SUSPENDED_USER_ENROLL_ATTEMPT_FROM_THE_UI = "attempt to enroll by a suspended user from the Admin UI"
+    RESOURCE_LOCKED = "user locked a resource"
+    RESOURCE_UNLOCKED = "user unlocked a resource"
+    RESOURCE_FORCE_UNLOCKED = "admin force-unlocked a resource"
 
 
 # Permissions, all permissions that may be granted to an account.
@@ -421,3 +427,10 @@ class CaptureType:
     K_8_S_GENERIC = "k8s-generic"
     K_8_S_APPLY = "k8s-apply"
     SSH_PORT_FORWARD = "ssh-portForward"
+
+
+# Providers responsible for device posture enforcement
+class DevicePostureProvider:
+    NONE = ""
+    SENTINEL_ONE = "sentinelone"
+    CROWD_STRIKE = "crowdstrike"
