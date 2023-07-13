@@ -5412,6 +5412,7 @@ def convert_query_to_porcelain(plumbing):
     porcelain.resource_name = (plumbing.resource_name)
     porcelain.resource_tags = convert_tags_to_porcelain(plumbing.resource_tags)
     porcelain.resource_type = (plumbing.resource_type)
+    porcelain.source_ip = (plumbing.source_ip)
     porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
     return porcelain
 
@@ -5447,6 +5448,7 @@ def convert_query_to_plumbing(porcelain):
     plumbing.resource_tags.CopyFrom(
         convert_tags_to_plumbing(porcelain.resource_tags))
     plumbing.resource_type = (porcelain.resource_type)
+    plumbing.source_ip = (porcelain.source_ip)
     plumbing.timestamp.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.timestamp))
     return plumbing

@@ -12693,6 +12693,7 @@ class Query:
         'resource_name',
         'resource_tags',
         'resource_type',
+        'source_ip',
         'timestamp',
     ]
 
@@ -12720,6 +12721,7 @@ class Query:
         resource_name=None,
         resource_tags=None,
         resource_type=None,
+        source_ip=None,
         timestamp=None,
     ):
         self.account_email = account_email if account_email is not None else ''
@@ -12824,6 +12826,10 @@ class Query:
         '''
          The specific type of Resource against which the Query was performed, e.g. "ssh" or "postgres".
         '''
+        self.source_ip = source_ip if source_ip is not None else ''
+        '''
+         The IP address the Query was performed from, as detected at the ingress gateway.
+        '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
          The time at which the Query was started.
@@ -12853,6 +12859,7 @@ class Query:
             'resource_name: ' + repr(self.resource_name) + ' ' +\
             'resource_tags: ' + repr(self.resource_tags) + ' ' +\
             'resource_type: ' + repr(self.resource_type) + ' ' +\
+            'source_ip: ' + repr(self.source_ip) + ' ' +\
             'timestamp: ' + repr(self.timestamp) + ' ' +\
             '>'
 
@@ -12880,6 +12887,7 @@ class Query:
             'resource_name': self.resource_name,
             'resource_tags': self.resource_tags,
             'resource_type': self.resource_type,
+            'source_ip': self.source_ip,
             'timestamp': self.timestamp,
         }
 
@@ -12908,6 +12916,7 @@ class Query:
             resource_name=d.get('resource_name'),
             resource_tags=d.get('resource_tags'),
             resource_type=d.get('resource_type'),
+            source_ip=d.get('source_ip'),
             timestamp=d.get('timestamp'),
         )
 
