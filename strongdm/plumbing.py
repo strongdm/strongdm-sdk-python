@@ -3420,7 +3420,6 @@ def convert_gateway_to_porcelain(plumbing):
         return None
     porcelain = models.Gateway()
     porcelain.bind_address = (plumbing.bind_address)
-    porcelain.connects_to = (plumbing.connects_to)
     porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
@@ -3440,7 +3439,6 @@ def convert_gateway_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_address = (porcelain.bind_address)
-    plumbing.connects_to = (porcelain.connects_to)
     plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)
@@ -5810,7 +5808,6 @@ def convert_relay_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Relay()
-    porcelain.connects_to = (plumbing.connects_to)
     porcelain.device = (plumbing.device)
     porcelain.gateway_filter = (plumbing.gateway_filter)
     porcelain.id = (plumbing.id)
@@ -5828,7 +5825,6 @@ def convert_relay_to_plumbing(porcelain):
     plumbing = Relay()
     if porcelain is None:
         return plumbing
-    plumbing.connects_to = (porcelain.connects_to)
     plumbing.device = (porcelain.device)
     plumbing.gateway_filter = (porcelain.gateway_filter)
     plumbing.id = (porcelain.id)

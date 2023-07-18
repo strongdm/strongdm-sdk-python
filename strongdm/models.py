@@ -7599,7 +7599,6 @@ class Gateway:
     '''
     __slots__ = [
         'bind_address',
-        'connects_to',
         'device',
         'gateway_filter',
         'id',
@@ -7615,7 +7614,6 @@ class Gateway:
     def __init__(
         self,
         bind_address=None,
-        connects_to=None,
         device=None,
         gateway_filter=None,
         id=None,
@@ -7631,11 +7629,6 @@ class Gateway:
         '''
          The hostname/port tuple which the gateway daemon will bind to.
          If not provided on create, set to "0.0.0.0:listen_address_port".
-        '''
-        self.connects_to = connects_to if connects_to is not None else ''
-        '''
-         ConnectsTo can be used to restrict the peering between relays and
-         gateways.
         '''
         self.device = device if device is not None else ''
         '''
@@ -7697,7 +7690,6 @@ class Gateway:
     def __repr__(self):
         return '<sdm.Gateway ' + \
             'bind_address: ' + repr(self.bind_address) + ' ' +\
-            'connects_to: ' + repr(self.connects_to) + ' ' +\
             'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -7713,7 +7705,6 @@ class Gateway:
     def to_dict(self):
         return {
             'bind_address': self.bind_address,
-            'connects_to': self.connects_to,
             'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
@@ -7730,7 +7721,6 @@ class Gateway:
     def from_dict(cls, d):
         return cls(
             bind_address=d.get('bind_address'),
-            connects_to=d.get('connects_to'),
             device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
@@ -13854,7 +13844,6 @@ class Relay:
          Relay represents a StrongDM CLI installation running in relay mode.
     '''
     __slots__ = [
-        'connects_to',
         'device',
         'gateway_filter',
         'id',
@@ -13868,7 +13857,6 @@ class Relay:
 
     def __init__(
         self,
-        connects_to=None,
         device=None,
         gateway_filter=None,
         id=None,
@@ -13879,11 +13867,6 @@ class Relay:
         tags=None,
         version=None,
     ):
-        self.connects_to = connects_to if connects_to is not None else ''
-        '''
-         ConnectsTo can be used to restrict the peering between relays and
-         gateways.
-        '''
         self.device = device if device is not None else ''
         '''
          Device is a read only device name uploaded by the gateway process when
@@ -13940,7 +13923,6 @@ class Relay:
 
     def __repr__(self):
         return '<sdm.Relay ' + \
-            'connects_to: ' + repr(self.connects_to) + ' ' +\
             'device: ' + repr(self.device) + ' ' +\
             'gateway_filter: ' + repr(self.gateway_filter) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -13954,7 +13936,6 @@ class Relay:
 
     def to_dict(self):
         return {
-            'connects_to': self.connects_to,
             'device': self.device,
             'gateway_filter': self.gateway_filter,
             'id': self.id,
@@ -13969,7 +13950,6 @@ class Relay:
     @classmethod
     def from_dict(cls, d):
         return cls(
-            connects_to=d.get('connects_to'),
             device=d.get('device'),
             gateway_filter=d.get('gateway_filter'),
             id=d.get('id'),
