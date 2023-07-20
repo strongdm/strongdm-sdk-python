@@ -12338,6 +12338,794 @@ class OrganizationHistoryRecord:
         )
 
 
+class PeeringGroup:
+    '''
+         PeeringGroups are the building blocks used for explicit network topology making.
+     They may be linked to other peering groups. Sets of PeeringGroupResource and PeeringGroupNode can be attached to a peering group.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the PeeringGroup.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the PeeringGroup.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroup ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+        )
+
+
+class PeeringGroupCreateResponse:
+    '''
+         PeeringGroupCreateResponse reports how the PeeringGroup was created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group = peering_group if peering_group is not None else None
+        '''
+         The created PeeringGroup.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group: ' + repr(self.peering_group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group': self.peering_group,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group=d.get('peering_group'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupDeleteResponse:
+    '''
+         PeeringGroupDeleteResponse returns information about a PeeringGroup that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupGetResponse:
+    '''
+         PeeringGroupGetResponse returns a requested PeeringGroup.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group = peering_group if peering_group is not None else None
+        '''
+         The requested PeeringGroup.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group: ' + repr(self.peering_group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group': self.peering_group,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group=d.get('peering_group'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupNode:
+    '''
+         PeeringGroupNode represents the attachment between a PeeringGroup and a Node.
+    '''
+    __slots__ = [
+        'group_id',
+        'id',
+        'node_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        id=None,
+        node_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         Peering Group ID to which the node will be attached to.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Attachment.
+        '''
+        self.node_id = node_id if node_id is not None else ''
+        '''
+         Node ID to be attached.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupNode ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'node_id: ' + repr(self.node_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'id': self.id,
+            'node_id': self.node_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            id=d.get('id'),
+            node_id=d.get('node_id'),
+        )
+
+
+class PeeringGroupNodeCreateResponse:
+    '''
+         PeeringGroupNodeCreateResponse reports how the PeeringGroupNode was created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_node',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_node=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_node = peering_group_node if peering_group_node is not None else None
+        '''
+         The created PeeringGroupNode.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupNodeCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_node: ' + repr(self.peering_group_node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_node': self.peering_group_node,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_node=d.get('peering_group_node'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupNodeDeleteResponse:
+    '''
+         PeeringGroupNodeDeleteResponse returns information about a PeeringGroupNode that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupNodeDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupNodeGetResponse:
+    '''
+         PeeringGroupNodeGetResponse returns a requested PeeringGroupNode.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_node',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_node=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_node = peering_group_node if peering_group_node is not None else None
+        '''
+         The requested PeeringGroupNode.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupNodeGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_node: ' + repr(self.peering_group_node) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_node': self.peering_group_node,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_node=d.get('peering_group_node'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupPeer:
+    '''
+         PeeringGroupPeer represents the link between two PeeringGroups
+    '''
+    __slots__ = [
+        'group_id',
+        'id',
+        'peers_with_group_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        id=None,
+        peers_with_group_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         Group ID from which the link will originate.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Attachment.
+        '''
+        self.peers_with_group_id = peers_with_group_id if peers_with_group_id is not None else ''
+        '''
+         Peering Group ID to which Group ID will link.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupPeer ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'peers_with_group_id: ' + repr(self.peers_with_group_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'id': self.id,
+            'peers_with_group_id': self.peers_with_group_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            id=d.get('id'),
+            peers_with_group_id=d.get('peers_with_group_id'),
+        )
+
+
+class PeeringGroupPeerCreateResponse:
+    '''
+         PeeringGroupPeerCreateResponse reports how the PeeringGroupPeer was created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_peer',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_peer=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_peer = peering_group_peer if peering_group_peer is not None else None
+        '''
+         The created PeeringGroupPeer.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupPeerCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_peer: ' + repr(self.peering_group_peer) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_peer': self.peering_group_peer,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_peer=d.get('peering_group_peer'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupPeerDeleteResponse:
+    '''
+         PeeringGroupPeerDeleteResponse returns information about a PeeringGroupPeer that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupPeerDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupPeerGetResponse:
+    '''
+         PeeringGroupPeerGetResponse returns a requested PeeringGroupPeer.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_peer',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_peer=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_peer = peering_group_peer if peering_group_peer is not None else None
+        '''
+         The requested PeeringGroupPeer.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupPeerGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_peer: ' + repr(self.peering_group_peer) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_peer': self.peering_group_peer,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_peer=d.get('peering_group_peer'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupResource:
+    '''
+         PeeringGroupResource represents the attachment between a PeeringGroup and a Resource.
+    '''
+    __slots__ = [
+        'group_id',
+        'id',
+        'resource_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        id=None,
+        resource_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         Peering Group ID to which the resource will be attached to.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Attachment.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         Resource ID to be attached.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupResource ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'id': self.id,
+            'resource_id': self.resource_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            id=d.get('id'),
+            resource_id=d.get('resource_id'),
+        )
+
+
+class PeeringGroupResourceCreateResponse:
+    '''
+         PeeringGroupResourceCreateResponse reports how the attachment was created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_resource',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_resource=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_resource = peering_group_resource if peering_group_resource is not None else None
+        '''
+         The created PeeringGroupResource.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupResourceCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_resource: ' + repr(self.peering_group_resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_resource': self.peering_group_resource,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_resource=d.get('peering_group_resource'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupResourceDeleteResponse:
+    '''
+         PeeringGroupResourceDeleteResponse returns information about a PeeringGroupResource that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupResourceDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PeeringGroupResourceGetResponse:
+    '''
+         PeeringGroupResourceGetResponse returns a requested PeeringGroupResource.
+    '''
+    __slots__ = [
+        'meta',
+        'peering_group_resource',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        peering_group_resource=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.peering_group_resource = peering_group_resource if peering_group_resource is not None else None
+        '''
+         The requested PeeringGroupResource.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PeeringGroupResourceGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'peering_group_resource: ' + repr(self.peering_group_resource) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'peering_group_resource': self.peering_group_resource,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            peering_group_resource=d.get('peering_group_resource'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class Postgres:
     __slots__ = [
         'bind_interface',

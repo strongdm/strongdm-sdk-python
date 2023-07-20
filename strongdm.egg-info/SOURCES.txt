@@ -37,6 +37,14 @@ strongdm/options_pb2.py
 strongdm/options_pb2_grpc.py
 strongdm/organization_history_pb2.py
 strongdm/organization_history_pb2_grpc.py
+strongdm/peering_group_nodes_pb2.py
+strongdm/peering_group_nodes_pb2_grpc.py
+strongdm/peering_group_peers_pb2.py
+strongdm/peering_group_peers_pb2_grpc.py
+strongdm/peering_group_resources_pb2.py
+strongdm/peering_group_resources_pb2_grpc.py
+strongdm/peering_groups_pb2.py
+strongdm/peering_groups_pb2_grpc.py
 strongdm/plumbing.py
 strongdm/queries_pb2.py
 strongdm/queries_pb2_grpc.py

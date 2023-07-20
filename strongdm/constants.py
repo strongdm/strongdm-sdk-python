@@ -107,6 +107,9 @@ class ActivityEntityType:
     WORKFLOW = "workflow"
     NODE = "node"
     PEERING_GROUP = "peering_group"
+    PEERING_GROUP_NODE = "peering_group_node"
+    PEERING_GROUP_RESOURCE = "peering_group_resource"
+    PEERING_GROUP_PEER = "peering_group_peer"
 
 
 # Activity Verbs, describe which kind of activity has taken place.

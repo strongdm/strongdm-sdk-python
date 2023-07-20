@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/4.0.0'
+USER_AGENT = 'strongdm-sdk-python/4.1.0'
 
 
 class Client:
@@ -160,6 +160,30 @@ class Client:
          OrganizationHistory records all changes to the state of an Organization.
 
         See `strongdm.svc.OrganizationHistory`.
+        '''
+        self.peering_group_nodes = svc.PeeringGroupNodes(channel, self)
+        '''
+         PeeringGroupNodes provides the building blocks necessary to obtain attach a node to a peering group.
+
+        See `strongdm.svc.PeeringGroupNodes`.
+        '''
+        self.peering_group_peers = svc.PeeringGroupPeers(channel, self)
+        '''
+         PeeringGroupPeers provides the building blocks necessary to link two peering groups.
+
+        See `strongdm.svc.PeeringGroupPeers`.
+        '''
+        self.peering_group_resources = svc.PeeringGroupResources(channel, self)
+        '''
+         PeeringGroupResources provides the building blocks necessary to obtain attach a resource to a peering group.
+
+        See `strongdm.svc.PeeringGroupResources`.
+        '''
+        self.peering_groups = svc.PeeringGroups(channel, self)
+        '''
+         PeeringGroups provides the building blocks necessary to obtain explicit network topology and routing.
+
+        See `strongdm.svc.PeeringGroups`.
         '''
         self.queries = svc.Queries(channel, self)
         '''
@@ -336,6 +360,13 @@ class Client:
         client.account_resources = svc.AccountResources(client.channel, client)
         client.accounts = svc.Accounts(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
+        client.peering_group_nodes = svc.PeeringGroupNodes(
+            client.channel, client)
+        client.peering_group_peers = svc.PeeringGroupPeers(
+            client.channel, client)
+        client.peering_group_resources = svc.PeeringGroupResources(
+            client.channel, client)
+        client.peering_groups = svc.PeeringGroups(client.channel, client)
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
             client.channel, client)
@@ -393,6 +424,33 @@ class SnapshotClient:
          - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
 
         See `strongdm.svc.SnapshotNodes`.
+        '''
+        self.peering_group_nodes = svc.SnapshotPeeringGroupNodes(
+            client.peering_group_nodes)
+        '''
+         PeeringGroupNodes provides the building blocks necessary to obtain attach a node to a peering group.
+
+        See `strongdm.svc.SnapshotPeeringGroupNodes`.
+        '''
+        self.peering_group_peers = svc.SnapshotPeeringGroupPeers(
+            client.peering_group_peers)
+        '''
+         PeeringGroupPeers provides the building blocks necessary to link two peering groups.
+
+        See `strongdm.svc.SnapshotPeeringGroupPeers`.
+        '''
+        self.peering_group_resources = svc.SnapshotPeeringGroupResources(
+            client.peering_group_resources)
+        '''
+         PeeringGroupResources provides the building blocks necessary to obtain attach a resource to a peering group.
+
+        See `strongdm.svc.SnapshotPeeringGroupResources`.
+        '''
+        self.peering_groups = svc.SnapshotPeeringGroups(client.peering_groups)
+        '''
+         PeeringGroups provides the building blocks necessary to obtain explicit network topology and routing.
+
+        See `strongdm.svc.SnapshotPeeringGroups`.
         '''
         self.remote_identities = svc.SnapshotRemoteIdentities(
             client.remote_identities)

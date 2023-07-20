@@ -42,6 +42,10 @@ from .drivers_pb2 import *
 from .nodes_pb2 import *
 from .nodes_history_pb2 import *
 from .organization_history_pb2 import *
+from .peering_group_nodes_pb2 import *
+from .peering_group_peers_pb2 import *
+from .peering_group_resources_pb2 import *
+from .peering_groups_pb2 import *
 from .queries_pb2 import *
 from .remote_identities_pb2 import *
 from .remote_identities_history_pb2 import *
@@ -5273,6 +5277,615 @@ def convert_repeated_organization_history_record_to_plumbing(porcelains):
 def convert_repeated_organization_history_record_to_porcelain(plumbings):
     return [
         convert_organization_history_record_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroup()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    return porcelain
+
+
+def convert_peering_group_to_plumbing(porcelain):
+    plumbing = PeeringGroup()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    return plumbing
+
+
+def convert_repeated_peering_group_to_plumbing(porcelains):
+    return [
+        convert_peering_group_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_to_porcelain(plumbings):
+    return [
+        convert_peering_group_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.peering_group = convert_peering_group_to_porcelain(
+        plumbing.peering_group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_create_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group.CopyFrom(
+        convert_peering_group_to_plumbing(porcelain.peering_group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_create_response_to_plumbing(porcelains):
+    return [
+        convert_peering_group_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_create_response_to_porcelain(plumbings):
+    return [
+        convert_peering_group_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_delete_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_delete_response_to_plumbing(porcelains):
+    return [
+        convert_peering_group_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_delete_response_to_porcelain(plumbings):
+    return [
+        convert_peering_group_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.peering_group = convert_peering_group_to_porcelain(
+        plumbing.peering_group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_get_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group.CopyFrom(
+        convert_peering_group_to_plumbing(porcelain.peering_group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_get_response_to_plumbing(porcelains):
+    return [
+        convert_peering_group_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_get_response_to_porcelain(plumbings):
+    return [
+        convert_peering_group_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_node_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupNode()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.id = (plumbing.id)
+    porcelain.node_id = (plumbing.node_id)
+    return porcelain
+
+
+def convert_peering_group_node_to_plumbing(porcelain):
+    plumbing = PeeringGroupNode()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.id = (porcelain.id)
+    plumbing.node_id = (porcelain.node_id)
+    return plumbing
+
+
+def convert_repeated_peering_group_node_to_plumbing(porcelains):
+    return [
+        convert_peering_group_node_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_node_to_porcelain(plumbings):
+    return [
+        convert_peering_group_node_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_node_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupNodeCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.peering_group_node = convert_peering_group_node_to_porcelain(
+        plumbing.peering_group_node)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_node_create_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupNodeCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_node.CopyFrom(
+        convert_peering_group_node_to_plumbing(porcelain.peering_group_node))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_node_create_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_node_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_node_create_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_node_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_node_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupNodeDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_node_delete_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupNodeDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_node_delete_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_node_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_node_delete_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_node_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_node_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupNodeGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.peering_group_node = convert_peering_group_node_to_porcelain(
+        plumbing.peering_group_node)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_node_get_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupNodeGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_node.CopyFrom(
+        convert_peering_group_node_to_plumbing(porcelain.peering_group_node))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_node_get_response_to_plumbing(porcelains):
+    return [
+        convert_peering_group_node_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_node_get_response_to_porcelain(plumbings):
+    return [
+        convert_peering_group_node_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_peer_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupPeer()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.id = (plumbing.id)
+    porcelain.peers_with_group_id = (plumbing.peers_with_group_id)
+    return porcelain
+
+
+def convert_peering_group_peer_to_plumbing(porcelain):
+    plumbing = PeeringGroupPeer()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.id = (porcelain.id)
+    plumbing.peers_with_group_id = (porcelain.peers_with_group_id)
+    return plumbing
+
+
+def convert_repeated_peering_group_peer_to_plumbing(porcelains):
+    return [
+        convert_peering_group_peer_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_peer_to_porcelain(plumbings):
+    return [
+        convert_peering_group_peer_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_peer_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupPeerCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.peering_group_peer = convert_peering_group_peer_to_porcelain(
+        plumbing.peering_group_peer)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_peer_create_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupPeerCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_peer.CopyFrom(
+        convert_peering_group_peer_to_plumbing(porcelain.peering_group_peer))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_peer_create_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_peer_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_peer_create_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_peer_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_peer_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupPeerDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_peer_delete_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupPeerDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_peer_delete_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_peer_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_peer_delete_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_peer_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_peer_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupPeerGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.peering_group_peer = convert_peering_group_peer_to_porcelain(
+        plumbing.peering_group_peer)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_peer_get_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupPeerGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_peer.CopyFrom(
+        convert_peering_group_peer_to_plumbing(porcelain.peering_group_peer))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_peer_get_response_to_plumbing(porcelains):
+    return [
+        convert_peering_group_peer_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_peer_get_response_to_porcelain(plumbings):
+    return [
+        convert_peering_group_peer_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_resource_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupResource()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.id = (plumbing.id)
+    porcelain.resource_id = (plumbing.resource_id)
+    return porcelain
+
+
+def convert_peering_group_resource_to_plumbing(porcelain):
+    plumbing = PeeringGroupResource()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.id = (porcelain.id)
+    plumbing.resource_id = (porcelain.resource_id)
+    return plumbing
+
+
+def convert_repeated_peering_group_resource_to_plumbing(porcelains):
+    return [
+        convert_peering_group_resource_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_resource_to_porcelain(plumbings):
+    return [
+        convert_peering_group_resource_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_resource_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupResourceCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.peering_group_resource = convert_peering_group_resource_to_porcelain(
+        plumbing.peering_group_resource)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_resource_create_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupResourceCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_resource.CopyFrom(
+        convert_peering_group_resource_to_plumbing(
+            porcelain.peering_group_resource))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_resource_create_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_resource_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_resource_create_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_resource_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_resource_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupResourceDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_resource_delete_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupResourceDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_resource_delete_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_resource_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_resource_delete_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_resource_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_peering_group_resource_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PeeringGroupResourceGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.peering_group_resource = convert_peering_group_resource_to_porcelain(
+        plumbing.peering_group_resource)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_peering_group_resource_get_response_to_plumbing(porcelain):
+    plumbing = PeeringGroupResourceGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.peering_group_resource.CopyFrom(
+        convert_peering_group_resource_to_plumbing(
+            porcelain.peering_group_resource))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_peering_group_resource_get_response_to_plumbing(
+        porcelains):
+    return [
+        convert_peering_group_resource_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_peering_group_resource_get_response_to_porcelain(
+        plumbings):
+    return [
+        convert_peering_group_resource_get_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

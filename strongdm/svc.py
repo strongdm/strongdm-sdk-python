@@ -54,6 +54,14 @@ from .nodes_history_pb2 import *
 from .nodes_history_pb2_grpc import *
 from .organization_history_pb2 import *
 from .organization_history_pb2_grpc import *
+from .peering_group_nodes_pb2 import *
+from .peering_group_nodes_pb2_grpc import *
+from .peering_group_peers_pb2 import *
+from .peering_group_peers_pb2_grpc import *
+from .peering_group_resources_pb2 import *
+from .peering_group_resources_pb2_grpc import *
+from .peering_groups_pb2 import *
+from .peering_groups_pb2_grpc import *
 from .queries_pb2 import *
 from .queries_pb2_grpc import *
 from .remote_identities_pb2 import *
@@ -1431,6 +1439,699 @@ class OrganizationHistory:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class PeeringGroupNodes:
+    '''
+     PeeringGroupNodes provides the building blocks necessary to obtain attach a node to a peering group.
+    See `strongdm.models.PeeringGroupNode`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PeeringGroupNodesStub(channel)
+
+    def create(self, peering_group_node, timeout=None):
+        '''
+         Create attaches a Node to a PeeringGroup
+        '''
+        req = PeeringGroupNodeCreateRequest()
+
+        if peering_group_node is not None:
+            req.peering_group_node.CopyFrom(
+                plumbing.convert_peering_group_node_to_plumbing(
+                    peering_group_node))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupNodes.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupNodeCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_node = plumbing.convert_peering_group_node_to_porcelain(
+            plumbing_response.peering_group_node)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete detaches a Node to a PeeringGroup.
+        '''
+        req = PeeringGroupNodeDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupNodes.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupNodeDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group to node attachment.
+        '''
+        req = PeeringGroupNodeGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('PeeringGroupNodes.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupNodeGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_node = plumbing.convert_peering_group_node_to_porcelain(
+            plumbing_response.peering_group_node)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group node attachments.
+        '''
+        req = PeeringGroupNodeListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'PeeringGroupNodes.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.peering_group_nodes:
+                    yield plumbing.convert_peering_group_node_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotPeeringGroupNodes:
+    '''
+    SnapshotPeeringGroupNodes exposes the read only methods of the PeeringGroupNodes
+    service for historical queries.
+    '''
+    def __init__(self, peering_group_nodes):
+        self.peering_group_nodes = peering_group_nodes
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group to node attachment.
+        '''
+        return self.peering_group_nodes.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group node attachments.
+        '''
+        return self.peering_group_nodes.list(filter, *args, timeout=timeout)
+
+
+class PeeringGroupPeers:
+    '''
+     PeeringGroupPeers provides the building blocks necessary to link two peering groups.
+    See `strongdm.models.PeeringGroupPeer`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PeeringGroupPeersStub(channel)
+
+    def create(self, peering_group_peer, timeout=None):
+        '''
+         Create links two peering groups.
+        '''
+        req = PeeringGroupPeerCreateRequest()
+
+        if peering_group_peer is not None:
+            req.peering_group_peer.CopyFrom(
+                plumbing.convert_peering_group_peer_to_plumbing(
+                    peering_group_peer))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupPeers.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupPeerCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_peer = plumbing.convert_peering_group_peer_to_porcelain(
+            plumbing_response.peering_group_peer)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete unlinks two peering groups.
+        '''
+        req = PeeringGroupPeerDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupPeers.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupPeerDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group link.
+        '''
+        req = PeeringGroupPeerGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('PeeringGroupPeers.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupPeerGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_peer = plumbing.convert_peering_group_peer_to_porcelain(
+            plumbing_response.peering_group_peer)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group links.
+        '''
+        req = PeeringGroupPeerListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'PeeringGroupPeers.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.peering_group_peers:
+                    yield plumbing.convert_peering_group_peer_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotPeeringGroupPeers:
+    '''
+    SnapshotPeeringGroupPeers exposes the read only methods of the PeeringGroupPeers
+    service for historical queries.
+    '''
+    def __init__(self, peering_group_peers):
+        self.peering_group_peers = peering_group_peers
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group link.
+        '''
+        return self.peering_group_peers.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group links.
+        '''
+        return self.peering_group_peers.list(filter, *args, timeout=timeout)
+
+
+class PeeringGroupResources:
+    '''
+     PeeringGroupResources provides the building blocks necessary to obtain attach a resource to a peering group.
+    See `strongdm.models.PeeringGroupResource`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PeeringGroupResourcesStub(channel)
+
+    def create(self, peering_group_resource, timeout=None):
+        '''
+         Create attaches a Resource to a PeeringGroup
+        '''
+        req = PeeringGroupResourceCreateRequest()
+
+        if peering_group_resource is not None:
+            req.peering_group_resource.CopyFrom(
+                plumbing.convert_peering_group_resource_to_plumbing(
+                    peering_group_resource))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupResources.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupResourceCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_resource = plumbing.convert_peering_group_resource_to_porcelain(
+            plumbing_response.peering_group_resource)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete detaches a Resource to a PeeringGroup
+        '''
+        req = PeeringGroupResourceDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupResources.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupResourceDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group to resource attachment.
+        '''
+        req = PeeringGroupResourceGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'PeeringGroupResources.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupResourceGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group_resource = plumbing.convert_peering_group_resource_to_porcelain(
+            plumbing_response.peering_group_resource)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group resource attachments.
+        '''
+        req = PeeringGroupResourceListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'PeeringGroupResources.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.peering_group_resources:
+                    yield plumbing.convert_peering_group_resource_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotPeeringGroupResources:
+    '''
+    SnapshotPeeringGroupResources exposes the read only methods of the PeeringGroupResources
+    service for historical queries.
+    '''
+    def __init__(self, peering_group_resources):
+        self.peering_group_resources = peering_group_resources
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads the information of one peering group to resource attachment.
+        '''
+        return self.peering_group_resources.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of peering group resource attachments.
+        '''
+        return self.peering_group_resources.list(filter,
+                                                 *args,
+                                                 timeout=timeout)
+
+
+class PeeringGroups:
+    '''
+     PeeringGroups provides the building blocks necessary to obtain explicit network topology and routing.
+    See `strongdm.models.PeeringGroup`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PeeringGroupsStub(channel)
+
+    def create(self, peering_group, timeout=None):
+        '''
+         Create registers a new PeeringGroup.
+        '''
+        req = PeeringGroupCreateRequest()
+
+        if peering_group is not None:
+            req.peering_group.CopyFrom(
+                plumbing.convert_peering_group_to_plumbing(peering_group))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('PeeringGroups.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group = plumbing.convert_peering_group_to_porcelain(
+            plumbing_response.peering_group)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a PeeringGroup by ID.
+        '''
+        req = PeeringGroupDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('PeeringGroups.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one PeeringGroup by ID. It will load all its dependencies.
+        '''
+        req = PeeringGroupGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('PeeringGroups.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PeeringGroupGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.peering_group = plumbing.convert_peering_group_to_porcelain(
+            plumbing_response.peering_group)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Peering Groups.
+        '''
+        req = PeeringGroupListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'PeeringGroups.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.peering_groups:
+                    yield plumbing.convert_peering_group_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotPeeringGroups:
+    '''
+    SnapshotPeeringGroups exposes the read only methods of the PeeringGroups
+    service for historical queries.
+    '''
+    def __init__(self, peering_groups):
+        self.peering_groups = peering_groups
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one PeeringGroup by ID. It will load all its dependencies.
+        '''
+        return self.peering_groups.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Peering Groups.
+        '''
+        return self.peering_groups.list(filter, *args, timeout=timeout)
 
 
 class Queries:
