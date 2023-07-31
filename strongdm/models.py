@@ -7765,6 +7765,7 @@ class GoogleGKE:
         'healthy',
         'id',
         'name',
+        'port_override',
         'remote_identity_group_id',
         'remote_identity_healthcheck_username',
         'secret_store_id',
@@ -7783,6 +7784,7 @@ class GoogleGKE:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         remote_identity_group_id=None,
         remote_identity_healthcheck_username=None,
         secret_store_id=None,
@@ -7822,6 +7824,10 @@ class GoogleGKE:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
         '''
          The ID of the remote identity group to use for remote identity connections.
@@ -7857,6 +7863,7 @@ class GoogleGKE:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
             'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -7875,6 +7882,7 @@ class GoogleGKE:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'remote_identity_group_id': self.remote_identity_group_id,
             'remote_identity_healthcheck_username':
             self.remote_identity_healthcheck_username,
@@ -7895,6 +7903,7 @@ class GoogleGKE:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             remote_identity_group_id=d.get('remote_identity_group_id'),
             remote_identity_healthcheck_username=d.get(
                 'remote_identity_healthcheck_username'),
@@ -7915,6 +7924,7 @@ class GoogleGKEUserImpersonation:
         'healthy',
         'id',
         'name',
+        'port_override',
         'secret_store_id',
         'service_account_key',
         'subdomain',
@@ -7931,6 +7941,7 @@ class GoogleGKEUserImpersonation:
         healthy=None,
         id=None,
         name=None,
+        port_override=None,
         secret_store_id=None,
         service_account_key=None,
         subdomain=None,
@@ -7968,6 +7979,10 @@ class GoogleGKEUserImpersonation:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7995,6 +8010,7 @@ class GoogleGKEUserImpersonation:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -8011,6 +8027,7 @@ class GoogleGKEUserImpersonation:
             'healthy': self.healthy,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'secret_store_id': self.secret_store_id,
             'service_account_key': self.service_account_key,
             'subdomain': self.subdomain,
@@ -8028,6 +8045,7 @@ class GoogleGKEUserImpersonation:
             healthy=d.get('healthy'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
             subdomain=d.get('subdomain'),

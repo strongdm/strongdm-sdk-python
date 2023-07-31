@@ -317,6 +317,8 @@ class Permission:
     ORG_AUDIT_REMOTE_IDENTITIES = "audit:remoteidentities"
     ORG_AUDIT_REMOTE_IDENTITY_GROUPS = "audit:remoteidentitygroups"
     ORG_AUDIT_SECRET_STORES = "audit:secretstores"
+    ORG_AUDIT_WORKFLOWS = "audit:workflows"
+    ORG_AUDIT_ACCESS_REQUESTS = "audit:accessrequests"
     WORKFLOW_LIST = "workflow:list"
     WORKFLOW_EDIT = "workflow:edit"
     ACCESS_REQUEST_EDIT = "accessrequest:edit"

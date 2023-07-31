@@ -3507,6 +3507,7 @@ def convert_google_gke_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
     porcelain.remote_identity_healthcheck_username = (
         plumbing.remote_identity_healthcheck_username)
@@ -3529,6 +3530,7 @@ def convert_google_gke_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
     plumbing.remote_identity_healthcheck_username = (
         porcelain.remote_identity_healthcheck_username)
@@ -3563,6 +3565,7 @@ def convert_google_gke_user_impersonation_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.service_account_key = (plumbing.service_account_key)
     porcelain.subdomain = (plumbing.subdomain)
@@ -3582,6 +3585,7 @@ def convert_google_gke_user_impersonation_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.service_account_key = (porcelain.service_account_key)
     plumbing.subdomain = (porcelain.subdomain)
