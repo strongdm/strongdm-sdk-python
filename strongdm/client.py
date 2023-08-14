@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/4.2.0'
+USER_AGENT = 'strongdm-sdk-python/4.3.0'
 
 
 class Client:
@@ -67,6 +67,25 @@ class Client:
         except Exception as e:
             raise plumbing.convert_error_to_porcelain(e) from e
         self.channel = channel
+        self.access_requests = svc.AccessRequests(channel, self)
+        '''
+         AccessRequests are requests for access to a resource that may match a Workflow.
+
+        See `strongdm.svc.AccessRequests`.
+        '''
+        self.access_request_events_history = svc.AccessRequestEventsHistory(
+            channel, self)
+        '''
+         AccessRequestEventsHistory provides records of all changes to the state of an AccessRequest.
+
+        See `strongdm.svc.AccessRequestEventsHistory`.
+        '''
+        self.access_requests_history = svc.AccessRequestsHistory(channel, self)
+        '''
+         AccessRequestsHistory provides records of all changes to the state of an AccessRequest.
+
+        See `strongdm.svc.AccessRequestsHistory`.
+        '''
         self.account_attachments = svc.AccountAttachments(channel, self)
         '''
          AccountAttachments assign an account to a role.
@@ -279,6 +298,40 @@ class Client:
 
         See `strongdm.svc.SecretStoresHistory`.
         '''
+        self.workflows = svc.Workflows(channel, self)
+        '''
+         Workflows are the collection of rules that define the resources to which access can be requested,
+         the users that can request that access, and the mechanism for approving those requests which can either
+         but automatic approval or a set of users authorized to approve the requests.
+
+        See `strongdm.svc.Workflows`.
+        '''
+        self.workflow_approvers_history = svc.WorkflowApproversHistory(
+            channel, self)
+        '''
+         WorkflowApproversHistory provides records of all changes to the state of a WorkflowApprover.
+
+        See `strongdm.svc.WorkflowApproversHistory`.
+        '''
+        self.workflow_assignments_history = svc.WorkflowAssignmentsHistory(
+            channel, self)
+        '''
+         WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
+
+        See `strongdm.svc.WorkflowAssignmentsHistory`.
+        '''
+        self.workflow_roles_history = svc.WorkflowRolesHistory(channel, self)
+        '''
+         WorkflowRolesHistory provides records of all changes to the state of a WorkflowRole
+
+        See `strongdm.svc.WorkflowRolesHistory`.
+        '''
+        self.workflows_history = svc.WorkflowsHistory(channel, self)
+        '''
+         WorkflowsHistory provides records of all changes to the state of a Workflow.
+
+        See `strongdm.svc.WorkflowsHistory`.
+        '''
 
     def close(self):
         '''Closes this Client and releases all resources held by it.
@@ -352,6 +405,7 @@ class Client:
         '''
         client = copy.copy(self)
         client.snapshot_datetime = snapshot_datetime
+        client.access_requests = svc.AccessRequests(client.channel, client)
         client.account_attachments = svc.AccountAttachments(
             client.channel, client)
         client.account_grants = svc.AccountGrants(client.channel, client)
@@ -374,12 +428,20 @@ class Client:
         client.role_resources = svc.RoleResources(client.channel, client)
         client.roles = svc.Roles(client.channel, client)
         client.secret_stores = svc.SecretStores(client.channel, client)
+        client.workflows = svc.Workflows(client.channel, client)
         return SnapshotClient(client)
 
 
 class SnapshotClient:
     '''SnapshotClient exposes methods to query historical records at a provided timestamp.'''
     def __init__(self, client):
+        self.access_requests = svc.SnapshotAccessRequests(
+            client.access_requests)
+        '''
+         AccessRequests are requests for access to a resource that may match a Workflow.
+
+        See `strongdm.svc.SnapshotAccessRequests`.
+        '''
         self.account_attachments = svc.SnapshotAccountAttachments(
             client.account_attachments)
         '''
@@ -494,4 +556,12 @@ class SnapshotClient:
          SecretStores are servers where resource secrets (passwords, keys) are stored.
 
         See `strongdm.svc.SnapshotSecretStores`.
+        '''
+        self.workflows = svc.SnapshotWorkflows(client.workflows)
+        '''
+         Workflows are the collection of rules that define the resources to which access can be requested,
+         the users that can request that access, and the mechanism for approving those requests which can either
+         but automatic approval or a set of users authorized to approve the requests.
+
+        See `strongdm.svc.SnapshotWorkflows`.
         '''

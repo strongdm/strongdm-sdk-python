@@ -26,6 +26,9 @@ from google.protobuf.timestamp_pb2 import Timestamp
 import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
+from .access_requests_pb2 import *
+from .access_request_events_history_pb2 import *
+from .access_requests_history_pb2 import *
 from .account_attachments_pb2 import *
 from .account_attachments_history_pb2 import *
 from .account_grants_pb2 import *
@@ -61,6 +64,11 @@ from .roles_history_pb2 import *
 from .secret_store_types_pb2 import *
 from .secret_stores_pb2 import *
 from .secret_stores_history_pb2 import *
+from .workflows_pb2 import *
+from .workflow_approvers_history_pb2 import *
+from .workflow_assignments_history_pb2 import *
+from .workflow_roles_history_pb2 import *
+from .workflows_history_pb2 import *
 
 
 def quote_filter_args(filter, *args):
@@ -625,6 +633,176 @@ def convert_repeated_aws_store_to_plumbing(porcelains):
 
 def convert_repeated_aws_store_to_porcelain(plumbings):
     return [convert_aws_store_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_access_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequest()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.grant_id = (plumbing.grant_id)
+    porcelain.id = (plumbing.id)
+    porcelain.reason = (plumbing.reason)
+    porcelain.resource_id = (plumbing.resource_id)
+    porcelain.start_from = convert_timestamp_to_porcelain(plumbing.start_from)
+    porcelain.status = (plumbing.status)
+    porcelain.status_at = convert_timestamp_to_porcelain(plumbing.status_at)
+    porcelain.valid_until = convert_timestamp_to_porcelain(
+        plumbing.valid_until)
+    porcelain.workflow_id = (plumbing.workflow_id)
+    return porcelain
+
+
+def convert_access_request_to_plumbing(porcelain):
+    plumbing = AccessRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.grant_id = (porcelain.grant_id)
+    plumbing.id = (porcelain.id)
+    plumbing.reason = (porcelain.reason)
+    plumbing.resource_id = (porcelain.resource_id)
+    plumbing.start_from.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.start_from))
+    plumbing.status = (porcelain.status)
+    plumbing.status_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.status_at))
+    plumbing.valid_until.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.valid_until))
+    plumbing.workflow_id = (porcelain.workflow_id)
+    return plumbing
+
+
+def convert_repeated_access_request_to_plumbing(porcelains):
+    return [
+        convert_access_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_to_porcelain(plumbings):
+    return [
+        convert_access_request_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_access_request_event_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestEvent()
+    porcelain.actor_id = (plumbing.actor_id)
+    porcelain.id = (plumbing.id)
+    porcelain.metadata = (plumbing.metadata)
+    porcelain.request_id = (plumbing.request_id)
+    porcelain.type = (plumbing.type)
+    return porcelain
+
+
+def convert_access_request_event_to_plumbing(porcelain):
+    plumbing = AccessRequestEvent()
+    if porcelain is None:
+        return plumbing
+    plumbing.actor_id = (porcelain.actor_id)
+    plumbing.id = (porcelain.id)
+    plumbing.metadata = (porcelain.metadata)
+    plumbing.request_id = (porcelain.request_id)
+    plumbing.type = (porcelain.type)
+    return plumbing
+
+
+def convert_repeated_access_request_event_to_plumbing(porcelains):
+    return [
+        convert_access_request_event_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_event_to_porcelain(plumbings):
+    return [
+        convert_access_request_event_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_access_request_event_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestEventHistory()
+    porcelain.access_request_event = convert_access_request_event_to_porcelain(
+        plumbing.access_request_event)
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_access_request_event_history_to_plumbing(porcelain):
+    plumbing = AccessRequestEventHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.access_request_event.CopyFrom(
+        convert_access_request_event_to_plumbing(
+            porcelain.access_request_event))
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_access_request_event_history_to_plumbing(porcelains):
+    return [
+        convert_access_request_event_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_event_history_to_porcelain(plumbings):
+    return [
+        convert_access_request_event_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_access_request_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestHistory()
+    porcelain.access_request = convert_access_request_to_porcelain(
+        plumbing.access_request)
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_access_request_history_to_plumbing(porcelain):
+    plumbing = AccessRequestHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.access_request.CopyFrom(
+        convert_access_request_to_plumbing(porcelain.access_request))
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_access_request_history_to_plumbing(porcelains):
+    return [
+        convert_access_request_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_history_to_porcelain(plumbings):
+    return [
+        convert_access_request_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_account_to_plumbing(porcelain):
@@ -9003,6 +9181,300 @@ def convert_repeated_vault_token_store_to_plumbing(porcelains):
 def convert_repeated_vault_token_store_to_porcelain(plumbings):
     return [
         convert_vault_token_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Workflow()
+    porcelain.access_rules = convert_access_rules_to_porcelain(
+        plumbing.access_rules)
+    porcelain.auto_grant = (plumbing.auto_grant)
+    porcelain.description = (plumbing.description)
+    porcelain.enabled = (plumbing.enabled)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.weight = (plumbing.weight)
+    return porcelain
+
+
+def convert_workflow_to_plumbing(porcelain):
+    plumbing = Workflow()
+    if porcelain is None:
+        return plumbing
+    plumbing.access_rules = convert_access_rules_to_plumbing(
+        porcelain.access_rules)
+    plumbing.auto_grant = (porcelain.auto_grant)
+    plumbing.description = (porcelain.description)
+    plumbing.enabled = (porcelain.enabled)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.weight = (porcelain.weight)
+    return plumbing
+
+
+def convert_repeated_workflow_to_plumbing(porcelains):
+    return [
+        convert_workflow_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_to_porcelain(plumbings):
+    return [convert_workflow_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_workflow_approver_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowApprover()
+    porcelain.approver_id = (plumbing.approver_id)
+    porcelain.workflow_id = (plumbing.workflow_id)
+    return porcelain
+
+
+def convert_workflow_approver_to_plumbing(porcelain):
+    plumbing = WorkflowApprover()
+    if porcelain is None:
+        return plumbing
+    plumbing.approver_id = (porcelain.approver_id)
+    plumbing.workflow_id = (porcelain.workflow_id)
+    return plumbing
+
+
+def convert_repeated_workflow_approver_to_plumbing(porcelains):
+    return [
+        convert_workflow_approver_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_approver_to_porcelain(plumbings):
+    return [
+        convert_workflow_approver_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_approver_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowApproverHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    porcelain.workflow_approver = convert_workflow_approver_to_porcelain(
+        plumbing.workflow_approver)
+    return porcelain
+
+
+def convert_workflow_approver_history_to_plumbing(porcelain):
+    plumbing = WorkflowApproverHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    plumbing.workflow_approver.CopyFrom(
+        convert_workflow_approver_to_plumbing(porcelain.workflow_approver))
+    return plumbing
+
+
+def convert_repeated_workflow_approver_history_to_plumbing(porcelains):
+    return [
+        convert_workflow_approver_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_approver_history_to_porcelain(plumbings):
+    return [
+        convert_workflow_approver_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_assignment_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowAssignment()
+    porcelain.resource_id = (plumbing.resource_id)
+    porcelain.workflow_id = (plumbing.workflow_id)
+    return porcelain
+
+
+def convert_workflow_assignment_to_plumbing(porcelain):
+    plumbing = WorkflowAssignment()
+    if porcelain is None:
+        return plumbing
+    plumbing.resource_id = (porcelain.resource_id)
+    plumbing.workflow_id = (porcelain.workflow_id)
+    return plumbing
+
+
+def convert_repeated_workflow_assignment_to_plumbing(porcelains):
+    return [
+        convert_workflow_assignment_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_assignment_to_porcelain(plumbings):
+    return [
+        convert_workflow_assignment_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_assignment_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowAssignmentHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    porcelain.workflow_assignment = convert_workflow_assignment_to_porcelain(
+        plumbing.workflow_assignment)
+    return porcelain
+
+
+def convert_workflow_assignment_history_to_plumbing(porcelain):
+    plumbing = WorkflowAssignmentHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    plumbing.workflow_assignment.CopyFrom(
+        convert_workflow_assignment_to_plumbing(porcelain.workflow_assignment))
+    return plumbing
+
+
+def convert_repeated_workflow_assignment_history_to_plumbing(porcelains):
+    return [
+        convert_workflow_assignment_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_assignment_history_to_porcelain(plumbings):
+    return [
+        convert_workflow_assignment_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    porcelain.workflow = convert_workflow_to_porcelain(plumbing.workflow)
+    return porcelain
+
+
+def convert_workflow_history_to_plumbing(porcelain):
+    plumbing = WorkflowHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    plumbing.workflow.CopyFrom(convert_workflow_to_plumbing(
+        porcelain.workflow))
+    return plumbing
+
+
+def convert_repeated_workflow_history_to_plumbing(porcelains):
+    return [
+        convert_workflow_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_history_to_porcelain(plumbings):
+    return [
+        convert_workflow_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_role_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowRole()
+    porcelain.role_id = (plumbing.role_id)
+    porcelain.workflow_id = (plumbing.workflow_id)
+    return porcelain
+
+
+def convert_workflow_role_to_plumbing(porcelain):
+    plumbing = WorkflowRole()
+    if porcelain is None:
+        return plumbing
+    plumbing.role_id = (porcelain.role_id)
+    plumbing.workflow_id = (porcelain.workflow_id)
+    return plumbing
+
+
+def convert_repeated_workflow_role_to_plumbing(porcelains):
+    return [
+        convert_workflow_role_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_role_to_porcelain(plumbings):
+    return [
+        convert_workflow_role_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_workflow_role_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowRoleHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    porcelain.workflow_role = convert_workflow_role_to_porcelain(
+        plumbing.workflow_role)
+    return porcelain
+
+
+def convert_workflow_role_history_to_plumbing(porcelain):
+    plumbing = WorkflowRoleHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    plumbing.workflow_role.CopyFrom(
+        convert_workflow_role_to_plumbing(porcelain.workflow_role))
+    return plumbing
+
+
+def convert_repeated_workflow_role_history_to_plumbing(porcelains):
+    return [
+        convert_workflow_role_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_role_history_to_porcelain(plumbings):
+    return [
+        convert_workflow_role_history_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

@@ -1357,6 +1357,321 @@ class AWSStore:
         )
 
 
+class AccessRequest:
+    '''
+         AccessRequests are requests for access to a resource that may match a Workflow.
+    '''
+    __slots__ = [
+        'account_id',
+        'grant_id',
+        'id',
+        'reason',
+        'resource_id',
+        'start_from',
+        'status',
+        'status_at',
+        'valid_until',
+        'workflow_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        grant_id=None,
+        id=None,
+        reason=None,
+        resource_id=None,
+        start_from=None,
+        status=None,
+        status_at=None,
+        valid_until=None,
+        workflow_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The account that initiated the request.
+        '''
+        self.grant_id = grant_id if grant_id is not None else ''
+        '''
+         The account grant created, if it exists.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         The access request id.
+        '''
+        self.reason = reason if reason is not None else ''
+        '''
+         The reason the access was requested.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The resource id.
+        '''
+        self.start_from = start_from if start_from is not None else None
+        '''
+         The timestamp when the requested access will be granted.
+         If this field is not specified it will default to the current time.
+        '''
+        self.status = status if status is not None else ''
+        '''
+         The status of the access request.
+        '''
+        self.status_at = status_at if status_at is not None else None
+        '''
+         The timestamp when the status changed.
+        '''
+        self.valid_until = valid_until if valid_until is not None else None
+        '''
+         The timestamp when the requested access will expire.
+        '''
+        self.workflow_id = workflow_id if workflow_id is not None else ''
+        '''
+         The workflow the request bound to.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequest ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'grant_id: ' + repr(self.grant_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'reason: ' + repr(self.reason) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'start_from: ' + repr(self.start_from) + ' ' +\
+            'status: ' + repr(self.status) + ' ' +\
+            'status_at: ' + repr(self.status_at) + ' ' +\
+            'valid_until: ' + repr(self.valid_until) + ' ' +\
+            'workflow_id: ' + repr(self.workflow_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'grant_id': self.grant_id,
+            'id': self.id,
+            'reason': self.reason,
+            'resource_id': self.resource_id,
+            'start_from': self.start_from,
+            'status': self.status,
+            'status_at': self.status_at,
+            'valid_until': self.valid_until,
+            'workflow_id': self.workflow_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            grant_id=d.get('grant_id'),
+            id=d.get('id'),
+            reason=d.get('reason'),
+            resource_id=d.get('resource_id'),
+            start_from=d.get('start_from'),
+            status=d.get('status'),
+            status_at=d.get('status_at'),
+            valid_until=d.get('valid_until'),
+            workflow_id=d.get('workflow_id'),
+        )
+
+
+class AccessRequestEvent:
+    '''
+         AccessRequestEvents hold information about events related to an access
+     request such as creation, approval and denial.
+    '''
+    __slots__ = [
+        'actor_id',
+        'id',
+        'metadata',
+        'request_id',
+        'type',
+    ]
+
+    def __init__(
+        self,
+        actor_id=None,
+        id=None,
+        metadata=None,
+        request_id=None,
+        type=None,
+    ):
+        self.actor_id = actor_id if actor_id is not None else ''
+        '''
+         The account responsible for the event.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         The access request event id.
+        '''
+        self.metadata = metadata if metadata is not None else ''
+        '''
+         The metadata about the event
+        '''
+        self.request_id = request_id if request_id is not None else ''
+        '''
+         The request that the event is bound to.
+        '''
+        self.type = type if type is not None else ''
+        '''
+         The type of event.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestEvent ' + \
+            'actor_id: ' + repr(self.actor_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'metadata: ' + repr(self.metadata) + ' ' +\
+            'request_id: ' + repr(self.request_id) + ' ' +\
+            'type: ' + repr(self.type) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'actor_id': self.actor_id,
+            'id': self.id,
+            'metadata': self.metadata,
+            'request_id': self.request_id,
+            'type': self.type,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            actor_id=d.get('actor_id'),
+            id=d.get('id'),
+            metadata=d.get('metadata'),
+            request_id=d.get('request_id'),
+            type=d.get('type'),
+        )
+
+
+class AccessRequestEventHistory:
+    '''
+         AccessRequestEventHistory records the state of a AccessRequest at a given point in time,
+     where every change (create, update and delete) to a AccessRequest produces an
+     AccessRequestEventHistory record.
+    '''
+    __slots__ = [
+        'access_request_event',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        access_request_event=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.access_request_event = access_request_event if access_request_event is not None else None
+        '''
+         The complete AccessRequestEvent state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccessRequest.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Workflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccessRequest state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestEventHistory ' + \
+            'access_request_event: ' + repr(self.access_request_event) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_request_event': self.access_request_event,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_request_event=d.get('access_request_event'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class AccessRequestHistory:
+    '''
+         AccessRequestHistory records the state of a AccessRequest at a given point in time,
+     where every change (create, update and delete) to a AccessRequest produces an
+     AccessRequestHistory record.
+    '''
+    __slots__ = [
+        'access_request',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        access_request=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.access_request = access_request if access_request is not None else None
+        '''
+         The complete AccessRequest state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccessRequest.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Workflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccessRequest state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestHistory ' + \
+            'access_request: ' + repr(self.access_request) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_request': self.access_request,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_request=d.get('access_request'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class AccountAttachment:
     '''
          AccountAttachments assign an account to a role.
@@ -18829,6 +19144,484 @@ class VaultTokenStore:
             namespace=d.get('namespace'),
             server_address=d.get('server_address'),
             tags=d.get('tags'),
+        )
+
+
+class Workflow:
+    '''
+         Workflows are the collection of rules that define the resources to which access can be requested,
+     the users that can request that access, and the mechanism for approving those requests which can either
+     but automatic approval or a set of users authorized to approve the requests.
+    '''
+    __slots__ = [
+        'access_rules',
+        'auto_grant',
+        'description',
+        'enabled',
+        'id',
+        'name',
+        'weight',
+    ]
+
+    def __init__(
+        self,
+        access_rules=None,
+        auto_grant=None,
+        description=None,
+        enabled=None,
+        id=None,
+        name=None,
+        weight=None,
+    ):
+        self.access_rules = access_rules if access_rules is not None else _porcelain_zero_value_access_rules(
+        )
+        '''
+         AccessRules is a list of access rules defining the resources this Workflow provides access to.
+        '''
+        self.auto_grant = auto_grant if auto_grant is not None else False
+        '''
+         Optional auto grant setting to automatically approve requests or not, defaults to false.
+        '''
+        self.description = description if description is not None else ''
+        '''
+         Optional description of the Workflow.
+        '''
+        self.enabled = enabled if enabled is not None else False
+        '''
+         Optional enabled state for workflow. This setting may be overridden by the system if
+         the workflow doesn't meet the requirements to be enabled or if other conditions prevent
+         enabling the workflow.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Workflow.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Workflow.
+        '''
+        self.weight = weight if weight is not None else 0
+        '''
+         Optional weight for workflow to specify it's priority in matching a request.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Workflow ' + \
+            'access_rules: ' + repr(self.access_rules) + ' ' +\
+            'auto_grant: ' + repr(self.auto_grant) + ' ' +\
+            'description: ' + repr(self.description) + ' ' +\
+            'enabled: ' + repr(self.enabled) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'weight: ' + repr(self.weight) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_rules': self.access_rules,
+            'auto_grant': self.auto_grant,
+            'description': self.description,
+            'enabled': self.enabled,
+            'id': self.id,
+            'name': self.name,
+            'weight': self.weight,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_rules=d.get('access_rules'),
+            auto_grant=d.get('auto_grant'),
+            description=d.get('description'),
+            enabled=d.get('enabled'),
+            id=d.get('id'),
+            name=d.get('name'),
+            weight=d.get('weight'),
+        )
+
+
+class WorkflowApprover:
+    '''
+         WorkflowApprover is an account with the ability to approve requests bound to a workflow.
+    '''
+    __slots__ = [
+        'approver_id',
+        'workflow_id',
+    ]
+
+    def __init__(
+        self,
+        approver_id=None,
+        workflow_id=None,
+    ):
+        self.approver_id = approver_id if approver_id is not None else ''
+        '''
+         The approver id.
+        '''
+        self.workflow_id = workflow_id if workflow_id is not None else ''
+        '''
+         The workflow id.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApprover ' + \
+            'approver_id: ' + repr(self.approver_id) + ' ' +\
+            'workflow_id: ' + repr(self.workflow_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approver_id': self.approver_id,
+            'workflow_id': self.workflow_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approver_id=d.get('approver_id'),
+            workflow_id=d.get('workflow_id'),
+        )
+
+
+class WorkflowApproverHistory:
+    '''
+         WorkflowApproverHistory records the state of a WorkflowApprover at a given point in time,
+     where every change (create, update and delete) to a WorkflowApprover produces an
+     WorkflowApproverHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+        'workflow_approver',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+        workflow_approver=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Workflow.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Workflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Workflow state was recorded.
+        '''
+        self.workflow_approver = workflow_approver if workflow_approver is not None else None
+        '''
+         The complete WorkflowApprover state at this time.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproverHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            'workflow_approver: ' + repr(self.workflow_approver) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+            'workflow_approver': self.workflow_approver,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+            workflow_approver=d.get('workflow_approver'),
+        )
+
+
+class WorkflowAssignment:
+    '''
+         WorkflowAssignment links a Resource to a Workflow.
+    '''
+    __slots__ = [
+        'resource_id',
+        'workflow_id',
+    ]
+
+    def __init__(
+        self,
+        resource_id=None,
+        workflow_id=None,
+    ):
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The resource id.
+        '''
+        self.workflow_id = workflow_id if workflow_id is not None else ''
+        '''
+         The workflow id.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowAssignment ' + \
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'workflow_id: ' + repr(self.workflow_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'resource_id': self.resource_id,
+            'workflow_id': self.workflow_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            resource_id=d.get('resource_id'),
+            workflow_id=d.get('workflow_id'),
+        )
+
+
+class WorkflowAssignmentHistory:
+    '''
+         WorkflowAssignmentHistory records the state of a WorkflowAssignment at a given point in time,
+     where every change (create, update and delete) to a WorkflowAssignment produces an
+     WorkflowAssignmentHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+        'workflow_assignment',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+        workflow_assignment=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Workflow.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Workflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Workflow state was recorded.
+        '''
+        self.workflow_assignment = workflow_assignment if workflow_assignment is not None else None
+        '''
+         The complete WorkflowAssignment state at this time.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowAssignmentHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            'workflow_assignment: ' + repr(self.workflow_assignment) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+            'workflow_assignment': self.workflow_assignment,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+            workflow_assignment=d.get('workflow_assignment'),
+        )
+
+
+class WorkflowHistory:
+    '''
+         WorkflowHistory records the state of a Workflow at a given point in time,
+     where every change (create, update and delete) to a Workflow produces an
+     WorkflowHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+        'workflow',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+        workflow=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Workflow.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Workflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Workflow state was recorded.
+        '''
+        self.workflow = workflow if workflow is not None else None
+        '''
+         The complete Workflow state at this time.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            'workflow: ' + repr(self.workflow) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+            'workflow': self.workflow,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+            workflow=d.get('workflow'),
+        )
+
+
+class WorkflowRole:
+    '''
+         WorkflowRole links a Role to a Workflow.
+    '''
+    __slots__ = [
+        'role_id',
+        'workflow_id',
+    ]
+
+    def __init__(
+        self,
+        role_id=None,
+        workflow_id=None,
+    ):
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The role id.
+        '''
+        self.workflow_id = workflow_id if workflow_id is not None else ''
+        '''
+         The workflow id.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRole ' + \
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            'workflow_id: ' + repr(self.workflow_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'role_id': self.role_id,
+            'workflow_id': self.workflow_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            role_id=d.get('role_id'),
+            workflow_id=d.get('workflow_id'),
+        )
+
+
+class WorkflowRoleHistory:
+    '''
+         WorkflowRolesHistory records the state of a Workflow at a given point in time,
+     where every change (create, update and delete) to a WorkflowRole produces a
+     WorkflowRoleHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+        'workflow_role',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+        workflow_role=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Workflow.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this WorkflowRole was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Workflow state was recorded.
+        '''
+        self.workflow_role = workflow_role if workflow_role is not None else None
+        '''
+         The complete WorkflowRole state at this time.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRoleHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            'workflow_role: ' + repr(self.workflow_role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+            'workflow_role': self.workflow_role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+            workflow_role=d.get('workflow_role'),
         )
 
 

@@ -22,6 +22,12 @@ from .options_pb2 import *
 from .options_pb2_grpc import *
 from .spec_pb2 import *
 from .spec_pb2_grpc import *
+from .access_requests_pb2 import *
+from .access_requests_pb2_grpc import *
+from .access_request_events_history_pb2 import *
+from .access_request_events_history_pb2_grpc import *
+from .access_requests_history_pb2 import *
+from .access_requests_history_pb2_grpc import *
 from .account_attachments_pb2 import *
 from .account_attachments_pb2_grpc import *
 from .account_attachments_history_pb2 import *
@@ -92,6 +98,16 @@ from .secret_stores_pb2 import *
 from .secret_stores_pb2_grpc import *
 from .secret_stores_history_pb2 import *
 from .secret_stores_history_pb2_grpc import *
+from .workflows_pb2 import *
+from .workflows_pb2_grpc import *
+from .workflow_approvers_history_pb2 import *
+from .workflow_approvers_history_pb2_grpc import *
+from .workflow_assignments_history_pb2 import *
+from .workflow_assignments_history_pb2_grpc import *
+from .workflow_roles_history_pb2 import *
+from .workflow_roles_history_pb2_grpc import *
+from .workflows_history_pb2 import *
+from .workflows_history_pb2_grpc import *
 import warnings
 import functools
 
@@ -108,6 +124,168 @@ def deprecated(func):
         return func(*args, **kwargs)
 
     return new_func
+
+
+class AccessRequests:
+    '''
+     AccessRequests are requests for access to a resource that may match a Workflow.
+    See `strongdm.models.AccessRequest`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccessRequestsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        req = AccessRequestListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccessRequests.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.access_requests:
+                    yield plumbing.convert_access_request_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccessRequests:
+    '''
+    SnapshotAccessRequests exposes the read only methods of the AccessRequests
+    service for historical queries.
+    '''
+    def __init__(self, access_requests):
+        self.access_requests = access_requests
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        return self.access_requests.list(filter, *args, timeout=timeout)
+
+
+class AccessRequestEventsHistory:
+    '''
+     AccessRequestEventsHistory provides records of all changes to the state of an AccessRequest.
+    See `strongdm.models.AccessRequestEventHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccessRequestEventsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccessRequestEventHistory records matching a given set of criteria.
+        '''
+        req = AccessRequestEventHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccessRequestEventsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_access_request_event_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class AccessRequestsHistory:
+    '''
+     AccessRequestsHistory provides records of all changes to the state of an AccessRequest.
+    See `strongdm.models.AccessRequestHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccessRequestsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccessRequestHistory records matching a given set of criteria.
+        '''
+        req = AccessRequestHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccessRequestsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_access_request_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class AccountAttachments:
@@ -3630,6 +3808,267 @@ class SecretStoresHistory:
                 tries = 0
                 for plumbing_item in plumbing_response.history:
                     yield plumbing.convert_secret_store_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Workflows:
+    '''
+     Workflows are the collection of rules that define the resources to which access can be requested,
+     the users that can request that access, and the mechanism for approving those requests which can either
+     but automatic approval or a set of users authorized to approve the requests.
+    See `strongdm.models.Workflow`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        req = WorkflowListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'Workflows.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.workflows:
+                    yield plumbing.convert_workflow_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotWorkflows:
+    '''
+    SnapshotWorkflows exposes the read only methods of the Workflows
+    service for historical queries.
+    '''
+    def __init__(self, workflows):
+        self.workflows = workflows
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        return self.workflows.list(filter, *args, timeout=timeout)
+
+
+class WorkflowApproversHistory:
+    '''
+     WorkflowApproversHistory provides records of all changes to the state of a WorkflowApprover.
+    See `strongdm.models.WorkflowApproverHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowApproversHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of WorkflowApproversHistory records matching a given set of criteria.
+        '''
+        req = WorkflowApproversHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowApproversHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_workflow_approver_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class WorkflowAssignmentsHistory:
+    '''
+     WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
+    See `strongdm.models.WorkflowAssignmentHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowAssignmentsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of WorkflowAssignmentsHistory records matching a given set of criteria.
+        '''
+        req = WorkflowAssignmentsHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowAssignmentsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_workflow_assignment_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class WorkflowRolesHistory:
+    '''
+     WorkflowRolesHistory provides records of all changes to the state of a WorkflowRole
+    See `strongdm.models.WorkflowRoleHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowRolesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of WorkflowRolesHistory records matching a given set of criteria.
+        '''
+        req = WorkflowRolesHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowRolesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_workflow_role_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class WorkflowsHistory:
+    '''
+     WorkflowsHistory provides records of all changes to the state of a Workflow.
+    See `strongdm.models.WorkflowHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of WorkflowHistory records matching a given set of criteria.
+        '''
+        req = WorkflowHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        page_size_option = self.parent._test_options.get('PageSize')
+        if isinstance(page_size_option, int):
+            req.meta.limit = page_size_option
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_workflow_history_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
