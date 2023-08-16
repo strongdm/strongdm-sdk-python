@@ -1672,6 +1672,71 @@ class AccessRequestHistory:
         )
 
 
+class AccessRequestListRequest:
+    '''
+         AccessRequestListRequest specifies criteria for retrieving a list of
+     AccessRequest records
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class AccessRequestListResponse:
+    '''
+         AccessRequestListResponse reports how the Workflow was created in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class AccountAttachment:
     '''
          AccountAttachments assign an account to a role.
@@ -19516,6 +19581,72 @@ class WorkflowHistory:
             timestamp=d.get('timestamp'),
             workflow=d.get('workflow'),
         )
+
+
+class WorkflowListRequest:
+    '''
+         WorkflowListRequest specifies criteria for retrieving a list of
+     Workflow records
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class WorkflowListResponse:
+    '''
+         WorkflowListResponse returns a list of Workflow records that meet
+     the criteria of a WorkflowListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
 
 
 class WorkflowRole:

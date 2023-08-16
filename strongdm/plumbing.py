@@ -805,6 +805,79 @@ def convert_repeated_access_request_history_to_porcelain(plumbings):
     ]
 
 
+def convert_access_request_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestListRequest()
+    porcelain.filter = (plumbing.filter)
+    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
+    return porcelain
+
+
+def convert_access_request_list_request_to_plumbing(porcelain):
+    plumbing = AccessRequestListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    plumbing.meta.CopyFrom(
+        convert_list_request_metadata_to_plumbing(porcelain.meta))
+    return plumbing
+
+
+def convert_repeated_access_request_list_request_to_plumbing(porcelains):
+    return [
+        convert_access_request_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_list_request_to_porcelain(plumbings):
+    return [
+        convert_access_request_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_access_request_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestListResponse()
+    porcelain.access_requests = convert_repeated_access_request_to_porcelain(
+        plumbing.access_requests)
+    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_access_request_list_response_to_plumbing(porcelain):
+    plumbing = AccessRequestListResponse()
+    if porcelain is None:
+        return plumbing
+    del plumbing.access_requests[:]
+    plumbing.access_requests.extend(
+        convert_repeated_access_request_to_plumbing(porcelain.access_requests))
+    plumbing.meta.CopyFrom(
+        convert_list_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_access_request_list_response_to_plumbing(porcelains):
+    return [
+        convert_access_request_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_list_response_to_porcelain(plumbings):
+    return [
+        convert_access_request_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_account_to_plumbing(porcelain):
     plumbing = Account()
     if porcelain is None:
@@ -9404,6 +9477,79 @@ def convert_repeated_workflow_history_to_plumbing(porcelains):
 def convert_repeated_workflow_history_to_porcelain(plumbings):
     return [
         convert_workflow_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowListRequest()
+    porcelain.filter = (plumbing.filter)
+    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
+    return porcelain
+
+
+def convert_workflow_list_request_to_plumbing(porcelain):
+    plumbing = WorkflowListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    plumbing.meta.CopyFrom(
+        convert_list_request_metadata_to_plumbing(porcelain.meta))
+    return plumbing
+
+
+def convert_repeated_workflow_list_request_to_plumbing(porcelains):
+    return [
+        convert_workflow_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_list_request_to_porcelain(plumbings):
+    return [
+        convert_workflow_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_workflow_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.WorkflowListResponse()
+    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.workflows = convert_repeated_workflow_to_porcelain(
+        plumbing.workflows)
+    return porcelain
+
+
+def convert_workflow_list_response_to_plumbing(porcelain):
+    plumbing = WorkflowListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_list_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    del plumbing.workflows[:]
+    plumbing.workflows.extend(
+        convert_repeated_workflow_to_plumbing(porcelain.workflows))
+    return plumbing
+
+
+def convert_repeated_workflow_list_response_to_plumbing(porcelains):
+    return [
+        convert_workflow_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_workflow_list_response_to_porcelain(plumbings):
+    return [
+        convert_workflow_list_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
