@@ -206,6 +206,7 @@ class ActivityVerb:
     RELAY_UPDATED_NAME = "relay name updated"
     RELAY_DELETED = "relay deleted"
     ORG_PUBLIC_KEY_UPDATED = "public key updated"
+    ORG_DISCARD_REPLAYS_UPDATED = "discard replays updated"
     ORG_ENFORCE_PORT_OVERRIDES_UPDATED = "port override enforcement updated"
     ORG_SERVICE_AUTO_CONNECT_UPDATED = "service account auto-connect updated"
     ORG_SELF_REGISTRATION_ACTIVATED = "self-registration activated"

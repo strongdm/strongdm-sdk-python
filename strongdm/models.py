@@ -4344,7 +4344,7 @@ class AuroraMysql:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -4929,7 +4929,7 @@ class AzureMysql:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5928,7 +5928,7 @@ class Clustrix:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -9883,7 +9883,7 @@ class MTLSMysql:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10260,7 +10260,7 @@ class Maria:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10549,7 +10549,7 @@ class Memsql:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11550,7 +11550,7 @@ class Mysql:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -16485,7 +16485,7 @@ class SQLServer:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks, and used for clients if Override Default Database is true.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -16657,7 +16657,7 @@ class SQLServerAzureAD:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks, and used for clients if Override Default Database is true.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -16832,7 +16832,7 @@ class SQLServerKerberosAD:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks, and used for clients if Override Default Database is true.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -17851,7 +17851,7 @@ class SingleStore:
         '''
         self.database = database if database is not None else ''
         '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+         The database for healthchecks. Does not affect client requests.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
