@@ -8028,6 +8028,8 @@ def convert_sql_server_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SQLServer()
+    porcelain.allow_deprecated_encryption = (
+        plumbing.allow_deprecated_encryption)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
@@ -8051,6 +8053,8 @@ def convert_sql_server_to_plumbing(porcelain):
     plumbing = SQLServer()
     if porcelain is None:
         return plumbing
+    plumbing.allow_deprecated_encryption = (
+        porcelain.allow_deprecated_encryption)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
@@ -8086,6 +8090,8 @@ def convert_sql_server_azure_ad_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SQLServerAzureAD()
+    porcelain.allow_deprecated_encryption = (
+        plumbing.allow_deprecated_encryption)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.client_id = (plumbing.client_id)
     porcelain.database = (plumbing.database)
@@ -8110,6 +8116,8 @@ def convert_sql_server_azure_ad_to_plumbing(porcelain):
     plumbing = SQLServerAzureAD()
     if porcelain is None:
         return plumbing
+    plumbing.allow_deprecated_encryption = (
+        porcelain.allow_deprecated_encryption)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.client_id = (porcelain.client_id)
     plumbing.database = (porcelain.database)
@@ -8148,6 +8156,8 @@ def convert_sql_server_kerberos_ad_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SQLServerKerberosAD()
+    porcelain.allow_deprecated_encryption = (
+        plumbing.allow_deprecated_encryption)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
@@ -8174,6 +8184,8 @@ def convert_sql_server_kerberos_ad_to_plumbing(porcelain):
     plumbing = SQLServerKerberosAD()
     if porcelain is None:
         return plumbing
+    plumbing.allow_deprecated_encryption = (
+        porcelain.allow_deprecated_encryption)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)

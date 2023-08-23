@@ -16442,6 +16442,7 @@ class RoleUpdateResponse:
 
 class SQLServer:
     __slots__ = [
+        'allow_deprecated_encryption',
         'bind_interface',
         'database',
         'egress_filter',
@@ -16462,6 +16463,7 @@ class SQLServer:
 
     def __init__(
         self,
+        allow_deprecated_encryption=None,
         bind_interface=None,
         database=None,
         egress_filter=None,
@@ -16479,6 +16481,11 @@ class SQLServer:
         tags=None,
         username=None,
     ):
+        self.allow_deprecated_encryption = allow_deprecated_encryption if allow_deprecated_encryption is not None else False
+        '''
+         Whether to allow deprecated encryption protocols to be used for this resource. For example,
+         TLS 1.0.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -16546,6 +16553,7 @@ class SQLServer:
 
     def __repr__(self):
         return '<sdm.SQLServer ' + \
+            'allow_deprecated_encryption: ' + repr(self.allow_deprecated_encryption) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -16566,6 +16574,7 @@ class SQLServer:
 
     def to_dict(self):
         return {
+            'allow_deprecated_encryption': self.allow_deprecated_encryption,
             'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
@@ -16587,6 +16596,7 @@ class SQLServer:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_encryption=d.get('allow_deprecated_encryption'),
             bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
@@ -16608,6 +16618,7 @@ class SQLServer:
 
 class SQLServerAzureAD:
     __slots__ = [
+        'allow_deprecated_encryption',
         'bind_interface',
         'client_id',
         'database',
@@ -16629,6 +16640,7 @@ class SQLServerAzureAD:
 
     def __init__(
         self,
+        allow_deprecated_encryption=None,
         bind_interface=None,
         client_id=None,
         database=None,
@@ -16647,6 +16659,11 @@ class SQLServerAzureAD:
         tags=None,
         tenant_id=None,
     ):
+        self.allow_deprecated_encryption = allow_deprecated_encryption if allow_deprecated_encryption is not None else False
+        '''
+         Whether to allow deprecated encryption protocols to be used for this resource. For example,
+         TLS 1.0.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -16718,6 +16735,7 @@ class SQLServerAzureAD:
 
     def __repr__(self):
         return '<sdm.SQLServerAzureAD ' + \
+            'allow_deprecated_encryption: ' + repr(self.allow_deprecated_encryption) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'client_id: ' + repr(self.client_id) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
@@ -16739,6 +16757,7 @@ class SQLServerAzureAD:
 
     def to_dict(self):
         return {
+            'allow_deprecated_encryption': self.allow_deprecated_encryption,
             'bind_interface': self.bind_interface,
             'client_id': self.client_id,
             'database': self.database,
@@ -16761,6 +16780,7 @@ class SQLServerAzureAD:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_encryption=d.get('allow_deprecated_encryption'),
             bind_interface=d.get('bind_interface'),
             client_id=d.get('client_id'),
             database=d.get('database'),
@@ -16783,6 +16803,7 @@ class SQLServerAzureAD:
 
 class SQLServerKerberosAD:
     __slots__ = [
+        'allow_deprecated_encryption',
         'bind_interface',
         'database',
         'egress_filter',
@@ -16806,6 +16827,7 @@ class SQLServerKerberosAD:
 
     def __init__(
         self,
+        allow_deprecated_encryption=None,
         bind_interface=None,
         database=None,
         egress_filter=None,
@@ -16826,6 +16848,11 @@ class SQLServerKerberosAD:
         tags=None,
         username=None,
     ):
+        self.allow_deprecated_encryption = allow_deprecated_encryption if allow_deprecated_encryption is not None else False
+        '''
+         Whether to allow deprecated encryption protocols to be used for this resource. For example,
+         TLS 1.0.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -16905,6 +16932,7 @@ class SQLServerKerberosAD:
 
     def __repr__(self):
         return '<sdm.SQLServerKerberosAD ' + \
+            'allow_deprecated_encryption: ' + repr(self.allow_deprecated_encryption) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
@@ -16928,6 +16956,7 @@ class SQLServerKerberosAD:
 
     def to_dict(self):
         return {
+            'allow_deprecated_encryption': self.allow_deprecated_encryption,
             'bind_interface': self.bind_interface,
             'database': self.database,
             'egress_filter': self.egress_filter,
@@ -16952,6 +16981,7 @@ class SQLServerKerberosAD:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_deprecated_encryption=d.get('allow_deprecated_encryption'),
             bind_interface=d.get('bind_interface'),
             database=d.get('database'),
             egress_filter=d.get('egress_filter'),
