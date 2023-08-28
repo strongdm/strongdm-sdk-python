@@ -5147,7 +5147,7 @@ class AzurePostgres:
         '''
         self.username = username if username is not None else ''
         '''
-         The username to authenticate with.
+         The username to authenticate with. For Azure Postgres, this also will include the hostname of the target server for Azure Single Server compatibility. For Flexible servers, use the normal Postgres type.
         '''
 
     def __repr__(self):
