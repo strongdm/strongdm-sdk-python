@@ -58,6 +58,9 @@ class ActivitiesServicer(object):
 
     def List(self, request, context):
         """List gets a list of Activities matching a given set of criteria.
+        The 'before' and 'after' filters can be used to control the time
+        range of the output activities. If not provided, one week of back
+        of activities will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -947,10 +947,6 @@ class AWS:
 
 
 class AWSConsole:
-    '''
-    AWSConsole is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -1119,10 +1115,6 @@ class AWSConsole:
 
 
 class AWSConsoleStaticKeyPair:
-    '''
-    AWSConsoleStaticKeyPair is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'access_key',
         'bind_interface',
@@ -14247,6 +14239,7 @@ class RDP:
         'healthy',
         'hostname',
         'id',
+        'lock_required',
         'name',
         'password',
         'port',
@@ -14265,6 +14258,7 @@ class RDP:
         healthy=None,
         hostname=None,
         id=None,
+        lock_required=None,
         name=None,
         password=None,
         port=None,
@@ -14297,6 +14291,10 @@ class RDP:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -14339,6 +14337,7 @@ class RDP:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -14357,6 +14356,7 @@ class RDP:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'lock_required': self.lock_required,
             'name': self.name,
             'password': self.password,
             'port': self.port,
@@ -14376,6 +14376,7 @@ class RDP:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             password=d.get('password'),
             port=d.get('port'),
@@ -18153,10 +18154,6 @@ class Snowflake:
 
 
 class Snowsight:
-    '''
-    Snowsight is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',

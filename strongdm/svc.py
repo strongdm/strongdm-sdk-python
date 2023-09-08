@@ -1212,6 +1212,9 @@ class Activities:
     def list(self, filter, *args, timeout=None):
         '''
          List gets a list of Activities matching a given set of criteria.
+         The 'before' and 'after' filters can be used to control the time
+         range of the output activities. If not provided, one week of back
+         of activities will be returned.
         '''
         req = ActivityListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
