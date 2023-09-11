@@ -141,9 +141,8 @@ class AccessRequests:
         '''
         req = AccessRequestListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -205,9 +204,8 @@ class AccessRequestEventsHistory:
         '''
         req = AccessRequestEventHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -254,9 +252,8 @@ class AccessRequestsHistory:
         '''
         req = AccessRequestHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -406,9 +403,8 @@ class AccountAttachments:
         '''
         req = AccountAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -476,9 +472,8 @@ class AccountAttachmentsHistory:
         '''
         req = AccountAttachmentHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -627,9 +622,8 @@ class AccountGrants:
         '''
         req = AccountGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -697,9 +691,8 @@ class AccountGrantsHistory:
         '''
         req = AccountGrantHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -747,9 +740,8 @@ class AccountPermissions:
         '''
         req = AccountPermissionListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -812,9 +804,8 @@ class AccountResources:
         '''
         req = AccountResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -876,9 +867,8 @@ class AccountResourcesHistory:
         '''
         req = AccountResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1061,9 +1051,8 @@ class Accounts:
         '''
         req = AccountListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1129,9 +1118,8 @@ class AccountsHistory:
         '''
         req = AccountHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1218,9 +1206,8 @@ class Activities:
         '''
         req = ActivityListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1471,9 +1458,8 @@ class Nodes:
         '''
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1539,9 +1525,8 @@ class NodesHistory:
         '''
         req = NodeHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1588,9 +1573,8 @@ class OrganizationHistory:
         '''
         req = OrganizationHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1740,9 +1724,8 @@ class PeeringGroupNodes:
         '''
         req = PeeringGroupNodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -1913,9 +1896,8 @@ class PeeringGroupPeers:
         '''
         req = PeeringGroupPeerListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2086,9 +2068,8 @@ class PeeringGroupResources:
         '''
         req = PeeringGroupResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2260,9 +2241,8 @@ class PeeringGroups:
         '''
         req = PeeringGroupListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2332,9 +2312,8 @@ class Queries:
         '''
         req = QueryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2516,9 +2495,8 @@ class RemoteIdentities:
         '''
         req = RemoteIdentityListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2586,9 +2564,8 @@ class RemoteIdentitiesHistory:
         '''
         req = RemoteIdentityHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2672,9 +2649,8 @@ class RemoteIdentityGroups:
         '''
         req = RemoteIdentityGroupListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2742,9 +2718,8 @@ class RemoteIdentityGroupsHistory:
         '''
         req = RemoteIdentityGroupHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2792,9 +2767,8 @@ class Replays:
         '''
         req = ReplayListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -2922,9 +2896,8 @@ class Resources:
         '''
         req = EnumerateTagsRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3093,9 +3066,8 @@ class Resources:
         '''
         req = ResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3162,9 +3134,8 @@ class ResourcesHistory:
         '''
         req = ResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3212,9 +3183,8 @@ class RoleResources:
         '''
         req = RoleResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3276,9 +3246,8 @@ class RoleResourcesHistory:
         '''
         req = RoleResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3455,9 +3424,8 @@ class Roles:
         '''
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3523,9 +3491,8 @@ class RolesHistory:
         '''
         req = RoleHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3715,9 +3682,8 @@ class SecretStores:
         '''
         req = SecretStoreListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3785,9 +3751,8 @@ class SecretStoresHistory:
         '''
         req = SecretStoreHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3836,9 +3801,8 @@ class Workflows:
         '''
         req = WorkflowListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3899,9 +3863,8 @@ class WorkflowApproversHistory:
         '''
         req = WorkflowApproversHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3948,9 +3911,8 @@ class WorkflowAssignmentsHistory:
         '''
         req = WorkflowAssignmentsHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -3997,9 +3959,8 @@ class WorkflowRolesHistory:
         '''
         req = WorkflowRolesHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 
@@ -4046,9 +4007,8 @@ class WorkflowsHistory:
         '''
         req = WorkflowHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
-        page_size_option = self.parent._test_options.get('PageSize')
-        if isinstance(page_size_option, int):
-            req.meta.limit = page_size_option
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
         if self.parent.snapshot_datetime is not None:
             req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
 

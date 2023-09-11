@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/4.5.1'
+USER_AGENT = 'strongdm-sdk-python/4.7.0'
 
 
 class Client:
@@ -42,7 +42,8 @@ class Client:
                  api_secret,
                  host='api.strongdm.com:443',
                  insecure=False,
-                 retry_rate_limit_errors=True):
+                 retry_rate_limit_errors=True,
+                 page_limit=50):
         '''
         Create a new Client.
 
@@ -56,7 +57,7 @@ class Client:
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
         self.expose_rate_limit_errors = (not retry_rate_limit_errors)
         self.snapshot_datetime = None
-        self._test_options = {}
+        self.page_limit = page_limit
 
         try:
             if insecure:
