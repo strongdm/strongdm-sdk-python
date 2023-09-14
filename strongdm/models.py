@@ -19278,7 +19278,9 @@ class Workflow:
         '''
          Optional enabled state for workflow. This setting may be overridden by the system if
          the workflow doesn't meet the requirements to be enabled or if other conditions prevent
-         enabling the workflow.
+         enabling the workflow. The requirements to enable a workflow are that the workflow must be
+         either set up for with auto grant enabled or have one or more WorkflowApprovers created for
+         the workflow.
         '''
         self.id = id if id is not None else ''
         '''
@@ -19334,17 +19336,23 @@ class WorkflowApprover:
     '''
     __slots__ = [
         'approver_id',
+        'id',
         'workflow_id',
     ]
 
     def __init__(
         self,
         approver_id=None,
+        id=None,
         workflow_id=None,
     ):
         self.approver_id = approver_id if approver_id is not None else ''
         '''
          The approver id.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the WorkflowApprover.
         '''
         self.workflow_id = workflow_id if workflow_id is not None else ''
         '''
@@ -19354,12 +19362,14 @@ class WorkflowApprover:
     def __repr__(self):
         return '<sdm.WorkflowApprover ' + \
             'approver_id: ' + repr(self.approver_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
             'workflow_id: ' + repr(self.workflow_id) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'approver_id': self.approver_id,
+            'id': self.id,
             'workflow_id': self.workflow_id,
         }
 
@@ -19367,15 +19377,66 @@ class WorkflowApprover:
     def from_dict(cls, d):
         return cls(
             approver_id=d.get('approver_id'),
+            id=d.get('id'),
             workflow_id=d.get('workflow_id'),
+        )
+
+
+class WorkflowApproverGetResponse:
+    '''
+         WorkflowApproverGetResponse returns a requested WorkflowApprover.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'workflow_approver',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        workflow_approver=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow_approver = workflow_approver if workflow_approver is not None else None
+        '''
+         The requested WorkflowApprover.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproverGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow_approver: ' + repr(self.workflow_approver) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'workflow_approver': self.workflow_approver,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            workflow_approver=d.get('workflow_approver'),
         )
 
 
 class WorkflowApproverHistory:
     '''
-         WorkflowApproverHistory records the state of a WorkflowApprover at a given point in time,
-     where every change (create, update and delete) to a WorkflowApprover produces an
-     WorkflowApproverHistory record.
+         WorkflowApproverHistory provides records of all changes to the state of a WorkflowApprover.
     '''
     __slots__ = [
         'activity_id',
@@ -19393,16 +19454,16 @@ class WorkflowApproverHistory:
     ):
         self.activity_id = activity_id if activity_id is not None else ''
         '''
-         The unique identifier of the Activity that produced this change to the Workflow.
+         The unique identifier of the Activity that produced this change to the WorkflowApprover.
          May be empty for some system-initiated updates.
         '''
         self.deleted_at = deleted_at if deleted_at is not None else None
         '''
-         If this Workflow was deleted, the time it was deleted.
+         If this WorkflowApprover was deleted, the time it was deleted.
         '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
-         The time at which the Workflow state was recorded.
+         The time at which the WorkflowApprover state was recorded.
         '''
         self.workflow_approver = workflow_approver if workflow_approver is not None else None
         '''
@@ -19435,9 +19496,216 @@ class WorkflowApproverHistory:
         )
 
 
+class WorkflowApproversCreateRequest:
+    '''
+         WorkflowApproversCreateRequest specifies the workflowID and approverID of a new
+     workflow approver to be created.
+    '''
+    __slots__ = [
+        'workflow_approver',
+    ]
+
+    def __init__(
+        self,
+        workflow_approver=None,
+    ):
+        self.workflow_approver = workflow_approver if workflow_approver is not None else None
+        '''
+         Parameters to define the new WorkflowApprover.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversCreateRequest ' + \
+            'workflow_approver: ' + repr(self.workflow_approver) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'workflow_approver': self.workflow_approver,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(workflow_approver=d.get('workflow_approver'), )
+
+
+class WorkflowApproversCreateResponse:
+    '''
+         WorkflowApproversCreateResponse reports how the WorkflowApprover was created in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+        'workflow_approver',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+        workflow_approver=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow_approver = workflow_approver if workflow_approver is not None else None
+        '''
+         The created workflow approver.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversCreateResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow_approver: ' + repr(self.workflow_approver) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+            'workflow_approver': self.workflow_approver,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            rate_limit=d.get('rate_limit'),
+            workflow_approver=d.get('workflow_approver'),
+        )
+
+
+class WorkflowApproversDeleteRequest:
+    '''
+         WorkflowApproversDeleteRequest specifies the ID of a WorkflowApprover to be deleted.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the WorkflowApprover to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class WorkflowApproversDeleteResponse:
+    '''
+         WorkflowApproversDeleteResponse reports how the WorkflowApprover was deleted in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversDeleteResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class WorkflowApproversListRequest:
+    '''
+         WorkflowApproversListRequest specifies criteria for retrieving a list of
+     WorkflowApprover records
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class WorkflowApproversListResponse:
+    '''
+         WorkflowApproversListResponse returns a list of WorkflowApprover records that meet
+     the criteria of a WorkflowApproversListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowApproversListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class WorkflowAssignment:
     '''
-         WorkflowAssignment links a Resource to a Workflow.
+         WorkflowAssignment links a Resource to a Workflow. The assigned resources are those that a user can request
+     access to via the workflow.
     '''
     __slots__ = [
         'resource_id',
@@ -19480,9 +19748,7 @@ class WorkflowAssignment:
 
 class WorkflowAssignmentHistory:
     '''
-         WorkflowAssignmentHistory records the state of a WorkflowAssignment at a given point in time,
-     where every change (create, update and delete) to a WorkflowAssignment produces an
-     WorkflowAssignmentHistory record.
+         WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
     '''
     __slots__ = [
         'activity_id',
@@ -19500,16 +19766,16 @@ class WorkflowAssignmentHistory:
     ):
         self.activity_id = activity_id if activity_id is not None else ''
         '''
-         The unique identifier of the Activity that produced this change to the Workflow.
+         The unique identifier of the Activity that produced this change to the WorkflowAssignment.
          May be empty for some system-initiated updates.
         '''
         self.deleted_at = deleted_at if deleted_at is not None else None
         '''
-         If this Workflow was deleted, the time it was deleted.
+         If this WorkflowAssignment was deleted, the time it was deleted.
         '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
-         The time at which the Workflow state was recorded.
+         The time at which the WorkflowAssignment state was recorded.
         '''
         self.workflow_assignment = workflow_assignment if workflow_assignment is not None else None
         '''
@@ -19542,11 +19808,213 @@ class WorkflowAssignmentHistory:
         )
 
 
+class WorkflowAssignmentsListRequest:
+    '''
+         WorkflowAssignmentsListRequest specifies criteria for retrieving a list of
+     WorkflowAssignment records
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowAssignmentsListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class WorkflowAssignmentsListResponse:
+    '''
+         WorkflowAssignmentsListResponse returns a list of WorkflowAssignment records that meet
+     the criteria of a WorkflowAssignmentsListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowAssignmentsListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class WorkflowCreateResponse:
+    '''
+         WorkflowCreateResponse reports how the Workflow was created in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+        'workflow',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+        workflow=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow = workflow if workflow is not None else None
+        '''
+         The created workflow.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowCreateResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow: ' + repr(self.workflow) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+            'workflow': self.workflow,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            rate_limit=d.get('rate_limit'),
+            workflow=d.get('workflow'),
+        )
+
+
+class WorkflowDeleteResponse:
+    '''
+         WorkflowDeleteResponse returns information about a Workflow that was deleted.
+    '''
+    __slots__ = [
+        'id',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        rate_limit=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The deleted workflow id.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowDeleteResponse ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class WorkflowGetResponse:
+    '''
+         WorkflowGetResponse returns a requested Workflow.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'workflow',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        workflow=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow = workflow if workflow is not None else None
+        '''
+         The requested Workflow.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow: ' + repr(self.workflow) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'workflow': self.workflow,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            workflow=d.get('workflow'),
+        )
+
+
 class WorkflowHistory:
     '''
-         WorkflowHistory records the state of a Workflow at a given point in time,
-     where every change (create, update and delete) to a Workflow produces an
-     WorkflowHistory record.
+         WorkflowsHistory provides records of all changes to the state of a Workflow.
     '''
     __slots__ = [
         'activity_id',
@@ -19606,39 +20074,6 @@ class WorkflowHistory:
         )
 
 
-class WorkflowListRequest:
-    '''
-         WorkflowListRequest specifies criteria for retrieving a list of
-     Workflow records
-    '''
-    __slots__ = [
-        'filter',
-    ]
-
-    def __init__(
-        self,
-        filter=None,
-    ):
-        self.filter = filter if filter is not None else ''
-        '''
-         A human-readable filter query string.
-        '''
-
-    def __repr__(self):
-        return '<sdm.WorkflowListRequest ' + \
-            'filter: ' + repr(self.filter) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'filter': self.filter,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(filter=d.get('filter'), )
-
-
 class WorkflowListResponse:
     '''
          WorkflowListResponse returns a list of Workflow records that meet
@@ -19674,18 +20109,25 @@ class WorkflowListResponse:
 
 class WorkflowRole:
     '''
-         WorkflowRole links a Role to a Workflow.
+         WorkflowRole links a role to a workflow. The linked roles indicate which roles a user must be a part of
+     to request access to a resource via the workflow.
     '''
     __slots__ = [
+        'id',
         'role_id',
         'workflow_id',
     ]
 
     def __init__(
         self,
+        id=None,
         role_id=None,
         workflow_id=None,
     ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the WorkflowRole.
+        '''
         self.role_id = role_id if role_id is not None else ''
         '''
          The role id.
@@ -19697,12 +20139,14 @@ class WorkflowRole:
 
     def __repr__(self):
         return '<sdm.WorkflowRole ' + \
+            'id: ' + repr(self.id) + ' ' +\
             'role_id: ' + repr(self.role_id) + ' ' +\
             'workflow_id: ' + repr(self.workflow_id) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'id': self.id,
             'role_id': self.role_id,
             'workflow_id': self.workflow_id,
         }
@@ -19710,16 +20154,67 @@ class WorkflowRole:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            id=d.get('id'),
             role_id=d.get('role_id'),
             workflow_id=d.get('workflow_id'),
         )
 
 
+class WorkflowRoleGetResponse:
+    '''
+         WorkflowRoleGetResponse returns a requested WorkflowRole.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'workflow_role',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        workflow_role=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow_role = workflow_role if workflow_role is not None else None
+        '''
+         The requested WorkflowRole.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRoleGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow_role: ' + repr(self.workflow_role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'workflow_role': self.workflow_role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            workflow_role=d.get('workflow_role'),
+        )
+
+
 class WorkflowRoleHistory:
     '''
-         WorkflowRolesHistory records the state of a Workflow at a given point in time,
-     where every change (create, update and delete) to a WorkflowRole produces a
-     WorkflowRoleHistory record.
+         WorkflowRolesHistory provides records of all changes to the state of a WorkflowRole
     '''
     __slots__ = [
         'activity_id',
@@ -19737,7 +20232,7 @@ class WorkflowRoleHistory:
     ):
         self.activity_id = activity_id if activity_id is not None else ''
         '''
-         The unique identifier of the Activity that produced this change to the Workflow.
+         The unique identifier of the Activity that produced this change to the WorkflowRole.
          May be empty for some system-initiated updates.
         '''
         self.deleted_at = deleted_at if deleted_at is not None else None
@@ -19746,7 +20241,7 @@ class WorkflowRoleHistory:
         '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
-         The time at which the Workflow state was recorded.
+         The time at which the WorkflowRole state was recorded.
         '''
         self.workflow_role = workflow_role if workflow_role is not None else None
         '''
@@ -19776,6 +20271,256 @@ class WorkflowRoleHistory:
             deleted_at=d.get('deleted_at'),
             timestamp=d.get('timestamp'),
             workflow_role=d.get('workflow_role'),
+        )
+
+
+class WorkflowRolesCreateRequest:
+    '''
+         WorkflowRolesCreateRequest specifies the workflowID and roleID of a new
+     workflow role to be created.
+    '''
+    __slots__ = [
+        'workflow_role',
+    ]
+
+    def __init__(
+        self,
+        workflow_role=None,
+    ):
+        self.workflow_role = workflow_role if workflow_role is not None else None
+        '''
+         Parameters to define the new WorkflowRole.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesCreateRequest ' + \
+            'workflow_role: ' + repr(self.workflow_role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'workflow_role': self.workflow_role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(workflow_role=d.get('workflow_role'), )
+
+
+class WorkflowRolesCreateResponse:
+    '''
+         WorkflowRolesCreateResponse reports how the WorkflowRole was created in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+        'workflow_role',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+        workflow_role=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow_role = workflow_role if workflow_role is not None else None
+        '''
+         The created workflow role.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesCreateResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow_role: ' + repr(self.workflow_role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+            'workflow_role': self.workflow_role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            rate_limit=d.get('rate_limit'),
+            workflow_role=d.get('workflow_role'),
+        )
+
+
+class WorkflowRolesDeleteRequest:
+    '''
+         WorkflowRolesDeleteRequest specifies the ID of a WorkflowRole to be deleted.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the WorkflowRole to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class WorkflowRolesDeleteResponse:
+    '''
+         WorkflowRolesDeleteResponse reports how the WorkflowRole was deleted in the system.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesDeleteResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class WorkflowRolesListRequest:
+    '''
+         WorkflowRolesListRequest specifies criteria for retrieving a list of
+     WorkflowRole records
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class WorkflowRolesListResponse:
+    '''
+         WorkflowRolesListResponse returns a list of WorkflowRole records that meet
+     the criteria of a WorkflowRolesListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowRolesListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class WorkflowUpdateResponse:
+    '''
+         WorkflowUpdateResponse returns the fields of a Workflow after it has been updated by
+     a WorkflowUpdateRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+        'workflow',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+        workflow=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.workflow = workflow if workflow is not None else None
+        '''
+         The updated workflow.
+        '''
+
+    def __repr__(self):
+        return '<sdm.WorkflowUpdateResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'workflow: ' + repr(self.workflow) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+            'workflow': self.workflow,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            rate_limit=d.get('rate_limit'),
+            workflow=d.get('workflow'),
         )
 
 

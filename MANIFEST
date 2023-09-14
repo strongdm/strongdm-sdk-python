@@ -90,10 +90,16 @@ strongdm/tags_pb2.py
 strongdm/tags_pb2_grpc.py
 strongdm/workflow_approvers_history_pb2.py
 strongdm/workflow_approvers_history_pb2_grpc.py
+strongdm/workflow_approvers_pb2.py
+strongdm/workflow_approvers_pb2_grpc.py
 strongdm/workflow_assignments_history_pb2.py
 strongdm/workflow_assignments_history_pb2_grpc.py
+strongdm/workflow_assignments_pb2.py
+strongdm/workflow_assignments_pb2_grpc.py
 strongdm/workflow_roles_history_pb2.py
 strongdm/workflow_roles_history_pb2_grpc.py
+strongdm/workflow_roles_pb2.py
+strongdm/workflow_roles_pb2_grpc.py
 strongdm/workflows_history_pb2.py
 strongdm/workflows_history_pb2_grpc.py
 strongdm/workflows_pb2.py

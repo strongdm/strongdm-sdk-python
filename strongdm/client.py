@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/4.7.0'
+USER_AGENT = 'strongdm-sdk-python/4.8.0'
 
 
 class Client:
@@ -299,13 +299,11 @@ class Client:
 
         See `strongdm.svc.SecretStoresHistory`.
         '''
-        self.workflows = svc.Workflows(channel, self)
+        self.workflow_approvers = svc.WorkflowApprovers(channel, self)
         '''
-         Workflows are the collection of rules that define the resources to which access can be requested,
-         the users that can request that access, and the mechanism for approving those requests which can either
-         but automatic approval or a set of users authorized to approve the requests.
+         WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
 
-        See `strongdm.svc.Workflows`.
+        See `strongdm.svc.WorkflowApprovers`.
         '''
         self.workflow_approvers_history = svc.WorkflowApproversHistory(
             channel, self)
@@ -314,6 +312,13 @@ class Client:
 
         See `strongdm.svc.WorkflowApproversHistory`.
         '''
+        self.workflow_assignments = svc.WorkflowAssignments(channel, self)
+        '''
+         WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
+         access to via the workflow.
+
+        See `strongdm.svc.WorkflowAssignments`.
+        '''
         self.workflow_assignments_history = svc.WorkflowAssignmentsHistory(
             channel, self)
         '''
@@ -321,11 +326,26 @@ class Client:
 
         See `strongdm.svc.WorkflowAssignmentsHistory`.
         '''
+        self.workflow_roles = svc.WorkflowRoles(channel, self)
+        '''
+         WorkflowRole links a role to a workflow. The linked roles indicate which roles a user must be a part of
+         to request access to a resource via the workflow.
+
+        See `strongdm.svc.WorkflowRoles`.
+        '''
         self.workflow_roles_history = svc.WorkflowRolesHistory(channel, self)
         '''
          WorkflowRolesHistory provides records of all changes to the state of a WorkflowRole
 
         See `strongdm.svc.WorkflowRolesHistory`.
+        '''
+        self.workflows = svc.Workflows(channel, self)
+        '''
+         Workflows are the collection of rules that define the resources to which access can be requested,
+         the users that can request that access, and the mechanism for approving those requests which can either
+         be automatic approval or a set of users authorized to approve the requests.
+
+        See `strongdm.svc.Workflows`.
         '''
         self.workflows_history = svc.WorkflowsHistory(channel, self)
         '''
@@ -429,6 +449,11 @@ class Client:
         client.role_resources = svc.RoleResources(client.channel, client)
         client.roles = svc.Roles(client.channel, client)
         client.secret_stores = svc.SecretStores(client.channel, client)
+        client.workflow_approvers = svc.WorkflowApprovers(
+            client.channel, client)
+        client.workflow_assignments = svc.WorkflowAssignments(
+            client.channel, client)
+        client.workflow_roles = svc.WorkflowRoles(client.channel, client)
         client.workflows = svc.Workflows(client.channel, client)
         return SnapshotClient(client)
 
@@ -558,11 +583,33 @@ class SnapshotClient:
 
         See `strongdm.svc.SnapshotSecretStores`.
         '''
+        self.workflow_approvers = svc.SnapshotWorkflowApprovers(
+            client.workflow_approvers)
+        '''
+         WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+
+        See `strongdm.svc.SnapshotWorkflowApprovers`.
+        '''
+        self.workflow_assignments = svc.SnapshotWorkflowAssignments(
+            client.workflow_assignments)
+        '''
+         WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
+         access to via the workflow.
+
+        See `strongdm.svc.SnapshotWorkflowAssignments`.
+        '''
+        self.workflow_roles = svc.SnapshotWorkflowRoles(client.workflow_roles)
+        '''
+         WorkflowRole links a role to a workflow. The linked roles indicate which roles a user must be a part of
+         to request access to a resource via the workflow.
+
+        See `strongdm.svc.SnapshotWorkflowRoles`.
+        '''
         self.workflows = svc.SnapshotWorkflows(client.workflows)
         '''
          Workflows are the collection of rules that define the resources to which access can be requested,
          the users that can request that access, and the mechanism for approving those requests which can either
-         but automatic approval or a set of users authorized to approve the requests.
+         be automatic approval or a set of users authorized to approve the requests.
 
         See `strongdm.svc.SnapshotWorkflows`.
         '''

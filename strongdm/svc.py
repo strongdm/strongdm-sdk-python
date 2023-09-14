@@ -98,14 +98,20 @@ from .secret_stores_pb2 import *
 from .secret_stores_pb2_grpc import *
 from .secret_stores_history_pb2 import *
 from .secret_stores_history_pb2_grpc import *
-from .workflows_pb2 import *
-from .workflows_pb2_grpc import *
+from .workflow_approvers_pb2 import *
+from .workflow_approvers_pb2_grpc import *
 from .workflow_approvers_history_pb2 import *
 from .workflow_approvers_history_pb2_grpc import *
+from .workflow_assignments_pb2 import *
+from .workflow_assignments_pb2_grpc import *
 from .workflow_assignments_history_pb2 import *
 from .workflow_assignments_history_pb2_grpc import *
+from .workflow_roles_pb2 import *
+from .workflow_roles_pb2_grpc import *
 from .workflow_roles_history_pb2 import *
 from .workflow_roles_history_pb2_grpc import *
+from .workflows_pb2 import *
+from .workflows_pb2_grpc import *
 from .workflows_history_pb2 import *
 from .workflows_history_pb2_grpc import *
 import warnings
@@ -3784,22 +3790,119 @@ class SecretStoresHistory:
         return generator(self, req)
 
 
-class Workflows:
+class WorkflowApprovers:
     '''
-     Workflows are the collection of rules that define the resources to which access can be requested,
-     the users that can request that access, and the mechanism for approving those requests which can either
-     but automatic approval or a set of users authorized to approve the requests.
-    See `strongdm.models.Workflow`.
+     WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+    See `strongdm.models.WorkflowApprover`.
     '''
     def __init__(self, channel, client):
         self.parent = client
-        self.stub = WorkflowsStub(channel)
+        self.stub = WorkflowApproversStub(channel)
+
+    def create(self, workflow_approver, timeout=None):
+        '''
+         Create creates a new workflow approver
+        '''
+        req = WorkflowApproversCreateRequest()
+
+        if workflow_approver is not None:
+            req.workflow_approver.CopyFrom(
+                plumbing.convert_workflow_approver_to_plumbing(
+                    workflow_approver))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'WorkflowApprovers.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowApproversCreateResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow_approver = plumbing.convert_workflow_approver_to_porcelain(
+            plumbing_response.workflow_approver)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow approver by ID.
+        '''
+        req = WorkflowApproverGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('WorkflowApprovers.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowApproverGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow_approver = plumbing.convert_workflow_approver_to_porcelain(
+            plumbing_response.workflow_approver)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes a workflow approver
+        '''
+        req = WorkflowApproversDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'WorkflowApprovers.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowApproversDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing workflows.
+         Lists existing workflow approvers.
         '''
-        req = WorkflowListRequest()
+        req = WorkflowApproversListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
             req.meta.limit = self.parent.page_limit
@@ -3815,7 +3918,7 @@ class Workflows:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
-                            'Workflows.List', req),
+                            'WorkflowApprovers.List', req),
                         timeout=timeout)
                 except Exception as e:
                     if self.parent.shouldRetry(tries, e):
@@ -3824,8 +3927,9 @@ class Workflows:
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
-                for plumbing_item in plumbing_response.workflows:
-                    yield plumbing.convert_workflow_to_porcelain(plumbing_item)
+                for plumbing_item in plumbing_response.workflow_approvers:
+                    yield plumbing.convert_workflow_approver_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor
@@ -3833,19 +3937,25 @@ class Workflows:
         return generator(self, req)
 
 
-class SnapshotWorkflows:
+class SnapshotWorkflowApprovers:
     '''
-    SnapshotWorkflows exposes the read only methods of the Workflows
+    SnapshotWorkflowApprovers exposes the read only methods of the WorkflowApprovers
     service for historical queries.
     '''
-    def __init__(self, workflows):
-        self.workflows = workflows
+    def __init__(self, workflow_approvers):
+        self.workflow_approvers = workflow_approvers
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow approver by ID.
+        '''
+        return self.workflow_approvers.get(id, timeout=timeout)
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing workflows.
+         Lists existing workflow approvers.
         '''
-        return self.workflows.list(filter, *args, timeout=timeout)
+        return self.workflow_approvers.list(filter, *args, timeout=timeout)
 
 
 class WorkflowApproversHistory:
@@ -3896,6 +4006,70 @@ class WorkflowApproversHistory:
         return generator(self, req)
 
 
+class WorkflowAssignments:
+    '''
+     WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
+     access to via the workflow.
+    See `strongdm.models.WorkflowAssignment`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowAssignmentsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflow assignments.
+        '''
+        req = WorkflowAssignmentsListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowAssignments.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.workflow_assignments:
+                    yield plumbing.convert_workflow_assignment_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotWorkflowAssignments:
+    '''
+    SnapshotWorkflowAssignments exposes the read only methods of the WorkflowAssignments
+    service for historical queries.
+    '''
+    def __init__(self, workflow_assignments):
+        self.workflow_assignments = workflow_assignments
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflow assignments.
+        '''
+        return self.workflow_assignments.list(filter, *args, timeout=timeout)
+
+
 class WorkflowAssignmentsHistory:
     '''
      WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
@@ -3944,6 +4118,174 @@ class WorkflowAssignmentsHistory:
         return generator(self, req)
 
 
+class WorkflowRoles:
+    '''
+     WorkflowRole links a role to a workflow. The linked roles indicate which roles a user must be a part of
+     to request access to a resource via the workflow.
+    See `strongdm.models.WorkflowRole`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowRolesStub(channel)
+
+    def create(self, workflow_role, timeout=None):
+        '''
+         Create creates a new workflow role
+        '''
+        req = WorkflowRolesCreateRequest()
+
+        if workflow_role is not None:
+            req.workflow_role.CopyFrom(
+                plumbing.convert_workflow_role_to_plumbing(workflow_role))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('WorkflowRoles.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowRolesCreateResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow_role = plumbing.convert_workflow_role_to_porcelain(
+            plumbing_response.workflow_role)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow role by ID.
+        '''
+        req = WorkflowRoleGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('WorkflowRoles.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowRoleGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow_role = plumbing.convert_workflow_role_to_porcelain(
+            plumbing_response.workflow_role)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes a workflow role
+        '''
+        req = WorkflowRolesDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('WorkflowRoles.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowRolesDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflow roles.
+        '''
+        req = WorkflowRolesListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'WorkflowRoles.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.workflow_role:
+                    yield plumbing.convert_workflow_role_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotWorkflowRoles:
+    '''
+    SnapshotWorkflowRoles exposes the read only methods of the WorkflowRoles
+    service for historical queries.
+    '''
+    def __init__(self, workflow_roles):
+        self.workflow_roles = workflow_roles
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow role by ID.
+        '''
+        return self.workflow_roles.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflow roles.
+        '''
+        return self.workflow_roles.list(filter, *args, timeout=timeout)
+
+
 class WorkflowRolesHistory:
     '''
      WorkflowRolesHistory provides records of all changes to the state of a WorkflowRole
@@ -3990,6 +4332,204 @@ class WorkflowRolesHistory:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class Workflows:
+    '''
+     Workflows are the collection of rules that define the resources to which access can be requested,
+     the users that can request that access, and the mechanism for approving those requests which can either
+     be automatic approval or a set of users authorized to approve the requests.
+    See `strongdm.models.Workflow`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = WorkflowsStub(channel)
+
+    def create(self, workflow, timeout=None):
+        '''
+         Create creates a new workflow and requires a name for the workflow.
+        '''
+        req = WorkflowCreateRequest()
+
+        if workflow is not None:
+            req.workflow.CopyFrom(
+                plumbing.convert_workflow_to_plumbing(workflow))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Workflows.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowCreateResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow = plumbing.convert_workflow_to_porcelain(
+            plumbing_response.workflow)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow by ID.
+        '''
+        req = WorkflowGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Workflows.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow = plumbing.convert_workflow_to_porcelain(
+            plumbing_response.workflow)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes an existing workflow.
+        '''
+        req = WorkflowDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Workflows.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowDeleteResponse()
+        resp.id = (plumbing_response.id)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, workflow, timeout=None):
+        '''
+         Update updates an existing workflow.
+        '''
+        req = WorkflowUpdateRequest()
+
+        if workflow is not None:
+            req.workflow.CopyFrom(
+                plumbing.convert_workflow_to_plumbing(workflow))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Workflows.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.WorkflowUpdateResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.workflow = plumbing.convert_workflow_to_porcelain(
+            plumbing_response.workflow)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        req = WorkflowListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'Workflows.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.workflows:
+                    yield plumbing.convert_workflow_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotWorkflows:
+    '''
+    SnapshotWorkflows exposes the read only methods of the Workflows
+    service for historical queries.
+    '''
+    def __init__(self, workflows):
+        self.workflows = workflows
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one workflow by ID.
+        '''
+        return self.workflows.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing workflows.
+        '''
+        return self.workflows.list(filter, *args, timeout=timeout)
 
 
 class WorkflowsHistory:

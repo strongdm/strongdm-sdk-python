@@ -27,12 +27,12 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from . import workflows_pb2 as workflows__pb2
+from . import workflow_assignments_pb2 as workflow__assignments__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"workflow_assignments_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x0fworkflows.proto\x1a\roptions.proto\x1a\nspec.proto\"\x94\x01\n%WorkflowAssignmentsHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x8f\x02\n&WorkflowAssignmentsHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12:\n\x07history\x18\x02 \x03(\x0b\x32\x1d.v1.WorkflowAssignmentHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xa8\x02\n\x19WorkflowAssignmentHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x13workflow_assignment\x18\x03 \x01(\x0b\x32\x16.v1.WorkflowAssignmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\x8d\x02\n\x1aWorkflowAssignmentsHistory\x12\x97\x01\n\x04List\x12).v1.WorkflowAssignmentsHistoryListRequest\x1a*.v1.WorkflowAssignmentsHistoryListResponse\"8\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07&\xaa\xf3\xb3\x07!/v1/workflows-assignments-history\x1aU\xca\xf9\xb3\x07\x1e\xc2\xf9\xb3\x07\x19WorkflowAssignmentHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x9e\x01\n\x19\x63om.strongdm.api.plumbingB\"WorkflowAssignmentsHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"workflow_assignments_history.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1aworkflow_assignments.proto\x1a\roptions.proto\x1a\nspec.proto\"\x94\x01\n%WorkflowAssignmentsHistoryListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\x8f\x02\n&WorkflowAssignmentsHistoryListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12:\n\x07history\x18\x02 \x03(\x0b\x32\x1d.v1.WorkflowAssignmentHistoryB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:(\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider\"\xa8\x02\n\x19WorkflowAssignmentHistory\x12\x1f\n\x0b\x61\x63tivity_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12?\n\x13workflow_assignment\x18\x03 \x01(\x0b\x32\x16.v1.WorkflowAssignmentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\ndeleted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:2\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\xfa\xf8\xb3\x07\x06\xd2\xf3\xb3\x07\x01*\xfa\xf8\xb3\x07\x18\xd2\xf3\xb3\x07\x13!terraform-provider2\x8c\x02\n\x1aWorkflowAssignmentsHistory\x12\x96\x01\n\x04List\x12).v1.WorkflowAssignmentsHistoryListRequest\x1a*.v1.WorkflowAssignmentsHistoryListResponse\"7\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07%\xaa\xf3\xb3\x07 /v1/workflow-assignments-history\x1aU\xca\xf9\xb3\x07\x1e\xc2\xf9\xb3\x07\x19WorkflowAssignmentHistory\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x9e\x01\n\x19\x63om.strongdm.api.plumbingB\"WorkflowAssignmentsHistoryPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -88,13 +88,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _WORKFLOWASSIGNMENTSHISTORY._options = None
   _WORKFLOWASSIGNMENTSHISTORY._serialized_options = b'\312\371\263\007\036\302\371\263\007\031WorkflowAssignmentHistory\312\371\263\007\005\330\371\263\007\001\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _WORKFLOWASSIGNMENTSHISTORY.methods_by_name['List']._options = None
-  _WORKFLOWASSIGNMENTSHISTORY.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007&\252\363\263\007!/v1/workflows-assignments-history'
-  _WORKFLOWASSIGNMENTSHISTORYLISTREQUEST._serialized_start=120
-  _WORKFLOWASSIGNMENTSHISTORYLISTREQUEST._serialized_end=268
-  _WORKFLOWASSIGNMENTSHISTORYLISTRESPONSE._serialized_start=271
-  _WORKFLOWASSIGNMENTSHISTORYLISTRESPONSE._serialized_end=542
-  _WORKFLOWASSIGNMENTHISTORY._serialized_start=545
-  _WORKFLOWASSIGNMENTHISTORY._serialized_end=841
-  _WORKFLOWASSIGNMENTSHISTORY._serialized_start=844
-  _WORKFLOWASSIGNMENTSHISTORY._serialized_end=1113
+  _WORKFLOWASSIGNMENTSHISTORY.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007%\252\363\263\007 /v1/workflow-assignments-history'
+  _WORKFLOWASSIGNMENTSHISTORYLISTREQUEST._serialized_start=131
+  _WORKFLOWASSIGNMENTSHISTORYLISTREQUEST._serialized_end=279
+  _WORKFLOWASSIGNMENTSHISTORYLISTRESPONSE._serialized_start=282
+  _WORKFLOWASSIGNMENTSHISTORYLISTRESPONSE._serialized_end=553
+  _WORKFLOWASSIGNMENTHISTORY._serialized_start=556
+  _WORKFLOWASSIGNMENTHISTORY._serialized_end=852
+  _WORKFLOWASSIGNMENTSHISTORY._serialized_start=855
+  _WORKFLOWASSIGNMENTSHISTORY._serialized_end=1123
 # @@protoc_insertion_point(module_scope)

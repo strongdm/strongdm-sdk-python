@@ -22,7 +22,7 @@ from . import workflows_pb2 as workflows__pb2
 class WorkflowsStub(object):
     """Workflows are the collection of rules that define the resources to which access can be requested,
     the users that can request that access, and the mechanism for approving those requests which can either
-    but automatic approval or a set of users authorized to approve the requests.
+    be automatic approval or a set of users authorized to approve the requests.
     """
 
     def __init__(self, channel):
@@ -31,6 +31,26 @@ class WorkflowsStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Create = channel.unary_unary(
+                '/v1.Workflows/Create',
+                request_serializer=workflows__pb2.WorkflowCreateRequest.SerializeToString,
+                response_deserializer=workflows__pb2.WorkflowCreateResponse.FromString,
+                )
+        self.Get = channel.unary_unary(
+                '/v1.Workflows/Get',
+                request_serializer=workflows__pb2.WorkflowGetRequest.SerializeToString,
+                response_deserializer=workflows__pb2.WorkflowGetResponse.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/v1.Workflows/Delete',
+                request_serializer=workflows__pb2.WorkflowDeleteRequest.SerializeToString,
+                response_deserializer=workflows__pb2.WorkflowDeleteResponse.FromString,
+                )
+        self.Update = channel.unary_unary(
+                '/v1.Workflows/Update',
+                request_serializer=workflows__pb2.WorkflowUpdateRequest.SerializeToString,
+                response_deserializer=workflows__pb2.WorkflowUpdateResponse.FromString,
+                )
         self.List = channel.unary_unary(
                 '/v1.Workflows/List',
                 request_serializer=workflows__pb2.WorkflowListRequest.SerializeToString,
@@ -41,8 +61,36 @@ class WorkflowsStub(object):
 class WorkflowsServicer(object):
     """Workflows are the collection of rules that define the resources to which access can be requested,
     the users that can request that access, and the mechanism for approving those requests which can either
-    but automatic approval or a set of users authorized to approve the requests.
+    be automatic approval or a set of users authorized to approve the requests.
     """
+
+    def Create(self, request, context):
+        """Create creates a new workflow and requires a name for the workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Get(self, request, context):
+        """Get reads one workflow by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Delete deletes an existing workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Update updates an existing workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
         """Lists existing workflows.
@@ -54,6 +102,26 @@ class WorkflowsServicer(object):
 
 def add_WorkflowsServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=workflows__pb2.WorkflowCreateRequest.FromString,
+                    response_serializer=workflows__pb2.WorkflowCreateResponse.SerializeToString,
+            ),
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=workflows__pb2.WorkflowGetRequest.FromString,
+                    response_serializer=workflows__pb2.WorkflowGetResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=workflows__pb2.WorkflowDeleteRequest.FromString,
+                    response_serializer=workflows__pb2.WorkflowDeleteResponse.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=workflows__pb2.WorkflowUpdateRequest.FromString,
+                    response_serializer=workflows__pb2.WorkflowUpdateResponse.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=workflows__pb2.WorkflowListRequest.FromString,
@@ -69,8 +137,76 @@ def add_WorkflowsServicer_to_server(servicer, server):
 class Workflows(object):
     """Workflows are the collection of rules that define the resources to which access can be requested,
     the users that can request that access, and the mechanism for approving those requests which can either
-    but automatic approval or a set of users authorized to approve the requests.
+    be automatic approval or a set of users authorized to approve the requests.
     """
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.Workflows/Create',
+            workflows__pb2.WorkflowCreateRequest.SerializeToString,
+            workflows__pb2.WorkflowCreateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.Workflows/Get',
+            workflows__pb2.WorkflowGetRequest.SerializeToString,
+            workflows__pb2.WorkflowGetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.Workflows/Delete',
+            workflows__pb2.WorkflowDeleteRequest.SerializeToString,
+            workflows__pb2.WorkflowDeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.Workflows/Update',
+            workflows__pb2.WorkflowUpdateRequest.SerializeToString,
+            workflows__pb2.WorkflowUpdateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
