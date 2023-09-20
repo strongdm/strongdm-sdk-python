@@ -2824,6 +2824,7 @@ class Resources:
     `strongdm.models.Athena`
     `strongdm.models.AuroraMysql`
     `strongdm.models.AuroraPostgres`
+    `strongdm.models.AuroraPostgresIAM`
     `strongdm.models.AWS`
     `strongdm.models.AWSConsole`
     `strongdm.models.AWSConsoleStaticKeyPair`
@@ -2876,6 +2877,7 @@ class Resources:
     `strongdm.models.RabbitMQAMQP091`
     `strongdm.models.RawTCP`
     `strongdm.models.RDP`
+    `strongdm.models.RDSPostgresIAM`
     `strongdm.models.Redis`
     `strongdm.models.Redshift`
     `strongdm.models.SingleStore`

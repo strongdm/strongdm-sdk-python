@@ -22,7 +22,7 @@ class PermissionLevel:
     DATABASE_ADMIN = "database-admin"
     TEAM_LEADER = "multi-team-leader"
     USER = "user"
-    READ_ONLY_ADMIN = "read-only-admin"
+    AUDITOR = "auditor"
     RELAY = "relay"
     ADMIN_TOKEN = "admin-token"
     SCIM_TOKEN = "scim-token"

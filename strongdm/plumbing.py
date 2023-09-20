@@ -2319,6 +2319,64 @@ def convert_repeated_aurora_postgres_to_porcelain(plumbings):
     ]
 
 
+def convert_aurora_postgres_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AuroraPostgresIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.region = (plumbing.region)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_aurora_postgres_iam_to_plumbing(porcelain):
+    plumbing = AuroraPostgresIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.region = (porcelain.region)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_aurora_postgres_iam_to_plumbing(porcelains):
+    return [
+        convert_aurora_postgres_iam_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aurora_postgres_iam_to_porcelain(plumbings):
+    return [
+        convert_aurora_postgres_iam_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_azure_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -6436,6 +6494,64 @@ def convert_repeated_rdp_to_porcelain(plumbings):
     return [convert_rdp_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_rds_postgres_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RDSPostgresIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.region = (plumbing.region)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_rds_postgres_iam_to_plumbing(porcelain):
+    plumbing = RDSPostgresIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.region = (porcelain.region)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_rds_postgres_iam_to_plumbing(porcelains):
+    return [
+        convert_rds_postgres_iam_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_rds_postgres_iam_to_porcelain(plumbings):
+    return [
+        convert_rds_postgres_iam_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_rabbit_mqamqp_091_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -7177,6 +7293,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AuroraPostgres):
         plumbing.aurora_postgres.CopyFrom(
             convert_aurora_postgres_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AuroraPostgresIAM):
+        plumbing.aurora_postgres_iam.CopyFrom(
+            convert_aurora_postgres_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.AWS):
         plumbing.aws.CopyFrom(convert_aws_to_plumbing(porcelain))
     if isinstance(porcelain, models.AWSConsole):
@@ -7305,6 +7424,9 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.raw_tcp.CopyFrom(convert_raw_tcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.RDP):
         plumbing.rdp.CopyFrom(convert_rdp_to_plumbing(porcelain))
+    if isinstance(porcelain, models.RDSPostgresIAM):
+        plumbing.rds_postgres_iam.CopyFrom(
+            convert_rds_postgres_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Redis):
         plumbing.redis.CopyFrom(convert_redis_to_plumbing(porcelain))
     if isinstance(porcelain, models.Redshift):
@@ -7380,6 +7502,9 @@ def convert_resource_to_porcelain(plumbing):
         return convert_aurora_mysql_to_porcelain(plumbing.aurora_mysql)
     if plumbing.HasField('aurora_postgres'):
         return convert_aurora_postgres_to_porcelain(plumbing.aurora_postgres)
+    if plumbing.HasField('aurora_postgres_iam'):
+        return convert_aurora_postgres_iam_to_porcelain(
+            plumbing.aurora_postgres_iam)
     if plumbing.HasField('aws'):
         return convert_aws_to_porcelain(plumbing.aws)
     if plumbing.HasField('aws_console'):
@@ -7499,6 +7624,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_raw_tcp_to_porcelain(plumbing.raw_tcp)
     if plumbing.HasField('rdp'):
         return convert_rdp_to_porcelain(plumbing.rdp)
+    if plumbing.HasField('rds_postgres_iam'):
+        return convert_rds_postgres_iam_to_porcelain(plumbing.rds_postgres_iam)
     if plumbing.HasField('redis'):
         return convert_redis_to_porcelain(plumbing.redis)
     if plumbing.HasField('redshift'):

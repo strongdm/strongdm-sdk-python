@@ -4616,6 +4616,167 @@ class AuroraPostgres:
         )
 
 
+class AuroraPostgresIAM:
+    '''
+    AuroraPostgresIAM is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'port',
+        'port_override',
+        'region',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        port=None,
+        port_override=None,
+        region=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AuroraPostgresIAM ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'port': self.port,
+            'port_override': self.port_override,
+            'region': self.region,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
 class Azure:
     __slots__ = [
         'app_id',
@@ -14377,6 +14538,167 @@ class RDP:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class RDSPostgresIAM:
+    '''
+    RDSPostgresIAM is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'override_database',
+        'port',
+        'port_override',
+        'region',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        override_database=None,
+        port=None,
+        port_override=None,
+        region=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.override_database = override_database if override_database is not None else False
+        '''
+         If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RDSPostgresIAM ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'override_database: ' + repr(self.override_database) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'override_database': self.override_database,
+            'port': self.port,
+            'port_override': self.port_override,
+            'region': self.region,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            override_database=d.get('override_database'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            region=d.get('region'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
