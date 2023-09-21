@@ -61,6 +61,8 @@ if __name__ == "__main__":
   2.  [Managing Accounts](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/2_managing_accounts)
   3.  [Managing Roles](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/3_managing_roles)
   4.  [Managing Gateways](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/4_managing_gateways)
+  5.  [Auditing](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/5_auditing)
+  6.  [Managing Access Workflows](https://github.com/strongdm/strongdm-sdk-python-examples/tree/master/6_managing_workflows)
 
 ## License
 
