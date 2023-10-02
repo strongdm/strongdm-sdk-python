@@ -22,6 +22,8 @@ from .options_pb2 import *
 from .options_pb2_grpc import *
 from .spec_pb2 import *
 from .spec_pb2_grpc import *
+from .tags_pb2 import *
+from .tags_pb2_grpc import *
 from .access_requests_pb2 import *
 from .access_requests_pb2_grpc import *
 from .access_request_events_history_pb2 import *
@@ -42,8 +44,6 @@ from .account_resources_pb2 import *
 from .account_resources_pb2_grpc import *
 from .account_resources_history_pb2 import *
 from .account_resources_history_pb2_grpc import *
-from .tags_pb2 import *
-from .tags_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
 from .accounts_history_pb2 import *
@@ -143,7 +143,7 @@ class AccessRequests:
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing workflows.
+         Lists existing access requests.
         '''
         req = AccessRequestListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
@@ -190,7 +190,7 @@ class SnapshotAccessRequests:
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing workflows.
+         Lists existing access requests.
         '''
         return self.access_requests.list(filter, *args, timeout=timeout)
 

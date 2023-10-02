@@ -29,9 +29,10 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
+from . import tags_pb2 as tags__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61\x63\x63\x65ss_requests.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\"i\n\x18\x41\x63\x63\x65ssRequestListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc9\x01\n\x19\x41\x63\x63\x65ssRequestListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x36\n\x0f\x61\x63\x63\x65ss_requests\x18\x02 \x03(\x0b\x32\x11.v1.AccessRequestB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12@\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x15\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x03\n\rAccessRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x0bresource_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1a\n\x06reason\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0bworkflow_id\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccount_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\nstart_from\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12@\n\x0bvalid_until\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1a\n\x06status\x18\x08 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\tstatus_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08grant_id\x18\n \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*\"\xb4\x01\n\x12\x41\x63\x63\x65ssRequestEvent\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nrequest_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x63tor_id\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04type\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08metadata\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*2\xf7\x01\n\x0e\x41\x63\x63\x65ssRequests\x12o\n\x04List\x12\x1c.v1.AccessRequestListRequest\x1a\x1d.v1.AccessRequestListResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/access-requests\x1at\xca\xf9\xb3\x07\x12\xc2\xf9\xb3\x07\rAccessRequest\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61q-\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-provider\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x92\x01\n\x19\x63om.strongdm.api.plumbingB\x16\x41\x63\x63\x65ssRequestsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61\x63\x63\x65ss_requests.proto\x12\x02v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\"i\n\x18\x41\x63\x63\x65ssRequestListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xc9\x01\n\x19\x41\x63\x63\x65ssRequestListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x36\n\x0f\x61\x63\x63\x65ss_requests\x18\x02 \x03(\x0b\x32\x11.v1.AccessRequestB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12@\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\x15\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xaf\x03\n\rAccessRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12$\n\x0bresource_id\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1a\n\x06reason\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0bworkflow_id\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\naccount_id\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\nstart_from\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12@\n\x0bvalid_until\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1a\n\x06status\x18\x08 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\tstatus_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08grant_id\x18\n \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*\"\xb4\x01\n\x12\x41\x63\x63\x65ssRequestEvent\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nrequest_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x61\x63tor_id\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04type\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08metadata\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*\"\xf4\x01\n\x13RequestableResource\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04name\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1b\n\x07healthy\x18\x03 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04type\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x0e\x61uthentication\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\"\n\x04tags\x18\x06 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x61\x63\x63\x65ss\x18\x07 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*\"\xc3\x01\n\x13\x41\x63\x63\x65ssRequestConfig\x12$\n\x0bresource_id\x18\x01 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1a\n\x06reason\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\nstart_from\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x64uration\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x10\xfa\xf8\xb3\x07\x0b\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\x01*2\xcf\x01\n\x0e\x41\x63\x63\x65ssRequests\x12o\n\x04List\x12\x1c.v1.AccessRequestListRequest\x1a\x1d.v1.AccessRequestListResponse\"*\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x18\xaa\xf3\xb3\x07\x13/v1/access-requests\x1aL\xca\xf9\xb3\x07\x12\xc2\xf9\xb3\x07\rAccessRequest\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61q-\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*\xca\xf9\xb3\x07\x18\xca\xf9\xb3\x07\x13!terraform-providerB\x92\x01\n\x19\x63om.strongdm.api.plumbingB\x16\x41\x63\x63\x65ssRequestsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1\xc2\x92\xb4\x07\x06\xa2\x8c\xb4\x07\x01*\xc2\x92\xb4\x07\x18\xa2\x8c\xb4\x07\x13!terraform-providerb\x06proto3')
 
 
 
@@ -39,6 +40,8 @@ _ACCESSREQUESTLISTREQUEST = DESCRIPTOR.message_types_by_name['AccessRequestListR
 _ACCESSREQUESTLISTRESPONSE = DESCRIPTOR.message_types_by_name['AccessRequestListResponse']
 _ACCESSREQUEST = DESCRIPTOR.message_types_by_name['AccessRequest']
 _ACCESSREQUESTEVENT = DESCRIPTOR.message_types_by_name['AccessRequestEvent']
+_REQUESTABLERESOURCE = DESCRIPTOR.message_types_by_name['RequestableResource']
+_ACCESSREQUESTCONFIG = DESCRIPTOR.message_types_by_name['AccessRequestConfig']
 AccessRequestListRequest = _reflection.GeneratedProtocolMessageType('AccessRequestListRequest', (_message.Message,), {
   'DESCRIPTOR' : _ACCESSREQUESTLISTREQUEST,
   '__module__' : 'access_requests_pb2'
@@ -66,6 +69,20 @@ AccessRequestEvent = _reflection.GeneratedProtocolMessageType('AccessRequestEven
   # @@protoc_insertion_point(class_scope:v1.AccessRequestEvent)
   })
 _sym_db.RegisterMessage(AccessRequestEvent)
+
+RequestableResource = _reflection.GeneratedProtocolMessageType('RequestableResource', (_message.Message,), {
+  'DESCRIPTOR' : _REQUESTABLERESOURCE,
+  '__module__' : 'access_requests_pb2'
+  # @@protoc_insertion_point(class_scope:v1.RequestableResource)
+  })
+_sym_db.RegisterMessage(RequestableResource)
+
+AccessRequestConfig = _reflection.GeneratedProtocolMessageType('AccessRequestConfig', (_message.Message,), {
+  'DESCRIPTOR' : _ACCESSREQUESTCONFIG,
+  '__module__' : 'access_requests_pb2'
+  # @@protoc_insertion_point(class_scope:v1.AccessRequestConfig)
+  })
+_sym_db.RegisterMessage(AccessRequestConfig)
 
 _ACCESSREQUESTS = DESCRIPTOR.services_by_name['AccessRequests']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -116,18 +133,48 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACCESSREQUESTEVENT.fields_by_name['metadata']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _ACCESSREQUESTEVENT._options = None
   _ACCESSREQUESTEVENT._serialized_options = b'\372\370\263\007\013\250\363\263\007\001\322\363\263\007\001*'
+  _REQUESTABLERESOURCE.fields_by_name['id']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['name']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['name']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['healthy']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['healthy']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['type']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['type']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['authentication']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['authentication']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['tags']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE.fields_by_name['access']._options = None
+  _REQUESTABLERESOURCE.fields_by_name['access']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _REQUESTABLERESOURCE._options = None
+  _REQUESTABLERESOURCE._serialized_options = b'\372\370\263\007\013\250\363\263\007\001\322\363\263\007\001*'
+  _ACCESSREQUESTCONFIG.fields_by_name['resource_id']._options = None
+  _ACCESSREQUESTCONFIG.fields_by_name['resource_id']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _ACCESSREQUESTCONFIG.fields_by_name['reason']._options = None
+  _ACCESSREQUESTCONFIG.fields_by_name['reason']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACCESSREQUESTCONFIG.fields_by_name['start_from']._options = None
+  _ACCESSREQUESTCONFIG.fields_by_name['start_from']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACCESSREQUESTCONFIG.fields_by_name['duration']._options = None
+  _ACCESSREQUESTCONFIG.fields_by_name['duration']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _ACCESSREQUESTCONFIG._options = None
+  _ACCESSREQUESTCONFIG._serialized_options = b'\372\370\263\007\013\250\363\263\007\001\322\363\263\007\001*'
   _ACCESSREQUESTS._options = None
-  _ACCESSREQUESTS._serialized_options = b'\312\371\263\007\022\302\371\263\007\rAccessRequest\312\371\263\007\010\322\371\263\007\003aq-\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
+  _ACCESSREQUESTS._serialized_options = b'\312\371\263\007\022\302\371\263\007\rAccessRequest\312\371\263\007\010\322\371\263\007\003aq-\312\371\263\007\006\312\371\263\007\001*\312\371\263\007\030\312\371\263\007\023!terraform-provider'
   _ACCESSREQUESTS.methods_by_name['List']._options = None
   _ACCESSREQUESTS.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\030\252\363\263\007\023/v1/access-requests'
-  _ACCESSREQUESTLISTREQUEST._serialized_start=89
-  _ACCESSREQUESTLISTREQUEST._serialized_end=194
-  _ACCESSREQUESTLISTRESPONSE._serialized_start=197
-  _ACCESSREQUESTLISTRESPONSE._serialized_end=398
-  _ACCESSREQUEST._serialized_start=401
-  _ACCESSREQUEST._serialized_end=832
-  _ACCESSREQUESTEVENT._serialized_start=835
-  _ACCESSREQUESTEVENT._serialized_end=1015
-  _ACCESSREQUESTS._serialized_start=1018
-  _ACCESSREQUESTS._serialized_end=1265
+  _ACCESSREQUESTLISTREQUEST._serialized_start=101
+  _ACCESSREQUESTLISTREQUEST._serialized_end=206
+  _ACCESSREQUESTLISTRESPONSE._serialized_start=209
+  _ACCESSREQUESTLISTRESPONSE._serialized_end=410
+  _ACCESSREQUEST._serialized_start=413
+  _ACCESSREQUEST._serialized_end=844
+  _ACCESSREQUESTEVENT._serialized_start=847
+  _ACCESSREQUESTEVENT._serialized_end=1027
+  _REQUESTABLERESOURCE._serialized_start=1030
+  _REQUESTABLERESOURCE._serialized_end=1274
+  _ACCESSREQUESTCONFIG._serialized_start=1277
+  _ACCESSREQUESTCONFIG._serialized_end=1472
+  _ACCESSREQUESTS._serialized_start=1475
+  _ACCESSREQUESTS._serialized_end=1682
 # @@protoc_insertion_point(module_scope)

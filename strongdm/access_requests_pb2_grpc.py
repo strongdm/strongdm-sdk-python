@@ -41,7 +41,7 @@ class AccessRequestsServicer(object):
     """
 
     def List(self, request, context):
-        """Lists existing workflows.
+        """Lists existing access requests.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

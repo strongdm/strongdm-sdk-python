@@ -26,6 +26,7 @@ from google.protobuf.timestamp_pb2 import Timestamp
 import datetime
 from .options_pb2 import *
 from .spec_pb2 import *
+from .tags_pb2 import *
 from .access_requests_pb2 import *
 from .access_request_events_history_pb2 import *
 from .access_requests_history_pb2 import *
@@ -36,7 +37,6 @@ from .account_grants_history_pb2 import *
 from .account_permissions_pb2 import *
 from .account_resources_pb2 import *
 from .account_resources_history_pb2 import *
-from .tags_pb2 import *
 from .accounts_pb2 import *
 from .accounts_history_pb2 import *
 from .activities_pb2 import *
@@ -686,6 +686,43 @@ def convert_repeated_access_request_to_plumbing(porcelains):
 def convert_repeated_access_request_to_porcelain(plumbings):
     return [
         convert_access_request_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_access_request_config_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccessRequestConfig()
+    porcelain.duration = (plumbing.duration)
+    porcelain.reason = (plumbing.reason)
+    porcelain.resource_id = (plumbing.resource_id)
+    porcelain.start_from = convert_timestamp_to_porcelain(plumbing.start_from)
+    return porcelain
+
+
+def convert_access_request_config_to_plumbing(porcelain):
+    plumbing = AccessRequestConfig()
+    if porcelain is None:
+        return plumbing
+    plumbing.duration = (porcelain.duration)
+    plumbing.reason = (porcelain.reason)
+    plumbing.resource_id = (porcelain.resource_id)
+    plumbing.start_from.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.start_from))
+    return plumbing
+
+
+def convert_repeated_access_request_config_to_plumbing(porcelains):
+    return [
+        convert_access_request_config_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_access_request_config_to_porcelain(plumbings):
+    return [
+        convert_access_request_config_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 
@@ -7245,6 +7282,48 @@ def convert_repeated_replay_chunk_event_to_plumbing(porcelains):
 def convert_repeated_replay_chunk_event_to_porcelain(plumbings):
     return [
         convert_replay_chunk_event_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_requestable_resource_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RequestableResource()
+    porcelain.access = (plumbing.access)
+    porcelain.authentication = (plumbing.authentication)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.type = (plumbing.type)
+    return porcelain
+
+
+def convert_requestable_resource_to_plumbing(porcelain):
+    plumbing = RequestableResource()
+    if porcelain is None:
+        return plumbing
+    plumbing.access = (porcelain.access)
+    plumbing.authentication = (porcelain.authentication)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.type = (porcelain.type)
+    return plumbing
+
+
+def convert_repeated_requestable_resource_to_plumbing(porcelains):
+    return [
+        convert_requestable_resource_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_requestable_resource_to_porcelain(plumbings):
+    return [
+        convert_requestable_resource_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

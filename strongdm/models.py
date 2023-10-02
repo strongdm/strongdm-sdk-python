@@ -1465,6 +1465,67 @@ class AccessRequest:
         )
 
 
+class AccessRequestConfig:
+    '''
+         AccessRequestConfig holds the information required to request access to a resource
+    '''
+    __slots__ = [
+        'duration',
+        'reason',
+        'resource_id',
+        'start_from',
+    ]
+
+    def __init__(
+        self,
+        duration=None,
+        reason=None,
+        resource_id=None,
+        start_from=None,
+    ):
+        self.duration = duration if duration is not None else ''
+        '''
+         The time access should end, defaults to the next occurance of 5 pm
+        '''
+        self.reason = reason if reason is not None else ''
+        '''
+         The reason for access
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The resource for which access is being requested
+        '''
+        self.start_from = start_from if start_from is not None else None
+        '''
+         The time access should start, defaults to now
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccessRequestConfig ' + \
+            'duration: ' + repr(self.duration) + ' ' +\
+            'reason: ' + repr(self.reason) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'start_from: ' + repr(self.start_from) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'duration': self.duration,
+            'reason': self.reason,
+            'resource_id': self.resource_id,
+            'start_from': self.start_from,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            duration=d.get('duration'),
+            reason=d.get('reason'),
+            resource_id=d.get('resource_id'),
+            start_from=d.get('start_from'),
+        )
+
+
 class AccessRequestEvent:
     '''
          AccessRequestEvents hold information about events related to an access
@@ -1699,7 +1760,8 @@ class AccessRequestListRequest:
 
 class AccessRequestListResponse:
     '''
-         AccessRequestListResponse reports how the Workflow was created in the system.
+         AccessRequestListResponse returns a list of access requests records that meet
+     the criteria of a AccessRequestListRequest.
     '''
     __slots__ = [
         'rate_limit',
@@ -16037,6 +16099,94 @@ class ReplayChunkEvent:
         return cls(
             data=d.get('data'),
             duration=d.get('duration'),
+        )
+
+
+class RequestableResource:
+    '''
+         RequestableResource is a resource that can be requested via an AccessRequestConfig
+    '''
+    __slots__ = [
+        'access',
+        'authentication',
+        'healthy',
+        'id',
+        'name',
+        'tags',
+        'type',
+    ]
+
+    def __init__(
+        self,
+        access=None,
+        authentication=None,
+        healthy=None,
+        id=None,
+        name=None,
+        tags=None,
+        type=None,
+    ):
+        self.access = access if access is not None else ''
+        '''
+         The current state of the user's access to the resources
+        '''
+        self.authentication = authentication if authentication is not None else ''
+        '''
+         The type of authentication for the resource
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         The health check status of the reasource
+        '''
+        self.id = id if id is not None else ''
+        '''
+         The resource id.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         The resource name.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Any tags attached to this resource
+        '''
+        self.type = type if type is not None else ''
+        '''
+         The resource type
+        '''
+
+    def __repr__(self):
+        return '<sdm.RequestableResource ' + \
+            'access: ' + repr(self.access) + ' ' +\
+            'authentication: ' + repr(self.authentication) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'type: ' + repr(self.type) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access': self.access,
+            'authentication': self.authentication,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+            'type': self.type,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access=d.get('access'),
+            authentication=d.get('authentication'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+            type=d.get('type'),
         )
 
 
