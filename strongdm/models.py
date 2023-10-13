@@ -4695,6 +4695,7 @@ class AuroraPostgresIAM:
         'port',
         'port_override',
         'region',
+        'role_assumption_arn',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -4714,6 +4715,7 @@ class AuroraPostgresIAM:
         port=None,
         port_override=None,
         region=None,
+        role_assumption_arn=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -4763,6 +4765,10 @@ class AuroraPostgresIAM:
         '''
          The AWS region to connect to.
         '''
+        self.role_assumption_arn = role_assumption_arn if role_assumption_arn is not None else ''
+        '''
+         If provided, the gateway/relay will try to assume this role instead of the underlying compute's role.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4793,6 +4799,7 @@ class AuroraPostgresIAM:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
+            'role_assumption_arn: ' + repr(self.role_assumption_arn) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -4812,6 +4819,7 @@ class AuroraPostgresIAM:
             'port': self.port,
             'port_override': self.port_override,
             'region': self.region,
+            'role_assumption_arn': self.role_assumption_arn,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -4832,6 +4840,7 @@ class AuroraPostgresIAM:
             port=d.get('port'),
             port_override=d.get('port_override'),
             region=d.get('region'),
+            role_assumption_arn=d.get('role_assumption_arn'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -14624,6 +14633,7 @@ class RDSPostgresIAM:
         'port',
         'port_override',
         'region',
+        'role_assumption_arn',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -14643,6 +14653,7 @@ class RDSPostgresIAM:
         port=None,
         port_override=None,
         region=None,
+        role_assumption_arn=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -14692,6 +14703,10 @@ class RDSPostgresIAM:
         '''
          The AWS region to connect to.
         '''
+        self.role_assumption_arn = role_assumption_arn if role_assumption_arn is not None else ''
+        '''
+         If provided, the gateway/relay will try to assume this role instead of the underlying compute's role.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14722,6 +14737,7 @@ class RDSPostgresIAM:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
+            'role_assumption_arn: ' + repr(self.role_assumption_arn) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -14741,6 +14757,7 @@ class RDSPostgresIAM:
             'port': self.port,
             'port_override': self.port_override,
             'region': self.region,
+            'role_assumption_arn': self.role_assumption_arn,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -14761,6 +14778,7 @@ class RDSPostgresIAM:
             port=d.get('port'),
             port_override=d.get('port_override'),
             region=d.get('region'),
+            role_assumption_arn=d.get('role_assumption_arn'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
