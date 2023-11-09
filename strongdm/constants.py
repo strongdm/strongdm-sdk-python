@@ -216,6 +216,7 @@ class ActivityVerb:
     ORG_NAME_UPDATED = "organization name updated"
     ORG_SETTING_UPDATED = "organization setting updated"
     ORG_LOG_SYNC_SETTING_UPDATED = "organization log stream setting updated"
+    ORG_WORKFLOW_SETTING_UPDATED = "organization workflow setting updated"
     ORG_CREATED = "organization created"
     ORG_SCIM_PROVISIONING_UPDATED = "SCIM provider set"
     ORG_SCIM_PROVISIONING_DELETED = "SCIM provider deleted"
@@ -262,6 +263,10 @@ class ActivityVerb:
     RESOURCE_LOCKED = "user locked a resource"
     RESOURCE_UNLOCKED = "user unlocked a resource"
     RESOURCE_FORCE_UNLOCKED = "admin force-unlocked a resource"
+    ORG_INTEGRATION_INSTALLED = "org integration installed"
+    USER_INTEGRATION_AUTHORIZED = "user authorized integration"
+    ORG_INTEGRATION_UNINSTALLED = "org integration uninstalled"
+    USER_INTEGRATION_DEAUTHORIZED = "user deauthorized integration"
 
 
 # Permissions, all permissions that may be granted to an account.
@@ -345,6 +350,8 @@ class Permission:
     GRANT_WRITE = "grant:write"
     REPORT_READ = "report:read"
     BILLING_READ = "billing:read"
+    CREDENTIAL_READ = "credential:read"
+    CREDENTIAL_WRITE = "credential:write"
 
 
 # Query Categories, all the categories of resource against which queries are logged.
