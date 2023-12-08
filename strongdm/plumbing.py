@@ -9529,8 +9529,9 @@ def convert_workflow_approver_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowApprover()
-    porcelain.approver_id = (plumbing.approver_id)
+    porcelain.account_id = (plumbing.account_id)
     porcelain.id = (plumbing.id)
+    porcelain.role_id = (plumbing.role_id)
     porcelain.workflow_id = (plumbing.workflow_id)
     return porcelain
 
@@ -9539,8 +9540,9 @@ def convert_workflow_approver_to_plumbing(porcelain):
     plumbing = WorkflowApprover()
     if porcelain is None:
         return plumbing
-    plumbing.approver_id = (porcelain.approver_id)
+    plumbing.account_id = (porcelain.account_id)
     plumbing.id = (porcelain.id)
+    plumbing.role_id = (porcelain.role_id)
     plumbing.workflow_id = (porcelain.workflow_id)
     return plumbing
 

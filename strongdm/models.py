@@ -19814,27 +19814,33 @@ class Workflow:
 
 class WorkflowApprover:
     '''
-         WorkflowApprover is an account with the ability to approve requests bound to a workflow.
+         WorkflowApprover is an account or a role with the ability to approve requests bound to a workflow.
     '''
     __slots__ = [
-        'approver_id',
+        'account_id',
         'id',
+        'role_id',
         'workflow_id',
     ]
 
     def __init__(
         self,
-        approver_id=None,
+        account_id=None,
         id=None,
+        role_id=None,
         workflow_id=None,
     ):
-        self.approver_id = approver_id if approver_id is not None else ''
+        self.account_id = account_id if account_id is not None else ''
         '''
-         The approver id.
+         The approver account id.
         '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the WorkflowApprover.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The approver role id
         '''
         self.workflow_id = workflow_id if workflow_id is not None else ''
         '''
@@ -19843,23 +19849,26 @@ class WorkflowApprover:
 
     def __repr__(self):
         return '<sdm.WorkflowApprover ' + \
-            'approver_id: ' + repr(self.approver_id) + ' ' +\
+            'account_id: ' + repr(self.account_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
             'workflow_id: ' + repr(self.workflow_id) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
-            'approver_id': self.approver_id,
+            'account_id': self.account_id,
             'id': self.id,
+            'role_id': self.role_id,
             'workflow_id': self.workflow_id,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
-            approver_id=d.get('approver_id'),
+            account_id=d.get('account_id'),
             id=d.get('id'),
+            role_id=d.get('role_id'),
             workflow_id=d.get('workflow_id'),
         )
 

@@ -20,7 +20,7 @@ from . import workflow_approvers_pb2 as workflow__approvers__pb2
 
 
 class WorkflowApproversStub(object):
-    """WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+    """WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
     """
 
     def __init__(self, channel):
@@ -52,7 +52,7 @@ class WorkflowApproversStub(object):
 
 
 class WorkflowApproversServicer(object):
-    """WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+    """WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
     """
 
     def Create(self, request, context):
@@ -114,7 +114,7 @@ def add_WorkflowApproversServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class WorkflowApprovers(object):
-    """WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+    """WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
     """
 
     @staticmethod

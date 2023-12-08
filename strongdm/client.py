@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/5.0.5'
+USER_AGENT = 'strongdm-sdk-python/6.0.0'
 
 
 class Client:
@@ -301,7 +301,7 @@ class Client:
         '''
         self.workflow_approvers = svc.WorkflowApprovers(channel, self)
         '''
-         WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+         WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
 
         See `strongdm.svc.WorkflowApprovers`.
         '''
@@ -586,7 +586,7 @@ class SnapshotClient:
         self.workflow_approvers = svc.SnapshotWorkflowApprovers(
             client.workflow_approvers)
         '''
-         WorkflowApprovers is an account with the ability to approve requests bound to a workflow.
+         WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
 
         See `strongdm.svc.SnapshotWorkflowApprovers`.
         '''
