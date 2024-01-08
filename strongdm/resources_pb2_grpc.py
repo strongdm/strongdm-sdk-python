@@ -60,6 +60,11 @@ class ResourcesStub(object):
                 request_serializer=resources__pb2.ResourceListRequest.SerializeToString,
                 response_deserializer=resources__pb2.ResourceListResponse.FromString,
                 )
+        self.Healthcheck = channel.unary_unary(
+                '/v1.Resources/Healthcheck',
+                request_serializer=resources__pb2.ResourceHealthcheckRequest.SerializeToString,
+                response_deserializer=resources__pb2.ResourceHealthcheckResponse.FromString,
+                )
 
 
 class ResourcesServicer(object):
@@ -109,6 +114,15 @@ class ResourcesServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Healthcheck(self, request, context):
+        """Healthcheck triggers a remote healthcheck. It may take minutes to propagate across a
+        large network of Nodes. The call will return immediately, and the updated health of the
+        Resource can be retrieved via Get or List.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ResourcesServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -141,6 +155,11 @@ def add_ResourcesServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=resources__pb2.ResourceListRequest.FromString,
                     response_serializer=resources__pb2.ResourceListResponse.SerializeToString,
+            ),
+            'Healthcheck': grpc.unary_unary_rpc_method_handler(
+                    servicer.Healthcheck,
+                    request_deserializer=resources__pb2.ResourceHealthcheckRequest.FromString,
+                    response_serializer=resources__pb2.ResourceHealthcheckResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -253,5 +272,22 @@ class Resources(object):
         return grpc.experimental.unary_unary(request, target, '/v1.Resources/List',
             resources__pb2.ResourceListRequest.SerializeToString,
             resources__pb2.ResourceListResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Healthcheck(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.Resources/Healthcheck',
+            resources__pb2.ResourceHealthcheckRequest.SerializeToString,
+            resources__pb2.ResourceHealthcheckResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

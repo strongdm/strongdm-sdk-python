@@ -16347,6 +16347,82 @@ class ResourceGetResponse:
         )
 
 
+class ResourceHealthcheckRequest:
+    '''
+         ResourceHealthcheckRequest specifies requesting a healthcheck for a given resource by ID.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Resource to healthcheck.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ResourceHealthcheckRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ResourceHealthcheckResponse:
+    '''
+         ResourceHealthcheckResponse reports any metadata concerning a healthcheck response.
+     Healthchecks are non blocking, and this contains no non-metadata.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ResourceHealthcheckResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class ResourceHistory:
     '''
          ResourceHistory records the state of a Resource at a given point in time,

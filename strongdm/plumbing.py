@@ -7868,6 +7868,76 @@ def convert_repeated_resource_get_response_to_porcelain(plumbings):
     ]
 
 
+def convert_resource_healthcheck_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ResourceHealthcheckRequest()
+    porcelain.id = (plumbing.id)
+    porcelain.meta = convert_update_request_metadata_to_porcelain(
+        plumbing.meta)
+    return porcelain
+
+
+def convert_resource_healthcheck_request_to_plumbing(porcelain):
+    plumbing = ResourceHealthcheckRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.meta.CopyFrom(
+        convert_update_request_metadata_to_plumbing(porcelain.meta))
+    return plumbing
+
+
+def convert_repeated_resource_healthcheck_request_to_plumbing(porcelains):
+    return [
+        convert_resource_healthcheck_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_resource_healthcheck_request_to_porcelain(plumbings):
+    return [
+        convert_resource_healthcheck_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_resource_healthcheck_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ResourceHealthcheckResponse()
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_resource_healthcheck_response_to_plumbing(porcelain):
+    plumbing = ResourceHealthcheckResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_resource_healthcheck_response_to_plumbing(porcelains):
+    return [
+        convert_resource_healthcheck_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_resource_healthcheck_response_to_porcelain(plumbings):
+    return [
+        convert_resource_healthcheck_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_resource_history_to_porcelain(plumbing):
     if plumbing is None:
         return None

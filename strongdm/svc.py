@@ -3105,6 +3105,39 @@ class Resources:
 
         return generator(self, req)
 
+    def healthcheck(self, id, timeout=None):
+        '''
+         Healthcheck triggers a remote healthcheck. It may take minutes to propagate across a
+         large network of Nodes. The call will return immediately, and the updated health of the
+         Resource can be retrieved via Get or List.
+        '''
+        req = ResourceHealthcheckRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Healthcheck(
+                    req,
+                    metadata=self.parent.get_metadata('Resources.Healthcheck',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ResourceHealthcheckResponse()
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
 
 class SnapshotResources:
     '''
