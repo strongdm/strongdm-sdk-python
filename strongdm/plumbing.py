@@ -2993,6 +2993,45 @@ def convert_repeated_cockroach_to_porcelain(plumbings):
     return [convert_cockroach_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_control_panel_get_rdpca_public_key_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ControlPanelGetRDPCAPublicKeyResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_control_panel_get_rdpca_public_key_response_to_plumbing(porcelain):
+    plumbing = ControlPanelGetRDPCAPublicKeyResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_control_panel_get_rdpca_public_key_response_to_plumbing(
+        porcelains):
+    return [
+        convert_control_panel_get_rdpca_public_key_response_to_plumbing(
+            porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_control_panel_get_rdpca_public_key_response_to_porcelain(
+        plumbings):
+    return [
+        convert_control_panel_get_rdpca_public_key_response_to_porcelain(
+            plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_control_panel_get_sshca_public_key_response_to_porcelain(plumbing):
     if plumbing is None:
         return None

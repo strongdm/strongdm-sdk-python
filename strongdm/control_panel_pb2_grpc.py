@@ -34,6 +34,11 @@ class ControlPanelStub(object):
                 request_serializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.SerializeToString,
                 response_deserializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.FromString,
                 )
+        self.GetRDPCAPublicKey = channel.unary_unary(
+                '/v1.ControlPanel/GetRDPCAPublicKey',
+                request_serializer=control__panel__pb2.ControlPanelGetRDPCAPublicKeyRequest.SerializeToString,
+                response_deserializer=control__panel__pb2.ControlPanelGetRDPCAPublicKeyResponse.FromString,
+                )
         self.VerifyJWT = channel.unary_unary(
                 '/v1.ControlPanel/VerifyJWT',
                 request_serializer=control__panel__pb2.ControlPanelVerifyJWTRequest.SerializeToString,
@@ -47,6 +52,13 @@ class ControlPanelServicer(object):
 
     def GetSSHCAPublicKey(self, request, context):
         """GetSSHCAPublicKey retrieves the SSH CA public key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRDPCAPublicKey(self, request, context):
+        """GetRDPCAPublicKey retrieves the RDP CA public key.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -66,6 +78,11 @@ def add_ControlPanelServicer_to_server(servicer, server):
                     servicer.GetSSHCAPublicKey,
                     request_deserializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.FromString,
                     response_serializer=control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.SerializeToString,
+            ),
+            'GetRDPCAPublicKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRDPCAPublicKey,
+                    request_deserializer=control__panel__pb2.ControlPanelGetRDPCAPublicKeyRequest.FromString,
+                    response_serializer=control__panel__pb2.ControlPanelGetRDPCAPublicKeyResponse.SerializeToString,
             ),
             'VerifyJWT': grpc.unary_unary_rpc_method_handler(
                     servicer.VerifyJWT,
@@ -97,6 +114,23 @@ class ControlPanel(object):
         return grpc.experimental.unary_unary(request, target, '/v1.ControlPanel/GetSSHCAPublicKey',
             control__panel__pb2.ControlPanelGetSSHCAPublicKeyRequest.SerializeToString,
             control__panel__pb2.ControlPanelGetSSHCAPublicKeyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRDPCAPublicKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.ControlPanel/GetRDPCAPublicKey',
+            control__panel__pb2.ControlPanelGetRDPCAPublicKeyRequest.SerializeToString,
+            control__panel__pb2.ControlPanelGetRDPCAPublicKeyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

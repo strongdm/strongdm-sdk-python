@@ -1283,6 +1283,37 @@ class ControlPanel:
             plumbing_response.rate_limit)
         return resp
 
+    def get_rdpca_public_key(self, timeout=None):
+        '''
+         GetRDPCAPublicKey retrieves the RDP CA public key.
+        '''
+        req = ControlPanelGetRDPCAPublicKeyRequest()
+
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.GetRDPCAPublicKey(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ControlPanel.GetRDPCAPublicKey', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ControlPanelGetRDPCAPublicKeyResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.public_key = (plumbing_response.public_key)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
     def verify_jwt(self, token, timeout=None):
         '''
          VerifyJWT reports whether the given JWT token (x-sdm-token) is valid.
