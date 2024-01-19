@@ -1794,27 +1794,6 @@ class PeeringGroupNodes:
         return generator(self, req)
 
 
-class SnapshotPeeringGroupNodes:
-    '''
-    SnapshotPeeringGroupNodes exposes the read only methods of the PeeringGroupNodes
-    service for historical queries.
-    '''
-    def __init__(self, peering_group_nodes):
-        self.peering_group_nodes = peering_group_nodes
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads the information of one peering group to node attachment.
-        '''
-        return self.peering_group_nodes.get(id, timeout=timeout)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of peering group node attachments.
-        '''
-        return self.peering_group_nodes.list(filter, *args, timeout=timeout)
-
-
 class PeeringGroupPeers:
     '''
      PeeringGroupPeers provides the building blocks necessary to link two peering groups.
@@ -1964,27 +1943,6 @@ class PeeringGroupPeers:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
-
-
-class SnapshotPeeringGroupPeers:
-    '''
-    SnapshotPeeringGroupPeers exposes the read only methods of the PeeringGroupPeers
-    service for historical queries.
-    '''
-    def __init__(self, peering_group_peers):
-        self.peering_group_peers = peering_group_peers
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads the information of one peering group link.
-        '''
-        return self.peering_group_peers.get(id, timeout=timeout)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of peering group links.
-        '''
-        return self.peering_group_peers.list(filter, *args, timeout=timeout)
 
 
 class PeeringGroupResources:
@@ -2138,29 +2096,6 @@ class PeeringGroupResources:
         return generator(self, req)
 
 
-class SnapshotPeeringGroupResources:
-    '''
-    SnapshotPeeringGroupResources exposes the read only methods of the PeeringGroupResources
-    service for historical queries.
-    '''
-    def __init__(self, peering_group_resources):
-        self.peering_group_resources = peering_group_resources
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads the information of one peering group to resource attachment.
-        '''
-        return self.peering_group_resources.get(id, timeout=timeout)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of peering group resource attachments.
-        '''
-        return self.peering_group_resources.list(filter,
-                                                 *args,
-                                                 timeout=timeout)
-
-
 class PeeringGroups:
     '''
      PeeringGroups provides the building blocks necessary to obtain explicit network topology and routing.
@@ -2309,27 +2244,6 @@ class PeeringGroups:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
-
-
-class SnapshotPeeringGroups:
-    '''
-    SnapshotPeeringGroups exposes the read only methods of the PeeringGroups
-    service for historical queries.
-    '''
-    def __init__(self, peering_groups):
-        self.peering_groups = peering_groups
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads one PeeringGroup by ID. It will load all its dependencies.
-        '''
-        return self.peering_groups.get(id, timeout=timeout)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of Peering Groups.
-        '''
-        return self.peering_groups.list(filter, *args, timeout=timeout)
 
 
 class Queries:
