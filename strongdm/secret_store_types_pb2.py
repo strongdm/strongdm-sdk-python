@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from . import tags_pb2 as tags__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\xa4\x07\n\x0bSecretStore\x12?\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreB\"\xf2\xf8\xb3\x07\x1d\xca\xf3\xb3\x07\x18\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61wsH\x00\x12\x45\n\x05\x61zure\x18\x65 \x01(\x0b\x32\x0e.v1.AzureStoreB$\xf2\xf8\xb3\x07\x1f\xca\xf3\xb3\x07\x1a\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zureH\x00\x12\x62\n\x0f\x63yberark_conjur\x18\xad\x02 \x01(\x0b\x32\x17.v1.CyberarkConjurStoreB-\xf2\xf8\xb3\x07(\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63yberarkConjurH\x00\x12Y\n\x0c\x63yberark_pam\x18\xaf\x02 \x01(\x0b\x32\x14.v1.CyberarkPAMStoreB*\xf2\xf8\xb3\x07%\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0b\x63yberarkPAMH\x00\x12~\n\x19\x63yberark_pam_experimental\x18\xae\x02 \x01(\x0b\x32 .v1.CyberarkPAMExperimentalStoreB6\xf2\xf8\xb3\x07\x31\xca\xf3\xb3\x07,\xc2\xf4\xb3\x07\'\n\x0cjson_gateway\x12\x17\x63yberarkPAMExperimentalH\x00\x12L\n\x07\x64\x65linea\x18\xd4\x16 \x01(\x0b\x32\x10.v1.DelineaStoreB&\xf2\xf8\xb3\x07!\xca\xf3\xb3\x07\x1c\xc2\xf4\xb3\x07\x17\n\x0cjson_gateway\x12\x07\x64\x65lineaH\x00\x12@\n\x03gcp\x18\xc9\x01 \x01(\x0b\x32\x0c.v1.GCPStoreB\"\xf2\xf8\xb3\x07\x1d\xca\xf3\xb3\x07\x18\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcpH\x00\x12\\\n\x0evault_app_role\x18\x04 \x01(\x0b\x32\x15.v1.VaultAppRoleStoreB+\xf2\xf8\xb3\x07&\xca\xf3\xb3\x07!\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRoleH\x00\x12O\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreB\'\xf2\xf8\xb3\x07\"\xca\xf3\xb3\x07\x1d\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLSH\x00\x12U\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreB)\xf2\xf8\xb3\x07$\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultTokenH\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42,\n\x0csecret_store\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xfc\x01\n\x08\x41WSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06region\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06region\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:T\xfa\xf8\xb3\x07O\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x45\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03\x61ws\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x19\n\x12terraform-provider\x12\x03\x61ws\"\xeb\x01\n\nAzureStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\tvault_uri\x18\x03 \x01(\tB1\xf2\xf8\xb3\x07,\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1d\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultUri\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01::\xfa\xf8\xb3\x07\x35\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07+\xc2\xf4\xb3\x07\x0c\n\x03\x63li\x12\x05\x61zure\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\"\xab\x02\n\x13\x43yberarkConjurStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:v\xfa\xf8\xb3\x07q\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07g\xc2\xf4\xb3\x07\x15\n\x03\x63li\x12\x0e\x63yberarkConjur\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63yberarkConjur\xc2\xf4\xb3\x07%\n\x12terraform-provider\x12\x0f\x63yberark_conjur\"\x9f\x02\n\x10\x43yberarkPAMStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:m\xfa\xf8\xb3\x07h\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07^\xc2\xf4\xb3\x07\x12\n\x03\x63li\x12\x0b\x63yberarkPAM\xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0b\x63yberarkPAM\xc2\xf4\xb3\x07\"\n\x12terraform-provider\x12\x0c\x63yberark_pam\"\xd8\x02\n\x1c\x43yberarkPAMExperimentalStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x99\x01\xfa\xf8\xb3\x07\x93\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x88\x01\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x1e\n\x03\x63li\x12\x17\x63yberarkPAMExperimental\xc2\xf4\xb3\x07\'\n\x0cjson_gateway\x12\x17\x63yberarkPAMExperimental\xc2\xf4\xb3\x07/\n\x12terraform-provider\x12\x19\x63yberark_pam_experimental\"\xb3\x02\n\x0c\x44\x65lineaStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x41\n\nserver_url\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tserverUrl\x12\x43\n\x0btenant_name\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ntenantName\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:>\xfa\xf8\xb3\x07\x39\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07/\xc2\xf4\xb3\x07\x0e\n\x03\x63li\x12\x07\x64\x65linea\xc2\xf4\xb3\x07\x17\n\x0cjson_gateway\x12\x07\x64\x65linea\"\xe6\x01\n\x08GCPStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x45\n\tprojectID\x18\x03 \x01(\tB2\xf2\xf8\xb3\x07-\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tprojectId\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:6\xfa\xf8\xb3\x07\x31\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\'\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03gcp\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\"\xf2\x02\n\x11VaultAppRoleStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:p\xfa\xf8\xb3\x07k\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x61\xc2\xf4\xb3\x07\x13\n\x03\x63li\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07#\n\x12terraform-provider\x12\rvault_approle\"\xcc\x04\n\rVaultTLSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\x12Q\n\x10\x63lient_cert_path\x18\x05 \x01(\tB7\xf2\xf8\xb3\x07\x32\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\x12O\n\x0f\x63lient_key_path\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\x12@\n\tnamespace\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:d\xfa\xf8\xb3\x07_\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07U\xc2\xf4\xb3\x07\x0f\n\x03\x63li\x12\x08vaultTLS\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07\x1f\n\x12terraform-provider\x12\tvault_tls\"\xea\x02\n\x0fVaultTokenStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:j\xfa\xf8\xb3\x07\x65\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07[\xc2\xf4\xb3\x07\x11\n\x03\x63li\x12\nvaultToken\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07!\n\x12terraform-provider\x12\x0bvault_tokenBm\n\x19\x63om.strongdm.api.plumbingB\x19SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18secret_store_types.proto\x12\x02v1\x1a\roptions.proto\x1a\ntags.proto\"\xc6\x0c\n\x0bSecretStore\x12?\n\x03\x61ws\x18\x03 \x01(\x0b\x32\x0c.v1.AWSStoreB\"\xf2\xf8\xb3\x07\x1d\xca\xf3\xb3\x07\x18\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61wsH\x00\x12\x45\n\x05\x61zure\x18\x65 \x01(\x0b\x32\x0e.v1.AzureStoreB$\xf2\xf8\xb3\x07\x1f\xca\xf3\xb3\x07\x1a\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zureH\x00\x12\x62\n\x0f\x63yberark_conjur\x18\xad\x02 \x01(\x0b\x32\x17.v1.CyberarkConjurStoreB-\xf2\xf8\xb3\x07(\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63yberarkConjurH\x00\x12Y\n\x0c\x63yberark_pam\x18\xaf\x02 \x01(\x0b\x32\x14.v1.CyberarkPAMStoreB*\xf2\xf8\xb3\x07%\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0b\x63yberarkPAMH\x00\x12~\n\x19\x63yberark_pam_experimental\x18\xae\x02 \x01(\x0b\x32 .v1.CyberarkPAMExperimentalStoreB6\xf2\xf8\xb3\x07\x31\xca\xf3\xb3\x07,\xc2\xf4\xb3\x07\'\n\x0cjson_gateway\x12\x17\x63yberarkPAMExperimentalH\x00\x12L\n\x07\x64\x65linea\x18\xd4\x16 \x01(\x0b\x32\x10.v1.DelineaStoreB&\xf2\xf8\xb3\x07!\xca\xf3\xb3\x07\x1c\xc2\xf4\xb3\x07\x17\n\x0cjson_gateway\x12\x07\x64\x65lineaH\x00\x12@\n\x03gcp\x18\xc9\x01 \x01(\x0b\x32\x0c.v1.GCPStoreB\"\xf2\xf8\xb3\x07\x1d\xca\xf3\xb3\x07\x18\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcpH\x00\x12\\\n\x0evault_app_role\x18\x04 \x01(\x0b\x32\x15.v1.VaultAppRoleStoreB+\xf2\xf8\xb3\x07&\xca\xf3\xb3\x07!\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRoleH\x00\x12s\n\x17vault_app_role_cert_ssh\x18^ \x01(\x0b\x32\x1c.v1.VaultAppRoleCertSSHStoreB2\xf2\xf8\xb3\x07-\xca\xf3\xb3\x07(\xc2\xf4\xb3\x07#\n\x0cjson_gateway\x12\x13vaultAppRoleCertSSHH\x00\x12w\n\x19vault_app_role_cert_x_509\x18_ \x01(\x0b\x32\x1d.v1.VaultAppRoleCertX509StoreB3\xf2\xf8\xb3\x07.\xca\xf3\xb3\x07)\xc2\xf4\xb3\x07$\n\x0cjson_gateway\x12\x14vaultAppRoleCertX509H\x00\x12O\n\tvault_tls\x18\x01 \x01(\x0b\x32\x11.v1.VaultTLSStoreB\'\xf2\xf8\xb3\x07\"\xca\xf3\xb3\x07\x1d\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLSH\x00\x12\x66\n\x12vault_tls_cert_ssh\x18\\ \x01(\x0b\x32\x18.v1.VaultTLSCertSSHStoreB.\xf2\xf8\xb3\x07)\xca\xf3\xb3\x07$\xc2\xf4\xb3\x07\x1f\n\x0cjson_gateway\x12\x0fvaultTLSCertSSHH\x00\x12j\n\x14vault_tls_cert_x_509\x18] \x01(\x0b\x32\x19.v1.VaultTLSCertX509StoreB/\xf2\xf8\xb3\x07*\xca\xf3\xb3\x07%\xc2\xf4\xb3\x07 \n\x0cjson_gateway\x12\x10vaultTLSCertX509H\x00\x12U\n\x0bvault_token\x18\x02 \x01(\x0b\x32\x13.v1.VaultTokenStoreB)\xf2\xf8\xb3\x07$\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultTokenH\x00\x12l\n\x14vault_token_cert_ssh\x18Z \x01(\x0b\x32\x1a.v1.VaultTokenCertSSHStoreB0\xf2\xf8\xb3\x07+\xca\xf3\xb3\x07&\xc2\xf4\xb3\x07!\n\x0cjson_gateway\x12\x11vaultTokenCertSSHH\x00\x12p\n\x16vault_token_cert_x_509\x18[ \x01(\x0b\x32\x1b.v1.VaultTokenCertX509StoreB1\xf2\xf8\xb3\x07,\xca\xf3\xb3\x07\'\xc2\xf4\xb3\x07\"\n\x0cjson_gateway\x12\x12vaultTokenCertX509H\x00:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42,\n\x0csecret_store\x12\x1c\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04tags\xaa\xf8\xb3\x07\t\xaa\xf8\xb3\x07\x04name\"\xfc\x01\n\x08\x41WSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06region\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06region\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:T\xfa\xf8\xb3\x07O\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x45\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03\x61ws\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03\x61ws\xc2\xf4\xb3\x07\x19\n\x12terraform-provider\x12\x03\x61ws\"\xeb\x01\n\nAzureStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\tvault_uri\x18\x03 \x01(\tB1\xf2\xf8\xb3\x07,\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1d\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultUri\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01::\xfa\xf8\xb3\x07\x35\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07+\xc2\xf4\xb3\x07\x0c\n\x03\x63li\x12\x05\x61zure\xc2\xf4\xb3\x07\x15\n\x0cjson_gateway\x12\x05\x61zure\"\xab\x02\n\x13\x43yberarkConjurStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:v\xfa\xf8\xb3\x07q\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07g\xc2\xf4\xb3\x07\x15\n\x03\x63li\x12\x0e\x63yberarkConjur\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63yberarkConjur\xc2\xf4\xb3\x07%\n\x12terraform-provider\x12\x0f\x63yberark_conjur\"\x9f\x02\n\x10\x43yberarkPAMStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:m\xfa\xf8\xb3\x07h\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07^\xc2\xf4\xb3\x07\x12\n\x03\x63li\x12\x0b\x63yberarkPAM\xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0b\x63yberarkPAM\xc2\xf4\xb3\x07\"\n\x12terraform-provider\x12\x0c\x63yberark_pam\"\xd8\x02\n\x1c\x43yberarkPAMExperimentalStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12?\n\x06\x61ppURL\x18\x03 \x01(\tB/\xf2\xf8\xb3\x07*\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1b\xc2\xf4\xb3\x07\x16\n\x0cjson_gateway\x12\x06\x61ppUrl\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x99\x01\xfa\xf8\xb3\x07\x93\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x88\x01\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x1e\n\x03\x63li\x12\x17\x63yberarkPAMExperimental\xc2\xf4\xb3\x07\'\n\x0cjson_gateway\x12\x17\x63yberarkPAMExperimental\xc2\xf4\xb3\x07/\n\x12terraform-provider\x12\x19\x63yberark_pam_experimental\"\xb3\x02\n\x0c\x44\x65lineaStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x41\n\nserver_url\x18\x03 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tserverUrl\x12\x43\n\x0btenant_name\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ntenantName\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:>\xfa\xf8\xb3\x07\x39\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07/\xc2\xf4\xb3\x07\x0e\n\x03\x63li\x12\x07\x64\x65linea\xc2\xf4\xb3\x07\x17\n\x0cjson_gateway\x12\x07\x64\x65linea\"\xe6\x01\n\x08GCPStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x45\n\tprojectID\x18\x03 \x01(\tB2\xf2\xf8\xb3\x07-\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tprojectId\x12$\n\x04tags\x18\x83\x80\x02 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:6\xfa\xf8\xb3\x07\x31\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\'\xc2\xf4\xb3\x07\n\n\x03\x63li\x12\x03gcp\xc2\xf4\xb3\x07\x13\n\x0cjson_gateway\x12\x03gcp\"\xf2\x02\n\x11VaultAppRoleStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:p\xfa\xf8\xb3\x07k\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x61\xc2\xf4\xb3\x07\x13\n\x03\x63li\x12\x0cvaultAppRole\xc2\xf4\xb3\x07\x1c\n\x0cjson_gateway\x12\x0cvaultAppRole\xc2\xf4\xb3\x07#\n\x12terraform-provider\x12\rvault_approle\"\xb4\x04\n\x18VaultAppRoleCertSSHStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\x07 \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12O\n\x0fssh_mount_point\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rsshMountPoint\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x8d\x01\xfa\xf8\xb3\x07\x87\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07}\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x1a\n\x03\x63li\x12\x13vaultAppRoleCertSSH\xc2\xf4\xb3\x07#\n\x0cjson_gateway\x12\x13vaultAppRoleCertSSH\xc2\xf4\xb3\x07,\n\x12terraform-provider\x12\x16vault_approle_cert_ssh\"\xb9\x04\n\x19VaultAppRoleCertX509Store\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12O\n\x0fpki_mount_point\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rpkiMountPoint\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\x07 \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12\"\n\x04tags\x18\x08 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x91\x01\xfa\xf8\xb3\x07\x8b\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x80\x01\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x1b\n\x03\x63li\x12\x14vaultAppRoleCertX509\xc2\xf4\xb3\x07$\n\x0cjson_gateway\x12\x14vaultAppRoleCertX509\xc2\xf4\xb3\x07-\n\x12terraform-provider\x12\x17vault_approle_cert_x509\"\xcc\x04\n\rVaultTLSStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\x12Q\n\x10\x63lient_cert_path\x18\x05 \x01(\tB7\xf2\xf8\xb3\x07\x32\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\x12O\n\x0f\x63lient_key_path\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\x12@\n\tnamespace\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:d\xfa\xf8\xb3\x07_\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07U\xc2\xf4\xb3\x07\x0f\n\x03\x63li\x12\x08vaultTLS\xc2\xf4\xb3\x07\x18\n\x0cjson_gateway\x12\x08vaultTLS\xc2\xf4\xb3\x07\x1f\n\x12terraform-provider\x12\tvault_tls\"\x8d\x06\n\x14VaultTLSCertSSHStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\x12Q\n\x10\x63lient_cert_path\x18\x05 \x01(\tB7\xf2\xf8\xb3\x07\x32\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\x12O\n\x0f\x63lient_key_path\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\x12@\n\tnamespace\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\n \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12O\n\x0fssh_mount_point\x18\t \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rsshMountPoint\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x80\x01\xfa\xf8\xb3\x07{\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07q\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x16\n\x03\x63li\x12\x0fvaultTLSCertSSH\xc2\xf4\xb3\x07\x1f\n\x0cjson_gateway\x12\x0fvaultTLSCertSSH\xc2\xf4\xb3\x07(\n\x12terraform-provider\x12\x12vault_tls_cert_ssh\"\x91\x06\n\x15VaultTLSCertX509Store\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x44\n\x0c\x43\x41_cert_path\x18\x04 \x01(\tB.\xf2\xf8\xb3\x07)\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1f\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\ncaCertPath\x12Q\n\x10\x63lient_cert_path\x18\x05 \x01(\tB7\xf2\xf8\xb3\x07\x32\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x0cjson_gateway\x12\x0e\x63lientCertPath\x12O\n\x0f\x63lient_key_path\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rclientKeyPath\x12@\n\tnamespace\x18\x08 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12O\n\x0fpki_mount_point\x18\t \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rpkiMountPoint\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\n \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12\"\n\x04tags\x18\x07 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x83\x01\xfa\xf8\xb3\x07~\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07t\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x17\n\x03\x63li\x12\x10vaultTLSCertX509\xc2\xf4\xb3\x07 \n\x0cjson_gateway\x12\x10vaultTLSCertX509\xc2\xf4\xb3\x07)\n\x12terraform-provider\x12\x13vault_tls_cert_x509\"\xea\x02\n\x0fVaultTokenStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:j\xfa\xf8\xb3\x07\x65\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07[\xc2\xf4\xb3\x07\x11\n\x03\x63li\x12\nvaultToken\xc2\xf4\xb3\x07\x1a\n\x0cjson_gateway\x12\nvaultToken\xc2\xf4\xb3\x07!\n\x12terraform-provider\x12\x0bvault_token\"\xac\x04\n\x16VaultTokenCertSSHStore\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\x07 \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12O\n\x0fssh_mount_point\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rsshMountPoint\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x87\x01\xfa\xf8\xb3\x07\x81\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07w\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x18\n\x03\x63li\x12\x11vaultTokenCertSSH\xc2\xf4\xb3\x07!\n\x0cjson_gateway\x12\x11vaultTokenCertSSH\xc2\xf4\xb3\x07*\n\x12terraform-provider\x12\x14vault_token_cert_ssh\"\xb0\x04\n\x17VaultTokenCertX509Store\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12@\n\tnamespace\x18\x05 \x01(\tB-\xf2\xf8\xb3\x07(\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x1e\xc2\xf4\xb3\x07\x19\n\x0cjson_gateway\x12\tnamespace\x12O\n\x0fpki_mount_point\x18\x06 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rpkiMountPoint\x12N\n\x0eserver_address\x18\x03 \x01(\tB6\xf2\xf8\xb3\x07\x31\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07\"\xc2\xf4\xb3\x07\x1d\n\x0cjson_gateway\x12\rserverAddress\x12J\n\x0csigning_role\x18\x07 \x01(\tB4\xf2\xf8\xb3\x07/\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07 \xc2\xf4\xb3\x07\x1b\n\x0cjson_gateway\x12\x0bsigningRole\x12\"\n\x04tags\x18\x04 \x01(\x0b\x32\x08.v1.TagsB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x8a\x01\xfa\xf8\xb3\x07\x84\x01\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07z\x88\xf4\xb3\x07\x01\xc2\xf4\xb3\x07\x19\n\x03\x63li\x12\x12vaultTokenCertX509\xc2\xf4\xb3\x07\"\n\x0cjson_gateway\x12\x12vaultTokenCertX509\xc2\xf4\xb3\x07+\n\x12terraform-provider\x12\x15vault_token_cert_x509Bm\n\x19\x63om.strongdm.api.plumbingB\x19SecretStoresTypesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -43,8 +43,14 @@ _CYBERARKPAMEXPERIMENTALSTORE = DESCRIPTOR.message_types_by_name['CyberarkPAMExp
 _DELINEASTORE = DESCRIPTOR.message_types_by_name['DelineaStore']
 _GCPSTORE = DESCRIPTOR.message_types_by_name['GCPStore']
 _VAULTAPPROLESTORE = DESCRIPTOR.message_types_by_name['VaultAppRoleStore']
+_VAULTAPPROLECERTSSHSTORE = DESCRIPTOR.message_types_by_name['VaultAppRoleCertSSHStore']
+_VAULTAPPROLECERTX509STORE = DESCRIPTOR.message_types_by_name['VaultAppRoleCertX509Store']
 _VAULTTLSSTORE = DESCRIPTOR.message_types_by_name['VaultTLSStore']
+_VAULTTLSCERTSSHSTORE = DESCRIPTOR.message_types_by_name['VaultTLSCertSSHStore']
+_VAULTTLSCERTX509STORE = DESCRIPTOR.message_types_by_name['VaultTLSCertX509Store']
 _VAULTTOKENSTORE = DESCRIPTOR.message_types_by_name['VaultTokenStore']
+_VAULTTOKENCERTSSHSTORE = DESCRIPTOR.message_types_by_name['VaultTokenCertSSHStore']
+_VAULTTOKENCERTX509STORE = DESCRIPTOR.message_types_by_name['VaultTokenCertX509Store']
 SecretStore = _reflection.GeneratedProtocolMessageType('SecretStore', (_message.Message,), {
   'DESCRIPTOR' : _SECRETSTORE,
   '__module__' : 'secret_store_types_pb2'
@@ -108,6 +114,20 @@ VaultAppRoleStore = _reflection.GeneratedProtocolMessageType('VaultAppRoleStore'
   })
 _sym_db.RegisterMessage(VaultAppRoleStore)
 
+VaultAppRoleCertSSHStore = _reflection.GeneratedProtocolMessageType('VaultAppRoleCertSSHStore', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTAPPROLECERTSSHSTORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultAppRoleCertSSHStore)
+  })
+_sym_db.RegisterMessage(VaultAppRoleCertSSHStore)
+
+VaultAppRoleCertX509Store = _reflection.GeneratedProtocolMessageType('VaultAppRoleCertX509Store', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTAPPROLECERTX509STORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultAppRoleCertX509Store)
+  })
+_sym_db.RegisterMessage(VaultAppRoleCertX509Store)
+
 VaultTLSStore = _reflection.GeneratedProtocolMessageType('VaultTLSStore', (_message.Message,), {
   'DESCRIPTOR' : _VAULTTLSSTORE,
   '__module__' : 'secret_store_types_pb2'
@@ -115,12 +135,40 @@ VaultTLSStore = _reflection.GeneratedProtocolMessageType('VaultTLSStore', (_mess
   })
 _sym_db.RegisterMessage(VaultTLSStore)
 
+VaultTLSCertSSHStore = _reflection.GeneratedProtocolMessageType('VaultTLSCertSSHStore', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTLSCERTSSHSTORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTLSCertSSHStore)
+  })
+_sym_db.RegisterMessage(VaultTLSCertSSHStore)
+
+VaultTLSCertX509Store = _reflection.GeneratedProtocolMessageType('VaultTLSCertX509Store', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTLSCERTX509STORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTLSCertX509Store)
+  })
+_sym_db.RegisterMessage(VaultTLSCertX509Store)
+
 VaultTokenStore = _reflection.GeneratedProtocolMessageType('VaultTokenStore', (_message.Message,), {
   'DESCRIPTOR' : _VAULTTOKENSTORE,
   '__module__' : 'secret_store_types_pb2'
   # @@protoc_insertion_point(class_scope:v1.VaultTokenStore)
   })
 _sym_db.RegisterMessage(VaultTokenStore)
+
+VaultTokenCertSSHStore = _reflection.GeneratedProtocolMessageType('VaultTokenCertSSHStore', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTOKENCERTSSHSTORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTokenCertSSHStore)
+  })
+_sym_db.RegisterMessage(VaultTokenCertSSHStore)
+
+VaultTokenCertX509Store = _reflection.GeneratedProtocolMessageType('VaultTokenCertX509Store', (_message.Message,), {
+  'DESCRIPTOR' : _VAULTTOKENCERTX509STORE,
+  '__module__' : 'secret_store_types_pb2'
+  # @@protoc_insertion_point(class_scope:v1.VaultTokenCertX509Store)
+  })
+_sym_db.RegisterMessage(VaultTokenCertX509Store)
 
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -144,10 +192,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SECRETSTORE.fields_by_name['gcp']._serialized_options = b'\362\370\263\007\035\312\363\263\007\030\302\364\263\007\023\n\014json_gateway\022\003gcp'
   _SECRETSTORE.fields_by_name['vault_app_role']._options = None
   _SECRETSTORE.fields_by_name['vault_app_role']._serialized_options = b'\362\370\263\007&\312\363\263\007!\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole'
+  _SECRETSTORE.fields_by_name['vault_app_role_cert_ssh']._options = None
+  _SECRETSTORE.fields_by_name['vault_app_role_cert_ssh']._serialized_options = b'\362\370\263\007-\312\363\263\007(\302\364\263\007#\n\014json_gateway\022\023vaultAppRoleCertSSH'
+  _SECRETSTORE.fields_by_name['vault_app_role_cert_x_509']._options = None
+  _SECRETSTORE.fields_by_name['vault_app_role_cert_x_509']._serialized_options = b'\362\370\263\007.\312\363\263\007)\302\364\263\007$\n\014json_gateway\022\024vaultAppRoleCertX509'
   _SECRETSTORE.fields_by_name['vault_tls']._options = None
   _SECRETSTORE.fields_by_name['vault_tls']._serialized_options = b'\362\370\263\007\"\312\363\263\007\035\302\364\263\007\030\n\014json_gateway\022\010vaultTLS'
+  _SECRETSTORE.fields_by_name['vault_tls_cert_ssh']._options = None
+  _SECRETSTORE.fields_by_name['vault_tls_cert_ssh']._serialized_options = b'\362\370\263\007)\312\363\263\007$\302\364\263\007\037\n\014json_gateway\022\017vaultTLSCertSSH'
+  _SECRETSTORE.fields_by_name['vault_tls_cert_x_509']._options = None
+  _SECRETSTORE.fields_by_name['vault_tls_cert_x_509']._serialized_options = b'\362\370\263\007*\312\363\263\007%\302\364\263\007 \n\014json_gateway\022\020vaultTLSCertX509'
   _SECRETSTORE.fields_by_name['vault_token']._options = None
   _SECRETSTORE.fields_by_name['vault_token']._serialized_options = b'\362\370\263\007$\312\363\263\007\037\302\364\263\007\032\n\014json_gateway\022\nvaultToken'
+  _SECRETSTORE.fields_by_name['vault_token_cert_ssh']._options = None
+  _SECRETSTORE.fields_by_name['vault_token_cert_ssh']._serialized_options = b'\362\370\263\007+\312\363\263\007&\302\364\263\007!\n\014json_gateway\022\021vaultTokenCertSSH'
+  _SECRETSTORE.fields_by_name['vault_token_cert_x_509']._options = None
+  _SECRETSTORE.fields_by_name['vault_token_cert_x_509']._serialized_options = b'\362\370\263\007,\312\363\263\007\'\302\364\263\007\"\n\014json_gateway\022\022vaultTokenCertX509'
   _SECRETSTORE._options = None
   _SECRETSTORE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _AWSSTORE.fields_by_name['id']._options = None
@@ -234,6 +294,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _VAULTAPPROLESTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _VAULTAPPROLESTORE._options = None
   _VAULTAPPROLESTORE._serialized_options = b'\372\370\263\007k\250\363\263\007\001\312\363\263\007a\302\364\263\007\023\n\003cli\022\014vaultAppRole\302\364\263\007\034\n\014json_gateway\022\014vaultAppRole\302\364\263\007#\n\022terraform-provider\022\rvault_approle'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['id']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['name']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['namespace']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['server_address']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['signing_role']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['ssh_mount_point']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['ssh_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rsshMountPoint'
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['tags']._options = None
+  _VAULTAPPROLECERTSSHSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLECERTSSHSTORE._options = None
+  _VAULTAPPROLECERTSSHSTORE._serialized_options = b'\372\370\263\007\207\001\250\363\263\007\001\312\363\263\007}\210\364\263\007\001\302\364\263\007\032\n\003cli\022\023vaultAppRoleCertSSH\302\364\263\007#\n\014json_gateway\022\023vaultAppRoleCertSSH\302\364\263\007,\n\022terraform-provider\022\026vault_approle_cert_ssh'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['id']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['name']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['namespace']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['pki_mount_point']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['pki_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rpkiMountPoint'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['server_address']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['signing_role']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTAPPROLECERTX509STORE.fields_by_name['tags']._options = None
+  _VAULTAPPROLECERTX509STORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTAPPROLECERTX509STORE._options = None
+  _VAULTAPPROLECERTX509STORE._serialized_options = b'\372\370\263\007\213\001\250\363\263\007\001\312\363\263\007\200\001\210\364\263\007\001\302\364\263\007\033\n\003cli\022\024vaultAppRoleCertX509\302\364\263\007$\n\014json_gateway\022\024vaultAppRoleCertX509\302\364\263\007-\n\022terraform-provider\022\027vault_approle_cert_x509'
   _VAULTTLSSTORE.fields_by_name['id']._options = None
   _VAULTTLSSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _VAULTTLSSTORE.fields_by_name['name']._options = None
@@ -252,6 +344,50 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _VAULTTLSSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _VAULTTLSSTORE._options = None
   _VAULTTLSSTORE._serialized_options = b'\372\370\263\007_\250\363\263\007\001\312\363\263\007U\302\364\263\007\017\n\003cli\022\010vaultTLS\302\364\263\007\030\n\014json_gateway\022\010vaultTLS\302\364\263\007\037\n\022terraform-provider\022\tvault_tls'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['id']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['name']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['CA_cert_path']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['CA_cert_path']._serialized_options = b'\362\370\263\007)\260\363\263\007\001\312\363\263\007\037\302\364\263\007\032\n\014json_gateway\022\ncaCertPath'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['client_cert_path']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['client_cert_path']._serialized_options = b'\362\370\263\0072\260\363\263\007\001\300\363\263\007\001\312\363\263\007#\302\364\263\007\036\n\014json_gateway\022\016clientCertPath'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['client_key_path']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['client_key_path']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rclientKeyPath'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['namespace']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['server_address']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['signing_role']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['ssh_mount_point']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['ssh_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rsshMountPoint'
+  _VAULTTLSCERTSSHSTORE.fields_by_name['tags']._options = None
+  _VAULTTLSCERTSSHSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSCERTSSHSTORE._options = None
+  _VAULTTLSCERTSSHSTORE._serialized_options = b'\372\370\263\007{\250\363\263\007\001\312\363\263\007q\210\364\263\007\001\302\364\263\007\026\n\003cli\022\017vaultTLSCertSSH\302\364\263\007\037\n\014json_gateway\022\017vaultTLSCertSSH\302\364\263\007(\n\022terraform-provider\022\022vault_tls_cert_ssh'
+  _VAULTTLSCERTX509STORE.fields_by_name['id']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSCERTX509STORE.fields_by_name['name']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTLSCERTX509STORE.fields_by_name['CA_cert_path']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['CA_cert_path']._serialized_options = b'\362\370\263\007)\260\363\263\007\001\312\363\263\007\037\302\364\263\007\032\n\014json_gateway\022\ncaCertPath'
+  _VAULTTLSCERTX509STORE.fields_by_name['client_cert_path']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['client_cert_path']._serialized_options = b'\362\370\263\0072\260\363\263\007\001\300\363\263\007\001\312\363\263\007#\302\364\263\007\036\n\014json_gateway\022\016clientCertPath'
+  _VAULTTLSCERTX509STORE.fields_by_name['client_key_path']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['client_key_path']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rclientKeyPath'
+  _VAULTTLSCERTX509STORE.fields_by_name['namespace']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTTLSCERTX509STORE.fields_by_name['pki_mount_point']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['pki_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rpkiMountPoint'
+  _VAULTTLSCERTX509STORE.fields_by_name['server_address']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTTLSCERTX509STORE.fields_by_name['signing_role']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTTLSCERTX509STORE.fields_by_name['tags']._options = None
+  _VAULTTLSCERTX509STORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTLSCERTX509STORE._options = None
+  _VAULTTLSCERTX509STORE._serialized_options = b'\372\370\263\007~\250\363\263\007\001\312\363\263\007t\210\364\263\007\001\302\364\263\007\027\n\003cli\022\020vaultTLSCertX509\302\364\263\007 \n\014json_gateway\022\020vaultTLSCertX509\302\364\263\007)\n\022terraform-provider\022\023vault_tls_cert_x509'
   _VAULTTOKENSTORE.fields_by_name['id']._options = None
   _VAULTTOKENSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _VAULTTOKENSTORE.fields_by_name['name']._options = None
@@ -264,26 +400,70 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _VAULTTOKENSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _VAULTTOKENSTORE._options = None
   _VAULTTOKENSTORE._serialized_options = b'\372\370\263\007e\250\363\263\007\001\312\363\263\007[\302\364\263\007\021\n\003cli\022\nvaultToken\302\364\263\007\032\n\014json_gateway\022\nvaultToken\302\364\263\007!\n\022terraform-provider\022\013vault_token'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['id']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['name']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['namespace']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['server_address']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['signing_role']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['ssh_mount_point']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['ssh_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rsshMountPoint'
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['tags']._options = None
+  _VAULTTOKENCERTSSHSTORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENCERTSSHSTORE._options = None
+  _VAULTTOKENCERTSSHSTORE._serialized_options = b'\372\370\263\007\201\001\250\363\263\007\001\312\363\263\007w\210\364\263\007\001\302\364\263\007\030\n\003cli\022\021vaultTokenCertSSH\302\364\263\007!\n\014json_gateway\022\021vaultTokenCertSSH\302\364\263\007*\n\022terraform-provider\022\024vault_token_cert_ssh'
+  _VAULTTOKENCERTX509STORE.fields_by_name['id']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENCERTX509STORE.fields_by_name['name']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
+  _VAULTTOKENCERTX509STORE.fields_by_name['namespace']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['namespace']._serialized_options = b'\362\370\263\007(\260\363\263\007\001\312\363\263\007\036\302\364\263\007\031\n\014json_gateway\022\tnamespace'
+  _VAULTTOKENCERTX509STORE.fields_by_name['pki_mount_point']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['pki_mount_point']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rpkiMountPoint'
+  _VAULTTOKENCERTX509STORE.fields_by_name['server_address']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['server_address']._serialized_options = b'\362\370\263\0071\260\363\263\007\001\300\363\263\007\001\312\363\263\007\"\302\364\263\007\035\n\014json_gateway\022\rserverAddress'
+  _VAULTTOKENCERTX509STORE.fields_by_name['signing_role']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['signing_role']._serialized_options = b'\362\370\263\007/\260\363\263\007\001\300\363\263\007\001\312\363\263\007 \302\364\263\007\033\n\014json_gateway\022\013signingRole'
+  _VAULTTOKENCERTX509STORE.fields_by_name['tags']._options = None
+  _VAULTTOKENCERTX509STORE.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _VAULTTOKENCERTX509STORE._options = None
+  _VAULTTOKENCERTX509STORE._serialized_options = b'\372\370\263\007\204\001\250\363\263\007\001\312\363\263\007z\210\364\263\007\001\302\364\263\007\031\n\003cli\022\022vaultTokenCertX509\302\364\263\007\"\n\014json_gateway\022\022vaultTokenCertX509\302\364\263\007+\n\022terraform-provider\022\025vault_token_cert_x509'
   _SECRETSTORE._serialized_start=60
-  _SECRETSTORE._serialized_end=992
-  _AWSSTORE._serialized_start=995
-  _AWSSTORE._serialized_end=1247
-  _AZURESTORE._serialized_start=1250
-  _AZURESTORE._serialized_end=1485
-  _CYBERARKCONJURSTORE._serialized_start=1488
-  _CYBERARKCONJURSTORE._serialized_end=1787
-  _CYBERARKPAMSTORE._serialized_start=1790
-  _CYBERARKPAMSTORE._serialized_end=2077
-  _CYBERARKPAMEXPERIMENTALSTORE._serialized_start=2080
-  _CYBERARKPAMEXPERIMENTALSTORE._serialized_end=2424
-  _DELINEASTORE._serialized_start=2427
-  _DELINEASTORE._serialized_end=2734
-  _GCPSTORE._serialized_start=2737
-  _GCPSTORE._serialized_end=2967
-  _VAULTAPPROLESTORE._serialized_start=2970
-  _VAULTAPPROLESTORE._serialized_end=3340
-  _VAULTTLSSTORE._serialized_start=3343
-  _VAULTTLSSTORE._serialized_end=3931
-  _VAULTTOKENSTORE._serialized_start=3934
-  _VAULTTOKENSTORE._serialized_end=4296
+  _SECRETSTORE._serialized_end=1666
+  _AWSSTORE._serialized_start=1669
+  _AWSSTORE._serialized_end=1921
+  _AZURESTORE._serialized_start=1924
+  _AZURESTORE._serialized_end=2159
+  _CYBERARKCONJURSTORE._serialized_start=2162
+  _CYBERARKCONJURSTORE._serialized_end=2461
+  _CYBERARKPAMSTORE._serialized_start=2464
+  _CYBERARKPAMSTORE._serialized_end=2751
+  _CYBERARKPAMEXPERIMENTALSTORE._serialized_start=2754
+  _CYBERARKPAMEXPERIMENTALSTORE._serialized_end=3098
+  _DELINEASTORE._serialized_start=3101
+  _DELINEASTORE._serialized_end=3408
+  _GCPSTORE._serialized_start=3411
+  _GCPSTORE._serialized_end=3641
+  _VAULTAPPROLESTORE._serialized_start=3644
+  _VAULTAPPROLESTORE._serialized_end=4014
+  _VAULTAPPROLECERTSSHSTORE._serialized_start=4017
+  _VAULTAPPROLECERTSSHSTORE._serialized_end=4581
+  _VAULTAPPROLECERTX509STORE._serialized_start=4584
+  _VAULTAPPROLECERTX509STORE._serialized_end=5153
+  _VAULTTLSSTORE._serialized_start=5156
+  _VAULTTLSSTORE._serialized_end=5744
+  _VAULTTLSCERTSSHSTORE._serialized_start=5747
+  _VAULTTLSCERTSSHSTORE._serialized_end=6528
+  _VAULTTLSCERTX509STORE._serialized_start=6531
+  _VAULTTLSCERTX509STORE._serialized_end=7316
+  _VAULTTOKENSTORE._serialized_start=7319
+  _VAULTTOKENSTORE._serialized_end=7681
+  _VAULTTOKENCERTSSHSTORE._serialized_start=7684
+  _VAULTTOKENCERTSSHSTORE._serialized_end=8240
+  _VAULTTOKENCERTX509STORE._serialized_start=8243
+  _VAULTTOKENCERTX509STORE._serialized_end=8803
 # @@protoc_insertion_point(module_scope)

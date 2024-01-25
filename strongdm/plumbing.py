@@ -8749,12 +8749,30 @@ def convert_secret_store_to_plumbing(porcelain):
     if isinstance(porcelain, models.VaultAppRoleStore):
         plumbing.vault_app_role.CopyFrom(
             convert_vault_app_role_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultAppRoleCertSSHStore):
+        plumbing.vault_app_role_cert_ssh.CopyFrom(
+            convert_vault_app_role_cert_ssh_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultAppRoleCertX509Store):
+        plumbing.vault_app_role_cert_x_509.CopyFrom(
+            convert_vault_app_role_cert_x_509_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultTLSStore):
         plumbing.vault_tls.CopyFrom(
             convert_vault_tls_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultTLSCertSSHStore):
+        plumbing.vault_tls_cert_ssh.CopyFrom(
+            convert_vault_tls_cert_ssh_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultTLSCertX509Store):
+        plumbing.vault_tls_cert_x_509.CopyFrom(
+            convert_vault_tls_cert_x_509_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultTokenStore):
         plumbing.vault_token.CopyFrom(
             convert_vault_token_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultTokenCertSSHStore):
+        plumbing.vault_token_cert_ssh.CopyFrom(
+            convert_vault_token_cert_ssh_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.VaultTokenCertX509Store):
+        plumbing.vault_token_cert_x_509.CopyFrom(
+            convert_vault_token_cert_x_509_store_to_plumbing(porcelain))
     return plumbing
 
 
@@ -8780,10 +8798,28 @@ def convert_secret_store_to_porcelain(plumbing):
     if plumbing.HasField('vault_app_role'):
         return convert_vault_app_role_store_to_porcelain(
             plumbing.vault_app_role)
+    if plumbing.HasField('vault_app_role_cert_ssh'):
+        return convert_vault_app_role_cert_ssh_store_to_porcelain(
+            plumbing.vault_app_role_cert_ssh)
+    if plumbing.HasField('vault_app_role_cert_x_509'):
+        return convert_vault_app_role_cert_x_509_store_to_porcelain(
+            plumbing.vault_app_role_cert_x_509)
     if plumbing.HasField('vault_tls'):
         return convert_vault_tls_store_to_porcelain(plumbing.vault_tls)
+    if plumbing.HasField('vault_tls_cert_ssh'):
+        return convert_vault_tls_cert_ssh_store_to_porcelain(
+            plumbing.vault_tls_cert_ssh)
+    if plumbing.HasField('vault_tls_cert_x_509'):
+        return convert_vault_tls_cert_x_509_store_to_porcelain(
+            plumbing.vault_tls_cert_x_509)
     if plumbing.HasField('vault_token'):
         return convert_vault_token_store_to_porcelain(plumbing.vault_token)
+    if plumbing.HasField('vault_token_cert_ssh'):
+        return convert_vault_token_cert_ssh_store_to_porcelain(
+            plumbing.vault_token_cert_ssh)
+    if plumbing.HasField('vault_token_cert_x_509'):
+        return convert_vault_token_cert_x_509_store_to_porcelain(
+            plumbing.vault_token_cert_x_509)
     raise errors.UnknownError(
         "unknown polymorphic type, please upgrade your SDK")
 
@@ -9599,6 +9635,90 @@ def convert_repeated_user_to_porcelain(plumbings):
     return [convert_user_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_vault_app_role_cert_ssh_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultAppRoleCertSSHStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.ssh_mount_point = (plumbing.ssh_mount_point)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_app_role_cert_ssh_store_to_plumbing(porcelain):
+    plumbing = VaultAppRoleCertSSHStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.ssh_mount_point = (porcelain.ssh_mount_point)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_app_role_cert_ssh_store_to_plumbing(porcelains):
+    return [
+        convert_vault_app_role_cert_ssh_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_app_role_cert_ssh_store_to_porcelain(plumbings):
+    return [
+        convert_vault_app_role_cert_ssh_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_app_role_cert_x_509_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultAppRoleCertX509Store()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.pki_mount_point = (plumbing.pki_mount_point)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_app_role_cert_x_509_store_to_plumbing(porcelain):
+    plumbing = VaultAppRoleCertX509Store()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.pki_mount_point = (porcelain.pki_mount_point)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_app_role_cert_x_509_store_to_plumbing(porcelains):
+    return [
+        convert_vault_app_role_cert_x_509_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_app_role_cert_x_509_store_to_porcelain(plumbings):
+    return [
+        convert_vault_app_role_cert_x_509_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_vault_app_role_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -9633,6 +9753,102 @@ def convert_repeated_vault_app_role_store_to_plumbing(porcelains):
 def convert_repeated_vault_app_role_store_to_porcelain(plumbings):
     return [
         convert_vault_app_role_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_tls_cert_ssh_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTLSCertSSHStore()
+    porcelain.ca_cert_path = (plumbing.CA_cert_path)
+    porcelain.client_cert_path = (plumbing.client_cert_path)
+    porcelain.client_key_path = (plumbing.client_key_path)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.ssh_mount_point = (plumbing.ssh_mount_point)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_tls_cert_ssh_store_to_plumbing(porcelain):
+    plumbing = VaultTLSCertSSHStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.CA_cert_path = (porcelain.ca_cert_path)
+    plumbing.client_cert_path = (porcelain.client_cert_path)
+    plumbing.client_key_path = (porcelain.client_key_path)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.ssh_mount_point = (porcelain.ssh_mount_point)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_tls_cert_ssh_store_to_plumbing(porcelains):
+    return [
+        convert_vault_tls_cert_ssh_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_tls_cert_ssh_store_to_porcelain(plumbings):
+    return [
+        convert_vault_tls_cert_ssh_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_tls_cert_x_509_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTLSCertX509Store()
+    porcelain.ca_cert_path = (plumbing.CA_cert_path)
+    porcelain.client_cert_path = (plumbing.client_cert_path)
+    porcelain.client_key_path = (plumbing.client_key_path)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.pki_mount_point = (plumbing.pki_mount_point)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_tls_cert_x_509_store_to_plumbing(porcelain):
+    plumbing = VaultTLSCertX509Store()
+    if porcelain is None:
+        return plumbing
+    plumbing.CA_cert_path = (porcelain.ca_cert_path)
+    plumbing.client_cert_path = (porcelain.client_cert_path)
+    plumbing.client_key_path = (porcelain.client_key_path)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.pki_mount_point = (porcelain.pki_mount_point)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_tls_cert_x_509_store_to_plumbing(porcelains):
+    return [
+        convert_vault_tls_cert_x_509_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_tls_cert_x_509_store_to_porcelain(plumbings):
+    return [
+        convert_vault_tls_cert_x_509_store_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -9677,6 +9893,90 @@ def convert_repeated_vault_tls_store_to_plumbing(porcelains):
 def convert_repeated_vault_tls_store_to_porcelain(plumbings):
     return [
         convert_vault_tls_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_token_cert_ssh_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTokenCertSSHStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.ssh_mount_point = (plumbing.ssh_mount_point)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_token_cert_ssh_store_to_plumbing(porcelain):
+    plumbing = VaultTokenCertSSHStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.ssh_mount_point = (porcelain.ssh_mount_point)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_token_cert_ssh_store_to_plumbing(porcelains):
+    return [
+        convert_vault_token_cert_ssh_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_token_cert_ssh_store_to_porcelain(plumbings):
+    return [
+        convert_vault_token_cert_ssh_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_vault_token_cert_x_509_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.VaultTokenCertX509Store()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.namespace = (plumbing.namespace)
+    porcelain.pki_mount_point = (plumbing.pki_mount_point)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.signing_role = (plumbing.signing_role)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_vault_token_cert_x_509_store_to_plumbing(porcelain):
+    plumbing = VaultTokenCertX509Store()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.namespace = (porcelain.namespace)
+    plumbing.pki_mount_point = (porcelain.pki_mount_point)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.signing_role = (porcelain.signing_role)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_vault_token_cert_x_509_store_to_plumbing(porcelains):
+    return [
+        convert_vault_token_cert_x_509_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_vault_token_cert_x_509_store_to_porcelain(plumbings):
+    return [
+        convert_vault_token_cert_x_509_store_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

@@ -3603,8 +3603,14 @@ class SecretStores:
     `strongdm.models.DelineaStore`
     `strongdm.models.GCPStore`
     `strongdm.models.VaultAppRoleStore`
+    `strongdm.models.VaultAppRoleCertSSHStore`
+    `strongdm.models.VaultAppRoleCertX509Store`
     `strongdm.models.VaultTLSStore`
+    `strongdm.models.VaultTLSCertSSHStore`
+    `strongdm.models.VaultTLSCertX509Store`
     `strongdm.models.VaultTokenStore`
+    `strongdm.models.VaultTokenCertSSHStore`
+    `strongdm.models.VaultTokenCertX509Store`
     '''
     def __init__(self, channel, client):
         self.parent = client
