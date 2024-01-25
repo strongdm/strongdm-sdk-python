@@ -92,6 +92,8 @@ from .roles_pb2 import *
 from .roles_pb2_grpc import *
 from .roles_history_pb2 import *
 from .roles_history_pb2_grpc import *
+from .secret_store_healths_pb2 import *
+from .secret_store_healths_pb2_grpc import *
 from .secret_store_types_pb2 import *
 from .secret_store_types_pb2_grpc import *
 from .secret_stores_pb2 import *
@@ -3508,6 +3510,85 @@ class RolesHistory:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class SecretStoreHealths:
+    '''
+     SecretStoreHealths exposes health states for secret stores.
+    See `strongdm.models.SecretStoreHealth`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = SecretStoreHealthsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List reports the health status of node to secret store pairs.
+        '''
+        req = SecretStoreHealthListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'SecretStoreHealths.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.secret_store_healths:
+                    yield plumbing.convert_secret_store_health_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+    def healthcheck(self, secret_store_id, timeout=None):
+        '''
+         Healthcheck triggers a remote healthcheck request for a secret store. It may take minutes
+         to propagate across a large network of Nodes. The call will return immediately, and the
+         updated health of the Secret Store can be retrieved via List.
+        '''
+        req = SecretStoreHealthcheckRequest()
+
+        req.secret_store_id = (secret_store_id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Healthcheck(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'SecretStoreHealths.Healthcheck', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretStoreHealthcheckResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
 
 
 class SecretStores:

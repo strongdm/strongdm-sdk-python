@@ -78,6 +78,8 @@ strongdm/roles_history_pb2.py
 strongdm/roles_history_pb2_grpc.py
 strongdm/roles_pb2.py
 strongdm/roles_pb2_grpc.py
+strongdm/secret_store_healths_pb2.py
+strongdm/secret_store_healths_pb2_grpc.py
 strongdm/secret_store_types_pb2.py
 strongdm/secret_store_types_pb2_grpc.py
 strongdm/secret_stores_history_pb2.py

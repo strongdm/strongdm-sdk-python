@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/6.2.1'
+USER_AGENT = 'strongdm-sdk-python/6.3.0'
 
 
 class Client:
@@ -286,6 +286,12 @@ class Client:
          RolesHistory records all changes to the state of a Role.
 
         See `strongdm.svc.RolesHistory`.
+        '''
+        self.secret_store_healths = svc.SecretStoreHealths(channel, self)
+        '''
+         SecretStoreHealths exposes health states for secret stores.
+
+        See `strongdm.svc.SecretStoreHealths`.
         '''
         self.secret_stores = svc.SecretStores(channel, self)
         '''

@@ -18266,6 +18266,163 @@ class SecretStoreGetResponse:
         )
 
 
+class SecretStoreHealth:
+    '''
+         SecretStoreHealth denotes a secret store's health status. Note a secret store is not
+     healthy in terms of a simple boolean, but rather healthy with respect to a particular node
+     or set of nodes.
+    '''
+    __slots__ = [
+        'changed_at',
+        'checked_at',
+        'error',
+        'flags',
+        'node_id',
+        'reachability',
+        'secret_store_id',
+        'status',
+    ]
+
+    def __init__(
+        self,
+        changed_at=None,
+        checked_at=None,
+        error=None,
+        flags=None,
+        node_id=None,
+        reachability=None,
+        secret_store_id=None,
+        status=None,
+    ):
+        self.changed_at = changed_at if changed_at is not None else None
+        '''
+         The time when the status last changed
+        '''
+        self.checked_at = checked_at if checked_at is not None else None
+        '''
+         The time when the status was last checked by the node
+        '''
+        self.error = error if error is not None else ''
+        '''
+         The error associated with this health check, if it occurred after reachability checks succeeded.
+        '''
+        self.flags = flags if flags is not None else []
+        '''
+         Any specific status or error flags associated with this health check.
+        '''
+        self.node_id = node_id if node_id is not None else ''
+        '''
+         Associated node id for this health
+        '''
+        self.reachability = reachability if reachability is not None else ''
+        '''
+         The error associated with this health check, if it occurred during reachability checks.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Associated secret store for this health
+        '''
+        self.status = status if status is not None else ''
+        '''
+         The status of the link between the node and secret store
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretStoreHealth ' + \
+            'changed_at: ' + repr(self.changed_at) + ' ' +\
+            'checked_at: ' + repr(self.checked_at) + ' ' +\
+            'error: ' + repr(self.error) + ' ' +\
+            'flags: ' + repr(self.flags) + ' ' +\
+            'node_id: ' + repr(self.node_id) + ' ' +\
+            'reachability: ' + repr(self.reachability) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'status: ' + repr(self.status) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'changed_at': self.changed_at,
+            'checked_at': self.checked_at,
+            'error': self.error,
+            'flags': self.flags,
+            'node_id': self.node_id,
+            'reachability': self.reachability,
+            'secret_store_id': self.secret_store_id,
+            'status': self.status,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            changed_at=d.get('changed_at'),
+            checked_at=d.get('checked_at'),
+            error=d.get('error'),
+            flags=d.get('flags'),
+            node_id=d.get('node_id'),
+            reachability=d.get('reachability'),
+            secret_store_id=d.get('secret_store_id'),
+            status=d.get('status'),
+        )
+
+
+class SecretStoreHealthListResponse:
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretStoreHealthListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class SecretStoreHealthcheckResponse:
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretStoreHealthcheckResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class SecretStoreHistory:
     '''
          SecretStoreHistory records the state of a SecretStore at a given point in time,
