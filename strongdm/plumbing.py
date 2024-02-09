@@ -6573,6 +6573,60 @@ def convert_repeated_rdp_to_porcelain(plumbings):
     return [convert_rdp_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_rdp_cert_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RDPCert()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
+    porcelain.remote_identity_healthcheck_username = (
+        plumbing.remote_identity_healthcheck_username)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_rdp_cert_to_plumbing(porcelain):
+    plumbing = RDPCert()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
+    plumbing.remote_identity_healthcheck_username = (
+        porcelain.remote_identity_healthcheck_username)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_rdp_cert_to_plumbing(porcelains):
+    return [
+        convert_rdp_cert_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_rdp_cert_to_porcelain(plumbings):
+    return [convert_rdp_cert_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_rds_postgres_iam_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -7547,6 +7601,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.raw_tcp.CopyFrom(convert_raw_tcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.RDP):
         plumbing.rdp.CopyFrom(convert_rdp_to_plumbing(porcelain))
+    if isinstance(porcelain, models.RDPCert):
+        plumbing.rdp_cert.CopyFrom(convert_rdp_cert_to_plumbing(porcelain))
     if isinstance(porcelain, models.RDSPostgresIAM):
         plumbing.rds_postgres_iam.CopyFrom(
             convert_rds_postgres_iam_to_plumbing(porcelain))
@@ -7747,6 +7803,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_raw_tcp_to_porcelain(plumbing.raw_tcp)
     if plumbing.HasField('rdp'):
         return convert_rdp_to_porcelain(plumbing.rdp)
+    if plumbing.HasField('rdp_cert'):
+        return convert_rdp_cert_to_porcelain(plumbing.rdp_cert)
     if plumbing.HasField('rds_postgres_iam'):
         return convert_rds_postgres_iam_to_porcelain(plumbing.rds_postgres_iam)
     if plumbing.HasField('redis'):

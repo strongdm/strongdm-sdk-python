@@ -2824,6 +2824,7 @@ class Resources:
     `strongdm.models.RabbitMQAMQP091`
     `strongdm.models.RawTCP`
     `strongdm.models.RDP`
+    `strongdm.models.RDPCert`
     `strongdm.models.RDSPostgresIAM`
     `strongdm.models.Redis`
     `strongdm.models.Redshift`
