@@ -8185,6 +8185,95 @@ class GCP:
         )
 
 
+class GCPCertX509Store:
+    '''
+    GCPCertX509Store is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'caid',
+        'capoolid',
+        'id',
+        'location',
+        'name',
+        'projectid',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        caid=None,
+        capoolid=None,
+        id=None,
+        location=None,
+        name=None,
+        projectid=None,
+        tags=None,
+    ):
+        self.caid = caid if caid is not None else ''
+        '''
+         The ID of the target CA
+        '''
+        self.capoolid = capoolid if capoolid is not None else ''
+        '''
+         The ID of the target CA pool
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.location = location if location is not None else ''
+        '''
+         The Region for the CA in GCP format e.g. us-west1
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.projectid = projectid if projectid is not None else ''
+        '''
+         The GCP project ID to target.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GCPCertX509Store ' + \
+            'caid: ' + repr(self.caid) + ' ' +\
+            'capoolid: ' + repr(self.capoolid) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'location: ' + repr(self.location) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'projectid: ' + repr(self.projectid) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'caid': self.caid,
+            'capoolid': self.capoolid,
+            'id': self.id,
+            'location': self.location,
+            'name': self.name,
+            'projectid': self.projectid,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            caid=d.get('caid'),
+            capoolid=d.get('capoolid'),
+            id=d.get('id'),
+            location=d.get('location'),
+            name=d.get('name'),
+            projectid=d.get('projectid'),
+            tags=d.get('tags'),
+        )
+
+
 class GCPStore:
     __slots__ = [
         'id',

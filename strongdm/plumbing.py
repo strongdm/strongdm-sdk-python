@@ -3778,6 +3778,48 @@ def convert_repeated_gcp_to_porcelain(plumbings):
     return [convert_gcp_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_gcp_cert_x_509_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GCPCertX509Store()
+    porcelain.caid = (plumbing.caID)
+    porcelain.capoolid = (plumbing.caPoolID)
+    porcelain.id = (plumbing.id)
+    porcelain.location = (plumbing.location)
+    porcelain.name = (plumbing.name)
+    porcelain.projectid = (plumbing.projectID)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_gcp_cert_x_509_store_to_plumbing(porcelain):
+    plumbing = GCPCertX509Store()
+    if porcelain is None:
+        return plumbing
+    plumbing.caID = (porcelain.caid)
+    plumbing.caPoolID = (porcelain.capoolid)
+    plumbing.id = (porcelain.id)
+    plumbing.location = (porcelain.location)
+    plumbing.name = (porcelain.name)
+    plumbing.projectID = (porcelain.projectid)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_gcp_cert_x_509_store_to_plumbing(porcelains):
+    return [
+        convert_gcp_cert_x_509_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_gcp_cert_x_509_store_to_porcelain(plumbings):
+    return [
+        convert_gcp_cert_x_509_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_gcp_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -8804,6 +8846,9 @@ def convert_secret_store_to_plumbing(porcelain):
         plumbing.delinea.CopyFrom(convert_delinea_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPStore):
         plumbing.gcp.CopyFrom(convert_gcp_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GCPCertX509Store):
+        plumbing.gcp_cert_x_509.CopyFrom(
+            convert_gcp_cert_x_509_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultAppRoleStore):
         plumbing.vault_app_role.CopyFrom(
             convert_vault_app_role_store_to_plumbing(porcelain))
@@ -8853,6 +8898,9 @@ def convert_secret_store_to_porcelain(plumbing):
         return convert_delinea_store_to_porcelain(plumbing.delinea)
     if plumbing.HasField('gcp'):
         return convert_gcp_store_to_porcelain(plumbing.gcp)
+    if plumbing.HasField('gcp_cert_x_509'):
+        return convert_gcp_cert_x_509_store_to_porcelain(
+            plumbing.gcp_cert_x_509)
     if plumbing.HasField('vault_app_role'):
         return convert_vault_app_role_store_to_porcelain(
             plumbing.vault_app_role)
