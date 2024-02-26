@@ -10131,6 +10131,7 @@ def convert_workflow_to_porcelain(plumbing):
     porcelain = models.Workflow()
     porcelain.access_rules = convert_access_rules_to_porcelain(
         plumbing.access_rules)
+    porcelain.approval_flow_id = (plumbing.approval_flow_id)
     porcelain.auto_grant = (plumbing.auto_grant)
     porcelain.description = (plumbing.description)
     porcelain.enabled = (plumbing.enabled)
@@ -10146,6 +10147,7 @@ def convert_workflow_to_plumbing(porcelain):
         return plumbing
     plumbing.access_rules = convert_access_rules_to_plumbing(
         porcelain.access_rules)
+    plumbing.approval_flow_id = (porcelain.approval_flow_id)
     plumbing.auto_grant = (porcelain.auto_grant)
     plumbing.description = (porcelain.description)
     plumbing.enabled = (porcelain.enabled)

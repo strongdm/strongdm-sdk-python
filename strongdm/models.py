@@ -20839,6 +20839,7 @@ class Workflow:
     '''
     __slots__ = [
         'access_rules',
+        'approval_flow_id',
         'auto_grant',
         'description',
         'enabled',
@@ -20850,6 +20851,7 @@ class Workflow:
     def __init__(
         self,
         access_rules=None,
+        approval_flow_id=None,
         auto_grant=None,
         description=None,
         enabled=None,
@@ -20861,6 +20863,10 @@ class Workflow:
         )
         '''
          AccessRules is a list of access rules defining the resources this Workflow provides access to.
+        '''
+        self.approval_flow_id = approval_flow_id if approval_flow_id is not None else ''
+        '''
+         Optional approval flow ID identifies an approval flow that linked to the workflow
         '''
         self.auto_grant = auto_grant if auto_grant is not None else False
         '''
@@ -20894,6 +20900,7 @@ class Workflow:
     def __repr__(self):
         return '<sdm.Workflow ' + \
             'access_rules: ' + repr(self.access_rules) + ' ' +\
+            'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
             'auto_grant: ' + repr(self.auto_grant) + ' ' +\
             'description: ' + repr(self.description) + ' ' +\
             'enabled: ' + repr(self.enabled) + ' ' +\
@@ -20905,6 +20912,7 @@ class Workflow:
     def to_dict(self):
         return {
             'access_rules': self.access_rules,
+            'approval_flow_id': self.approval_flow_id,
             'auto_grant': self.auto_grant,
             'description': self.description,
             'enabled': self.enabled,
@@ -20917,6 +20925,7 @@ class Workflow:
     def from_dict(cls, d):
         return cls(
             access_rules=d.get('access_rules'),
+            approval_flow_id=d.get('approval_flow_id'),
             auto_grant=d.get('auto_grant'),
             description=d.get('description'),
             enabled=d.get('enabled'),
