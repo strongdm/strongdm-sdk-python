@@ -483,6 +483,50 @@ def convert_repeated_aws_to_porcelain(plumbings):
     return [convert_aws_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_aws_cert_x_509_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSCertX509Store()
+    porcelain.caarn = (plumbing.caArn)
+    porcelain.certificatetemplatearn = (plumbing.certificateTemplateArn)
+    porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
+    porcelain.name = (plumbing.name)
+    porcelain.region = (plumbing.region)
+    porcelain.signingalgo = (plumbing.signingAlgo)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_aws_cert_x_509_store_to_plumbing(porcelain):
+    plumbing = AWSCertX509Store()
+    if porcelain is None:
+        return plumbing
+    plumbing.caArn = (porcelain.caarn)
+    plumbing.certificateTemplateArn = (porcelain.certificatetemplatearn)
+    plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
+    plumbing.name = (porcelain.name)
+    plumbing.region = (porcelain.region)
+    plumbing.signingAlgo = (porcelain.signingalgo)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_aws_cert_x_509_store_to_plumbing(porcelains):
+    return [
+        convert_aws_cert_x_509_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_cert_x_509_store_to_porcelain(plumbings):
+    return [
+        convert_aws_cert_x_509_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_aws_console_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -8831,6 +8875,9 @@ def convert_secret_store_to_plumbing(porcelain):
         return plumbing
     if isinstance(porcelain, models.AWSStore):
         plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AWSCertX509Store):
+        plumbing.aws_cert_x_509.CopyFrom(
+            convert_aws_cert_x_509_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureStore):
         plumbing.azure.CopyFrom(convert_azure_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.CyberarkConjurStore):
@@ -8884,6 +8931,9 @@ def convert_secret_store_to_porcelain(plumbing):
         return None
     if plumbing.HasField('aws'):
         return convert_aws_store_to_porcelain(plumbing.aws)
+    if plumbing.HasField('aws_cert_x_509'):
+        return convert_aws_cert_x_509_store_to_porcelain(
+            plumbing.aws_cert_x_509)
     if plumbing.HasField('azure'):
         return convert_azure_store_to_porcelain(plumbing.azure)
     if plumbing.HasField('cyberark_conjur'):

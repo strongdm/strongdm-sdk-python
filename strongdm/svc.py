@@ -3597,6 +3597,7 @@ class SecretStores:
      SecretStores are servers where resource secrets (passwords, keys) are stored.
     See:
     `strongdm.models.AWSStore`
+    `strongdm.models.AWSCertX509Store`
     `strongdm.models.AzureStore`
     `strongdm.models.CyberarkConjurStore`
     `strongdm.models.CyberarkPAMStore`

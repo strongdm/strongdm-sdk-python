@@ -946,6 +946,104 @@ class AWS:
         )
 
 
+class AWSCertX509Store:
+    '''
+    AWSCertX509Store is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'caarn',
+        'certificatetemplatearn',
+        'id',
+        'issuedcertttlminutes',
+        'name',
+        'region',
+        'signingalgo',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        caarn=None,
+        certificatetemplatearn=None,
+        id=None,
+        issuedcertttlminutes=None,
+        name=None,
+        region=None,
+        signingalgo=None,
+        tags=None,
+    ):
+        self.caarn = caarn if caarn is not None else ''
+        '''
+         The ARN of the CA in AWS Private CA
+        '''
+        self.certificatetemplatearn = certificatetemplatearn if certificatetemplatearn is not None else ''
+        '''
+         The ARN of the AWS certificate template for requested certificates. Must allow SAN, key usage, and ext key usage passthrough from CSR
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else ''
+        '''
+         The lifetime of certificates issued by this CA represented in minutes e.g. 600 (for 10 hours). Defaults to 8 hours if not provided.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to target e.g. us-east-1
+        '''
+        self.signingalgo = signingalgo if signingalgo is not None else ''
+        '''
+         The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key. e.g. SHA256WITHRSA
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AWSCertX509Store ' + \
+            'caarn: ' + repr(self.caarn) + ' ' +\
+            'certificatetemplatearn: ' + repr(self.certificatetemplatearn) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'signingalgo: ' + repr(self.signingalgo) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'caarn': self.caarn,
+            'certificatetemplatearn': self.certificatetemplatearn,
+            'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
+            'name': self.name,
+            'region': self.region,
+            'signingalgo': self.signingalgo,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            caarn=d.get('caarn'),
+            certificatetemplatearn=d.get('certificatetemplatearn'),
+            id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
+            name=d.get('name'),
+            region=d.get('region'),
+            signingalgo=d.get('signingalgo'),
+            tags=d.get('tags'),
+        )
+
+
 class AWSConsole:
     __slots__ = [
         'bind_interface',
