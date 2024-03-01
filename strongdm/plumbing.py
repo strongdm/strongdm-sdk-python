@@ -6487,6 +6487,7 @@ def convert_query_to_porcelain(plumbing):
     porcelain.account_last_name = (plumbing.account_last_name)
     porcelain.account_tags = convert_tags_to_porcelain(plumbing.account_tags)
     porcelain.capture = convert_query_capture_to_porcelain(plumbing.capture)
+    porcelain.client_ip = (plumbing.client_ip)
     porcelain.completed_at = convert_timestamp_to_porcelain(
         plumbing.completed_at)
     porcelain.duration = convert_duration_to_porcelain(plumbing.duration)
@@ -6521,6 +6522,7 @@ def convert_query_to_plumbing(porcelain):
         convert_tags_to_plumbing(porcelain.account_tags))
     plumbing.capture.CopyFrom(
         convert_query_capture_to_plumbing(porcelain.capture))
+    plumbing.client_ip = (porcelain.client_ip)
     plumbing.completed_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.completed_at))
     plumbing.duration.CopyFrom(convert_duration_to_plumbing(

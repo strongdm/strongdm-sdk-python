@@ -14310,6 +14310,7 @@ class Query:
         'account_last_name',
         'account_tags',
         'capture',
+        'client_ip',
         'completed_at',
         'duration',
         'egress_node_id',
@@ -14338,6 +14339,7 @@ class Query:
         account_last_name=None,
         account_tags=None,
         capture=None,
+        client_ip=None,
         completed_at=None,
         duration=None,
         egress_node_id=None,
@@ -14386,6 +14388,10 @@ class Query:
         '''
          For queries against SSH, Kubernetes, and RDP resources, this contains additional information
          about the captured query.
+        '''
+        self.client_ip = client_ip if client_ip is not None else ''
+        '''
+         The IP address the Query was performed from, as detected at the StrongDM control plane.
         '''
         self.completed_at = completed_at if completed_at is not None else None
         '''
@@ -14476,6 +14482,7 @@ class Query:
             'account_last_name: ' + repr(self.account_last_name) + ' ' +\
             'account_tags: ' + repr(self.account_tags) + ' ' +\
             'capture: ' + repr(self.capture) + ' ' +\
+            'client_ip: ' + repr(self.client_ip) + ' ' +\
             'completed_at: ' + repr(self.completed_at) + ' ' +\
             'duration: ' + repr(self.duration) + ' ' +\
             'egress_node_id: ' + repr(self.egress_node_id) + ' ' +\
@@ -14504,6 +14511,7 @@ class Query:
             'account_last_name': self.account_last_name,
             'account_tags': self.account_tags,
             'capture': self.capture,
+            'client_ip': self.client_ip,
             'completed_at': self.completed_at,
             'duration': self.duration,
             'egress_node_id': self.egress_node_id,
@@ -14533,6 +14541,7 @@ class Query:
             account_last_name=d.get('account_last_name'),
             account_tags=d.get('account_tags'),
             capture=d.get('capture'),
+            client_ip=d.get('client_ip'),
             completed_at=d.get('completed_at'),
             duration=d.get('duration'),
             egress_node_id=d.get('egress_node_id'),
