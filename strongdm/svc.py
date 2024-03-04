@@ -50,6 +50,18 @@ from .accounts_history_pb2 import *
 from .accounts_history_pb2_grpc import *
 from .activities_pb2 import *
 from .activities_pb2_grpc import *
+from .approval_workflow_approvers_pb2 import *
+from .approval_workflow_approvers_pb2_grpc import *
+from .approval_workflow_approvers_history_pb2 import *
+from .approval_workflow_approvers_history_pb2_grpc import *
+from .approval_workflow_steps_pb2 import *
+from .approval_workflow_steps_pb2_grpc import *
+from .approval_workflow_steps_history_pb2 import *
+from .approval_workflow_steps_history_pb2_grpc import *
+from .approval_workflows_pb2 import *
+from .approval_workflows_pb2_grpc import *
+from .approval_workflows_history_pb2 import *
+from .approval_workflows_history_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *
@@ -1239,6 +1251,696 @@ class Activities:
                 tries = 0
                 for plumbing_item in plumbing_response.activities:
                     yield plumbing.convert_activity_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class ApprovalWorkflowApprovers:
+    '''
+     ApprovalWorkflowApprovers link approval workflow approvers to an ApprovalWorkflowStep
+    See `strongdm.models.ApprovalWorkflowApprover`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowApproversStub(channel)
+
+    def create(self, approval_workflow_approver, timeout=None):
+        '''
+         Create creates a new approval workflow approver.
+        '''
+        req = ApprovalWorkflowApproverCreateRequest()
+
+        if approval_workflow_approver is not None:
+            req.approval_workflow_approver.CopyFrom(
+                plumbing.convert_approval_workflow_approver_to_plumbing(
+                    approval_workflow_approver))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowApprovers.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowApproverCreateResponse()
+        resp.approval_workflow_approver = plumbing.convert_approval_workflow_approver_to_porcelain(
+            plumbing_response.approval_workflow_approver)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow approver by ID.
+        '''
+        req = ApprovalWorkflowApproverGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowApprovers.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowApproverGetResponse()
+        resp.approval_workflow_approver = plumbing.convert_approval_workflow_approver_to_porcelain(
+            plumbing_response.approval_workflow_approver)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes an existing approval workflow approver.
+        '''
+        req = ApprovalWorkflowApproverDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowApprovers.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowApproverDeleteResponse()
+        resp.id = (plumbing_response.id)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflow approvers.
+        '''
+        req = ApprovalWorkflowApproverListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflowApprovers.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.approval_workflow_approvers:
+                    yield plumbing.convert_approval_workflow_approver_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotApprovalWorkflowApprovers:
+    '''
+    SnapshotApprovalWorkflowApprovers exposes the read only methods of the ApprovalWorkflowApprovers
+    service for historical queries.
+    '''
+    def __init__(self, approval_workflow_approvers):
+        self.approval_workflow_approvers = approval_workflow_approvers
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow approver by ID.
+        '''
+        return self.approval_workflow_approvers.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflow approvers.
+        '''
+        return self.approval_workflow_approvers.list(filter,
+                                                     *args,
+                                                     timeout=timeout)
+
+
+class ApprovalWorkflowApproversHistory:
+    '''
+     ApprovalWorkflowApproversHistory records all changes to the state of an ApprovalWorkflowApprover.
+    See `strongdm.models.ApprovalWorkflowApproverHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowApproversHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ApprovalWorkflowApproverHistory records matching a given set of criteria.
+        '''
+        req = ApprovalWorkflowApproverHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflowApproversHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_approval_workflow_approver_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class ApprovalWorkflowSteps:
+    '''
+     ApprovalWorkflowSteps link approval workflow steps to an ApprovalWorkflow
+    See `strongdm.models.ApprovalWorkflowStep`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowStepsStub(channel)
+
+    def create(self, approval_workflow_step, timeout=None):
+        '''
+         Create creates a new approval workflow step.
+        '''
+        req = ApprovalWorkflowStepCreateRequest()
+
+        if approval_workflow_step is not None:
+            req.approval_workflow_step.CopyFrom(
+                plumbing.convert_approval_workflow_step_to_plumbing(
+                    approval_workflow_step))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowSteps.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowStepCreateResponse()
+        resp.approval_workflow_step = plumbing.convert_approval_workflow_step_to_porcelain(
+            plumbing_response.approval_workflow_step)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow step by ID.
+        '''
+        req = ApprovalWorkflowStepGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowSteps.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowStepGetResponse()
+        resp.approval_workflow_step = plumbing.convert_approval_workflow_step_to_porcelain(
+            plumbing_response.approval_workflow_step)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes an existing approval workflow step.
+        '''
+        req = ApprovalWorkflowStepDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflowSteps.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowStepDeleteResponse()
+        resp.id = (plumbing_response.id)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflow steps.
+        '''
+        req = ApprovalWorkflowStepListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflowSteps.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.approval_workflow_steps:
+                    yield plumbing.convert_approval_workflow_step_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotApprovalWorkflowSteps:
+    '''
+    SnapshotApprovalWorkflowSteps exposes the read only methods of the ApprovalWorkflowSteps
+    service for historical queries.
+    '''
+    def __init__(self, approval_workflow_steps):
+        self.approval_workflow_steps = approval_workflow_steps
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow step by ID.
+        '''
+        return self.approval_workflow_steps.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflow steps.
+        '''
+        return self.approval_workflow_steps.list(filter,
+                                                 *args,
+                                                 timeout=timeout)
+
+
+class ApprovalWorkflowStepsHistory:
+    '''
+     ApprovalWorkflowStepsHistory records all changes to the state of an ApprovalWorkflowStep.
+    See `strongdm.models.ApprovalWorkflowStepHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowStepsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ApprovalWorkflowStepHistory records matching a given set of criteria.
+        '''
+        req = ApprovalWorkflowStepHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflowStepsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_approval_workflow_step_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class ApprovalWorkflows:
+    '''
+     ApprovalWorkflows are the mechanism by which requests for access can be viewed by authorized
+     approvers and be approved or denied.
+    See `strongdm.models.ApprovalWorkflow`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowsStub(channel)
+
+    def create(self, approval_workflow, timeout=None):
+        '''
+         Create creates a new approval workflow and requires a name and approval mode for the approval workflow.
+        '''
+        req = ApprovalWorkflowCreateRequest()
+
+        if approval_workflow is not None:
+            req.approval_workflow.CopyFrom(
+                plumbing.convert_approval_workflow_to_plumbing(
+                    approval_workflow))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflows.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowCreateResponse()
+        resp.approval_workflow = plumbing.convert_approval_workflow_to_porcelain(
+            plumbing_response.approval_workflow)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow by ID.
+        '''
+        req = ApprovalWorkflowGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('ApprovalWorkflows.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowGetResponse()
+        resp.approval_workflow = plumbing.convert_approval_workflow_to_porcelain(
+            plumbing_response.approval_workflow)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes an existing approval workflow.
+        '''
+        req = ApprovalWorkflowDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflows.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowDeleteResponse()
+        resp.id = (plumbing_response.id)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, approval_workflow, timeout=None):
+        '''
+         Update updates an existing approval workflow.
+        '''
+        req = ApprovalWorkflowUpdateRequest()
+
+        if approval_workflow is not None:
+            req.approval_workflow.CopyFrom(
+                plumbing.convert_approval_workflow_to_plumbing(
+                    approval_workflow))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ApprovalWorkflows.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ApprovalWorkflowUpdateResponse()
+        resp.approval_workflow = plumbing.convert_approval_workflow_to_porcelain(
+            plumbing_response.approval_workflow)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflows.
+        '''
+        req = ApprovalWorkflowListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflows.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.approval_workflows:
+                    yield plumbing.convert_approval_workflow_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotApprovalWorkflows:
+    '''
+    SnapshotApprovalWorkflows exposes the read only methods of the ApprovalWorkflows
+    service for historical queries.
+    '''
+    def __init__(self, approval_workflows):
+        self.approval_workflows = approval_workflows
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one approval workflow by ID.
+        '''
+        return self.approval_workflows.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         Lists existing approval workflows.
+        '''
+        return self.approval_workflows.list(filter, *args, timeout=timeout)
+
+
+class ApprovalWorkflowsHistory:
+    '''
+     ApprovalWorkflowsHistory records all changes to the state of an ApprovalWorkflow.
+    See `strongdm.models.ApprovalWorkflowHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ApprovalWorkflowsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ApprovalWorkflowHistory records matching a given set of criteria.
+        '''
+        req = ApprovalWorkflowHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ApprovalWorkflowsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_approval_workflow_history_to_porcelain(
+                        plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
                 req.meta.cursor = plumbing_response.meta.next_cursor

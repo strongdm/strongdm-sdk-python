@@ -32,7 +32,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2021-08-23'
-USER_AGENT = 'strongdm-sdk-python/6.8.0'
+USER_AGENT = 'strongdm-sdk-python/6.9.0'
 
 
 class Client:
@@ -154,6 +154,47 @@ class Client:
          service is read-only.
 
         See `strongdm.svc.Activities`.
+        '''
+        self.approval_workflow_approvers = svc.ApprovalWorkflowApprovers(
+            channel, self)
+        '''
+         ApprovalWorkflowApprovers link approval workflow approvers to an ApprovalWorkflowStep
+
+        See `strongdm.svc.ApprovalWorkflowApprovers`.
+        '''
+        self.approval_workflow_approvers_history = svc.ApprovalWorkflowApproversHistory(
+            channel, self)
+        '''
+         ApprovalWorkflowApproversHistory records all changes to the state of an ApprovalWorkflowApprover.
+
+        See `strongdm.svc.ApprovalWorkflowApproversHistory`.
+        '''
+        self.approval_workflow_steps = svc.ApprovalWorkflowSteps(channel, self)
+        '''
+         ApprovalWorkflowSteps link approval workflow steps to an ApprovalWorkflow
+
+        See `strongdm.svc.ApprovalWorkflowSteps`.
+        '''
+        self.approval_workflow_steps_history = svc.ApprovalWorkflowStepsHistory(
+            channel, self)
+        '''
+         ApprovalWorkflowStepsHistory records all changes to the state of an ApprovalWorkflowStep.
+
+        See `strongdm.svc.ApprovalWorkflowStepsHistory`.
+        '''
+        self.approval_workflows = svc.ApprovalWorkflows(channel, self)
+        '''
+         ApprovalWorkflows are the mechanism by which requests for access can be viewed by authorized
+         approvers and be approved or denied.
+
+        See `strongdm.svc.ApprovalWorkflows`.
+        '''
+        self.approval_workflows_history = svc.ApprovalWorkflowsHistory(
+            channel, self)
+        '''
+         ApprovalWorkflowsHistory records all changes to the state of an ApprovalWorkflow.
+
+        See `strongdm.svc.ApprovalWorkflowsHistory`.
         '''
         self.control_panel = svc.ControlPanel(channel, self)
         '''
@@ -440,6 +481,12 @@ class Client:
             client.channel, client)
         client.account_resources = svc.AccountResources(client.channel, client)
         client.accounts = svc.Accounts(client.channel, client)
+        client.approval_workflow_approvers = svc.ApprovalWorkflowApprovers(
+            client.channel, client)
+        client.approval_workflow_steps = svc.ApprovalWorkflowSteps(
+            client.channel, client)
+        client.approval_workflows = svc.ApprovalWorkflows(
+            client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
@@ -503,6 +550,28 @@ class SnapshotClient:
          2. **Service Accounts:** machines that are authenticated using a service token.
 
         See `strongdm.svc.SnapshotAccounts`.
+        '''
+        self.approval_workflow_approvers = svc.SnapshotApprovalWorkflowApprovers(
+            client.approval_workflow_approvers)
+        '''
+         ApprovalWorkflowApprovers link approval workflow approvers to an ApprovalWorkflowStep
+
+        See `strongdm.svc.SnapshotApprovalWorkflowApprovers`.
+        '''
+        self.approval_workflow_steps = svc.SnapshotApprovalWorkflowSteps(
+            client.approval_workflow_steps)
+        '''
+         ApprovalWorkflowSteps link approval workflow steps to an ApprovalWorkflow
+
+        See `strongdm.svc.SnapshotApprovalWorkflowSteps`.
+        '''
+        self.approval_workflows = svc.SnapshotApprovalWorkflows(
+            client.approval_workflows)
+        '''
+         ApprovalWorkflows are the mechanism by which requests for access can be viewed by authorized
+         approvers and be approved or denied.
+
+        See `strongdm.svc.SnapshotApprovalWorkflows`.
         '''
         self.nodes = svc.SnapshotNodes(client.nodes)
         '''

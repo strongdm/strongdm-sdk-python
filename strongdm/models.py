@@ -4357,6 +4357,930 @@ class AmazonMQAMQP091:
         )
 
 
+class ApprovalWorkflow:
+    '''
+         ApprovalWorkflows are the mechanism by which requests for access can be viewed by authorized
+     approvers and be approved or denied.
+    '''
+    __slots__ = [
+        'approval_mode',
+        'description',
+        'id',
+        'name',
+    ]
+
+    def __init__(
+        self,
+        approval_mode=None,
+        description=None,
+        id=None,
+        name=None,
+    ):
+        self.approval_mode = approval_mode if approval_mode is not None else ''
+        '''
+         Approval mode of the ApprovalWorkflow
+        '''
+        self.description = description if description is not None else ''
+        '''
+         Optional description of the ApprovalWorkflow.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the ApprovalWorkflow.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the ApprovalWorkflow.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflow ' + \
+            'approval_mode: ' + repr(self.approval_mode) + ' ' +\
+            'description: ' + repr(self.description) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_mode': self.approval_mode,
+            'description': self.description,
+            'id': self.id,
+            'name': self.name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_mode=d.get('approval_mode'),
+            description=d.get('description'),
+            id=d.get('id'),
+            name=d.get('name'),
+        )
+
+
+class ApprovalWorkflowApprover:
+    '''
+         ApprovalWorkflowApprover links an approval workflow approver to an ApprovalWorkflowStep
+    '''
+    __slots__ = [
+        'account_id',
+        'approval_flow_id',
+        'approval_step_id',
+        'id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        approval_flow_id=None,
+        approval_step_id=None,
+        id=None,
+        role_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The approver account id.
+        '''
+        self.approval_flow_id = approval_flow_id if approval_flow_id is not None else ''
+        '''
+         The approval flow id specified the approval workflow that this approver belongs to
+        '''
+        self.approval_step_id = approval_step_id if approval_step_id is not None else ''
+        '''
+         The approval step id specified the approval flow step that this approver belongs to
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the ApprovalWorkflowApprover.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The approver role id
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApprover ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
+            'approval_step_id: ' + repr(self.approval_step_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'approval_flow_id': self.approval_flow_id,
+            'approval_step_id': self.approval_step_id,
+            'id': self.id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            approval_flow_id=d.get('approval_flow_id'),
+            approval_step_id=d.get('approval_step_id'),
+            id=d.get('id'),
+            role_id=d.get('role_id'),
+        )
+
+
+class ApprovalWorkflowApproverCreateResponse:
+    '''
+         ApprovalWorkflowApproverCreateResponse reports how the ApprovalWorkflowApprover was created in the system.
+    '''
+    __slots__ = [
+        'approval_workflow_approver',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow_approver=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow_approver = approval_workflow_approver if approval_workflow_approver is not None else None
+        '''
+         The created approval workflow approver.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApproverCreateResponse ' + \
+            'approval_workflow_approver: ' + repr(self.approval_workflow_approver) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow_approver': self.approval_workflow_approver,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow_approver=d.get('approval_workflow_approver'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowApproverDeleteResponse:
+    '''
+         ApprovalWorkflowApproverDeleteResponse returns information about an ApprovalWorkflowApprover that was deleted.
+    '''
+    __slots__ = [
+        'id',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        rate_limit=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The deleted approval workflow approver id.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApproverDeleteResponse ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowApproverGetResponse:
+    '''
+         ApprovalWorkflowApproverGetResponse returns a requested ApprovalWorkflowApprover.
+    '''
+    __slots__ = [
+        'approval_workflow_approver',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow_approver=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow_approver = approval_workflow_approver if approval_workflow_approver is not None else None
+        '''
+         The requested ApprovalWorkflowApprover.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApproverGetResponse ' + \
+            'approval_workflow_approver: ' + repr(self.approval_workflow_approver) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow_approver': self.approval_workflow_approver,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow_approver=d.get('approval_workflow_approver'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowApproverHistory:
+    '''
+         ApprovalWorkflowApproverHistory records the state of an ApprovalWorkflowApprover at a given point in time,
+     where every change (create or delete) to an ApprovalWorkflowApprover produces an
+     ApprovalWorkflowApproverHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'approval_workflow_approver',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        approval_workflow_approver=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the ApprovalWorkflowApprover.
+         May be empty for some system-initiated updates.
+        '''
+        self.approval_workflow_approver = approval_workflow_approver if approval_workflow_approver is not None else None
+        '''
+         The complete ApprovalWorkflowApprover state at this time.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this ApprovalWorkflowApprover was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the ApprovalWorkflowApprover state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApproverHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'approval_workflow_approver: ' + repr(self.approval_workflow_approver) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'approval_workflow_approver': self.approval_workflow_approver,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            approval_workflow_approver=d.get('approval_workflow_approver'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class ApprovalWorkflowApproverListResponse:
+    '''
+         ApprovalWorkflowApproverListResponse returns a list of ApprovalWorkflowApprover records that meet
+     the criteria of an ApprovalWorkflowApproverListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowApproverListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ApprovalWorkflowCreateResponse:
+    '''
+         ApprovalWorkflowCreateResponse reports how the ApprovalWorkflow was created in the system.
+    '''
+    __slots__ = [
+        'approval_workflow',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow = approval_workflow if approval_workflow is not None else None
+        '''
+         The created approval workflow.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowCreateResponse ' + \
+            'approval_workflow: ' + repr(self.approval_workflow) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow': self.approval_workflow,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow=d.get('approval_workflow'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowDeleteResponse:
+    '''
+         ApprovalWorkflowDeleteResponse returns information about an ApprovalWorkflow that was deleted.
+    '''
+    __slots__ = [
+        'id',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        rate_limit=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The deleted approval workflow id.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowDeleteResponse ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowGetResponse:
+    '''
+         ApprovalWorkflowGetResponse returns a requested ApprovalWorkflow.
+    '''
+    __slots__ = [
+        'approval_workflow',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow = approval_workflow if approval_workflow is not None else None
+        '''
+         The requested ApprovalWorkflow.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowGetResponse ' + \
+            'approval_workflow: ' + repr(self.approval_workflow) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow': self.approval_workflow,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow=d.get('approval_workflow'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowHistory:
+    '''
+         ApprovalWorkflowHistory records the state of an ApprovalWorkflow at a given point in time,
+     where every change (create, update and delete) to an ApprovalWorkflow produces an
+     ApprovalWorkflowHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'approval_workflow',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        approval_workflow=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the ApprovalWorkflow.
+         May be empty for some system-initiated updates.
+        '''
+        self.approval_workflow = approval_workflow if approval_workflow is not None else None
+        '''
+         The complete ApprovalWorkflow state at this time.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this ApprovalWorkflow was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the ApprovalWorkflow state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'approval_workflow: ' + repr(self.approval_workflow) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'approval_workflow': self.approval_workflow,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            approval_workflow=d.get('approval_workflow'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class ApprovalWorkflowListResponse:
+    '''
+         ApprovalWorkflowListResponse returns a list of ApprovalWorkflow records that meet
+     the criteria of an ApprovalWorkflowListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ApprovalWorkflowStep:
+    '''
+         ApprovalWorkflowStep links an approval workflow step to an ApprovalWorkflow
+    '''
+    __slots__ = [
+        'approval_flow_id',
+        'id',
+    ]
+
+    def __init__(
+        self,
+        approval_flow_id=None,
+        id=None,
+    ):
+        self.approval_flow_id = approval_flow_id if approval_flow_id is not None else ''
+        '''
+         The approval flow id specified the approval workfflow that this step belongs to
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the ApprovalWorkflowStep.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStep ' + \
+            'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_flow_id': self.approval_flow_id,
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_flow_id=d.get('approval_flow_id'),
+            id=d.get('id'),
+        )
+
+
+class ApprovalWorkflowStepCreateResponse:
+    '''
+         ApprovalWorkflowStepCreateResponse reports how the ApprovalWorkflowStep was created in the system.
+    '''
+    __slots__ = [
+        'approval_workflow_step',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow_step=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow_step = approval_workflow_step if approval_workflow_step is not None else None
+        '''
+         The created approval workflow step.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStepCreateResponse ' + \
+            'approval_workflow_step: ' + repr(self.approval_workflow_step) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow_step': self.approval_workflow_step,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow_step=d.get('approval_workflow_step'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowStepDeleteResponse:
+    '''
+         ApprovalWorkflowStepDeleteResponse returns information about an ApprovalWorkflowStep that was deleted.
+    '''
+    __slots__ = [
+        'id',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        rate_limit=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The deleted approval workflow step id.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStepDeleteResponse ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowStepGetResponse:
+    '''
+         ApprovalWorkflowStepGetResponse returns a requested ApprovalWorkflowStep.
+    '''
+    __slots__ = [
+        'approval_workflow_step',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow_step=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow_step = approval_workflow_step if approval_workflow_step is not None else None
+        '''
+         The requested ApprovalWorkflowStep.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStepGetResponse ' + \
+            'approval_workflow_step: ' + repr(self.approval_workflow_step) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow_step': self.approval_workflow_step,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow_step=d.get('approval_workflow_step'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ApprovalWorkflowStepHistory:
+    '''
+         ApprovalWorkflowStepHistory records the state of an ApprovalWorkflowStep at a given point in time,
+     where every change (create or delete) to an ApprovalWorkflowStep produces an
+     ApprovalWorkflowStepHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'approval_workflow_step',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        approval_workflow_step=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the ApprovalWorkflowStep.
+         May be empty for some system-initiated updates.
+        '''
+        self.approval_workflow_step = approval_workflow_step if approval_workflow_step is not None else None
+        '''
+         The complete ApprovalWorkflowStep state at this time.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this ApprovalWorkflowStep was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the ApprovalWorkflowStep state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStepHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'approval_workflow_step: ' + repr(self.approval_workflow_step) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'approval_workflow_step': self.approval_workflow_step,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            approval_workflow_step=d.get('approval_workflow_step'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class ApprovalWorkflowStepListResponse:
+    '''
+         ApprovalWorkflowStepListResponse returns a list of ApprovalWorkflowStep records that meet
+     the criteria of an ApprovalWorkflowStepListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowStepListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ApprovalWorkflowUpdateResponse:
+    '''
+         ApprovalWorkflowUpdateResponse returns the fields of an ApprovalWorkflow after it has been updated by
+     an ApprovalWorkflowUpdateRequest.
+    '''
+    __slots__ = [
+        'approval_workflow',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        approval_workflow=None,
+        rate_limit=None,
+    ):
+        self.approval_workflow = approval_workflow if approval_workflow is not None else None
+        '''
+         The updated approval workflow.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalWorkflowUpdateResponse ' + \
+            'approval_workflow: ' + repr(self.approval_workflow) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approval_workflow': self.approval_workflow,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approval_workflow=d.get('approval_workflow'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class Athena:
     __slots__ = [
         'access_key',
