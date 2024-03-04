@@ -1694,6 +1694,42 @@ def convert_repeated_account_update_response_to_porcelain(plumbings):
     ]
 
 
+def convert_active_directory_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ActiveDirectoryStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_active_directory_store_to_plumbing(porcelain):
+    plumbing = ActiveDirectoryStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_active_directory_store_to_plumbing(porcelains):
+    return [
+        convert_active_directory_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_active_directory_store_to_porcelain(plumbings):
+    return [
+        convert_active_directory_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_activity_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -8875,6 +8911,9 @@ def convert_secret_store_to_plumbing(porcelain):
     plumbing = SecretStore()
     if porcelain is None:
         return plumbing
+    if isinstance(porcelain, models.ActiveDirectoryStore):
+        plumbing.active_directory.CopyFrom(
+            convert_active_directory_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.AWSStore):
         plumbing.aws.CopyFrom(convert_aws_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.AWSCertX509Store):
@@ -8931,6 +8970,9 @@ def convert_secret_store_to_plumbing(porcelain):
 def convert_secret_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
+    if plumbing.HasField('active_directory'):
+        return convert_active_directory_store_to_porcelain(
+            plumbing.active_directory)
     if plumbing.HasField('aws'):
         return convert_aws_store_to_porcelain(plumbing.aws)
     if plumbing.HasField('aws_cert_x_509'):
