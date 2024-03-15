@@ -4569,6 +4569,7 @@ def convert_gcp_cert_x_509_store_to_porcelain(plumbing):
     porcelain.caid = (plumbing.caID)
     porcelain.capoolid = (plumbing.caPoolID)
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.location = (plumbing.location)
     porcelain.name = (plumbing.name)
     porcelain.projectid = (plumbing.projectID)
@@ -4583,6 +4584,7 @@ def convert_gcp_cert_x_509_store_to_plumbing(porcelain):
     plumbing.caID = (porcelain.caid)
     plumbing.caPoolID = (porcelain.capoolid)
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.location = (porcelain.location)
     plumbing.name = (porcelain.name)
     plumbing.projectID = (porcelain.projectid)
@@ -10527,6 +10529,7 @@ def convert_vault_app_role_cert_ssh_store_to_porcelain(plumbing):
         return None
     porcelain = models.VaultAppRoleCertSSHStore()
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.server_address = (plumbing.server_address)
@@ -10541,6 +10544,7 @@ def convert_vault_app_role_cert_ssh_store_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.server_address = (porcelain.server_address)
@@ -10569,6 +10573,7 @@ def convert_vault_app_role_cert_x_509_store_to_porcelain(plumbing):
         return None
     porcelain = models.VaultAppRoleCertX509Store()
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.pki_mount_point = (plumbing.pki_mount_point)
@@ -10583,6 +10588,7 @@ def convert_vault_app_role_cert_x_509_store_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.pki_mount_point = (porcelain.pki_mount_point)
@@ -10652,6 +10658,7 @@ def convert_vault_tls_cert_ssh_store_to_porcelain(plumbing):
     porcelain.client_cert_path = (plumbing.client_cert_path)
     porcelain.client_key_path = (plumbing.client_key_path)
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.server_address = (plumbing.server_address)
@@ -10669,6 +10676,7 @@ def convert_vault_tls_cert_ssh_store_to_plumbing(porcelain):
     plumbing.client_cert_path = (porcelain.client_cert_path)
     plumbing.client_key_path = (porcelain.client_key_path)
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.server_address = (porcelain.server_address)
@@ -10700,6 +10708,7 @@ def convert_vault_tls_cert_x_509_store_to_porcelain(plumbing):
     porcelain.client_cert_path = (plumbing.client_cert_path)
     porcelain.client_key_path = (plumbing.client_key_path)
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.pki_mount_point = (plumbing.pki_mount_point)
@@ -10717,6 +10726,7 @@ def convert_vault_tls_cert_x_509_store_to_plumbing(porcelain):
     plumbing.client_cert_path = (porcelain.client_cert_path)
     plumbing.client_key_path = (porcelain.client_key_path)
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.pki_mount_point = (porcelain.pki_mount_point)
@@ -10789,6 +10799,7 @@ def convert_vault_token_cert_ssh_store_to_porcelain(plumbing):
         return None
     porcelain = models.VaultTokenCertSSHStore()
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.server_address = (plumbing.server_address)
@@ -10803,6 +10814,7 @@ def convert_vault_token_cert_ssh_store_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.server_address = (porcelain.server_address)
@@ -10831,6 +10843,7 @@ def convert_vault_token_cert_x_509_store_to_porcelain(plumbing):
         return None
     porcelain = models.VaultTokenCertX509Store()
     porcelain.id = (plumbing.id)
+    porcelain.issuedcertttlminutes = (plumbing.issuedCertTTLMinutes)
     porcelain.name = (plumbing.name)
     porcelain.namespace = (plumbing.namespace)
     porcelain.pki_mount_point = (plumbing.pki_mount_point)
@@ -10845,6 +10858,7 @@ def convert_vault_token_cert_x_509_store_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
+    plumbing.issuedCertTTLMinutes = (porcelain.issuedcertttlminutes)
     plumbing.name = (porcelain.name)
     plumbing.namespace = (porcelain.namespace)
     plumbing.pki_mount_point = (porcelain.pki_mount_point)

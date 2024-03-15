@@ -947,10 +947,6 @@ class AWS:
 
 
 class AWSCertX509Store:
-    '''
-    AWSCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'caarn',
         'certificatetemplatearn',
@@ -985,9 +981,9 @@ class AWSCertX509Store:
         '''
          Unique identifier of the SecretStore.
         '''
-        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else ''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
         '''
-         The lifetime of certificates issued by this CA represented in minutes e.g. 600 (for 10 hours). Defaults to 8 hours if not provided.
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.name = name if name is not None else ''
         '''
@@ -2941,10 +2937,6 @@ class AccountUpdateResponse:
 
 
 class ActiveDirectoryStore:
-    '''
-    ActiveDirectoryStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'name',
@@ -2969,7 +2961,7 @@ class ActiveDirectoryStore:
         '''
         self.server_address = server_address if server_address is not None else ''
         '''
-         Hostname of server that is hosting NDES (Network Device Enrollment Services). 
+         Hostname of server that is hosting NDES (Network Device Enrollment Services).
          Often this is the same host as Active Directory Certificate Services
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
@@ -9271,14 +9263,11 @@ class GCP:
 
 
 class GCPCertX509Store:
-    '''
-    GCPCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'caid',
         'capoolid',
         'id',
+        'issuedcertttlminutes',
         'location',
         'name',
         'projectid',
@@ -9290,6 +9279,7 @@ class GCPCertX509Store:
         caid=None,
         capoolid=None,
         id=None,
+        issuedcertttlminutes=None,
         location=None,
         name=None,
         projectid=None,
@@ -9306,6 +9296,10 @@ class GCPCertX509Store:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.location = location if location is not None else ''
         '''
@@ -9329,6 +9323,7 @@ class GCPCertX509Store:
             'caid: ' + repr(self.caid) + ' ' +\
             'capoolid: ' + repr(self.capoolid) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'location: ' + repr(self.location) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'projectid: ' + repr(self.projectid) + ' ' +\
@@ -9340,6 +9335,7 @@ class GCPCertX509Store:
             'caid': self.caid,
             'capoolid': self.capoolid,
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'location': self.location,
             'name': self.name,
             'projectid': self.projectid,
@@ -9352,6 +9348,7 @@ class GCPCertX509Store:
             caid=d.get('caid'),
             capoolid=d.get('capoolid'),
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             location=d.get('location'),
             name=d.get('name'),
             projectid=d.get('projectid'),
@@ -21110,12 +21107,9 @@ class User:
 
 
 class VaultAppRoleCertSSHStore:
-    '''
-    VaultAppRoleCertSSHStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'server_address',
@@ -21127,6 +21121,7 @@ class VaultAppRoleCertSSHStore:
     def __init__(
         self,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         server_address=None,
@@ -21137,6 +21132,10 @@ class VaultAppRoleCertSSHStore:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21166,6 +21165,7 @@ class VaultAppRoleCertSSHStore:
     def __repr__(self):
         return '<sdm.VaultAppRoleCertSSHStore ' + \
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'server_address: ' + repr(self.server_address) + ' ' +\
@@ -21177,6 +21177,7 @@ class VaultAppRoleCertSSHStore:
     def to_dict(self):
         return {
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'server_address': self.server_address,
@@ -21189,6 +21190,7 @@ class VaultAppRoleCertSSHStore:
     def from_dict(cls, d):
         return cls(
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             server_address=d.get('server_address'),
@@ -21199,12 +21201,9 @@ class VaultAppRoleCertSSHStore:
 
 
 class VaultAppRoleCertX509Store:
-    '''
-    VaultAppRoleCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'pki_mount_point',
@@ -21216,6 +21215,7 @@ class VaultAppRoleCertX509Store:
     def __init__(
         self,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         pki_mount_point=None,
@@ -21226,6 +21226,10 @@ class VaultAppRoleCertX509Store:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA in minutes. Recommended value is 5.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21255,6 +21259,7 @@ class VaultAppRoleCertX509Store:
     def __repr__(self):
         return '<sdm.VaultAppRoleCertX509Store ' + \
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'pki_mount_point: ' + repr(self.pki_mount_point) + ' ' +\
@@ -21266,6 +21271,7 @@ class VaultAppRoleCertX509Store:
     def to_dict(self):
         return {
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'pki_mount_point': self.pki_mount_point,
@@ -21278,6 +21284,7 @@ class VaultAppRoleCertX509Store:
     def from_dict(cls, d):
         return cls(
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             pki_mount_point=d.get('pki_mount_point'),
@@ -21355,15 +21362,12 @@ class VaultAppRoleStore:
 
 
 class VaultTLSCertSSHStore:
-    '''
-    VaultTLSCertSSHStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'ca_cert_path',
         'client_cert_path',
         'client_key_path',
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'server_address',
@@ -21378,6 +21382,7 @@ class VaultTLSCertSSHStore:
         client_cert_path=None,
         client_key_path=None,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         server_address=None,
@@ -21400,6 +21405,10 @@ class VaultTLSCertSSHStore:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21432,6 +21441,7 @@ class VaultTLSCertSSHStore:
             'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
             'client_key_path: ' + repr(self.client_key_path) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'server_address: ' + repr(self.server_address) + ' ' +\
@@ -21446,6 +21456,7 @@ class VaultTLSCertSSHStore:
             'client_cert_path': self.client_cert_path,
             'client_key_path': self.client_key_path,
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'server_address': self.server_address,
@@ -21461,6 +21472,7 @@ class VaultTLSCertSSHStore:
             client_cert_path=d.get('client_cert_path'),
             client_key_path=d.get('client_key_path'),
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             server_address=d.get('server_address'),
@@ -21471,15 +21483,12 @@ class VaultTLSCertSSHStore:
 
 
 class VaultTLSCertX509Store:
-    '''
-    VaultTLSCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'ca_cert_path',
         'client_cert_path',
         'client_key_path',
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'pki_mount_point',
@@ -21494,6 +21503,7 @@ class VaultTLSCertX509Store:
         client_cert_path=None,
         client_key_path=None,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         pki_mount_point=None,
@@ -21516,6 +21526,10 @@ class VaultTLSCertX509Store:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21548,6 +21562,7 @@ class VaultTLSCertX509Store:
             'client_cert_path: ' + repr(self.client_cert_path) + ' ' +\
             'client_key_path: ' + repr(self.client_key_path) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'pki_mount_point: ' + repr(self.pki_mount_point) + ' ' +\
@@ -21562,6 +21577,7 @@ class VaultTLSCertX509Store:
             'client_cert_path': self.client_cert_path,
             'client_key_path': self.client_key_path,
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'pki_mount_point': self.pki_mount_point,
@@ -21577,6 +21593,7 @@ class VaultTLSCertX509Store:
             client_cert_path=d.get('client_cert_path'),
             client_key_path=d.get('client_key_path'),
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             pki_mount_point=d.get('pki_mount_point'),
@@ -21681,12 +21698,9 @@ class VaultTLSStore:
 
 
 class VaultTokenCertSSHStore:
-    '''
-    VaultTokenCertSSHStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'server_address',
@@ -21698,6 +21712,7 @@ class VaultTokenCertSSHStore:
     def __init__(
         self,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         server_address=None,
@@ -21708,6 +21723,10 @@ class VaultTokenCertSSHStore:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA in minutes. Recommended value is 5.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21737,6 +21756,7 @@ class VaultTokenCertSSHStore:
     def __repr__(self):
         return '<sdm.VaultTokenCertSSHStore ' + \
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'server_address: ' + repr(self.server_address) + ' ' +\
@@ -21748,6 +21768,7 @@ class VaultTokenCertSSHStore:
     def to_dict(self):
         return {
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'server_address': self.server_address,
@@ -21760,6 +21781,7 @@ class VaultTokenCertSSHStore:
     def from_dict(cls, d):
         return cls(
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             server_address=d.get('server_address'),
@@ -21770,12 +21792,9 @@ class VaultTokenCertSSHStore:
 
 
 class VaultTokenCertX509Store:
-    '''
-    VaultTokenCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
+        'issuedcertttlminutes',
         'name',
         'namespace',
         'pki_mount_point',
@@ -21787,6 +21806,7 @@ class VaultTokenCertX509Store:
     def __init__(
         self,
         id=None,
+        issuedcertttlminutes=None,
         name=None,
         namespace=None,
         pki_mount_point=None,
@@ -21797,6 +21817,10 @@ class VaultTokenCertX509Store:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
         '''
         self.name = name if name is not None else ''
         '''
@@ -21826,6 +21850,7 @@ class VaultTokenCertX509Store:
     def __repr__(self):
         return '<sdm.VaultTokenCertX509Store ' + \
             'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'namespace: ' + repr(self.namespace) + ' ' +\
             'pki_mount_point: ' + repr(self.pki_mount_point) + ' ' +\
@@ -21837,6 +21862,7 @@ class VaultTokenCertX509Store:
     def to_dict(self):
         return {
             'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
             'name': self.name,
             'namespace': self.namespace,
             'pki_mount_point': self.pki_mount_point,
@@ -21849,6 +21875,7 @@ class VaultTokenCertX509Store:
     def from_dict(cls, d):
         return cls(
             id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
             name=d.get('name'),
             namespace=d.get('namespace'),
             pki_mount_point=d.get('pki_mount_point'),
