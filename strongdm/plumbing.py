@@ -901,7 +901,6 @@ def convert_access_request_list_request_to_porcelain(plumbing):
         return None
     porcelain = models.AccessRequestListRequest()
     porcelain.filter = (plumbing.filter)
-    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
     return porcelain
 
 
@@ -910,8 +909,6 @@ def convert_access_request_list_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.filter = (porcelain.filter)
-    plumbing.meta.CopyFrom(
-        convert_list_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -933,9 +930,6 @@ def convert_access_request_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AccessRequestListResponse()
-    porcelain.access_requests = convert_repeated_access_request_to_porcelain(
-        plumbing.access_requests)
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -945,11 +939,6 @@ def convert_access_request_list_response_to_plumbing(porcelain):
     plumbing = AccessRequestListResponse()
     if porcelain is None:
         return plumbing
-    del plumbing.access_requests[:]
-    plumbing.access_requests.extend(
-        convert_repeated_access_request_to_plumbing(porcelain.access_requests))
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2353,8 +2342,6 @@ def convert_approval_workflow_approver_create_response_to_porcelain(plumbing):
     porcelain = models.ApprovalWorkflowApproverCreateResponse()
     porcelain.approval_workflow_approver = convert_approval_workflow_approver_to_porcelain(
         plumbing.approval_workflow_approver)
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2367,8 +2354,6 @@ def convert_approval_workflow_approver_create_response_to_plumbing(porcelain):
     plumbing.approval_workflow_approver.CopyFrom(
         convert_approval_workflow_approver_to_plumbing(
             porcelain.approval_workflow_approver))
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2395,8 +2380,6 @@ def convert_approval_workflow_approver_delete_response_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalWorkflowApproverDeleteResponse()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2407,8 +2390,6 @@ def convert_approval_workflow_approver_delete_response_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2519,9 +2500,6 @@ def convert_approval_workflow_approver_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.ApprovalWorkflowApproverListResponse()
-    porcelain.approval_workflow_approvers = convert_repeated_approval_workflow_approver_to_porcelain(
-        plumbing.approval_workflow_approvers)
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2531,12 +2509,6 @@ def convert_approval_workflow_approver_list_response_to_plumbing(porcelain):
     plumbing = ApprovalWorkflowApproverListResponse()
     if porcelain is None:
         return plumbing
-    del plumbing.approval_workflow_approvers[:]
-    plumbing.approval_workflow_approvers.extend(
-        convert_repeated_approval_workflow_approver_to_plumbing(
-            porcelain.approval_workflow_approvers))
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2564,8 +2536,6 @@ def convert_approval_workflow_create_response_to_porcelain(plumbing):
     porcelain = models.ApprovalWorkflowCreateResponse()
     porcelain.approval_workflow = convert_approval_workflow_to_porcelain(
         plumbing.approval_workflow)
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2577,8 +2547,6 @@ def convert_approval_workflow_create_response_to_plumbing(porcelain):
         return plumbing
     plumbing.approval_workflow.CopyFrom(
         convert_approval_workflow_to_plumbing(porcelain.approval_workflow))
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2603,8 +2571,6 @@ def convert_approval_workflow_delete_response_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalWorkflowDeleteResponse()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2615,8 +2581,6 @@ def convert_approval_workflow_delete_response_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2719,9 +2683,6 @@ def convert_approval_workflow_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.ApprovalWorkflowListResponse()
-    porcelain.approval_workflows = convert_repeated_approval_workflow_to_porcelain(
-        plumbing.approval_workflows)
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2731,12 +2692,6 @@ def convert_approval_workflow_list_response_to_plumbing(porcelain):
     plumbing = ApprovalWorkflowListResponse()
     if porcelain is None:
         return plumbing
-    del plumbing.approval_workflows[:]
-    plumbing.approval_workflows.extend(
-        convert_repeated_approval_workflow_to_plumbing(
-            porcelain.approval_workflows))
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2794,8 +2749,6 @@ def convert_approval_workflow_step_create_response_to_porcelain(plumbing):
     porcelain = models.ApprovalWorkflowStepCreateResponse()
     porcelain.approval_workflow_step = convert_approval_workflow_step_to_porcelain(
         plumbing.approval_workflow_step)
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2808,8 +2761,6 @@ def convert_approval_workflow_step_create_response_to_plumbing(porcelain):
     plumbing.approval_workflow_step.CopyFrom(
         convert_approval_workflow_step_to_plumbing(
             porcelain.approval_workflow_step))
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2836,8 +2787,6 @@ def convert_approval_workflow_step_delete_response_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalWorkflowStepDeleteResponse()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2848,8 +2797,6 @@ def convert_approval_workflow_step_delete_response_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -2958,9 +2905,6 @@ def convert_approval_workflow_step_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.ApprovalWorkflowStepListResponse()
-    porcelain.approval_workflow_steps = convert_repeated_approval_workflow_step_to_porcelain(
-        plumbing.approval_workflow_steps)
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -2970,12 +2914,6 @@ def convert_approval_workflow_step_list_response_to_plumbing(porcelain):
     plumbing = ApprovalWorkflowStepListResponse()
     if porcelain is None:
         return plumbing
-    del plumbing.approval_workflow_steps[:]
-    plumbing.approval_workflow_steps.extend(
-        convert_repeated_approval_workflow_step_to_plumbing(
-            porcelain.approval_workflow_steps))
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -3003,8 +2941,6 @@ def convert_approval_workflow_update_response_to_porcelain(plumbing):
     porcelain = models.ApprovalWorkflowUpdateResponse()
     porcelain.approval_workflow = convert_approval_workflow_to_porcelain(
         plumbing.approval_workflow)
-    porcelain.meta = convert_update_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -3016,8 +2952,6 @@ def convert_approval_workflow_update_response_to_plumbing(porcelain):
         return plumbing
     plumbing.approval_workflow.CopyFrom(
         convert_approval_workflow_to_plumbing(porcelain.approval_workflow))
-    plumbing.meta.CopyFrom(
-        convert_update_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -8865,8 +8799,6 @@ def convert_resource_healthcheck_request_to_porcelain(plumbing):
         return None
     porcelain = models.ResourceHealthcheckRequest()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_update_request_metadata_to_porcelain(
-        plumbing.meta)
     return porcelain
 
 
@@ -8875,8 +8807,6 @@ def convert_resource_healthcheck_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_update_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -9972,11 +9902,8 @@ def convert_secret_store_health_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SecretStoreHealthListResponse()
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
-    porcelain.secret_store_healths = convert_repeated_secret_store_health_to_porcelain(
-        plumbing.secret_store_healths)
     return porcelain
 
 
@@ -9984,14 +9911,8 @@ def convert_secret_store_health_list_response_to_plumbing(porcelain):
     plumbing = SecretStoreHealthListResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    del plumbing.secret_store_healths[:]
-    plumbing.secret_store_healths.extend(
-        convert_repeated_secret_store_health_to_plumbing(
-            porcelain.secret_store_healths))
     return plumbing
 
 
@@ -10013,8 +9934,6 @@ def convert_secret_store_healthcheck_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.SecretStoreHealthcheckResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -10024,8 +9943,6 @@ def convert_secret_store_healthcheck_response_to_plumbing(porcelain):
     plumbing = SecretStoreHealthcheckResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -10575,8 +10492,8 @@ def convert_user_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.last_name = (plumbing.last_name)
     porcelain.managed_by = (plumbing.managed_by)
-    porcelain.permission_level = (plumbing.permission_level)
-    porcelain.suspended = (plumbing.suspended)
+    porcelain.permission_level = (plumbing.permission_levelRW)
+    porcelain.suspended = (plumbing.suspendedRO)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
@@ -10591,8 +10508,8 @@ def convert_user_to_plumbing(porcelain):
     plumbing.id = (porcelain.id)
     plumbing.last_name = (porcelain.last_name)
     plumbing.managed_by = (porcelain.managed_by)
-    plumbing.permission_level = (porcelain.permission_level)
-    plumbing.suspended = (porcelain.suspended)
+    plumbing.permission_levelRW = (porcelain.permission_level)
+    plumbing.suspendedRO = (porcelain.suspended)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
@@ -11150,8 +11067,6 @@ def convert_workflow_approvers_create_request_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowApproversCreateRequest()
-    porcelain.meta = convert_create_request_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.workflow_approver = convert_workflow_approver_to_porcelain(
         plumbing.workflow_approver)
     return porcelain
@@ -11161,8 +11076,6 @@ def convert_workflow_approvers_create_request_to_plumbing(porcelain):
     plumbing = WorkflowApproversCreateRequest()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_request_metadata_to_plumbing(porcelain.meta))
     plumbing.workflow_approver.CopyFrom(
         convert_workflow_approver_to_plumbing(porcelain.workflow_approver))
     return plumbing
@@ -11186,8 +11099,6 @@ def convert_workflow_approvers_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowApproversCreateResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     porcelain.workflow_approver = convert_workflow_approver_to_porcelain(
@@ -11199,8 +11110,6 @@ def convert_workflow_approvers_create_response_to_plumbing(porcelain):
     plumbing = WorkflowApproversCreateResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     plumbing.workflow_approver.CopyFrom(
@@ -11229,8 +11138,6 @@ def convert_workflow_approvers_delete_request_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowApproversDeleteRequest()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_request_metadata_to_porcelain(
-        plumbing.meta)
     return porcelain
 
 
@@ -11239,8 +11146,6 @@ def convert_workflow_approvers_delete_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -11262,8 +11167,6 @@ def convert_workflow_approvers_delete_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowApproversDeleteResponse()
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -11273,8 +11176,6 @@ def convert_workflow_approvers_delete_response_to_plumbing(porcelain):
     plumbing = WorkflowApproversDeleteResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -11301,7 +11202,6 @@ def convert_workflow_approvers_list_request_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowApproversListRequest()
     porcelain.filter = (plumbing.filter)
-    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
     return porcelain
 
 
@@ -11310,8 +11210,6 @@ def convert_workflow_approvers_list_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.filter = (porcelain.filter)
-    plumbing.meta.CopyFrom(
-        convert_list_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -11333,11 +11231,8 @@ def convert_workflow_approvers_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowApproversListResponse()
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
-    porcelain.workflow_approvers = convert_repeated_workflow_approver_to_porcelain(
-        plumbing.workflow_approvers)
     return porcelain
 
 
@@ -11345,14 +11240,8 @@ def convert_workflow_approvers_list_response_to_plumbing(porcelain):
     plumbing = WorkflowApproversListResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    del plumbing.workflow_approvers[:]
-    plumbing.workflow_approvers.extend(
-        convert_repeated_workflow_approver_to_plumbing(
-            porcelain.workflow_approvers))
     return plumbing
 
 
@@ -11447,7 +11336,6 @@ def convert_workflow_assignments_list_request_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowAssignmentsListRequest()
     porcelain.filter = (plumbing.filter)
-    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
     return porcelain
 
 
@@ -11456,8 +11344,6 @@ def convert_workflow_assignments_list_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.filter = (porcelain.filter)
-    plumbing.meta.CopyFrom(
-        convert_list_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -11479,11 +11365,8 @@ def convert_workflow_assignments_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowAssignmentsListResponse()
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
-    porcelain.workflow_assignments = convert_repeated_workflow_assignment_to_porcelain(
-        plumbing.workflow_assignments)
     return porcelain
 
 
@@ -11491,14 +11374,8 @@ def convert_workflow_assignments_list_response_to_plumbing(porcelain):
     plumbing = WorkflowAssignmentsListResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    del plumbing.workflow_assignments[:]
-    plumbing.workflow_assignments.extend(
-        convert_repeated_workflow_assignment_to_plumbing(
-            porcelain.workflow_assignments))
     return plumbing
 
 
@@ -11522,8 +11399,6 @@ def convert_workflow_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowCreateResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     porcelain.workflow = convert_workflow_to_porcelain(plumbing.workflow)
@@ -11534,8 +11409,6 @@ def convert_workflow_create_response_to_plumbing(porcelain):
     plumbing = WorkflowCreateResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     plumbing.workflow.CopyFrom(convert_workflow_to_plumbing(
@@ -11562,8 +11435,6 @@ def convert_workflow_delete_response_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowDeleteResponse()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -11574,8 +11445,6 @@ def convert_workflow_delete_response_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -11676,11 +11545,8 @@ def convert_workflow_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowListResponse()
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
-    porcelain.workflows = convert_repeated_workflow_to_porcelain(
-        plumbing.workflows)
     return porcelain
 
 
@@ -11688,13 +11554,8 @@ def convert_workflow_list_response_to_plumbing(porcelain):
     plumbing = WorkflowListResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    del plumbing.workflows[:]
-    plumbing.workflows.extend(
-        convert_repeated_workflow_to_plumbing(porcelain.workflows))
     return plumbing
 
 
@@ -11828,8 +11689,6 @@ def convert_workflow_roles_create_request_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowRolesCreateRequest()
-    porcelain.meta = convert_create_request_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.workflow_role = convert_workflow_role_to_porcelain(
         plumbing.workflow_role)
     return porcelain
@@ -11839,8 +11698,6 @@ def convert_workflow_roles_create_request_to_plumbing(porcelain):
     plumbing = WorkflowRolesCreateRequest()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_request_metadata_to_plumbing(porcelain.meta))
     plumbing.workflow_role.CopyFrom(
         convert_workflow_role_to_plumbing(porcelain.workflow_role))
     return plumbing
@@ -11864,8 +11721,6 @@ def convert_workflow_roles_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowRolesCreateResponse()
-    porcelain.meta = convert_create_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     porcelain.workflow_role = convert_workflow_role_to_porcelain(
@@ -11877,8 +11732,6 @@ def convert_workflow_roles_create_response_to_plumbing(porcelain):
     plumbing = WorkflowRolesCreateResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     plumbing.workflow_role.CopyFrom(
@@ -11905,8 +11758,6 @@ def convert_workflow_roles_delete_request_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowRolesDeleteRequest()
     porcelain.id = (plumbing.id)
-    porcelain.meta = convert_delete_request_metadata_to_porcelain(
-        plumbing.meta)
     return porcelain
 
 
@@ -11915,8 +11766,6 @@ def convert_workflow_roles_delete_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.meta.CopyFrom(
-        convert_delete_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -11938,8 +11787,6 @@ def convert_workflow_roles_delete_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowRolesDeleteResponse()
-    porcelain.meta = convert_delete_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     return porcelain
@@ -11949,8 +11796,6 @@ def convert_workflow_roles_delete_response_to_plumbing(porcelain):
     plumbing = WorkflowRolesDeleteResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_delete_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     return plumbing
@@ -11975,7 +11820,6 @@ def convert_workflow_roles_list_request_to_porcelain(plumbing):
         return None
     porcelain = models.WorkflowRolesListRequest()
     porcelain.filter = (plumbing.filter)
-    porcelain.meta = convert_list_request_metadata_to_porcelain(plumbing.meta)
     return porcelain
 
 
@@ -11984,8 +11828,6 @@ def convert_workflow_roles_list_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.filter = (porcelain.filter)
-    plumbing.meta.CopyFrom(
-        convert_list_request_metadata_to_plumbing(porcelain.meta))
     return plumbing
 
 
@@ -12007,11 +11849,8 @@ def convert_workflow_roles_list_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowRolesListResponse()
-    porcelain.meta = convert_list_response_metadata_to_porcelain(plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
-    porcelain.workflow_role = convert_repeated_workflow_role_to_porcelain(
-        plumbing.workflow_role)
     return porcelain
 
 
@@ -12019,13 +11858,8 @@ def convert_workflow_roles_list_response_to_plumbing(porcelain):
     plumbing = WorkflowRolesListResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_list_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
-    del plumbing.workflow_role[:]
-    plumbing.workflow_role.extend(
-        convert_repeated_workflow_role_to_plumbing(porcelain.workflow_role))
     return plumbing
 
 
@@ -12047,8 +11881,6 @@ def convert_workflow_update_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.WorkflowUpdateResponse()
-    porcelain.meta = convert_update_response_metadata_to_porcelain(
-        plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
     porcelain.workflow = convert_workflow_to_porcelain(plumbing.workflow)
@@ -12059,8 +11891,6 @@ def convert_workflow_update_response_to_plumbing(porcelain):
     plumbing = WorkflowUpdateResponse()
     if porcelain is None:
         return plumbing
-    plumbing.meta.CopyFrom(
-        convert_update_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
     plumbing.workflow.CopyFrom(convert_workflow_to_plumbing(

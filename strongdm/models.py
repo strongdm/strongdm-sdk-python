@@ -21057,11 +21057,11 @@ class User:
         '''
         self.permission_level = permission_level if permission_level is not None else ''
         '''
-         PermissionLevel is a read only field for the user's permission level e.g. admin, DBA, user.
+         PermissionLevel is the user's permission level e.g. admin, DBA, user.
         '''
         self.suspended = suspended if suspended is not None else False
         '''
-         The User's suspended state.
+         Suspended is a read only field for the User's suspended state.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
