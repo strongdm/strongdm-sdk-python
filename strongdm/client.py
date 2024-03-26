@@ -23,8 +23,9 @@ import hashlib
 import hmac
 import random
 import time
-from . import svc
+from . import errors
 from . import plumbing
+from . import svc
 
 # These defaults are taken from AWS. Customization of these values
 # is a future step in the API.
@@ -32,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-14'
-USER_AGENT = 'strongdm-sdk-python/7.1.0'
+USER_AGENT = 'strongdm-sdk-python/7.1.1'
 
 
 class Client:
@@ -450,9 +451,9 @@ class Client:
             return False
         if not isinstance(err, grpc.RpcError):
             return True
-        if (not self.expose_rate_limit_errors
-            ) and err.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
-            porcelain_err = plumbing.convert_error_to_porcelain(err)
+        porcelain_err = plumbing.convert_error_to_porcelain(err)
+        if (not self.expose_rate_limit_errors) and isinstance(
+                porcelain_err, errors.RateLimitError):
             wait_until = porcelain_err.rate_limit.reset_at
             now = datetime.datetime.now(datetime.timezone.utc)
             sleep_for = (wait_until - now).total_seconds()
