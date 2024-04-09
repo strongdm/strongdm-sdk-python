@@ -2153,19 +2153,27 @@ class AccountCreateResponse:
          AccountCreateResponse reports how the Accounts were created in the system.
     '''
     __slots__ = [
+        'access_key',
         'account',
         'meta',
         'rate_limit',
+        'secret_key',
         'token',
     ]
 
     def __init__(
         self,
+        access_key=None,
         account=None,
         meta=None,
         rate_limit=None,
+        secret_key=None,
         token=None,
     ):
+        self.access_key = access_key if access_key is not None else ''
+        '''
+         ID part of the API key.
+        '''
         self.account = account if account is not None else None
         '''
          The created Account.
@@ -2178,6 +2186,10 @@ class AccountCreateResponse:
         '''
          Rate limit information.
         '''
+        self.secret_key = secret_key if secret_key is not None else ''
+        '''
+         Secret part of the API key.
+        '''
         self.token = token if token is not None else ''
         '''
          The auth token generated for the Account. The Account will use this token to
@@ -2186,26 +2198,32 @@ class AccountCreateResponse:
 
     def __repr__(self):
         return '<sdm.AccountCreateResponse ' + \
+            'access_key: ' + repr(self.access_key) + ' ' +\
             'account: ' + repr(self.account) + ' ' +\
             'meta: ' + repr(self.meta) + ' ' +\
             'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_key: ' + repr(self.secret_key) + ' ' +\
             'token: ' + repr(self.token) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'access_key': self.access_key,
             'account': self.account,
             'meta': self.meta,
             'rate_limit': self.rate_limit,
+            'secret_key': self.secret_key,
             'token': self.token,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_key=d.get('access_key'),
             account=d.get('account'),
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
+            secret_key=d.get('secret_key'),
             token=d.get('token'),
         )
 
@@ -20823,6 +20841,113 @@ class Teradata:
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             username=d.get('username'),
+        )
+
+
+class Token:
+    '''
+         A Token is an account providing tokenized access for automation or integration use.
+     Tokens include admin tokens, API keys, and SCIM tokens.
+    '''
+    __slots__ = [
+        'account_type',
+        'deadline',
+        'duration',
+        'id',
+        'name',
+        'permissions',
+        'rekeyed',
+        'suspended',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        account_type=None,
+        deadline=None,
+        duration=None,
+        id=None,
+        name=None,
+        permissions=None,
+        rekeyed=None,
+        suspended=None,
+        tags=None,
+    ):
+        self.account_type = account_type if account_type is not None else ''
+        '''
+         Corresponds to the type of token, e.g. api or admin-token.
+        '''
+        self.deadline = deadline if deadline is not None else None
+        '''
+         The timestamp when the Token will expire.
+        '''
+        self.duration = duration if duration is not None else None
+        '''
+         Duration from token creation to expiration.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Token.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Token.
+        '''
+        self.permissions = permissions if permissions is not None else []
+        '''
+         Permissions assigned to the token, e.g. role:create.
+        '''
+        self.rekeyed = rekeyed if rekeyed is not None else None
+        '''
+         The timestamp when the Token was last rekeyed.
+        '''
+        self.suspended = suspended if suspended is not None else False
+        '''
+         Reserved for future use.  Always false for tokens.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Token ' + \
+            'account_type: ' + repr(self.account_type) + ' ' +\
+            'deadline: ' + repr(self.deadline) + ' ' +\
+            'duration: ' + repr(self.duration) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'permissions: ' + repr(self.permissions) + ' ' +\
+            'rekeyed: ' + repr(self.rekeyed) + ' ' +\
+            'suspended: ' + repr(self.suspended) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_type': self.account_type,
+            'deadline': self.deadline,
+            'duration': self.duration,
+            'id': self.id,
+            'name': self.name,
+            'permissions': self.permissions,
+            'rekeyed': self.rekeyed,
+            'suspended': self.suspended,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_type=d.get('account_type'),
+            deadline=d.get('deadline'),
+            duration=d.get('duration'),
+            id=d.get('id'),
+            name=d.get('name'),
+            permissions=d.get('permissions'),
+            rekeyed=d.get('rekeyed'),
+            suspended=d.get('suspended'),
+            tags=d.get('tags'),
         )
 
 

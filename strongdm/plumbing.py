@@ -964,6 +964,8 @@ def convert_account_to_plumbing(porcelain):
         return plumbing
     if isinstance(porcelain, models.Service):
         plumbing.service.CopyFrom(convert_service_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Token):
+        plumbing.token.CopyFrom(convert_token_to_plumbing(porcelain))
     if isinstance(porcelain, models.User):
         plumbing.user.CopyFrom(convert_user_to_plumbing(porcelain))
     return plumbing
@@ -974,6 +976,8 @@ def convert_account_to_porcelain(plumbing):
         return None
     if plumbing.HasField('service'):
         return convert_service_to_porcelain(plumbing.service)
+    if plumbing.HasField('token'):
+        return convert_token_to_porcelain(plumbing.token)
     if plumbing.HasField('user'):
         return convert_user_to_porcelain(plumbing.user)
     raise errors.UnknownError(
@@ -1185,11 +1189,13 @@ def convert_account_create_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AccountCreateResponse()
+    porcelain.access_key = (plumbing.access_key)
     porcelain.account = convert_account_to_porcelain(plumbing.account)
     porcelain.meta = convert_create_response_metadata_to_porcelain(
         plumbing.meta)
     porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
         plumbing.rate_limit)
+    porcelain.secret_key = (plumbing.secret_key)
     porcelain.token = (plumbing.token)
     return porcelain
 
@@ -1198,11 +1204,13 @@ def convert_account_create_response_to_plumbing(porcelain):
     plumbing = AccountCreateResponse()
     if porcelain is None:
         return plumbing
+    plumbing.access_key = (porcelain.access_key)
     plumbing.account.CopyFrom(convert_account_to_plumbing(porcelain.account))
     plumbing.meta.CopyFrom(
         convert_create_response_metadata_to_plumbing(porcelain.meta))
     plumbing.rate_limit.CopyFrom(
         convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.secret_key = (porcelain.secret_key)
     plumbing.token = (porcelain.token)
     return plumbing
 
@@ -10404,6 +10412,49 @@ def convert_repeated_teradata_to_plumbing(porcelains):
 
 def convert_repeated_teradata_to_porcelain(plumbings):
     return [convert_teradata_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_token_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Token()
+    porcelain.account_type = (plumbing.account_type)
+    porcelain.deadline = convert_timestamp_to_porcelain(plumbing.deadline)
+    porcelain.duration = convert_duration_to_porcelain(plumbing.duration)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.permissions = (plumbing.permissions)
+    porcelain.rekeyed = convert_timestamp_to_porcelain(plumbing.rekeyed)
+    porcelain.suspended = (plumbing.suspended)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_token_to_plumbing(porcelain):
+    plumbing = Token()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_type = (porcelain.account_type)
+    plumbing.deadline.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deadline))
+    plumbing.duration.CopyFrom(convert_duration_to_plumbing(
+        porcelain.duration))
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    del plumbing.permissions[:]
+    plumbing.permissions.extend((porcelain.permissions))
+    plumbing.rekeyed.CopyFrom(convert_timestamp_to_plumbing(porcelain.rekeyed))
+    plumbing.suspended = (porcelain.suspended)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_token_to_plumbing(porcelains):
+    return [convert_token_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_token_to_porcelain(plumbings):
+    return [convert_token_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_trino_to_porcelain(plumbing):

@@ -32,8 +32,8 @@ from . import svc
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
-API_VERSION = '2024-03-14'
-USER_AGENT = 'strongdm-sdk-python/7.1.1'
+API_VERSION = '2024-03-28'
+USER_AGENT = 'strongdm-sdk-python/8.0.0'
 
 
 class Client:
@@ -139,6 +139,7 @@ class Client:
          Accounts are users that have access to strongDM. There are two types of accounts:
          1. **Users:** humans who are authenticated through username and password or SSO.
          2. **Service Accounts:** machines that are authenticated using a service token.
+         3. **Tokens** are access keys with permissions that can be used for authentication.
 
         See `strongdm.svc.Accounts`.
         '''
@@ -426,7 +427,8 @@ class Client:
             return hmac.new(key, msg=msg_byte_string,
                             digestmod=hashlib.sha256).digest()
 
-        current_utc_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+        current_utc_date = datetime.datetime.now(
+            datetime.timezone.utc).strftime('%Y-%m-%d')
         signing_key = hmac_digest(self.api_secret, current_utc_date.encode())
         signing_key = hmac_digest(signing_key, b'sdm_api_v1')
 
@@ -549,6 +551,7 @@ class SnapshotClient:
          Accounts are users that have access to strongDM. There are two types of accounts:
          1. **Users:** humans who are authenticated through username and password or SSO.
          2. **Service Accounts:** machines that are authenticated using a service token.
+         3. **Tokens** are access keys with permissions that can be used for authentication.
 
         See `strongdm.svc.SnapshotAccounts`.
         '''
