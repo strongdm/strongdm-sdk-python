@@ -10493,6 +10493,157 @@ class HTTPNoAuth:
         )
 
 
+class KeyfactorX509Store:
+    __slots__ = [
+        'ca_file_path',
+        'certificate_file_path',
+        'default_certificate_authority_name',
+        'default_certificate_profile_name',
+        'default_end_entity_profile_name',
+        'enrollment_code_env_var',
+        'enrollment_username_env_var',
+        'id',
+        'key_file_path',
+        'key_password_env_var',
+        'name',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        ca_file_path=None,
+        certificate_file_path=None,
+        default_certificate_authority_name=None,
+        default_certificate_profile_name=None,
+        default_end_entity_profile_name=None,
+        enrollment_code_env_var=None,
+        enrollment_username_env_var=None,
+        id=None,
+        key_file_path=None,
+        key_password_env_var=None,
+        name=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.ca_file_path = ca_file_path if ca_file_path is not None else ''
+        '''
+         Path to the root CA that signed the certificate passed to the client for HTTPS connection.
+         This is not required if the CA is trusted by the host operating system. This should be a PEM
+         formatted certificate, and doesn't necessarily have to be the CA that signed CertificateFile.
+        '''
+        self.certificate_file_path = certificate_file_path if certificate_file_path is not None else ''
+        '''
+         Path to client certificate in PEM format. This certificate must contain a client certificate that
+         is recognized by the EJBCA instance represented by Hostname. This PEM file may also contain the private
+         key associated with the certificate, but KeyFile can also be set to configure the private key.
+        '''
+        self.default_certificate_authority_name = default_certificate_authority_name if default_certificate_authority_name is not None else ''
+        '''
+         Name of EJBCA certificate authority that will enroll CSR.
+        '''
+        self.default_certificate_profile_name = default_certificate_profile_name if default_certificate_profile_name is not None else ''
+        '''
+         Certificate profile name that EJBCA will enroll the CSR with.
+        '''
+        self.default_end_entity_profile_name = default_end_entity_profile_name if default_end_entity_profile_name is not None else ''
+        '''
+         End entity profile that EJBCA will enroll the CSR with.
+        '''
+        self.enrollment_code_env_var = enrollment_code_env_var if enrollment_code_env_var is not None else ''
+        '''
+         code used by EJBCA during enrollment. May be left blank if no code is required.
+        '''
+        self.enrollment_username_env_var = enrollment_username_env_var if enrollment_username_env_var is not None else ''
+        '''
+         username that used by the EJBCA during enrollment. This can be left out. 
+         If so, the username must be auto-generated on the Keyfactor side.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.key_file_path = key_file_path if key_file_path is not None else ''
+        '''
+         Path to private key in PEM format. This file should contain the private key associated with the
+         client certificate configured in CertificateFile.
+        '''
+        self.key_password_env_var = key_password_env_var if key_password_env_var is not None else ''
+        '''
+         optional environment variable housing the password that is used to decrypt the key file.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         the host of the Key Factor CA
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.KeyfactorX509Store ' + \
+            'ca_file_path: ' + repr(self.ca_file_path) + ' ' +\
+            'certificate_file_path: ' + repr(self.certificate_file_path) + ' ' +\
+            'default_certificate_authority_name: ' + repr(self.default_certificate_authority_name) + ' ' +\
+            'default_certificate_profile_name: ' + repr(self.default_certificate_profile_name) + ' ' +\
+            'default_end_entity_profile_name: ' + repr(self.default_end_entity_profile_name) + ' ' +\
+            'enrollment_code_env_var: ' + repr(self.enrollment_code_env_var) + ' ' +\
+            'enrollment_username_env_var: ' + repr(self.enrollment_username_env_var) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'key_file_path: ' + repr(self.key_file_path) + ' ' +\
+            'key_password_env_var: ' + repr(self.key_password_env_var) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'ca_file_path': self.ca_file_path,
+            'certificate_file_path': self.certificate_file_path,
+            'default_certificate_authority_name':
+            self.default_certificate_authority_name,
+            'default_certificate_profile_name':
+            self.default_certificate_profile_name,
+            'default_end_entity_profile_name':
+            self.default_end_entity_profile_name,
+            'enrollment_code_env_var': self.enrollment_code_env_var,
+            'enrollment_username_env_var': self.enrollment_username_env_var,
+            'id': self.id,
+            'key_file_path': self.key_file_path,
+            'key_password_env_var': self.key_password_env_var,
+            'name': self.name,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            ca_file_path=d.get('ca_file_path'),
+            certificate_file_path=d.get('certificate_file_path'),
+            default_certificate_authority_name=d.get(
+                'default_certificate_authority_name'),
+            default_certificate_profile_name=d.get(
+                'default_certificate_profile_name'),
+            default_end_entity_profile_name=d.get(
+                'default_end_entity_profile_name'),
+            enrollment_code_env_var=d.get('enrollment_code_env_var'),
+            enrollment_username_env_var=d.get('enrollment_username_env_var'),
+            id=d.get('id'),
+            key_file_path=d.get('key_file_path'),
+            key_password_env_var=d.get('key_password_env_var'),
+            name=d.get('name'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
 class Kubernetes:
     __slots__ = [
         'bind_interface',
