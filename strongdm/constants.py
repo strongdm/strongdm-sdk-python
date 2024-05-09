@@ -92,6 +92,7 @@ class MFAProvider:
     NONE = ""
     DUO = "duo"
     TOTP = "totp"
+    OKTA = "okta"
 
 
 # Activity Entities, all entity types that can be part of an activity.

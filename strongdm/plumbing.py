@@ -5050,6 +5050,66 @@ def convert_repeated_http_no_auth_to_porcelain(plumbings):
     ]
 
 
+def convert_keyfactor_ssh_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KeyfactorSSHStore()
+    porcelain.ca_file_path = (plumbing.ca_file_path)
+    porcelain.certificate_file_path = (plumbing.certificate_file_path)
+    porcelain.default_certificate_authority_name = (
+        plumbing.default_certificate_authority_name)
+    porcelain.default_certificate_profile_name = (
+        plumbing.default_certificate_profile_name)
+    porcelain.default_end_entity_profile_name = (
+        plumbing.default_end_entity_profile_name)
+    porcelain.enrollment_code_env_var = (plumbing.enrollment_code_env_var)
+    porcelain.enrollment_username_env_var = (
+        plumbing.enrollment_username_env_var)
+    porcelain.id = (plumbing.id)
+    porcelain.key_file_path = (plumbing.key_file_path)
+    porcelain.name = (plumbing.name)
+    porcelain.server_address = (plumbing.server_address)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_keyfactor_ssh_store_to_plumbing(porcelain):
+    plumbing = KeyfactorSSHStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.ca_file_path = (porcelain.ca_file_path)
+    plumbing.certificate_file_path = (porcelain.certificate_file_path)
+    plumbing.default_certificate_authority_name = (
+        porcelain.default_certificate_authority_name)
+    plumbing.default_certificate_profile_name = (
+        porcelain.default_certificate_profile_name)
+    plumbing.default_end_entity_profile_name = (
+        porcelain.default_end_entity_profile_name)
+    plumbing.enrollment_code_env_var = (porcelain.enrollment_code_env_var)
+    plumbing.enrollment_username_env_var = (
+        porcelain.enrollment_username_env_var)
+    plumbing.id = (porcelain.id)
+    plumbing.key_file_path = (porcelain.key_file_path)
+    plumbing.name = (porcelain.name)
+    plumbing.server_address = (porcelain.server_address)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_keyfactor_ssh_store_to_plumbing(porcelains):
+    return [
+        convert_keyfactor_ssh_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_keyfactor_ssh_store_to_porcelain(plumbings):
+    return [
+        convert_keyfactor_ssh_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_keyfactor_x_509_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5067,7 +5127,6 @@ def convert_keyfactor_x_509_store_to_porcelain(plumbing):
         plumbing.enrollment_username_env_var)
     porcelain.id = (plumbing.id)
     porcelain.key_file_path = (plumbing.key_file_path)
-    porcelain.key_password_env_var = (plumbing.key_password_env_var)
     porcelain.name = (plumbing.name)
     porcelain.server_address = (plumbing.server_address)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -5091,7 +5150,6 @@ def convert_keyfactor_x_509_store_to_plumbing(porcelain):
         porcelain.enrollment_username_env_var)
     plumbing.id = (porcelain.id)
     plumbing.key_file_path = (porcelain.key_file_path)
-    plumbing.key_password_env_var = (porcelain.key_password_env_var)
     plumbing.name = (porcelain.name)
     plumbing.server_address = (porcelain.server_address)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -9709,6 +9767,9 @@ def convert_secret_store_to_plumbing(porcelain):
     if isinstance(porcelain, models.GCPCertX509Store):
         plumbing.gcp_cert_x_509.CopyFrom(
             convert_gcp_cert_x_509_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KeyfactorSSHStore):
+        plumbing.keyfactor_ssh.CopyFrom(
+            convert_keyfactor_ssh_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.KeyfactorX509Store):
         plumbing.keyfactor_x_509.CopyFrom(
             convert_keyfactor_x_509_store_to_plumbing(porcelain))
@@ -9770,6 +9831,8 @@ def convert_secret_store_to_porcelain(plumbing):
     if plumbing.HasField('gcp_cert_x_509'):
         return convert_gcp_cert_x_509_store_to_porcelain(
             plumbing.gcp_cert_x_509)
+    if plumbing.HasField('keyfactor_ssh'):
+        return convert_keyfactor_ssh_store_to_porcelain(plumbing.keyfactor_ssh)
     if plumbing.HasField('keyfactor_x_509'):
         return convert_keyfactor_x_509_store_to_porcelain(
             plumbing.keyfactor_x_509)

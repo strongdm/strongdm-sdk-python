@@ -4312,6 +4312,7 @@ class SecretStores:
     `strongdm.models.DelineaStore`
     `strongdm.models.GCPStore`
     `strongdm.models.GCPCertX509Store`
+    `strongdm.models.KeyfactorSSHStore`
     `strongdm.models.KeyfactorX509Store`
     `strongdm.models.VaultAppRoleStore`
     `strongdm.models.VaultAppRoleCertSSHStore`
