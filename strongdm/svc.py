@@ -4317,6 +4317,8 @@ class SecretStores:
     `strongdm.models.VaultAppRoleStore`
     `strongdm.models.VaultAppRoleCertSSHStore`
     `strongdm.models.VaultAppRoleCertX509Store`
+    `strongdm.models.VaultAWSEC2Store`
+    `strongdm.models.VaultAWSIAMStore`
     `strongdm.models.VaultTLSStore`
     `strongdm.models.VaultTLSCertSSHStore`
     `strongdm.models.VaultTLSCertX509Store`

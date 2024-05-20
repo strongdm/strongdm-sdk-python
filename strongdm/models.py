@@ -21515,6 +21515,148 @@ class User:
         )
 
 
+class VaultAWSEC2Store:
+    '''
+    VaultAWSEC2Store is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'namespace',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSEC2Store ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultAWSIAMStore:
+    '''
+    VaultAWSIAMStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'namespace',
+        'server_address',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSIAMStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
 class VaultAppRoleCertSSHStore:
     __slots__ = [
         'id',
