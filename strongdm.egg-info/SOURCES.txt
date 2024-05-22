@@ -47,6 +47,14 @@ strongdm/control_panel_pb2_grpc.py
 strongdm/drivers_pb2.py
 strongdm/drivers_pb2_grpc.py
 strongdm/errors.py
+strongdm/identity_aliases_history_pb2.py
+strongdm/identity_aliases_history_pb2_grpc.py
+strongdm/identity_aliases_pb2.py
+strongdm/identity_aliases_pb2_grpc.py
+strongdm/identity_sets_history_pb2.py
+strongdm/identity_sets_history_pb2_grpc.py
+strongdm/identity_sets_pb2.py
+strongdm/identity_sets_pb2_grpc.py
 strongdm/models.py
 strongdm/nodes_history_pb2.py
 strongdm/nodes_history_pb2_grpc.py

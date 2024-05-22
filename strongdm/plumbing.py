@@ -48,6 +48,10 @@ from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
 from .control_panel_pb2 import *
 from .drivers_pb2 import *
+from .identity_aliases_pb2 import *
+from .identity_aliases_history_pb2 import *
+from .identity_sets_pb2 import *
+from .identity_sets_history_pb2 import *
 from .nodes_pb2 import *
 from .nodes_history_pb2 import *
 from .organization_history_pb2 import *
@@ -165,12 +169,12 @@ def convert_aks_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -190,12 +194,12 @@ def convert_aks_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -275,12 +279,12 @@ def convert_aks_service_account_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -298,12 +302,12 @@ def convert_aks_service_account_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -542,12 +546,12 @@ def convert_aws_console_to_porcelain(plumbing):
     porcelain.enable_env_variables = (plumbing.enable_env_variables)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -566,12 +570,12 @@ def convert_aws_console_to_plumbing(porcelain):
     plumbing.enable_env_variables = (porcelain.enable_env_variables)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
@@ -602,12 +606,12 @@ def convert_aws_console_static_key_pair_to_porcelain(plumbing):
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.secret_access_key = (plumbing.secret_access_key)
@@ -627,12 +631,12 @@ def convert_aws_console_static_key_pair_to_plumbing(porcelain):
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.secret_access_key = (porcelain.secret_access_key)
@@ -1905,12 +1909,12 @@ def convert_amazon_eks_to_porcelain(plumbing):
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.secret_access_key = (plumbing.secret_access_key)
@@ -1933,12 +1937,12 @@ def convert_amazon_eks_to_plumbing(porcelain):
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.secret_access_key = (porcelain.secret_access_key)
@@ -1972,12 +1976,12 @@ def convert_amazon_eks_instance_profile_to_porcelain(plumbing):
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -1998,12 +2002,12 @@ def convert_amazon_eks_instance_profile_to_plumbing(porcelain):
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
@@ -2042,9 +2046,6 @@ def convert_amazon_eks_instance_profile_user_impersonation_to_porcelain(
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.region = (plumbing.region)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.role_arn = (plumbing.role_arn)
     porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -2069,9 +2070,6 @@ def convert_amazon_eks_instance_profile_user_impersonation_to_plumbing(
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.region = (porcelain.region)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.role_arn = (porcelain.role_arn)
     plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
@@ -4733,11 +4731,11 @@ def convert_google_gke_to_porcelain(plumbing):
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.service_account_key = (plumbing.service_account_key)
     porcelain.subdomain = (plumbing.subdomain)
@@ -4756,11 +4754,11 @@ def convert_google_gke_to_plumbing(porcelain):
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.service_account_key = (porcelain.service_account_key)
     plumbing.subdomain = (porcelain.subdomain)
@@ -5050,6 +5048,345 @@ def convert_repeated_http_no_auth_to_porcelain(plumbings):
     ]
 
 
+def convert_identity_alias_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAlias()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_identity_alias_to_plumbing(porcelain):
+    plumbing = IdentityAlias()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_identity_alias_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_identity_alias_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAliasCreateResponse()
+    porcelain.identity_alias = convert_identity_alias_to_porcelain(
+        plumbing.identity_alias)
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_alias_create_response_to_plumbing(porcelain):
+    plumbing = IdentityAliasCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_alias.CopyFrom(
+        convert_identity_alias_to_plumbing(porcelain.identity_alias))
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_alias_create_response_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_create_response_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_alias_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAliasDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_alias_delete_response_to_plumbing(porcelain):
+    plumbing = IdentityAliasDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_alias_delete_response_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_delete_response_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_alias_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAliasGetResponse()
+    porcelain.identity_alias = convert_identity_alias_to_porcelain(
+        plumbing.identity_alias)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_alias_get_response_to_plumbing(porcelain):
+    plumbing = IdentityAliasGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_alias.CopyFrom(
+        convert_identity_alias_to_plumbing(porcelain.identity_alias))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_alias_get_response_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_get_response_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_alias_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAliasHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.identity_alias = convert_identity_alias_to_porcelain(
+        plumbing.identity_alias)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_identity_alias_history_to_plumbing(porcelain):
+    plumbing = IdentityAliasHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.identity_alias.CopyFrom(
+        convert_identity_alias_to_plumbing(porcelain.identity_alias))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_identity_alias_history_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_history_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_alias_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentityAliasUpdateResponse()
+    porcelain.identity_alias = convert_identity_alias_to_porcelain(
+        plumbing.identity_alias)
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_alias_update_response_to_plumbing(porcelain):
+    plumbing = IdentityAliasUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_alias.CopyFrom(
+        convert_identity_alias_to_plumbing(porcelain.identity_alias))
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_alias_update_response_to_plumbing(porcelains):
+    return [
+        convert_identity_alias_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_alias_update_response_to_porcelain(plumbings):
+    return [
+        convert_identity_alias_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_set_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySet()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    return porcelain
+
+
+def convert_identity_set_to_plumbing(porcelain):
+    plumbing = IdentitySet()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    return plumbing
+
+
+def convert_repeated_identity_set_to_plumbing(porcelains):
+    return [
+        convert_identity_set_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_to_porcelain(plumbings):
+    return [
+        convert_identity_set_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_identity_set_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySetGetResponse()
+    porcelain.identity_set = convert_identity_set_to_porcelain(
+        plumbing.identity_set)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_set_get_response_to_plumbing(porcelain):
+    plumbing = IdentitySetGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_set.CopyFrom(
+        convert_identity_set_to_plumbing(porcelain.identity_set))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_set_get_response_to_plumbing(porcelains):
+    return [
+        convert_identity_set_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_get_response_to_porcelain(plumbings):
+    return [
+        convert_identity_set_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_set_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySetHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.identity_set = convert_identity_set_to_porcelain(
+        plumbing.identity_set)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_identity_set_history_to_plumbing(porcelain):
+    plumbing = IdentitySetHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.identity_set.CopyFrom(
+        convert_identity_set_to_plumbing(porcelain.identity_set))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_identity_set_history_to_plumbing(porcelains):
+    return [
+        convert_identity_set_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_history_to_porcelain(plumbings):
+    return [
+        convert_identity_set_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_keyfactor_ssh_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5183,12 +5520,12 @@ def convert_kubernetes_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -5208,12 +5545,12 @@ def convert_kubernetes_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -5298,12 +5635,12 @@ def convert_kubernetes_service_account_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -5321,12 +5658,12 @@ def convert_kubernetes_service_account_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -7540,12 +7877,12 @@ def convert_rdp_cert_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -7562,12 +7899,12 @@ def convert_rdp_cert_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -9626,14 +9963,14 @@ def convert_ssh_cert_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.key_type = (plumbing.key_type)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_forwarding = (plumbing.port_forwarding)
     porcelain.port_override = (plumbing.port_override)
-    porcelain.remote_identity_group_id = (plumbing.remote_identity_group_id)
-    porcelain.remote_identity_healthcheck_username = (
-        plumbing.remote_identity_healthcheck_username)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -9652,14 +9989,14 @@ def convert_ssh_cert_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.key_type = (porcelain.key_type)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_forwarding = (porcelain.port_forwarding)
     plumbing.port_override = (porcelain.port_override)
-    plumbing.remote_identity_group_id = (porcelain.remote_identity_group_id)
-    plumbing.remote_identity_healthcheck_username = (
-        porcelain.remote_identity_healthcheck_username)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))

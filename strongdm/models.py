@@ -29,11 +29,11 @@ class AKS:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -50,11 +50,11 @@ class AKS:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -95,6 +95,14 @@ class AKS:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -106,14 +114,6 @@ class AKS:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -139,11 +139,11 @@ class AKS:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -160,12 +160,12 @@ class AKS:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -183,12 +183,12 @@ class AKS:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -351,11 +351,11 @@ class AKSServiceAccount:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -370,11 +370,11 @@ class AKSServiceAccount:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -404,6 +404,14 @@ class AKSServiceAccount:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -415,14 +423,6 @@ class AKSServiceAccount:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -449,11 +449,11 @@ class AKSServiceAccount:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -468,12 +468,12 @@ class AKSServiceAccount:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -489,12 +489,12 @@ class AKSServiceAccount:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -1047,11 +1047,11 @@ class AWSConsole:
         'enable_env_variables',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
         'region',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_store_id',
@@ -1067,11 +1067,11 @@ class AWSConsole:
         enable_env_variables=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
         region=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_store_id=None,
@@ -1099,6 +1099,14 @@ class AWSConsole:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -1110,14 +1118,6 @@ class AWSConsole:
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
@@ -1151,11 +1151,11 @@ class AWSConsole:
             'enable_env_variables: ' + repr(self.enable_env_variables) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -1171,12 +1171,12 @@ class AWSConsole:
             'enable_env_variables': self.enable_env_variables,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
             'region': self.region,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_store_id': self.secret_store_id,
@@ -1193,12 +1193,12 @@ class AWSConsole:
             enable_env_variables=d.get('enable_env_variables'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
             region=d.get('region'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_store_id=d.get('secret_store_id'),
@@ -1215,11 +1215,11 @@ class AWSConsoleStaticKeyPair:
         'egress_filter',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
         'region',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_access_key',
@@ -1236,11 +1236,11 @@ class AWSConsoleStaticKeyPair:
         egress_filter=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
         region=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_access_key=None,
@@ -1269,6 +1269,14 @@ class AWSConsoleStaticKeyPair:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -1280,14 +1288,6 @@ class AWSConsoleStaticKeyPair:
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
@@ -1325,11 +1325,11 @@ class AWSConsoleStaticKeyPair:
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -1346,12 +1346,12 @@ class AWSConsoleStaticKeyPair:
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
             'region': self.region,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_access_key': self.secret_access_key,
@@ -1369,12 +1369,12 @@ class AWSConsoleStaticKeyPair:
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
             region=d.get('region'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_access_key=d.get('secret_access_key'),
@@ -3313,11 +3313,11 @@ class AmazonEKS:
         'healthcheck_namespace',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
         'region',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_access_key',
@@ -3337,11 +3337,11 @@ class AmazonEKS:
         healthcheck_namespace=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
         region=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_access_key=None,
@@ -3385,6 +3385,14 @@ class AmazonEKS:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -3396,14 +3404,6 @@ class AmazonEKS:
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
@@ -3441,11 +3441,11 @@ class AmazonEKS:
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -3465,12 +3465,12 @@ class AmazonEKS:
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
             'region': self.region,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_access_key': self.secret_access_key,
@@ -3491,12 +3491,12 @@ class AmazonEKS:
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
             region=d.get('region'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_access_key=d.get('secret_access_key'),
@@ -3516,11 +3516,11 @@ class AmazonEKSInstanceProfile:
         'healthcheck_namespace',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
         'region',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_store_id',
@@ -3538,11 +3538,11 @@ class AmazonEKSInstanceProfile:
         healthcheck_namespace=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
         region=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_store_id=None,
@@ -3581,6 +3581,14 @@ class AmazonEKSInstanceProfile:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -3592,14 +3600,6 @@ class AmazonEKSInstanceProfile:
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
@@ -3632,11 +3632,11 @@ class AmazonEKSInstanceProfile:
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -3654,12 +3654,12 @@ class AmazonEKSInstanceProfile:
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
             'region': self.region,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_store_id': self.secret_store_id,
@@ -3678,12 +3678,12 @@ class AmazonEKSInstanceProfile:
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
             region=d.get('region'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_store_id=d.get('secret_store_id'),
@@ -3705,8 +3705,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
         'name',
         'port_override',
         'region',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'role_arn',
         'role_external_id',
         'secret_store_id',
@@ -3727,8 +3725,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
         name=None,
         port_override=None,
         region=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         role_arn=None,
         role_external_id=None,
         secret_store_id=None,
@@ -3778,14 +3774,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
@@ -3821,8 +3809,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -3843,9 +3829,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'name': self.name,
             'port_override': self.port_override,
             'region': self.region,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_store_id': self.secret_store_id,
@@ -3867,9 +3850,6 @@ class AmazonEKSInstanceProfileUserImpersonation:
             name=d.get('name'),
             port_override=d.get('port_override'),
             region=d.get('region'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_store_id=d.get('secret_store_id'),
@@ -9603,10 +9583,10 @@ class GoogleGKE:
         'healthcheck_namespace',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'service_account_key',
         'subdomain',
@@ -9622,10 +9602,10 @@ class GoogleGKE:
         healthcheck_namespace=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         service_account_key=None,
         subdomain=None,
@@ -9659,6 +9639,14 @@ class GoogleGKE:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -9666,14 +9654,6 @@ class GoogleGKE:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -9701,10 +9681,10 @@ class GoogleGKE:
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -9720,11 +9700,11 @@ class GoogleGKE:
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'service_account_key': self.service_account_key,
             'subdomain': self.subdomain,
@@ -9741,11 +9721,11 @@ class GoogleGKE:
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
             subdomain=d.get('subdomain'),
@@ -10493,6 +10473,491 @@ class HTTPNoAuth:
         )
 
 
+class IdentityAlias:
+    '''
+         IdentityAliases define the username to be used for a specific account
+     when connecting to a remote resource using that identity set.
+    '''
+    __slots__ = [
+        'account_id',
+        'id',
+        'identity_set_id',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        id=None,
+        identity_set_id=None,
+        username=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The account for this identity alias.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the IdentityAlias.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The identity set.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to be used as the identity alias for this account.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAlias ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'id': self.id,
+            'identity_set_id': self.identity_set_id,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            id=d.get('id'),
+            identity_set_id=d.get('identity_set_id'),
+            username=d.get('username'),
+        )
+
+
+class IdentityAliasCreateResponse:
+    '''
+         IdentityAliasCreateResponse reports how the IdentityAliases were created in the system.
+    '''
+    __slots__ = [
+        'identity_alias',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_alias=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_alias = identity_alias if identity_alias is not None else None
+        '''
+         The created IdentityAlias.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAliasCreateResponse ' + \
+            'identity_alias: ' + repr(self.identity_alias) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_alias': self.identity_alias,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_alias=d.get('identity_alias'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentityAliasDeleteResponse:
+    '''
+         IdentityAliasDeleteResponse returns information about a IdentityAlias that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAliasDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentityAliasGetResponse:
+    '''
+         IdentityAliasGetResponse returns a requested IdentityAlias.
+    '''
+    __slots__ = [
+        'identity_alias',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_alias=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_alias = identity_alias if identity_alias is not None else None
+        '''
+         The requested IdentityAlias.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAliasGetResponse ' + \
+            'identity_alias: ' + repr(self.identity_alias) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_alias': self.identity_alias,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_alias=d.get('identity_alias'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentityAliasHistory:
+    '''
+         IdentityAliasHistory records the state of a IdentityAlias at a given point in time,
+     where every change (create, update and delete) to a IdentityAlias produces an
+     IdentityAliasHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'identity_alias',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        identity_alias=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the IdentityAlias.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this IdentityAlias was deleted, the time it was deleted.
+        '''
+        self.identity_alias = identity_alias if identity_alias is not None else None
+        '''
+         The complete IdentityAlias state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the IdentityAlias state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAliasHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'identity_alias: ' + repr(self.identity_alias) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'identity_alias': self.identity_alias,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            identity_alias=d.get('identity_alias'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class IdentityAliasUpdateResponse:
+    '''
+         IdentityAliasUpdateResponse returns the fields of a IdentityAlias after it has been updated by
+     a IdentityAliasUpdateRequest.
+    '''
+    __slots__ = [
+        'identity_alias',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_alias=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_alias = identity_alias if identity_alias is not None else None
+        '''
+         The updated IdentityAlias.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentityAliasUpdateResponse ' + \
+            'identity_alias: ' + repr(self.identity_alias) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_alias': self.identity_alias,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_alias=d.get('identity_alias'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentitySet:
+    '''
+         A IdentitySet defines a group of identity aliases.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the IdentitySet.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the IdentitySet.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySet ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+        )
+
+
+class IdentitySetGetResponse:
+    '''
+         IdentitySetGetResponse returns a requested IdentitySet.
+    '''
+    __slots__ = [
+        'identity_set',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_set=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_set = identity_set if identity_set is not None else None
+        '''
+         The requested IdentitySet.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySetGetResponse ' + \
+            'identity_set: ' + repr(self.identity_set) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_set': self.identity_set,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_set=d.get('identity_set'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentitySetHistory:
+    '''
+         IdentitySetHistory records the state of a IdentitySet at a given point in time,
+     where every change (create, update and delete) to a IdentitySet produces an
+     IdentitySetHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'identity_set',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        identity_set=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the IdentitySet.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this IdentitySet was deleted, the time it was deleted.
+        '''
+        self.identity_set = identity_set if identity_set is not None else None
+        '''
+         The complete IdentitySet state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the IdentitySet state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySetHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'identity_set: ' + repr(self.identity_set) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'identity_set': self.identity_set,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            identity_set=d.get('identity_set'),
+            timestamp=d.get('timestamp'),
+        )
+
+
 class KeyfactorSSHStore:
     __slots__ = [
         'ca_file_path',
@@ -10788,11 +11253,11 @@ class Kubernetes:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -10809,11 +11274,11 @@ class Kubernetes:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -10854,6 +11319,14 @@ class Kubernetes:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -10865,14 +11338,6 @@ class Kubernetes:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -10898,11 +11363,11 @@ class Kubernetes:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -10919,12 +11384,12 @@ class Kubernetes:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -10942,12 +11407,12 @@ class Kubernetes:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -11110,11 +11575,11 @@ class KubernetesServiceAccount:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -11129,11 +11594,11 @@ class KubernetesServiceAccount:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -11163,6 +11628,14 @@ class KubernetesServiceAccount:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -11174,14 +11647,6 @@ class KubernetesServiceAccount:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -11208,11 +11673,11 @@ class KubernetesServiceAccount:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -11227,12 +11692,12 @@ class KubernetesServiceAccount:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -11248,12 +11713,12 @@ class KubernetesServiceAccount:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -16155,11 +16620,11 @@ class RDPCert:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -16173,11 +16638,11 @@ class RDPCert:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -16203,6 +16668,14 @@ class RDPCert:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -16214,14 +16687,6 @@ class RDPCert:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -16247,11 +16712,11 @@ class RDPCert:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -16265,12 +16730,12 @@ class RDPCert:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -16285,12 +16750,12 @@ class RDPCert:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -19421,13 +19886,13 @@ class SSHCert:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'key_type',
         'name',
         'port',
         'port_forwarding',
         'port_override',
-        'remote_identity_group_id',
-        'remote_identity_healthcheck_username',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -19442,13 +19907,13 @@ class SSHCert:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         key_type=None,
         name=None,
         port=None,
         port_forwarding=None,
         port_override=None,
-        remote_identity_group_id=None,
-        remote_identity_healthcheck_username=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -19478,6 +19943,14 @@ class SSHCert:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.key_type = key_type if key_type is not None else ''
         '''
          The key type to use e.g. rsa-2048 or ed25519
@@ -19497,14 +19970,6 @@ class SSHCert:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
-        '''
-        self.remote_identity_group_id = remote_identity_group_id if remote_identity_group_id is not None else ''
-        '''
-         The ID of the remote identity group to use for remote identity connections.
-        '''
-        self.remote_identity_healthcheck_username = remote_identity_healthcheck_username if remote_identity_healthcheck_username is not None else ''
-        '''
-         The username to use for healthchecks, when clients otherwise connect with their own remote identity username.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -19531,13 +19996,13 @@ class SSHCert:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'key_type: ' + repr(self.key_type) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'remote_identity_group_id: ' + repr(self.remote_identity_group_id) + ' ' +\
-            'remote_identity_healthcheck_username: ' + repr(self.remote_identity_healthcheck_username) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -19553,14 +20018,14 @@ class SSHCert:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'key_type': self.key_type,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
-            'remote_identity_group_id': self.remote_identity_group_id,
-            'remote_identity_healthcheck_username':
-            self.remote_identity_healthcheck_username,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -19577,14 +20042,14 @@ class SSHCert:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             key_type=d.get('key_type'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
-            remote_identity_group_id=d.get('remote_identity_group_id'),
-            remote_identity_healthcheck_username=d.get(
-                'remote_identity_healthcheck_username'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),

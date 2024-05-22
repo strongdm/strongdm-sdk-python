@@ -33,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-28'
-USER_AGENT = 'strongdm-sdk-python/8.4.0'
+USER_AGENT = 'strongdm-sdk-python/9.0.0'
 
 
 class Client:
@@ -203,6 +203,33 @@ class Client:
          ControlPanel contains all administrative controls.
 
         See `strongdm.svc.ControlPanel`.
+        '''
+        self.identity_aliases = svc.IdentityAliases(channel, self)
+        '''
+         IdentityAliases assign an alias to an account within an IdentitySet.
+         The alias is used as the username when connecting to a identity supported resource.
+
+        See `strongdm.svc.IdentityAliases`.
+        '''
+        self.identity_aliases_history = svc.IdentityAliasesHistory(
+            channel, self)
+        '''
+         IdentityAliasesHistory records all changes to the state of a IdentityAlias.
+
+        See `strongdm.svc.IdentityAliasesHistory`.
+        '''
+        self.identity_sets = svc.IdentitySets(channel, self)
+        '''
+         A IdentitySet is a named grouping of Identity Aliases for Accounts.
+         An Account's relationship to a IdentitySet is defined via IdentityAlias objects.
+
+        See `strongdm.svc.IdentitySets`.
+        '''
+        self.identity_sets_history = svc.IdentitySetsHistory(channel, self)
+        '''
+         IdentitySetsHistory records all changes to the state of a IdentitySet.
+
+        See `strongdm.svc.IdentitySetsHistory`.
         '''
         self.nodes = svc.Nodes(channel, self)
         '''
@@ -490,6 +517,8 @@ class Client:
             client.channel, client)
         client.approval_workflows = svc.ApprovalWorkflows(
             client.channel, client)
+        client.identity_aliases = svc.IdentityAliases(client.channel, client)
+        client.identity_sets = svc.IdentitySets(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
@@ -576,6 +605,21 @@ class SnapshotClient:
          approvers and be approved or denied.
 
         See `strongdm.svc.SnapshotApprovalWorkflows`.
+        '''
+        self.identity_aliases = svc.SnapshotIdentityAliases(
+            client.identity_aliases)
+        '''
+         IdentityAliases assign an alias to an account within an IdentitySet.
+         The alias is used as the username when connecting to a identity supported resource.
+
+        See `strongdm.svc.SnapshotIdentityAliases`.
+        '''
+        self.identity_sets = svc.SnapshotIdentitySets(client.identity_sets)
+        '''
+         A IdentitySet is a named grouping of Identity Aliases for Accounts.
+         An Account's relationship to a IdentitySet is defined via IdentityAlias objects.
+
+        See `strongdm.svc.SnapshotIdentitySets`.
         '''
         self.nodes = svc.SnapshotNodes(client.nodes)
         '''

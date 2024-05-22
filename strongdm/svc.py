@@ -66,6 +66,14 @@ from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
+from .identity_aliases_pb2 import *
+from .identity_aliases_pb2_grpc import *
+from .identity_aliases_history_pb2 import *
+from .identity_aliases_history_pb2_grpc import *
+from .identity_sets_pb2 import *
+from .identity_sets_pb2_grpc import *
+from .identity_sets_history_pb2 import *
+from .identity_sets_history_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
 from .nodes_history_pb2 import *
@@ -2053,6 +2061,414 @@ class ControlPanel:
             plumbing_response.rate_limit)
         resp.valid = (plumbing_response.valid)
         return resp
+
+
+class IdentityAliases:
+    '''
+     IdentityAliases assign an alias to an account within an IdentitySet.
+     The alias is used as the username when connecting to a identity supported resource.
+    See `strongdm.models.IdentityAlias`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = IdentityAliasesStub(channel)
+
+    def create(self, identity_alias, timeout=None):
+        '''
+         Create registers a new IdentityAlias.
+        '''
+        req = IdentityAliasCreateRequest()
+
+        if identity_alias is not None:
+            req.identity_alias.CopyFrom(
+                plumbing.convert_identity_alias_to_plumbing(identity_alias))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('IdentityAliases.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentityAliasCreateResponse()
+        resp.identity_alias = plumbing.convert_identity_alias_to_porcelain(
+            plumbing_response.identity_alias)
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one IdentityAlias by ID.
+        '''
+        req = IdentityAliasGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('IdentityAliases.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentityAliasGetResponse()
+        resp.identity_alias = plumbing.convert_identity_alias_to_porcelain(
+            plumbing_response.identity_alias)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, identity_alias, timeout=None):
+        '''
+         Update replaces all the fields of a IdentityAlias by ID.
+        '''
+        req = IdentityAliasUpdateRequest()
+
+        if identity_alias is not None:
+            req.identity_alias.CopyFrom(
+                plumbing.convert_identity_alias_to_plumbing(identity_alias))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('IdentityAliases.Update',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentityAliasUpdateResponse()
+        resp.identity_alias = plumbing.convert_identity_alias_to_porcelain(
+            plumbing_response.identity_alias)
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a IdentityAlias by ID.
+        '''
+        req = IdentityAliasDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('IdentityAliases.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentityAliasDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentityAliases matching a given set of criteria.
+        '''
+        req = IdentityAliasListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'IdentityAliases.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.identity_aliases:
+                    yield plumbing.convert_identity_alias_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotIdentityAliases:
+    '''
+    SnapshotIdentityAliases exposes the read only methods of the IdentityAliases
+    service for historical queries.
+    '''
+    def __init__(self, identity_aliases):
+        self.identity_aliases = identity_aliases
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one IdentityAlias by ID.
+        '''
+        return self.identity_aliases.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentityAliases matching a given set of criteria.
+        '''
+        return self.identity_aliases.list(filter, *args, timeout=timeout)
+
+
+class IdentityAliasesHistory:
+    '''
+     IdentityAliasesHistory records all changes to the state of a IdentityAlias.
+    See `strongdm.models.IdentityAliasHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = IdentityAliasesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentityAliasHistory records matching a given set of criteria.
+        '''
+        req = IdentityAliasHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'IdentityAliasesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_identity_alias_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class IdentitySets:
+    '''
+     A IdentitySet is a named grouping of Identity Aliases for Accounts.
+     An Account's relationship to a IdentitySet is defined via IdentityAlias objects.
+    See `strongdm.models.IdentitySet`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = IdentitySetsStub(channel)
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one IdentitySet by ID.
+        '''
+        req = IdentitySetGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('IdentitySets.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentitySetGetResponse()
+        resp.identity_set = plumbing.convert_identity_set_to_porcelain(
+            plumbing_response.identity_set)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentitySets matching a given set of criteria.
+        '''
+        req = IdentitySetListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'IdentitySets.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.identity_sets:
+                    yield plumbing.convert_identity_set_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotIdentitySets:
+    '''
+    SnapshotIdentitySets exposes the read only methods of the IdentitySets
+    service for historical queries.
+    '''
+    def __init__(self, identity_sets):
+        self.identity_sets = identity_sets
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one IdentitySet by ID.
+        '''
+        return self.identity_sets.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentitySets matching a given set of criteria.
+        '''
+        return self.identity_sets.list(filter, *args, timeout=timeout)
+
+
+class IdentitySetsHistory:
+    '''
+     IdentitySetsHistory records all changes to the state of a IdentitySet.
+    See `strongdm.models.IdentitySetHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = IdentitySetsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of IdentitySetHistory records matching a given set of criteria.
+        '''
+        req = IdentitySetHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'IdentitySetsHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_identity_set_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class Nodes:
