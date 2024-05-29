@@ -30,10 +30,25 @@ class IdentitySetsStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Create = channel.unary_unary(
+                '/v1.IdentitySets/Create',
+                request_serializer=identity__sets__pb2.IdentitySetCreateRequest.SerializeToString,
+                response_deserializer=identity__sets__pb2.IdentitySetCreateResponse.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/v1.IdentitySets/Get',
                 request_serializer=identity__sets__pb2.IdentitySetGetRequest.SerializeToString,
                 response_deserializer=identity__sets__pb2.IdentitySetGetResponse.FromString,
+                )
+        self.Update = channel.unary_unary(
+                '/v1.IdentitySets/Update',
+                request_serializer=identity__sets__pb2.IdentitySetUpdateRequest.SerializeToString,
+                response_deserializer=identity__sets__pb2.IdentitySetUpdateResponse.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/v1.IdentitySets/Delete',
+                request_serializer=identity__sets__pb2.IdentitySetDeleteRequest.SerializeToString,
+                response_deserializer=identity__sets__pb2.IdentitySetDeleteResponse.FromString,
                 )
         self.List = channel.unary_unary(
                 '/v1.IdentitySets/List',
@@ -47,33 +62,36 @@ class IdentitySetsServicer(object):
     An Account's relationship to a IdentitySet is defined via IdentityAlias objects.
     """
 
-    def Get(self, request, context):
-        """// Create registers a new IdentitySet.
-        rpc Create(IdentitySetCreateRequest) returns (IdentitySetCreateResponse) {
-        option (v1.method_options).method = "post";
-        option (v1.method_options).url = "/v1/identity-sets";
-        }
+    def Create(self, request, context):
+        """Create registers a new IdentitySet.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-        Get reads one IdentitySet by ID.
+    def Get(self, request, context):
+        """Get reads one IdentitySet by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Update replaces all the fields of a IdentitySet by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Delete removes a IdentitySet by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """// Update replaces all the fields of a IdentitySet by ID.
-        rpc Update(IdentitySetUpdateRequest) returns (IdentitySetUpdateResponse) {
-        option (v1.method_options).method = "put";
-        option (v1.method_options).url = "/v1/identity-sets/{id}";
-        }
-
-        // Delete removes a IdentitySet by ID.
-        rpc Delete(IdentitySetDeleteRequest) returns (IdentitySetDeleteResponse) {
-        option (v1.method_options).method = "delete";
-        option (v1.method_options).url = "/v1/identity-sets/{id}";
-        }
-
-        List gets a list of IdentitySets matching a given set of criteria.
+        """List gets a list of IdentitySets matching a given set of criteria.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -82,10 +100,25 @@ class IdentitySetsServicer(object):
 
 def add_IdentitySetsServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=identity__sets__pb2.IdentitySetCreateRequest.FromString,
+                    response_serializer=identity__sets__pb2.IdentitySetCreateResponse.SerializeToString,
+            ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=identity__sets__pb2.IdentitySetGetRequest.FromString,
                     response_serializer=identity__sets__pb2.IdentitySetGetResponse.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=identity__sets__pb2.IdentitySetUpdateRequest.FromString,
+                    response_serializer=identity__sets__pb2.IdentitySetUpdateResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=identity__sets__pb2.IdentitySetDeleteRequest.FromString,
+                    response_serializer=identity__sets__pb2.IdentitySetDeleteResponse.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
@@ -105,6 +138,23 @@ class IdentitySets(object):
     """
 
     @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.IdentitySets/Create',
+            identity__sets__pb2.IdentitySetCreateRequest.SerializeToString,
+            identity__sets__pb2.IdentitySetCreateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Get(request,
             target,
             options=(),
@@ -118,6 +168,40 @@ class IdentitySets(object):
         return grpc.experimental.unary_unary(request, target, '/v1.IdentitySets/Get',
             identity__sets__pb2.IdentitySetGetRequest.SerializeToString,
             identity__sets__pb2.IdentitySetGetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.IdentitySets/Update',
+            identity__sets__pb2.IdentitySetUpdateRequest.SerializeToString,
+            identity__sets__pb2.IdentitySetUpdateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.IdentitySets/Delete',
+            identity__sets__pb2.IdentitySetDeleteRequest.SerializeToString,
+            identity__sets__pb2.IdentitySetDeleteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

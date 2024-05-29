@@ -30,15 +30,35 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13identity_sets.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"U\n\x15IdentitySetGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe3\x01\n\x16IdentitySetGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0cidentity_set\x18\x02 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16IdentitySetListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xce\x01\n\x17IdentitySetListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\ridentity_sets\x18\x02 \x03(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xac\x01\n\x0bIdentitySet\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:f\xfa\xf8\xb3\x07\x61\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07W\xa2\xf3\xb3\x07%tf_examples/identity_set_resource.txt\xaa\xf3\xb3\x07(tf_examples/identity_set_data_source.txt2\x8a\x02\n\x0cIdentitySets\x12k\n\x03Get\x12\x19.v1.IdentitySetGetRequest\x1a\x1a.v1.IdentitySetGetResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/identity-sets/{id}\x12i\n\x04List\x12\x1a.v1.IdentitySetListRequest\x1a\x1b.v1.IdentitySetListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/identity-sets\x1a\"\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bIdentitySet\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ig-Bh\n\x19\x63om.strongdm.api.plumbingB\x14IdentitySetsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13identity_sets.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"v\n\x18IdentitySetCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x31\n\x0cidentity_set\x18\x02 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe9\x01\n\x19IdentitySetCreateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0cidentity_set\x18\x02 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"U\n\x15IdentitySetGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe3\x01\n\x16IdentitySetGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0cidentity_set\x18\x02 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x82\x01\n\x18IdentitySetUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x31\n\x0cidentity_set\x18\x03 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe9\x01\n\x19IdentitySetUpdateResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x31\n\x0cidentity_set\x18\x02 \x01(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x18IdentitySetDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xb6\x01\n\x19IdentitySetDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"[\n\x16IdentitySetListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xce\x01\n\x17IdentitySetListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x32\n\ridentity_sets\x18\x02 \x03(\x0b\x32\x0f.v1.IdentitySetB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway\"\xac\x01\n\x0bIdentitySet\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01:f\xfa\xf8\xb3\x07\x61\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07W\xa2\xf3\xb3\x07%tf_examples/identity_set_resource.txt\xaa\xf3\xb3\x07(tf_examples/identity_set_data_source.txt2\xeb\x04\n\x0cIdentitySets\x12p\n\x06\x43reate\x12\x1c.v1.IdentitySetCreateRequest\x1a\x1d.v1.IdentitySetCreateResponse\")\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/identity-sets\x12k\n\x03Get\x12\x19.v1.IdentitySetGetRequest\x1a\x1a.v1.IdentitySetGetResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/identity-sets/{id}\x12t\n\x06Update\x12\x1c.v1.IdentitySetUpdateRequest\x1a\x1d.v1.IdentitySetUpdateResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/identity-sets/{id}\x12w\n\x06\x44\x65lete\x12\x1c.v1.IdentitySetDeleteRequest\x1a\x1d.v1.IdentitySetDeleteResponse\"0\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/identity-sets/{id}\x12i\n\x04List\x12\x1a.v1.IdentitySetListRequest\x1a\x1b.v1.IdentitySetListResponse\"(\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x16\xaa\xf3\xb3\x07\x11/v1/identity-sets\x1a\"\xca\xf9\xb3\x07\x10\xc2\xf9\xb3\x07\x0bIdentitySet\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03ig-Bh\n\x19\x63om.strongdm.api.plumbingB\x14IdentitySetsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
+_IDENTITYSETCREATEREQUEST = DESCRIPTOR.message_types_by_name['IdentitySetCreateRequest']
+_IDENTITYSETCREATERESPONSE = DESCRIPTOR.message_types_by_name['IdentitySetCreateResponse']
 _IDENTITYSETGETREQUEST = DESCRIPTOR.message_types_by_name['IdentitySetGetRequest']
 _IDENTITYSETGETRESPONSE = DESCRIPTOR.message_types_by_name['IdentitySetGetResponse']
+_IDENTITYSETUPDATEREQUEST = DESCRIPTOR.message_types_by_name['IdentitySetUpdateRequest']
+_IDENTITYSETUPDATERESPONSE = DESCRIPTOR.message_types_by_name['IdentitySetUpdateResponse']
+_IDENTITYSETDELETEREQUEST = DESCRIPTOR.message_types_by_name['IdentitySetDeleteRequest']
+_IDENTITYSETDELETERESPONSE = DESCRIPTOR.message_types_by_name['IdentitySetDeleteResponse']
 _IDENTITYSETLISTREQUEST = DESCRIPTOR.message_types_by_name['IdentitySetListRequest']
 _IDENTITYSETLISTRESPONSE = DESCRIPTOR.message_types_by_name['IdentitySetListResponse']
 _IDENTITYSET = DESCRIPTOR.message_types_by_name['IdentitySet']
+IdentitySetCreateRequest = _reflection.GeneratedProtocolMessageType('IdentitySetCreateRequest', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETCREATEREQUEST,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetCreateRequest)
+  })
+_sym_db.RegisterMessage(IdentitySetCreateRequest)
+
+IdentitySetCreateResponse = _reflection.GeneratedProtocolMessageType('IdentitySetCreateResponse', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETCREATERESPONSE,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetCreateResponse)
+  })
+_sym_db.RegisterMessage(IdentitySetCreateResponse)
+
 IdentitySetGetRequest = _reflection.GeneratedProtocolMessageType('IdentitySetGetRequest', (_message.Message,), {
   'DESCRIPTOR' : _IDENTITYSETGETREQUEST,
   '__module__' : 'identity_sets_pb2'
@@ -52,6 +72,34 @@ IdentitySetGetResponse = _reflection.GeneratedProtocolMessageType('IdentitySetGe
   # @@protoc_insertion_point(class_scope:v1.IdentitySetGetResponse)
   })
 _sym_db.RegisterMessage(IdentitySetGetResponse)
+
+IdentitySetUpdateRequest = _reflection.GeneratedProtocolMessageType('IdentitySetUpdateRequest', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETUPDATEREQUEST,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetUpdateRequest)
+  })
+_sym_db.RegisterMessage(IdentitySetUpdateRequest)
+
+IdentitySetUpdateResponse = _reflection.GeneratedProtocolMessageType('IdentitySetUpdateResponse', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETUPDATERESPONSE,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetUpdateResponse)
+  })
+_sym_db.RegisterMessage(IdentitySetUpdateResponse)
+
+IdentitySetDeleteRequest = _reflection.GeneratedProtocolMessageType('IdentitySetDeleteRequest', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETDELETEREQUEST,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetDeleteRequest)
+  })
+_sym_db.RegisterMessage(IdentitySetDeleteRequest)
+
+IdentitySetDeleteResponse = _reflection.GeneratedProtocolMessageType('IdentitySetDeleteResponse', (_message.Message,), {
+  'DESCRIPTOR' : _IDENTITYSETDELETERESPONSE,
+  '__module__' : 'identity_sets_pb2'
+  # @@protoc_insertion_point(class_scope:v1.IdentitySetDeleteResponse)
+  })
+_sym_db.RegisterMessage(IdentitySetDeleteResponse)
 
 IdentitySetListRequest = _reflection.GeneratedProtocolMessageType('IdentitySetListRequest', (_message.Message,), {
   'DESCRIPTOR' : _IDENTITYSETLISTREQUEST,
@@ -79,6 +127,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031com.strongdm.api.plumbingB\024IdentitySetsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1'
+  _IDENTITYSETCREATEREQUEST.fields_by_name['identity_set']._options = None
+  _IDENTITYSETCREATEREQUEST.fields_by_name['identity_set']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETCREATERESPONSE.fields_by_name['meta']._options = None
+  _IDENTITYSETCREATERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETCREATERESPONSE.fields_by_name['identity_set']._options = None
+  _IDENTITYSETCREATERESPONSE.fields_by_name['identity_set']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETCREATERESPONSE.fields_by_name['rate_limit']._options = None
+  _IDENTITYSETCREATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _IDENTITYSETCREATERESPONSE._options = None
+  _IDENTITYSETCREATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _IDENTITYSETGETREQUEST.fields_by_name['id']._options = None
   _IDENTITYSETGETREQUEST.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _IDENTITYSETGETRESPONSE.fields_by_name['meta']._options = None
@@ -89,6 +147,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _IDENTITYSETGETRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _IDENTITYSETGETRESPONSE._options = None
   _IDENTITYSETGETRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _IDENTITYSETUPDATEREQUEST.fields_by_name['identity_set']._options = None
+  _IDENTITYSETUPDATEREQUEST.fields_by_name['identity_set']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['meta']._options = None
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['identity_set']._options = None
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['identity_set']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['rate_limit']._options = None
+  _IDENTITYSETUPDATERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _IDENTITYSETUPDATERESPONSE._options = None
+  _IDENTITYSETUPDATERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _IDENTITYSETDELETEREQUEST.fields_by_name['id']._options = None
+  _IDENTITYSETDELETEREQUEST.fields_by_name['id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETDELETERESPONSE.fields_by_name['meta']._options = None
+  _IDENTITYSETDELETERESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _IDENTITYSETDELETERESPONSE.fields_by_name['rate_limit']._options = None
+  _IDENTITYSETDELETERESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _IDENTITYSETDELETERESPONSE._options = None
+  _IDENTITYSETDELETERESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _IDENTITYSETLISTREQUEST.fields_by_name['filter']._options = None
   _IDENTITYSETLISTREQUEST.fields_by_name['filter']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _IDENTITYSETLISTRESPONSE.fields_by_name['identity_sets']._options = None
@@ -103,20 +179,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _IDENTITYSET._serialized_options = b'\372\370\263\007a\250\363\263\007\001\302\363\263\007W\242\363\263\007%tf_examples/identity_set_resource.txt\252\363\263\007(tf_examples/identity_set_data_source.txt'
   _IDENTITYSETS._options = None
   _IDENTITYSETS._serialized_options = b'\312\371\263\007\020\302\371\263\007\013IdentitySet\312\371\263\007\010\322\371\263\007\003ig-'
+  _IDENTITYSETS.methods_by_name['Create']._options = None
+  _IDENTITYSETS.methods_by_name['Create']._serialized_options = b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\026\252\363\263\007\021/v1/identity-sets'
   _IDENTITYSETS.methods_by_name['Get']._options = None
   _IDENTITYSETS.methods_by_name['Get']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\033\252\363\263\007\026/v1/identity-sets/{id}'
+  _IDENTITYSETS.methods_by_name['Update']._options = None
+  _IDENTITYSETS.methods_by_name['Update']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\033\252\363\263\007\026/v1/identity-sets/{id}'
+  _IDENTITYSETS.methods_by_name['Delete']._options = None
+  _IDENTITYSETS.methods_by_name['Delete']._serialized_options = b'\202\371\263\007\013\242\363\263\007\006delete\202\371\263\007\033\252\363\263\007\026/v1/identity-sets/{id}'
   _IDENTITYSETS.methods_by_name['List']._options = None
   _IDENTITYSETS.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\026\252\363\263\007\021/v1/identity-sets'
-  _IDENTITYSETGETREQUEST._serialized_start=54
-  _IDENTITYSETGETREQUEST._serialized_end=139
-  _IDENTITYSETGETRESPONSE._serialized_start=142
-  _IDENTITYSETGETRESPONSE._serialized_end=369
-  _IDENTITYSETLISTREQUEST._serialized_start=371
-  _IDENTITYSETLISTREQUEST._serialized_end=462
-  _IDENTITYSETLISTRESPONSE._serialized_start=465
-  _IDENTITYSETLISTRESPONSE._serialized_end=671
-  _IDENTITYSET._serialized_start=674
-  _IDENTITYSET._serialized_end=846
-  _IDENTITYSETS._serialized_start=849
-  _IDENTITYSETS._serialized_end=1115
+  _IDENTITYSETCREATEREQUEST._serialized_start=54
+  _IDENTITYSETCREATEREQUEST._serialized_end=172
+  _IDENTITYSETCREATERESPONSE._serialized_start=175
+  _IDENTITYSETCREATERESPONSE._serialized_end=408
+  _IDENTITYSETGETREQUEST._serialized_start=410
+  _IDENTITYSETGETREQUEST._serialized_end=495
+  _IDENTITYSETGETRESPONSE._serialized_start=498
+  _IDENTITYSETGETRESPONSE._serialized_end=725
+  _IDENTITYSETUPDATEREQUEST._serialized_start=728
+  _IDENTITYSETUPDATEREQUEST._serialized_end=858
+  _IDENTITYSETUPDATERESPONSE._serialized_start=861
+  _IDENTITYSETUPDATERESPONSE._serialized_end=1094
+  _IDENTITYSETDELETEREQUEST._serialized_start=1096
+  _IDENTITYSETDELETEREQUEST._serialized_end=1187
+  _IDENTITYSETDELETERESPONSE._serialized_start=1190
+  _IDENTITYSETDELETERESPONSE._serialized_end=1372
+  _IDENTITYSETLISTREQUEST._serialized_start=1374
+  _IDENTITYSETLISTREQUEST._serialized_end=1465
+  _IDENTITYSETLISTRESPONSE._serialized_start=1468
+  _IDENTITYSETLISTRESPONSE._serialized_end=1674
+  _IDENTITYSET._serialized_start=1677
+  _IDENTITYSET._serialized_end=1849
+  _IDENTITYSETS._serialized_start=1852
+  _IDENTITYSETS._serialized_end=2471
 # @@protoc_insertion_point(module_scope)

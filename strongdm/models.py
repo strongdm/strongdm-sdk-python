@@ -10842,6 +10842,102 @@ class IdentitySet:
         )
 
 
+class IdentitySetCreateResponse:
+    '''
+         IdentitySetCreateResponse reports how the IdentitySets were created in the system. It can
+     communicate partial successes or failures.
+    '''
+    __slots__ = [
+        'identity_set',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_set=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_set = identity_set if identity_set is not None else None
+        '''
+         The created IdentitySet.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySetCreateResponse ' + \
+            'identity_set: ' + repr(self.identity_set) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_set': self.identity_set,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_set=d.get('identity_set'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class IdentitySetDeleteResponse:
+    '''
+         IdentitySetDeleteResponse returns information about a IdentitySet that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySetDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class IdentitySetGetResponse:
     '''
          IdentitySetGetResponse returns a requested IdentitySet.
@@ -10955,6 +11051,59 @@ class IdentitySetHistory:
             deleted_at=d.get('deleted_at'),
             identity_set=d.get('identity_set'),
             timestamp=d.get('timestamp'),
+        )
+
+
+class IdentitySetUpdateResponse:
+    '''
+         IdentitySetUpdateResponse returns the fields of a IdentitySet after it has been updated by
+     a IdentitySetUpdateRequest.
+    '''
+    __slots__ = [
+        'identity_set',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        identity_set=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.identity_set = identity_set if identity_set is not None else None
+        '''
+         The updated IdentitySet.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.IdentitySetUpdateResponse ' + \
+            'identity_set: ' + repr(self.identity_set) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'identity_set': self.identity_set,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            identity_set=d.get('identity_set'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
         )
 
 

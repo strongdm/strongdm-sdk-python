@@ -2328,6 +2328,41 @@ class IdentitySets:
         self.parent = client
         self.stub = IdentitySetsStub(channel)
 
+    def create(self, identity_set, timeout=None):
+        '''
+         Create registers a new IdentitySet.
+        '''
+        req = IdentitySetCreateRequest()
+
+        if identity_set is not None:
+            req.identity_set.CopyFrom(
+                plumbing.convert_identity_set_to_plumbing(identity_set))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('IdentitySets.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentitySetCreateResponse()
+        resp.identity_set = plumbing.convert_identity_set_to_porcelain(
+            plumbing_response.identity_set)
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
     def get(self, id, timeout=None):
         '''
          Get reads one IdentitySet by ID.
@@ -2358,6 +2393,72 @@ class IdentitySets:
         resp.identity_set = plumbing.convert_identity_set_to_porcelain(
             plumbing_response.identity_set)
         resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, identity_set, timeout=None):
+        '''
+         Update replaces all the fields of a IdentitySet by ID.
+        '''
+        req = IdentitySetUpdateRequest()
+
+        if identity_set is not None:
+            req.identity_set.CopyFrom(
+                plumbing.convert_identity_set_to_plumbing(identity_set))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('IdentitySets.Update',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentitySetUpdateResponse()
+        resp.identity_set = plumbing.convert_identity_set_to_porcelain(
+            plumbing_response.identity_set)
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a IdentitySet by ID.
+        '''
+        req = IdentitySetDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('IdentitySets.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.IdentitySetDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
             plumbing_response.meta)
         resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
             plumbing_response.rate_limit)

@@ -5308,6 +5308,82 @@ def convert_repeated_identity_set_to_porcelain(plumbings):
     ]
 
 
+def convert_identity_set_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySetCreateResponse()
+    porcelain.identity_set = convert_identity_set_to_porcelain(
+        plumbing.identity_set)
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_set_create_response_to_plumbing(porcelain):
+    plumbing = IdentitySetCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_set.CopyFrom(
+        convert_identity_set_to_plumbing(porcelain.identity_set))
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_set_create_response_to_plumbing(porcelains):
+    return [
+        convert_identity_set_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_create_response_to_porcelain(plumbings):
+    return [
+        convert_identity_set_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_set_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySetDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_set_delete_response_to_plumbing(porcelain):
+    plumbing = IdentitySetDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_set_delete_response_to_plumbing(porcelains):
+    return [
+        convert_identity_set_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_delete_response_to_porcelain(plumbings):
+    return [
+        convert_identity_set_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_identity_set_get_response_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5383,6 +5459,46 @@ def convert_repeated_identity_set_history_to_plumbing(porcelains):
 def convert_repeated_identity_set_history_to_porcelain(plumbings):
     return [
         convert_identity_set_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_identity_set_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.IdentitySetUpdateResponse()
+    porcelain.identity_set = convert_identity_set_to_porcelain(
+        plumbing.identity_set)
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_identity_set_update_response_to_plumbing(porcelain):
+    plumbing = IdentitySetUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.identity_set.CopyFrom(
+        convert_identity_set_to_plumbing(porcelain.identity_set))
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_identity_set_update_response_to_plumbing(porcelains):
+    return [
+        convert_identity_set_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_identity_set_update_response_to_porcelain(plumbings):
+    return [
+        convert_identity_set_update_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
