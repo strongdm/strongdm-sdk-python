@@ -16216,6 +16216,7 @@ class Query:
         'egress_node_id',
         'encrypted',
         'id',
+        'identity_alias_username',
         'query_body',
         'query_category',
         'query_hash',
@@ -16245,6 +16246,7 @@ class Query:
         egress_node_id=None,
         encrypted=None,
         id=None,
+        identity_alias_username=None,
         query_body=None,
         query_category=None,
         query_hash=None,
@@ -16313,6 +16315,10 @@ class Query:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Query.
+        '''
+        self.identity_alias_username = identity_alias_username if identity_alias_username is not None else ''
+        '''
+         The username of the IdentityAlias used to access the Resource.
         '''
         self.query_body = query_body if query_body is not None else ''
         '''
@@ -16388,6 +16394,7 @@ class Query:
             'egress_node_id: ' + repr(self.egress_node_id) + ' ' +\
             'encrypted: ' + repr(self.encrypted) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_username: ' + repr(self.identity_alias_username) + ' ' +\
             'query_body: ' + repr(self.query_body) + ' ' +\
             'query_category: ' + repr(self.query_category) + ' ' +\
             'query_hash: ' + repr(self.query_hash) + ' ' +\
@@ -16417,6 +16424,7 @@ class Query:
             'egress_node_id': self.egress_node_id,
             'encrypted': self.encrypted,
             'id': self.id,
+            'identity_alias_username': self.identity_alias_username,
             'query_body': self.query_body,
             'query_category': self.query_category,
             'query_hash': self.query_hash,
@@ -16447,6 +16455,7 @@ class Query:
             egress_node_id=d.get('egress_node_id'),
             encrypted=d.get('encrypted'),
             id=d.get('id'),
+            identity_alias_username=d.get('identity_alias_username'),
             query_body=d.get('query_body'),
             query_category=d.get('query_category'),
             query_hash=d.get('query_hash'),
