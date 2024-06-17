@@ -24,6 +24,8 @@ class AKS:
         'certificate_authority',
         'client_certificate',
         'client_key',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -45,6 +47,8 @@ class AKS:
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -74,6 +78,15 @@ class AKS:
         self.client_key = client_key if client_key is not None else ''
         '''
          The key to authenticate TLS connections with.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -134,6 +147,8 @@ class AKS:
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -155,6 +170,8 @@ class AKS:
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -178,6 +195,8 @@ class AKS:
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -346,6 +365,8 @@ class AKSBasicAuth:
 class AKSServiceAccount:
     __slots__ = [
         'bind_interface',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -365,6 +386,8 @@ class AKSServiceAccount:
     def __init__(
         self,
         bind_interface=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -383,6 +406,15 @@ class AKSServiceAccount:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -444,6 +476,8 @@ class AKSServiceAccount:
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -463,6 +497,8 @@ class AKSServiceAccount:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -484,6 +520,8 @@ class AKSServiceAccount:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -3308,6 +3346,8 @@ class AmazonEKS:
         'bind_interface',
         'certificate_authority',
         'cluster_name',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'endpoint',
         'healthcheck_namespace',
@@ -3332,6 +3372,8 @@ class AmazonEKS:
         bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         endpoint=None,
         healthcheck_namespace=None,
@@ -3364,6 +3406,15 @@ class AmazonEKS:
         self.cluster_name = cluster_name if cluster_name is not None else ''
         '''
          The name of the cluster to connect to.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -3436,6 +3487,8 @@ class AmazonEKS:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
@@ -3460,6 +3513,8 @@ class AmazonEKS:
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthcheck_namespace': self.healthcheck_namespace,
@@ -3486,6 +3541,8 @@ class AmazonEKS:
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
@@ -3511,6 +3568,8 @@ class AmazonEKSInstanceProfile:
         'bind_interface',
         'certificate_authority',
         'cluster_name',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'endpoint',
         'healthcheck_namespace',
@@ -3533,6 +3592,8 @@ class AmazonEKSInstanceProfile:
         bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         endpoint=None,
         healthcheck_namespace=None,
@@ -3560,6 +3621,15 @@ class AmazonEKSInstanceProfile:
         self.cluster_name = cluster_name if cluster_name is not None else ''
         '''
          The name of the cluster to connect to.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -3627,6 +3697,8 @@ class AmazonEKSInstanceProfile:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
@@ -3649,6 +3721,8 @@ class AmazonEKSInstanceProfile:
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthcheck_namespace': self.healthcheck_namespace,
@@ -3673,6 +3747,8 @@ class AmazonEKSInstanceProfile:
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
@@ -9578,6 +9654,8 @@ class GoogleGKE:
     __slots__ = [
         'bind_interface',
         'certificate_authority',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'endpoint',
         'healthcheck_namespace',
@@ -9597,6 +9675,8 @@ class GoogleGKE:
         self,
         bind_interface=None,
         certificate_authority=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         endpoint=None,
         healthcheck_namespace=None,
@@ -9618,6 +9698,15 @@ class GoogleGKE:
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
          The CA to authenticate TLS connections with.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -9676,6 +9765,8 @@ class GoogleGKE:
         return '<sdm.GoogleGKE ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'endpoint: ' + repr(self.endpoint) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
@@ -9695,6 +9786,8 @@ class GoogleGKE:
         return {
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'endpoint': self.endpoint,
             'healthcheck_namespace': self.healthcheck_namespace,
@@ -9716,6 +9809,8 @@ class GoogleGKE:
         return cls(
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             endpoint=d.get('endpoint'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
@@ -11397,6 +11492,8 @@ class Kubernetes:
         'certificate_authority',
         'client_certificate',
         'client_key',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -11418,6 +11515,8 @@ class Kubernetes:
         certificate_authority=None,
         client_certificate=None,
         client_key=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -11447,6 +11546,15 @@ class Kubernetes:
         self.client_key = client_key if client_key is not None else ''
         '''
          The key to authenticate TLS connections with.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11507,6 +11615,8 @@ class Kubernetes:
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
             'client_key: ' + repr(self.client_key) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -11528,6 +11638,8 @@ class Kubernetes:
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
             'client_key': self.client_key,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -11551,6 +11663,8 @@ class Kubernetes:
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
             client_key=d.get('client_key'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -11719,6 +11833,8 @@ class KubernetesBasicAuth:
 class KubernetesServiceAccount:
     __slots__ = [
         'bind_interface',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -11738,6 +11854,8 @@ class KubernetesServiceAccount:
     def __init__(
         self,
         bind_interface=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -11756,6 +11874,15 @@ class KubernetesServiceAccount:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11817,6 +11944,8 @@ class KubernetesServiceAccount:
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -11836,6 +11965,8 @@ class KubernetesServiceAccount:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -11857,6 +11988,8 @@ class KubernetesServiceAccount:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
