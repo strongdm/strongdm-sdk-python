@@ -446,8 +446,8 @@ class CaptureType:
     SSH_PORT_FORWARD = "ssh-portForward"
 
 
-# Providers responsible for device posture enforcement
-class DevicePostureProvider:
+# Providers responsible for device trust enforcement
+class DeviceTrustProvider:
     NONE = ""
     SENTINEL_ONE = "sentinelone"
     CROWD_STRIKE = "crowdstrike"

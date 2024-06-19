@@ -2737,8 +2737,7 @@ class AccountPermission:
         '''
         self.permission = permission if permission is not None else ''
         '''
-         The value of this permission, split into vertical and action e.g.
-         'secretstore:List', 'role:update'
+         The value of this permission, split into vertical and action, one of the Permission constants.
         '''
         self.scope = scope if scope is not None else ''
         '''
@@ -3113,7 +3112,7 @@ class Activity:
         '''
         self.verb = verb if verb is not None else ''
         '''
-         The kind of activity which has taken place.
+         The kind of activity which has taken place, one of the ActivityVerb constants.
         '''
 
     def __repr__(self):
@@ -3256,7 +3255,7 @@ class ActivityEntity:
         '''
         self.type = type if type is not None else ''
         '''
-         The type of entity affected, one of the Activity Entities constants.
+         The type of entity affected, one of the ActivityEntityType constants.
         '''
 
     def __repr__(self):
@@ -14934,6 +14933,8 @@ class Organization:
     __slots__ = [
         'auth_provider',
         'created_at',
+        'device_trust_enabled',
+        'device_trust_provider',
         'idle_timeout',
         'idle_timeout_enabled',
         'kind',
@@ -14962,6 +14963,8 @@ class Organization:
         self,
         auth_provider=None,
         created_at=None,
+        device_trust_enabled=None,
+        device_trust_provider=None,
         idle_timeout=None,
         idle_timeout_enabled=None,
         kind=None,
@@ -14987,11 +14990,19 @@ class Organization:
     ):
         self.auth_provider = auth_provider if auth_provider is not None else ''
         '''
-         The Organization's authentication provider.
+         The Organization's authentication provider, one of the AuthProvider constants.
         '''
         self.created_at = created_at if created_at is not None else None
         '''
          The time at which the Organization was created.
+        '''
+        self.device_trust_enabled = device_trust_enabled if device_trust_enabled is not None else False
+        '''
+         Indicates if the Organization has device trust enabled.
+        '''
+        self.device_trust_provider = device_trust_provider if device_trust_provider is not None else ''
+        '''
+         The Organization's device trust provider, one of the DeviceTrustProvider constants.
         '''
         self.idle_timeout = idle_timeout if idle_timeout is not None else None
         '''
@@ -15003,23 +15014,23 @@ class Organization:
         '''
         self.kind = kind if kind is not None else ''
         '''
-         The Organization's type.
+         The Organization's type, one of the OrgKind constants.
         '''
         self.log_local_encoder = log_local_encoder if log_local_encoder is not None else ''
         '''
-         The Organization's local log encryption encoder.
+         The Organization's local log encryption encoder, one of the LogLocalEncoder constants.
         '''
         self.log_local_format = log_local_format if log_local_format is not None else ''
         '''
-         The Organization's local log format.
+         The Organization's local log format, one of the LogLocalFormat constants.
         '''
         self.log_local_storage = log_local_storage if log_local_storage is not None else ''
         '''
-         The Organization's local log storage.
+         The Organization's local log storage, one of the LogLocalStorage constants.
         '''
         self.log_remote_encoder = log_remote_encoder if log_remote_encoder is not None else ''
         '''
-         The Organization's remote log encryption encoder.
+         The Organization's remote log encryption encoder, one of the LogRemoteEncoder constants.
         '''
         self.log_socket_path = log_socket_path if log_socket_path is not None else ''
         '''
@@ -15035,7 +15046,7 @@ class Organization:
         '''
         self.mfa_provider = mfa_provider if mfa_provider is not None else ''
         '''
-         The Organization's multi-factor authentication provider, if enabled.
+         The Organization's multi-factor authentication provider, one of the MFAProvider constants.
         '''
         self.name = name if name is not None else ''
         '''
@@ -15051,7 +15062,7 @@ class Organization:
         '''
         self.scim_provider = scim_provider if scim_provider is not None else ''
         '''
-         The Organization's SCIM provider.
+         The Organization's SCIM provider, one of the SCIMProvider constants.
         '''
         self.sensitive_label = sensitive_label if sensitive_label is not None else ''
         '''
@@ -15086,6 +15097,8 @@ class Organization:
         return '<sdm.Organization ' + \
             'auth_provider: ' + repr(self.auth_provider) + ' ' +\
             'created_at: ' + repr(self.created_at) + ' ' +\
+            'device_trust_enabled: ' + repr(self.device_trust_enabled) + ' ' +\
+            'device_trust_provider: ' + repr(self.device_trust_provider) + ' ' +\
             'idle_timeout: ' + repr(self.idle_timeout) + ' ' +\
             'idle_timeout_enabled: ' + repr(self.idle_timeout_enabled) + ' ' +\
             'kind: ' + repr(self.kind) + ' ' +\
@@ -15114,6 +15127,8 @@ class Organization:
         return {
             'auth_provider': self.auth_provider,
             'created_at': self.created_at,
+            'device_trust_enabled': self.device_trust_enabled,
+            'device_trust_provider': self.device_trust_provider,
             'idle_timeout': self.idle_timeout,
             'idle_timeout_enabled': self.idle_timeout_enabled,
             'kind': self.kind,
@@ -15145,6 +15160,8 @@ class Organization:
         return cls(
             auth_provider=d.get('auth_provider'),
             created_at=d.get('created_at'),
+            device_trust_enabled=d.get('device_trust_enabled'),
+            device_trust_provider=d.get('device_trust_provider'),
             idle_timeout=d.get('idle_timeout'),
             idle_timeout_enabled=d.get('idle_timeout_enabled'),
             kind=d.get('kind'),
@@ -16687,7 +16704,7 @@ class QueryCapture:
         '''
         self.type = type if type is not None else ''
         '''
-         The CaptureType of this query capture.
+         The CaptureType of this query capture, one of the CaptureType constants.
         '''
         self.width = width if width is not None else 0
         '''
@@ -17926,9 +17943,7 @@ class Relay:
         '''
         self.state = state if state is not None else ''
         '''
-         The current state of the relay. One of: "new", "verifying_restart",
-         "awaiting_restart", "restarting", "started", "stopped", "dead",
-         "unknown".
+         The current state of the relay, one of the NodeState constants.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''

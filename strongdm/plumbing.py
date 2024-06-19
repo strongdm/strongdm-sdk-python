@@ -6997,6 +6997,8 @@ def convert_organization_to_porcelain(plumbing):
     porcelain = models.Organization()
     porcelain.auth_provider = (plumbing.auth_provider)
     porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
+    porcelain.device_trust_enabled = (plumbing.device_trust_enabled)
+    porcelain.device_trust_provider = (plumbing.device_trust_provider)
     porcelain.idle_timeout = convert_duration_to_porcelain(
         plumbing.idle_timeout)
     porcelain.idle_timeout_enabled = (plumbing.idle_timeout_enabled)
@@ -7033,6 +7035,8 @@ def convert_organization_to_plumbing(porcelain):
     plumbing.auth_provider = (porcelain.auth_provider)
     plumbing.created_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.created_at))
+    plumbing.device_trust_enabled = (porcelain.device_trust_enabled)
+    plumbing.device_trust_provider = (porcelain.device_trust_provider)
     plumbing.idle_timeout.CopyFrom(
         convert_duration_to_plumbing(porcelain.idle_timeout))
     plumbing.idle_timeout_enabled = (porcelain.idle_timeout_enabled)
