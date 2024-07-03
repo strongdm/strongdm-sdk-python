@@ -4060,6 +4060,7 @@ class Resources:
     `strongdm.models.SSH`
     `strongdm.models.SSHCert`
     `strongdm.models.SSHCustomerKey`
+    `strongdm.models.SSHPassword`
     `strongdm.models.Sybase`
     `strongdm.models.SybaseIQ`
     `strongdm.models.Teradata`

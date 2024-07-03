@@ -9077,6 +9077,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.SSHCustomerKey):
         plumbing.ssh_customer_key.CopyFrom(
             convert_ssh_customer_key_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SSHPassword):
+        plumbing.ssh_password.CopyFrom(
+            convert_ssh_password_to_plumbing(porcelain))
     if isinstance(porcelain, models.Sybase):
         plumbing.sybase.CopyFrom(convert_sybase_to_plumbing(porcelain))
     if isinstance(porcelain, models.SybaseIQ):
@@ -9276,6 +9279,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_ssh_cert_to_porcelain(plumbing.ssh_cert)
     if plumbing.HasField('ssh_customer_key'):
         return convert_ssh_customer_key_to_porcelain(plumbing.ssh_customer_key)
+    if plumbing.HasField('ssh_password'):
+        return convert_ssh_password_to_porcelain(plumbing.ssh_password)
     if plumbing.HasField('sybase'):
         return convert_sybase_to_porcelain(plumbing.sybase)
     if plumbing.HasField('sybase_iq'):
@@ -10221,6 +10226,64 @@ def convert_repeated_ssh_customer_key_to_porcelain(plumbings):
     return [
         convert_ssh_customer_key_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_ssh_password_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SSHPassword()
+    porcelain.allow_deprecated_key_exchanges = (
+        plumbing.allow_deprecated_key_exchanges)
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_forwarding = (plumbing.port_forwarding)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_ssh_password_to_plumbing(porcelain):
+    plumbing = SSHPassword()
+    if porcelain is None:
+        return plumbing
+    plumbing.allow_deprecated_key_exchanges = (
+        porcelain.allow_deprecated_key_exchanges)
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_forwarding = (porcelain.port_forwarding)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_ssh_password_to_plumbing(porcelains):
+    return [
+        convert_ssh_password_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_ssh_password_to_porcelain(plumbings):
+    return [
+        convert_ssh_password_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
