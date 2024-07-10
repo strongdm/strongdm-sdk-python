@@ -14940,6 +14940,7 @@ class Organization:
         'log_remote_encoder',
         'log_socket_path',
         'log_tcp_address',
+        'loopback_range',
         'mfa_enabled',
         'mfa_provider',
         'name',
@@ -14970,6 +14971,7 @@ class Organization:
         log_remote_encoder=None,
         log_socket_path=None,
         log_tcp_address=None,
+        loopback_range=None,
         mfa_enabled=None,
         mfa_provider=None,
         name=None,
@@ -15035,6 +15037,10 @@ class Organization:
         self.log_tcp_address = log_tcp_address if log_tcp_address is not None else ''
         '''
          The Organization's TCP address for TCP or Syslog local log storage.
+        '''
+        self.loopback_range = loopback_range if loopback_range is not None else ''
+        '''
+         The Organization's loopback range.
         '''
         self.mfa_enabled = mfa_enabled if mfa_enabled is not None else False
         '''
@@ -15104,6 +15110,7 @@ class Organization:
             'log_remote_encoder: ' + repr(self.log_remote_encoder) + ' ' +\
             'log_socket_path: ' + repr(self.log_socket_path) + ' ' +\
             'log_tcp_address: ' + repr(self.log_tcp_address) + ' ' +\
+            'loopback_range: ' + repr(self.loopback_range) + ' ' +\
             'mfa_enabled: ' + repr(self.mfa_enabled) + ' ' +\
             'mfa_provider: ' + repr(self.mfa_provider) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
@@ -15134,6 +15141,7 @@ class Organization:
             'log_remote_encoder': self.log_remote_encoder,
             'log_socket_path': self.log_socket_path,
             'log_tcp_address': self.log_tcp_address,
+            'loopback_range': self.loopback_range,
             'mfa_enabled': self.mfa_enabled,
             'mfa_provider': self.mfa_provider,
             'name': self.name,
@@ -15167,6 +15175,7 @@ class Organization:
             log_remote_encoder=d.get('log_remote_encoder'),
             log_socket_path=d.get('log_socket_path'),
             log_tcp_address=d.get('log_tcp_address'),
+            loopback_range=d.get('loopback_range'),
             mfa_enabled=d.get('mfa_enabled'),
             mfa_provider=d.get('mfa_provider'),
             name=d.get('name'),
