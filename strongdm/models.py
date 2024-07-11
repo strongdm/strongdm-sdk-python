@@ -13334,7 +13334,6 @@ class MongoLegacyHost:
         'password',
         'port',
         'port_override',
-        'replica_set',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -13354,7 +13353,6 @@ class MongoLegacyHost:
         password=None,
         port=None,
         port_override=None,
-        replica_set=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -13401,10 +13399,6 @@ class MongoLegacyHost:
         '''
          The local port used by clients to connect to this resource.
         '''
-        self.replica_set = replica_set if replica_set is not None else ''
-        '''
-         The name of the mongo replicaset.
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13438,7 +13432,6 @@ class MongoLegacyHost:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -13458,7 +13451,6 @@ class MongoLegacyHost:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
-            'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -13479,7 +13471,6 @@ class MongoLegacyHost:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
-            replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
