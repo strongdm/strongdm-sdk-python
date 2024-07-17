@@ -13162,10 +13162,6 @@ class Memsql:
 
 
 class MongoHost:
-    '''
-    MongoHost is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -13323,6 +13319,10 @@ class MongoHost:
 
 
 class MongoLegacyHost:
+    '''
+    MongoLegacyHost is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -13480,6 +13480,10 @@ class MongoLegacyHost:
 
 
 class MongoLegacyReplicaset:
+    '''
+    MongoLegacyReplicaset is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
@@ -13655,10 +13659,6 @@ class MongoLegacyReplicaset:
 
 
 class MongoReplicaSet:
-    '''
-    MongoReplicaSet is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'auth_database',
         'bind_interface',
