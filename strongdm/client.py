@@ -33,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-28'
-USER_AGENT = 'strongdm-sdk-python/11.1.0'
+USER_AGENT = 'strongdm-sdk-python/11.3.0'
 
 
 class Client:
@@ -274,6 +274,19 @@ class Client:
          PeeringGroups provides the building blocks necessary to obtain explicit network topology and routing.
 
         See `strongdm.svc.PeeringGroups`.
+        '''
+        self.policies = svc.Policies(channel, self)
+        '''
+         Policies are the collection of one or more statements that enforce fine-grained access
+         control for the users of an organization.
+
+        See `strongdm.svc.Policies`.
+        '''
+        self.policies_history = svc.PoliciesHistory(channel, self)
+        '''
+         PoliciesHistory records all changes to the state of a Policy.
+
+        See `strongdm.svc.PoliciesHistory`.
         '''
         self.queries = svc.Queries(channel, self)
         '''
@@ -520,6 +533,7 @@ class Client:
         client.identity_aliases = svc.IdentityAliases(client.channel, client)
         client.identity_sets = svc.IdentitySets(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
+        client.policies = svc.Policies(client.channel, client)
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
             client.channel, client)
@@ -628,6 +642,13 @@ class SnapshotClient:
          - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
 
         See `strongdm.svc.SnapshotNodes`.
+        '''
+        self.policies = svc.SnapshotPolicies(client.policies)
+        '''
+         Policies are the collection of one or more statements that enforce fine-grained access
+         control for the users of an organization.
+
+        See `strongdm.svc.SnapshotPolicies`.
         '''
         self.remote_identities = svc.SnapshotRemoteIdentities(
             client.remote_identities)

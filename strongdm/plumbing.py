@@ -59,6 +59,8 @@ from .peering_group_nodes_pb2 import *
 from .peering_group_peers_pb2 import *
 from .peering_group_resources_pb2 import *
 from .peering_groups_pb2 import *
+from .policies_pb2 import *
+from .policies_history_pb2 import *
 from .queries_pb2 import *
 from .remote_identities_pb2 import *
 from .remote_identities_history_pb2 import *
@@ -160,6 +162,8 @@ def convert_aks_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKS()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
@@ -187,6 +191,8 @@ def convert_aks_to_plumbing(porcelain):
     plumbing = AKS()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
@@ -277,6 +283,8 @@ def convert_aks_service_account_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AKSServiceAccount()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.discovery_enabled = (plumbing.discovery_enabled)
     porcelain.discovery_username = (plumbing.discovery_username)
@@ -302,6 +310,8 @@ def convert_aks_service_account_to_plumbing(porcelain):
     plumbing = AKSServiceAccount()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.discovery_enabled = (porcelain.discovery_enabled)
     plumbing.discovery_username = (porcelain.discovery_username)
@@ -1909,6 +1919,8 @@ def convert_amazon_eks_to_porcelain(plumbing):
         return None
     porcelain = models.AmazonEKS()
     porcelain.access_key = (plumbing.access_key)
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.cluster_name = (plumbing.cluster_name)
@@ -1939,6 +1951,8 @@ def convert_amazon_eks_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.access_key = (porcelain.access_key)
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.cluster_name = (porcelain.cluster_name)
@@ -1980,6 +1994,8 @@ def convert_amazon_eks_instance_profile_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AmazonEKSInstanceProfile()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.cluster_name = (plumbing.cluster_name)
@@ -2008,6 +2024,8 @@ def convert_amazon_eks_instance_profile_to_plumbing(porcelain):
     plumbing = AmazonEKSInstanceProfile()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.cluster_name = (porcelain.cluster_name)
@@ -4740,6 +4758,8 @@ def convert_google_gke_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.GoogleGKE()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.discovery_enabled = (plumbing.discovery_enabled)
@@ -4765,6 +4785,8 @@ def convert_google_gke_to_plumbing(porcelain):
     plumbing = GoogleGKE()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.discovery_enabled = (porcelain.discovery_enabled)
@@ -5647,6 +5669,8 @@ def convert_kubernetes_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Kubernetes()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.certificate_authority = (plumbing.certificate_authority)
     porcelain.client_certificate = (plumbing.client_certificate)
@@ -5674,6 +5698,8 @@ def convert_kubernetes_to_plumbing(porcelain):
     plumbing = Kubernetes()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.certificate_authority = (porcelain.certificate_authority)
     plumbing.client_certificate = (porcelain.client_certificate)
@@ -5769,6 +5795,8 @@ def convert_kubernetes_service_account_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.KubernetesServiceAccount()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.discovery_enabled = (plumbing.discovery_enabled)
     porcelain.discovery_username = (plumbing.discovery_username)
@@ -5794,6 +5822,8 @@ def convert_kubernetes_service_account_to_plumbing(porcelain):
     plumbing = KubernetesServiceAccount()
     if porcelain is None:
         return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.discovery_enabled = (porcelain.discovery_enabled)
     plumbing.discovery_username = (porcelain.discovery_username)
@@ -7722,6 +7752,242 @@ def convert_repeated_peering_group_resource_get_response_to_porcelain(
         plumbings):
     return [
         convert_peering_group_resource_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Policy()
+    porcelain.description = (plumbing.description)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.policy = (plumbing.policy)
+    return porcelain
+
+
+def convert_policy_to_plumbing(porcelain):
+    plumbing = Policy()
+    if porcelain is None:
+        return plumbing
+    plumbing.description = (porcelain.description)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.policy = (porcelain.policy)
+    return plumbing
+
+
+def convert_repeated_policy_to_plumbing(porcelains):
+    return [convert_policy_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_policy_to_porcelain(plumbings):
+    return [convert_policy_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_policy_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyCreateResponse()
+    porcelain.policy = convert_policy_to_porcelain(plumbing.policy)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_policy_create_response_to_plumbing(porcelain):
+    plumbing = PolicyCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.policy.CopyFrom(convert_policy_to_plumbing(porcelain.policy))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_policy_create_response_to_plumbing(porcelains):
+    return [
+        convert_policy_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_create_response_to_porcelain(plumbings):
+    return [
+        convert_policy_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_policy_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyDeleteResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_policy_delete_response_to_plumbing(porcelain):
+    plumbing = PolicyDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_policy_delete_response_to_plumbing(porcelains):
+    return [
+        convert_policy_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_delete_response_to_porcelain(plumbings):
+    return [
+        convert_policy_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_policy_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.policy = convert_policy_to_porcelain(plumbing.policy)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_policy_get_response_to_plumbing(porcelain):
+    plumbing = PolicyGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.policy.CopyFrom(convert_policy_to_plumbing(porcelain.policy))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_policy_get_response_to_plumbing(porcelains):
+    return [
+        convert_policy_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_get_response_to_porcelain(plumbings):
+    return [
+        convert_policy_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_policy_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.policy = convert_policy_to_porcelain(plumbing.policy)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_policy_history_to_plumbing(porcelain):
+    plumbing = PolicyHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.policy.CopyFrom(convert_policy_to_plumbing(porcelain.policy))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_policy_history_to_plumbing(porcelains):
+    return [
+        convert_policy_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_history_to_porcelain(plumbings):
+    return [
+        convert_policy_history_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_policy_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_policy_list_response_to_plumbing(porcelain):
+    plumbing = PolicyListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_policy_list_response_to_plumbing(porcelains):
+    return [
+        convert_policy_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_list_response_to_porcelain(plumbings):
+    return [
+        convert_policy_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_policy_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PolicyUpdateResponse()
+    porcelain.policy = convert_policy_to_porcelain(plumbing.policy)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_policy_update_response_to_plumbing(porcelain):
+    plumbing = PolicyUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.policy.CopyFrom(convert_policy_to_plumbing(porcelain.policy))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_policy_update_response_to_plumbing(porcelains):
+    return [
+        convert_policy_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_policy_update_response_to_porcelain(plumbings):
+    return [
+        convert_policy_update_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

@@ -74,6 +74,10 @@ strongdm/peering_group_resources_pb2_grpc.py
 strongdm/peering_groups_pb2.py
 strongdm/peering_groups_pb2_grpc.py
 strongdm/plumbing.py
+strongdm/policies_history_pb2.py
+strongdm/policies_history_pb2_grpc.py
+strongdm/policies_pb2.py
+strongdm/policies_pb2_grpc.py
 strongdm/queries_pb2.py
 strongdm/queries_pb2_grpc.py
 strongdm/remote_identities_history_pb2.py

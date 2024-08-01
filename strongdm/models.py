@@ -20,6 +20,7 @@ import collections
 
 class AKS:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
         'client_certificate',
@@ -43,6 +44,7 @@ class AKS:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
@@ -63,6 +65,11 @@ class AKS:
         subdomain=None,
         tags=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -143,6 +150,7 @@ class AKS:
 
     def __repr__(self):
         return '<sdm.AKS ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
@@ -166,6 +174,7 @@ class AKS:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
@@ -191,6 +200,7 @@ class AKS:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
@@ -364,6 +374,7 @@ class AKSBasicAuth:
 
 class AKSServiceAccount:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'discovery_enabled',
         'discovery_username',
@@ -385,6 +396,7 @@ class AKSServiceAccount:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         discovery_enabled=None,
         discovery_username=None,
@@ -403,6 +415,11 @@ class AKSServiceAccount:
         tags=None,
         token=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -475,6 +492,7 @@ class AKSServiceAccount:
 
     def __repr__(self):
         return '<sdm.AKSServiceAccount ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
             'discovery_username: ' + repr(self.discovery_username) + ' ' +\
@@ -496,6 +514,7 @@ class AKSServiceAccount:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'discovery_enabled': self.discovery_enabled,
             'discovery_username': self.discovery_username,
@@ -519,6 +538,7 @@ class AKSServiceAccount:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             discovery_enabled=d.get('discovery_enabled'),
             discovery_username=d.get('discovery_username'),
@@ -3342,6 +3362,7 @@ class ActivityGetResponse:
 class AmazonEKS:
     __slots__ = [
         'access_key',
+        'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
         'cluster_name',
@@ -3368,6 +3389,7 @@ class AmazonEKS:
     def __init__(
         self,
         access_key=None,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
@@ -3393,6 +3415,11 @@ class AmazonEKS:
         self.access_key = access_key if access_key is not None else ''
         '''
          The Access Key ID to use to authenticate.
+        '''
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -3483,6 +3510,7 @@ class AmazonEKS:
     def __repr__(self):
         return '<sdm.AmazonEKS ' + \
             'access_key: ' + repr(self.access_key) + ' ' +\
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
@@ -3509,6 +3537,7 @@ class AmazonEKS:
     def to_dict(self):
         return {
             'access_key': self.access_key,
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
@@ -3537,6 +3566,7 @@ class AmazonEKS:
     def from_dict(cls, d):
         return cls(
             access_key=d.get('access_key'),
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
@@ -3564,6 +3594,7 @@ class AmazonEKS:
 
 class AmazonEKSInstanceProfile:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
         'cluster_name',
@@ -3588,6 +3619,7 @@ class AmazonEKSInstanceProfile:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
         cluster_name=None,
@@ -3609,6 +3641,11 @@ class AmazonEKSInstanceProfile:
         subdomain=None,
         tags=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -3693,6 +3730,7 @@ class AmazonEKSInstanceProfile:
 
     def __repr__(self):
         return '<sdm.AmazonEKSInstanceProfile ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'cluster_name: ' + repr(self.cluster_name) + ' ' +\
@@ -3717,6 +3755,7 @@ class AmazonEKSInstanceProfile:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'cluster_name': self.cluster_name,
@@ -3743,6 +3782,7 @@ class AmazonEKSInstanceProfile:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             cluster_name=d.get('cluster_name'),
@@ -9651,6 +9691,7 @@ class GetResponseMetadata:
 
 class GoogleGKE:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
         'discovery_enabled',
@@ -9672,6 +9713,7 @@ class GoogleGKE:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
         discovery_enabled=None,
@@ -9690,6 +9732,11 @@ class GoogleGKE:
         subdomain=None,
         tags=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -9762,6 +9809,7 @@ class GoogleGKE:
 
     def __repr__(self):
         return '<sdm.GoogleGKE ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
@@ -9783,6 +9831,7 @@ class GoogleGKE:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'discovery_enabled': self.discovery_enabled,
@@ -9806,6 +9855,7 @@ class GoogleGKE:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             discovery_enabled=d.get('discovery_enabled'),
@@ -11487,6 +11537,7 @@ class KeyfactorX509Store:
 
 class Kubernetes:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
         'client_certificate',
@@ -11510,6 +11561,7 @@ class Kubernetes:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
         client_certificate=None,
@@ -11530,6 +11582,11 @@ class Kubernetes:
         subdomain=None,
         tags=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -11610,6 +11667,7 @@ class Kubernetes:
 
     def __repr__(self):
         return '<sdm.Kubernetes ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
             'client_certificate: ' + repr(self.client_certificate) + ' ' +\
@@ -11633,6 +11691,7 @@ class Kubernetes:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
             'client_certificate': self.client_certificate,
@@ -11658,6 +11717,7 @@ class Kubernetes:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
             client_certificate=d.get('client_certificate'),
@@ -11831,6 +11891,7 @@ class KubernetesBasicAuth:
 
 class KubernetesServiceAccount:
     __slots__ = [
+        'allow_resource_role_bypass',
         'bind_interface',
         'discovery_enabled',
         'discovery_username',
@@ -11852,6 +11913,7 @@ class KubernetesServiceAccount:
 
     def __init__(
         self,
+        allow_resource_role_bypass=None,
         bind_interface=None,
         discovery_enabled=None,
         discovery_username=None,
@@ -11870,6 +11932,11 @@ class KubernetesServiceAccount:
         tags=None,
         token=None,
     ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
@@ -11942,6 +12009,7 @@ class KubernetesServiceAccount:
 
     def __repr__(self):
         return '<sdm.KubernetesServiceAccount ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
             'discovery_username: ' + repr(self.discovery_username) + ' ' +\
@@ -11963,6 +12031,7 @@ class KubernetesServiceAccount:
 
     def to_dict(self):
         return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'discovery_enabled': self.discovery_enabled,
             'discovery_username': self.discovery_username,
@@ -11986,6 +12055,7 @@ class KubernetesServiceAccount:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             discovery_enabled=d.get('discovery_enabled'),
             discovery_username=d.get('discovery_username'),
@@ -16023,6 +16093,336 @@ class PeeringGroupResourceGetResponse:
         return cls(
             meta=d.get('meta'),
             peering_group_resource=d.get('peering_group_resource'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class Policy:
+    '''
+         Policy is a collection of one or more statements that enforce fine-grained access control
+     for the users of an organization.
+    '''
+    __slots__ = [
+        'description',
+        'id',
+        'name',
+        'policy',
+    ]
+
+    def __init__(
+        self,
+        description=None,
+        id=None,
+        name=None,
+        policy=None,
+    ):
+        self.description = description if description is not None else ''
+        '''
+         Optional description of the Policy.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Policy.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Policy.
+        '''
+        self.policy = policy if policy is not None else ''
+        '''
+         The content of the Policy, in Cedar policy language.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Policy ' + \
+            'description: ' + repr(self.description) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'description': self.description,
+            'id': self.id,
+            'name': self.name,
+            'policy': self.policy,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            description=d.get('description'),
+            id=d.get('id'),
+            name=d.get('name'),
+            policy=d.get('policy'),
+        )
+
+
+class PolicyCreateResponse:
+    '''
+         PolicyCreateResponse reports how the Policy was created in the system.
+    '''
+    __slots__ = [
+        'policy',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        policy=None,
+        rate_limit=None,
+    ):
+        self.policy = policy if policy is not None else None
+        '''
+         The created Policy.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyCreateResponse ' + \
+            'policy: ' + repr(self.policy) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'policy': self.policy,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            policy=d.get('policy'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PolicyDeleteResponse:
+    '''
+         PolicyDeleteResponse returns information about a Policy that was deleted.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyDeleteResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class PolicyGetResponse:
+    '''
+         PolicyGetResponse returns a requested Policy.
+    '''
+    __slots__ = [
+        'meta',
+        'policy',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        policy=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         The requested Policy.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'policy': self.policy,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            policy=d.get('policy'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class PolicyHistory:
+    '''
+         PolicyHistory records the state of a Policy at a given point in time,
+     where every change (create, update and delete) to a Policy produces a
+     PolicyHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'policy',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        policy=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Policy.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Policy was deleted, the time it was deleted.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         The complete Policy state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Policy state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'policy': self.policy,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            policy=d.get('policy'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class PolicyListResponse:
+    '''
+         PolicyListResponse returns a list of Policy records that meet
+     the criteria of a PolicyListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class PolicyUpdateResponse:
+    '''
+         PolicyUpdateResponse returns the fields of a Policy after it has been updated by
+     a PolicyUpdateRequest.
+    '''
+    __slots__ = [
+        'policy',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        policy=None,
+        rate_limit=None,
+    ):
+        self.policy = policy if policy is not None else None
+        '''
+         The updated Policy.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PolicyUpdateResponse ' + \
+            'policy: ' + repr(self.policy) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'policy': self.policy,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            policy=d.get('policy'),
             rate_limit=d.get('rate_limit'),
         )
 

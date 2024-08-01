@@ -341,6 +341,7 @@ class Permission:
     ORG_AUDIT_WORKFLOWS = "audit:workflows"
     ORG_AUDIT_APPROVAL_FLOWS = "audit:approvalflows"
     ORG_AUDIT_ACCESS_REQUESTS = "audit:accessrequests"
+    ORG_AUDIT_POLICIES = "audit:policies"
     WORKFLOW_LIST = "workflow:list"
     WORKFLOW_EDIT = "workflow:edit"
     ACCESS_REQUEST_EDIT = "accessrequest:edit"
@@ -452,3 +453,4 @@ class DeviceTrustProvider:
     SENTINEL_ONE = "sentinelone"
     CROWD_STRIKE = "crowdstrike"
     MICROSOFT_DEFENDER = "microsoftdefender"
+    DUO = "duo"

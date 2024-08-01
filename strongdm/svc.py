@@ -88,6 +88,10 @@ from .peering_group_resources_pb2 import *
 from .peering_group_resources_pb2_grpc import *
 from .peering_groups_pb2 import *
 from .peering_groups_pb2_grpc import *
+from .policies_pb2 import *
+from .policies_pb2_grpc import *
+from .policies_history_pb2 import *
+from .policies_history_pb2_grpc import *
 from .queries_pb2 import *
 from .queries_pb2_grpc import *
 from .remote_identities_pb2 import *
@@ -3463,6 +3467,247 @@ class PeeringGroups:
                 tries = 0
                 for plumbing_item in plumbing_response.peering_groups:
                     yield plumbing.convert_peering_group_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class Policies:
+    '''
+     Policies are the collection of one or more statements that enforce fine-grained access
+     control for the users of an organization.
+    See `strongdm.models.Policy`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PoliciesStub(channel)
+
+    def create(self, policy, timeout=None):
+        '''
+         Create creates a new Policy.
+        '''
+        req = PolicyCreateRequest()
+
+        if policy is not None:
+            req.policy.CopyFrom(plumbing.convert_policy_to_plumbing(policy))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Policies.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PolicyCreateResponse()
+        resp.policy = plumbing.convert_policy_to_porcelain(
+            plumbing_response.policy)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a Policy by ID.
+        '''
+        req = PolicyDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Policies.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PolicyDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, policy, timeout=None):
+        '''
+         Update replaces all the fields of a Policy by ID.
+        '''
+        req = PolicyUpdateRequest()
+
+        if policy is not None:
+            req.policy.CopyFrom(plumbing.convert_policy_to_plumbing(policy))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Policies.Update', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PolicyUpdateResponse()
+        resp.policy = plumbing.convert_policy_to_porcelain(
+            plumbing_response.policy)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Policy by ID.
+        '''
+        req = PolicyGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Policies.Get', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.PolicyGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.policy = plumbing.convert_policy_to_porcelain(
+            plumbing_response.policy)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Policy matching a given set of criteria
+        '''
+        req = PolicyListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Policies.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.policies:
+                    yield plumbing.convert_policy_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotPolicies:
+    '''
+    SnapshotPolicies exposes the read only methods of the Policies
+    service for historical queries.
+    '''
+    def __init__(self, policies):
+        self.policies = policies
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Policy by ID.
+        '''
+        return self.policies.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Policy matching a given set of criteria
+        '''
+        return self.policies.list(filter, *args, timeout=timeout)
+
+
+class PoliciesHistory:
+    '''
+     PoliciesHistory records all changes to the state of a Policy.
+    See `strongdm.models.PolicyHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = PoliciesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of PolicyHistory records matching a given set of criteria.
+        '''
+        req = PoliciesHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'PoliciesHistory.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_policy_history_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
