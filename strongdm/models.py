@@ -225,6 +225,10 @@ class AKS:
 
 
 class AKSBasicAuth:
+    '''
+    AKSBasicAuth is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -11742,6 +11746,10 @@ class Kubernetes:
 
 
 class KubernetesBasicAuth:
+    '''
+    KubernetesBasicAuth is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
