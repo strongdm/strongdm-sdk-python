@@ -16763,6 +16763,7 @@ class Query:
         'account_id',
         'account_last_name',
         'account_tags',
+        'authzjson',
         'capture',
         'client_ip',
         'completed_at',
@@ -16783,6 +16784,7 @@ class Query:
         'resource_tags',
         'resource_type',
         'source_ip',
+        'target',
         'timestamp',
     ]
 
@@ -16793,6 +16795,7 @@ class Query:
         account_id=None,
         account_last_name=None,
         account_tags=None,
+        authzjson=None,
         capture=None,
         client_ip=None,
         completed_at=None,
@@ -16813,6 +16816,7 @@ class Query:
         resource_tags=None,
         resource_type=None,
         source_ip=None,
+        target=None,
         timestamp=None,
     ):
         self.account_email = account_email if account_email is not None else ''
@@ -16839,6 +16843,10 @@ class Query:
         '''
          The tags of the account accessed, at the time the query was executed. If the account
          tags are later changed, that change will not be reflected via this field.
+        '''
+        self.authzjson = authzjson if authzjson is not None else ''
+        '''
+         Authorization metadata associated with this query.
         '''
         self.capture = capture if capture is not None else None
         '''
@@ -16929,6 +16937,10 @@ class Query:
         '''
          The IP address the Query was performed from, as detected at the ingress gateway.
         '''
+        self.target = target if target is not None else ''
+        '''
+         The target destination of the query, in host:port format.
+        '''
         self.timestamp = timestamp if timestamp is not None else None
         '''
          The time at which the Query was started.
@@ -16941,6 +16953,7 @@ class Query:
             'account_id: ' + repr(self.account_id) + ' ' +\
             'account_last_name: ' + repr(self.account_last_name) + ' ' +\
             'account_tags: ' + repr(self.account_tags) + ' ' +\
+            'authzjson: ' + repr(self.authzjson) + ' ' +\
             'capture: ' + repr(self.capture) + ' ' +\
             'client_ip: ' + repr(self.client_ip) + ' ' +\
             'completed_at: ' + repr(self.completed_at) + ' ' +\
@@ -16961,6 +16974,7 @@ class Query:
             'resource_tags: ' + repr(self.resource_tags) + ' ' +\
             'resource_type: ' + repr(self.resource_type) + ' ' +\
             'source_ip: ' + repr(self.source_ip) + ' ' +\
+            'target: ' + repr(self.target) + ' ' +\
             'timestamp: ' + repr(self.timestamp) + ' ' +\
             '>'
 
@@ -16971,6 +16985,7 @@ class Query:
             'account_id': self.account_id,
             'account_last_name': self.account_last_name,
             'account_tags': self.account_tags,
+            'authzjson': self.authzjson,
             'capture': self.capture,
             'client_ip': self.client_ip,
             'completed_at': self.completed_at,
@@ -16991,6 +17006,7 @@ class Query:
             'resource_tags': self.resource_tags,
             'resource_type': self.resource_type,
             'source_ip': self.source_ip,
+            'target': self.target,
             'timestamp': self.timestamp,
         }
 
@@ -17002,6 +17018,7 @@ class Query:
             account_id=d.get('account_id'),
             account_last_name=d.get('account_last_name'),
             account_tags=d.get('account_tags'),
+            authzjson=d.get('authzjson'),
             capture=d.get('capture'),
             client_ip=d.get('client_ip'),
             completed_at=d.get('completed_at'),
@@ -17022,6 +17039,7 @@ class Query:
             resource_tags=d.get('resource_tags'),
             resource_type=d.get('resource_type'),
             source_ip=d.get('source_ip'),
+            target=d.get('target'),
             timestamp=d.get('timestamp'),
         )
 
