@@ -283,6 +283,7 @@ class ActivityVerb:
     APPROVAL_FLOW_UPDATED = "approval workflow updated"
     APPROVAL_FLOW_STEP_ADDED = "approval workflow step added"
     APPROVAL_FLOW_STEP_DELETED = "approval workflow step deleted"
+    APPROVAL_FLOW_STEP_UPDATED = "approval workflow step updated"
     APPROVAL_FLOW_APPROVER_ADDED = "approval workflow approver added"
     APPROVAL_FLOW_APPROVER_DELETED = "approval workflow approver deleted"
     ORG_VNM_SUBNET_UPDATED = "organization VNM subnet updated"
