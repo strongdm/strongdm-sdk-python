@@ -1511,6 +1511,7 @@ class AccessRequest:
     '''
     __slots__ = [
         'account_id',
+        'duration',
         'grant_id',
         'id',
         'reason',
@@ -1525,6 +1526,7 @@ class AccessRequest:
     def __init__(
         self,
         account_id=None,
+        duration=None,
         grant_id=None,
         id=None,
         reason=None,
@@ -1538,6 +1540,10 @@ class AccessRequest:
         self.account_id = account_id if account_id is not None else ''
         '''
          The account that initiated the request.
+        '''
+        self.duration = duration if duration is not None else 0
+        '''
+         Duration of the access request.
         '''
         self.grant_id = grant_id if grant_id is not None else ''
         '''
@@ -1580,6 +1586,7 @@ class AccessRequest:
     def __repr__(self):
         return '<sdm.AccessRequest ' + \
             'account_id: ' + repr(self.account_id) + ' ' +\
+            'duration: ' + repr(self.duration) + ' ' +\
             'grant_id: ' + repr(self.grant_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'reason: ' + repr(self.reason) + ' ' +\
@@ -1594,6 +1601,7 @@ class AccessRequest:
     def to_dict(self):
         return {
             'account_id': self.account_id,
+            'duration': self.duration,
             'grant_id': self.grant_id,
             'id': self.id,
             'reason': self.reason,
@@ -1609,6 +1617,7 @@ class AccessRequest:
     def from_dict(cls, d):
         return cls(
             account_id=d.get('account_id'),
+            duration=d.get('duration'),
             grant_id=d.get('grant_id'),
             id=d.get('id'),
             reason=d.get('reason'),

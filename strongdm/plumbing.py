@@ -716,6 +716,7 @@ def convert_access_request_to_porcelain(plumbing):
         return None
     porcelain = models.AccessRequest()
     porcelain.account_id = (plumbing.account_id)
+    porcelain.duration = (plumbing.duration)
     porcelain.grant_id = (plumbing.grant_id)
     porcelain.id = (plumbing.id)
     porcelain.reason = (plumbing.reason)
@@ -734,6 +735,7 @@ def convert_access_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.account_id = (porcelain.account_id)
+    plumbing.duration = (porcelain.duration)
     plumbing.grant_id = (porcelain.grant_id)
     plumbing.id = (porcelain.id)
     plumbing.reason = (porcelain.reason)

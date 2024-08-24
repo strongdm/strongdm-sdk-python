@@ -85,6 +85,7 @@ class AuthProvider:
     ONE_LOGIN_SAML = "onelogin-saml"
     GENERIC_SAML = "generic-saml"
     PING_IDSAML = "ping-identity-saml"
+    PING_IDOIDC = "ping-identity-oidc"
 
 
 # Providers responsible for multi-factor authentication
