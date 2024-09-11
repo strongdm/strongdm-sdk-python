@@ -73,9 +73,9 @@ from .role_resources_pb2 import *
 from .role_resources_history_pb2 import *
 from .roles_pb2 import *
 from .roles_history_pb2 import *
-from .secret_store_healths_pb2 import *
 from .secret_store_types_pb2 import *
 from .secret_stores_pb2 import *
+from .secret_store_healths_pb2 import *
 from .secret_stores_history_pb2 import *
 from .workflow_approvers_pb2 import *
 from .workflow_approvers_history_pb2 import *
@@ -3935,6 +3935,116 @@ def convert_repeated_control_panel_verify_jwt_response_to_porcelain(plumbings):
     ]
 
 
+def convert_couchbase_database_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CouchbaseDatabase()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.n1ql_port = (plumbing.n1ql_port)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_couchbase_database_to_plumbing(porcelain):
+    plumbing = CouchbaseDatabase()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.n1ql_port = (porcelain.n1ql_port)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_couchbase_database_to_plumbing(porcelains):
+    return [
+        convert_couchbase_database_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_couchbase_database_to_porcelain(plumbings):
+    return [
+        convert_couchbase_database_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_couchbase_web_ui_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CouchbaseWebUI()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_couchbase_web_ui_to_plumbing(porcelain):
+    plumbing = CouchbaseWebUI()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_couchbase_web_ui_to_plumbing(porcelains):
+    return [
+        convert_couchbase_web_ui_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_couchbase_web_ui_to_porcelain(plumbings):
+    return [
+        convert_couchbase_web_ui_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_create_response_metadata_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4726,6 +4836,34 @@ def convert_repeated_gateway_to_plumbing(porcelains):
 
 def convert_repeated_gateway_to_porcelain(plumbings):
     return [convert_gateway_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_generic_response_metadata_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GenericResponseMetadata()
+    return porcelain
+
+
+def convert_generic_response_metadata_to_plumbing(porcelain):
+    plumbing = GenericResponseMetadata()
+    if porcelain is None:
+        return plumbing
+    return plumbing
+
+
+def convert_repeated_generic_response_metadata_to_plumbing(porcelains):
+    return [
+        convert_generic_response_metadata_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_generic_response_metadata_to_porcelain(plumbings):
+    return [
+        convert_generic_response_metadata_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_get_response_metadata_to_porcelain(plumbing):
@@ -9222,6 +9360,12 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.clustrix.CopyFrom(convert_clustrix_to_plumbing(porcelain))
     if isinstance(porcelain, models.Cockroach):
         plumbing.cockroach.CopyFrom(convert_cockroach_to_plumbing(porcelain))
+    if isinstance(porcelain, models.CouchbaseDatabase):
+        plumbing.couchbase_database.CopyFrom(
+            convert_couchbase_database_to_plumbing(porcelain))
+    if isinstance(porcelain, models.CouchbaseWebUI):
+        plumbing.couchbase_web_ui.CopyFrom(
+            convert_couchbase_web_ui_to_plumbing(porcelain))
     if isinstance(porcelain, models.DB2I):
         plumbing.db_2_i.CopyFrom(convert_db_2_i_to_plumbing(porcelain))
     if isinstance(porcelain, models.DB2LUW):
@@ -9433,6 +9577,11 @@ def convert_resource_to_porcelain(plumbing):
         return convert_clustrix_to_porcelain(plumbing.clustrix)
     if plumbing.HasField('cockroach'):
         return convert_cockroach_to_porcelain(plumbing.cockroach)
+    if plumbing.HasField('couchbase_database'):
+        return convert_couchbase_database_to_porcelain(
+            plumbing.couchbase_database)
+    if plumbing.HasField('couchbase_web_ui'):
+        return convert_couchbase_web_ui_to_porcelain(plumbing.couchbase_web_ui)
     if plumbing.HasField('db_2_i'):
         return convert_db_2_i_to_porcelain(plumbing.db_2_i)
     if plumbing.HasField('db_2_luw'):

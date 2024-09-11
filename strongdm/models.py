@@ -7787,6 +7787,293 @@ class ControlPanelVerifyJWTResponse:
         )
 
 
+class CouchbaseDatabase:
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'n1ql_port',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        n1ql_port=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.n1ql_port = n1ql_port if n1ql_port is not None else 0
+        '''
+         The port number for N1QL queries. Default HTTP is 8093. Default HTTPS is 18093.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CouchbaseDatabase ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'n1ql_port: ' + repr(self.n1ql_port) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'n1ql_port': self.n1ql_port,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            n1ql_port=d.get('n1ql_port'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
+class CouchbaseWebUI:
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'name',
+        'password',
+        'port_override',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'url',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        name=None,
+        password=None,
+        port_override=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        url=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.url = url if url is not None else ''
+        '''
+         The base address of your website without the path.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CouchbaseWebUI ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port_override': self.port_override,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'url': self.url,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            url=d.get('url'),
+            username=d.get('username'),
+        )
+
+
 class CreateResponseMetadata:
     '''
          CreateResponseMetadata is reserved for future use.
@@ -9679,6 +9966,28 @@ class Gateway:
             tags=d.get('tags'),
             version=d.get('version'),
         )
+
+
+class GenericResponseMetadata:
+    '''
+         GenericResponseMetadata contains common headers for generic request
+     responses.
+    '''
+    __slots__ = []
+
+    def __init__(self, ):
+        pass
+
+    def __repr__(self):
+        return '<sdm.GenericResponseMetadata ' + \
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
 
 
 class GetResponseMetadata:
