@@ -23094,6 +23094,7 @@ class User:
         'id',
         'last_name',
         'managed_by',
+        'password',
         'permission_level',
         'suspended',
         'tags',
@@ -23107,6 +23108,7 @@ class User:
         id=None,
         last_name=None,
         managed_by=None,
+        password=None,
         permission_level=None,
         suspended=None,
         tags=None,
@@ -23135,6 +23137,11 @@ class User:
         '''
          Managed By is a read only field for what service manages this user, e.g. StrongDM, Okta, Azure.
         '''
+        self.password = password if password is not None else ''
+        '''
+         Password is a write-only field that can be used to set the user's password.
+         Currently only supported for update.
+        '''
         self.permission_level = permission_level if permission_level is not None else ''
         '''
          PermissionLevel is the user's permission level e.g. admin, DBA, user.
@@ -23156,6 +23163,7 @@ class User:
             'id: ' + repr(self.id) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
             'managed_by: ' + repr(self.managed_by) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
             'permission_level: ' + repr(self.permission_level) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23169,6 +23177,7 @@ class User:
             'id': self.id,
             'last_name': self.last_name,
             'managed_by': self.managed_by,
+            'password': self.password,
             'permission_level': self.permission_level,
             'suspended': self.suspended,
             'tags': self.tags,
@@ -23183,6 +23192,7 @@ class User:
             id=d.get('id'),
             last_name=d.get('last_name'),
             managed_by=d.get('managed_by'),
+            password=d.get('password'),
             permission_level=d.get('permission_level'),
             suspended=d.get('suspended'),
             tags=d.get('tags'),
