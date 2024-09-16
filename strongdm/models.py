@@ -15318,6 +15318,7 @@ class Organization:
         'created_at',
         'device_trust_enabled',
         'device_trust_provider',
+        'enforce_single_session',
         'idle_timeout',
         'idle_timeout_enabled',
         'kind',
@@ -15349,6 +15350,7 @@ class Organization:
         created_at=None,
         device_trust_enabled=None,
         device_trust_provider=None,
+        enforce_single_session=None,
         idle_timeout=None,
         idle_timeout_enabled=None,
         kind=None,
@@ -15388,6 +15390,10 @@ class Organization:
         self.device_trust_provider = device_trust_provider if device_trust_provider is not None else ''
         '''
          The Organization's device trust provider, one of the DeviceTrustProvider constants.
+        '''
+        self.enforce_single_session = enforce_single_session if enforce_single_session is not None else False
+        '''
+         Indicates if the Organization enforces a single session per user for the CLI and AdminUI.
         '''
         self.idle_timeout = idle_timeout if idle_timeout is not None else None
         '''
@@ -15488,6 +15494,7 @@ class Organization:
             'created_at: ' + repr(self.created_at) + ' ' +\
             'device_trust_enabled: ' + repr(self.device_trust_enabled) + ' ' +\
             'device_trust_provider: ' + repr(self.device_trust_provider) + ' ' +\
+            'enforce_single_session: ' + repr(self.enforce_single_session) + ' ' +\
             'idle_timeout: ' + repr(self.idle_timeout) + ' ' +\
             'idle_timeout_enabled: ' + repr(self.idle_timeout_enabled) + ' ' +\
             'kind: ' + repr(self.kind) + ' ' +\
@@ -15519,6 +15526,7 @@ class Organization:
             'created_at': self.created_at,
             'device_trust_enabled': self.device_trust_enabled,
             'device_trust_provider': self.device_trust_provider,
+            'enforce_single_session': self.enforce_single_session,
             'idle_timeout': self.idle_timeout,
             'idle_timeout_enabled': self.idle_timeout_enabled,
             'kind': self.kind,
@@ -15553,6 +15561,7 @@ class Organization:
             created_at=d.get('created_at'),
             device_trust_enabled=d.get('device_trust_enabled'),
             device_trust_provider=d.get('device_trust_provider'),
+            enforce_single_session=d.get('enforce_single_session'),
             idle_timeout=d.get('idle_timeout'),
             idle_timeout_enabled=d.get('idle_timeout_enabled'),
             kind=d.get('kind'),

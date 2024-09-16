@@ -313,6 +313,7 @@ class ActivityVerb:
     RESOURCE_LOCKED = "user locked a resource"
     RESOURCE_UNLOCKED = "user unlocked a resource"
     RESOURCE_FORCE_UNLOCKED = "admin force-unlocked a resource"
+    CONCURRENT_AUTHENTICATION_REVOKED_PER_ORG_SETTING = "concurrent authentications revoked per organization settings"
     ORG_INTEGRATION_INSTALLED = "org integration installed"
     USER_INTEGRATION_AUTHORIZED = "user authorized integration"
     ORG_INTEGRATION_UNINSTALLED = "org integration uninstalled"
