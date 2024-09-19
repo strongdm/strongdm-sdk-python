@@ -92,6 +92,8 @@ from .policies_pb2 import *
 from .policies_pb2_grpc import *
 from .policies_history_pb2 import *
 from .policies_history_pb2_grpc import *
+from .proxy_cluster_keys_pb2 import *
+from .proxy_cluster_keys_pb2_grpc import *
 from .queries_pb2 import *
 from .queries_pb2_grpc import *
 from .remote_identities_pb2 import *
@@ -2583,6 +2585,7 @@ class Nodes:
      - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
     See:
     `strongdm.models.Gateway`
+    `strongdm.models.ProxyCluster`
     `strongdm.models.Relay`
     '''
     def __init__(self, channel, client):
@@ -3714,6 +3717,181 @@ class PoliciesHistory:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+
+class ProxyClusterKeys:
+    '''
+     Proxy Cluster Keys are authentication keys for all proxies within a cluster.
+     The proxies within a cluster share the same key. One cluster can have
+     multiple keys in order to facilitate key rotation.
+    See `strongdm.models.ProxyClusterKey`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ProxyClusterKeysStub(channel)
+
+    def create(self, proxy_cluster_key, timeout=None):
+        '''
+         Create registers a new ProxyClusterKey.
+        '''
+        req = ProxyClusterKeyCreateRequest()
+
+        if proxy_cluster_key is not None:
+            req.proxy_cluster_key.CopyFrom(
+                plumbing.convert_proxy_cluster_key_to_plumbing(
+                    proxy_cluster_key))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ProxyClusterKeys.Create', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ProxyClusterKeyCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.proxy_cluster_key = plumbing.convert_proxy_cluster_key_to_porcelain(
+            plumbing_response.proxy_cluster_key)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.secret_key = (plumbing_response.secret_key)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one ProxyClusterKey by ID.
+        '''
+        req = ProxyClusterKeyGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('ProxyClusterKeys.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ProxyClusterKeyGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.proxy_cluster_key = plumbing.convert_proxy_cluster_key_to_porcelain(
+            plumbing_response.proxy_cluster_key)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a ProxyClusterKey by ID.
+        '''
+        req = ProxyClusterKeyDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ProxyClusterKeys.Delete', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ProxyClusterKeyDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ProxyClusterKeys matching a given set of criteria.
+        '''
+        req = ProxyClusterKeyListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ProxyClusterKeys.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.proxy_cluster_keys:
+                    yield plumbing.convert_proxy_cluster_key_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotProxyClusterKeys:
+    '''
+    SnapshotProxyClusterKeys exposes the read only methods of the ProxyClusterKeys
+    service for historical queries.
+    '''
+    def __init__(self, proxy_cluster_keys):
+        self.proxy_cluster_keys = proxy_cluster_keys
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one ProxyClusterKey by ID.
+        '''
+        return self.proxy_cluster_keys.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of ProxyClusterKeys matching a given set of criteria.
+        '''
+        return self.proxy_cluster_keys.list(filter, *args, timeout=timeout)
 
 
 class Queries:

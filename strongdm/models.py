@@ -17076,6 +17076,310 @@ class Presto:
         )
 
 
+class ProxyCluster:
+    '''
+         ProxyCluster represents a cluster of StrongDM proxies.
+    '''
+    __slots__ = [
+        'address',
+        'id',
+        'maintenance_windows',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        address=None,
+        id=None,
+        maintenance_windows=None,
+        name=None,
+        tags=None,
+    ):
+        self.address = address if address is not None else ''
+        '''
+         The public hostname/port tuple at which the proxy cluster will be
+         accessible to clients.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Proxy Cluster.
+        '''
+        self.maintenance_windows = maintenance_windows if maintenance_windows is not None else []
+        '''
+         Maintenance Windows define when this node is allowed to restart. If a node
+         is requested to restart, it will check each window to determine if any of
+         them permit it to restart, and if any do, it will. This check is repeated
+         per window until the restart is successfully completed.
+         
+         If not set here, may be set on the command line or via an environment variable
+         on the process itself; any server setting will take precedence over local
+         settings. This setting is ineffective for nodes below version 38.44.0.
+         
+         If this setting is not applied via this remote configuration or via local
+         configuration, the default setting is used: always allow restarts if serving
+         no connections, and allow a restart even if serving connections between 7-8 UTC, any day.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the proxy cluster. Names must
+         include only letters, numbers, and hyphens (no spaces, underscores, or
+         other special characters). Generated if not provided on create.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ProxyCluster ' + \
+            'address: ' + repr(self.address) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'maintenance_windows: ' + repr(self.maintenance_windows) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'address': self.address,
+            'id': self.id,
+            'maintenance_windows': self.maintenance_windows,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            address=d.get('address'),
+            id=d.get('id'),
+            maintenance_windows=d.get('maintenance_windows'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+        )
+
+
+class ProxyClusterKey:
+    '''
+         Proxy Cluster Keys are authentication keys for all proxies within a cluster.
+     The proxies within a cluster share the same key. One cluster can have
+     multiple keys in order to facilitate key rotation.
+    '''
+    __slots__ = [
+        'created_at',
+        'id',
+        'last_used_at',
+        'proxy_cluster_id',
+    ]
+
+    def __init__(
+        self,
+        created_at=None,
+        id=None,
+        last_used_at=None,
+        proxy_cluster_id=None,
+    ):
+        self.created_at = created_at if created_at is not None else None
+        '''
+         The timestamp when this key was created.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Relay.
+        '''
+        self.last_used_at = last_used_at if last_used_at is not None else None
+        '''
+         The timestamp when this key was last used, if at all.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         The ID of the proxy cluster which this key authenticates to.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ProxyClusterKey ' + \
+            'created_at: ' + repr(self.created_at) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'last_used_at: ' + repr(self.last_used_at) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'created_at': self.created_at,
+            'id': self.id,
+            'last_used_at': self.last_used_at,
+            'proxy_cluster_id': self.proxy_cluster_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            created_at=d.get('created_at'),
+            id=d.get('id'),
+            last_used_at=d.get('last_used_at'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+        )
+
+
+class ProxyClusterKeyCreateResponse:
+    '''
+         ProxyClusterKeyCreateResponse reports how the ProxyClusterKeys were created in the system.
+    '''
+    __slots__ = [
+        'meta',
+        'proxy_cluster_key',
+        'rate_limit',
+        'secret_key',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        proxy_cluster_key=None,
+        rate_limit=None,
+        secret_key=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.proxy_cluster_key = proxy_cluster_key if proxy_cluster_key is not None else None
+        '''
+         The created ProxyClusterKey.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.secret_key = secret_key if secret_key is not None else ''
+        '''
+         The secret key component of this key. It must be saved upon creation
+         because it will not be available for retrieval later.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ProxyClusterKeyCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'proxy_cluster_key: ' + repr(self.proxy_cluster_key) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_key: ' + repr(self.secret_key) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'proxy_cluster_key': self.proxy_cluster_key,
+            'rate_limit': self.rate_limit,
+            'secret_key': self.secret_key,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            proxy_cluster_key=d.get('proxy_cluster_key'),
+            rate_limit=d.get('rate_limit'),
+            secret_key=d.get('secret_key'),
+        )
+
+
+class ProxyClusterKeyDeleteResponse:
+    '''
+         ProxyClusterKeyDeleteResponse returns information about a ProxyClusterKey that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ProxyClusterKeyDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ProxyClusterKeyGetResponse:
+    '''
+         ProxyClusterKeyGetResponse returns a requested ProxyClusterKey.
+    '''
+    __slots__ = [
+        'meta',
+        'proxy_cluster_key',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        proxy_cluster_key=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.proxy_cluster_key = proxy_cluster_key if proxy_cluster_key is not None else None
+        '''
+         The requested ProxyClusterKey.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ProxyClusterKeyGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'proxy_cluster_key: ' + repr(self.proxy_cluster_key) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'proxy_cluster_key': self.proxy_cluster_key,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            proxy_cluster_key=d.get('proxy_cluster_key'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class Query:
     '''
          A Query is a record of a single client request to a resource, such as a SQL query.

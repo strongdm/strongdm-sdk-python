@@ -78,6 +78,8 @@ strongdm/policies_history_pb2.py
 strongdm/policies_history_pb2_grpc.py
 strongdm/policies_pb2.py
 strongdm/policies_pb2_grpc.py
+strongdm/proxy_cluster_keys_pb2.py
+strongdm/proxy_cluster_keys_pb2_grpc.py
 strongdm/queries_pb2.py
 strongdm/queries_pb2_grpc.py
 strongdm/remote_identities_history_pb2.py

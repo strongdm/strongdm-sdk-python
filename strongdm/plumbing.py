@@ -61,6 +61,7 @@ from .peering_group_resources_pb2 import *
 from .peering_groups_pb2 import *
 from .policies_pb2 import *
 from .policies_history_pb2 import *
+from .proxy_cluster_keys_pb2 import *
 from .queries_pb2 import *
 from .remote_identities_pb2 import *
 from .remote_identities_history_pb2 import *
@@ -6864,6 +6865,9 @@ def convert_node_to_plumbing(porcelain):
         return plumbing
     if isinstance(porcelain, models.Gateway):
         plumbing.gateway.CopyFrom(convert_gateway_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ProxyCluster):
+        plumbing.proxy_cluster.CopyFrom(
+            convert_proxy_cluster_to_plumbing(porcelain))
     if isinstance(porcelain, models.Relay):
         plumbing.relay.CopyFrom(convert_relay_to_plumbing(porcelain))
     return plumbing
@@ -6874,6 +6878,8 @@ def convert_node_to_porcelain(plumbing):
         return None
     if plumbing.HasField('gateway'):
         return convert_gateway_to_porcelain(plumbing.gateway)
+    if plumbing.HasField('proxy_cluster'):
+        return convert_proxy_cluster_to_porcelain(plumbing.proxy_cluster)
     if plumbing.HasField('relay'):
         return convert_relay_to_porcelain(plumbing.relay)
     raise errors.UnknownError(
@@ -8238,6 +8244,203 @@ def convert_repeated_presto_to_plumbing(porcelains):
 
 def convert_repeated_presto_to_porcelain(plumbings):
     return [convert_presto_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_proxy_cluster_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ProxyCluster()
+    porcelain.address = (plumbing.address)
+    porcelain.id = (plumbing.id)
+    porcelain.maintenance_windows = convert_repeated_node_maintenance_window_to_porcelain(
+        plumbing.maintenance_windows)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_proxy_cluster_to_plumbing(porcelain):
+    plumbing = ProxyCluster()
+    if porcelain is None:
+        return plumbing
+    plumbing.address = (porcelain.address)
+    plumbing.id = (porcelain.id)
+    del plumbing.maintenance_windows[:]
+    plumbing.maintenance_windows.extend(
+        convert_repeated_node_maintenance_window_to_plumbing(
+            porcelain.maintenance_windows))
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_proxy_cluster_to_plumbing(porcelains):
+    return [
+        convert_proxy_cluster_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_proxy_cluster_to_porcelain(plumbings):
+    return [
+        convert_proxy_cluster_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_proxy_cluster_key_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ProxyClusterKey()
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
+    porcelain.id = (plumbing.id)
+    porcelain.last_used_at = convert_timestamp_to_porcelain(
+        plumbing.last_used_at)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    return porcelain
+
+
+def convert_proxy_cluster_key_to_plumbing(porcelain):
+    plumbing = ProxyClusterKey()
+    if porcelain is None:
+        return plumbing
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
+    plumbing.id = (porcelain.id)
+    plumbing.last_used_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.last_used_at))
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    return plumbing
+
+
+def convert_repeated_proxy_cluster_key_to_plumbing(porcelains):
+    return [
+        convert_proxy_cluster_key_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_proxy_cluster_key_to_porcelain(plumbings):
+    return [
+        convert_proxy_cluster_key_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_proxy_cluster_key_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ProxyClusterKeyCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.proxy_cluster_key = convert_proxy_cluster_key_to_porcelain(
+        plumbing.proxy_cluster_key)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.secret_key = (plumbing.secret_key)
+    return porcelain
+
+
+def convert_proxy_cluster_key_create_response_to_plumbing(porcelain):
+    plumbing = ProxyClusterKeyCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.proxy_cluster_key.CopyFrom(
+        convert_proxy_cluster_key_to_plumbing(porcelain.proxy_cluster_key))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.secret_key = (porcelain.secret_key)
+    return plumbing
+
+
+def convert_repeated_proxy_cluster_key_create_response_to_plumbing(porcelains):
+    return [
+        convert_proxy_cluster_key_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_proxy_cluster_key_create_response_to_porcelain(plumbings):
+    return [
+        convert_proxy_cluster_key_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_proxy_cluster_key_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ProxyClusterKeyDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_proxy_cluster_key_delete_response_to_plumbing(porcelain):
+    plumbing = ProxyClusterKeyDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_proxy_cluster_key_delete_response_to_plumbing(porcelains):
+    return [
+        convert_proxy_cluster_key_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_proxy_cluster_key_delete_response_to_porcelain(plumbings):
+    return [
+        convert_proxy_cluster_key_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_proxy_cluster_key_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ProxyClusterKeyGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.proxy_cluster_key = convert_proxy_cluster_key_to_porcelain(
+        plumbing.proxy_cluster_key)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_proxy_cluster_key_get_response_to_plumbing(porcelain):
+    plumbing = ProxyClusterKeyGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.proxy_cluster_key.CopyFrom(
+        convert_proxy_cluster_key_to_plumbing(porcelain.proxy_cluster_key))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_proxy_cluster_key_get_response_to_plumbing(porcelains):
+    return [
+        convert_proxy_cluster_key_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_proxy_cluster_key_get_response_to_porcelain(plumbings):
+    return [
+        convert_proxy_cluster_key_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_query_to_porcelain(plumbing):

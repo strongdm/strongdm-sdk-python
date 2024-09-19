@@ -33,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-28'
-USER_AGENT = 'strongdm-sdk-python/11.10.1'
+USER_AGENT = 'strongdm-sdk-python/11.11.0'
 
 
 class Client:
@@ -288,6 +288,14 @@ class Client:
 
         See `strongdm.svc.PoliciesHistory`.
         '''
+        self.proxy_cluster_keys = svc.ProxyClusterKeys(channel, self)
+        '''
+         Proxy Cluster Keys are authentication keys for all proxies within a cluster.
+         The proxies within a cluster share the same key. One cluster can have
+         multiple keys in order to facilitate key rotation.
+
+        See `strongdm.svc.ProxyClusterKeys`.
+        '''
         self.queries = svc.Queries(channel, self)
         '''
          A Query is a record of a single client request to a resource, such as a SQL query.
@@ -534,6 +542,8 @@ class Client:
         client.identity_sets = svc.IdentitySets(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
         client.policies = svc.Policies(client.channel, client)
+        client.proxy_cluster_keys = svc.ProxyClusterKeys(
+            client.channel, client)
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
             client.channel, client)
@@ -649,6 +659,15 @@ class SnapshotClient:
          control for the users of an organization.
 
         See `strongdm.svc.SnapshotPolicies`.
+        '''
+        self.proxy_cluster_keys = svc.SnapshotProxyClusterKeys(
+            client.proxy_cluster_keys)
+        '''
+         Proxy Cluster Keys are authentication keys for all proxies within a cluster.
+         The proxies within a cluster share the same key. One cluster can have
+         multiple keys in order to facilitate key rotation.
+
+        See `strongdm.svc.SnapshotProxyClusterKeys`.
         '''
         self.remote_identities = svc.SnapshotRemoteIdentities(
             client.remote_identities)
