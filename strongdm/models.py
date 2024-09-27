@@ -37,6 +37,7 @@ class AKS:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -61,6 +62,7 @@ class AKS:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -135,6 +137,10 @@ class AKS:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -167,6 +173,7 @@ class AKS:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -192,6 +199,7 @@ class AKS:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -218,6 +226,7 @@ class AKS:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -240,6 +249,7 @@ class AKSBasicAuth:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -258,6 +268,7 @@ class AKSBasicAuth:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -303,6 +314,10 @@ class AKSBasicAuth:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -332,6 +347,7 @@ class AKSBasicAuth:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -350,6 +366,7 @@ class AKSBasicAuth:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -369,6 +386,7 @@ class AKSBasicAuth:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -392,6 +410,7 @@ class AKSServiceAccount:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -414,6 +433,7 @@ class AKSServiceAccount:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -477,6 +497,10 @@ class AKSServiceAccount:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -510,6 +534,7 @@ class AKSServiceAccount:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -533,6 +558,7 @@ class AKSServiceAccount:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -557,6 +583,7 @@ class AKSServiceAccount:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -575,6 +602,7 @@ class AKSServiceAccountUserImpersonation:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -592,6 +620,7 @@ class AKSServiceAccountUserImpersonation:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -633,6 +662,10 @@ class AKSServiceAccountUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -661,6 +694,7 @@ class AKSServiceAccountUserImpersonation:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -678,6 +712,7 @@ class AKSServiceAccountUserImpersonation:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -696,6 +731,7 @@ class AKSServiceAccountUserImpersonation:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -717,6 +753,7 @@ class AKSUserImpersonation:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -736,6 +773,7 @@ class AKSUserImpersonation:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -788,6 +826,10 @@ class AKSUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -815,6 +857,7 @@ class AKSUserImpersonation:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -834,6 +877,7 @@ class AKSUserImpersonation:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -854,6 +898,7 @@ class AKSUserImpersonation:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -870,6 +915,7 @@ class AWS:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'role_arn',
         'role_external_id',
         'secret_access_key',
@@ -888,6 +934,7 @@ class AWS:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         role_arn=None,
         role_external_id=None,
         secret_access_key=None,
@@ -927,6 +974,10 @@ class AWS:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.role_arn = role_arn if role_arn is not None else ''
         '''
          The role to assume after logging in.
@@ -962,6 +1013,7 @@ class AWS:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'secret_access_key: ' + repr(self.secret_access_key) + ' ' +\
@@ -980,6 +1032,7 @@ class AWS:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
             'secret_access_key': self.secret_access_key,
@@ -999,6 +1052,7 @@ class AWS:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
             secret_access_key=d.get('secret_access_key'),
@@ -1113,6 +1167,7 @@ class AWSConsole:
         'identity_set_id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -1133,6 +1188,7 @@ class AWSConsole:
         identity_set_id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -1177,6 +1233,10 @@ class AWSConsole:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
@@ -1217,6 +1277,7 @@ class AWSConsole:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -1238,6 +1299,7 @@ class AWSConsole:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -1260,6 +1322,7 @@ class AWSConsole:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -1281,6 +1344,7 @@ class AWSConsoleStaticKeyPair:
         'identity_set_id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -1302,6 +1366,7 @@ class AWSConsoleStaticKeyPair:
         identity_set_id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -1347,6 +1412,10 @@ class AWSConsoleStaticKeyPair:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
@@ -1391,6 +1460,7 @@ class AWSConsoleStaticKeyPair:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -1413,6 +1483,7 @@ class AWSConsoleStaticKeyPair:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -1436,6 +1507,7 @@ class AWSConsoleStaticKeyPair:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -3390,6 +3462,7 @@ class AmazonEKS:
         'identity_set_id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -3417,6 +3490,7 @@ class AmazonEKS:
         identity_set_id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -3490,6 +3564,10 @@ class AmazonEKS:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.region = region if region is not None else ''
         '''
@@ -3538,6 +3616,7 @@ class AmazonEKS:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -3566,6 +3645,7 @@ class AmazonEKS:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -3595,6 +3675,7 @@ class AmazonEKS:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -3622,6 +3703,7 @@ class AmazonEKSInstanceProfile:
         'identity_set_id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -3647,6 +3729,7 @@ class AmazonEKSInstanceProfile:
         identity_set_id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -3716,6 +3799,10 @@ class AmazonEKSInstanceProfile:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
@@ -3758,6 +3845,7 @@ class AmazonEKSInstanceProfile:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -3784,6 +3872,7 @@ class AmazonEKSInstanceProfile:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -3811,6 +3900,7 @@ class AmazonEKSInstanceProfile:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -3832,6 +3922,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -3852,6 +3943,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -3899,6 +3991,10 @@ class AmazonEKSInstanceProfileUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
@@ -3936,6 +4032,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -3956,6 +4053,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -3977,6 +4075,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -3999,6 +4098,7 @@ class AmazonEKSUserImpersonation:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -4021,6 +4121,7 @@ class AmazonEKSUserImpersonation:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -4072,6 +4173,10 @@ class AmazonEKSUserImpersonation:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.region = region if region is not None else ''
         '''
@@ -4115,6 +4220,7 @@ class AmazonEKSUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -4137,6 +4243,7 @@ class AmazonEKSUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -4160,6 +4267,7 @@ class AmazonEKSUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -4180,6 +4288,7 @@ class AmazonES:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -4199,6 +4308,7 @@ class AmazonES:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -4239,6 +4349,10 @@ class AmazonES:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
@@ -4278,6 +4392,7 @@ class AmazonES:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -4297,6 +4412,7 @@ class AmazonES:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -4317,6 +4433,7 @@ class AmazonES:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -4338,6 +4455,7 @@ class AmazonMQAMQP091:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -4356,6 +4474,7 @@ class AmazonMQAMQP091:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -4398,6 +4517,10 @@ class AmazonMQAMQP091:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -4430,6 +4553,7 @@ class AmazonMQAMQP091:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -4448,6 +4572,7 @@ class AmazonMQAMQP091:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -4467,6 +4592,7 @@ class AmazonMQAMQP091:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -5409,6 +5535,7 @@ class Athena:
         'name',
         'output',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -5428,6 +5555,7 @@ class Athena:
         name=None,
         output=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -5468,6 +5596,10 @@ class Athena:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to e.g. us-east-1.
@@ -5507,6 +5639,7 @@ class Athena:
             'name: ' + repr(self.name) + ' ' +\
             'output: ' + repr(self.output) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -5526,6 +5659,7 @@ class Athena:
             'name': self.name,
             'output': self.output,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -5546,6 +5680,7 @@ class Athena:
             name=d.get('name'),
             output=d.get('output'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -5568,6 +5703,7 @@ class AuroraMysql:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -5588,6 +5724,7 @@ class AuroraMysql:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -5635,6 +5772,10 @@ class AuroraMysql:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -5672,6 +5813,7 @@ class AuroraMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -5692,6 +5834,7 @@ class AuroraMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -5714,6 +5857,7 @@ class AuroraMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -5737,6 +5881,7 @@ class AuroraPostgres:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -5756,6 +5901,7 @@ class AuroraPostgres:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -5805,6 +5951,10 @@ class AuroraPostgres:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -5835,6 +5985,7 @@ class AuroraPostgres:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -5854,6 +6005,7 @@ class AuroraPostgres:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -5874,6 +6026,7 @@ class AuroraPostgres:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -5893,6 +6046,7 @@ class AuroraPostgresIAM:
         'override_database',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_assumption_arn',
         'secret_store_id',
@@ -5913,6 +6067,7 @@ class AuroraPostgresIAM:
         override_database=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_assumption_arn=None,
         secret_store_id=None,
@@ -5960,6 +6115,10 @@ class AuroraPostgresIAM:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
@@ -5997,6 +6156,7 @@ class AuroraPostgresIAM:
             'override_database: ' + repr(self.override_database) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_assumption_arn: ' + repr(self.role_assumption_arn) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -6017,6 +6177,7 @@ class AuroraPostgresIAM:
             'override_database': self.override_database,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_assumption_arn': self.role_assumption_arn,
             'secret_store_id': self.secret_store_id,
@@ -6038,6 +6199,7 @@ class AuroraPostgresIAM:
             override_database=d.get('override_database'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_assumption_arn=d.get('role_assumption_arn'),
             secret_store_id=d.get('secret_store_id'),
@@ -6057,6 +6219,7 @@ class Azure:
         'name',
         'password',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -6073,6 +6236,7 @@ class Azure:
         name=None,
         password=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -6110,6 +6274,10 @@ class Azure:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6137,6 +6305,7 @@ class Azure:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -6153,6 +6322,7 @@ class Azure:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -6170,6 +6340,7 @@ class Azure:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -6187,6 +6358,7 @@ class AzureCertificate:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -6203,6 +6375,7 @@ class AzureCertificate:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -6240,6 +6413,10 @@ class AzureCertificate:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6267,6 +6444,7 @@ class AzureCertificate:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -6283,6 +6461,7 @@ class AzureCertificate:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -6300,6 +6479,7 @@ class AzureCertificate:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -6319,6 +6499,7 @@ class AzureMysql:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -6339,6 +6520,7 @@ class AzureMysql:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -6386,6 +6568,10 @@ class AzureMysql:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -6423,6 +6609,7 @@ class AzureMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -6443,6 +6630,7 @@ class AzureMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -6465,6 +6653,7 @@ class AzureMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -6488,6 +6677,7 @@ class AzurePostgres:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -6507,6 +6697,7 @@ class AzurePostgres:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -6556,6 +6747,10 @@ class AzurePostgres:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6586,6 +6781,7 @@ class AzurePostgres:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -6605,6 +6801,7 @@ class AzurePostgres:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -6625,6 +6822,7 @@ class AzurePostgres:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -6645,6 +6843,7 @@ class AzurePostgresManagedIdentity:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -6665,6 +6864,7 @@ class AzurePostgresManagedIdentity:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -6715,6 +6915,10 @@ class AzurePostgresManagedIdentity:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6749,6 +6953,7 @@ class AzurePostgresManagedIdentity:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -6769,6 +6974,7 @@ class AzurePostgresManagedIdentity:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -6791,6 +6997,7 @@ class AzurePostgresManagedIdentity:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -6869,6 +7076,7 @@ class BigQuery:
         'port_override',
         'private_key',
         'project',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -6886,6 +7094,7 @@ class BigQuery:
         port_override=None,
         private_key=None,
         project=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -6927,6 +7136,10 @@ class BigQuery:
         '''
          The project to connect to.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -6955,6 +7168,7 @@ class BigQuery:
             'port_override: ' + repr(self.port_override) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
             'project: ' + repr(self.project) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -6972,6 +7186,7 @@ class BigQuery:
             'port_override': self.port_override,
             'private_key': self.private_key,
             'project': self.project,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -6990,6 +7205,7 @@ class BigQuery:
             port_override=d.get('port_override'),
             private_key=d.get('private_key'),
             project=d.get('project'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -7008,6 +7224,7 @@ class Cassandra:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -7026,6 +7243,7 @@ class Cassandra:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -7068,6 +7286,10 @@ class Cassandra:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7100,6 +7322,7 @@ class Cassandra:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -7118,6 +7341,7 @@ class Cassandra:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -7137,6 +7361,7 @@ class Cassandra:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -7158,6 +7383,7 @@ class Citus:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -7177,6 +7403,7 @@ class Citus:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -7226,6 +7453,10 @@ class Citus:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7256,6 +7487,7 @@ class Citus:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -7275,6 +7507,7 @@ class Citus:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -7295,6 +7528,7 @@ class Citus:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -7314,6 +7548,7 @@ class Clustrix:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -7334,6 +7569,7 @@ class Clustrix:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -7381,6 +7617,10 @@ class Clustrix:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -7418,6 +7658,7 @@ class Clustrix:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -7438,6 +7679,7 @@ class Clustrix:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -7460,6 +7702,7 @@ class Clustrix:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -7483,6 +7726,7 @@ class Cockroach:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -7502,6 +7746,7 @@ class Cockroach:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -7551,6 +7796,10 @@ class Cockroach:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7581,6 +7830,7 @@ class Cockroach:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -7600,6 +7850,7 @@ class Cockroach:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -7620,6 +7871,7 @@ class Cockroach:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -7799,6 +8051,7 @@ class CouchbaseDatabase:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -7818,6 +8071,7 @@ class CouchbaseDatabase:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -7864,6 +8118,10 @@ class CouchbaseDatabase:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -7897,6 +8155,7 @@ class CouchbaseDatabase:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -7916,6 +8175,7 @@ class CouchbaseDatabase:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -7936,6 +8196,7 @@ class CouchbaseDatabase:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -7953,6 +8214,7 @@ class CouchbaseWebUI:
         'name',
         'password',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -7969,6 +8231,7 @@ class CouchbaseWebUI:
         name=None,
         password=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -8003,6 +8266,10 @@ class CouchbaseWebUI:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8033,6 +8300,7 @@ class CouchbaseWebUI:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -8049,6 +8317,7 @@ class CouchbaseWebUI:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -8066,6 +8335,7 @@ class CouchbaseWebUI:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -8284,6 +8554,7 @@ class DB2I:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -8302,6 +8573,7 @@ class DB2I:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -8344,6 +8616,10 @@ class DB2I:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8376,6 +8652,7 @@ class DB2I:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -8394,6 +8671,7 @@ class DB2I:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -8413,6 +8691,7 @@ class DB2I:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -8433,6 +8712,7 @@ class DB2LUW:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -8451,6 +8731,7 @@ class DB2LUW:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -8496,6 +8777,10 @@ class DB2LUW:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8525,6 +8810,7 @@ class DB2LUW:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -8543,6 +8829,7 @@ class DB2LUW:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -8562,6 +8849,7 @@ class DB2LUW:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -8669,6 +8957,7 @@ class DocumentDBHost:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -8687,6 +8976,7 @@ class DocumentDBHost:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -8732,6 +9022,10 @@ class DocumentDBHost:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -8761,6 +9055,7 @@ class DocumentDBHost:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -8779,6 +9074,7 @@ class DocumentDBHost:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -8798,6 +9094,7 @@ class DocumentDBHost:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -8817,6 +9114,7 @@ class DocumentDBReplicaSet:
         'name',
         'password',
         'port_override',
+        'proxy_cluster_id',
         'replica_set',
         'secret_store_id',
         'subdomain',
@@ -8836,6 +9134,7 @@ class DocumentDBReplicaSet:
         name=None,
         password=None,
         port_override=None,
+        proxy_cluster_id=None,
         replica_set=None,
         secret_store_id=None,
         subdomain=None,
@@ -8882,6 +9181,10 @@ class DocumentDBReplicaSet:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
         '''
          The name of the mongo replicaset.
@@ -8915,6 +9218,7 @@ class DocumentDBReplicaSet:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -8934,6 +9238,7 @@ class DocumentDBReplicaSet:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -8954,6 +9259,7 @@ class DocumentDBReplicaSet:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -8973,6 +9279,7 @@ class Druid:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -8990,6 +9297,7 @@ class Druid:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -9031,6 +9339,10 @@ class Druid:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9059,6 +9371,7 @@ class Druid:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -9076,6 +9389,7 @@ class Druid:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -9094,6 +9408,7 @@ class Druid:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -9111,6 +9426,7 @@ class DynamoDB:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -9130,6 +9446,7 @@ class DynamoDB:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -9170,6 +9487,10 @@ class DynamoDB:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The region to authenticate requests against e.g. us-east-1
@@ -9209,6 +9530,7 @@ class DynamoDB:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -9228,6 +9550,7 @@ class DynamoDB:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -9248,6 +9571,7 @@ class DynamoDB:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -9269,6 +9593,7 @@ class Elastic:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -9287,6 +9612,7 @@ class Elastic:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -9328,6 +9654,10 @@ class Elastic:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -9361,6 +9691,7 @@ class Elastic:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -9379,6 +9710,7 @@ class Elastic:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -9398,6 +9730,7 @@ class Elastic:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -9417,6 +9750,7 @@ class ElasticacheRedis:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -9435,6 +9769,7 @@ class ElasticacheRedis:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -9477,6 +9812,10 @@ class ElasticacheRedis:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -9509,6 +9848,7 @@ class ElasticacheRedis:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -9527,6 +9867,7 @@ class ElasticacheRedis:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -9546,6 +9887,7 @@ class ElasticacheRedis:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -9563,6 +9905,7 @@ class GCP:
         'keyfile',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'scopes',
         'secret_store_id',
         'subdomain',
@@ -9578,6 +9921,7 @@ class GCP:
         keyfile=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         scopes=None,
         secret_store_id=None,
         subdomain=None,
@@ -9611,6 +9955,10 @@ class GCP:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.scopes = scopes if scopes is not None else ''
         '''
          Space separated scopes that this login should assume into when authenticating.
@@ -9637,6 +9985,7 @@ class GCP:
             'keyfile: ' + repr(self.keyfile) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'scopes: ' + repr(self.scopes) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -9652,6 +10001,7 @@ class GCP:
             'keyfile': self.keyfile,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'scopes': self.scopes,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -9668,6 +10018,7 @@ class GCP:
             keyfile=d.get('keyfile'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             scopes=d.get('scopes'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -10027,6 +10378,7 @@ class GoogleGKE:
         'identity_set_id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'service_account_key',
         'subdomain',
@@ -10049,6 +10401,7 @@ class GoogleGKE:
         identity_set_id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         service_account_key=None,
         subdomain=None,
@@ -10112,6 +10465,10 @@ class GoogleGKE:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10145,6 +10502,7 @@ class GoogleGKE:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -10168,6 +10526,7 @@ class GoogleGKE:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'service_account_key': self.service_account_key,
             'subdomain': self.subdomain,
@@ -10192,6 +10551,7 @@ class GoogleGKE:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
             subdomain=d.get('subdomain'),
@@ -10210,6 +10570,7 @@ class GoogleGKEUserImpersonation:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'service_account_key',
         'subdomain',
@@ -10227,6 +10588,7 @@ class GoogleGKEUserImpersonation:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         service_account_key=None,
         subdomain=None,
@@ -10268,6 +10630,10 @@ class GoogleGKEUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10296,6 +10662,7 @@ class GoogleGKEUserImpersonation:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'service_account_key: ' + repr(self.service_account_key) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -10313,6 +10680,7 @@ class GoogleGKEUserImpersonation:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'service_account_key': self.service_account_key,
             'subdomain': self.subdomain,
@@ -10331,6 +10699,7 @@ class GoogleGKEUserImpersonation:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
             subdomain=d.get('subdomain'),
@@ -10351,6 +10720,7 @@ class Greenplum:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -10370,6 +10740,7 @@ class Greenplum:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -10419,6 +10790,10 @@ class Greenplum:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10449,6 +10824,7 @@ class Greenplum:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -10468,6 +10844,7 @@ class Greenplum:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -10488,6 +10865,7 @@ class Greenplum:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -10507,6 +10885,7 @@ class HTTPAuth:
         'host_override',
         'id',
         'name',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -10525,6 +10904,7 @@ class HTTPAuth:
         host_override=None,
         id=None,
         name=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -10570,6 +10950,10 @@ class HTTPAuth:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10599,6 +10983,7 @@ class HTTPAuth:
             'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -10617,6 +11002,7 @@ class HTTPAuth:
             'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -10636,6 +11022,7 @@ class HTTPAuth:
             host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -10655,6 +11042,7 @@ class HTTPBasicAuth:
         'id',
         'name',
         'password',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -10674,6 +11062,7 @@ class HTTPBasicAuth:
         id=None,
         name=None,
         password=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -10720,6 +11109,10 @@ class HTTPBasicAuth:
         '''
          The password to authenticate with.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10753,6 +11146,7 @@ class HTTPBasicAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -10772,6 +11166,7 @@ class HTTPBasicAuth:
             'id': self.id,
             'name': self.name,
             'password': self.password,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -10792,6 +11187,7 @@ class HTTPBasicAuth:
             id=d.get('id'),
             name=d.get('name'),
             password=d.get('password'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -10811,6 +11207,7 @@ class HTTPNoAuth:
         'host_override',
         'id',
         'name',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -10828,6 +11225,7 @@ class HTTPNoAuth:
         host_override=None,
         id=None,
         name=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -10869,6 +11267,10 @@ class HTTPNoAuth:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -10897,6 +11299,7 @@ class HTTPNoAuth:
             'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -10914,6 +11317,7 @@ class HTTPNoAuth:
             'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -10932,6 +11336,7 @@ class HTTPNoAuth:
             host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -11876,6 +12281,7 @@ class Kubernetes:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -11900,6 +12306,7 @@ class Kubernetes:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -11974,6 +12381,10 @@ class Kubernetes:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12006,6 +12417,7 @@ class Kubernetes:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12031,6 +12443,7 @@ class Kubernetes:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12057,6 +12470,7 @@ class Kubernetes:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -12079,6 +12493,7 @@ class KubernetesBasicAuth:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -12097,6 +12512,7 @@ class KubernetesBasicAuth:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -12142,6 +12558,10 @@ class KubernetesBasicAuth:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12171,6 +12591,7 @@ class KubernetesBasicAuth:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12189,6 +12610,7 @@ class KubernetesBasicAuth:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12208,6 +12630,7 @@ class KubernetesBasicAuth:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -12231,6 +12654,7 @@ class KubernetesServiceAccount:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -12253,6 +12677,7 @@ class KubernetesServiceAccount:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -12316,6 +12741,10 @@ class KubernetesServiceAccount:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12349,6 +12778,7 @@ class KubernetesServiceAccount:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12372,6 +12802,7 @@ class KubernetesServiceAccount:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12396,6 +12827,7 @@ class KubernetesServiceAccount:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -12414,6 +12846,7 @@ class KubernetesServiceAccountUserImpersonation:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -12431,6 +12864,7 @@ class KubernetesServiceAccountUserImpersonation:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -12472,6 +12906,10 @@ class KubernetesServiceAccountUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12500,6 +12938,7 @@ class KubernetesServiceAccountUserImpersonation:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12517,6 +12956,7 @@ class KubernetesServiceAccountUserImpersonation:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12535,6 +12975,7 @@ class KubernetesServiceAccountUserImpersonation:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -12556,6 +12997,7 @@ class KubernetesUserImpersonation:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -12575,6 +13017,7 @@ class KubernetesUserImpersonation:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -12627,6 +13070,10 @@ class KubernetesUserImpersonation:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12654,6 +13101,7 @@ class KubernetesUserImpersonation:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12673,6 +13121,7 @@ class KubernetesUserImpersonation:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12693,6 +13142,7 @@ class KubernetesUserImpersonation:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -12718,6 +13168,7 @@ class MTLSMysql:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'server_name',
@@ -12742,6 +13193,7 @@ class MTLSMysql:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         server_name=None,
@@ -12802,6 +13254,10 @@ class MTLSMysql:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -12846,6 +13302,7 @@ class MTLSMysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'server_name: ' + repr(self.server_name) + ' ' +\
@@ -12870,6 +13327,7 @@ class MTLSMysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'server_name': self.server_name,
@@ -12896,6 +13354,7 @@ class MTLSMysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             server_name=d.get('server_name'),
@@ -12923,6 +13382,7 @@ class MTLSPostgres:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'server_name',
         'subdomain',
@@ -12946,6 +13406,7 @@ class MTLSPostgres:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         server_name=None,
         subdomain=None,
@@ -13008,6 +13469,10 @@ class MTLSPostgres:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13045,6 +13510,7 @@ class MTLSPostgres:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'server_name: ' + repr(self.server_name) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13068,6 +13534,7 @@ class MTLSPostgres:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'server_name': self.server_name,
             'subdomain': self.subdomain,
@@ -13092,6 +13559,7 @@ class MTLSPostgres:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             server_name=d.get('server_name'),
             subdomain=d.get('subdomain'),
@@ -13112,6 +13580,7 @@ class Maria:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -13132,6 +13601,7 @@ class Maria:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -13178,6 +13648,10 @@ class Maria:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
@@ -13216,6 +13690,7 @@ class Maria:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13236,6 +13711,7 @@ class Maria:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -13258,6 +13734,7 @@ class Maria:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -13278,6 +13755,7 @@ class Memcached:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -13293,6 +13771,7 @@ class Memcached:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -13329,6 +13808,10 @@ class Memcached:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13352,6 +13835,7 @@ class Memcached:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -13367,6 +13851,7 @@ class Memcached:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -13383,6 +13868,7 @@ class Memcached:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -13401,6 +13887,7 @@ class Memsql:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -13421,6 +13908,7 @@ class Memsql:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -13468,6 +13956,10 @@ class Memsql:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -13505,6 +13997,7 @@ class Memsql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13525,6 +14018,7 @@ class Memsql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -13547,6 +14041,7 @@ class Memsql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -13569,6 +14064,7 @@ class MongoHost:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -13588,6 +14084,7 @@ class MongoHost:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -13633,6 +14130,10 @@ class MongoHost:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -13667,6 +14168,7 @@ class MongoHost:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -13686,6 +14188,7 @@ class MongoHost:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -13706,6 +14209,7 @@ class MongoHost:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -13730,6 +14234,7 @@ class MongoLegacyHost:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -13749,6 +14254,7 @@ class MongoLegacyHost:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -13795,6 +14301,10 @@ class MongoLegacyHost:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -13828,6 +14338,7 @@ class MongoLegacyHost:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -13847,6 +14358,7 @@ class MongoLegacyHost:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -13867,6 +14379,7 @@ class MongoLegacyHost:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -13892,6 +14405,7 @@ class MongoLegacyReplicaset:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'replica_set',
         'secret_store_id',
         'subdomain',
@@ -13913,6 +14427,7 @@ class MongoLegacyReplicaset:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         replica_set=None,
         secret_store_id=None,
         subdomain=None,
@@ -13963,6 +14478,10 @@ class MongoLegacyReplicaset:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.replica_set = replica_set if replica_set is not None else ''
         '''
@@ -14002,6 +14521,7 @@ class MongoLegacyReplicaset:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -14023,6 +14543,7 @@ class MongoLegacyReplicaset:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -14045,6 +14566,7 @@ class MongoLegacyReplicaset:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -14067,6 +14589,7 @@ class MongoReplicaSet:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'replica_set',
         'secret_store_id',
         'subdomain',
@@ -14088,6 +14611,7 @@ class MongoReplicaSet:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         replica_set=None,
         secret_store_id=None,
         subdomain=None,
@@ -14139,6 +14663,10 @@ class MongoReplicaSet:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.replica_set = replica_set if replica_set is not None else ''
         '''
          The name of the mongo replicaset.
@@ -14177,6 +14705,7 @@ class MongoReplicaSet:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -14198,6 +14727,7 @@ class MongoReplicaSet:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -14220,6 +14750,7 @@ class MongoReplicaSet:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -14240,6 +14771,7 @@ class MongoShardedCluster:
         'name',
         'password',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -14258,6 +14790,7 @@ class MongoShardedCluster:
         name=None,
         password=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -14300,6 +14833,10 @@ class MongoShardedCluster:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14332,6 +14869,7 @@ class MongoShardedCluster:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -14350,6 +14888,7 @@ class MongoShardedCluster:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -14369,6 +14908,7 @@ class MongoShardedCluster:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -14389,6 +14929,7 @@ class Mysql:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -14409,6 +14950,7 @@ class Mysql:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -14456,6 +14998,10 @@ class Mysql:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -14493,6 +15039,7 @@ class Mysql:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -14513,6 +15060,7 @@ class Mysql:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -14535,6 +15083,7 @@ class Mysql:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -14555,6 +15104,7 @@ class Neptune:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -14570,6 +15120,7 @@ class Neptune:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -14606,6 +15157,10 @@ class Neptune:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -14629,6 +15184,7 @@ class Neptune:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -14644,6 +15200,7 @@ class Neptune:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -14660,6 +15217,7 @@ class Neptune:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -14677,6 +15235,7 @@ class NeptuneIAM:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_arn',
         'role_external_id',
@@ -14697,6 +15256,7 @@ class NeptuneIAM:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_arn=None,
         role_external_id=None,
@@ -14741,6 +15301,10 @@ class NeptuneIAM:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
@@ -14781,6 +15345,7 @@ class NeptuneIAM:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_arn: ' + repr(self.role_arn) + ' ' +\
             'role_external_id: ' + repr(self.role_external_id) + ' ' +\
@@ -14801,6 +15366,7 @@ class NeptuneIAM:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_arn': self.role_arn,
             'role_external_id': self.role_external_id,
@@ -14822,6 +15388,7 @@ class NeptuneIAM:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_arn=d.get('role_arn'),
             role_external_id=d.get('role_external_id'),
@@ -15167,6 +15734,7 @@ class Oracle:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -15186,6 +15754,7 @@ class Oracle:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -15232,6 +15801,10 @@ class Oracle:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -15265,6 +15838,7 @@ class Oracle:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -15284,6 +15858,7 @@ class Oracle:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -15304,6 +15879,7 @@ class Oracle:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -16775,6 +17351,7 @@ class Postgres:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -16794,6 +17371,7 @@ class Postgres:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -16843,6 +17421,10 @@ class Postgres:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -16873,6 +17455,7 @@ class Postgres:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -16892,6 +17475,7 @@ class Postgres:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -16912,6 +17496,7 @@ class Postgres:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -16931,6 +17516,7 @@ class Presto:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -16950,6 +17536,7 @@ class Presto:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -16996,6 +17583,10 @@ class Presto:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -17029,6 +17620,7 @@ class Presto:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -17048,6 +17640,7 @@ class Presto:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -17068,6 +17661,7 @@ class Presto:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -17830,6 +18424,7 @@ class RDP:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -17849,6 +18444,7 @@ class RDP:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -17898,6 +18494,10 @@ class RDP:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -17928,6 +18528,7 @@ class RDP:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -17947,6 +18548,7 @@ class RDP:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -17967,6 +18569,7 @@ class RDP:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -17986,6 +18589,7 @@ class RDPCert:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -18004,6 +18608,7 @@ class RDPCert:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -18049,6 +18654,10 @@ class RDPCert:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -18078,6 +18687,7 @@ class RDPCert:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -18097,6 +18707,7 @@ class RDPCert:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -18117,6 +18728,7 @@ class RDPCert:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -18136,6 +18748,7 @@ class RDSPostgresIAM:
         'override_database',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'region',
         'role_assumption_arn',
         'secret_store_id',
@@ -18156,6 +18769,7 @@ class RDSPostgresIAM:
         override_database=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         region=None,
         role_assumption_arn=None,
         secret_store_id=None,
@@ -18203,6 +18817,10 @@ class RDSPostgresIAM:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.region = region if region is not None else ''
         '''
          The AWS region to connect to.
@@ -18240,6 +18858,7 @@ class RDSPostgresIAM:
             'override_database: ' + repr(self.override_database) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
             'role_assumption_arn: ' + repr(self.role_assumption_arn) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -18260,6 +18879,7 @@ class RDSPostgresIAM:
             'override_database': self.override_database,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'region': self.region,
             'role_assumption_arn': self.role_assumption_arn,
             'secret_store_id': self.secret_store_id,
@@ -18281,6 +18901,7 @@ class RDSPostgresIAM:
             override_database=d.get('override_database'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             region=d.get('region'),
             role_assumption_arn=d.get('role_assumption_arn'),
             secret_store_id=d.get('secret_store_id'),
@@ -18301,6 +18922,7 @@ class RabbitMQAMQP091:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -18319,6 +18941,7 @@ class RabbitMQAMQP091:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -18361,6 +18984,10 @@ class RabbitMQAMQP091:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -18393,6 +19020,7 @@ class RabbitMQAMQP091:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -18411,6 +19039,7 @@ class RabbitMQAMQP091:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -18430,6 +19059,7 @@ class RabbitMQAMQP091:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -18512,6 +19142,7 @@ class RawTCP:
         'name',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -18527,6 +19158,7 @@ class RawTCP:
         name=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -18563,6 +19195,10 @@ class RawTCP:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -18586,6 +19222,7 @@ class RawTCP:
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -18601,6 +19238,7 @@ class RawTCP:
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -18617,6 +19255,7 @@ class RawTCP:
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -18634,6 +19273,7 @@ class Redis:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -18652,6 +19292,7 @@ class Redis:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -18694,6 +19335,10 @@ class Redis:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -18726,6 +19371,7 @@ class Redis:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -18744,6 +19390,7 @@ class Redis:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -18763,6 +19410,7 @@ class Redis:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -18784,6 +19432,7 @@ class Redshift:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -18803,6 +19452,7 @@ class Redshift:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -18852,6 +19502,10 @@ class Redshift:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -18882,6 +19536,7 @@ class Redshift:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -18901,6 +19556,7 @@ class Redshift:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -18921,6 +19577,7 @@ class Redshift:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -20519,6 +21176,7 @@ class SQLServer:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'schema',
         'secret_store_id',
         'subdomain',
@@ -20540,6 +21198,7 @@ class SQLServer:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         schema=None,
         secret_store_id=None,
         subdomain=None,
@@ -20595,6 +21254,10 @@ class SQLServer:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.schema = schema if schema is not None else ''
         '''
          The Schema to use to direct initial requests.
@@ -20630,6 +21293,7 @@ class SQLServer:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'schema: ' + repr(self.schema) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -20651,6 +21315,7 @@ class SQLServer:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'schema': self.schema,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -20673,6 +21338,7 @@ class SQLServer:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             schema=d.get('schema'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -20695,6 +21361,7 @@ class SQLServerAzureAD:
         'override_database',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'schema',
         'secret',
         'secret_store_id',
@@ -20717,6 +21384,7 @@ class SQLServerAzureAD:
         override_database=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         schema=None,
         secret=None,
         secret_store_id=None,
@@ -20773,6 +21441,10 @@ class SQLServerAzureAD:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.schema = schema if schema is not None else ''
         '''
          The Schema to use to direct initial requests.
@@ -20812,6 +21484,7 @@ class SQLServerAzureAD:
             'override_database: ' + repr(self.override_database) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'schema: ' + repr(self.schema) + ' ' +\
             'secret: ' + repr(self.secret) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -20834,6 +21507,7 @@ class SQLServerAzureAD:
             'override_database': self.override_database,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'schema': self.schema,
             'secret': self.secret,
             'secret_store_id': self.secret_store_id,
@@ -20857,6 +21531,7 @@ class SQLServerAzureAD:
             override_database=d.get('override_database'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             schema=d.get('schema'),
             secret=d.get('secret'),
             secret_store_id=d.get('secret_store_id'),
@@ -20881,6 +21556,7 @@ class SQLServerKerberosAD:
         'override_database',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'realm',
         'schema',
         'secret_store_id',
@@ -20905,6 +21581,7 @@ class SQLServerKerberosAD:
         override_database=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         realm=None,
         schema=None,
         secret_store_id=None,
@@ -20966,6 +21643,10 @@ class SQLServerKerberosAD:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.realm = realm if realm is not None else ''
         '''
          The Active Directory domain (realm) to which the configured username belongs.
@@ -21010,6 +21691,7 @@ class SQLServerKerberosAD:
             'override_database: ' + repr(self.override_database) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'realm: ' + repr(self.realm) + ' ' +\
             'schema: ' + repr(self.schema) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -21034,6 +21716,7 @@ class SQLServerKerberosAD:
             'override_database': self.override_database,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'realm': self.realm,
             'schema': self.schema,
             'secret_store_id': self.secret_store_id,
@@ -21059,6 +21742,7 @@ class SQLServerKerberosAD:
             override_database=d.get('override_database'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             realm=d.get('realm'),
             schema=d.get('schema'),
             secret_store_id=d.get('secret_store_id'),
@@ -21082,6 +21766,7 @@ class SSH:
         'port',
         'port_forwarding',
         'port_override',
+        'proxy_cluster_id',
         'public_key',
         'secret_store_id',
         'subdomain',
@@ -21102,6 +21787,7 @@ class SSH:
         port=None,
         port_forwarding=None,
         port_override=None,
+        proxy_cluster_id=None,
         public_key=None,
         secret_store_id=None,
         subdomain=None,
@@ -21152,6 +21838,10 @@ class SSH:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.public_key = public_key if public_key is not None else ''
         '''
          The public key to append to a server's authorized keys. This will be generated after resource creation.
@@ -21186,6 +21876,7 @@ class SSH:
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -21207,6 +21898,7 @@ class SSH:
             'port': self.port,
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'public_key': self.public_key,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -21229,6 +21921,7 @@ class SSH:
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             public_key=d.get('public_key'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -21252,6 +21945,7 @@ class SSHCert:
         'port',
         'port_forwarding',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -21273,6 +21967,7 @@ class SSHCert:
         port=None,
         port_forwarding=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -21330,6 +22025,10 @@ class SSHCert:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -21362,6 +22061,7 @@ class SSHCert:
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -21385,6 +22085,7 @@ class SSHCert:
             'port': self.port,
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -21409,6 +22110,7 @@ class SSHCert:
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -21429,6 +22131,7 @@ class SSHCustomerKey:
         'port_forwarding',
         'port_override',
         'private_key',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -21448,6 +22151,7 @@ class SSHCustomerKey:
         port_forwarding=None,
         port_override=None,
         private_key=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -21497,6 +22201,10 @@ class SSHCustomerKey:
         '''
          The private key used to authenticate with the server.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -21527,6 +22235,7 @@ class SSHCustomerKey:
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'private_key: ' + repr(self.private_key) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -21547,6 +22256,7 @@ class SSHCustomerKey:
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
             'private_key': self.private_key,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -21568,6 +22278,7 @@ class SSHCustomerKey:
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
             private_key=d.get('private_key'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -21592,6 +22303,7 @@ class SSHPassword:
         'port',
         'port_forwarding',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -21611,6 +22323,7 @@ class SSHPassword:
         port=None,
         port_forwarding=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -21660,6 +22373,10 @@ class SSHPassword:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -21690,6 +22407,7 @@ class SSHPassword:
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -21710,6 +22428,7 @@ class SSHPassword:
             'port': self.port,
             'port_forwarding': self.port_forwarding,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -21731,6 +22450,7 @@ class SSHPassword:
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -22233,6 +22953,7 @@ class SingleStore:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'require_native_auth',
         'secret_store_id',
         'subdomain',
@@ -22253,6 +22974,7 @@ class SingleStore:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         require_native_auth=None,
         secret_store_id=None,
         subdomain=None,
@@ -22300,6 +23022,10 @@ class SingleStore:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.require_native_auth = require_native_auth if require_native_auth is not None else False
         '''
          Whether native auth (mysql_native_password) is used for all connections (for backwards compatibility)
@@ -22337,6 +23063,7 @@ class SingleStore:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'require_native_auth: ' + repr(self.require_native_auth) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -22357,6 +23084,7 @@ class SingleStore:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'require_native_auth': self.require_native_auth,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -22379,6 +23107,7 @@ class SingleStore:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             require_native_auth=d.get('require_native_auth'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -22400,6 +23129,7 @@ class Snowflake:
         'name',
         'password',
         'port_override',
+        'proxy_cluster_id',
         'schema',
         'secret_store_id',
         'subdomain',
@@ -22418,6 +23148,7 @@ class Snowflake:
         name=None,
         password=None,
         port_override=None,
+        proxy_cluster_id=None,
         schema=None,
         secret_store_id=None,
         subdomain=None,
@@ -22460,6 +23191,10 @@ class Snowflake:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.schema = schema if schema is not None else ''
         '''
          The schema to provide on authentication.
@@ -22492,6 +23227,7 @@ class Snowflake:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'schema: ' + repr(self.schema) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -22510,6 +23246,7 @@ class Snowflake:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'schema': self.schema,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -22529,6 +23266,7 @@ class Snowflake:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             schema=d.get('schema'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -22546,6 +23284,7 @@ class Snowsight:
         'id',
         'name',
         'port_override',
+        'proxy_cluster_id',
         'samlmetadata',
         'secret_store_id',
         'subdomain',
@@ -22561,6 +23300,7 @@ class Snowsight:
         id=None,
         name=None,
         port_override=None,
+        proxy_cluster_id=None,
         samlmetadata=None,
         secret_store_id=None,
         subdomain=None,
@@ -22594,6 +23334,10 @@ class Snowsight:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.samlmetadata = samlmetadata if samlmetadata is not None else ''
         '''
          The Metadata for your snowflake IDP integration
@@ -22620,6 +23364,7 @@ class Snowsight:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'samlmetadata: ' + repr(self.samlmetadata) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -22635,6 +23380,7 @@ class Snowsight:
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'samlmetadata': self.samlmetadata,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -22651,6 +23397,7 @@ class Snowsight:
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             samlmetadata=d.get('samlmetadata'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -22669,6 +23416,7 @@ class Sybase:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -22686,6 +23434,7 @@ class Sybase:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -22726,6 +23475,10 @@ class Sybase:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -22755,6 +23508,7 @@ class Sybase:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -22772,6 +23526,7 @@ class Sybase:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -22790,6 +23545,7 @@ class Sybase:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -22808,6 +23564,7 @@ class SybaseIQ:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -22825,6 +23582,7 @@ class SybaseIQ:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -22866,6 +23624,10 @@ class SybaseIQ:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -22894,6 +23656,7 @@ class SybaseIQ:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -22911,6 +23674,7 @@ class SybaseIQ:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -22929,6 +23693,7 @@ class SybaseIQ:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -22987,6 +23752,7 @@ class Teradata:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -23004,6 +23770,7 @@ class Teradata:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -23045,6 +23812,10 @@ class Teradata:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -23073,6 +23844,7 @@ class Teradata:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23090,6 +23862,7 @@ class Teradata:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -23108,6 +23881,7 @@ class Teradata:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -23238,6 +24012,7 @@ class Trino:
         'password',
         'port',
         'port_override',
+        'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -23256,6 +24031,7 @@ class Trino:
         password=None,
         port=None,
         port_override=None,
+        proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -23301,6 +24077,10 @@ class Trino:
         '''
          The local port used by clients to connect to this resource.
         '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -23330,6 +24110,7 @@ class Trino:
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23348,6 +24129,7 @@ class Trino:
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -23367,6 +24149,7 @@ class Trino:
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
