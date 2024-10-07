@@ -8671,6 +8671,8 @@ def convert_query_capture_to_porcelain(plumbing):
     porcelain.file_name = (plumbing.file_name)
     porcelain.file_size = (plumbing.file_size)
     porcelain.height = (plumbing.height)
+    porcelain.impersonation_groups = (plumbing.impersonation_groups)
+    porcelain.impersonation_user = (plumbing.impersonation_user)
     porcelain.pod = (plumbing.pod)
     porcelain.request_body = (plumbing.request_body)
     porcelain.request_method = (plumbing.request_method)
@@ -8691,6 +8693,9 @@ def convert_query_capture_to_plumbing(porcelain):
     plumbing.file_name = (porcelain.file_name)
     plumbing.file_size = (porcelain.file_size)
     plumbing.height = (porcelain.height)
+    del plumbing.impersonation_groups[:]
+    plumbing.impersonation_groups.extend((porcelain.impersonation_groups))
+    plumbing.impersonation_user = (porcelain.impersonation_user)
     plumbing.pod = (porcelain.pod)
     plumbing.request_body = (porcelain.request_body)
     plumbing.request_method = (porcelain.request_method)

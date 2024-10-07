@@ -18281,6 +18281,8 @@ class QueryCapture:
         'file_name',
         'file_size',
         'height',
+        'impersonation_groups',
+        'impersonation_user',
         'pod',
         'request_body',
         'request_method',
@@ -18298,6 +18300,8 @@ class QueryCapture:
         file_name=None,
         file_size=None,
         height=None,
+        impersonation_groups=None,
+        impersonation_user=None,
         pod=None,
         request_body=None,
         request_method=None,
@@ -18333,6 +18337,14 @@ class QueryCapture:
         '''
          The height of the terminal or window for SSH, Kubernetes, and RDP interactive sessions.
         '''
+        self.impersonation_groups = impersonation_groups if impersonation_groups is not None else []
+        '''
+         The impersonation groups of a Kubernetes operation.
+        '''
+        self.impersonation_user = impersonation_user if impersonation_user is not None else ''
+        '''
+         The impersonation user of a Kubernetes operation.
+        '''
         self.pod = pod if pod is not None else ''
         '''
          The target pod of a Kubernetes operation.
@@ -18367,6 +18379,8 @@ class QueryCapture:
             'file_name: ' + repr(self.file_name) + ' ' +\
             'file_size: ' + repr(self.file_size) + ' ' +\
             'height: ' + repr(self.height) + ' ' +\
+            'impersonation_groups: ' + repr(self.impersonation_groups) + ' ' +\
+            'impersonation_user: ' + repr(self.impersonation_user) + ' ' +\
             'pod: ' + repr(self.pod) + ' ' +\
             'request_body: ' + repr(self.request_body) + ' ' +\
             'request_method: ' + repr(self.request_method) + ' ' +\
@@ -18384,6 +18398,8 @@ class QueryCapture:
             'file_name': self.file_name,
             'file_size': self.file_size,
             'height': self.height,
+            'impersonation_groups': self.impersonation_groups,
+            'impersonation_user': self.impersonation_user,
             'pod': self.pod,
             'request_body': self.request_body,
             'request_method': self.request_method,
@@ -18402,6 +18418,8 @@ class QueryCapture:
             file_name=d.get('file_name'),
             file_size=d.get('file_size'),
             height=d.get('height'),
+            impersonation_groups=d.get('impersonation_groups'),
+            impersonation_user=d.get('impersonation_user'),
             pod=d.get('pod'),
             request_body=d.get('request_body'),
             request_method=d.get('request_method'),
