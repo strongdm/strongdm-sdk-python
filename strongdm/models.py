@@ -22305,10 +22305,6 @@ class SSHCustomerKey:
 
 
 class SSHPassword:
-    '''
-    SSHPassword is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'allow_deprecated_key_exchanges',
         'bind_interface',
