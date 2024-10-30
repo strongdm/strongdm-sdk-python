@@ -11344,6 +11344,136 @@ class HTTPNoAuth:
         )
 
 
+class Healthcheck:
+    '''
+         Healthcheck defines the status of the link between a node and a resource
+    '''
+    __slots__ = [
+        'error_msg',
+        'healthy',
+        'id',
+        'node_id',
+        'node_name',
+        'resource_id',
+        'resource_name',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        error_msg=None,
+        healthy=None,
+        id=None,
+        node_id=None,
+        node_name=None,
+        resource_id=None,
+        resource_name=None,
+        timestamp=None,
+    ):
+        self.error_msg = error_msg if error_msg is not None else ''
+        '''
+         The error if unhealthy
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         Whether the healthcheck succeeded.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the healthcheck.
+        '''
+        self.node_id = node_id if node_id is not None else ''
+        '''
+         Unique identifier of the healthcheck node.
+        '''
+        self.node_name = node_name if node_name is not None else ''
+        '''
+         The name of the node.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         Unique identifier of the healthcheck resource.
+        '''
+        self.resource_name = resource_name if resource_name is not None else ''
+        '''
+         The name of the resource.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the healthcheck state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Healthcheck ' + \
+            'error_msg: ' + repr(self.error_msg) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'node_id: ' + repr(self.node_id) + ' ' +\
+            'node_name: ' + repr(self.node_name) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'resource_name: ' + repr(self.resource_name) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'error_msg': self.error_msg,
+            'healthy': self.healthy,
+            'id': self.id,
+            'node_id': self.node_id,
+            'node_name': self.node_name,
+            'resource_id': self.resource_id,
+            'resource_name': self.resource_name,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            error_msg=d.get('error_msg'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            node_id=d.get('node_id'),
+            node_name=d.get('node_name'),
+            resource_id=d.get('resource_id'),
+            resource_name=d.get('resource_name'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class HealthcheckListResponse:
+    '''
+         HealthcheckListResponse returns a list of Healthchecks that meet the criteria of a
+     HealthcheckListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.HealthcheckListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class IdentityAlias:
     '''
          IdentityAliases define the username to be used for a specific account

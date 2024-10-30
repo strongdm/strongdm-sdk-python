@@ -48,6 +48,7 @@ from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
 from .control_panel_pb2 import *
 from .drivers_pb2 import *
+from .health_checks_pb2 import *
 from .identity_aliases_pb2 import *
 from .identity_aliases_history_pb2 import *
 from .identity_sets_pb2 import *
@@ -5318,6 +5319,81 @@ def convert_repeated_http_no_auth_to_plumbing(porcelains):
 def convert_repeated_http_no_auth_to_porcelain(plumbings):
     return [
         convert_http_no_auth_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_healthcheck_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Healthcheck()
+    porcelain.error_msg = (plumbing.error_msg)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.node_id = (plumbing.node_id)
+    porcelain.node_name = (plumbing.node_name)
+    porcelain.resource_id = (plumbing.resource_id)
+    porcelain.resource_name = (plumbing.resource_name)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_healthcheck_to_plumbing(porcelain):
+    plumbing = Healthcheck()
+    if porcelain is None:
+        return plumbing
+    plumbing.error_msg = (porcelain.error_msg)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.node_id = (porcelain.node_id)
+    plumbing.node_name = (porcelain.node_name)
+    plumbing.resource_id = (porcelain.resource_id)
+    plumbing.resource_name = (porcelain.resource_name)
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_healthcheck_to_plumbing(porcelains):
+    return [
+        convert_healthcheck_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_healthcheck_to_porcelain(plumbings):
+    return [
+        convert_healthcheck_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_healthcheck_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.HealthcheckListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_healthcheck_list_response_to_plumbing(porcelain):
+    plumbing = HealthcheckListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_healthcheck_list_response_to_plumbing(porcelains):
+    return [
+        convert_healthcheck_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_healthcheck_list_response_to_porcelain(plumbings):
+    return [
+        convert_healthcheck_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 

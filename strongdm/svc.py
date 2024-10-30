@@ -66,6 +66,8 @@ from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
+from .health_checks_pb2 import *
+from .health_checks_pb2_grpc import *
 from .identity_aliases_pb2 import *
 from .identity_aliases_pb2_grpc import *
 from .identity_aliases_history_pb2 import *
@@ -2067,6 +2069,55 @@ class ControlPanel:
             plumbing_response.rate_limit)
         resp.valid = (plumbing_response.valid)
         return resp
+
+
+class HealthChecks:
+    '''
+     HealthChecks lists the last healthcheck between each node and resource.
+     Note the unconventional capitalization here is to prevent having a collision with GRPC
+    See `strongdm.models.Healthcheck`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = HealthChecksStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Healthchecks matching a given set of criteria.
+        '''
+        req = HealthcheckListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'HealthChecks.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.healthchecks:
+                    yield plumbing.convert_healthcheck_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class IdentityAliases:

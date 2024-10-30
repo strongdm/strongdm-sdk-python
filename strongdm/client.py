@@ -33,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-28'
-USER_AGENT = 'strongdm-sdk-python/11.15.0'
+USER_AGENT = 'strongdm-sdk-python/11.16.0'
 
 
 class Client:
@@ -203,6 +203,13 @@ class Client:
          ControlPanel contains all administrative controls.
 
         See `strongdm.svc.ControlPanel`.
+        '''
+        self.health_checks = svc.HealthChecks(channel, self)
+        '''
+         HealthChecks lists the last healthcheck between each node and resource.
+         Note the unconventional capitalization here is to prevent having a collision with GRPC
+
+        See `strongdm.svc.HealthChecks`.
         '''
         self.identity_aliases = svc.IdentityAliases(channel, self)
         '''

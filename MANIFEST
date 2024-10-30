@@ -48,6 +48,8 @@ strongdm/control_panel_pb2_grpc.py
 strongdm/drivers_pb2.py
 strongdm/drivers_pb2_grpc.py
 strongdm/errors.py
+strongdm/health_checks_pb2.py
+strongdm/health_checks_pb2_grpc.py
 strongdm/identity_aliases_history_pb2.py
 strongdm/identity_aliases_history_pb2_grpc.py
 strongdm/identity_aliases_pb2.py
