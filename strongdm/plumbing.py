@@ -697,6 +697,62 @@ def convert_repeated_aws_console_static_key_pair_to_porcelain(plumbings):
     ]
 
 
+def convert_aws_instance_profile_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSInstanceProfile()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.enable_env_variables = (plumbing.enable_env_variables)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_aws_instance_profile_to_plumbing(porcelain):
+    plumbing = AWSInstanceProfile()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.enable_env_variables = (porcelain.enable_env_variables)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_aws_instance_profile_to_plumbing(porcelains):
+    return [
+        convert_aws_instance_profile_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_instance_profile_to_porcelain(plumbings):
+    return [
+        convert_aws_instance_profile_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_aws_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -9768,6 +9824,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AWSConsoleStaticKeyPair):
         plumbing.aws_console_static_key_pair.CopyFrom(
             convert_aws_console_static_key_pair_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AWSInstanceProfile):
+        plumbing.aws_instance_profile.CopyFrom(
+            convert_aws_instance_profile_to_plumbing(porcelain))
     if isinstance(porcelain, models.Azure):
         plumbing.azure.CopyFrom(convert_azure_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureCertificate):
@@ -9987,6 +10046,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('aws_console_static_key_pair'):
         return convert_aws_console_static_key_pair_to_porcelain(
             plumbing.aws_console_static_key_pair)
+    if plumbing.HasField('aws_instance_profile'):
+        return convert_aws_instance_profile_to_porcelain(
+            plumbing.aws_instance_profile)
     if plumbing.HasField('azure'):
         return convert_azure_to_porcelain(plumbing.azure)
     if plumbing.HasField('azure_certificate'):

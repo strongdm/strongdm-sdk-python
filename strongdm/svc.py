@@ -4472,6 +4472,7 @@ class Resources:
     `strongdm.models.AWS`
     `strongdm.models.AWSConsole`
     `strongdm.models.AWSConsoleStaticKeyPair`
+    `strongdm.models.AWSInstanceProfile`
     `strongdm.models.Azure`
     `strongdm.models.AzureCertificate`
     `strongdm.models.AzureMysql`
