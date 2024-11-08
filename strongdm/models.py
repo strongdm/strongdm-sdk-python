@@ -10268,6 +10268,169 @@ class GCPCertX509Store:
         )
 
 
+class GCPConsole:
+    '''
+    GCPConsole is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
+        'name',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'session_expiry',
+        'subdomain',
+        'tags',
+        'workforce_pool_id',
+        'workforce_provider_id',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
+        name=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        session_expiry=None,
+        subdomain=None,
+        tags=None,
+        workforce_pool_id=None,
+        workforce_provider_id=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.session_expiry = session_expiry if session_expiry is not None else 0
+        '''
+         The length of time in seconds console sessions will live before needing to reauthenticate.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.workforce_pool_id = workforce_pool_id if workforce_pool_id is not None else ''
+        '''
+         The ID of the Workforce Identity Pool in GCP to use for federated authentication.
+        '''
+        self.workforce_provider_id = workforce_provider_id if workforce_provider_id is not None else ''
+        '''
+         The ID of the Workforce Identity Provider in GCP to use for federated authentication.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GCPConsole ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'session_expiry: ' + repr(self.session_expiry) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'workforce_pool_id: ' + repr(self.workforce_pool_id) + ' ' +\
+            'workforce_provider_id: ' + repr(self.workforce_provider_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'session_expiry': self.session_expiry,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'workforce_pool_id': self.workforce_pool_id,
+            'workforce_provider_id': self.workforce_provider_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            session_expiry=d.get('session_expiry'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            workforce_pool_id=d.get('workforce_pool_id'),
+            workforce_provider_id=d.get('workforce_provider_id'),
+        )
+
+
 class GCPStore:
     __slots__ = [
         'id',
@@ -10323,6 +10486,178 @@ class GCPStore:
             name=d.get('name'),
             projectid=d.get('projectid'),
             tags=d.get('tags'),
+        )
+
+
+class GCPWIF:
+    '''
+    GCPWIF is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
+        'name',
+        'port_override',
+        'proxy_cluster_id',
+        'scopes',
+        'secret_store_id',
+        'session_expiry',
+        'subdomain',
+        'tags',
+        'workforce_pool_id',
+        'workforce_provider_id',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
+        name=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        scopes=None,
+        secret_store_id=None,
+        session_expiry=None,
+        subdomain=None,
+        tags=None,
+        workforce_pool_id=None,
+        workforce_provider_id=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.scopes = scopes if scopes is not None else ''
+        '''
+         Space separated scopes that this login should assume into when authenticating.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.session_expiry = session_expiry if session_expiry is not None else 0
+        '''
+         The length of time in seconds console sessions will live before needing to reauthenticate.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.workforce_pool_id = workforce_pool_id if workforce_pool_id is not None else ''
+        '''
+         The ID of the Workforce Identity Pool in GCP to use for federated authentication.
+        '''
+        self.workforce_provider_id = workforce_provider_id if workforce_provider_id is not None else ''
+        '''
+         The ID of the Workforce Identity Provider in GCP to use for federated authentication.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GCPWIF ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'scopes: ' + repr(self.scopes) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'session_expiry: ' + repr(self.session_expiry) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'workforce_pool_id: ' + repr(self.workforce_pool_id) + ' ' +\
+            'workforce_provider_id: ' + repr(self.workforce_provider_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'scopes': self.scopes,
+            'secret_store_id': self.secret_store_id,
+            'session_expiry': self.session_expiry,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'workforce_pool_id': self.workforce_pool_id,
+            'workforce_provider_id': self.workforce_provider_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            scopes=d.get('scopes'),
+            secret_store_id=d.get('secret_store_id'),
+            session_expiry=d.get('session_expiry'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            workforce_pool_id=d.get('workforce_pool_id'),
+            workforce_provider_id=d.get('workforce_provider_id'),
         )
 
 

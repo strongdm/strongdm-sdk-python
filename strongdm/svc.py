@@ -4494,6 +4494,8 @@ class Resources:
     `strongdm.models.Elastic`
     `strongdm.models.ElasticacheRedis`
     `strongdm.models.GCP`
+    `strongdm.models.GCPConsole`
+    `strongdm.models.GCPWIF`
     `strongdm.models.GoogleGKE`
     `strongdm.models.GoogleGKEUserImpersonation`
     `strongdm.models.Greenplum`

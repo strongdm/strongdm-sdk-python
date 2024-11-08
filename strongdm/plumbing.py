@@ -4894,6 +4894,64 @@ def convert_repeated_gcp_cert_x_509_store_to_porcelain(plumbings):
     ]
 
 
+def convert_gcp_console_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GCPConsole()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.session_expiry = (plumbing.session_expiry)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.workforce_pool_id = (plumbing.workforce_pool_id)
+    porcelain.workforce_provider_id = (plumbing.workforce_provider_id)
+    return porcelain
+
+
+def convert_gcp_console_to_plumbing(porcelain):
+    plumbing = GCPConsole()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.session_expiry = (porcelain.session_expiry)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.workforce_pool_id = (porcelain.workforce_pool_id)
+    plumbing.workforce_provider_id = (porcelain.workforce_provider_id)
+    return plumbing
+
+
+def convert_repeated_gcp_console_to_plumbing(porcelains):
+    return [
+        convert_gcp_console_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_gcp_console_to_porcelain(plumbings):
+    return [
+        convert_gcp_console_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_gcp_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4924,6 +4982,62 @@ def convert_repeated_gcp_store_to_plumbing(porcelains):
 
 def convert_repeated_gcp_store_to_porcelain(plumbings):
     return [convert_gcp_store_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_gcpwif_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GCPWIF()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.scopes = (plumbing.scopes)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.session_expiry = (plumbing.session_expiry)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.workforce_pool_id = (plumbing.workforce_pool_id)
+    porcelain.workforce_provider_id = (plumbing.workforce_provider_id)
+    return porcelain
+
+
+def convert_gcpwif_to_plumbing(porcelain):
+    plumbing = GCPWIF()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.scopes = (porcelain.scopes)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.session_expiry = (porcelain.session_expiry)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.workforce_pool_id = (porcelain.workforce_pool_id)
+    plumbing.workforce_provider_id = (porcelain.workforce_provider_id)
+    return plumbing
+
+
+def convert_repeated_gcpwif_to_plumbing(porcelains):
+    return [convert_gcpwif_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_gcpwif_to_porcelain(plumbings):
+    return [convert_gcpwif_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_gateway_to_porcelain(plumbing):
@@ -9878,6 +9992,11 @@ def convert_resource_to_plumbing(porcelain):
             convert_elasticache_redis_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCP):
         plumbing.gcp.CopyFrom(convert_gcp_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GCPConsole):
+        plumbing.gcp_console.CopyFrom(
+            convert_gcp_console_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GCPWIF):
+        plumbing.gcpwif.CopyFrom(convert_gcpwif_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKE):
         plumbing.google_gke.CopyFrom(convert_google_gke_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleGKEUserImpersonation):
@@ -10096,6 +10215,10 @@ def convert_resource_to_porcelain(plumbing):
             plumbing.elasticache_redis)
     if plumbing.HasField('gcp'):
         return convert_gcp_to_porcelain(plumbing.gcp)
+    if plumbing.HasField('gcp_console'):
+        return convert_gcp_console_to_porcelain(plumbing.gcp_console)
+    if plumbing.HasField('gcpwif'):
+        return convert_gcpwif_to_porcelain(plumbing.gcpwif)
     if plumbing.HasField('google_gke'):
         return convert_google_gke_to_porcelain(plumbing.google_gke)
     if plumbing.HasField('google_gke_user_impersonation'):
