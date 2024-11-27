@@ -274,6 +274,7 @@ class ActivityVerb:
     ACCESS_REQUEST_TO_RESOURCE_GRANTED = "access request to resource granted"
     ACCESS_REQUEST_TO_RESOURCE_GRANTED_AUTOMATICALLY = "access request to resource granted automatically"
     ACCESS_REQUEST_TO_RESOURCE_APPROVED_VIA_SERVICE_NOW = "access request to resource approved via ServiceNow"
+    ACCESS_REQUEST_TO_RESOURCE_APPROVED_VIA_JIRA = "access request to resource approved via Jira"
     WORKFLOW_DELETED = "workflow deleted"
     WORKFLOW_ADDED = "workflow added"
     DEPRECATED_WORKFLOW_RESOURCE_ASSIGNED = "resource assigned to workflow"

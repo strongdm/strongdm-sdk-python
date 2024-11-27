@@ -794,7 +794,11 @@ def convert_access_request_to_porcelain(plumbing):
     porcelain.grant_id = (plumbing.grant_id)
     porcelain.id = (plumbing.id)
     porcelain.reason = (plumbing.reason)
+    porcelain.requestedduration = convert_duration_to_porcelain(
+        plumbing.requestedDuration)
     porcelain.resource_id = (plumbing.resource_id)
+    porcelain.resultduration = convert_duration_to_porcelain(
+        plumbing.resultDuration)
     porcelain.start_from = convert_timestamp_to_porcelain(plumbing.start_from)
     porcelain.status = (plumbing.status)
     porcelain.status_at = convert_timestamp_to_porcelain(plumbing.status_at)
@@ -813,7 +817,11 @@ def convert_access_request_to_plumbing(porcelain):
     plumbing.grant_id = (porcelain.grant_id)
     plumbing.id = (porcelain.id)
     plumbing.reason = (porcelain.reason)
+    plumbing.requestedDuration.CopyFrom(
+        convert_duration_to_plumbing(porcelain.requestedduration))
     plumbing.resource_id = (porcelain.resource_id)
+    plumbing.resultDuration.CopyFrom(
+        convert_duration_to_plumbing(porcelain.resultduration))
     plumbing.start_from.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.start_from))
     plumbing.status = (porcelain.status)
@@ -4997,6 +5005,7 @@ def convert_gcpwif_to_porcelain(plumbing):
     porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.project_id = (plumbing.project_id)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
     porcelain.scopes = (plumbing.scopes)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -5021,6 +5030,7 @@ def convert_gcpwif_to_plumbing(porcelain):
     plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.project_id = (porcelain.project_id)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
     plumbing.scopes = (porcelain.scopes)
     plumbing.secret_store_id = (porcelain.secret_store_id)

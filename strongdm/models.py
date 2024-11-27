@@ -1735,7 +1735,9 @@ class AccessRequest:
         'grant_id',
         'id',
         'reason',
+        'requestedduration',
         'resource_id',
+        'resultduration',
         'start_from',
         'status',
         'status_at',
@@ -1750,7 +1752,9 @@ class AccessRequest:
         grant_id=None,
         id=None,
         reason=None,
+        requestedduration=None,
         resource_id=None,
+        resultduration=None,
         start_from=None,
         status=None,
         status_at=None,
@@ -1764,6 +1768,7 @@ class AccessRequest:
         self.duration = duration if duration is not None else 0
         '''
          Duration of the access request.
+         Deprecated: use requested/result duration instead
         '''
         self.grant_id = grant_id if grant_id is not None else ''
         '''
@@ -1777,9 +1782,17 @@ class AccessRequest:
         '''
          The reason the access was requested.
         '''
+        self.requestedduration = requestedduration if requestedduration is not None else None
+        '''
+         The duration that access was requested for, if any.
+        '''
         self.resource_id = resource_id if resource_id is not None else ''
         '''
          The resource id.
+        '''
+        self.resultduration = resultduration if resultduration is not None else None
+        '''
+         The duration that results from an approved request.
         '''
         self.start_from = start_from if start_from is not None else None
         '''
@@ -1810,7 +1823,9 @@ class AccessRequest:
             'grant_id: ' + repr(self.grant_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'reason: ' + repr(self.reason) + ' ' +\
+            'requestedduration: ' + repr(self.requestedduration) + ' ' +\
             'resource_id: ' + repr(self.resource_id) + ' ' +\
+            'resultduration: ' + repr(self.resultduration) + ' ' +\
             'start_from: ' + repr(self.start_from) + ' ' +\
             'status: ' + repr(self.status) + ' ' +\
             'status_at: ' + repr(self.status_at) + ' ' +\
@@ -1825,7 +1840,9 @@ class AccessRequest:
             'grant_id': self.grant_id,
             'id': self.id,
             'reason': self.reason,
+            'requestedduration': self.requestedduration,
             'resource_id': self.resource_id,
+            'resultduration': self.resultduration,
             'start_from': self.start_from,
             'status': self.status,
             'status_at': self.status_at,
@@ -1841,7 +1858,9 @@ class AccessRequest:
             grant_id=d.get('grant_id'),
             id=d.get('id'),
             reason=d.get('reason'),
+            requestedduration=d.get('requestedduration'),
             resource_id=d.get('resource_id'),
+            resultduration=d.get('resultduration'),
             start_from=d.get('start_from'),
             status=d.get('status'),
             status_at=d.get('status_at'),
@@ -10503,6 +10522,7 @@ class GCPWIF:
         'identity_set_id',
         'name',
         'port_override',
+        'project_id',
         'proxy_cluster_id',
         'scopes',
         'secret_store_id',
@@ -10523,6 +10543,7 @@ class GCPWIF:
         identity_set_id=None,
         name=None,
         port_override=None,
+        project_id=None,
         proxy_cluster_id=None,
         scopes=None,
         secret_store_id=None,
@@ -10563,6 +10584,10 @@ class GCPWIF:
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.project_id = project_id if project_id is not None else ''
+        '''
+         When specified, all project scoped requests will use this Project ID, overriding the project ID specified by clients
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10607,6 +10632,7 @@ class GCPWIF:
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'project_id: ' + repr(self.project_id) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'scopes: ' + repr(self.scopes) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -10628,6 +10654,7 @@ class GCPWIF:
             'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
+            'project_id': self.project_id,
             'proxy_cluster_id': self.proxy_cluster_id,
             'scopes': self.scopes,
             'secret_store_id': self.secret_store_id,
@@ -10650,6 +10677,7 @@ class GCPWIF:
             identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
+            project_id=d.get('project_id'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             scopes=d.get('scopes'),
             secret_store_id=d.get('secret_store_id'),
