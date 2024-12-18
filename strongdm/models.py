@@ -19245,6 +19245,7 @@ class RDPCert:
         'id',
         'identity_alias_healthcheck_username',
         'identity_set_id',
+        'lock_required',
         'name',
         'port',
         'port_override',
@@ -19264,6 +19265,7 @@ class RDPCert:
         id=None,
         identity_alias_healthcheck_username=None,
         identity_set_id=None,
+        lock_required=None,
         name=None,
         port=None,
         port_override=None,
@@ -19300,6 +19302,10 @@ class RDPCert:
         self.identity_set_id = identity_set_id if identity_set_id is not None else ''
         '''
          The ID of the identity set to use for identity connections.
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -19343,6 +19349,7 @@ class RDPCert:
             'id: ' + repr(self.id) + ' ' +\
             'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -19363,6 +19370,7 @@ class RDPCert:
             'identity_alias_healthcheck_username':
             self.identity_alias_healthcheck_username,
             'identity_set_id': self.identity_set_id,
+            'lock_required': self.lock_required,
             'name': self.name,
             'port': self.port,
             'port_override': self.port_override,
@@ -19384,6 +19392,7 @@ class RDPCert:
             identity_alias_healthcheck_username=d.get(
                 'identity_alias_healthcheck_username'),
             identity_set_id=d.get('identity_set_id'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             port=d.get('port'),
             port_override=d.get('port_override'),

@@ -9040,6 +9040,7 @@ def convert_rdp_cert_to_porcelain(plumbing):
     porcelain.identity_alias_healthcheck_username = (
         plumbing.identity_alias_healthcheck_username)
     porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.lock_required = (plumbing.lock_required)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
@@ -9063,6 +9064,7 @@ def convert_rdp_cert_to_plumbing(porcelain):
     plumbing.identity_alias_healthcheck_username = (
         porcelain.identity_alias_healthcheck_username)
     plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.lock_required = (porcelain.lock_required)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
