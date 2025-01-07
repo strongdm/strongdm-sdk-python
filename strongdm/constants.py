@@ -288,6 +288,7 @@ class ActivityVerb:
     WORKFLOW_NAME_UPDATED = "workflow name updated"
     WORKFLOW_DESCRIPTION_UPDATED = "workflow description updated"
     WORKFLOW_REQUIRES_REASON_UPDATED = "workflow requires reason updated"
+    WORKFLOW_SETTINGS_UPDATED = "workflow settings updated"
     WORKFLOW_ACCESS_RULES_UPDATED = "workflow access rules updated"
     WORKFLOW_ACCESS_RULES_DELETED = "workflow access rules deleted"
     WORKFLOW_ACCESS_RULES_CREATED = "workflow access rules created"
@@ -324,6 +325,7 @@ class ActivityVerb:
     MANAGED_SECRET_CREATED = "managed secret created"
     MANAGED_SECRET_UPDATED = "managed secret updated"
     MANAGED_SECRET_EXPIRATION_TIME_UPDATED = "managed secret expiration time updated"
+    MANAGED_SECRET_CONFIG_UPDATED = "managed secret config updated"
     MANAGED_SECRET_DELETED = "managed secret deleted"
 
 

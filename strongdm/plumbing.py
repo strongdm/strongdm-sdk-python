@@ -9040,6 +9040,7 @@ def convert_rdp_cert_to_porcelain(plumbing):
     porcelain.identity_alias_healthcheck_username = (
         plumbing.identity_alias_healthcheck_username)
     porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.lock_required = (plumbing.lock_required)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
@@ -9063,6 +9064,7 @@ def convert_rdp_cert_to_plumbing(porcelain):
     plumbing.identity_alias_healthcheck_username = (
         porcelain.identity_alias_healthcheck_username)
     plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.lock_required = (porcelain.lock_required)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
@@ -9792,6 +9794,7 @@ def convert_replay_chunk_to_porcelain(plumbing):
     porcelain.data = (plumbing.data)
     porcelain.events = convert_repeated_replay_chunk_event_to_porcelain(
         plumbing.events)
+    porcelain.symmetric_key = (plumbing.symmetric_key)
     return porcelain
 
 
@@ -9803,6 +9806,7 @@ def convert_replay_chunk_to_plumbing(porcelain):
     del plumbing.events[:]
     plumbing.events.extend(
         convert_repeated_replay_chunk_event_to_plumbing(porcelain.events))
+    plumbing.symmetric_key = (porcelain.symmetric_key)
     return plumbing
 
 
