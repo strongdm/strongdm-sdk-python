@@ -12824,6 +12824,10 @@ def convert_workflow_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Workflow()
+    porcelain.access_request_fixed_duration = convert_duration_to_porcelain(
+        plumbing.access_request_fixed_duration)
+    porcelain.access_request_max_duration = convert_duration_to_porcelain(
+        plumbing.access_request_max_duration)
     porcelain.access_rules = convert_access_rules_to_porcelain(
         plumbing.access_rules)
     porcelain.approval_flow_id = (plumbing.approval_flow_id)
@@ -12840,6 +12844,10 @@ def convert_workflow_to_plumbing(porcelain):
     plumbing = Workflow()
     if porcelain is None:
         return plumbing
+    plumbing.access_request_fixed_duration.CopyFrom(
+        convert_duration_to_plumbing(porcelain.access_request_fixed_duration))
+    plumbing.access_request_max_duration.CopyFrom(
+        convert_duration_to_plumbing(porcelain.access_request_max_duration))
     plumbing.access_rules = convert_access_rules_to_plumbing(
         porcelain.access_rules)
     plumbing.approval_flow_id = (porcelain.approval_flow_id)

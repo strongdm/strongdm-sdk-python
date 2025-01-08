@@ -25963,6 +25963,8 @@ class Workflow:
      but automatic approval or a set of users authorized to approve the requests.
     '''
     __slots__ = [
+        'access_request_fixed_duration',
+        'access_request_max_duration',
         'access_rules',
         'approval_flow_id',
         'auto_grant',
@@ -25975,6 +25977,8 @@ class Workflow:
 
     def __init__(
         self,
+        access_request_fixed_duration=None,
+        access_request_max_duration=None,
         access_rules=None,
         approval_flow_id=None,
         auto_grant=None,
@@ -25984,6 +25988,16 @@ class Workflow:
         name=None,
         weight=None,
     ):
+        self.access_request_fixed_duration = access_request_fixed_duration if access_request_fixed_duration is not None else None
+        '''
+         Fixed Duration of access requests bound to this workflow. If fixed duration is provided, max duration must be empty.
+         If neither max nor fixed duration are provided, requests that bind to this workflow will use the organization-level settings.
+        '''
+        self.access_request_max_duration = access_request_max_duration if access_request_max_duration is not None else None
+        '''
+         Maximum Duration of access requests bound to this workflow. If max duration is provided, fixed duration must be empty.
+         If neither max nor fixed duration are provided, requests that bind to this workflow will use the organization-level settings.
+        '''
         self.access_rules = access_rules if access_rules is not None else _porcelain_zero_value_access_rules(
         )
         '''
@@ -26024,6 +26038,8 @@ class Workflow:
 
     def __repr__(self):
         return '<sdm.Workflow ' + \
+            'access_request_fixed_duration: ' + repr(self.access_request_fixed_duration) + ' ' +\
+            'access_request_max_duration: ' + repr(self.access_request_max_duration) + ' ' +\
             'access_rules: ' + repr(self.access_rules) + ' ' +\
             'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
             'auto_grant: ' + repr(self.auto_grant) + ' ' +\
@@ -26036,6 +26052,9 @@ class Workflow:
 
     def to_dict(self):
         return {
+            'access_request_fixed_duration':
+            self.access_request_fixed_duration,
+            'access_request_max_duration': self.access_request_max_duration,
             'access_rules': self.access_rules,
             'approval_flow_id': self.approval_flow_id,
             'auto_grant': self.auto_grant,
@@ -26049,6 +26068,9 @@ class Workflow:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_request_fixed_duration=d.get(
+                'access_request_fixed_duration'),
+            access_request_max_duration=d.get('access_request_max_duration'),
             access_rules=d.get('access_rules'),
             approval_flow_id=d.get('approval_flow_id'),
             auto_grant=d.get('auto_grant'),
