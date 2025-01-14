@@ -249,6 +249,7 @@ class ActivityVerb:
     SECRET_STORE_DELETED = "secret store deleted"
     SECRET_ENGINE_ADDED = "secret engine added"
     SECRET_ENGINE_UPDATED = "secret engine updated"
+    SECRET_ENGINE_ROTATED = "secret engine's credentials updated"
     SECRET_ENGINE_DELETED = "secret engine deleted"
     REMOTE_IDENTITY_GROUP_CREATED = "remote identity group created"
     REMOTE_IDENTITY_GROUP_UPDATED = "remote identity group updated"

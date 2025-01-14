@@ -4467,6 +4467,7 @@ class Resources:
     `strongdm.models.AmazonMQAMQP091`
     `strongdm.models.Athena`
     `strongdm.models.AuroraMysql`
+    `strongdm.models.AuroraMysqlIAM`
     `strongdm.models.AuroraPostgres`
     `strongdm.models.AuroraPostgresIAM`
     `strongdm.models.AWS`
