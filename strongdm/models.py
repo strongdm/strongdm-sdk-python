@@ -10458,10 +10458,6 @@ class GCPCertX509Store:
 
 
 class GCPConsole:
-    '''
-    GCPConsole is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -10679,10 +10675,6 @@ class GCPStore:
 
 
 class GCPWIF:
-    '''
-    GCPWIF is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
