@@ -269,6 +269,7 @@ class ActivityVerb:
     IDENTITY_ALIAS_PROVISIONING_DISABLED = "identity alias provisioning disabled"
     ACCESS_REQUESTED_TO_RESOURCE = "access requested to resource"
     ACCESS_REQUEST_TO_RESOURCE_APPROVAL_ADDED = "access request to resource approval added"
+    ACCESS_REQUEST_TO_RESOURCE_STEP_SKIPPED = "access request to resource step skipped"
     ACCESS_REQUEST_TO_RESOURCE_CANCELED = "access request to resource canceled"
     ACCESS_REQUEST_TO_RESOURCE_DENIED = "access request to resource denied"
     ACCESS_REQUEST_TO_RESOURCE_TIMED_OUT = "access request to resource timed out"

@@ -4482,6 +4482,9 @@ class Resources:
     `strongdm.models.BigQuery`
     `strongdm.models.Cassandra`
     `strongdm.models.Citus`
+    `strongdm.models.ClickHouseHTTP`
+    `strongdm.models.ClickHouseMySQL`
+    `strongdm.models.ClickHouseTCP`
     `strongdm.models.Clustrix`
     `strongdm.models.Cockroach`
     `strongdm.models.CouchbaseDatabase`
@@ -4492,6 +4495,7 @@ class Resources:
     `strongdm.models.DocumentDBReplicaSet`
     `strongdm.models.Druid`
     `strongdm.models.DynamoDB`
+    `strongdm.models.DynamoDBIAM`
     `strongdm.models.Elastic`
     `strongdm.models.ElasticacheRedis`
     `strongdm.models.GCP`

@@ -3886,6 +3886,180 @@ def convert_repeated_citus_to_porcelain(plumbings):
     return [convert_citus_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_click_house_http_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ClickHouseHTTP()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_click_house_http_to_plumbing(porcelain):
+    plumbing = ClickHouseHTTP()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_click_house_http_to_plumbing(porcelains):
+    return [
+        convert_click_house_http_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_click_house_http_to_porcelain(plumbings):
+    return [
+        convert_click_house_http_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_click_house_my_sql_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ClickHouseMySQL()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.require_native_auth = (plumbing.require_native_auth)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_click_house_my_sql_to_plumbing(porcelain):
+    plumbing = ClickHouseMySQL()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.require_native_auth = (porcelain.require_native_auth)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_click_house_my_sql_to_plumbing(porcelains):
+    return [
+        convert_click_house_my_sql_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_click_house_my_sql_to_porcelain(plumbings):
+    return [
+        convert_click_house_my_sql_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_click_house_tcp_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ClickHouseTCP()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_click_house_tcp_to_plumbing(porcelain):
+    plumbing = ClickHouseTCP()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_click_house_tcp_to_plumbing(porcelains):
+    return [
+        convert_click_house_tcp_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_click_house_tcp_to_porcelain(plumbings):
+    return [
+        convert_click_house_tcp_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_clustrix_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -4760,6 +4934,60 @@ def convert_repeated_dynamo_db_to_plumbing(porcelains):
 
 def convert_repeated_dynamo_db_to_porcelain(plumbings):
     return [convert_dynamo_db_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_dynamo_dbiam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.DynamoDBIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_dynamo_dbiam_to_plumbing(porcelain):
+    plumbing = DynamoDBIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.endpoint = (porcelain.endpoint)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_dynamo_dbiam_to_plumbing(porcelains):
+    return [
+        convert_dynamo_dbiam_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_dynamo_dbiam_to_porcelain(plumbings):
+    return [
+        convert_dynamo_dbiam_to_porcelain(plumbing) for plumbing in plumbings
+    ]
 
 
 def convert_elastic_to_porcelain(plumbing):
@@ -10038,6 +10266,15 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.cassandra.CopyFrom(convert_cassandra_to_plumbing(porcelain))
     if isinstance(porcelain, models.Citus):
         plumbing.citus.CopyFrom(convert_citus_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ClickHouseHTTP):
+        plumbing.click_house_http.CopyFrom(
+            convert_click_house_http_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ClickHouseMySQL):
+        plumbing.click_house_my_sql.CopyFrom(
+            convert_click_house_my_sql_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ClickHouseTCP):
+        plumbing.click_house_tcp.CopyFrom(
+            convert_click_house_tcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.Clustrix):
         plumbing.clustrix.CopyFrom(convert_clustrix_to_plumbing(porcelain))
     if isinstance(porcelain, models.Cockroach):
@@ -10062,6 +10299,9 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.druid.CopyFrom(convert_druid_to_plumbing(porcelain))
     if isinstance(porcelain, models.DynamoDB):
         plumbing.dynamo_db.CopyFrom(convert_dynamo_db_to_plumbing(porcelain))
+    if isinstance(porcelain, models.DynamoDBIAM):
+        plumbing.dynamo_dbiam.CopyFrom(
+            convert_dynamo_dbiam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Elastic):
         plumbing.elastic.CopyFrom(convert_elastic_to_plumbing(porcelain))
     if isinstance(porcelain, models.ElasticacheRedis):
@@ -10265,6 +10505,13 @@ def convert_resource_to_porcelain(plumbing):
         return convert_cassandra_to_porcelain(plumbing.cassandra)
     if plumbing.HasField('citus'):
         return convert_citus_to_porcelain(plumbing.citus)
+    if plumbing.HasField('click_house_http'):
+        return convert_click_house_http_to_porcelain(plumbing.click_house_http)
+    if plumbing.HasField('click_house_my_sql'):
+        return convert_click_house_my_sql_to_porcelain(
+            plumbing.click_house_my_sql)
+    if plumbing.HasField('click_house_tcp'):
+        return convert_click_house_tcp_to_porcelain(plumbing.click_house_tcp)
     if plumbing.HasField('clustrix'):
         return convert_clustrix_to_porcelain(plumbing.clustrix)
     if plumbing.HasField('cockroach'):
@@ -10287,6 +10534,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_druid_to_porcelain(plumbing.druid)
     if plumbing.HasField('dynamo_db'):
         return convert_dynamo_db_to_porcelain(plumbing.dynamo_db)
+    if plumbing.HasField('dynamo_dbiam'):
+        return convert_dynamo_dbiam_to_porcelain(plumbing.dynamo_dbiam)
     if plumbing.HasField('elastic'):
         return convert_elastic_to_porcelain(plumbing.elastic)
     if plumbing.HasField('elasticache_redis'):
