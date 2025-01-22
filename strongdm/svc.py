@@ -4492,6 +4492,7 @@ class Resources:
     `strongdm.models.DB2I`
     `strongdm.models.DB2LUW`
     `strongdm.models.DocumentDBHost`
+    `strongdm.models.DocumentDBHostIAM`
     `strongdm.models.DocumentDBReplicaSet`
     `strongdm.models.Druid`
     `strongdm.models.DynamoDB`
