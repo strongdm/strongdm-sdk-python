@@ -5858,6 +5858,158 @@ class Athena:
         )
 
 
+class AthenaIAM:
+    '''
+    AthenaIAM is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'name',
+        'output',
+        'port_override',
+        'proxy_cluster_id',
+        'region',
+        'role_arn',
+        'role_external_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        name=None,
+        output=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        region=None,
+        role_arn=None,
+        role_external_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.output = output if output is not None else ''
+        '''
+         The AWS S3 output location.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to connect to e.g. us-east-1.
+        '''
+        self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AthenaIAM ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'output: ' + repr(self.output) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'output': self.output,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            output=d.get('output'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
 class AuroraMysql:
     __slots__ = [
         'bind_interface',
@@ -6036,10 +6188,6 @@ class AuroraMysql:
 
 
 class AuroraMysqlIAM:
-    '''
-    AuroraMysqlIAM is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'database',
