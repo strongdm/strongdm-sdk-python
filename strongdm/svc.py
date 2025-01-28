@@ -30,6 +30,8 @@ from .access_request_events_history_pb2 import *
 from .access_request_events_history_pb2_grpc import *
 from .access_requests_history_pb2 import *
 from .access_requests_history_pb2_grpc import *
+from .drivers_pb2 import *
+from .drivers_pb2_grpc import *
 from .account_attachments_pb2 import *
 from .account_attachments_pb2_grpc import *
 from .account_attachments_history_pb2 import *
@@ -64,8 +66,6 @@ from .approval_workflows_history_pb2 import *
 from .approval_workflows_history_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
-from .drivers_pb2 import *
-from .drivers_pb2_grpc import *
 from .health_checks_pb2 import *
 from .health_checks_pb2_grpc import *
 from .identity_aliases_pb2 import *

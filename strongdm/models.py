@@ -19993,6 +19993,7 @@ class QueryCapture:
         'impersonation_groups',
         'impersonation_user',
         'pod',
+        'privilege_groups',
         'request_body',
         'request_method',
         'request_uri',
@@ -20012,6 +20013,7 @@ class QueryCapture:
         impersonation_groups=None,
         impersonation_user=None,
         pod=None,
+        privilege_groups=None,
         request_body=None,
         request_method=None,
         request_uri=None,
@@ -20058,6 +20060,10 @@ class QueryCapture:
         '''
          The target pod of a Kubernetes operation.
         '''
+        self.privilege_groups = privilege_groups if privilege_groups is not None else []
+        '''
+         The additional impersonation groups, as granted by privilege levels, of a Kubernetes operation.
+        '''
         self.request_body = request_body if request_body is not None else b''
         '''
          The HTTP request body of a Kubernetes operation.
@@ -20091,6 +20097,7 @@ class QueryCapture:
             'impersonation_groups: ' + repr(self.impersonation_groups) + ' ' +\
             'impersonation_user: ' + repr(self.impersonation_user) + ' ' +\
             'pod: ' + repr(self.pod) + ' ' +\
+            'privilege_groups: ' + repr(self.privilege_groups) + ' ' +\
             'request_body: ' + repr(self.request_body) + ' ' +\
             'request_method: ' + repr(self.request_method) + ' ' +\
             'request_uri: ' + repr(self.request_uri) + ' ' +\
@@ -20110,6 +20117,7 @@ class QueryCapture:
             'impersonation_groups': self.impersonation_groups,
             'impersonation_user': self.impersonation_user,
             'pod': self.pod,
+            'privilege_groups': self.privilege_groups,
             'request_body': self.request_body,
             'request_method': self.request_method,
             'request_uri': self.request_uri,
@@ -20130,6 +20138,7 @@ class QueryCapture:
             impersonation_groups=d.get('impersonation_groups'),
             impersonation_user=d.get('impersonation_user'),
             pod=d.get('pod'),
+            privilege_groups=d.get('privilege_groups'),
             request_body=d.get('request_body'),
             request_method=d.get('request_method'),
             request_uri=d.get('request_uri'),

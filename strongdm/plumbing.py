@@ -30,6 +30,7 @@ from .tags_pb2 import *
 from .access_requests_pb2 import *
 from .access_request_events_history_pb2 import *
 from .access_requests_history_pb2 import *
+from .drivers_pb2 import *
 from .account_attachments_pb2 import *
 from .account_attachments_history_pb2 import *
 from .account_grants_pb2 import *
@@ -47,7 +48,6 @@ from .approval_workflow_steps_history_pb2 import *
 from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
 from .control_panel_pb2 import *
-from .drivers_pb2 import *
 from .health_checks_pb2 import *
 from .identity_aliases_pb2 import *
 from .identity_aliases_history_pb2 import *
@@ -9326,6 +9326,7 @@ def convert_query_capture_to_porcelain(plumbing):
     porcelain.impersonation_groups = (plumbing.impersonation_groups)
     porcelain.impersonation_user = (plumbing.impersonation_user)
     porcelain.pod = (plumbing.pod)
+    porcelain.privilege_groups = (plumbing.privilege_groups)
     porcelain.request_body = (plumbing.request_body)
     porcelain.request_method = (plumbing.request_method)
     porcelain.request_uri = (plumbing.request_uri)
@@ -9349,6 +9350,8 @@ def convert_query_capture_to_plumbing(porcelain):
     plumbing.impersonation_groups.extend((porcelain.impersonation_groups))
     plumbing.impersonation_user = (porcelain.impersonation_user)
     plumbing.pod = (porcelain.pod)
+    del plumbing.privilege_groups[:]
+    plumbing.privilege_groups.extend((porcelain.privilege_groups))
     plumbing.request_body = (porcelain.request_body)
     plumbing.request_method = (porcelain.request_method)
     plumbing.request_uri = (porcelain.request_uri)
