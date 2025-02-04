@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"u\n\x0eRateLimitError\x12W\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"\x17\n\x15\x43reateRequestMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"E\n\x12GetRequestMetadata\x12/\n\x0bsnapshot_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15UpdateRequestMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x17\n\x15\x44\x65leteRequestMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x85\x01\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\x12/\n\x0bsnapshot_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\">\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\x11\n\x05total\x18\x02 \x01(\x05\x42\x02\x18\x01\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x18\n\x16GenericRequestMetadata\"%\n\x17GenericResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x42R\n\x19\x63om.strongdm.api.plumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nspec.proto\x12\x02v1\x1a\roptions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"<\n\x12\x41lreadyExistsError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x06\"7\n\rNotFoundError\x12\x1a\n\x06\x65ntity\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x05\"\x1d\n\x0f\x42\x61\x64RequestError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x03\"!\n\x13\x41uthenticationError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x10\"\x1d\n\x0fPermissionError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x07\"\x1b\n\rInternalError:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\r\"u\n\x0eRateLimitError\x12W\n\nrate_limit\x18\x01 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x08\"G\n\x15\x43reateRequestMetadata\x12.\n\x0c\x66ulfillments\x18\x01 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\"$\n\x16\x43reateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"u\n\x12GetRequestMetadata\x12/\n\x0bsnapshot_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\x0c\x66ulfillments\x18\x02 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\"!\n\x13GetResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"G\n\x15UpdateRequestMetadata\x12.\n\x0c\x66ulfillments\x18\x01 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\"$\n\x16UpdateResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"G\n\x15\x44\x65leteRequestMetadata\x12.\n\x0c\x66ulfillments\x18\x01 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\"$\n\x16\x44\x65leteResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\xb5\x01\n\x13ListRequestMetadata\x12\x0e\n\x06\x63ursor\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x05\x12\r\n\x05limit\x18\x03 \x01(\x05\x12\x10\n\x08order_by\x18\x04 \x01(\t\x12/\n\x0bsnapshot_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\x0c\x66ulfillments\x18\x06 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\">\n\x14ListResponseMetadata\x12\x13\n\x0bnext_cursor\x18\x01 \x01(\t\x12\x11\n\x05total\x18\x02 \x01(\x05\x42\x02\x18\x01\"\xaf\x01\n\x11RateLimitMetadata\x12\x19\n\x05limit\x18\x01 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\tremaining\x18\x02 \x01(\x03\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x38\n\x08reset_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06\x62ucket\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"H\n\x16GenericRequestMetadata\x12.\n\x0c\x66ulfillments\x18\x01 \x01(\x0b\x32\x18.v1.FulfillmentsMetadata\"%\n\x17GenericResponseMetadata:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"=\n\x14RequirementsMetadata\x12%\n\x0crequirements\x18\x01 \x03(\x0b\x32\x0f.v1.Requirement\"=\n\x14\x46ulfillmentsMetadata\x12%\n\x0c\x66ulfillments\x18\x01 \x03(\x0b\x32\x0f.v1.Fulfillment\"*\n\x0bRequirement\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"B\n\x0b\x46ulfillment\x12$\n\x0brequirement\x18\x01 \x01(\x0b\x32\x0f.v1.Requirement\x12\r\n\x05value\x18\x02 \x01(\tBR\n\x19\x63om.strongdm.api.plumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -54,6 +54,10 @@ _LISTRESPONSEMETADATA = DESCRIPTOR.message_types_by_name['ListResponseMetadata']
 _RATELIMITMETADATA = DESCRIPTOR.message_types_by_name['RateLimitMetadata']
 _GENERICREQUESTMETADATA = DESCRIPTOR.message_types_by_name['GenericRequestMetadata']
 _GENERICRESPONSEMETADATA = DESCRIPTOR.message_types_by_name['GenericResponseMetadata']
+_REQUIREMENTSMETADATA = DESCRIPTOR.message_types_by_name['RequirementsMetadata']
+_FULFILLMENTSMETADATA = DESCRIPTOR.message_types_by_name['FulfillmentsMetadata']
+_REQUIREMENT = DESCRIPTOR.message_types_by_name['Requirement']
+_FULFILLMENT = DESCRIPTOR.message_types_by_name['Fulfillment']
 AlreadyExistsError = _reflection.GeneratedProtocolMessageType('AlreadyExistsError', (_message.Message,), {
   'DESCRIPTOR' : _ALREADYEXISTSERROR,
   '__module__' : 'spec_pb2'
@@ -194,6 +198,34 @@ GenericResponseMetadata = _reflection.GeneratedProtocolMessageType('GenericRespo
   })
 _sym_db.RegisterMessage(GenericResponseMetadata)
 
+RequirementsMetadata = _reflection.GeneratedProtocolMessageType('RequirementsMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _REQUIREMENTSMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.RequirementsMetadata)
+  })
+_sym_db.RegisterMessage(RequirementsMetadata)
+
+FulfillmentsMetadata = _reflection.GeneratedProtocolMessageType('FulfillmentsMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _FULFILLMENTSMETADATA,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.FulfillmentsMetadata)
+  })
+_sym_db.RegisterMessage(FulfillmentsMetadata)
+
+Requirement = _reflection.GeneratedProtocolMessageType('Requirement', (_message.Message,), {
+  'DESCRIPTOR' : _REQUIREMENT,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.Requirement)
+  })
+_sym_db.RegisterMessage(Requirement)
+
+Fulfillment = _reflection.GeneratedProtocolMessageType('Fulfillment', (_message.Message,), {
+  'DESCRIPTOR' : _FULFILLMENT,
+  '__module__' : 'spec_pb2'
+  # @@protoc_insertion_point(class_scope:v1.Fulfillment)
+  })
+_sym_db.RegisterMessage(Fulfillment)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -255,29 +287,37 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RATELIMITERROR._serialized_start=311
   _RATELIMITERROR._serialized_end=428
   _CREATEREQUESTMETADATA._serialized_start=430
-  _CREATEREQUESTMETADATA._serialized_end=453
-  _CREATERESPONSEMETADATA._serialized_start=455
-  _CREATERESPONSEMETADATA._serialized_end=491
-  _GETREQUESTMETADATA._serialized_start=493
-  _GETREQUESTMETADATA._serialized_end=562
-  _GETRESPONSEMETADATA._serialized_start=564
-  _GETRESPONSEMETADATA._serialized_end=597
-  _UPDATEREQUESTMETADATA._serialized_start=599
-  _UPDATEREQUESTMETADATA._serialized_end=622
-  _UPDATERESPONSEMETADATA._serialized_start=624
-  _UPDATERESPONSEMETADATA._serialized_end=660
-  _DELETEREQUESTMETADATA._serialized_start=662
-  _DELETEREQUESTMETADATA._serialized_end=685
-  _DELETERESPONSEMETADATA._serialized_start=687
-  _DELETERESPONSEMETADATA._serialized_end=723
-  _LISTREQUESTMETADATA._serialized_start=726
-  _LISTREQUESTMETADATA._serialized_end=859
-  _LISTRESPONSEMETADATA._serialized_start=861
-  _LISTRESPONSEMETADATA._serialized_end=923
-  _RATELIMITMETADATA._serialized_start=926
-  _RATELIMITMETADATA._serialized_end=1101
-  _GENERICREQUESTMETADATA._serialized_start=1103
-  _GENERICREQUESTMETADATA._serialized_end=1127
-  _GENERICRESPONSEMETADATA._serialized_start=1129
-  _GENERICRESPONSEMETADATA._serialized_end=1166
+  _CREATEREQUESTMETADATA._serialized_end=501
+  _CREATERESPONSEMETADATA._serialized_start=503
+  _CREATERESPONSEMETADATA._serialized_end=539
+  _GETREQUESTMETADATA._serialized_start=541
+  _GETREQUESTMETADATA._serialized_end=658
+  _GETRESPONSEMETADATA._serialized_start=660
+  _GETRESPONSEMETADATA._serialized_end=693
+  _UPDATEREQUESTMETADATA._serialized_start=695
+  _UPDATEREQUESTMETADATA._serialized_end=766
+  _UPDATERESPONSEMETADATA._serialized_start=768
+  _UPDATERESPONSEMETADATA._serialized_end=804
+  _DELETEREQUESTMETADATA._serialized_start=806
+  _DELETEREQUESTMETADATA._serialized_end=877
+  _DELETERESPONSEMETADATA._serialized_start=879
+  _DELETERESPONSEMETADATA._serialized_end=915
+  _LISTREQUESTMETADATA._serialized_start=918
+  _LISTREQUESTMETADATA._serialized_end=1099
+  _LISTRESPONSEMETADATA._serialized_start=1101
+  _LISTRESPONSEMETADATA._serialized_end=1163
+  _RATELIMITMETADATA._serialized_start=1166
+  _RATELIMITMETADATA._serialized_end=1341
+  _GENERICREQUESTMETADATA._serialized_start=1343
+  _GENERICREQUESTMETADATA._serialized_end=1415
+  _GENERICRESPONSEMETADATA._serialized_start=1417
+  _GENERICRESPONSEMETADATA._serialized_end=1454
+  _REQUIREMENTSMETADATA._serialized_start=1456
+  _REQUIREMENTSMETADATA._serialized_end=1517
+  _FULFILLMENTSMETADATA._serialized_start=1519
+  _FULFILLMENTSMETADATA._serialized_end=1580
+  _REQUIREMENT._serialized_start=1582
+  _REQUIREMENT._serialized_end=1624
+  _FULFILLMENT._serialized_start=1626
+  _FULFILLMENT._serialized_end=1692
 # @@protoc_insertion_point(module_scope)

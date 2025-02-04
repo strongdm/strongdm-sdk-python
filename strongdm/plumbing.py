@@ -2340,6 +2340,62 @@ def convert_repeated_amazon_es_to_porcelain(plumbings):
     return [convert_amazon_es_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_amazon_esiam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AmazonESIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tlsrequired = (plumbing.tlsRequired)
+    return porcelain
+
+
+def convert_amazon_esiam_to_plumbing(porcelain):
+    plumbing = AmazonESIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.endpoint = (porcelain.endpoint)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tlsRequired = (porcelain.tlsrequired)
+    return plumbing
+
+
+def convert_repeated_amazon_esiam_to_plumbing(porcelains):
+    return [
+        convert_amazon_esiam_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_amazon_esiam_to_porcelain(plumbings):
+    return [
+        convert_amazon_esiam_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_amazon_mqamqp_091_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10329,6 +10385,9 @@ def convert_resource_to_plumbing(porcelain):
             convert_amazon_eks_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonES):
         plumbing.amazon_es.CopyFrom(convert_amazon_es_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AmazonESIAM):
+        plumbing.amazon_esiam.CopyFrom(
+            convert_amazon_esiam_to_plumbing(porcelain))
     if isinstance(porcelain, models.AmazonMQAMQP091):
         plumbing.amazon_mqamqp_091.CopyFrom(
             convert_amazon_mqamqp_091_to_plumbing(porcelain))
@@ -10579,6 +10638,8 @@ def convert_resource_to_porcelain(plumbing):
             plumbing.amazon_eks_user_impersonation)
     if plumbing.HasField('amazon_es'):
         return convert_amazon_es_to_porcelain(plumbing.amazon_es)
+    if plumbing.HasField('amazon_esiam'):
+        return convert_amazon_esiam_to_porcelain(plumbing.amazon_esiam)
     if plumbing.HasField('amazon_mqamqp_091'):
         return convert_amazon_mqamqp_091_to_porcelain(
             plumbing.amazon_mqamqp_091)

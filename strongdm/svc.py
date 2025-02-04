@@ -4464,6 +4464,7 @@ class Resources:
     `strongdm.models.AmazonEKSInstanceProfileUserImpersonation`
     `strongdm.models.AmazonEKSUserImpersonation`
     `strongdm.models.AmazonES`
+    `strongdm.models.AmazonESIAM`
     `strongdm.models.AmazonMQAMQP091`
     `strongdm.models.Athena`
     `strongdm.models.AthenaIAM`
