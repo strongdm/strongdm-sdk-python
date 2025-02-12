@@ -2638,6 +2638,7 @@ class AccountGrant:
          AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
     '''
     __slots__ = [
+        'access_rule',
         'account_id',
         'id',
         'resource_id',
@@ -2647,12 +2648,18 @@ class AccountGrant:
 
     def __init__(
         self,
+        access_rule=None,
         account_id=None,
         id=None,
         resource_id=None,
         start_from=None,
         valid_until=None,
     ):
+        self.access_rule = access_rule if access_rule is not None else _porcelain_zero_value_access_rule(
+        )
+        '''
+         The access rule associated with this AccountGrant.
+        '''
         self.account_id = account_id if account_id is not None else ''
         '''
          The account ID of this AccountGrant.
@@ -2676,6 +2683,7 @@ class AccountGrant:
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
+            'access_rule: ' + repr(self.access_rule) + ' ' +\
             'account_id: ' + repr(self.account_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'resource_id: ' + repr(self.resource_id) + ' ' +\
@@ -2685,6 +2693,7 @@ class AccountGrant:
 
     def to_dict(self):
         return {
+            'access_rule': self.access_rule,
             'account_id': self.account_id,
             'id': self.id,
             'resource_id': self.resource_id,
@@ -2695,6 +2704,7 @@ class AccountGrant:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_rule=d.get('access_rule'),
             account_id=d.get('account_id'),
             id=d.get('id'),
             resource_id=d.get('resource_id'),
@@ -28529,3 +28539,7 @@ def _porcelain_zero_value_tags():
 
 def _porcelain_zero_value_access_rules():
     return []
+
+
+def _porcelain_zero_value_access_rule():
+    return {}

@@ -160,6 +160,16 @@ def convert_access_rules_to_plumbing(access_rules):
     return json.dumps(access_rules)
 
 
+def convert_access_rule_to_porcelain(access_rule_json):
+    if access_rule_json == "":
+        return {}
+    return json.loads(access_rule_json)
+
+
+def convert_access_rule_to_plumbing(access_rule):
+    return json.dumps(access_rule)
+
+
 def convert_aks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -1412,6 +1422,8 @@ def convert_account_grant_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AccountGrant()
+    porcelain.access_rule = convert_access_rule_to_porcelain(
+        plumbing.access_rule)
     porcelain.account_id = (plumbing.account_id)
     porcelain.id = (plumbing.id)
     porcelain.resource_id = (plumbing.resource_id)
@@ -1425,6 +1437,8 @@ def convert_account_grant_to_plumbing(porcelain):
     plumbing = AccountGrant()
     if porcelain is None:
         return plumbing
+    plumbing.access_rule = convert_access_rule_to_plumbing(
+        porcelain.access_rule)
     plumbing.account_id = (porcelain.account_id)
     plumbing.id = (porcelain.id)
     plumbing.resource_id = (porcelain.resource_id)
