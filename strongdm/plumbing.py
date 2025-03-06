@@ -6748,6 +6748,62 @@ def convert_repeated_kubernetes_basic_auth_to_porcelain(plumbings):
     ]
 
 
+def convert_kubernetes_pod_identity_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KubernetesPodIdentity()
+    porcelain.allow_resource_role_bypass = (
+        plumbing.allow_resource_role_bypass)
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.certificate_authority = (plumbing.certificate_authority)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_kubernetes_pod_identity_to_plumbing(porcelain):
+    plumbing = KubernetesPodIdentity()
+    if porcelain is None:
+        return plumbing
+    plumbing.allow_resource_role_bypass = (
+        porcelain.allow_resource_role_bypass)
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.certificate_authority = (porcelain.certificate_authority)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_kubernetes_pod_identity_to_plumbing(porcelains):
+    return [
+        convert_kubernetes_pod_identity_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_kubernetes_pod_identity_to_porcelain(plumbings):
+    return [
+        convert_kubernetes_pod_identity_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_kubernetes_service_account_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10523,6 +10579,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.KubernetesBasicAuth):
         plumbing.kubernetes_basic_auth.CopyFrom(
             convert_kubernetes_basic_auth_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KubernetesPodIdentity):
+        plumbing.kubernetes_pod_identity.CopyFrom(
+            convert_kubernetes_pod_identity_to_plumbing(porcelain))
     if isinstance(porcelain, models.KubernetesServiceAccount):
         plumbing.kubernetes_service_account.CopyFrom(
             convert_kubernetes_service_account_to_plumbing(porcelain))
@@ -10761,6 +10820,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('kubernetes_basic_auth'):
         return convert_kubernetes_basic_auth_to_porcelain(
             plumbing.kubernetes_basic_auth)
+    if plumbing.HasField('kubernetes_pod_identity'):
+        return convert_kubernetes_pod_identity_to_porcelain(
+            plumbing.kubernetes_pod_identity)
     if plumbing.HasField('kubernetes_service_account'):
         return convert_kubernetes_service_account_to_porcelain(
             plumbing.kubernetes_service_account)

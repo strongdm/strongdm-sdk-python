@@ -4512,6 +4512,7 @@ class Resources:
     `strongdm.models.HTTPNoAuth`
     `strongdm.models.Kubernetes`
     `strongdm.models.KubernetesBasicAuth`
+    `strongdm.models.KubernetesPodIdentity`
     `strongdm.models.KubernetesServiceAccount`
     `strongdm.models.KubernetesServiceAccountUserImpersonation`
     `strongdm.models.KubernetesUserImpersonation`

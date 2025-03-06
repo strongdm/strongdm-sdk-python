@@ -14514,6 +14514,146 @@ class KubernetesBasicAuth:
         )
 
 
+class KubernetesPodIdentity:
+    __slots__ = [
+        'allow_resource_role_bypass',
+        'bind_interface',
+        'certificate_authority',
+        'egress_filter',
+        'healthcheck_namespace',
+        'healthy',
+        'id',
+        'name',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        allow_resource_role_bypass=None,
+        bind_interface=None,
+        certificate_authority=None,
+        egress_filter=None,
+        healthcheck_namespace=None,
+        healthy=None,
+        id=None,
+        name=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.allow_resource_role_bypass = allow_resource_role_bypass if allow_resource_role_bypass is not None else False
+        '''
+         If true, allows users to fallback to the existing authentication mode (Leased Credential or Identity Set)
+         when a resource role is not provided.
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.certificate_authority = certificate_authority if certificate_authority is not None else ''
+        '''
+         The CA to authenticate TLS connections with.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthcheck_namespace = healthcheck_namespace if healthcheck_namespace is not None else ''
+        '''
+         The path used to check the health of your connection.  Defaults to `default`.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.KubernetesPodIdentity ' + \
+            'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'allow_resource_role_bypass': self.allow_resource_role_bypass,
+            'bind_interface': self.bind_interface,
+            'certificate_authority': self.certificate_authority,
+            'egress_filter': self.egress_filter,
+            'healthcheck_namespace': self.healthcheck_namespace,
+            'healthy': self.healthy,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
+            bind_interface=d.get('bind_interface'),
+            certificate_authority=d.get('certificate_authority'),
+            egress_filter=d.get('egress_filter'),
+            healthcheck_namespace=d.get('healthcheck_namespace'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
 class KubernetesServiceAccount:
     __slots__ = [
         'allow_resource_role_bypass',
