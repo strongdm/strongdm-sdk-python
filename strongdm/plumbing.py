@@ -9922,6 +9922,128 @@ def convert_repeated_redshift_to_porcelain(plumbings):
     return [convert_redshift_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_redshift_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RedshiftIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.cluster_id = (plumbing.cluster_id)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_assumption_arn = (plumbing.role_assumption_arn)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_redshift_iam_to_plumbing(porcelain):
+    plumbing = RedshiftIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.cluster_id = (porcelain.cluster_id)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_assumption_arn = (porcelain.role_assumption_arn)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_redshift_iam_to_plumbing(porcelains):
+    return [
+        convert_redshift_iam_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_redshift_iam_to_porcelain(plumbings):
+    return [
+        convert_redshift_iam_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_redshift_serverless_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RedshiftServerlessIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.override_database = (plumbing.override_database)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_assumption_arn = (plumbing.role_assumption_arn)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.workgroup = (plumbing.workgroup)
+    return porcelain
+
+
+def convert_redshift_serverless_iam_to_plumbing(porcelain):
+    plumbing = RedshiftServerlessIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.override_database = (porcelain.override_database)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_assumption_arn = (porcelain.role_assumption_arn)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.workgroup = (porcelain.workgroup)
+    return plumbing
+
+
+def convert_repeated_redshift_serverless_iam_to_plumbing(porcelains):
+    return [
+        convert_redshift_serverless_iam_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_redshift_serverless_iam_to_porcelain(plumbings):
+    return [
+        convert_redshift_serverless_iam_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_relay_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10646,6 +10768,12 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.redis.CopyFrom(convert_redis_to_plumbing(porcelain))
     if isinstance(porcelain, models.Redshift):
         plumbing.redshift.CopyFrom(convert_redshift_to_plumbing(porcelain))
+    if isinstance(porcelain, models.RedshiftIAM):
+        plumbing.redshift_iam.CopyFrom(
+            convert_redshift_iam_to_plumbing(porcelain))
+    if isinstance(porcelain, models.RedshiftServerlessIAM):
+        plumbing.redshift_serverless_iam.CopyFrom(
+            convert_redshift_serverless_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.SingleStore):
         plumbing.single_store.CopyFrom(
             convert_single_store_to_plumbing(porcelain))
@@ -10883,6 +11011,11 @@ def convert_resource_to_porcelain(plumbing):
         return convert_redis_to_porcelain(plumbing.redis)
     if plumbing.HasField('redshift'):
         return convert_redshift_to_porcelain(plumbing.redshift)
+    if plumbing.HasField('redshift_iam'):
+        return convert_redshift_iam_to_porcelain(plumbing.redshift_iam)
+    if plumbing.HasField('redshift_serverless_iam'):
+        return convert_redshift_serverless_iam_to_porcelain(
+            plumbing.redshift_serverless_iam)
     if plumbing.HasField('single_store'):
         return convert_single_store_to_porcelain(plumbing.single_store)
     if plumbing.HasField('snowflake'):

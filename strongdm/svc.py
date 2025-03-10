@@ -4539,6 +4539,8 @@ class Resources:
     `strongdm.models.RDSPostgresIAM`
     `strongdm.models.Redis`
     `strongdm.models.Redshift`
+    `strongdm.models.RedshiftIAM`
+    `strongdm.models.RedshiftServerlessIAM`
     `strongdm.models.SingleStore`
     `strongdm.models.Snowflake`
     `strongdm.models.Snowsight`
