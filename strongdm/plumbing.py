@@ -6760,6 +6760,9 @@ def convert_kubernetes_pod_identity_to_porcelain(plumbing):
     porcelain.healthcheck_namespace = (plumbing.healthcheck_namespace)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
@@ -6781,6 +6784,9 @@ def convert_kubernetes_pod_identity_to_plumbing(porcelain):
     plumbing.healthcheck_namespace = (porcelain.healthcheck_namespace)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)

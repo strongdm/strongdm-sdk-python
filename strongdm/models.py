@@ -14523,6 +14523,8 @@ class KubernetesPodIdentity:
         'healthcheck_namespace',
         'healthy',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port_override',
         'proxy_cluster_id',
@@ -14540,6 +14542,8 @@ class KubernetesPodIdentity:
         healthcheck_namespace=None,
         healthy=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port_override=None,
         proxy_cluster_id=None,
@@ -14576,6 +14580,14 @@ class KubernetesPodIdentity:
         '''
          Unique identifier of the Resource.
         '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
@@ -14610,6 +14622,8 @@ class KubernetesPodIdentity:
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
@@ -14627,6 +14641,9 @@ class KubernetesPodIdentity:
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
@@ -14645,6 +14662,9 @@ class KubernetesPodIdentity:
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
