@@ -4555,6 +4555,7 @@ class Resources:
     `strongdm.models.SybaseIQ`
     `strongdm.models.Teradata`
     `strongdm.models.Trino`
+    `strongdm.models.Vertica`
     '''
     def __init__(self, channel, client):
         self.parent = client
