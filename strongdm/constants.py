@@ -512,5 +512,6 @@ class DeviceTrustProvider:
 
 # APIHost defines the API host for various control planes.
 class APIHost:
-    US = "api.strongdm.com:443"
-    UK = "api.uk.strongdm.com:443"
+    US = "app.strongdm.com:443"
+    UK = "app.uk.strongdm.com:443"
+    EU = "app.eu.strongdm.com:443"
