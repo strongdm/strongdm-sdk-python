@@ -28,9 +28,10 @@ _sym_db = _symbol_database.Default()
 
 from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pproval_workflows.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"\x85\x01\n\x1d\x41pprovalWorkflowCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xec\x01\n\x1e\x41pprovalWorkflowCreateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Z\n\x1a\x41pprovalWorkflowGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf2\x01\n\x1b\x41pprovalWorkflowGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x85\x01\n\x1d\x41pprovalWorkflowUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xec\x01\n\x1e\x41pprovalWorkflowUpdateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x1d\x41pprovalWorkflowDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x1e\x41pprovalWorkflowDeleteResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x1b\x41pprovalWorkflowListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe9\x01\n\x1c\x41pprovalWorkflowListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12<\n\x12\x61pproval_workflows\x18\x02 \x03(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x8a\x02\n\x10\x41pprovalWorkflow\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12&\n\rapproval_mode\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:v\xfa\xf8\xb3\x07q\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x61\xa2\xf3\xb3\x07*tf_examples/approval_workflow_resource.txt\xaa\xf3\xb3\x07-tf_examples/approval_workflow_data_source.txt\xd2\xf3\xb3\x07\x01*2\xc0\x05\n\x11\x41pprovalWorkflows\x12\x7f\n\x06\x43reate\x12!.v1.ApprovalWorkflowCreateRequest\x1a\".v1.ApprovalWorkflowCreateResponse\".\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12y\n\x03Get\x12\x1e.v1.ApprovalWorkflowGetRequest\x1a\x1f.v1.ApprovalWorkflowGetResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/approval-workflow/{id}\x12\x81\x01\n\x06\x44\x65lete\x12!.v1.ApprovalWorkflowDeleteRequest\x1a\".v1.ApprovalWorkflowDeleteResponse\"0\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12~\n\x06Update\x12!.v1.ApprovalWorkflowUpdateRequest\x1a\".v1.ApprovalWorkflowUpdateResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12x\n\x04List\x12\x1f.v1.ApprovalWorkflowListRequest\x1a .v1.ApprovalWorkflowListResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x1a\x31\xca\xf9\xb3\x07\x15\xc2\xf9\xb3\x07\x10\x41pprovalWorkflow\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61\x66-\xca\xf9\xb3\x07\x05\xe8\xf9\xb3\x07\x01\x42m\n\x19\x63om.strongdm.api.plumbingB\x19\x41pprovalWorkflowsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pproval_workflows.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\x1egoogle/protobuf/duration.proto\"\x85\x01\n\x1d\x41pprovalWorkflowCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xec\x01\n\x1e\x41pprovalWorkflowCreateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"Z\n\x1a\x41pprovalWorkflowGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xf2\x01\n\x1b\x41pprovalWorkflowGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x85\x01\n\x1d\x41pprovalWorkflowUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xec\x01\n\x1e\x41pprovalWorkflowUpdateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadata\x12;\n\x11\x61pproval_workflow\x18\x02 \x01(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x1d\x41pprovalWorkflowDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xc7\x01\n\x1e\x41pprovalWorkflowDeleteResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"`\n\x1b\x41pprovalWorkflowListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xe9\x01\n\x1c\x41pprovalWorkflowListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12<\n\x12\x61pproval_workflows\x18\x02 \x03(\x0b\x32\x14.v1.ApprovalWorkflowB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"\x89\x03\n\x10\x41pprovalWorkflow\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12&\n\rapproval_mode\x18\x03 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12}\n\x17\x61pproval_workflow_steps\x18\x05 \x03(\x0b\x32\x14.v1.ApprovalFlowStepBF\xf2\xf8\xb3\x07\x41\xb0\xf3\xb3\x07\x01\xca\xf3\xb3\x07(\xc2\xf4\xb3\x07#\n\x12terraform-provider\x12\rapproval_step\xb2\xf4\xb3\x07\ngo_private:v\xfa\xf8\xb3\x07q\xa8\xf3\xb3\x07\x01\xc2\xf3\xb3\x07\x61\xa2\xf3\xb3\x07*tf_examples/approval_workflow_resource.txt\xaa\xf3\xb3\x07-tf_examples/approval_workflow_data_source.txt\xd2\xf3\xb3\x07\x01*\"\xb3\x02\n\x10\x41pprovalFlowStep\x12\x1e\n\nquantifier\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x39\n\nskip_after\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x64\n\tapprovers\x18\x03 \x03(\x0b\x32\x18.v1.ApprovalFlowApproverB7\xf2\xf8\xb3\x07\x32\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\xca\xf3\xb3\x07#\xc2\xf4\xb3\x07\x1e\n\x12terraform-provider\x12\x08\x61pprover:^\xfa\xf8\xb3\x07Y\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07@\xf2\xf3\xb3\x07\x1e\n\x12terraform-provider\x12\x08TypeList\xfa\xf3\xb3\x07\x18\x61pprovalFlowStepElemType\xd2\xf3\xb3\x07\ngo_private\"\xb7\x01\n\x14\x41pprovalFlowApprover\x12\x1e\n\naccount_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1b\n\x07role_id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:b\xfa\xf8\xb3\x07]\xa8\xf3\xb3\x07\x01\xca\xf3\xb3\x07\x44\xf2\xf3\xb3\x07\x1e\n\x12terraform-provider\x12\x08TypeList\xfa\xf3\xb3\x07\x1c\x61pprovalFlowApproverElemType\xd2\xf3\xb3\x07\ngo_private2\xcb\x05\n\x11\x41pprovalWorkflows\x12\x7f\n\x06\x43reate\x12!.v1.ApprovalWorkflowCreateRequest\x1a\".v1.ApprovalWorkflowCreateResponse\".\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12y\n\x03Get\x12\x1e.v1.ApprovalWorkflowGetRequest\x1a\x1f.v1.ApprovalWorkflowGetResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/approval-workflow/{id}\x12\x81\x01\n\x06\x44\x65lete\x12!.v1.ApprovalWorkflowDeleteRequest\x1a\".v1.ApprovalWorkflowDeleteResponse\"0\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12~\n\x06Update\x12!.v1.ApprovalWorkflowUpdateRequest\x1a\".v1.ApprovalWorkflowUpdateResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x12x\n\x04List\x12\x1f.v1.ApprovalWorkflowListRequest\x1a .v1.ApprovalWorkflowListResponse\"-\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1b\xaa\xf3\xb3\x07\x16/v1/approval-workflows\x1a<\xca\xf9\xb3\x07\x15\xc2\xf9\xb3\x07\x10\x41pprovalWorkflow\xca\xf9\xb3\x07\x08\xd2\xf9\xb3\x07\x03\x61\x66-\xca\xf9\xb3\x07\x05\xe8\xf9\xb3\x07\x01\xca\xf9\xb3\x07\x06\xca\xf9\xb3\x07\x01*Bm\n\x19\x63om.strongdm.api.plumbingB\x19\x41pprovalWorkflowsPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -45,6 +46,8 @@ _APPROVALWORKFLOWDELETERESPONSE = DESCRIPTOR.message_types_by_name['ApprovalWork
 _APPROVALWORKFLOWLISTREQUEST = DESCRIPTOR.message_types_by_name['ApprovalWorkflowListRequest']
 _APPROVALWORKFLOWLISTRESPONSE = DESCRIPTOR.message_types_by_name['ApprovalWorkflowListResponse']
 _APPROVALWORKFLOW = DESCRIPTOR.message_types_by_name['ApprovalWorkflow']
+_APPROVALFLOWSTEP = DESCRIPTOR.message_types_by_name['ApprovalFlowStep']
+_APPROVALFLOWAPPROVER = DESCRIPTOR.message_types_by_name['ApprovalFlowApprover']
 ApprovalWorkflowCreateRequest = _reflection.GeneratedProtocolMessageType('ApprovalWorkflowCreateRequest', (_message.Message,), {
   'DESCRIPTOR' : _APPROVALWORKFLOWCREATEREQUEST,
   '__module__' : 'approval_workflows_pb2'
@@ -122,6 +125,20 @@ ApprovalWorkflow = _reflection.GeneratedProtocolMessageType('ApprovalWorkflow', 
   })
 _sym_db.RegisterMessage(ApprovalWorkflow)
 
+ApprovalFlowStep = _reflection.GeneratedProtocolMessageType('ApprovalFlowStep', (_message.Message,), {
+  'DESCRIPTOR' : _APPROVALFLOWSTEP,
+  '__module__' : 'approval_workflows_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ApprovalFlowStep)
+  })
+_sym_db.RegisterMessage(ApprovalFlowStep)
+
+ApprovalFlowApprover = _reflection.GeneratedProtocolMessageType('ApprovalFlowApprover', (_message.Message,), {
+  'DESCRIPTOR' : _APPROVALFLOWAPPROVER,
+  '__module__' : 'approval_workflows_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ApprovalFlowApprover)
+  })
+_sym_db.RegisterMessage(ApprovalFlowApprover)
+
 _APPROVALWORKFLOWS = DESCRIPTOR.services_by_name['ApprovalWorkflows']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -177,10 +194,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _APPROVALWORKFLOW.fields_by_name['approval_mode']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
   _APPROVALWORKFLOW.fields_by_name['description']._options = None
   _APPROVALWORKFLOW.fields_by_name['description']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _APPROVALWORKFLOW.fields_by_name['approval_workflow_steps']._options = None
+  _APPROVALWORKFLOW.fields_by_name['approval_workflow_steps']._serialized_options = b'\362\370\263\007A\260\363\263\007\001\312\363\263\007(\302\364\263\007#\n\022terraform-provider\022\rapproval_step\262\364\263\007\ngo_private'
   _APPROVALWORKFLOW._options = None
   _APPROVALWORKFLOW._serialized_options = b'\372\370\263\007q\250\363\263\007\001\302\363\263\007a\242\363\263\007*tf_examples/approval_workflow_resource.txt\252\363\263\007-tf_examples/approval_workflow_data_source.txt\322\363\263\007\001*'
+  _APPROVALFLOWSTEP.fields_by_name['quantifier']._options = None
+  _APPROVALFLOWSTEP.fields_by_name['quantifier']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _APPROVALFLOWSTEP.fields_by_name['skip_after']._options = None
+  _APPROVALFLOWSTEP.fields_by_name['skip_after']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _APPROVALFLOWSTEP.fields_by_name['approvers']._options = None
+  _APPROVALFLOWSTEP.fields_by_name['approvers']._serialized_options = b'\362\370\263\0072\260\363\263\007\001\300\363\263\007\001\312\363\263\007#\302\364\263\007\036\n\022terraform-provider\022\010approver'
+  _APPROVALFLOWSTEP._options = None
+  _APPROVALFLOWSTEP._serialized_options = b'\372\370\263\007Y\250\363\263\007\001\312\363\263\007@\362\363\263\007\036\n\022terraform-provider\022\010TypeList\372\363\263\007\030approvalFlowStepElemType\322\363\263\007\ngo_private'
+  _APPROVALFLOWAPPROVER.fields_by_name['account_id']._options = None
+  _APPROVALFLOWAPPROVER.fields_by_name['account_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _APPROVALFLOWAPPROVER.fields_by_name['role_id']._options = None
+  _APPROVALFLOWAPPROVER.fields_by_name['role_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _APPROVALFLOWAPPROVER._options = None
+  _APPROVALFLOWAPPROVER._serialized_options = b'\372\370\263\007]\250\363\263\007\001\312\363\263\007D\362\363\263\007\036\n\022terraform-provider\022\010TypeList\372\363\263\007\034approvalFlowApproverElemType\322\363\263\007\ngo_private'
   _APPROVALWORKFLOWS._options = None
-  _APPROVALWORKFLOWS._serialized_options = b'\312\371\263\007\025\302\371\263\007\020ApprovalWorkflow\312\371\263\007\010\322\371\263\007\003af-\312\371\263\007\005\350\371\263\007\001'
+  _APPROVALWORKFLOWS._serialized_options = b'\312\371\263\007\025\302\371\263\007\020ApprovalWorkflow\312\371\263\007\010\322\371\263\007\003af-\312\371\263\007\005\350\371\263\007\001\312\371\263\007\006\312\371\263\007\001*'
   _APPROVALWORKFLOWS.methods_by_name['Create']._options = None
   _APPROVALWORKFLOWS.methods_by_name['Create']._serialized_options = b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\033\252\363\263\007\026/v1/approval-workflows'
   _APPROVALWORKFLOWS.methods_by_name['Get']._options = None
@@ -191,28 +224,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _APPROVALWORKFLOWS.methods_by_name['Update']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003put\202\371\263\007\033\252\363\263\007\026/v1/approval-workflows'
   _APPROVALWORKFLOWS.methods_by_name['List']._options = None
   _APPROVALWORKFLOWS.methods_by_name['List']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\033\252\363\263\007\026/v1/approval-workflows'
-  _APPROVALWORKFLOWCREATEREQUEST._serialized_start=60
-  _APPROVALWORKFLOWCREATEREQUEST._serialized_end=193
-  _APPROVALWORKFLOWCREATERESPONSE._serialized_start=196
-  _APPROVALWORKFLOWCREATERESPONSE._serialized_end=432
-  _APPROVALWORKFLOWGETREQUEST._serialized_start=434
-  _APPROVALWORKFLOWGETREQUEST._serialized_end=524
-  _APPROVALWORKFLOWGETRESPONSE._serialized_start=527
-  _APPROVALWORKFLOWGETRESPONSE._serialized_end=769
-  _APPROVALWORKFLOWUPDATEREQUEST._serialized_start=772
-  _APPROVALWORKFLOWUPDATEREQUEST._serialized_end=905
-  _APPROVALWORKFLOWUPDATERESPONSE._serialized_start=908
-  _APPROVALWORKFLOWUPDATERESPONSE._serialized_end=1144
-  _APPROVALWORKFLOWDELETEREQUEST._serialized_start=1146
-  _APPROVALWORKFLOWDELETEREQUEST._serialized_end=1242
-  _APPROVALWORKFLOWDELETERESPONSE._serialized_start=1245
-  _APPROVALWORKFLOWDELETERESPONSE._serialized_end=1444
-  _APPROVALWORKFLOWLISTREQUEST._serialized_start=1446
-  _APPROVALWORKFLOWLISTREQUEST._serialized_end=1542
-  _APPROVALWORKFLOWLISTRESPONSE._serialized_start=1545
-  _APPROVALWORKFLOWLISTRESPONSE._serialized_end=1778
-  _APPROVALWORKFLOW._serialized_start=1781
-  _APPROVALWORKFLOW._serialized_end=2047
-  _APPROVALWORKFLOWS._serialized_start=2050
-  _APPROVALWORKFLOWS._serialized_end=2754
+  _APPROVALWORKFLOWCREATEREQUEST._serialized_start=92
+  _APPROVALWORKFLOWCREATEREQUEST._serialized_end=225
+  _APPROVALWORKFLOWCREATERESPONSE._serialized_start=228
+  _APPROVALWORKFLOWCREATERESPONSE._serialized_end=464
+  _APPROVALWORKFLOWGETREQUEST._serialized_start=466
+  _APPROVALWORKFLOWGETREQUEST._serialized_end=556
+  _APPROVALWORKFLOWGETRESPONSE._serialized_start=559
+  _APPROVALWORKFLOWGETRESPONSE._serialized_end=801
+  _APPROVALWORKFLOWUPDATEREQUEST._serialized_start=804
+  _APPROVALWORKFLOWUPDATEREQUEST._serialized_end=937
+  _APPROVALWORKFLOWUPDATERESPONSE._serialized_start=940
+  _APPROVALWORKFLOWUPDATERESPONSE._serialized_end=1176
+  _APPROVALWORKFLOWDELETEREQUEST._serialized_start=1178
+  _APPROVALWORKFLOWDELETEREQUEST._serialized_end=1274
+  _APPROVALWORKFLOWDELETERESPONSE._serialized_start=1277
+  _APPROVALWORKFLOWDELETERESPONSE._serialized_end=1476
+  _APPROVALWORKFLOWLISTREQUEST._serialized_start=1478
+  _APPROVALWORKFLOWLISTREQUEST._serialized_end=1574
+  _APPROVALWORKFLOWLISTRESPONSE._serialized_start=1577
+  _APPROVALWORKFLOWLISTRESPONSE._serialized_end=1810
+  _APPROVALWORKFLOW._serialized_start=1813
+  _APPROVALWORKFLOW._serialized_end=2206
+  _APPROVALFLOWSTEP._serialized_start=2209
+  _APPROVALFLOWSTEP._serialized_end=2516
+  _APPROVALFLOWAPPROVER._serialized_start=2519
+  _APPROVALFLOWAPPROVER._serialized_end=2702
+  _APPROVALWORKFLOWS._serialized_start=2705
+  _APPROVALWORKFLOWS._serialized_end=3420
 # @@protoc_insertion_point(module_scope)

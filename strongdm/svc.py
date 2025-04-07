@@ -4538,6 +4538,7 @@ class Resources:
     `strongdm.models.RDPCert`
     `strongdm.models.RDSPostgresIAM`
     `strongdm.models.Redis`
+    `strongdm.models.RedisCluster`
     `strongdm.models.Redshift`
     `strongdm.models.RedshiftIAM`
     `strongdm.models.RedshiftServerlessIAM`
