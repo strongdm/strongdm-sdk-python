@@ -12019,6 +12019,9 @@ def convert_ssh_customer_key_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.name = (plumbing.name)
     porcelain.port = (plumbing.port)
     porcelain.port_forwarding = (plumbing.port_forwarding)
@@ -12043,6 +12046,9 @@ def convert_ssh_customer_key_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.name = (porcelain.name)
     plumbing.port = (porcelain.port)
     plumbing.port_forwarding = (porcelain.port_forwarding)

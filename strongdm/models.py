@@ -24722,6 +24722,8 @@ class SSHCustomerKey:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'name',
         'port',
         'port_forwarding',
@@ -24742,6 +24744,8 @@ class SSHCustomerKey:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         name=None,
         port=None,
         port_forwarding=None,
@@ -24776,6 +24780,14 @@ class SSHCustomerKey:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
         '''
         self.name = name if name is not None else ''
         '''
@@ -24826,6 +24838,8 @@ class SSHCustomerKey:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
@@ -24847,6 +24861,9 @@ class SSHCustomerKey:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
@@ -24869,6 +24886,9 @@ class SSHCustomerKey:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
