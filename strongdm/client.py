@@ -33,7 +33,7 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
 DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
 API_VERSION = '2024-03-28'
-USER_AGENT = 'strongdm-sdk-python/13.11.0'
+USER_AGENT = 'strongdm-sdk-python/13.12.0'
 
 
 class Client:
@@ -238,6 +238,14 @@ class Client:
 
         See `strongdm.svc.IdentitySetsHistory`.
         '''
+        self.managed_secrets = svc.ManagedSecrets(channel, self)
+        '''
+         ManagedSecret is a private vertical for creating, reading, updating,
+         deleting, listing and rotating the managed secrets in the secrets engines as
+         an authenticated user.
+
+        See `strongdm.svc.ManagedSecrets`.
+        '''
         self.nodes = svc.Nodes(channel, self)
         '''
          Nodes make up the strongDM network, and allow your users to connect securely to your resources. There are two types of nodes:
@@ -390,6 +398,12 @@ class Client:
          SecretStores are servers where resource secrets (passwords, keys) are stored.
 
         See `strongdm.svc.SecretStores`.
+        '''
+        self.secret_engines = svc.SecretEngines(channel, self)
+        '''
+
+
+        See `strongdm.svc.SecretEngines`.
         '''
         self.secret_store_healths = svc.SecretStoreHealths(channel, self)
         '''

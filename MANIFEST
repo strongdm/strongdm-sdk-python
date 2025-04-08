@@ -58,6 +58,8 @@ strongdm/identity_sets_history_pb2.py
 strongdm/identity_sets_history_pb2_grpc.py
 strongdm/identity_sets_pb2.py
 strongdm/identity_sets_pb2_grpc.py
+strongdm/managed_secrets_pb2.py
+strongdm/managed_secrets_pb2_grpc.py
 strongdm/models.py
 strongdm/nodes_history_pb2.py
 strongdm/nodes_history_pb2_grpc.py
@@ -106,8 +108,12 @@ strongdm/roles_history_pb2.py
 strongdm/roles_history_pb2_grpc.py
 strongdm/roles_pb2.py
 strongdm/roles_pb2_grpc.py
+strongdm/secret_engine_policy_pb2.py
 strongdm/secret_engine_policy_pb2_grpc.py
+strongdm/secret_engine_types_pb2.py
 strongdm/secret_engine_types_pb2_grpc.py
+strongdm/secret_engines_pb2.py
+strongdm/secret_engines_pb2_grpc.py
 strongdm/secret_store_healths_pb2.py
 strongdm/secret_store_healths_pb2_grpc.py
 strongdm/secret_store_types_pb2.py

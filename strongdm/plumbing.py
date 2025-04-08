@@ -53,6 +53,7 @@ from .identity_aliases_pb2 import *
 from .identity_aliases_history_pb2 import *
 from .identity_sets_pb2 import *
 from .identity_sets_history_pb2 import *
+from .managed_secrets_pb2 import *
 from .nodes_pb2 import *
 from .nodes_history_pb2 import *
 from .organization_history_pb2 import *
@@ -75,8 +76,11 @@ from .role_resources_pb2 import *
 from .role_resources_history_pb2 import *
 from .roles_pb2 import *
 from .roles_history_pb2 import *
+from .secret_engine_policy_pb2 import *
+from .secret_engine_types_pb2 import *
 from .secret_store_types_pb2 import *
 from .secret_stores_pb2 import *
+from .secret_engines_pb2 import *
 from .secret_store_healths_pb2 import *
 from .secret_stores_history_pb2 import *
 from .workflow_approvers_pb2 import *
@@ -1813,6 +1817,88 @@ def convert_repeated_account_update_response_to_plumbing(porcelains):
 def convert_repeated_account_update_response_to_porcelain(plumbings):
     return [
         convert_account_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_active_directory_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ActiveDirectoryEngine()
+    porcelain.after_read_ttl = convert_duration_to_porcelain(
+        plumbing.after_read_ttl)
+    porcelain.binddn = (plumbing.binddn)
+    porcelain.bindpass = (plumbing.bindpass)
+    porcelain.certificate = (plumbing.certificate)
+    porcelain.connection_timeout = (plumbing.connection_timeout)
+    porcelain.do_not_validate_timestamps = (
+        plumbing.do_not_validate_timestamps)
+    porcelain.id = (plumbing.id)
+    porcelain.insecure_tls = (plumbing.insecure_tls)
+    porcelain.key_rotation_interval_days = (
+        plumbing.key_rotation_interval_days)
+    porcelain.max_backoff_duration = convert_duration_to_porcelain(
+        plumbing.max_backoff_duration)
+    porcelain.name = (plumbing.name)
+    porcelain.policy = convert_secret_engine_policy_to_porcelain(
+        plumbing.policy)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.request_timeout = (plumbing.request_timeout)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
+    porcelain.start_tls = (plumbing.start_tls)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.ttl = convert_duration_to_porcelain(plumbing.ttl)
+    porcelain.upndomain = (plumbing.upndomain)
+    porcelain.url = (plumbing.url)
+    porcelain.userdn = (plumbing.userdn)
+    return porcelain
+
+
+def convert_active_directory_engine_to_plumbing(porcelain):
+    plumbing = ActiveDirectoryEngine()
+    if porcelain is None:
+        return plumbing
+    plumbing.after_read_ttl.CopyFrom(
+        convert_duration_to_plumbing(porcelain.after_read_ttl))
+    plumbing.binddn = (porcelain.binddn)
+    plumbing.bindpass = (porcelain.bindpass)
+    plumbing.certificate = (porcelain.certificate)
+    plumbing.connection_timeout = (porcelain.connection_timeout)
+    plumbing.do_not_validate_timestamps = (
+        porcelain.do_not_validate_timestamps)
+    plumbing.id = (porcelain.id)
+    plumbing.insecure_tls = (porcelain.insecure_tls)
+    plumbing.key_rotation_interval_days = (
+        porcelain.key_rotation_interval_days)
+    plumbing.max_backoff_duration.CopyFrom(
+        convert_duration_to_plumbing(porcelain.max_backoff_duration))
+    plumbing.name = (porcelain.name)
+    plumbing.policy.CopyFrom(
+        convert_secret_engine_policy_to_plumbing(porcelain.policy))
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.request_timeout = (porcelain.request_timeout)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
+    plumbing.start_tls = (porcelain.start_tls)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.ttl.CopyFrom(convert_duration_to_plumbing(porcelain.ttl))
+    plumbing.upndomain = (porcelain.upndomain)
+    plumbing.url = (porcelain.url)
+    plumbing.userdn = (porcelain.userdn)
+    return plumbing
+
+
+def convert_repeated_active_directory_engine_to_plumbing(porcelains):
+    return [
+        convert_active_directory_engine_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_active_directory_engine_to_porcelain(plumbings):
+    return [
+        convert_active_directory_engine_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -5564,6 +5650,68 @@ def convert_repeated_gateway_to_porcelain(plumbings):
     return [convert_gateway_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_generate_keys_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GenerateKeysRequest()
+    porcelain.secret_engine_id = (plumbing.secret_engine_id)
+    return porcelain
+
+
+def convert_generate_keys_request_to_plumbing(porcelain):
+    plumbing = GenerateKeysRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.secret_engine_id = (porcelain.secret_engine_id)
+    return plumbing
+
+
+def convert_repeated_generate_keys_request_to_plumbing(porcelains):
+    return [
+        convert_generate_keys_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_generate_keys_request_to_porcelain(plumbings):
+    return [
+        convert_generate_keys_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_generate_keys_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GenerateKeysResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_generate_keys_response_to_plumbing(porcelain):
+    plumbing = GenerateKeysResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_generate_keys_response_to_plumbing(porcelains):
+    return [
+        convert_generate_keys_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_generate_keys_response_to_porcelain(plumbings):
+    return [
+        convert_generate_keys_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_generic_response_metadata_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -6043,6 +6191,105 @@ def convert_repeated_healthcheck_list_response_to_porcelain(plumbings):
     ]
 
 
+def convert_healthcheck_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.HealthcheckRequest()
+    porcelain.secret_engine_id = (plumbing.secret_engine_id)
+    return porcelain
+
+
+def convert_healthcheck_request_to_plumbing(porcelain):
+    plumbing = HealthcheckRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.secret_engine_id = (porcelain.secret_engine_id)
+    return plumbing
+
+
+def convert_repeated_healthcheck_request_to_plumbing(porcelains):
+    return [
+        convert_healthcheck_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_healthcheck_request_to_porcelain(plumbings):
+    return [
+        convert_healthcheck_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_healthcheck_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.HealthcheckResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.status = convert_repeated_healthcheck_status_to_porcelain(
+        plumbing.status)
+    return porcelain
+
+
+def convert_healthcheck_response_to_plumbing(porcelain):
+    plumbing = HealthcheckResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    del plumbing.status[:]
+    plumbing.status.extend(
+        convert_repeated_healthcheck_status_to_plumbing(porcelain.status))
+    return plumbing
+
+
+def convert_repeated_healthcheck_response_to_plumbing(porcelains):
+    return [
+        convert_healthcheck_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_healthcheck_response_to_porcelain(plumbings):
+    return [
+        convert_healthcheck_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_healthcheck_status_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.HealthcheckStatus()
+    porcelain.node_id = (plumbing.node_id)
+    porcelain.status = (plumbing.status)
+    return porcelain
+
+
+def convert_healthcheck_status_to_plumbing(porcelain):
+    plumbing = HealthcheckStatus()
+    if porcelain is None:
+        return plumbing
+    plumbing.node_id = (porcelain.node_id)
+    plumbing.status = (porcelain.status)
+    return plumbing
+
+
+def convert_repeated_healthcheck_status_to_plumbing(porcelains):
+    return [
+        convert_healthcheck_status_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_healthcheck_status_to_porcelain(plumbings):
+    return [
+        convert_healthcheck_status_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_identity_alias_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -6494,6 +6741,50 @@ def convert_repeated_identity_set_update_response_to_plumbing(porcelains):
 def convert_repeated_identity_set_update_response_to_porcelain(plumbings):
     return [
         convert_identity_set_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_key_value_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.KeyValueEngine()
+    porcelain.id = (plumbing.id)
+    porcelain.key_rotation_interval_days = (
+        plumbing.key_rotation_interval_days)
+    porcelain.name = (plumbing.name)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_key_value_engine_to_plumbing(porcelain):
+    plumbing = KeyValueEngine()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.key_rotation_interval_days = (
+        porcelain.key_rotation_interval_days)
+    plumbing.name = (porcelain.name)
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_key_value_engine_to_plumbing(porcelains):
+    return [
+        convert_key_value_engine_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_key_value_engine_to_porcelain(plumbings):
+    return [
+        convert_key_value_engine_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -7134,6 +7425,812 @@ def convert_repeated_mtls_postgres_to_plumbing(porcelains):
 def convert_repeated_mtls_postgres_to_porcelain(plumbings):
     return [
         convert_mtls_postgres_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecret()
+    porcelain.config = (plumbing.config)
+    porcelain.expires_at = convert_timestamp_to_porcelain(plumbing.expires_at)
+    porcelain.id = (plumbing.id)
+    porcelain.last_rotated_at = convert_timestamp_to_porcelain(
+        plumbing.last_rotated_at)
+    porcelain.name = (plumbing.name)
+    porcelain.policy = convert_managed_secret_policy_to_porcelain(
+        plumbing.policy)
+    porcelain.secret_engine_id = (plumbing.secret_engine_id)
+    porcelain.secret_store_path = (plumbing.secret_store_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.value = (plumbing.value)
+    return porcelain
+
+
+def convert_managed_secret_to_plumbing(porcelain):
+    plumbing = ManagedSecret()
+    if porcelain is None:
+        return plumbing
+    plumbing.config = (porcelain.config)
+    plumbing.expires_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.expires_at))
+    plumbing.id = (porcelain.id)
+    plumbing.last_rotated_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.last_rotated_at))
+    plumbing.name = (porcelain.name)
+    plumbing.policy.CopyFrom(
+        convert_managed_secret_policy_to_plumbing(porcelain.policy))
+    plumbing.secret_engine_id = (porcelain.secret_engine_id)
+    plumbing.secret_store_path = (porcelain.secret_store_path)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.value = (porcelain.value)
+    return plumbing
+
+
+def convert_repeated_managed_secret_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretCreateRequest()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    return porcelain
+
+
+def convert_managed_secret_create_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    return plumbing
+
+
+def convert_repeated_managed_secret_create_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_create_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretCreateResponse()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_create_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_create_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_create_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_managed_secret_delete_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_managed_secret_delete_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_delete_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretDeleteResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_delete_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_delete_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_delete_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_managed_secret_get_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_managed_secret_get_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_get_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretGetResponse()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_get_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_get_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_get_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_managed_secret_list_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_managed_secret_list_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_list_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_list_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_list_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_list_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_log_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretLog()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.action = (plumbing.action)
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
+    porcelain.debug = (plumbing.debug)
+    porcelain.id = (plumbing.id)
+    porcelain.managed_secret_id = (plumbing.managed_secret_id)
+    porcelain.secret_engine_id = (plumbing.secret_engine_id)
+    return porcelain
+
+
+def convert_managed_secret_log_to_plumbing(porcelain):
+    plumbing = ManagedSecretLog()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.action = (porcelain.action)
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
+    plumbing.debug = (porcelain.debug)
+    plumbing.id = (porcelain.id)
+    plumbing.managed_secret_id = (porcelain.managed_secret_id)
+    plumbing.secret_engine_id = (porcelain.secret_engine_id)
+    return plumbing
+
+
+def convert_repeated_managed_secret_log_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_log_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_log_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_log_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_logs_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretLogsRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_managed_secret_logs_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretLogsRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_managed_secret_logs_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_logs_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_logs_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_logs_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_logs_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretLogsResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_logs_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretLogsResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_logs_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_logs_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_logs_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_logs_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_password_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretPasswordPolicy()
+    porcelain.allow_repeat = (plumbing.allow_repeat)
+    porcelain.exclude_characters = (plumbing.exclude_characters)
+    porcelain.exclude_upper_case = (plumbing.exclude_upper_case)
+    porcelain.length = (plumbing.length)
+    porcelain.num_digits = (plumbing.num_digits)
+    porcelain.num_symbols = (plumbing.num_symbols)
+    return porcelain
+
+
+def convert_managed_secret_password_policy_to_plumbing(porcelain):
+    plumbing = ManagedSecretPasswordPolicy()
+    if porcelain is None:
+        return plumbing
+    plumbing.allow_repeat = (porcelain.allow_repeat)
+    plumbing.exclude_characters = (porcelain.exclude_characters)
+    plumbing.exclude_upper_case = (porcelain.exclude_upper_case)
+    plumbing.length = (porcelain.length)
+    plumbing.num_digits = (porcelain.num_digits)
+    plumbing.num_symbols = (porcelain.num_symbols)
+    return plumbing
+
+
+def convert_repeated_managed_secret_password_policy_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_password_policy_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_password_policy_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_password_policy_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretPolicy()
+    porcelain.password_policy = convert_managed_secret_password_policy_to_porcelain(
+        plumbing.password_policy)
+    porcelain.rotation_policy = convert_managed_secret_rotation_policy_to_porcelain(
+        plumbing.rotation_policy)
+    return porcelain
+
+
+def convert_managed_secret_policy_to_plumbing(porcelain):
+    plumbing = ManagedSecretPolicy()
+    if porcelain is None:
+        return plumbing
+    plumbing.password_policy.CopyFrom(
+        convert_managed_secret_password_policy_to_plumbing(
+            porcelain.password_policy))
+    plumbing.rotation_policy.CopyFrom(
+        convert_managed_secret_rotation_policy_to_plumbing(
+            porcelain.rotation_policy))
+    return plumbing
+
+
+def convert_repeated_managed_secret_policy_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_policy_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_policy_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_policy_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_retrieve_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretRetrieveRequest()
+    porcelain.id = (plumbing.id)
+    porcelain.public_key = (plumbing.public_key)
+    return porcelain
+
+
+def convert_managed_secret_retrieve_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretRetrieveRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.public_key = (porcelain.public_key)
+    return plumbing
+
+
+def convert_repeated_managed_secret_retrieve_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_retrieve_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_retrieve_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_retrieve_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_retrieve_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretRetrieveResponse()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_retrieve_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretRetrieveResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_retrieve_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_retrieve_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_retrieve_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_retrieve_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_rotate_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretRotateRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_managed_secret_rotate_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretRotateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_managed_secret_rotate_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_rotate_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_rotate_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_rotate_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_rotate_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretRotateResponse()
+    porcelain.meta = convert_generic_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_rotate_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretRotateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_generic_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_rotate_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_rotate_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_rotate_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_rotate_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_rotation_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretRotationPolicy()
+    return porcelain
+
+
+def convert_managed_secret_rotation_policy_to_plumbing(porcelain):
+    plumbing = ManagedSecretRotationPolicy()
+    if porcelain is None:
+        return plumbing
+    return plumbing
+
+
+def convert_repeated_managed_secret_rotation_policy_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_rotation_policy_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_rotation_policy_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_rotation_policy_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_update_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretUpdateRequest()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    return porcelain
+
+
+def convert_managed_secret_update_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretUpdateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    return plumbing
+
+
+def convert_repeated_managed_secret_update_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_update_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_update_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_update_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretUpdateResponse()
+    porcelain.managed_secret = convert_managed_secret_to_porcelain(
+        plumbing.managed_secret)
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_managed_secret_update_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.managed_secret.CopyFrom(
+        convert_managed_secret_to_plumbing(porcelain.managed_secret))
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_managed_secret_update_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_update_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_validate_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretValidateRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_managed_secret_validate_request_to_plumbing(porcelain):
+    plumbing = ManagedSecretValidateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_managed_secret_validate_request_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_validate_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_validate_request_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_validate_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_managed_secret_validate_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ManagedSecretValidateResponse()
+    porcelain.invalid_info = (plumbing.invalid_info)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.valid = (plumbing.valid)
+    return porcelain
+
+
+def convert_managed_secret_validate_response_to_plumbing(porcelain):
+    plumbing = ManagedSecretValidateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.invalid_info = (porcelain.invalid_info)
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.valid = (porcelain.valid)
+    return plumbing
+
+
+def convert_repeated_managed_secret_validate_response_to_plumbing(porcelains):
+    return [
+        convert_managed_secret_validate_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_managed_secret_validate_response_to_porcelain(plumbings):
+    return [
+        convert_managed_secret_validate_response_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 
@@ -12133,6 +13230,521 @@ def convert_repeated_ssh_password_to_plumbing(porcelains):
 def convert_repeated_ssh_password_to_porcelain(plumbings):
     return [
         convert_ssh_password_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_to_plumbing(porcelain):
+    plumbing = SecretEngine()
+    if porcelain is None:
+        return plumbing
+    if isinstance(porcelain, models.ActiveDirectoryEngine):
+        plumbing.active_directory.CopyFrom(
+            convert_active_directory_engine_to_plumbing(porcelain))
+    if isinstance(porcelain, models.KeyValueEngine):
+        plumbing.key_value.CopyFrom(
+            convert_key_value_engine_to_plumbing(porcelain))
+    return plumbing
+
+
+def convert_secret_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    if plumbing.HasField('active_directory'):
+        return convert_active_directory_engine_to_porcelain(
+            plumbing.active_directory)
+    if plumbing.HasField('key_value'):
+        return convert_key_value_engine_to_porcelain(plumbing.key_value)
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
+
+
+def convert_repeated_secret_engine_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineCreateRequest()
+    porcelain.secret_engine = convert_secret_engine_to_porcelain(
+        plumbing.secret_engine)
+    return porcelain
+
+
+def convert_secret_engine_create_request_to_plumbing(porcelain):
+    plumbing = SecretEngineCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.secret_engine.CopyFrom(
+        convert_secret_engine_to_plumbing(porcelain.secret_engine))
+    return plumbing
+
+
+def convert_repeated_secret_engine_create_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_create_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineCreateResponse()
+    porcelain.meta = convert_create_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.secret_engine = convert_secret_engine_to_porcelain(
+        plumbing.secret_engine)
+    return porcelain
+
+
+def convert_secret_engine_create_response_to_plumbing(porcelain):
+    plumbing = SecretEngineCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_create_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.secret_engine.CopyFrom(
+        convert_secret_engine_to_plumbing(porcelain.secret_engine))
+    return plumbing
+
+
+def convert_repeated_secret_engine_create_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_create_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_secret_engine_delete_request_to_plumbing(porcelain):
+    plumbing = SecretEngineDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_secret_engine_delete_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_delete_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineDeleteResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_engine_delete_response_to_plumbing(porcelain):
+    plumbing = SecretEngineDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_engine_delete_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_delete_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_secret_engine_get_request_to_plumbing(porcelain):
+    plumbing = SecretEngineGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_secret_engine_get_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_get_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineGetResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.secret_engine = convert_secret_engine_to_porcelain(
+        plumbing.secret_engine)
+    return porcelain
+
+
+def convert_secret_engine_get_response_to_plumbing(porcelain):
+    plumbing = SecretEngineGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.secret_engine.CopyFrom(
+        convert_secret_engine_to_plumbing(porcelain.secret_engine))
+    return plumbing
+
+
+def convert_repeated_secret_engine_get_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_get_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_secret_engine_list_request_to_plumbing(porcelain):
+    plumbing = SecretEngineListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_secret_engine_list_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_list_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_engine_list_response_to_plumbing(porcelain):
+    plumbing = SecretEngineListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_engine_list_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_list_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_password_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEnginePasswordPolicy()
+    porcelain.allow_repeat = (plumbing.allow_repeat)
+    porcelain.exclude_characters = (plumbing.exclude_characters)
+    porcelain.exclude_upper_case = (plumbing.exclude_upper_case)
+    porcelain.length = (plumbing.length)
+    porcelain.num_digits = (plumbing.num_digits)
+    porcelain.num_symbols = (plumbing.num_symbols)
+    return porcelain
+
+
+def convert_secret_engine_password_policy_to_plumbing(porcelain):
+    plumbing = SecretEnginePasswordPolicy()
+    if porcelain is None:
+        return plumbing
+    plumbing.allow_repeat = (porcelain.allow_repeat)
+    plumbing.exclude_characters = (porcelain.exclude_characters)
+    plumbing.exclude_upper_case = (porcelain.exclude_upper_case)
+    plumbing.length = (porcelain.length)
+    plumbing.num_digits = (porcelain.num_digits)
+    plumbing.num_symbols = (porcelain.num_symbols)
+    return plumbing
+
+
+def convert_repeated_secret_engine_password_policy_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_password_policy_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_password_policy_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_password_policy_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_policy_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEnginePolicy()
+    porcelain.password_policy = convert_secret_engine_password_policy_to_porcelain(
+        plumbing.password_policy)
+    return porcelain
+
+
+def convert_secret_engine_policy_to_plumbing(porcelain):
+    plumbing = SecretEnginePolicy()
+    if porcelain is None:
+        return plumbing
+    plumbing.password_policy.CopyFrom(
+        convert_secret_engine_password_policy_to_plumbing(
+            porcelain.password_policy))
+    return plumbing
+
+
+def convert_repeated_secret_engine_policy_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_policy_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_policy_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_policy_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_rotate_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineRotateRequest()
+    porcelain.id = (plumbing.id)
+    porcelain.password_policy = convert_secret_engine_password_policy_to_porcelain(
+        plumbing.password_policy)
+    return porcelain
+
+
+def convert_secret_engine_rotate_request_to_plumbing(porcelain):
+    plumbing = SecretEngineRotateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.password_policy.CopyFrom(
+        convert_secret_engine_password_policy_to_plumbing(
+            porcelain.password_policy))
+    return plumbing
+
+
+def convert_repeated_secret_engine_rotate_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_rotate_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_rotate_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_rotate_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_rotate_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineRotateResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_secret_engine_rotate_response_to_plumbing(porcelain):
+    plumbing = SecretEngineRotateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_secret_engine_rotate_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_rotate_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_rotate_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_rotate_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_update_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineUpdateRequest()
+    porcelain.secret_engine = convert_secret_engine_to_porcelain(
+        plumbing.secret_engine)
+    return porcelain
+
+
+def convert_secret_engine_update_request_to_plumbing(porcelain):
+    plumbing = SecretEngineUpdateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.secret_engine.CopyFrom(
+        convert_secret_engine_to_plumbing(porcelain.secret_engine))
+    return plumbing
+
+
+def convert_repeated_secret_engine_update_request_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_update_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_update_request_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_update_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_secret_engine_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SecretEngineUpdateResponse()
+    porcelain.meta = convert_update_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.secret_engine = convert_secret_engine_to_porcelain(
+        plumbing.secret_engine)
+    return porcelain
+
+
+def convert_secret_engine_update_response_to_plumbing(porcelain):
+    plumbing = SecretEngineUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_update_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.secret_engine.CopyFrom(
+        convert_secret_engine_to_plumbing(porcelain.secret_engine))
+    return plumbing
+
+
+def convert_repeated_secret_engine_update_response_to_plumbing(porcelains):
+    return [
+        convert_secret_engine_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_secret_engine_update_response_to_porcelain(plumbings):
+    return [
+        convert_secret_engine_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
     ]
 
 

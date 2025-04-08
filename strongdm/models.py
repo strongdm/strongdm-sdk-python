@@ -3273,6 +3273,231 @@ class AccountUpdateResponse:
         )
 
 
+class ActiveDirectoryEngine:
+    '''
+    ActiveDirectoryEngine is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'after_read_ttl',
+        'binddn',
+        'bindpass',
+        'certificate',
+        'connection_timeout',
+        'do_not_validate_timestamps',
+        'id',
+        'insecure_tls',
+        'key_rotation_interval_days',
+        'max_backoff_duration',
+        'name',
+        'policy',
+        'public_key',
+        'request_timeout',
+        'secret_store_id',
+        'secret_store_root_path',
+        'start_tls',
+        'tags',
+        'ttl',
+        'upndomain',
+        'url',
+        'userdn',
+    ]
+
+    def __init__(
+        self,
+        after_read_ttl=None,
+        binddn=None,
+        bindpass=None,
+        certificate=None,
+        connection_timeout=None,
+        do_not_validate_timestamps=None,
+        id=None,
+        insecure_tls=None,
+        key_rotation_interval_days=None,
+        max_backoff_duration=None,
+        name=None,
+        policy=None,
+        public_key=None,
+        request_timeout=None,
+        secret_store_id=None,
+        secret_store_root_path=None,
+        start_tls=None,
+        tags=None,
+        ttl=None,
+        upndomain=None,
+        url=None,
+        userdn=None,
+    ):
+        self.after_read_ttl = after_read_ttl if after_read_ttl is not None else None
+        '''
+         The default time-to-live duration of the password after it's read. Once the ttl has passed, a password will be rotated.
+        '''
+        self.binddn = binddn if binddn is not None else ''
+        '''
+         Distinguished name of object to bind when performing user and group search. Example: cn=vault,ou=Users,dc=example,dc=com
+        '''
+        self.bindpass = bindpass if bindpass is not None else ''
+        '''
+         Password to use along with binddn when performing user search.
+        '''
+        self.certificate = certificate if certificate is not None else ''
+        '''
+         CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded.
+        '''
+        self.connection_timeout = connection_timeout if connection_timeout is not None else 0
+        '''
+         Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.
+        '''
+        self.do_not_validate_timestamps = do_not_validate_timestamps if do_not_validate_timestamps is not None else False
+        '''
+         If set to true this will prevent password change timestamp validation in Active Directory when validating credentials
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Secret Engine.
+        '''
+        self.insecure_tls = insecure_tls if insecure_tls is not None else False
+        '''
+         If true, skips LDAP server SSL certificate verification - insecure, use with caution!
+        '''
+        self.key_rotation_interval_days = key_rotation_interval_days if key_rotation_interval_days is not None else 0
+        '''
+         An interval of public/private key rotation for secret engine in days
+        '''
+        self.max_backoff_duration = max_backoff_duration if max_backoff_duration is not None else None
+        '''
+         The maximum retry duration in case of automatic failure.
+         On failed ttl rotation attempt it will be retried in an increasing intervals until it reaches max_backoff_duration
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Secret Engine.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         Policy for password creation
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key linked with a secret engine
+        '''
+        self.request_timeout = request_timeout if request_timeout is not None else 0
+        '''
+         Timeout, in seconds, for the connection when making requests against the server before returning back an error.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Backing secret store identifier
+        '''
+        self.secret_store_root_path = secret_store_root_path if secret_store_root_path is not None else ''
+        '''
+         Backing Secret Store root path where managed secrets are going to be stored
+        '''
+        self.start_tls = start_tls if start_tls is not None else False
+        '''
+         If true, issues a StartTLS command after establishing an unencrypted connection.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.ttl = ttl if ttl is not None else None
+        '''
+         The default password time-to-live duration. Once the ttl has passed, a password will be rotated the next time it's requested.
+        '''
+        self.upndomain = upndomain if upndomain is not None else ''
+        '''
+         The domain (userPrincipalDomain) used to construct a UPN string for authentication.
+        '''
+        self.url = url if url is not None else ''
+        '''
+         The LDAP server to connect to.
+        '''
+        self.userdn = userdn if userdn is not None else ''
+        '''
+         Base DN under which to perform user search. Example: ou=Users,dc=example,dc=com
+        '''
+
+    def __repr__(self):
+        return '<sdm.ActiveDirectoryEngine ' + \
+            'after_read_ttl: ' + repr(self.after_read_ttl) + ' ' +\
+            'binddn: ' + repr(self.binddn) + ' ' +\
+            'bindpass: ' + repr(self.bindpass) + ' ' +\
+            'certificate: ' + repr(self.certificate) + ' ' +\
+            'connection_timeout: ' + repr(self.connection_timeout) + ' ' +\
+            'do_not_validate_timestamps: ' + repr(self.do_not_validate_timestamps) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'insecure_tls: ' + repr(self.insecure_tls) + ' ' +\
+            'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
+            'max_backoff_duration: ' + repr(self.max_backoff_duration) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'request_timeout: ' + repr(self.request_timeout) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
+            'start_tls: ' + repr(self.start_tls) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'ttl: ' + repr(self.ttl) + ' ' +\
+            'upndomain: ' + repr(self.upndomain) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            'userdn: ' + repr(self.userdn) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'after_read_ttl': self.after_read_ttl,
+            'binddn': self.binddn,
+            'bindpass': self.bindpass,
+            'certificate': self.certificate,
+            'connection_timeout': self.connection_timeout,
+            'do_not_validate_timestamps': self.do_not_validate_timestamps,
+            'id': self.id,
+            'insecure_tls': self.insecure_tls,
+            'key_rotation_interval_days': self.key_rotation_interval_days,
+            'max_backoff_duration': self.max_backoff_duration,
+            'name': self.name,
+            'policy': self.policy,
+            'public_key': self.public_key,
+            'request_timeout': self.request_timeout,
+            'secret_store_id': self.secret_store_id,
+            'secret_store_root_path': self.secret_store_root_path,
+            'start_tls': self.start_tls,
+            'tags': self.tags,
+            'ttl': self.ttl,
+            'upndomain': self.upndomain,
+            'url': self.url,
+            'userdn': self.userdn,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            after_read_ttl=d.get('after_read_ttl'),
+            binddn=d.get('binddn'),
+            bindpass=d.get('bindpass'),
+            certificate=d.get('certificate'),
+            connection_timeout=d.get('connection_timeout'),
+            do_not_validate_timestamps=d.get('do_not_validate_timestamps'),
+            id=d.get('id'),
+            insecure_tls=d.get('insecure_tls'),
+            key_rotation_interval_days=d.get('key_rotation_interval_days'),
+            max_backoff_duration=d.get('max_backoff_duration'),
+            name=d.get('name'),
+            policy=d.get('policy'),
+            public_key=d.get('public_key'),
+            request_timeout=d.get('request_timeout'),
+            secret_store_id=d.get('secret_store_id'),
+            secret_store_root_path=d.get('secret_store_root_path'),
+            start_tls=d.get('start_tls'),
+            tags=d.get('tags'),
+            ttl=d.get('ttl'),
+            upndomain=d.get('upndomain'),
+            url=d.get('url'),
+            userdn=d.get('userdn'),
+        )
+
+
 class ActiveDirectoryStore:
     __slots__ = [
         'id',
@@ -12061,6 +12286,64 @@ class Gateway:
         )
 
 
+class GenerateKeysRequest:
+    __slots__ = [
+        'secret_engine_id',
+    ]
+
+    def __init__(
+        self,
+        secret_engine_id=None,
+    ):
+        self.secret_engine_id = secret_engine_id if secret_engine_id is not None else ''
+        '''
+         required
+        '''
+
+    def __repr__(self):
+        return '<sdm.GenerateKeysRequest ' + \
+            'secret_engine_id: ' + repr(self.secret_engine_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'secret_engine_id': self.secret_engine_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(secret_engine_id=d.get('secret_engine_id'), )
+
+
+class GenerateKeysResponse:
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GenerateKeysResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class GenericResponseMetadata:
     '''
          GenericResponseMetadata contains common headers for generic request
@@ -13216,6 +13499,118 @@ class HealthcheckListResponse:
         return cls(rate_limit=d.get('rate_limit'), )
 
 
+class HealthcheckRequest:
+    __slots__ = [
+        'secret_engine_id',
+    ]
+
+    def __init__(
+        self,
+        secret_engine_id=None,
+    ):
+        self.secret_engine_id = secret_engine_id if secret_engine_id is not None else ''
+        '''
+         required
+        '''
+
+    def __repr__(self):
+        return '<sdm.HealthcheckRequest ' + \
+            'secret_engine_id: ' + repr(self.secret_engine_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'secret_engine_id': self.secret_engine_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(secret_engine_id=d.get('secret_engine_id'), )
+
+
+class HealthcheckResponse:
+    __slots__ = [
+        'rate_limit',
+        'status',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+        status=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.status = status if status is not None else []
+        '''
+         Array of statuses of all nodes serving a secret engine
+        '''
+
+    def __repr__(self):
+        return '<sdm.HealthcheckResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'status: ' + repr(self.status) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+            'status': self.status,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            rate_limit=d.get('rate_limit'),
+            status=d.get('status'),
+        )
+
+
+class HealthcheckStatus:
+    '''
+         HealthcheckStatus contains status of a node health
+    '''
+    __slots__ = [
+        'node_id',
+        'status',
+    ]
+
+    def __init__(
+        self,
+        node_id=None,
+        status=None,
+    ):
+        self.node_id = node_id if node_id is not None else ''
+        '''
+         ID of node
+        '''
+        self.status = status if status is not None else ''
+        '''
+         Status of node's health
+        '''
+
+    def __repr__(self):
+        return '<sdm.HealthcheckStatus ' + \
+            'node_id: ' + repr(self.node_id) + ' ' +\
+            'status: ' + repr(self.status) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'node_id': self.node_id,
+            'status': self.status,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            node_id=d.get('node_id'),
+            status=d.get('status'),
+        )
+
+
 class IdentityAlias:
     '''
          IdentityAliases define the username to be used for a specific account
@@ -13847,6 +14242,95 @@ class IdentitySetUpdateResponse:
             identity_set=d.get('identity_set'),
             meta=d.get('meta'),
             rate_limit=d.get('rate_limit'),
+        )
+
+
+class KeyValueEngine:
+    '''
+    KeyValueEngine is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'key_rotation_interval_days',
+        'name',
+        'public_key',
+        'secret_store_id',
+        'secret_store_root_path',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        key_rotation_interval_days=None,
+        name=None,
+        public_key=None,
+        secret_store_id=None,
+        secret_store_root_path=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Secret Engine.
+        '''
+        self.key_rotation_interval_days = key_rotation_interval_days if key_rotation_interval_days is not None else 0
+        '''
+         An interval of public/private key rotation for secret engine in days
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Secret Engine.
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key linked with a secret engine
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Backing secret store identifier
+        '''
+        self.secret_store_root_path = secret_store_root_path if secret_store_root_path is not None else ''
+        '''
+         Backing Secret Store root path where managed secrets are going to be stored
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.KeyValueEngine ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'key_rotation_interval_days': self.key_rotation_interval_days,
+            'name': self.name,
+            'public_key': self.public_key,
+            'secret_store_id': self.secret_store_id,
+            'secret_store_root_path': self.secret_store_root_path,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            key_rotation_interval_days=d.get('key_rotation_interval_days'),
+            name=d.get('name'),
+            public_key=d.get('public_key'),
+            secret_store_id=d.get('secret_store_id'),
+            secret_store_root_path=d.get('secret_store_root_path'),
+            tags=d.get('tags'),
         )
 
 
@@ -15597,6 +16081,1063 @@ class MTLSPostgres:
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             username=d.get('username'),
+        )
+
+
+class ManagedSecret:
+    '''
+         ManagedSecret contains details about managed secret
+    '''
+    __slots__ = [
+        'config',
+        'expires_at',
+        'id',
+        'last_rotated_at',
+        'name',
+        'policy',
+        'secret_engine_id',
+        'secret_store_path',
+        'tags',
+        'value',
+    ]
+
+    def __init__(
+        self,
+        config=None,
+        expires_at=None,
+        id=None,
+        last_rotated_at=None,
+        name=None,
+        policy=None,
+        secret_engine_id=None,
+        secret_store_path=None,
+        tags=None,
+        value=None,
+    ):
+        self.config = config if config is not None else ''
+        '''
+         public part of the secret value
+        '''
+        self.expires_at = expires_at if expires_at is not None else None
+        '''
+         Timestamp of when secret is going to be rotated
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Managed Secret.
+        '''
+        self.last_rotated_at = last_rotated_at if last_rotated_at is not None else None
+        '''
+         Timestamp of when secret was last rotated
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Managed Secret.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         Password and rotation policy for the secret
+        '''
+        self.secret_engine_id = secret_engine_id if secret_engine_id is not None else ''
+        '''
+         An ID of a Secret Engine linked with the Managed Secret.
+        '''
+        self.secret_store_path = secret_store_path if secret_store_path is not None else ''
+        '''
+         Path in a secret store.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.value = value if value is not None else b''
+        '''
+         Sensitive value of the secret.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecret ' + \
+            'config: ' + repr(self.config) + ' ' +\
+            'expires_at: ' + repr(self.expires_at) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'last_rotated_at: ' + repr(self.last_rotated_at) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'secret_engine_id: ' + repr(self.secret_engine_id) + ' ' +\
+            'secret_store_path: ' + repr(self.secret_store_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'value: ' + repr(self.value) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'config': self.config,
+            'expires_at': self.expires_at,
+            'id': self.id,
+            'last_rotated_at': self.last_rotated_at,
+            'name': self.name,
+            'policy': self.policy,
+            'secret_engine_id': self.secret_engine_id,
+            'secret_store_path': self.secret_store_path,
+            'tags': self.tags,
+            'value': self.value,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            config=d.get('config'),
+            expires_at=d.get('expires_at'),
+            id=d.get('id'),
+            last_rotated_at=d.get('last_rotated_at'),
+            name=d.get('name'),
+            policy=d.get('policy'),
+            secret_engine_id=d.get('secret_engine_id'),
+            secret_store_path=d.get('secret_store_path'),
+            tags=d.get('tags'),
+            value=d.get('value'),
+        )
+
+
+class ManagedSecretCreateRequest:
+    '''
+         ManagedSecretCreateRequest specifies a Managed Secret to create.
+    '''
+    __slots__ = [
+        'managed_secret',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         Parameters to define the new Managed Secret.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretCreateRequest ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(managed_secret=d.get('managed_secret'), )
+
+
+class ManagedSecretCreateResponse:
+    '''
+         ManagedSecretCreateResponse contains information about a Managed Secret after
+     successful creation.
+    '''
+    __slots__ = [
+        'managed_secret',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         The requested Managed Secret.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretCreateResponse ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            managed_secret=d.get('managed_secret'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ManagedSecretDeleteRequest:
+    '''
+         ManagedSecretDeleteRequest specified the ID of a Managed Secret to be
+     deleted.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Managed Secret to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ManagedSecretDeleteResponse:
+    '''
+         ManagedSecretDeleteResponse contains information about a Managed Secret after
+     it was deleted.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretDeleteResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ManagedSecretGetRequest:
+    '''
+         ManagedSecretGetRequest specifies which Managed Secret to retrieve
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Managed Secret to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ManagedSecretGetResponse:
+    '''
+         ManagedSecretGetResponse contains information about requested Managed Secret
+    '''
+    __slots__ = [
+        'managed_secret',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         The requested Managed Secret.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretGetResponse ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            managed_secret=d.get('managed_secret'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ManagedSecretListRequest:
+    '''
+         ManagedSecretListRequest specifies criteria for retrieving a list of Managed
+     Secrets.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class ManagedSecretListResponse:
+    '''
+         ManagedSecretListResponse contains a list of requested Managed Secrets
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ManagedSecretLog:
+    '''
+         ManagedSecretLog contains details about action performed against a managed
+     secret
+    '''
+    __slots__ = [
+        'account_id',
+        'action',
+        'created_at',
+        'debug',
+        'id',
+        'managed_secret_id',
+        'secret_engine_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        action=None,
+        created_at=None,
+        debug=None,
+        id=None,
+        managed_secret_id=None,
+        secret_engine_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         An ID of the account the action was performed by.
+        '''
+        self.action = action if action is not None else ''
+        '''
+         The action performed by the account against the managed secret.
+        '''
+        self.created_at = created_at if created_at is not None else None
+        '''
+         Timestamp of when action was performed.
+        '''
+        self.debug = debug if debug is not None else ''
+        '''
+         Any debug logs associated with the action.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Managed Secret Log.
+        '''
+        self.managed_secret_id = managed_secret_id if managed_secret_id is not None else ''
+        '''
+         An ID of the Managed Secret the action was performed against.
+        '''
+        self.secret_engine_id = secret_engine_id if secret_engine_id is not None else ''
+        '''
+         An ID of the Secret Engine linked with the Managed Secret.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretLog ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'action: ' + repr(self.action) + ' ' +\
+            'created_at: ' + repr(self.created_at) + ' ' +\
+            'debug: ' + repr(self.debug) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'managed_secret_id: ' + repr(self.managed_secret_id) + ' ' +\
+            'secret_engine_id: ' + repr(self.secret_engine_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'action': self.action,
+            'created_at': self.created_at,
+            'debug': self.debug,
+            'id': self.id,
+            'managed_secret_id': self.managed_secret_id,
+            'secret_engine_id': self.secret_engine_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            action=d.get('action'),
+            created_at=d.get('created_at'),
+            debug=d.get('debug'),
+            id=d.get('id'),
+            managed_secret_id=d.get('managed_secret_id'),
+            secret_engine_id=d.get('secret_engine_id'),
+        )
+
+
+class ManagedSecretLogsRequest:
+    '''
+         ManagedSecretLogsRequest specifies criteria for retrieving a log of Managed
+     Secrets actions.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretLogsRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class ManagedSecretLogsResponse:
+    '''
+         ManagedSecretLogsResponse contains a list of requested Managed Secrets
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretLogsResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ManagedSecretPasswordPolicy:
+    __slots__ = [
+        'allow_repeat',
+        'exclude_characters',
+        'exclude_upper_case',
+        'length',
+        'num_digits',
+        'num_symbols',
+    ]
+
+    def __init__(
+        self,
+        allow_repeat=None,
+        exclude_characters=None,
+        exclude_upper_case=None,
+        length=None,
+        num_digits=None,
+        num_symbols=None,
+    ):
+        self.allow_repeat = allow_repeat if allow_repeat is not None else False
+        '''
+         If set to true allows for consecutive characters to repeat itself
+        '''
+        self.exclude_characters = exclude_characters if exclude_characters is not None else ''
+        '''
+         Characters to exclude when generating password
+        '''
+        self.exclude_upper_case = exclude_upper_case if exclude_upper_case is not None else False
+        '''
+         If set to true do not include upper case letters when generating password
+        '''
+        self.length = length if length is not None else 0
+        '''
+         Password length
+        '''
+        self.num_digits = num_digits if num_digits is not None else 0
+        '''
+         Numbers of digits to use when generating password
+        '''
+        self.num_symbols = num_symbols if num_symbols is not None else 0
+        '''
+         Number of symbols to use when generating password
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretPasswordPolicy ' + \
+            'allow_repeat: ' + repr(self.allow_repeat) + ' ' +\
+            'exclude_characters: ' + repr(self.exclude_characters) + ' ' +\
+            'exclude_upper_case: ' + repr(self.exclude_upper_case) + ' ' +\
+            'length: ' + repr(self.length) + ' ' +\
+            'num_digits: ' + repr(self.num_digits) + ' ' +\
+            'num_symbols: ' + repr(self.num_symbols) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'allow_repeat': self.allow_repeat,
+            'exclude_characters': self.exclude_characters,
+            'exclude_upper_case': self.exclude_upper_case,
+            'length': self.length,
+            'num_digits': self.num_digits,
+            'num_symbols': self.num_symbols,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            allow_repeat=d.get('allow_repeat'),
+            exclude_characters=d.get('exclude_characters'),
+            exclude_upper_case=d.get('exclude_upper_case'),
+            length=d.get('length'),
+            num_digits=d.get('num_digits'),
+            num_symbols=d.get('num_symbols'),
+        )
+
+
+class ManagedSecretPolicy:
+    '''
+         ManagedSecretPolicy contains password and rotation policy for managed secret
+    '''
+    __slots__ = [
+        'password_policy',
+        'rotation_policy',
+    ]
+
+    def __init__(
+        self,
+        password_policy=None,
+        rotation_policy=None,
+    ):
+        self.password_policy = password_policy if password_policy is not None else None
+        '''
+         Password policy for a managed secret
+        '''
+        self.rotation_policy = rotation_policy if rotation_policy is not None else None
+        '''
+         Rotation policy for a managed secret
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretPolicy ' + \
+            'password_policy: ' + repr(self.password_policy) + ' ' +\
+            'rotation_policy: ' + repr(self.rotation_policy) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'password_policy': self.password_policy,
+            'rotation_policy': self.rotation_policy,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            password_policy=d.get('password_policy'),
+            rotation_policy=d.get('rotation_policy'),
+        )
+
+
+class ManagedSecretRetrieveRequest:
+    '''
+         ManagedSecretRetrieveRequest specifies which Managed Secret to retrieve
+    '''
+    __slots__ = [
+        'id',
+        'public_key',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        public_key=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Managed Secret to retrieve.
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key to encrypt a sensitive value with
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretRetrieveRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'public_key': self.public_key,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            public_key=d.get('public_key'),
+        )
+
+
+class ManagedSecretRetrieveResponse:
+    '''
+         ManagedSecretRetrieveResponse contains information about requested Managed
+     Secret
+    '''
+    __slots__ = [
+        'managed_secret',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         The requested Managed Secret.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretRetrieveResponse ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            managed_secret=d.get('managed_secret'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ManagedSecretRotateRequest:
+    '''
+         ManagedSecretRotateRequest specifies Managed Secret to rotate
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Managed Secret to rotate.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretRotateRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ManagedSecretRotateResponse:
+    '''
+         ManagedSecretRotateResponse contains information about Secret Engine after
+     successful rotation.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretRotateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ManagedSecretRotationPolicy:
+    __slots__ = []
+
+    def __init__(self, ):
+        pass
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretRotationPolicy ' + \
+            '>'
+
+    def to_dict(self):
+        return {}
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls()
+
+
+class ManagedSecretUpdateRequest:
+    '''
+         ManagedSecretUpdateRequest specifies Managed Secret to update
+    '''
+    __slots__ = [
+        'managed_secret',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         Managed Secret to update
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretUpdateRequest ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(managed_secret=d.get('managed_secret'), )
+
+
+class ManagedSecretUpdateResponse:
+    '''
+         ManagedSecretUpdateResponse contains information about Secret Engine after
+     successful update.
+    '''
+    __slots__ = [
+        'managed_secret',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        managed_secret=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.managed_secret = managed_secret if managed_secret is not None else None
+        '''
+         The requested Managed Secret.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretUpdateResponse ' + \
+            'managed_secret: ' + repr(self.managed_secret) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'managed_secret': self.managed_secret,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            managed_secret=d.get('managed_secret'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ManagedSecretValidateRequest:
+    '''
+         ManagedSecretValidateRequest specifies which Managed Secret to validate
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Managed Secret to validate.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretValidateRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ManagedSecretValidateResponse:
+    '''
+         ManagedSecretValidateResponse contains validity of requested Managed
+     Secret
+    '''
+    __slots__ = [
+        'invalid_info',
+        'meta',
+        'rate_limit',
+        'valid',
+    ]
+
+    def __init__(
+        self,
+        invalid_info=None,
+        meta=None,
+        rate_limit=None,
+        valid=None,
+    ):
+        self.invalid_info = invalid_info if invalid_info is not None else ''
+        '''
+         Information about why secret is invalid
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.valid = valid if valid is not None else False
+        '''
+         Whether the secret is valid
+        '''
+
+    def __repr__(self):
+        return '<sdm.ManagedSecretValidateResponse ' + \
+            'invalid_info: ' + repr(self.invalid_info) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'valid: ' + repr(self.valid) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'invalid_info': self.invalid_info,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'valid': self.valid,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            invalid_info=d.get('invalid_info'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            valid=d.get('valid'),
         )
 
 
@@ -25067,6 +26608,561 @@ class SSHPassword:
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             username=d.get('username'),
+        )
+
+
+class SecretEngineCreateRequest:
+    '''
+         SecretEngineCreateRequest specifies a Secret Engine to create.
+    '''
+    __slots__ = [
+        'secret_engine',
+    ]
+
+    def __init__(
+        self,
+        secret_engine=None,
+    ):
+        self.secret_engine = secret_engine if secret_engine is not None else None
+        '''
+         Parameters to define the new Secret Engine.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineCreateRequest ' + \
+            'secret_engine: ' + repr(self.secret_engine) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'secret_engine': self.secret_engine,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(secret_engine=d.get('secret_engine'), )
+
+
+class SecretEngineCreateResponse:
+    '''
+         SecretEngineCreateResponse contains information about a Secret Engine after successful creation.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'secret_engine',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        secret_engine=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.secret_engine = secret_engine if secret_engine is not None else None
+        '''
+         The requested Secret Engine.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineCreateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_engine: ' + repr(self.secret_engine) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'secret_engine': self.secret_engine,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            secret_engine=d.get('secret_engine'),
+        )
+
+
+class SecretEngineDeleteRequest:
+    '''
+         SecretEngineDeleteRequest specified the ID of a Secret Engine to be deleted.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Secret Engine to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class SecretEngineDeleteResponse:
+    '''
+         SecretEngineDeleteResponse contains information about a Secret Engine after it was deleted.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineDeleteResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class SecretEngineGetRequest:
+    '''
+         SecretEngineGetRequest specifies which Secret Engine to retrieve
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Secret Engine to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class SecretEngineGetResponse:
+    '''
+         SecretEngineGetResponse contains information about requested Secret Engine
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'secret_engine',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        secret_engine=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.secret_engine = secret_engine if secret_engine is not None else None
+        '''
+         The requested Secret Engine.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineGetResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_engine: ' + repr(self.secret_engine) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'secret_engine': self.secret_engine,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            secret_engine=d.get('secret_engine'),
+        )
+
+
+class SecretEngineListRequest:
+    '''
+         SecretEngineListRequest specifies criteria for retrieving a list of Secret Engines
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class SecretEngineListResponse:
+    '''
+         SecretEngineListResponse contains a list of requested Secret Engine
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class SecretEnginePasswordPolicy:
+    __slots__ = [
+        'allow_repeat',
+        'exclude_characters',
+        'exclude_upper_case',
+        'length',
+        'num_digits',
+        'num_symbols',
+    ]
+
+    def __init__(
+        self,
+        allow_repeat=None,
+        exclude_characters=None,
+        exclude_upper_case=None,
+        length=None,
+        num_digits=None,
+        num_symbols=None,
+    ):
+        self.allow_repeat = allow_repeat if allow_repeat is not None else False
+        '''
+         If set to true allows for consecutive characters to repeat itself
+        '''
+        self.exclude_characters = exclude_characters if exclude_characters is not None else ''
+        '''
+         Characters to exclude when generating password
+        '''
+        self.exclude_upper_case = exclude_upper_case if exclude_upper_case is not None else False
+        '''
+         If set to true do not include upper case letters when generating password
+        '''
+        self.length = length if length is not None else 0
+        '''
+         Password length.
+        '''
+        self.num_digits = num_digits if num_digits is not None else 0
+        '''
+         Numbers of digits to use when generating password
+        '''
+        self.num_symbols = num_symbols if num_symbols is not None else 0
+        '''
+         Number of symbols to use when generating password
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEnginePasswordPolicy ' + \
+            'allow_repeat: ' + repr(self.allow_repeat) + ' ' +\
+            'exclude_characters: ' + repr(self.exclude_characters) + ' ' +\
+            'exclude_upper_case: ' + repr(self.exclude_upper_case) + ' ' +\
+            'length: ' + repr(self.length) + ' ' +\
+            'num_digits: ' + repr(self.num_digits) + ' ' +\
+            'num_symbols: ' + repr(self.num_symbols) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'allow_repeat': self.allow_repeat,
+            'exclude_characters': self.exclude_characters,
+            'exclude_upper_case': self.exclude_upper_case,
+            'length': self.length,
+            'num_digits': self.num_digits,
+            'num_symbols': self.num_symbols,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            allow_repeat=d.get('allow_repeat'),
+            exclude_characters=d.get('exclude_characters'),
+            exclude_upper_case=d.get('exclude_upper_case'),
+            length=d.get('length'),
+            num_digits=d.get('num_digits'),
+            num_symbols=d.get('num_symbols'),
+        )
+
+
+class SecretEnginePolicy:
+    __slots__ = [
+        'password_policy',
+    ]
+
+    def __init__(
+        self,
+        password_policy=None,
+    ):
+        self.password_policy = password_policy if password_policy is not None else None
+        '''
+         Policy for password
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEnginePolicy ' + \
+            'password_policy: ' + repr(self.password_policy) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'password_policy': self.password_policy,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(password_policy=d.get('password_policy'), )
+
+
+class SecretEngineRotateRequest:
+    __slots__ = [
+        'id',
+        'password_policy',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        password_policy=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Secret Engine to rotate credentials for.
+        '''
+        self.password_policy = password_policy if password_policy is not None else None
+        '''
+         Optional password policy to use when generating a password
+         If not provided it will use secret engine's password_policy
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineRotateRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'password_policy: ' + repr(self.password_policy) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'password_policy': self.password_policy,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            password_policy=d.get('password_policy'),
+        )
+
+
+class SecretEngineRotateResponse:
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineRotateResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class SecretEngineUpdateRequest:
+    '''
+         SecretEngineUpdateRequest specifies secret engine to update
+    '''
+    __slots__ = [
+        'secret_engine',
+    ]
+
+    def __init__(
+        self,
+        secret_engine=None,
+    ):
+        self.secret_engine = secret_engine if secret_engine is not None else None
+        '''
+         Secret engine to update
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineUpdateRequest ' + \
+            'secret_engine: ' + repr(self.secret_engine) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'secret_engine': self.secret_engine,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(secret_engine=d.get('secret_engine'), )
+
+
+class SecretEngineUpdateResponse:
+    '''
+         SecretEngineUpdateResponse contains information about Secret Engine after successful update.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+        'secret_engine',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+        secret_engine=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.secret_engine = secret_engine if secret_engine is not None else None
+        '''
+         The requested Secret Engine.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SecretEngineUpdateResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'secret_engine: ' + repr(self.secret_engine) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'secret_engine': self.secret_engine,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            secret_engine=d.get('secret_engine'),
         )
 
 

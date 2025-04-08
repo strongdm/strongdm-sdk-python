@@ -76,6 +76,8 @@ from .identity_sets_pb2 import *
 from .identity_sets_pb2_grpc import *
 from .identity_sets_history_pb2 import *
 from .identity_sets_history_pb2_grpc import *
+from .managed_secrets_pb2 import *
+from .managed_secrets_pb2_grpc import *
 from .nodes_pb2 import *
 from .nodes_pb2_grpc import *
 from .nodes_history_pb2 import *
@@ -120,10 +122,16 @@ from .roles_pb2 import *
 from .roles_pb2_grpc import *
 from .roles_history_pb2 import *
 from .roles_history_pb2_grpc import *
+from .secret_engine_policy_pb2 import *
+from .secret_engine_policy_pb2_grpc import *
+from .secret_engine_types_pb2 import *
+from .secret_engine_types_pb2_grpc import *
 from .secret_store_types_pb2 import *
 from .secret_store_types_pb2_grpc import *
 from .secret_stores_pb2 import *
 from .secret_stores_pb2_grpc import *
+from .secret_engines_pb2 import *
+from .secret_engines_pb2_grpc import *
 from .secret_store_healths_pb2 import *
 from .secret_store_healths_pb2_grpc import *
 from .secret_stores_history_pb2 import *
@@ -2621,6 +2629,367 @@ class IdentitySetsHistory:
                 tries = 0
                 for plumbing_item in plumbing_response.history:
                     yield plumbing.convert_identity_set_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class ManagedSecrets:
+    '''
+     ManagedSecret is a private vertical for creating, reading, updating,
+     deleting, listing and rotating the managed secrets in the secrets engines as
+     an authenticated user.
+    See `strongdm.models.ManagedSecret`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = ManagedSecretsStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List returns Managed Secrets from a Secret Engine.
+        '''
+        req = ManagedSecretListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ManagedSecrets.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.managed_secrets:
+                    yield plumbing.convert_managed_secret_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+    def list_by_actor(self, filter, *args, timeout=None):
+        '''
+         List returns Managed Secrets for an Actor from a Secret Engine.
+        '''
+        req = ManagedSecretListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.ListByActor(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ManagedSecrets.ListByActor', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.managed_secrets:
+                    yield plumbing.convert_managed_secret_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+    def create(self, managed_secret, timeout=None):
+        '''
+         Create creates a Managed Secret
+        '''
+        req = ManagedSecretCreateRequest()
+
+        if managed_secret is not None:
+            req.managed_secret.CopyFrom(
+                plumbing.convert_managed_secret_to_plumbing(managed_secret))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('ManagedSecrets.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretCreateResponse()
+        resp.managed_secret = plumbing.convert_managed_secret_to_porcelain(
+            plumbing_response.managed_secret)
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, managed_secret, timeout=None):
+        '''
+         Update updates a Managed Secret
+        '''
+        req = ManagedSecretUpdateRequest()
+
+        if managed_secret is not None:
+            req.managed_secret.CopyFrom(
+                plumbing.convert_managed_secret_to_plumbing(managed_secret))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('ManagedSecrets.Update',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretUpdateResponse()
+        resp.managed_secret = plumbing.convert_managed_secret_to_porcelain(
+            plumbing_response.managed_secret)
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def rotate(self, id, timeout=None):
+        '''
+         Rotate forces rotation of Managed Secret
+        '''
+        req = ManagedSecretRotateRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Rotate(
+                    req,
+                    metadata=self.parent.get_metadata('ManagedSecrets.Rotate',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretRotateResponse()
+        resp.meta = plumbing.convert_generic_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes a Managed Secret
+        '''
+        req = ManagedSecretDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('ManagedSecrets.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get gets details of a Managed Secret without sensitive data
+        '''
+        req = ManagedSecretGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('ManagedSecrets.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretGetResponse()
+        resp.managed_secret = plumbing.convert_managed_secret_to_porcelain(
+            plumbing_response.managed_secret)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def retrieve(self, id, public_key, timeout=None):
+        '''
+         Retrieve returns Managed Secret with sensitive data
+        '''
+        req = ManagedSecretRetrieveRequest()
+
+        req.id = (id)
+        req.public_key = (public_key)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Retrieve(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ManagedSecrets.Retrieve', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretRetrieveResponse()
+        resp.managed_secret = plumbing.convert_managed_secret_to_porcelain(
+            plumbing_response.managed_secret)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def validate(self, id, timeout=None):
+        '''
+         Validate returns the result of testing the stored credential against the
+         secret engine.
+        '''
+        req = ManagedSecretValidateRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Validate(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ManagedSecrets.Validate', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretValidateResponse()
+        resp.invalid_info = (plumbing_response.invalid_info)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.valid = (plumbing_response.valid)
+        return resp
+
+    def logs(self, filter, *args, timeout=None):
+        '''
+         Logs returns the audit records for the managed secret. This may be replaced
+         in the future.
+        '''
+        req = ManagedSecretLogsRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.Logs(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'ManagedSecrets.Logs', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.managed_secret_logs:
+                    yield plumbing.convert_managed_secret_log_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break
@@ -5452,6 +5821,323 @@ class SnapshotSecretStores:
          List gets a list of SecretStores matching a given set of criteria.
         '''
         return self.secret_stores.list(filter, *args, timeout=timeout)
+
+
+class SecretEngines:
+    '''
+
+    See:
+    `strongdm.models.ActiveDirectoryEngine`
+    `strongdm.models.KeyValueEngine`
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = SecretEnginesStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List returns a list of Secret Engines
+        '''
+        req = SecretEngineListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'SecretEngines.List', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.secret_engines:
+                    yield plumbing.convert_secret_engine_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+    def get(self, id, timeout=None):
+        '''
+         Get returns a secret engine details
+        '''
+        req = SecretEngineGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('SecretEngines.Get',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretEngineGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.secret_engine = plumbing.convert_secret_engine_to_porcelain(
+            plumbing_response.secret_engine)
+        return resp
+
+    def create(self, secret_engine, timeout=None):
+        '''
+         Create creates a secret engine
+        '''
+        req = SecretEngineCreateRequest()
+
+        if secret_engine is not None:
+            req.secret_engine.CopyFrom(
+                plumbing.convert_secret_engine_to_plumbing(secret_engine))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('SecretEngines.Create',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretEngineCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.secret_engine = plumbing.convert_secret_engine_to_porcelain(
+            plumbing_response.secret_engine)
+        return resp
+
+    def update(self, secret_engine, timeout=None):
+        '''
+         Update updates a secret engine
+        '''
+        req = SecretEngineUpdateRequest()
+
+        if secret_engine is not None:
+            req.secret_engine.CopyFrom(
+                plumbing.convert_secret_engine_to_plumbing(secret_engine))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('SecretEngines.Update',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretEngineUpdateResponse()
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.secret_engine = plumbing.convert_secret_engine_to_porcelain(
+            plumbing_response.secret_engine)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete deletes a secret engine
+        '''
+        req = SecretEngineDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('SecretEngines.Delete',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretEngineDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list_secret_stores(self, filter, *args, timeout=None):
+        '''
+         ListSecretStores returns a list of Secret Stores that can be used as a backing store
+         for Secret Engine
+        '''
+        req = SecretStoreListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                try:
+                    plumbing_response = svc.stub.ListSecretStores(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'SecretEngines.ListSecretStores', req),
+                        timeout=timeout)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e):
+                        tries += 1
+                        self.parent.jitterSleep(tries)
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.secret_stores:
+                    yield plumbing.convert_secret_store_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+    def generate_keys(self, secret_engine_id, timeout=None):
+        '''
+         GenerateKeys generates a private key, stores it in a secret store and stores a public key in a secret engine
+        '''
+        req = GenerateKeysRequest()
+
+        req.secret_engine_id = (secret_engine_id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.GenerateKeys(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'SecretEngines.GenerateKeys', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GenerateKeysResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def healthcheck(self, secret_engine_id, timeout=None):
+        '''
+         Healthcheck triggers a healthcheck for all nodes serving a secret engine
+        '''
+        req = HealthcheckRequest()
+
+        req.secret_engine_id = (secret_engine_id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Healthcheck(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'SecretEngines.Healthcheck', req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.HealthcheckResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.status = plumbing.convert_repeated_healthcheck_status_to_porcelain(
+            plumbing_response.status)
+        return resp
+
+    def rotate(self, id, password_policy, timeout=None):
+        '''
+         Rotate rotates secret engine's credentials
+        '''
+        req = SecretEngineRotateRequest()
+
+        req.id = (id)
+        if password_policy is not None:
+            req.password_policy.CopyFrom(
+                plumbing.convert_secret_engine_password_policy_to_plumbing(
+                    password_policy))
+        tries = 0
+        plumbing_response = None
+        while True:
+            try:
+                plumbing_response = self.stub.Rotate(
+                    req,
+                    metadata=self.parent.get_metadata('SecretEngines.Rotate',
+                                                      req),
+                    timeout=timeout)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e):
+                    tries += 1
+                    self.parent.jitterSleep(tries)
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.SecretEngineRotateResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
 
 
 class SecretStoreHealths:
