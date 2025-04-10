@@ -2554,11 +2554,84 @@ def convert_repeated_amazon_mqamqp_091_to_porcelain(plumbings):
     ]
 
 
+def convert_approval_flow_approver_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ApprovalFlowApprover()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.role_id = (plumbing.role_id)
+    return porcelain
+
+
+def convert_approval_flow_approver_to_plumbing(porcelain):
+    plumbing = ApprovalFlowApprover()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.role_id = (porcelain.role_id)
+    return plumbing
+
+
+def convert_repeated_approval_flow_approver_to_plumbing(porcelains):
+    return [
+        convert_approval_flow_approver_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_approval_flow_approver_to_porcelain(plumbings):
+    return [
+        convert_approval_flow_approver_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_approval_flow_step_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ApprovalFlowStep()
+    porcelain.approvers = convert_repeated_approval_flow_approver_to_porcelain(
+        plumbing.approvers)
+    porcelain.quantifier = (plumbing.quantifier)
+    porcelain.skip_after = convert_duration_to_porcelain(plumbing.skip_after)
+    return porcelain
+
+
+def convert_approval_flow_step_to_plumbing(porcelain):
+    plumbing = ApprovalFlowStep()
+    if porcelain is None:
+        return plumbing
+    del plumbing.approvers[:]
+    plumbing.approvers.extend(
+        convert_repeated_approval_flow_approver_to_plumbing(
+            porcelain.approvers))
+    plumbing.quantifier = (porcelain.quantifier)
+    plumbing.skip_after.CopyFrom(
+        convert_duration_to_plumbing(porcelain.skip_after))
+    return plumbing
+
+
+def convert_repeated_approval_flow_step_to_plumbing(porcelains):
+    return [
+        convert_approval_flow_step_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_approval_flow_step_to_porcelain(plumbings):
+    return [
+        convert_approval_flow_step_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_approval_workflow_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.ApprovalWorkflow()
     porcelain.approval_mode = (plumbing.approval_mode)
+    porcelain.approval_workflow_steps = convert_repeated_approval_flow_step_to_porcelain(
+        plumbing.approval_workflow_steps)
     porcelain.description = (plumbing.description)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
@@ -2570,6 +2643,10 @@ def convert_approval_workflow_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.approval_mode = (porcelain.approval_mode)
+    del plumbing.approval_workflow_steps[:]
+    plumbing.approval_workflow_steps.extend(
+        convert_repeated_approval_flow_step_to_plumbing(
+            porcelain.approval_workflow_steps))
     plumbing.description = (porcelain.description)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
@@ -3009,6 +3086,9 @@ def convert_approval_workflow_step_to_porcelain(plumbing):
     porcelain = models.ApprovalWorkflowStep()
     porcelain.approval_flow_id = (plumbing.approval_flow_id)
     porcelain.id = (plumbing.id)
+    porcelain.quantifier = (plumbing.quantifier)
+    porcelain.skip_after = convert_duration_to_porcelain(plumbing.skip_after)
+    porcelain.step_order = (plumbing.step_order)
     return porcelain
 
 
@@ -3018,6 +3098,10 @@ def convert_approval_workflow_step_to_plumbing(porcelain):
         return plumbing
     plumbing.approval_flow_id = (porcelain.approval_flow_id)
     plumbing.id = (porcelain.id)
+    plumbing.quantifier = (porcelain.quantifier)
+    plumbing.skip_after.CopyFrom(
+        convert_duration_to_plumbing(porcelain.skip_after))
+    plumbing.step_order = (porcelain.step_order)
     return plumbing
 
 

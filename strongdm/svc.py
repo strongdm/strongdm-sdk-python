@@ -1297,7 +1297,7 @@ class ApprovalWorkflowApprovers:
 
     def create(self, approval_workflow_approver, timeout=None):
         '''
-         Create creates a new approval workflow approver.
+         Deprecated: Create creates a new approval workflow approver.
         '''
         req = ApprovalWorkflowApproverCreateRequest()
 
@@ -1331,7 +1331,7 @@ class ApprovalWorkflowApprovers:
 
     def get(self, id, timeout=None):
         '''
-         Get reads one approval workflow approver by ID.
+         Deprecated: Get reads one approval workflow approver by ID.
         '''
         req = ApprovalWorkflowApproverGetRequest()
         if self.parent.snapshot_datetime is not None:
@@ -1367,7 +1367,7 @@ class ApprovalWorkflowApprovers:
 
     def delete(self, id, timeout=None):
         '''
-         Delete deletes an existing approval workflow approver.
+         Deprecated: Delete deletes an existing approval workflow approver.
         '''
         req = ApprovalWorkflowApproverDeleteRequest()
 
@@ -1397,7 +1397,7 @@ class ApprovalWorkflowApprovers:
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing approval workflow approvers.
+         Deprecated: Lists existing approval workflow approvers.
         '''
         req = ApprovalWorkflowApproverListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
@@ -1444,13 +1444,13 @@ class SnapshotApprovalWorkflowApprovers:
 
     def get(self, id, timeout=None):
         '''
-         Get reads one approval workflow approver by ID.
+         Deprecated: Get reads one approval workflow approver by ID.
         '''
         return self.approval_workflow_approvers.get(id, timeout=timeout)
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing approval workflow approvers.
+         Deprecated: Lists existing approval workflow approvers.
         '''
         return self.approval_workflow_approvers.list(filter,
                                                      *args,
@@ -1516,7 +1516,7 @@ class ApprovalWorkflowSteps:
 
     def create(self, approval_workflow_step, timeout=None):
         '''
-         Create creates a new approval workflow step.
+         Deprecated: Create creates a new approval workflow step.
         '''
         req = ApprovalWorkflowStepCreateRequest()
 
@@ -1550,7 +1550,7 @@ class ApprovalWorkflowSteps:
 
     def get(self, id, timeout=None):
         '''
-         Get reads one approval workflow step by ID.
+         Deprecated: Get reads one approval workflow step by ID.
         '''
         req = ApprovalWorkflowStepGetRequest()
         if self.parent.snapshot_datetime is not None:
@@ -1586,7 +1586,7 @@ class ApprovalWorkflowSteps:
 
     def delete(self, id, timeout=None):
         '''
-         Delete deletes an existing approval workflow step.
+         Deprecated: Delete deletes an existing approval workflow step.
         '''
         req = ApprovalWorkflowStepDeleteRequest()
 
@@ -1616,7 +1616,7 @@ class ApprovalWorkflowSteps:
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing approval workflow steps.
+         Deprecated: Lists existing approval workflow steps.
         '''
         req = ApprovalWorkflowStepListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
@@ -1663,13 +1663,13 @@ class SnapshotApprovalWorkflowSteps:
 
     def get(self, id, timeout=None):
         '''
-         Get reads one approval workflow step by ID.
+         Deprecated: Get reads one approval workflow step by ID.
         '''
         return self.approval_workflow_steps.get(id, timeout=timeout)
 
     def list(self, filter, *args, timeout=None):
         '''
-         Lists existing approval workflow steps.
+         Deprecated: Lists existing approval workflow steps.
         '''
         return self.approval_workflow_steps.list(filter,
                                                  *args,

@@ -56,28 +56,28 @@ class ApprovalWorkflowApproversServicer(object):
     """
 
     def Create(self, request, context):
-        """Create creates a new approval workflow approver.
+        """Deprecated: Create creates a new approval workflow approver.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Get reads one approval workflow approver by ID.
+        """Deprecated: Get reads one approval workflow approver by ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete deletes an existing approval workflow approver.
+        """Deprecated: Delete deletes an existing approval workflow approver.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Lists existing approval workflow approvers.
+        """Deprecated: Lists existing approval workflow approvers.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

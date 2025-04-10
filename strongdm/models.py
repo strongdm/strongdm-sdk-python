@@ -5160,6 +5160,101 @@ class AmazonMQAMQP091:
         )
 
 
+class ApprovalFlowApprover:
+    '''
+         An approver for an approval workflow step. Specifies either an account_id or an role_id (not both)
+    '''
+    __slots__ = [
+        'account_id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        role_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The approver account id.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The approver role id
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalFlowApprover ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            role_id=d.get('role_id'),
+        )
+
+
+class ApprovalFlowStep:
+    '''
+         An approval step for an approval workflow. Specifies approvers and conditions for approval to be granted.
+    '''
+    __slots__ = [
+        'approvers',
+        'quantifier',
+        'skip_after',
+    ]
+
+    def __init__(
+        self,
+        approvers=None,
+        quantifier=None,
+        skip_after=None,
+    ):
+        self.approvers = approvers if approvers is not None else []
+        '''
+         The approvers for this approval step
+        '''
+        self.quantifier = quantifier if quantifier is not None else ''
+        '''
+         Whether "any" or "all" approvers must approve for this approval step to pass. Optional, defaults to "any".
+        '''
+        self.skip_after = skip_after if skip_after is not None else None
+        '''
+         Duration after which this approval step will be skipped if no approval is given. Optional, if not provided an approver must approve before the step passes.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ApprovalFlowStep ' + \
+            'approvers: ' + repr(self.approvers) + ' ' +\
+            'quantifier: ' + repr(self.quantifier) + ' ' +\
+            'skip_after: ' + repr(self.skip_after) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'approvers': self.approvers,
+            'quantifier': self.quantifier,
+            'skip_after': self.skip_after,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            approvers=d.get('approvers'),
+            quantifier=d.get('quantifier'),
+            skip_after=d.get('skip_after'),
+        )
+
+
 class ApprovalWorkflow:
     '''
          ApprovalWorkflows are the mechanism by which requests for access can be viewed by authorized
@@ -5167,6 +5262,7 @@ class ApprovalWorkflow:
     '''
     __slots__ = [
         'approval_mode',
+        'approval_workflow_steps',
         'description',
         'id',
         'name',
@@ -5175,6 +5271,7 @@ class ApprovalWorkflow:
     def __init__(
         self,
         approval_mode=None,
+        approval_workflow_steps=None,
         description=None,
         id=None,
         name=None,
@@ -5182,6 +5279,10 @@ class ApprovalWorkflow:
         self.approval_mode = approval_mode if approval_mode is not None else ''
         '''
          Approval mode of the ApprovalWorkflow
+        '''
+        self.approval_workflow_steps = approval_workflow_steps if approval_workflow_steps is not None else []
+        '''
+         The approval steps of this approval workflow
         '''
         self.description = description if description is not None else ''
         '''
@@ -5199,6 +5300,7 @@ class ApprovalWorkflow:
     def __repr__(self):
         return '<sdm.ApprovalWorkflow ' + \
             'approval_mode: ' + repr(self.approval_mode) + ' ' +\
+            'approval_workflow_steps: ' + repr(self.approval_workflow_steps) + ' ' +\
             'description: ' + repr(self.description) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
@@ -5207,6 +5309,7 @@ class ApprovalWorkflow:
     def to_dict(self):
         return {
             'approval_mode': self.approval_mode,
+            'approval_workflow_steps': self.approval_workflow_steps,
             'description': self.description,
             'id': self.id,
             'name': self.name,
@@ -5216,6 +5319,7 @@ class ApprovalWorkflow:
     def from_dict(cls, d):
         return cls(
             approval_mode=d.get('approval_mode'),
+            approval_workflow_steps=d.get('approval_workflow_steps'),
             description=d.get('description'),
             id=d.get('id'),
             name=d.get('name'),
@@ -5769,12 +5873,18 @@ class ApprovalWorkflowStep:
     __slots__ = [
         'approval_flow_id',
         'id',
+        'quantifier',
+        'skip_after',
+        'step_order',
     ]
 
     def __init__(
         self,
         approval_flow_id=None,
         id=None,
+        quantifier=None,
+        skip_after=None,
+        step_order=None,
     ):
         self.approval_flow_id = approval_flow_id if approval_flow_id is not None else ''
         '''
@@ -5784,17 +5894,35 @@ class ApprovalWorkflowStep:
         '''
          Unique identifier of the ApprovalWorkflowStep.
         '''
+        self.quantifier = quantifier if quantifier is not None else ''
+        '''
+         Whether "any" or "all" approvers must approve for this approval step to pass. Read only field for history commands.
+        '''
+        self.skip_after = skip_after if skip_after is not None else None
+        '''
+         Duration after which this approval step will be skipped if no approval is given. Read only field for history commands.
+        '''
+        self.step_order = step_order if step_order is not None else 0
+        '''
+         The position of the approval step in a sequence of approval steps for an approval workflow. Read only field for history commands.
+        '''
 
     def __repr__(self):
         return '<sdm.ApprovalWorkflowStep ' + \
             'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'quantifier: ' + repr(self.quantifier) + ' ' +\
+            'skip_after: ' + repr(self.skip_after) + ' ' +\
+            'step_order: ' + repr(self.step_order) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'approval_flow_id': self.approval_flow_id,
             'id': self.id,
+            'quantifier': self.quantifier,
+            'skip_after': self.skip_after,
+            'step_order': self.step_order,
         }
 
     @classmethod
@@ -5802,6 +5930,9 @@ class ApprovalWorkflowStep:
         return cls(
             approval_flow_id=d.get('approval_flow_id'),
             id=d.get('id'),
+            quantifier=d.get('quantifier'),
+            skip_after=d.get('skip_after'),
+            step_order=d.get('step_order'),
         )
 
 
