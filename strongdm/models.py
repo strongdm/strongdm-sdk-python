@@ -23483,10 +23483,6 @@ class Redshift:
 
 
 class RedshiftIAM:
-    '''
-    RedshiftIAM is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'cluster_id',
@@ -23662,10 +23658,6 @@ class RedshiftIAM:
 
 
 class RedshiftServerlessIAM:
-    '''
-    RedshiftServerlessIAM is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'database',
