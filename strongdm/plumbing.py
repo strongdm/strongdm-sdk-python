@@ -9258,6 +9258,62 @@ def convert_repeated_oracle_to_porcelain(plumbings):
     return [convert_oracle_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_oracle_nne_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OracleNNE()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_oracle_nne_to_plumbing(porcelain):
+    plumbing = OracleNNE()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_oracle_nne_to_plumbing(porcelains):
+    return [
+        convert_oracle_nne_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_oracle_nne_to_porcelain(plumbings):
+    return [
+        convert_oracle_nne_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_organization_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -11992,6 +12048,8 @@ def convert_resource_to_plumbing(porcelain):
             convert_neptune_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Oracle):
         plumbing.oracle.CopyFrom(convert_oracle_to_plumbing(porcelain))
+    if isinstance(porcelain, models.OracleNNE):
+        plumbing.oracle_nne.CopyFrom(convert_oracle_nne_to_plumbing(porcelain))
     if isinstance(porcelain, models.Postgres):
         plumbing.postgres.CopyFrom(convert_postgres_to_plumbing(porcelain))
     if isinstance(porcelain, models.Presto):
@@ -12241,6 +12299,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_neptune_iam_to_porcelain(plumbing.neptune_iam)
     if plumbing.HasField('oracle'):
         return convert_oracle_to_porcelain(plumbing.oracle)
+    if plumbing.HasField('oracle_nne'):
+        return convert_oracle_nne_to_porcelain(plumbing.oracle_nne)
     if plumbing.HasField('postgres'):
         return convert_postgres_to_porcelain(plumbing.postgres)
     if plumbing.HasField('presto'):

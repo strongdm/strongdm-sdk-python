@@ -4899,6 +4899,7 @@ class Resources:
     `strongdm.models.Neptune`
     `strongdm.models.NeptuneIAM`
     `strongdm.models.Oracle`
+    `strongdm.models.OracleNNE`
     `strongdm.models.Postgres`
     `strongdm.models.Presto`
     `strongdm.models.RabbitMQAMQP091`
