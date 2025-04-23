@@ -5178,6 +5178,60 @@ def convert_repeated_document_db_replica_set_to_porcelain(plumbings):
     ]
 
 
+def convert_document_db_replica_set_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.DocumentDBReplicaSetIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.connect_to_replica = (plumbing.connect_to_replica)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_document_db_replica_set_iam_to_plumbing(porcelain):
+    plumbing = DocumentDBReplicaSetIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.connect_to_replica = (porcelain.connect_to_replica)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_document_db_replica_set_iam_to_plumbing(porcelains):
+    return [
+        convert_document_db_replica_set_iam_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_document_db_replica_set_iam_to_porcelain(plumbings):
+    return [
+        convert_document_db_replica_set_iam_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_druid_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -11962,6 +12016,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.DocumentDBReplicaSet):
         plumbing.document_db_replica_set.CopyFrom(
             convert_document_db_replica_set_to_plumbing(porcelain))
+    if isinstance(porcelain, models.DocumentDBReplicaSetIAM):
+        plumbing.document_db_replica_set_iam.CopyFrom(
+            convert_document_db_replica_set_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Druid):
         plumbing.druid.CopyFrom(convert_druid_to_plumbing(porcelain))
     if isinstance(porcelain, models.DynamoDB):
@@ -12220,6 +12277,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('document_db_replica_set'):
         return convert_document_db_replica_set_to_porcelain(
             plumbing.document_db_replica_set)
+    if plumbing.HasField('document_db_replica_set_iam'):
+        return convert_document_db_replica_set_iam_to_porcelain(
+            plumbing.document_db_replica_set_iam)
     if plumbing.HasField('druid'):
         return convert_druid_to_porcelain(plumbing.druid)
     if plumbing.HasField('dynamo_db'):

@@ -4865,6 +4865,7 @@ class Resources:
     `strongdm.models.DocumentDBHost`
     `strongdm.models.DocumentDBHostIAM`
     `strongdm.models.DocumentDBReplicaSet`
+    `strongdm.models.DocumentDBReplicaSetIAM`
     `strongdm.models.Druid`
     `strongdm.models.DynamoDB`
     `strongdm.models.DynamoDBIAM`
