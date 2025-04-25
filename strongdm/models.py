@@ -5162,21 +5162,28 @@ class AmazonMQAMQP091:
 
 class ApprovalFlowApprover:
     '''
-         An approver for an approval workflow step. Specifies either an account_id or an role_id (not both)
+         An approver for an approval workflow step. Each approver can specify exactly one of: account_id, role_id, or reference
     '''
     __slots__ = [
         'account_id',
+        'reference',
         'role_id',
     ]
 
     def __init__(
         self,
         account_id=None,
+        reference=None,
         role_id=None,
     ):
         self.account_id = account_id if account_id is not None else ''
         '''
          The approver account id.
+        '''
+        self.reference = reference if reference is not None else ''
+        '''
+         A reference to an approver. Must be one of ApproverReference constants.
+         If set, the account_id and role_id must be empty.
         '''
         self.role_id = role_id if role_id is not None else ''
         '''
@@ -5186,12 +5193,14 @@ class ApprovalFlowApprover:
     def __repr__(self):
         return '<sdm.ApprovalFlowApprover ' + \
             'account_id: ' + repr(self.account_id) + ' ' +\
+            'reference: ' + repr(self.reference) + ' ' +\
             'role_id: ' + repr(self.role_id) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'account_id': self.account_id,
+            'reference': self.reference,
             'role_id': self.role_id,
         }
 
@@ -5199,6 +5208,7 @@ class ApprovalFlowApprover:
     def from_dict(cls, d):
         return cls(
             account_id=d.get('account_id'),
+            reference=d.get('reference'),
             role_id=d.get('role_id'),
         )
 
@@ -5335,6 +5345,7 @@ class ApprovalWorkflowApprover:
         'approval_flow_id',
         'approval_step_id',
         'id',
+        'reference',
         'role_id',
     ]
 
@@ -5344,6 +5355,7 @@ class ApprovalWorkflowApprover:
         approval_flow_id=None,
         approval_step_id=None,
         id=None,
+        reference=None,
         role_id=None,
     ):
         self.account_id = account_id if account_id is not None else ''
@@ -5362,6 +5374,12 @@ class ApprovalWorkflowApprover:
         '''
          Unique identifier of the ApprovalWorkflowApprover.
         '''
+        self.reference = reference if reference is not None else ''
+        '''
+         A reference to an approver. Will be one of ApproverReference constants.
+         This field is only populated when reading historical Approval Workflow Approvers data through the Approval Workflows History API.
+         For the deprecated Approval Workflow Approvers API no value is returned for this field and it is non-settable.
+        '''
         self.role_id = role_id if role_id is not None else ''
         '''
          The approver role id
@@ -5373,6 +5391,7 @@ class ApprovalWorkflowApprover:
             'approval_flow_id: ' + repr(self.approval_flow_id) + ' ' +\
             'approval_step_id: ' + repr(self.approval_step_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'reference: ' + repr(self.reference) + ' ' +\
             'role_id: ' + repr(self.role_id) + ' ' +\
             '>'
 
@@ -5382,6 +5401,7 @@ class ApprovalWorkflowApprover:
             'approval_flow_id': self.approval_flow_id,
             'approval_step_id': self.approval_step_id,
             'id': self.id,
+            'reference': self.reference,
             'role_id': self.role_id,
         }
 
@@ -5392,6 +5412,7 @@ class ApprovalWorkflowApprover:
             approval_flow_id=d.get('approval_flow_id'),
             approval_step_id=d.get('approval_step_id'),
             id=d.get('id'),
+            reference=d.get('reference'),
             role_id=d.get('role_id'),
         )
 

@@ -2559,6 +2559,7 @@ def convert_approval_flow_approver_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalFlowApprover()
     porcelain.account_id = (plumbing.account_id)
+    porcelain.reference = (plumbing.reference)
     porcelain.role_id = (plumbing.role_id)
     return porcelain
 
@@ -2568,6 +2569,7 @@ def convert_approval_flow_approver_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.account_id = (porcelain.account_id)
+    plumbing.reference = (porcelain.reference)
     plumbing.role_id = (porcelain.role_id)
     return plumbing
 
@@ -2675,6 +2677,7 @@ def convert_approval_workflow_approver_to_porcelain(plumbing):
     porcelain.approval_flow_id = (plumbing.approval_flow_id)
     porcelain.approval_step_id = (plumbing.approval_step_id)
     porcelain.id = (plumbing.id)
+    porcelain.reference = (plumbing.reference)
     porcelain.role_id = (plumbing.role_id)
     return porcelain
 
@@ -2687,6 +2690,7 @@ def convert_approval_workflow_approver_to_plumbing(porcelain):
     plumbing.approval_flow_id = (porcelain.approval_flow_id)
     plumbing.approval_step_id = (porcelain.approval_step_id)
     plumbing.id = (porcelain.id)
+    plumbing.reference = (porcelain.reference)
     plumbing.role_id = (porcelain.role_id)
     return plumbing
 
