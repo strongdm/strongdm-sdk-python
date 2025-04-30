@@ -4823,6 +4823,7 @@ class Resources:
      Resources are databases, servers, clusters, websites, or clouds that strongDM
      delegates access to.
     See:
+    `strongdm.models.Aerospike`
     `strongdm.models.AKS`
     `strongdm.models.AKSBasicAuth`
     `strongdm.models.AKSServiceAccount`

@@ -2098,6 +2098,58 @@ def convert_repeated_activity_get_response_to_porcelain(plumbings):
     ]
 
 
+def convert_aerospike_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Aerospike()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_aerospike_to_plumbing(porcelain):
+    plumbing = Aerospike()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_aerospike_to_plumbing(porcelains):
+    return [
+        convert_aerospike_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aerospike_to_porcelain(plumbings):
+    return [convert_aerospike_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_amazon_eks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -11906,6 +11958,8 @@ def convert_resource_to_plumbing(porcelain):
     plumbing = Resource()
     if porcelain is None:
         return plumbing
+    if isinstance(porcelain, models.Aerospike):
+        plumbing.aerospike.CopyFrom(convert_aerospike_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKS):
         plumbing.aks.CopyFrom(convert_aks_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKSBasicAuth):
@@ -12181,6 +12235,8 @@ def convert_resource_to_plumbing(porcelain):
 def convert_resource_to_porcelain(plumbing):
     if plumbing is None:
         return None
+    if plumbing.HasField('aerospike'):
+        return convert_aerospike_to_porcelain(plumbing.aerospike)
     if plumbing.HasField('aks'):
         return convert_aks_to_porcelain(plumbing.aks)
     if plumbing.HasField('aks_basic_auth'):
