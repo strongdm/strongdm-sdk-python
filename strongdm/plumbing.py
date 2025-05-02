@@ -14890,7 +14890,6 @@ def convert_trino_to_porcelain(plumbing):
         return None
     porcelain = models.Trino()
     porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -14912,7 +14911,6 @@ def convert_trino_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)

@@ -29307,7 +29307,6 @@ class Trino:
     '''
     __slots__ = [
         'bind_interface',
-        'database',
         'egress_filter',
         'healthy',
         'hostname',
@@ -29326,7 +29325,6 @@ class Trino:
     def __init__(
         self,
         bind_interface=None,
-        database=None,
         egress_filter=None,
         healthy=None,
         hostname=None,
@@ -29344,10 +29342,6 @@ class Trino:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
-        '''
-        self.database = database if database is not None else ''
-        '''
-         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29405,7 +29399,6 @@ class Trino:
     def __repr__(self):
         return '<sdm.Trino ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
-            'database: ' + repr(self.database) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
@@ -29424,7 +29417,6 @@ class Trino:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
-            'database': self.database,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
             'hostname': self.hostname,
@@ -29444,7 +29436,6 @@ class Trino:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
-            database=d.get('database'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
