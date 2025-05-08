@@ -29479,31 +29479,41 @@ class User:
      via roles.
     '''
     __slots__ = [
+        'scim',
         'email',
         'external_id',
         'first_name',
         'id',
         'last_name',
         'managed_by',
+        'manager_id',
         'password',
         'permission_level',
+        'resolved_manager_id',
         'suspended',
         'tags',
     ]
 
     def __init__(
         self,
+        scim=None,
         email=None,
         external_id=None,
         first_name=None,
         id=None,
         last_name=None,
         managed_by=None,
+        manager_id=None,
         password=None,
         permission_level=None,
+        resolved_manager_id=None,
         suspended=None,
         tags=None,
     ):
+        self.scim = scim if scim is not None else ''
+        '''
+         SCIM contains the raw SCIM metadata for the user. This is a read-only field.
+        '''
         self.email = email if email is not None else ''
         '''
          The User's email address. Must be unique.
@@ -29528,6 +29538,10 @@ class User:
         '''
          Managed By is a read only field for what service manages this user, e.g. StrongDM, Okta, Azure.
         '''
+        self.manager_id = manager_id if manager_id is not None else ''
+        '''
+         Manager ID is the ID of the user's manager. This field is empty when the user has no manager.
+        '''
         self.password = password if password is not None else ''
         '''
          Password is a write-only field that can be used to set the user's password.
@@ -29536,6 +29550,12 @@ class User:
         self.permission_level = permission_level if permission_level is not None else ''
         '''
          PermissionLevel is the user's permission level e.g. admin, DBA, user.
+        '''
+        self.resolved_manager_id = resolved_manager_id if resolved_manager_id is not None else ''
+        '''
+         Resolved Manager ID is the ID of the user's manager derived from the manager_id,
+         if present, or from the SCIM metadata.
+         This is a read-only field that's only populated for get and list.
         '''
         self.suspended = suspended if suspended is not None else False
         '''
@@ -29548,28 +29568,34 @@ class User:
 
     def __repr__(self):
         return '<sdm.User ' + \
+            'scim: ' + repr(self.scim) + ' ' +\
             'email: ' + repr(self.email) + ' ' +\
             'external_id: ' + repr(self.external_id) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'last_name: ' + repr(self.last_name) + ' ' +\
             'managed_by: ' + repr(self.managed_by) + ' ' +\
+            'manager_id: ' + repr(self.manager_id) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'permission_level: ' + repr(self.permission_level) + ' ' +\
+            'resolved_manager_id: ' + repr(self.resolved_manager_id) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'scim': self.scim,
             'email': self.email,
             'external_id': self.external_id,
             'first_name': self.first_name,
             'id': self.id,
             'last_name': self.last_name,
             'managed_by': self.managed_by,
+            'manager_id': self.manager_id,
             'password': self.password,
             'permission_level': self.permission_level,
+            'resolved_manager_id': self.resolved_manager_id,
             'suspended': self.suspended,
             'tags': self.tags,
         }
@@ -29577,14 +29603,17 @@ class User:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            scim=d.get('scim'),
             email=d.get('email'),
             external_id=d.get('external_id'),
             first_name=d.get('first_name'),
             id=d.get('id'),
             last_name=d.get('last_name'),
             managed_by=d.get('managed_by'),
+            manager_id=d.get('manager_id'),
             password=d.get('password'),
             permission_level=d.get('permission_level'),
+            resolved_manager_id=d.get('resolved_manager_id'),
             suspended=d.get('suspended'),
             tags=d.get('tags'),
         )
