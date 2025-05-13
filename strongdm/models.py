@@ -3865,6 +3865,7 @@ class Aerospike:
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_services_alternate',
         'username',
     ]
 
@@ -3883,6 +3884,7 @@ class Aerospike:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_services_alternate=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -3937,6 +3939,10 @@ class Aerospike:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_services_alternate = use_services_alternate if use_services_alternate is not None else False
+        '''
+         If true, uses UseServicesAlternates directive for Aerospike connection
+        '''
         self.username = username if username is not None else ''
         '''
          The username to authenticate with.
@@ -3957,6 +3963,7 @@ class Aerospike:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_services_alternate: ' + repr(self.use_services_alternate) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -3975,6 +3982,7 @@ class Aerospike:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_services_alternate': self.use_services_alternate,
             'username': self.username,
         }
 
@@ -3994,6 +4002,7 @@ class Aerospike:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_services_alternate=d.get('use_services_alternate'),
             username=d.get('username'),
         )
 
