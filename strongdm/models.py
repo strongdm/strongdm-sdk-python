@@ -29625,10 +29625,6 @@ class User:
 
 
 class VaultAWSEC2Store:
-    '''
-    VaultAWSEC2Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'name',
@@ -29696,10 +29692,6 @@ class VaultAWSEC2Store:
 
 
 class VaultAWSIAMStore:
-    '''
-    VaultAWSIAMStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'name',
