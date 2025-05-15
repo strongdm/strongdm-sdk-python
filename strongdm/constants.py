@@ -95,7 +95,6 @@ class MFAProvider:
     DUO = "duo"
     TOTP = "totp"
     OKTA = "okta"
-    RSA = "rsa"
 
 
 # Activity Entities, all entity types that can be part of an activity.
@@ -516,10 +515,3 @@ class APIHost:
     US = "app.strongdm.com:443"
     UK = "app.uk.strongdm.com:443"
     EU = "app.eu.strongdm.com:443"
-
-
-# ApproverReference defines the type for approver references.
-class ApproverReference:
-    NONE = ""
-    MANAGER_OF_REQUESTER = "manager-of-requester"
-    MANAGER_OF_MANAGER_OF_REQUESTER = "manager-of-manager-of-requester"

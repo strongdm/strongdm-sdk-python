@@ -4823,7 +4823,6 @@ class Resources:
      Resources are databases, servers, clusters, websites, or clouds that strongDM
      delegates access to.
     See:
-    `strongdm.models.Aerospike`
     `strongdm.models.AKS`
     `strongdm.models.AKSBasicAuth`
     `strongdm.models.AKSServiceAccount`
@@ -4866,7 +4865,6 @@ class Resources:
     `strongdm.models.DocumentDBHost`
     `strongdm.models.DocumentDBHostIAM`
     `strongdm.models.DocumentDBReplicaSet`
-    `strongdm.models.DocumentDBReplicaSetIAM`
     `strongdm.models.Druid`
     `strongdm.models.DynamoDB`
     `strongdm.models.DynamoDBIAM`
@@ -4901,7 +4899,6 @@ class Resources:
     `strongdm.models.Neptune`
     `strongdm.models.NeptuneIAM`
     `strongdm.models.Oracle`
-    `strongdm.models.OracleNNE`
     `strongdm.models.Postgres`
     `strongdm.models.Presto`
     `strongdm.models.RabbitMQAMQP091`

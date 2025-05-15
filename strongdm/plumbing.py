@@ -2098,60 +2098,6 @@ def convert_repeated_activity_get_response_to_porcelain(plumbings):
     ]
 
 
-def convert_aerospike_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.Aerospike()
-    porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.egress_filter = (plumbing.egress_filter)
-    porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.password = (plumbing.password)
-    porcelain.port = (plumbing.port)
-    porcelain.port_override = (plumbing.port_override)
-    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.secret_store_id = (plumbing.secret_store_id)
-    porcelain.subdomain = (plumbing.subdomain)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.use_services_alternate = (plumbing.use_services_alternate)
-    porcelain.username = (plumbing.username)
-    return porcelain
-
-
-def convert_aerospike_to_plumbing(porcelain):
-    plumbing = Aerospike()
-    if porcelain is None:
-        return plumbing
-    plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.egress_filter = (porcelain.egress_filter)
-    plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.password = (porcelain.password)
-    plumbing.port = (porcelain.port)
-    plumbing.port_override = (porcelain.port_override)
-    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.secret_store_id = (porcelain.secret_store_id)
-    plumbing.subdomain = (porcelain.subdomain)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.use_services_alternate = (porcelain.use_services_alternate)
-    plumbing.username = (porcelain.username)
-    return plumbing
-
-
-def convert_repeated_aerospike_to_plumbing(porcelains):
-    return [
-        convert_aerospike_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_aerospike_to_porcelain(plumbings):
-    return [convert_aerospike_to_porcelain(plumbing) for plumbing in plumbings]
-
-
 def convert_amazon_eks_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2613,7 +2559,6 @@ def convert_approval_flow_approver_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalFlowApprover()
     porcelain.account_id = (plumbing.account_id)
-    porcelain.reference = (plumbing.reference)
     porcelain.role_id = (plumbing.role_id)
     return porcelain
 
@@ -2623,7 +2568,6 @@ def convert_approval_flow_approver_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.account_id = (porcelain.account_id)
-    plumbing.reference = (porcelain.reference)
     plumbing.role_id = (porcelain.role_id)
     return plumbing
 
@@ -2731,7 +2675,6 @@ def convert_approval_workflow_approver_to_porcelain(plumbing):
     porcelain.approval_flow_id = (plumbing.approval_flow_id)
     porcelain.approval_step_id = (plumbing.approval_step_id)
     porcelain.id = (plumbing.id)
-    porcelain.reference = (plumbing.reference)
     porcelain.role_id = (plumbing.role_id)
     return porcelain
 
@@ -2744,7 +2687,6 @@ def convert_approval_workflow_approver_to_plumbing(porcelain):
     plumbing.approval_flow_id = (porcelain.approval_flow_id)
     plumbing.approval_step_id = (porcelain.approval_step_id)
     plumbing.id = (porcelain.id)
-    plumbing.reference = (porcelain.reference)
     plumbing.role_id = (porcelain.role_id)
     return plumbing
 
@@ -5232,60 +5174,6 @@ def convert_repeated_document_db_replica_set_to_plumbing(porcelains):
 def convert_repeated_document_db_replica_set_to_porcelain(plumbings):
     return [
         convert_document_db_replica_set_to_porcelain(plumbing)
-        for plumbing in plumbings
-    ]
-
-
-def convert_document_db_replica_set_iam_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.DocumentDBReplicaSetIAM()
-    porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.connect_to_replica = (plumbing.connect_to_replica)
-    porcelain.egress_filter = (plumbing.egress_filter)
-    porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.port_override = (plumbing.port_override)
-    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.region = (plumbing.region)
-    porcelain.secret_store_id = (plumbing.secret_store_id)
-    porcelain.subdomain = (plumbing.subdomain)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    return porcelain
-
-
-def convert_document_db_replica_set_iam_to_plumbing(porcelain):
-    plumbing = DocumentDBReplicaSetIAM()
-    if porcelain is None:
-        return plumbing
-    plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.connect_to_replica = (porcelain.connect_to_replica)
-    plumbing.egress_filter = (porcelain.egress_filter)
-    plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.port_override = (porcelain.port_override)
-    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.region = (porcelain.region)
-    plumbing.secret_store_id = (porcelain.secret_store_id)
-    plumbing.subdomain = (porcelain.subdomain)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    return plumbing
-
-
-def convert_repeated_document_db_replica_set_iam_to_plumbing(porcelains):
-    return [
-        convert_document_db_replica_set_iam_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_document_db_replica_set_iam_to_porcelain(plumbings):
-    return [
-        convert_document_db_replica_set_iam_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -9370,62 +9258,6 @@ def convert_repeated_oracle_to_porcelain(plumbings):
     return [convert_oracle_to_porcelain(plumbing) for plumbing in plumbings]
 
 
-def convert_oracle_nne_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.OracleNNE()
-    porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.database = (plumbing.database)
-    porcelain.egress_filter = (plumbing.egress_filter)
-    porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
-    porcelain.id = (plumbing.id)
-    porcelain.name = (plumbing.name)
-    porcelain.password = (plumbing.password)
-    porcelain.port = (plumbing.port)
-    porcelain.port_override = (plumbing.port_override)
-    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.secret_store_id = (plumbing.secret_store_id)
-    porcelain.subdomain = (plumbing.subdomain)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    porcelain.username = (plumbing.username)
-    return porcelain
-
-
-def convert_oracle_nne_to_plumbing(porcelain):
-    plumbing = OracleNNE()
-    if porcelain is None:
-        return plumbing
-    plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.database = (porcelain.database)
-    plumbing.egress_filter = (porcelain.egress_filter)
-    plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
-    plumbing.id = (porcelain.id)
-    plumbing.name = (porcelain.name)
-    plumbing.password = (porcelain.password)
-    plumbing.port = (porcelain.port)
-    plumbing.port_override = (porcelain.port_override)
-    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.secret_store_id = (porcelain.secret_store_id)
-    plumbing.subdomain = (porcelain.subdomain)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    plumbing.username = (porcelain.username)
-    return plumbing
-
-
-def convert_repeated_oracle_nne_to_plumbing(porcelains):
-    return [
-        convert_oracle_nne_to_plumbing(porcelain) for porcelain in porcelains
-    ]
-
-
-def convert_repeated_oracle_nne_to_porcelain(plumbings):
-    return [
-        convert_oracle_nne_to_porcelain(plumbing) for plumbing in plumbings
-    ]
-
-
 def convert_organization_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -11960,8 +11792,6 @@ def convert_resource_to_plumbing(porcelain):
     plumbing = Resource()
     if porcelain is None:
         return plumbing
-    if isinstance(porcelain, models.Aerospike):
-        plumbing.aerospike.CopyFrom(convert_aerospike_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKS):
         plumbing.aks.CopyFrom(convert_aks_to_plumbing(porcelain))
     if isinstance(porcelain, models.AKSBasicAuth):
@@ -12076,9 +11906,6 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.DocumentDBReplicaSet):
         plumbing.document_db_replica_set.CopyFrom(
             convert_document_db_replica_set_to_plumbing(porcelain))
-    if isinstance(porcelain, models.DocumentDBReplicaSetIAM):
-        plumbing.document_db_replica_set_iam.CopyFrom(
-            convert_document_db_replica_set_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Druid):
         plumbing.druid.CopyFrom(convert_druid_to_plumbing(porcelain))
     if isinstance(porcelain, models.DynamoDB):
@@ -12165,8 +11992,6 @@ def convert_resource_to_plumbing(porcelain):
             convert_neptune_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.Oracle):
         plumbing.oracle.CopyFrom(convert_oracle_to_plumbing(porcelain))
-    if isinstance(porcelain, models.OracleNNE):
-        plumbing.oracle_nne.CopyFrom(convert_oracle_nne_to_plumbing(porcelain))
     if isinstance(porcelain, models.Postgres):
         plumbing.postgres.CopyFrom(convert_postgres_to_plumbing(porcelain))
     if isinstance(porcelain, models.Presto):
@@ -12237,8 +12062,6 @@ def convert_resource_to_plumbing(porcelain):
 def convert_resource_to_porcelain(plumbing):
     if plumbing is None:
         return None
-    if plumbing.HasField('aerospike'):
-        return convert_aerospike_to_porcelain(plumbing.aerospike)
     if plumbing.HasField('aks'):
         return convert_aks_to_porcelain(plumbing.aks)
     if plumbing.HasField('aks_basic_auth'):
@@ -12339,9 +12162,6 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('document_db_replica_set'):
         return convert_document_db_replica_set_to_porcelain(
             plumbing.document_db_replica_set)
-    if plumbing.HasField('document_db_replica_set_iam'):
-        return convert_document_db_replica_set_iam_to_porcelain(
-            plumbing.document_db_replica_set_iam)
     if plumbing.HasField('druid'):
         return convert_druid_to_porcelain(plumbing.druid)
     if plumbing.HasField('dynamo_db'):
@@ -12421,8 +12241,6 @@ def convert_resource_to_porcelain(plumbing):
         return convert_neptune_iam_to_porcelain(plumbing.neptune_iam)
     if plumbing.HasField('oracle'):
         return convert_oracle_to_porcelain(plumbing.oracle)
-    if plumbing.HasField('oracle_nne'):
-        return convert_oracle_nne_to_porcelain(plumbing.oracle_nne)
     if plumbing.HasField('postgres'):
         return convert_postgres_to_porcelain(plumbing.postgres)
     if plumbing.HasField('presto'):
@@ -14892,6 +14710,7 @@ def convert_trino_to_porcelain(plumbing):
         return None
     porcelain = models.Trino()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -14913,6 +14732,7 @@ def convert_trino_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
@@ -14969,17 +14789,14 @@ def convert_user_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.User()
-    porcelain.scim = (plumbing.SCIM)
     porcelain.email = (plumbing.email)
     porcelain.external_id = (plumbing.external_id)
     porcelain.first_name = (plumbing.first_name)
     porcelain.id = (plumbing.id)
     porcelain.last_name = (plumbing.last_name)
     porcelain.managed_by = (plumbing.managed_by)
-    porcelain.manager_id = (plumbing.manager_id)
     porcelain.password = (plumbing.password)
     porcelain.permission_level = (plumbing.permission_levelRW)
-    porcelain.resolved_manager_id = (plumbing.resolved_manager_id)
     porcelain.suspended = (plumbing.suspendedRO)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
@@ -14989,17 +14806,14 @@ def convert_user_to_plumbing(porcelain):
     plumbing = User()
     if porcelain is None:
         return plumbing
-    plumbing.SCIM = (porcelain.scim)
     plumbing.email = (porcelain.email)
     plumbing.external_id = (porcelain.external_id)
     plumbing.first_name = (porcelain.first_name)
     plumbing.id = (porcelain.id)
     plumbing.last_name = (porcelain.last_name)
     plumbing.managed_by = (porcelain.managed_by)
-    plumbing.manager_id = (porcelain.manager_id)
     plumbing.password = (porcelain.password)
     plumbing.permission_levelRW = (porcelain.permission_level)
-    plumbing.resolved_manager_id = (porcelain.resolved_manager_id)
     plumbing.suspendedRO = (porcelain.suspended)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
