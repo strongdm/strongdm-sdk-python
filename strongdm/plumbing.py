@@ -9434,6 +9434,7 @@ def convert_organization_to_porcelain(plumbing):
     porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.device_trust_enabled = (plumbing.device_trust_enabled)
     porcelain.device_trust_provider = (plumbing.device_trust_provider)
+    porcelain.discard_replays = (plumbing.discard_replays)
     porcelain.enforce_single_session = (plumbing.enforce_single_session)
     porcelain.idle_timeout = convert_duration_to_porcelain(
         plumbing.idle_timeout)
@@ -9449,6 +9450,7 @@ def convert_organization_to_porcelain(plumbing):
     porcelain.mfa_enabled = (plumbing.mfa_enabled)
     porcelain.mfa_provider = (plumbing.mfa_provider)
     porcelain.name = (plumbing.name)
+    porcelain.public_key_pem = (plumbing.public_key_pem)
     porcelain.require_secret_store = (plumbing.require_secret_store)
     porcelain.saml_metadata_url = (plumbing.saml_metadata_url)
     porcelain.scim_provider = (plumbing.scim_provider)
@@ -9474,6 +9476,7 @@ def convert_organization_to_plumbing(porcelain):
         convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.device_trust_enabled = (porcelain.device_trust_enabled)
     plumbing.device_trust_provider = (porcelain.device_trust_provider)
+    plumbing.discard_replays = (porcelain.discard_replays)
     plumbing.enforce_single_session = (porcelain.enforce_single_session)
     plumbing.idle_timeout.CopyFrom(
         convert_duration_to_plumbing(porcelain.idle_timeout))
@@ -9489,6 +9492,7 @@ def convert_organization_to_plumbing(porcelain):
     plumbing.mfa_enabled = (porcelain.mfa_enabled)
     plumbing.mfa_provider = (porcelain.mfa_provider)
     plumbing.name = (porcelain.name)
+    plumbing.public_key_pem = (porcelain.public_key_pem)
     plumbing.require_secret_store = (porcelain.require_secret_store)
     plumbing.saml_metadata_url = (porcelain.saml_metadata_url)
     plumbing.scim_provider = (porcelain.scim_provider)
@@ -14904,6 +14908,7 @@ def convert_trino_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -14925,6 +14930,7 @@ def convert_trino_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
     plumbing.username = (porcelain.username)
     return plumbing
 

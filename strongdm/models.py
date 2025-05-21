@@ -20080,6 +20080,7 @@ class Organization:
         'created_at',
         'device_trust_enabled',
         'device_trust_provider',
+        'discard_replays',
         'enforce_single_session',
         'idle_timeout',
         'idle_timeout_enabled',
@@ -20094,6 +20095,7 @@ class Organization:
         'mfa_enabled',
         'mfa_provider',
         'name',
+        'public_key_pem',
         'require_secret_store',
         'saml_metadata_url',
         'scim_provider',
@@ -20112,6 +20114,7 @@ class Organization:
         created_at=None,
         device_trust_enabled=None,
         device_trust_provider=None,
+        discard_replays=None,
         enforce_single_session=None,
         idle_timeout=None,
         idle_timeout_enabled=None,
@@ -20126,6 +20129,7 @@ class Organization:
         mfa_enabled=None,
         mfa_provider=None,
         name=None,
+        public_key_pem=None,
         require_secret_store=None,
         saml_metadata_url=None,
         scim_provider=None,
@@ -20152,6 +20156,10 @@ class Organization:
         self.device_trust_provider = device_trust_provider if device_trust_provider is not None else ''
         '''
          The Organization's device trust provider, one of the DeviceTrustProvider constants.
+        '''
+        self.discard_replays = discard_replays if discard_replays is not None else False
+        '''
+         Indicates if the Organization should drop replay data for SSH, RDP, and K8s logs.
         '''
         self.enforce_single_session = enforce_single_session if enforce_single_session is not None else False
         '''
@@ -20209,6 +20217,10 @@ class Organization:
         '''
          The Organization's name.
         '''
+        self.public_key_pem = public_key_pem if public_key_pem is not None else ''
+        '''
+         The Organization's public key PEM for encrypting remote logs.
+        '''
         self.require_secret_store = require_secret_store if require_secret_store is not None else False
         '''
          Indicates if the Organization requires secret stores.
@@ -20256,6 +20268,7 @@ class Organization:
             'created_at: ' + repr(self.created_at) + ' ' +\
             'device_trust_enabled: ' + repr(self.device_trust_enabled) + ' ' +\
             'device_trust_provider: ' + repr(self.device_trust_provider) + ' ' +\
+            'discard_replays: ' + repr(self.discard_replays) + ' ' +\
             'enforce_single_session: ' + repr(self.enforce_single_session) + ' ' +\
             'idle_timeout: ' + repr(self.idle_timeout) + ' ' +\
             'idle_timeout_enabled: ' + repr(self.idle_timeout_enabled) + ' ' +\
@@ -20270,6 +20283,7 @@ class Organization:
             'mfa_enabled: ' + repr(self.mfa_enabled) + ' ' +\
             'mfa_provider: ' + repr(self.mfa_provider) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'public_key_pem: ' + repr(self.public_key_pem) + ' ' +\
             'require_secret_store: ' + repr(self.require_secret_store) + ' ' +\
             'saml_metadata_url: ' + repr(self.saml_metadata_url) + ' ' +\
             'scim_provider: ' + repr(self.scim_provider) + ' ' +\
@@ -20288,6 +20302,7 @@ class Organization:
             'created_at': self.created_at,
             'device_trust_enabled': self.device_trust_enabled,
             'device_trust_provider': self.device_trust_provider,
+            'discard_replays': self.discard_replays,
             'enforce_single_session': self.enforce_single_session,
             'idle_timeout': self.idle_timeout,
             'idle_timeout_enabled': self.idle_timeout_enabled,
@@ -20302,6 +20317,7 @@ class Organization:
             'mfa_enabled': self.mfa_enabled,
             'mfa_provider': self.mfa_provider,
             'name': self.name,
+            'public_key_pem': self.public_key_pem,
             'require_secret_store': self.require_secret_store,
             'saml_metadata_url': self.saml_metadata_url,
             'scim_provider': self.scim_provider,
@@ -20323,6 +20339,7 @@ class Organization:
             created_at=d.get('created_at'),
             device_trust_enabled=d.get('device_trust_enabled'),
             device_trust_provider=d.get('device_trust_provider'),
+            discard_replays=d.get('discard_replays'),
             enforce_single_session=d.get('enforce_single_session'),
             idle_timeout=d.get('idle_timeout'),
             idle_timeout_enabled=d.get('idle_timeout_enabled'),
@@ -20337,6 +20354,7 @@ class Organization:
             mfa_enabled=d.get('mfa_enabled'),
             mfa_provider=d.get('mfa_provider'),
             name=d.get('name'),
+            public_key_pem=d.get('public_key_pem'),
             require_secret_store=d.get('require_secret_store'),
             saml_metadata_url=d.get('saml_metadata_url'),
             scim_provider=d.get('scim_provider'),
@@ -29324,6 +29342,7 @@ class Trino:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_required',
         'username',
     ]
 
@@ -29342,6 +29361,7 @@ class Trino:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_required=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -29396,6 +29416,10 @@ class Trino:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
         '''
          The username to authenticate with.
@@ -29416,6 +29440,7 @@ class Trino:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -29434,6 +29459,7 @@ class Trino:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_required': self.tls_required,
             'username': self.username,
         }
 
@@ -29453,6 +29479,7 @@ class Trino:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
             username=d.get('username'),
         )
 
