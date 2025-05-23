@@ -154,6 +154,7 @@ from .workflows_history_pb2 import *
 from .workflows_history_pb2_grpc import *
 import warnings
 import functools
+import time
 
 
 def deprecated(func):
@@ -183,6 +184,7 @@ class AccessRequests:
         '''
          Lists existing access requests.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccessRequestListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -195,16 +197,18 @@ class AccessRequests:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccessRequests.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -246,6 +250,7 @@ class AccessRequestEventsHistory:
         '''
          List gets a list of AccessRequestEventHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccessRequestEventHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -258,16 +263,18 @@ class AccessRequestEventsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccessRequestEventsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -294,6 +301,7 @@ class AccessRequestsHistory:
         '''
          List gets a list of AccessRequestHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccessRequestHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -306,16 +314,18 @@ class AccessRequestsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccessRequestsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -342,6 +352,7 @@ class AccountAttachments:
         '''
          Create registers a new AccountAttachment.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountAttachmentCreateRequest()
 
         if account_attachment is not None:
@@ -351,16 +362,17 @@ class AccountAttachments:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'AccountAttachments.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -378,6 +390,7 @@ class AccountAttachments:
         '''
          Get reads one AccountAttachment by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountAttachmentGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -387,16 +400,17 @@ class AccountAttachments:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('AccountAttachments.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -414,22 +428,24 @@ class AccountAttachments:
         '''
          Delete removes a AccountAttachment by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountAttachmentDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'AccountAttachments.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -445,6 +461,7 @@ class AccountAttachments:
         '''
          List gets a list of AccountAttachments matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountAttachmentListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -457,16 +474,18 @@ class AccountAttachments:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountAttachments.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -514,6 +533,7 @@ class AccountAttachmentsHistory:
         '''
          List gets a list of AccountAttachmentHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountAttachmentHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -526,16 +546,18 @@ class AccountAttachmentsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountAttachmentsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -562,6 +584,7 @@ class AccountGrants:
         '''
          Create registers a new AccountGrant.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGrantCreateRequest()
 
         if account_grant is not None:
@@ -570,16 +593,17 @@ class AccountGrants:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('AccountGrants.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -597,6 +621,7 @@ class AccountGrants:
         '''
          Get reads one AccountGrant by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGrantGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -606,16 +631,17 @@ class AccountGrants:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('AccountGrants.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -633,22 +659,24 @@ class AccountGrants:
         '''
          Delete removes a AccountGrant by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGrantDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('AccountGrants.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -664,6 +692,7 @@ class AccountGrants:
         '''
          List gets a list of AccountGrants matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGrantListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -676,16 +705,18 @@ class AccountGrants:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountGrants.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -733,6 +764,7 @@ class AccountGrantsHistory:
         '''
          List gets a list of AccountGrantHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGrantHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -745,16 +777,18 @@ class AccountGrantsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountGrantsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -782,6 +816,7 @@ class AccountPermissions:
         '''
          List gets a list of Permission records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountPermissionListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -794,16 +829,18 @@ class AccountPermissions:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountPermissions.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -846,6 +883,7 @@ class AccountResources:
         '''
          List gets a list of AccountResource records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -858,16 +896,18 @@ class AccountResources:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountResources.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -909,6 +949,7 @@ class AccountResourcesHistory:
         '''
          List gets a list of AccountResourceHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -921,16 +962,18 @@ class AccountResourcesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountResourcesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -963,6 +1006,7 @@ class Accounts:
         '''
          Create registers a new Account.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountCreateRequest()
 
         if account is not None:
@@ -970,15 +1014,16 @@ class Accounts:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Accounts.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -999,6 +1044,7 @@ class Accounts:
         '''
          Get reads one Account by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -1008,15 +1054,16 @@ class Accounts:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Accounts.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1034,6 +1081,7 @@ class Accounts:
         '''
          Update replaces all the fields of an Account by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountUpdateRequest()
 
         if account is not None:
@@ -1041,15 +1089,16 @@ class Accounts:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Accounts.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1067,21 +1116,23 @@ class Accounts:
         '''
          Delete removes an Account by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Accounts.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1097,6 +1148,7 @@ class Accounts:
         '''
          List gets a list of Accounts matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1109,15 +1161,17 @@ class Accounts:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Accounts.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1164,6 +1218,7 @@ class AccountsHistory:
         '''
          List gets a list of AccountHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = AccountHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1176,16 +1231,18 @@ class AccountsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'AccountsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1214,6 +1271,7 @@ class Activities:
         '''
          Get reads one Activity by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ActivityGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -1223,15 +1281,16 @@ class Activities:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Activities.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1252,6 +1311,7 @@ class Activities:
          range of the output activities. If not provided, one week of back
          of activities will be returned.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ActivityListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1264,16 +1324,18 @@ class Activities:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'Activities.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1299,6 +1361,7 @@ class ApprovalWorkflowApprovers:
         '''
          Deprecated: Create creates a new approval workflow approver.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowApproverCreateRequest()
 
         if approval_workflow_approver is not None:
@@ -1308,16 +1371,17 @@ class ApprovalWorkflowApprovers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowApprovers.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1333,6 +1397,7 @@ class ApprovalWorkflowApprovers:
         '''
          Deprecated: Get reads one approval workflow approver by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowApproverGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -1342,16 +1407,17 @@ class ApprovalWorkflowApprovers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowApprovers.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1369,22 +1435,24 @@ class ApprovalWorkflowApprovers:
         '''
          Deprecated: Delete deletes an existing approval workflow approver.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowApproverDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowApprovers.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1399,6 +1467,7 @@ class ApprovalWorkflowApprovers:
         '''
          Deprecated: Lists existing approval workflow approvers.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowApproverListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1411,16 +1480,18 @@ class ApprovalWorkflowApprovers:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflowApprovers.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1470,6 +1541,7 @@ class ApprovalWorkflowApproversHistory:
         '''
          List gets a list of ApprovalWorkflowApproverHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowApproverHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1482,16 +1554,18 @@ class ApprovalWorkflowApproversHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflowApproversHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1518,6 +1592,7 @@ class ApprovalWorkflowSteps:
         '''
          Deprecated: Create creates a new approval workflow step.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowStepCreateRequest()
 
         if approval_workflow_step is not None:
@@ -1527,16 +1602,17 @@ class ApprovalWorkflowSteps:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowSteps.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1552,6 +1628,7 @@ class ApprovalWorkflowSteps:
         '''
          Deprecated: Get reads one approval workflow step by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowStepGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -1561,16 +1638,17 @@ class ApprovalWorkflowSteps:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowSteps.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1588,22 +1666,24 @@ class ApprovalWorkflowSteps:
         '''
          Deprecated: Delete deletes an existing approval workflow step.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowStepDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflowSteps.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1618,6 +1698,7 @@ class ApprovalWorkflowSteps:
         '''
          Deprecated: Lists existing approval workflow steps.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowStepListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1630,16 +1711,18 @@ class ApprovalWorkflowSteps:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflowSteps.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1689,6 +1772,7 @@ class ApprovalWorkflowStepsHistory:
         '''
          List gets a list of ApprovalWorkflowStepHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowStepHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1701,16 +1785,18 @@ class ApprovalWorkflowStepsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflowStepsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1738,6 +1824,7 @@ class ApprovalWorkflows:
         '''
          Create creates a new approval workflow and requires a name and approval mode for the approval workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowCreateRequest()
 
         if approval_workflow is not None:
@@ -1747,16 +1834,17 @@ class ApprovalWorkflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflows.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1772,6 +1860,7 @@ class ApprovalWorkflows:
         '''
          Get reads one approval workflow by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -1781,16 +1870,17 @@ class ApprovalWorkflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('ApprovalWorkflows.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1808,22 +1898,24 @@ class ApprovalWorkflows:
         '''
          Delete deletes an existing approval workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflows.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1838,6 +1930,7 @@ class ApprovalWorkflows:
         '''
          Update updates an existing approval workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowUpdateRequest()
 
         if approval_workflow is not None:
@@ -1847,16 +1940,17 @@ class ApprovalWorkflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata(
                         'ApprovalWorkflows.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -1872,6 +1966,7 @@ class ApprovalWorkflows:
         '''
          Lists existing approval workflows.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1884,16 +1979,18 @@ class ApprovalWorkflows:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflows.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1941,6 +2038,7 @@ class ApprovalWorkflowsHistory:
         '''
          List gets a list of ApprovalWorkflowHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ApprovalWorkflowHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -1953,16 +2051,18 @@ class ApprovalWorkflowsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ApprovalWorkflowsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -1988,21 +2088,23 @@ class ControlPanel:
         '''
          GetSSHCAPublicKey retrieves the SSH CA public key.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ControlPanelGetSSHCAPublicKeyRequest()
 
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.GetSSHCAPublicKey(
                     req,
                     metadata=self.parent.get_metadata(
                         'ControlPanel.GetSSHCAPublicKey', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2019,21 +2121,23 @@ class ControlPanel:
         '''
          GetRDPCAPublicKey retrieves the RDP CA public key.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ControlPanelGetRDPCAPublicKeyRequest()
 
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.GetRDPCAPublicKey(
                     req,
                     metadata=self.parent.get_metadata(
                         'ControlPanel.GetRDPCAPublicKey', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2050,22 +2154,24 @@ class ControlPanel:
         '''
          VerifyJWT reports whether the given JWT token (x-sdm-token) is valid.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ControlPanelVerifyJWTRequest()
 
         req.token = (token)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.VerifyJWT(
                     req,
                     metadata=self.parent.get_metadata('ControlPanel.VerifyJWT',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2093,6 +2199,7 @@ class HealthChecks:
         '''
          List gets a list of Healthchecks matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = HealthcheckListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2105,16 +2212,18 @@ class HealthChecks:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'HealthChecks.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2142,6 +2251,7 @@ class IdentityAliases:
         '''
          Create registers a new IdentityAlias.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasCreateRequest()
 
         if identity_alias is not None:
@@ -2150,16 +2260,17 @@ class IdentityAliases:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('IdentityAliases.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2177,6 +2288,7 @@ class IdentityAliases:
         '''
          Get reads one IdentityAlias by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -2186,16 +2298,17 @@ class IdentityAliases:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('IdentityAliases.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2213,6 +2326,7 @@ class IdentityAliases:
         '''
          Update replaces all the fields of a IdentityAlias by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasUpdateRequest()
 
         if identity_alias is not None:
@@ -2221,16 +2335,17 @@ class IdentityAliases:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('IdentityAliases.Update',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2248,22 +2363,24 @@ class IdentityAliases:
         '''
          Delete removes a IdentityAlias by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('IdentityAliases.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2279,6 +2396,7 @@ class IdentityAliases:
         '''
          List gets a list of IdentityAliases matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2291,16 +2409,18 @@ class IdentityAliases:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'IdentityAliases.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2348,6 +2468,7 @@ class IdentityAliasesHistory:
         '''
          List gets a list of IdentityAliasHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentityAliasHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2360,16 +2481,18 @@ class IdentityAliasesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'IdentityAliasesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2397,6 +2520,7 @@ class IdentitySets:
         '''
          Create registers a new IdentitySet.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetCreateRequest()
 
         if identity_set is not None:
@@ -2405,16 +2529,17 @@ class IdentitySets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('IdentitySets.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2432,6 +2557,7 @@ class IdentitySets:
         '''
          Get reads one IdentitySet by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -2441,15 +2567,16 @@ class IdentitySets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('IdentitySets.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2467,6 +2594,7 @@ class IdentitySets:
         '''
          Update replaces all the fields of a IdentitySet by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetUpdateRequest()
 
         if identity_set is not None:
@@ -2475,16 +2603,17 @@ class IdentitySets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('IdentitySets.Update',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2502,22 +2631,24 @@ class IdentitySets:
         '''
          Delete removes a IdentitySet by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('IdentitySets.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2533,6 +2664,7 @@ class IdentitySets:
         '''
          List gets a list of IdentitySets matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2545,16 +2677,18 @@ class IdentitySets:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'IdentitySets.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2602,6 +2736,7 @@ class IdentitySetsHistory:
         '''
          List gets a list of IdentitySetHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = IdentitySetHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2614,16 +2749,18 @@ class IdentitySetsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'IdentitySetsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2652,6 +2789,7 @@ class ManagedSecrets:
         '''
          List returns Managed Secrets from a Secret Engine.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2664,16 +2802,18 @@ class ManagedSecrets:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ManagedSecrets.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2690,6 +2830,7 @@ class ManagedSecrets:
         '''
          List returns Managed Secrets for an Actor from a Secret Engine.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2702,16 +2843,18 @@ class ManagedSecrets:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.ListByActor(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ManagedSecrets.ListByActor', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -2728,6 +2871,7 @@ class ManagedSecrets:
         '''
          Create creates a Managed Secret
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretCreateRequest()
 
         if managed_secret is not None:
@@ -2736,16 +2880,17 @@ class ManagedSecrets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('ManagedSecrets.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2763,6 +2908,7 @@ class ManagedSecrets:
         '''
          Update updates a Managed Secret
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretUpdateRequest()
 
         if managed_secret is not None:
@@ -2771,16 +2917,17 @@ class ManagedSecrets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('ManagedSecrets.Update',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2798,22 +2945,24 @@ class ManagedSecrets:
         '''
          Rotate forces rotation of Managed Secret
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretRotateRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Rotate(
                     req,
                     metadata=self.parent.get_metadata('ManagedSecrets.Rotate',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2829,22 +2978,24 @@ class ManagedSecrets:
         '''
          Delete deletes a Managed Secret
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('ManagedSecrets.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2858,6 +3009,7 @@ class ManagedSecrets:
         '''
          Get gets details of a Managed Secret without sensitive data
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -2867,16 +3019,17 @@ class ManagedSecrets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('ManagedSecrets.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2894,6 +3047,7 @@ class ManagedSecrets:
         '''
          Retrieve returns Managed Secret with sensitive data
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretRetrieveRequest()
 
         req.id = (id)
@@ -2901,16 +3055,17 @@ class ManagedSecrets:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Retrieve(
                     req,
                     metadata=self.parent.get_metadata(
                         'ManagedSecrets.Retrieve', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2929,22 +3084,24 @@ class ManagedSecrets:
          Validate returns the result of testing the stored credential against the
          secret engine.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretValidateRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Validate(
                     req,
                     metadata=self.parent.get_metadata(
                         'ManagedSecrets.Validate', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -2963,6 +3120,7 @@ class ManagedSecrets:
          Logs returns the audit records for the managed secret. This may be replaced
          in the future.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ManagedSecretLogsRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -2975,16 +3133,18 @@ class ManagedSecrets:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.Logs(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ManagedSecrets.Logs', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3016,6 +3176,7 @@ class Nodes:
         '''
          Create registers a new Node.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeCreateRequest()
 
         if node is not None:
@@ -3023,15 +3184,16 @@ class Nodes:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Nodes.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3049,6 +3211,7 @@ class Nodes:
         '''
          Get reads one Node by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -3058,15 +3221,16 @@ class Nodes:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Nodes.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3083,6 +3247,7 @@ class Nodes:
         '''
          Update replaces all the fields of a Node by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeUpdateRequest()
 
         if node is not None:
@@ -3090,15 +3255,16 @@ class Nodes:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Nodes.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3115,21 +3281,23 @@ class Nodes:
         '''
          Delete removes a Node by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Nodes.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3145,6 +3313,7 @@ class Nodes:
         '''
          List gets a list of Nodes matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3157,15 +3326,17 @@ class Nodes:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Nodes.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3212,6 +3383,7 @@ class NodesHistory:
         '''
          List gets a list of NodeHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = NodeHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3224,16 +3396,18 @@ class NodesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'NodesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3260,6 +3434,7 @@ class OrganizationHistory:
         '''
          List gets a list of OrganizationHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = OrganizationHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3272,16 +3447,18 @@ class OrganizationHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'OrganizationHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3308,6 +3485,7 @@ class PeeringGroupNodes:
         '''
          Create attaches a Node to a PeeringGroup
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupNodeCreateRequest()
 
         if peering_group_node is not None:
@@ -3317,16 +3495,17 @@ class PeeringGroupNodes:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupNodes.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3344,22 +3523,24 @@ class PeeringGroupNodes:
         '''
          Delete detaches a Node to a PeeringGroup.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupNodeDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupNodes.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3375,6 +3556,7 @@ class PeeringGroupNodes:
         '''
          Get reads the information of one peering group to node attachment.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupNodeGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -3384,16 +3566,17 @@ class PeeringGroupNodes:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('PeeringGroupNodes.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3411,6 +3594,7 @@ class PeeringGroupNodes:
         '''
          List gets a list of peering group node attachments.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupNodeListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3423,16 +3607,18 @@ class PeeringGroupNodes:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'PeeringGroupNodes.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3459,6 +3645,7 @@ class PeeringGroupPeers:
         '''
          Create links two peering groups.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupPeerCreateRequest()
 
         if peering_group_peer is not None:
@@ -3468,16 +3655,17 @@ class PeeringGroupPeers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupPeers.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3495,22 +3683,24 @@ class PeeringGroupPeers:
         '''
          Delete unlinks two peering groups.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupPeerDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupPeers.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3526,6 +3716,7 @@ class PeeringGroupPeers:
         '''
          Get reads the information of one peering group link.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupPeerGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -3535,16 +3726,17 @@ class PeeringGroupPeers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('PeeringGroupPeers.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3562,6 +3754,7 @@ class PeeringGroupPeers:
         '''
          List gets a list of peering group links.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupPeerListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3574,16 +3767,18 @@ class PeeringGroupPeers:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'PeeringGroupPeers.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3610,6 +3805,7 @@ class PeeringGroupResources:
         '''
          Create attaches a Resource to a PeeringGroup
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupResourceCreateRequest()
 
         if peering_group_resource is not None:
@@ -3619,16 +3815,17 @@ class PeeringGroupResources:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupResources.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3646,22 +3843,24 @@ class PeeringGroupResources:
         '''
          Delete detaches a Resource to a PeeringGroup
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupResourceDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupResources.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3677,6 +3876,7 @@ class PeeringGroupResources:
         '''
          Get reads the information of one peering group to resource attachment.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupResourceGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -3686,16 +3886,17 @@ class PeeringGroupResources:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata(
                         'PeeringGroupResources.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3713,6 +3914,7 @@ class PeeringGroupResources:
         '''
          List gets a list of peering group resource attachments.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3725,16 +3927,18 @@ class PeeringGroupResources:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'PeeringGroupResources.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3761,6 +3965,7 @@ class PeeringGroups:
         '''
          Create registers a new PeeringGroup.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupCreateRequest()
 
         if peering_group is not None:
@@ -3769,16 +3974,17 @@ class PeeringGroups:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('PeeringGroups.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3796,22 +4002,24 @@ class PeeringGroups:
         '''
          Delete removes a PeeringGroup by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('PeeringGroups.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3827,6 +4035,7 @@ class PeeringGroups:
         '''
          Get reads one PeeringGroup by ID. It will load all its dependencies.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -3836,16 +4045,17 @@ class PeeringGroups:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('PeeringGroups.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3863,6 +4073,7 @@ class PeeringGroups:
         '''
          List gets a list of Peering Groups.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PeeringGroupListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -3875,16 +4086,18 @@ class PeeringGroups:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'PeeringGroups.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -3912,6 +4125,7 @@ class Policies:
         '''
          Create creates a new Policy.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PolicyCreateRequest()
 
         if policy is not None:
@@ -3919,15 +4133,16 @@ class Policies:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Policies.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3943,21 +4158,23 @@ class Policies:
         '''
          Delete removes a Policy by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PolicyDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Policies.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -3971,6 +4188,7 @@ class Policies:
         '''
          Update replaces all the fields of a Policy by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PolicyUpdateRequest()
 
         if policy is not None:
@@ -3978,15 +4196,16 @@ class Policies:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Policies.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4002,6 +4221,7 @@ class Policies:
         '''
          Get reads one Policy by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PolicyGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -4011,15 +4231,16 @@ class Policies:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Policies.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4037,6 +4258,7 @@ class Policies:
         '''
          List gets a list of Policy matching a given set of criteria
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PolicyListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4049,15 +4271,17 @@ class Policies:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Policies.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4104,6 +4328,7 @@ class PoliciesHistory:
         '''
          List gets a list of PolicyHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = PoliciesHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4116,16 +4341,18 @@ class PoliciesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'PoliciesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4154,6 +4381,7 @@ class ProxyClusterKeys:
         '''
          Create registers a new ProxyClusterKey.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ProxyClusterKeyCreateRequest()
 
         if proxy_cluster_key is not None:
@@ -4163,16 +4391,17 @@ class ProxyClusterKeys:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'ProxyClusterKeys.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4191,6 +4420,7 @@ class ProxyClusterKeys:
         '''
          Get reads one ProxyClusterKey by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ProxyClusterKeyGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -4200,16 +4430,17 @@ class ProxyClusterKeys:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('ProxyClusterKeys.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4227,22 +4458,24 @@ class ProxyClusterKeys:
         '''
          Delete removes a ProxyClusterKey by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ProxyClusterKeyDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'ProxyClusterKeys.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4258,6 +4491,7 @@ class ProxyClusterKeys:
         '''
          List gets a list of ProxyClusterKeys matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ProxyClusterKeyListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4270,16 +4504,18 @@ class ProxyClusterKeys:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ProxyClusterKeys.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4329,6 +4565,7 @@ class Queries:
         '''
          List gets a list of Queries matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = QueryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4341,15 +4578,17 @@ class Queries:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Queries.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4375,6 +4614,7 @@ class RemoteIdentities:
         '''
          Create registers a new RemoteIdentity.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityCreateRequest()
 
         if remote_identity is not None:
@@ -4383,16 +4623,17 @@ class RemoteIdentities:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'RemoteIdentities.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4410,6 +4651,7 @@ class RemoteIdentities:
         '''
          Get reads one RemoteIdentity by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -4419,16 +4661,17 @@ class RemoteIdentities:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('RemoteIdentities.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4446,6 +4689,7 @@ class RemoteIdentities:
         '''
          Update replaces all the fields of a RemoteIdentity by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityUpdateRequest()
 
         if remote_identity is not None:
@@ -4454,16 +4698,17 @@ class RemoteIdentities:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata(
                         'RemoteIdentities.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4481,22 +4726,24 @@ class RemoteIdentities:
         '''
          Delete removes a RemoteIdentity by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'RemoteIdentities.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4512,6 +4759,7 @@ class RemoteIdentities:
         '''
          List gets a list of RemoteIdentities matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4524,16 +4772,18 @@ class RemoteIdentities:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RemoteIdentities.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4581,6 +4831,7 @@ class RemoteIdentitiesHistory:
         '''
          List gets a list of RemoteIdentityHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4593,16 +4844,18 @@ class RemoteIdentitiesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RemoteIdentitiesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4630,6 +4883,7 @@ class RemoteIdentityGroups:
         '''
          Get reads one RemoteIdentityGroup by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityGroupGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -4639,16 +4893,17 @@ class RemoteIdentityGroups:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata(
                         'RemoteIdentityGroups.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -4666,6 +4921,7 @@ class RemoteIdentityGroups:
         '''
          List gets a list of RemoteIdentityGroups matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityGroupListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4678,16 +4934,18 @@ class RemoteIdentityGroups:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RemoteIdentityGroups.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4735,6 +4993,7 @@ class RemoteIdentityGroupsHistory:
         '''
          List gets a list of RemoteIdentityGroupHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RemoteIdentityGroupHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4747,16 +5006,18 @@ class RemoteIdentityGroupsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RemoteIdentityGroupsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4784,6 +5045,7 @@ class Replays:
         '''
          List gets a list of ReplayChunks for the Query ID specified by the filter criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ReplayListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4796,15 +5058,17 @@ class Replays:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Replays.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4938,6 +5202,7 @@ class Resources:
         '''
          EnumerateTags gets a list of the filter matching tags.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = EnumerateTagsRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -4950,16 +5215,18 @@ class Resources:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.EnumerateTags(
                         req,
                         metadata=svc.parent.get_metadata(
                             'Resources.EnumerateTags', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -4975,6 +5242,7 @@ class Resources:
         '''
          Create registers a new Resource.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceCreateRequest()
 
         if resource is not None:
@@ -4983,15 +5251,16 @@ class Resources:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Resources.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5009,6 +5278,7 @@ class Resources:
         '''
          Get reads one Resource by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -5018,15 +5288,16 @@ class Resources:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Resources.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5044,6 +5315,7 @@ class Resources:
         '''
          Update replaces all the fields of a Resource by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceUpdateRequest()
 
         if resource is not None:
@@ -5052,15 +5324,16 @@ class Resources:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Resources.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5078,21 +5351,23 @@ class Resources:
         '''
          Delete removes a Resource by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Resources.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5108,6 +5383,7 @@ class Resources:
         '''
          List gets a list of Resources matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5120,16 +5396,18 @@ class Resources:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'Resources.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5147,22 +5425,24 @@ class Resources:
          large network of Nodes. The call will return immediately, and the updated health of the
          Resource can be retrieved via Get or List.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceHealthcheckRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Healthcheck(
                     req,
                     metadata=self.parent.get_metadata('Resources.Healthcheck',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5209,6 +5489,7 @@ class ResourcesHistory:
         '''
          List gets a list of ResourceHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = ResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5221,16 +5502,18 @@ class ResourcesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'ResourcesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5258,6 +5541,7 @@ class RoleResources:
         '''
          List gets a list of RoleResource records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleResourceListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5270,16 +5554,18 @@ class RoleResources:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RoleResources.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5321,6 +5607,7 @@ class RoleResourcesHistory:
         '''
          List gets a list of RoleResourceHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleResourceHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5333,16 +5620,18 @@ class RoleResourcesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RoleResourcesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5371,6 +5660,7 @@ class Roles:
         '''
          Create registers a new Role.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleCreateRequest()
 
         if role is not None:
@@ -5378,15 +5668,16 @@ class Roles:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Roles.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5403,6 +5694,7 @@ class Roles:
         '''
          Get reads one Role by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -5412,15 +5704,16 @@ class Roles:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Roles.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5437,6 +5730,7 @@ class Roles:
         '''
          Update replaces all the fields of a Role by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleUpdateRequest()
 
         if role is not None:
@@ -5444,15 +5738,16 @@ class Roles:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Roles.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5469,21 +5764,23 @@ class Roles:
         '''
          Delete removes a Role by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Roles.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5499,6 +5796,7 @@ class Roles:
         '''
          List gets a list of Roles matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5511,15 +5809,17 @@ class Roles:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata('Roles.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5566,6 +5866,7 @@ class RolesHistory:
         '''
          List gets a list of RoleHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = RoleHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5578,16 +5879,18 @@ class RolesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'RolesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5634,6 +5937,7 @@ class SecretStores:
         self.stub = SecretStoresStub(channel)
 
     def create(self, secret_store, timeout=None):
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreCreateRequest()
 
         if secret_store is not None:
@@ -5642,16 +5946,17 @@ class SecretStores:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('SecretStores.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5669,6 +5974,7 @@ class SecretStores:
         '''
          Get reads one SecretStore by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -5678,15 +5984,16 @@ class SecretStores:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('SecretStores.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5704,6 +6011,7 @@ class SecretStores:
         '''
          Update replaces all the fields of a SecretStore by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreUpdateRequest()
 
         if secret_store is not None:
@@ -5712,16 +6020,17 @@ class SecretStores:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('SecretStores.Update',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5739,22 +6048,24 @@ class SecretStores:
         '''
          Delete removes a SecretStore by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('SecretStores.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5770,6 +6081,7 @@ class SecretStores:
         '''
          List gets a list of SecretStores matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5782,16 +6094,18 @@ class SecretStores:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'SecretStores.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5841,6 +6155,7 @@ class SecretEngines:
         '''
          List returns a list of Secret Engines
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -5853,16 +6168,18 @@ class SecretEngines:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'SecretEngines.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -5879,6 +6196,7 @@ class SecretEngines:
         '''
          Get returns a secret engine details
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -5888,16 +6206,17 @@ class SecretEngines:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('SecretEngines.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5915,6 +6234,7 @@ class SecretEngines:
         '''
          Create creates a secret engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineCreateRequest()
 
         if secret_engine is not None:
@@ -5923,16 +6243,17 @@ class SecretEngines:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('SecretEngines.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5950,6 +6271,7 @@ class SecretEngines:
         '''
          Update updates a secret engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineUpdateRequest()
 
         if secret_engine is not None:
@@ -5958,16 +6280,17 @@ class SecretEngines:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('SecretEngines.Update',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -5985,22 +6308,24 @@ class SecretEngines:
         '''
          Delete deletes a secret engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('SecretEngines.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6015,6 +6340,7 @@ class SecretEngines:
          ListSecretStores returns a list of Secret Stores that can be used as a backing store
          for Secret Engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6027,16 +6353,18 @@ class SecretEngines:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.ListSecretStores(
                         req,
                         metadata=svc.parent.get_metadata(
                             'SecretEngines.ListSecretStores', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6053,22 +6381,24 @@ class SecretEngines:
         '''
          GenerateKeys generates a private key, stores it in a secret store and stores a public key in a secret engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = GenerateKeysRequest()
 
         req.secret_engine_id = (secret_engine_id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.GenerateKeys(
                     req,
                     metadata=self.parent.get_metadata(
                         'SecretEngines.GenerateKeys', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6082,22 +6412,24 @@ class SecretEngines:
         '''
          Healthcheck triggers a healthcheck for all nodes serving a secret engine
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = HealthcheckRequest()
 
         req.secret_engine_id = (secret_engine_id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Healthcheck(
                     req,
                     metadata=self.parent.get_metadata(
                         'SecretEngines.Healthcheck', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6113,6 +6445,7 @@ class SecretEngines:
         '''
          Rotate rotates secret engine's credentials
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretEngineRotateRequest()
 
         req.id = (id)
@@ -6123,16 +6456,17 @@ class SecretEngines:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Rotate(
                     req,
                     metadata=self.parent.get_metadata('SecretEngines.Rotate',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6156,6 +6490,7 @@ class SecretStoreHealths:
         '''
          List reports the health status of node to secret store pairs.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreHealthListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6168,16 +6503,18 @@ class SecretStoreHealths:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'SecretStoreHealths.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6196,22 +6533,24 @@ class SecretStoreHealths:
          to propagate across a large network of Nodes. The call will return immediately, and the
          updated health of the Secret Store can be retrieved via List.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreHealthcheckRequest()
 
         req.secret_store_id = (secret_store_id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Healthcheck(
                     req,
                     metadata=self.parent.get_metadata(
                         'SecretStoreHealths.Healthcheck', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6235,6 +6574,7 @@ class SecretStoresHistory:
         '''
          List gets a list of SecretStoreHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = SecretStoreHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6247,16 +6587,18 @@ class SecretStoresHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'SecretStoresHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6283,6 +6625,7 @@ class WorkflowApprovers:
         '''
          Create creates a new workflow approver
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowApproversCreateRequest()
 
         if workflow_approver is not None:
@@ -6292,16 +6635,17 @@ class WorkflowApprovers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata(
                         'WorkflowApprovers.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6317,6 +6661,7 @@ class WorkflowApprovers:
         '''
          Get reads one workflow approver by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowApproverGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -6326,16 +6671,17 @@ class WorkflowApprovers:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('WorkflowApprovers.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6353,22 +6699,24 @@ class WorkflowApprovers:
         '''
          Delete deletes a workflow approver
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowApproversDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata(
                         'WorkflowApprovers.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6382,6 +6730,7 @@ class WorkflowApprovers:
         '''
          Lists existing workflow approvers.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowApproversListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6394,16 +6743,18 @@ class WorkflowApprovers:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowApprovers.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6451,6 +6802,7 @@ class WorkflowApproversHistory:
         '''
          List gets a list of WorkflowApproversHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowApproversHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6463,16 +6815,18 @@ class WorkflowApproversHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowApproversHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6500,6 +6854,7 @@ class WorkflowAssignments:
         '''
          Lists existing workflow assignments.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowAssignmentsListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6512,16 +6867,18 @@ class WorkflowAssignments:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowAssignments.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6563,6 +6920,7 @@ class WorkflowAssignmentsHistory:
         '''
          List gets a list of WorkflowAssignmentsHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowAssignmentsHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6575,16 +6933,18 @@ class WorkflowAssignmentsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowAssignmentsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6612,6 +6972,7 @@ class WorkflowRoles:
         '''
          Create creates a new workflow role
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowRolesCreateRequest()
 
         if workflow_role is not None:
@@ -6620,16 +6981,17 @@ class WorkflowRoles:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('WorkflowRoles.Create',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6645,6 +7007,7 @@ class WorkflowRoles:
         '''
          Get reads one workflow role by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowRoleGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -6654,16 +7017,17 @@ class WorkflowRoles:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('WorkflowRoles.Get',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6681,22 +7045,24 @@ class WorkflowRoles:
         '''
          Delete deletes a workflow role
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowRolesDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('WorkflowRoles.Delete',
                                                       req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6710,6 +7076,7 @@ class WorkflowRoles:
         '''
          Lists existing workflow roles.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowRolesListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6722,16 +7089,18 @@ class WorkflowRoles:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowRoles.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6779,6 +7148,7 @@ class WorkflowRolesHistory:
         '''
          List gets a list of WorkflowRolesHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowRolesHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6791,16 +7161,18 @@ class WorkflowRolesHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowRolesHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -6829,6 +7201,7 @@ class Workflows:
         '''
          Create creates a new workflow and requires a name for the workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowCreateRequest()
 
         if workflow is not None:
@@ -6837,15 +7210,16 @@ class Workflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Create(
                     req,
                     metadata=self.parent.get_metadata('Workflows.Create', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6861,6 +7235,7 @@ class Workflows:
         '''
          Get reads one workflow by ID.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowGetRequest()
         if self.parent.snapshot_datetime is not None:
             req.meta.CopyFrom(GetRequestMetadata())
@@ -6870,15 +7245,16 @@ class Workflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Get(
                     req,
                     metadata=self.parent.get_metadata('Workflows.Get', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6896,21 +7272,23 @@ class Workflows:
         '''
          Delete deletes an existing workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowDeleteRequest()
 
         req.id = (id)
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Delete(
                     req,
                     metadata=self.parent.get_metadata('Workflows.Delete', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6925,6 +7303,7 @@ class Workflows:
         '''
          Update updates an existing workflow.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowUpdateRequest()
 
         if workflow is not None:
@@ -6933,15 +7312,16 @@ class Workflows:
         tries = 0
         plumbing_response = None
         while True:
+            t = None if deadline is None else deadline - time.time()
             try:
                 plumbing_response = self.stub.Update(
                     req,
                     metadata=self.parent.get_metadata('Workflows.Update', req),
-                    timeout=timeout)
+                    timeout=t)
             except Exception as e:
-                if self.parent.shouldRetry(tries, e):
+                if self.parent.shouldRetry(tries, e, deadline):
                     tries += 1
-                    self.parent.jitterSleep(tries)
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
                     continue
                 raise plumbing.convert_error_to_porcelain(e) from e
             break
@@ -6957,6 +7337,7 @@ class Workflows:
         '''
          Lists existing workflows.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -6969,16 +7350,18 @@ class Workflows:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'Workflows.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0
@@ -7025,6 +7408,7 @@ class WorkflowsHistory:
         '''
          List gets a list of WorkflowHistory records matching a given set of criteria.
         '''
+        deadline = None if timeout is None else time.time() + timeout
         req = WorkflowHistoryListRequest()
         req.meta.CopyFrom(ListRequestMetadata())
         if self.parent.page_limit > 0:
@@ -7037,16 +7421,18 @@ class WorkflowsHistory:
         def generator(svc, req):
             tries = 0
             while True:
+                t = None if deadline is None else deadline - time.time()
                 try:
                     plumbing_response = svc.stub.List(
                         req,
                         metadata=svc.parent.get_metadata(
                             'WorkflowsHistory.List', req),
-                        timeout=timeout)
+                        timeout=t)
                 except Exception as e:
-                    if self.parent.shouldRetry(tries, e):
+                    if self.parent.shouldRetry(tries, e, deadline):
                         tries += 1
-                        self.parent.jitterSleep(tries)
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
                         continue
                     raise plumbing.convert_error_to_porcelain(e) from e
                 tries = 0

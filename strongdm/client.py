@@ -29,11 +29,12 @@ from . import svc
 
 # These defaults are taken from AWS. Customization of these values
 # is a future step in the API.
-DEFAULT_MAX_RETRIES = 3
-DEFAULT_BASE_RETRY_DELAY = 0.0030  # 30 ms
-DEFAULT_MAX_RETRY_DELAY = 300  # 300 seconds
+DEFAULT_BASE_RETRY_DELAY = 1  # 1 second
+DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
+DEFAULT_RETRY_FACTOR = 1.6
+DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/14.17.0'
+USER_AGENT = 'strongdm-sdk-python/14.20.0'
 
 
 class Client:
@@ -44,7 +45,7 @@ class Client:
                  host='app.strongdm.com:443',
                  insecure=False,
                  retry_rate_limit_errors=True,
-                 page_limit=50):
+                 page_limit=0):
         '''
         Create a new Client.
 
@@ -53,10 +54,11 @@ class Client:
         '''
         self.api_access_key = api_access_key.strip()
         self.api_secret = base64.b64decode(api_secret.strip())
-        self.max_retries = DEFAULT_MAX_RETRIES
         self.base_retry_delay = DEFAULT_BASE_RETRY_DELAY
         self.max_retry_delay = DEFAULT_MAX_RETRY_DELAY
-        self.expose_rate_limit_errors = (not retry_rate_limit_errors)
+        self.retry_factor = DEFAULT_RETRY_FACTOR
+        self.retry_jitter = DEFAULT_RETRY_JITTER
+        self.retry_rate_limit_errors = retry_rate_limit_errors
         self.snapshot_datetime = None
         self.page_limit = page_limit
 
@@ -509,33 +511,48 @@ class Client:
 
         return base64.b64encode(hmac_digest(signing_key, hash.digest()))
 
-    def jitterSleep(self, iter):
-        dur_max = self.base_retry_delay * 2**iter
-        if (dur_max > self.max_retry_delay):
-            dur_max = self.max_retry_delay
-        # get a value between 0 and max
-        dur = random.random() * dur_max
-        time.sleep(dur)
+    def exponentialBackoff(self, retries, deadline=None):
+        def applyDeadline(delay, deadline):
+            if deadline is None:
+                return delay
+            remaining = deadline - time.time()
+            if remaining < 0:
+                return 0
+            return min(delay, remaining)
 
-    def shouldRetry(self, iter, err):
-        if (iter >= self.max_retries - 1):
+        if retries == 0:
+            return applyDeadline(self.base_retry_delay, deadline)
+
+        backoff, max_delay = self.base_retry_delay, self.max_retry_delay
+        while backoff < max_delay and retries > 0:
+            backoff *= self.retry_factor
+            retries -= 1
+
+        if backoff > max_delay:
+            backoff = max_delay
+
+        # Randomize backoff delays so that if a cluster of requests start at
+        # the same time, they won't operate in lockstep.
+        backoff *= 1 + self.retry_jitter * (random.random() * 2 - 1)
+        if backoff < 0:
+            return 0
+
+        return applyDeadline(backoff, deadline)
+
+    def shouldRetry(self, retries, err, deadline=None):
+        # Check if we've passed the deadline
+        if deadline is not None and time.time() >= deadline:
             return False
+
         if not isinstance(err, grpc.RpcError):
+            return False
+
+        if self.retry_rate_limit_errors and err.code(
+        ) == grpc.StatusCode.RESOURCE_EXHAUSTED:
             return True
-        porcelain_err = plumbing.convert_error_to_porcelain(err)
-        if (not self.expose_rate_limit_errors) and isinstance(
-                porcelain_err, errors.RateLimitError):
-            wait_until = porcelain_err.rate_limit.reset_at
-            now = datetime.datetime.now(datetime.timezone.utc)
-            sleep_for = (wait_until - now).total_seconds()
-            # If timezones or clock drift causes this calculation to fail,
-            # wait at most one minute.
-            if sleep_for < 0 or sleep_for > 60:
-                sleep_for = 60
-            time.sleep(sleep_for)
-            return True
-        return err.code() == grpc.StatusCode.INTERNAL or err.code(
-        ) == grpc.StatusCode.UNAVAILABLE
+
+        return retries <= 3 and (err.code() == grpc.StatusCode.INTERNAL
+                                 or err.code() == grpc.StatusCode.UNAVAILABLE)
 
     def snapshot_at(self, snapshot_datetime):
         '''

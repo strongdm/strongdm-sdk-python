@@ -15455,6 +15455,8 @@ class KubernetesPodIdentity:
         'allow_resource_role_bypass',
         'bind_interface',
         'certificate_authority',
+        'discovery_enabled',
+        'discovery_username',
         'egress_filter',
         'healthcheck_namespace',
         'healthy',
@@ -15474,6 +15476,8 @@ class KubernetesPodIdentity:
         allow_resource_role_bypass=None,
         bind_interface=None,
         certificate_authority=None,
+        discovery_enabled=None,
+        discovery_username=None,
         egress_filter=None,
         healthcheck_namespace=None,
         healthy=None,
@@ -15499,6 +15503,15 @@ class KubernetesPodIdentity:
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
          The CA to authenticate TLS connections with.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of a cluster to be run from a node.
+        '''
+        self.discovery_username = discovery_username if discovery_username is not None else ''
+        '''
+         If a cluster is configured for user impersonation, this is the user to impersonate when
+         running discovery.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -15554,6 +15567,8 @@ class KubernetesPodIdentity:
             'allow_resource_role_bypass: ' + repr(self.allow_resource_role_bypass) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'certificate_authority: ' + repr(self.certificate_authority) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'discovery_username: ' + repr(self.discovery_username) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_namespace: ' + repr(self.healthcheck_namespace) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -15573,6 +15588,8 @@ class KubernetesPodIdentity:
             'allow_resource_role_bypass': self.allow_resource_role_bypass,
             'bind_interface': self.bind_interface,
             'certificate_authority': self.certificate_authority,
+            'discovery_enabled': self.discovery_enabled,
+            'discovery_username': self.discovery_username,
             'egress_filter': self.egress_filter,
             'healthcheck_namespace': self.healthcheck_namespace,
             'healthy': self.healthy,
@@ -15594,6 +15611,8 @@ class KubernetesPodIdentity:
             allow_resource_role_bypass=d.get('allow_resource_role_bypass'),
             bind_interface=d.get('bind_interface'),
             certificate_authority=d.get('certificate_authority'),
+            discovery_enabled=d.get('discovery_enabled'),
+            discovery_username=d.get('discovery_username'),
             egress_filter=d.get('egress_filter'),
             healthcheck_namespace=d.get('healthcheck_namespace'),
             healthy=d.get('healthy'),
@@ -22201,6 +22220,7 @@ class Query:
         'encrypted',
         'id',
         'identity_alias_username',
+        'metadata_json',
         'query_body',
         'query_category',
         'query_hash',
@@ -22233,6 +22253,7 @@ class Query:
         encrypted=None,
         id=None,
         identity_alias_username=None,
+        metadata_json=None,
         query_body=None,
         query_category=None,
         query_hash=None,
@@ -22310,6 +22331,10 @@ class Query:
         self.identity_alias_username = identity_alias_username if identity_alias_username is not None else ''
         '''
          The username of the IdentityAlias used to access the Resource.
+        '''
+        self.metadata_json = metadata_json if metadata_json is not None else ''
+        '''
+         Driver specific metadata associated with this query.
         '''
         self.query_body = query_body if query_body is not None else ''
         '''
@@ -22391,6 +22416,7 @@ class Query:
             'encrypted: ' + repr(self.encrypted) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'identity_alias_username: ' + repr(self.identity_alias_username) + ' ' +\
+            'metadata_json: ' + repr(self.metadata_json) + ' ' +\
             'query_body: ' + repr(self.query_body) + ' ' +\
             'query_category: ' + repr(self.query_category) + ' ' +\
             'query_hash: ' + repr(self.query_hash) + ' ' +\
@@ -22423,6 +22449,7 @@ class Query:
             'encrypted': self.encrypted,
             'id': self.id,
             'identity_alias_username': self.identity_alias_username,
+            'metadata_json': self.metadata_json,
             'query_body': self.query_body,
             'query_category': self.query_category,
             'query_hash': self.query_hash,
@@ -22456,6 +22483,7 @@ class Query:
             encrypted=d.get('encrypted'),
             id=d.get('id'),
             identity_alias_username=d.get('identity_alias_username'),
+            metadata_json=d.get('metadata_json'),
             query_body=d.get('query_body'),
             query_category=d.get('query_category'),
             query_hash=d.get('query_hash'),
