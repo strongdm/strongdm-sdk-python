@@ -7673,6 +7673,158 @@ class AzureCertificate:
         )
 
 
+class AzureConsole:
+    '''
+    AzureConsole is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'connector_id',
+        'egress_filter',
+        'healthy',
+        'id',
+        'identity_set_id',
+        'management_group_id',
+        'name',
+        'privilege_levels',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'subscription_id',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        connector_id=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        identity_set_id=None,
+        management_group_id=None,
+        name=None,
+        privilege_levels=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        subscription_id=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.connector_id = connector_id if connector_id is not None else ''
+        '''
+         The connector ID to authenticate through.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
+        self.management_group_id = management_group_id if management_group_id is not None else ''
+        '''
+         The management group ID to authenticate scope Privileges to.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.privilege_levels = privilege_levels if privilege_levels is not None else ''
+        '''
+         The privilege levels specify which Groups are managed externally
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.subscription_id = subscription_id if subscription_id is not None else ''
+        '''
+         The subscription ID to authenticate scope Privileges to.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AzureConsole ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'connector_id: ' + repr(self.connector_id) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'management_group_id: ' + repr(self.management_group_id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'privilege_levels: ' + repr(self.privilege_levels) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'subscription_id: ' + repr(self.subscription_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'connector_id': self.connector_id,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'identity_set_id': self.identity_set_id,
+            'management_group_id': self.management_group_id,
+            'name': self.name,
+            'privilege_levels': self.privilege_levels,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'subscription_id': self.subscription_id,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            connector_id=d.get('connector_id'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            identity_set_id=d.get('identity_set_id'),
+            management_group_id=d.get('management_group_id'),
+            name=d.get('name'),
+            privilege_levels=d.get('privilege_levels'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            subscription_id=d.get('subscription_id'),
+            tags=d.get('tags'),
+        )
+
+
 class AzureMysql:
     __slots__ = [
         'bind_interface',
@@ -28484,6 +28636,7 @@ class Snowflake:
         'name',
         'password',
         'port_override',
+        'private_key',
         'proxy_cluster_id',
         'schema',
         'secret_store_id',
@@ -28503,6 +28656,7 @@ class Snowflake:
         name=None,
         password=None,
         port_override=None,
+        private_key=None,
         proxy_cluster_id=None,
         schema=None,
         secret_store_id=None,
@@ -28540,11 +28694,15 @@ class Snowflake:
         '''
         self.password = password if password is not None else ''
         '''
-         The password to authenticate with.
+         Deprecated: https://www.snowflake.com/en/blog/blocking-single-factor-password-authentification/
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
          The local port used by clients to connect to this resource.
+        '''
+        self.private_key = private_key if private_key is not None else ''
+        '''
+         RSA Private Key for authentication
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -28582,6 +28740,7 @@ class Snowflake:
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
+            'private_key: ' + repr(self.private_key) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'schema: ' + repr(self.schema) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
@@ -28601,6 +28760,7 @@ class Snowflake:
             'name': self.name,
             'password': self.password,
             'port_override': self.port_override,
+            'private_key': self.private_key,
             'proxy_cluster_id': self.proxy_cluster_id,
             'schema': self.schema,
             'secret_store_id': self.secret_store_id,
@@ -28621,6 +28781,7 @@ class Snowflake:
             name=d.get('name'),
             password=d.get('password'),
             port_override=d.get('port_override'),
+            private_key=d.get('private_key'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             schema=d.get('schema'),
             secret_store_id=d.get('secret_store_id'),

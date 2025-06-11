@@ -5112,6 +5112,7 @@ class Resources:
     `strongdm.models.AWSInstanceProfile`
     `strongdm.models.Azure`
     `strongdm.models.AzureCertificate`
+    `strongdm.models.AzureConsole`
     `strongdm.models.AzureMysql`
     `strongdm.models.AzurePostgres`
     `strongdm.models.AzurePostgresManagedIdentity`

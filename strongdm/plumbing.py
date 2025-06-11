@@ -3859,6 +3859,61 @@ def convert_repeated_azure_certificate_to_porcelain(plumbings):
     ]
 
 
+def convert_azure_console_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzureConsole()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.connector_id = (plumbing.connector_id)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.management_group_id = (plumbing.management_group_id)
+    porcelain.name = (plumbing.name)
+    porcelain.privilege_levels = (plumbing.privilege_levels)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.subscription_id = (plumbing.subscription_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_azure_console_to_plumbing(porcelain):
+    plumbing = AzureConsole()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.connector_id = (porcelain.connector_id)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.management_group_id = (porcelain.management_group_id)
+    plumbing.name = (porcelain.name)
+    plumbing.privilege_levels = (porcelain.privilege_levels)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.subscription_id = (porcelain.subscription_id)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_azure_console_to_plumbing(porcelains):
+    return [
+        convert_azure_console_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_console_to_porcelain(plumbings):
+    return [
+        convert_azure_console_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_azure_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -12039,6 +12094,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AzureCertificate):
         plumbing.azure_certificate.CopyFrom(
             convert_azure_certificate_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzureConsole):
+        plumbing.azure_console.CopyFrom(
+            convert_azure_console_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureMysql):
         plumbing.azure_mysql.CopyFrom(
             convert_azure_mysql_to_plumbing(porcelain))
@@ -12308,6 +12366,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('azure_certificate'):
         return convert_azure_certificate_to_porcelain(
             plumbing.azure_certificate)
+    if plumbing.HasField('azure_console'):
+        return convert_azure_console_to_porcelain(plumbing.azure_console)
     if plumbing.HasField('azure_mysql'):
         return convert_azure_mysql_to_porcelain(plumbing.azure_mysql)
     if plumbing.HasField('azure_postgres'):
@@ -14585,6 +14645,7 @@ def convert_snowflake_to_porcelain(plumbing):
     porcelain.name = (plumbing.name)
     porcelain.password = (plumbing.password)
     porcelain.port_override = (plumbing.port_override)
+    porcelain.private_key = (plumbing.private_key)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
     porcelain.schema = (plumbing.schema)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -14607,6 +14668,7 @@ def convert_snowflake_to_plumbing(porcelain):
     plumbing.name = (porcelain.name)
     plumbing.password = (porcelain.password)
     plumbing.port_override = (porcelain.port_override)
+    plumbing.private_key = (porcelain.private_key)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
     plumbing.schema = (porcelain.schema)
     plumbing.secret_store_id = (porcelain.secret_store_id)

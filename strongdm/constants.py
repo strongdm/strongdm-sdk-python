@@ -227,6 +227,7 @@ class ActivityVerb:
     ORG_SELF_REGISTRATION_DEACTIVATED = "self-registration deactivated"
     ORG_NAME_UPDATED = "organization name updated"
     ORG_SETTING_UPDATED = "organization setting updated"
+    ORG_LOG_CONFIG_UPDATED = "organization logging configuration updated"
     ORG_LOG_SYNC_SETTING_UPDATED = "organization log stream setting updated"
     ORG_WORKFLOW_SETTING_UPDATED = "organization workflow setting updated"
     ORG_CREATED = "organization created"
