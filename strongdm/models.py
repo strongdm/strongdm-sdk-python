@@ -13518,6 +13518,7 @@ class HTTPAuth:
         'host_override',
         'id',
         'name',
+        'port_override',
         'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
@@ -13537,6 +13538,7 @@ class HTTPAuth:
         host_override=None,
         id=None,
         name=None,
+        port_override=None,
         proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
@@ -13583,6 +13585,10 @@ class HTTPAuth:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
          ID of the proxy cluster for this resource, if any.
@@ -13616,6 +13622,7 @@ class HTTPAuth:
             'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13635,6 +13642,7 @@ class HTTPAuth:
             'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -13655,6 +13663,7 @@ class HTTPAuth:
             host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -13675,6 +13684,7 @@ class HTTPBasicAuth:
         'id',
         'name',
         'password',
+        'port_override',
         'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
@@ -13695,6 +13705,7 @@ class HTTPBasicAuth:
         id=None,
         name=None,
         password=None,
+        port_override=None,
         proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
@@ -13742,6 +13753,10 @@ class HTTPBasicAuth:
         '''
          The password to authenticate with.
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
          ID of the proxy cluster for this resource, if any.
@@ -13779,6 +13794,7 @@ class HTTPBasicAuth:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13799,6 +13815,7 @@ class HTTPBasicAuth:
             'id': self.id,
             'name': self.name,
             'password': self.password,
+            'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -13820,6 +13837,7 @@ class HTTPBasicAuth:
             id=d.get('id'),
             name=d.get('name'),
             password=d.get('password'),
+            port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
@@ -13840,6 +13858,7 @@ class HTTPNoAuth:
         'host_override',
         'id',
         'name',
+        'port_override',
         'proxy_cluster_id',
         'secret_store_id',
         'subdomain',
@@ -13858,6 +13877,7 @@ class HTTPNoAuth:
         host_override=None,
         id=None,
         name=None,
+        port_override=None,
         proxy_cluster_id=None,
         secret_store_id=None,
         subdomain=None,
@@ -13900,6 +13920,10 @@ class HTTPNoAuth:
         '''
          Unique human-readable name of the Resource.
         '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource.
+        '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
          ID of the proxy cluster for this resource, if any.
@@ -13932,6 +13956,7 @@ class HTTPNoAuth:
             'host_override: ' + repr(self.host_override) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
@@ -13950,6 +13975,7 @@ class HTTPNoAuth:
             'host_override': self.host_override,
             'id': self.id,
             'name': self.name,
+            'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
@@ -13969,6 +13995,7 @@ class HTTPNoAuth:
             host_override=d.get('host_override'),
             id=d.get('id'),
             name=d.get('name'),
+            port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
