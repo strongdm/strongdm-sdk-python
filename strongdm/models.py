@@ -10525,6 +10525,7 @@ class DB2LUW:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_required',
         'username',
     ]
 
@@ -10544,6 +10545,7 @@ class DB2LUW:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_required=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -10602,6 +10604,10 @@ class DB2LUW:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
         self.username = username if username is not None else ''
         '''
          The username to authenticate with.
@@ -10623,6 +10629,7 @@ class DB2LUW:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -10642,6 +10649,7 @@ class DB2LUW:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_required': self.tls_required,
             'username': self.username,
         }
 
@@ -10662,6 +10670,7 @@ class DB2LUW:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
             username=d.get('username'),
         )
 
