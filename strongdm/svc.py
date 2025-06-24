@@ -140,10 +140,6 @@ from .workflow_approvers_pb2 import *
 from .workflow_approvers_pb2_grpc import *
 from .workflow_approvers_history_pb2 import *
 from .workflow_approvers_history_pb2_grpc import *
-from .workflow_assignments_pb2 import *
-from .workflow_assignments_pb2_grpc import *
-from .workflow_assignments_history_pb2 import *
-from .workflow_assignments_history_pb2_grpc import *
 from .workflow_roles_pb2 import *
 from .workflow_roles_pb2_grpc import *
 from .workflow_roles_history_pb2 import *
@@ -6833,124 +6829,6 @@ class WorkflowApproversHistory:
                 tries = 0
                 for plumbing_item in plumbing_response.history:
                     yield plumbing.convert_workflow_approver_history_to_porcelain(
-                        plumbing_item)
-                if plumbing_response.meta.next_cursor == '':
-                    break
-                req.meta.cursor = plumbing_response.meta.next_cursor
-
-        return generator(self, req)
-
-
-class WorkflowAssignments:
-    '''
-     WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
-     access to via the workflow.
-    See `strongdm.models.WorkflowAssignment`.
-    '''
-    def __init__(self, channel, client):
-        self.parent = client
-        self.stub = WorkflowAssignmentsStub(channel)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         Lists existing workflow assignments.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = WorkflowAssignmentsListRequest()
-        req.meta.CopyFrom(ListRequestMetadata())
-        if self.parent.page_limit > 0:
-            req.meta.limit = self.parent.page_limit
-        if self.parent.snapshot_datetime is not None:
-            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
-
-        req.filter = plumbing.quote_filter_args(filter, *args)
-
-        def generator(svc, req):
-            tries = 0
-            while True:
-                t = None if deadline is None else deadline - time.time()
-                try:
-                    plumbing_response = svc.stub.List(
-                        req,
-                        metadata=svc.parent.get_metadata(
-                            'WorkflowAssignments.List', req),
-                        timeout=t)
-                except Exception as e:
-                    if self.parent.shouldRetry(tries, e, deadline):
-                        tries += 1
-                        time.sleep(
-                            self.parent.exponentialBackoff(tries, deadline))
-                        continue
-                    raise plumbing.convert_error_to_porcelain(e) from e
-                tries = 0
-                for plumbing_item in plumbing_response.workflow_assignments:
-                    yield plumbing.convert_workflow_assignment_to_porcelain(
-                        plumbing_item)
-                if plumbing_response.meta.next_cursor == '':
-                    break
-                req.meta.cursor = plumbing_response.meta.next_cursor
-
-        return generator(self, req)
-
-
-class SnapshotWorkflowAssignments:
-    '''
-    SnapshotWorkflowAssignments exposes the read only methods of the WorkflowAssignments
-    service for historical queries.
-    '''
-    def __init__(self, workflow_assignments):
-        self.workflow_assignments = workflow_assignments
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         Lists existing workflow assignments.
-        '''
-        return self.workflow_assignments.list(filter, *args, timeout=timeout)
-
-
-class WorkflowAssignmentsHistory:
-    '''
-     WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
-    See `strongdm.models.WorkflowAssignmentHistory`.
-    '''
-    def __init__(self, channel, client):
-        self.parent = client
-        self.stub = WorkflowAssignmentsHistoryStub(channel)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of WorkflowAssignmentsHistory records matching a given set of criteria.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = WorkflowAssignmentsHistoryListRequest()
-        req.meta.CopyFrom(ListRequestMetadata())
-        if self.parent.page_limit > 0:
-            req.meta.limit = self.parent.page_limit
-        if self.parent.snapshot_datetime is not None:
-            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
-
-        req.filter = plumbing.quote_filter_args(filter, *args)
-
-        def generator(svc, req):
-            tries = 0
-            while True:
-                t = None if deadline is None else deadline - time.time()
-                try:
-                    plumbing_response = svc.stub.List(
-                        req,
-                        metadata=svc.parent.get_metadata(
-                            'WorkflowAssignmentsHistory.List', req),
-                        timeout=t)
-                except Exception as e:
-                    if self.parent.shouldRetry(tries, e, deadline):
-                        tries += 1
-                        time.sleep(
-                            self.parent.exponentialBackoff(tries, deadline))
-                        continue
-                    raise plumbing.convert_error_to_porcelain(e) from e
-                tries = 0
-                for plumbing_item in plumbing_response.history:
-                    yield plumbing.convert_workflow_assignment_history_to_porcelain(
                         plumbing_item)
                 if plumbing_response.meta.next_cursor == '':
                     break

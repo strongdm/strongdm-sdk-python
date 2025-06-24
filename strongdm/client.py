@@ -34,7 +34,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/14.25.0'
+USER_AGENT = 'strongdm-sdk-python/15.0.0'
 
 
 class Client:
@@ -432,20 +432,6 @@ class Client:
 
         See `strongdm.svc.WorkflowApproversHistory`.
         '''
-        self.workflow_assignments = svc.WorkflowAssignments(channel, self)
-        '''
-         WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
-         access to via the workflow.
-
-        See `strongdm.svc.WorkflowAssignments`.
-        '''
-        self.workflow_assignments_history = svc.WorkflowAssignmentsHistory(
-            channel, self)
-        '''
-         WorkflowAssignmentsHistory provides records of all changes to the state of a WorkflowAssignment.
-
-        See `strongdm.svc.WorkflowAssignmentsHistory`.
-        '''
         self.workflow_roles = svc.WorkflowRoles(channel, self)
         '''
          WorkflowRole links a role to a workflow. The linked roles indicate which roles a user must be a part of
@@ -590,8 +576,6 @@ class Client:
         client.roles = svc.Roles(client.channel, client)
         client.secret_stores = svc.SecretStores(client.channel, client)
         client.workflow_approvers = svc.WorkflowApprovers(
-            client.channel, client)
-        client.workflow_assignments = svc.WorkflowAssignments(
             client.channel, client)
         client.workflow_roles = svc.WorkflowRoles(client.channel, client)
         client.workflows = svc.Workflows(client.channel, client)
@@ -756,14 +740,6 @@ class SnapshotClient:
          WorkflowApprovers is an account or a role with the ability to approve requests bound to a workflow.
 
         See `strongdm.svc.SnapshotWorkflowApprovers`.
-        '''
-        self.workflow_assignments = svc.SnapshotWorkflowAssignments(
-            client.workflow_assignments)
-        '''
-         WorkflowAssignments links a Resource to a Workflow. The assigned resources are those that a user can request
-         access to via the workflow.
-
-        See `strongdm.svc.SnapshotWorkflowAssignments`.
         '''
         self.workflow_roles = svc.SnapshotWorkflowRoles(client.workflow_roles)
         '''
