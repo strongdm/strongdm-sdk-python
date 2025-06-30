@@ -16324,6 +16324,132 @@ class KubernetesUserImpersonation:
         )
 
 
+class LogCategoryConfig:
+    __slots__ = [
+        'remote_discard_replays',
+        'remote_encoder',
+    ]
+
+    def __init__(
+        self,
+        remote_discard_replays=None,
+        remote_encoder=None,
+    ):
+        self.remote_discard_replays = remote_discard_replays if remote_discard_replays is not None else False
+        '''
+         Indicates if the Organization should exclude replay data from remote logging for the log category.
+        '''
+        self.remote_encoder = remote_encoder if remote_encoder is not None else ''
+        '''
+         The Organization's remote log encryption encoder, one of the LogRemoteEncoder constants.
+        '''
+
+    def __repr__(self):
+        return '<sdm.LogCategoryConfig ' + \
+            'remote_discard_replays: ' + repr(self.remote_discard_replays) + ' ' +\
+            'remote_encoder: ' + repr(self.remote_encoder) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'remote_discard_replays': self.remote_discard_replays,
+            'remote_encoder': self.remote_encoder,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            remote_discard_replays=d.get('remote_discard_replays'),
+            remote_encoder=d.get('remote_encoder'),
+        )
+
+
+class LogConfig:
+    __slots__ = [
+        'categories',
+        'local_encoder',
+        'local_format',
+        'local_socket_path',
+        'local_storage',
+        'local_tcp_address',
+        'public_key',
+    ]
+
+    def __init__(
+        self,
+        categories=None,
+        local_encoder=None,
+        local_format=None,
+        local_socket_path=None,
+        local_storage=None,
+        local_tcp_address=None,
+        public_key=None,
+    ):
+        self.categories = categories if categories is not None else _porcelain_zero_value_log_category_config_map(
+        )
+        '''
+         The Organization's log category configuration settings.
+        '''
+        self.local_encoder = local_encoder if local_encoder is not None else ''
+        '''
+         The Organization's local log encryption encoder, one of the LogLocalEncoder constants.
+        '''
+        self.local_format = local_format if local_format is not None else ''
+        '''
+         The Organization's local log format, one of the LogLocalFormat constants.
+        '''
+        self.local_socket_path = local_socket_path if local_socket_path is not None else ''
+        '''
+         The Organization's local log socket path.
+        '''
+        self.local_storage = local_storage if local_storage is not None else ''
+        '''
+         The Organization's local log storage, one of the LogLocalStorage constants.
+        '''
+        self.local_tcp_address = local_tcp_address if local_tcp_address is not None else ''
+        '''
+         The Organization's local log TCP address.
+        '''
+        self.public_key = public_key if public_key is not None else ''
+        '''
+         The Organization's public key in PEM format for encrypting logs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.LogConfig ' + \
+            'categories: ' + repr(self.categories) + ' ' +\
+            'local_encoder: ' + repr(self.local_encoder) + ' ' +\
+            'local_format: ' + repr(self.local_format) + ' ' +\
+            'local_socket_path: ' + repr(self.local_socket_path) + ' ' +\
+            'local_storage: ' + repr(self.local_storage) + ' ' +\
+            'local_tcp_address: ' + repr(self.local_tcp_address) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'categories': self.categories,
+            'local_encoder': self.local_encoder,
+            'local_format': self.local_format,
+            'local_socket_path': self.local_socket_path,
+            'local_storage': self.local_storage,
+            'local_tcp_address': self.local_tcp_address,
+            'public_key': self.public_key,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            categories=d.get('categories'),
+            local_encoder=d.get('local_encoder'),
+            local_format=d.get('local_format'),
+            local_socket_path=d.get('local_socket_path'),
+            local_storage=d.get('local_storage'),
+            local_tcp_address=d.get('local_tcp_address'),
+            public_key=d.get('public_key'),
+        )
+
+
 class MTLSMysql:
     '''
     MTLSMysql is currently unstable, and its API may change, or it may be removed,
@@ -20288,6 +20414,7 @@ class Organization:
         'idle_timeout',
         'idle_timeout_enabled',
         'kind',
+        'log_config',
         'log_local_encoder',
         'log_local_format',
         'log_local_storage',
@@ -20322,6 +20449,7 @@ class Organization:
         idle_timeout=None,
         idle_timeout_enabled=None,
         kind=None,
+        log_config=None,
         log_local_encoder=None,
         log_local_format=None,
         log_local_storage=None,
@@ -20363,6 +20491,7 @@ class Organization:
         self.discard_replays = discard_replays if discard_replays is not None else False
         '''
          Indicates if the Organization should drop replay data for SSH, RDP, and K8s logs.
+         Deprecated: use categories specific log_config.categories[].remote_discard_replays instead
         '''
         self.enforce_single_session = enforce_single_session if enforce_single_session is not None else False
         '''
@@ -20380,29 +20509,39 @@ class Organization:
         '''
          The Organization's type, one of the OrgKind constants.
         '''
+        self.log_config = log_config if log_config is not None else None
+        '''
+         The Organization's logging settings
+        '''
         self.log_local_encoder = log_local_encoder if log_local_encoder is not None else ''
         '''
          The Organization's local log encryption encoder, one of the LogLocalEncoder constants.
+         Deprecated: use log_config.local_encoder instead
         '''
         self.log_local_format = log_local_format if log_local_format is not None else ''
         '''
          The Organization's local log format, one of the LogLocalFormat constants.
+         Deprecated: use log_config.local_format instead
         '''
         self.log_local_storage = log_local_storage if log_local_storage is not None else ''
         '''
          The Organization's local log storage, one of the LogLocalStorage constants.
+         Deprecated: use log_config.local_storage instead
         '''
         self.log_remote_encoder = log_remote_encoder if log_remote_encoder is not None else ''
         '''
          The Organization's remote log encryption encoder, one of the LogRemoteEncoder constants.
+         Deprecated: use categories specific log_config.categories[].remote_encoder instead
         '''
         self.log_socket_path = log_socket_path if log_socket_path is not None else ''
         '''
          The Organization's socket path for Socket local log storage.
+         Deprecated: use log_config.local_socket_path instead
         '''
         self.log_tcp_address = log_tcp_address if log_tcp_address is not None else ''
         '''
          The Organization's TCP address for TCP or Syslog local log storage.
+         Deprecated: use log_config.local_tcp_address instead
         '''
         self.loopback_range = loopback_range if loopback_range is not None else ''
         '''
@@ -20423,6 +20562,7 @@ class Organization:
         self.public_key_pem = public_key_pem if public_key_pem is not None else ''
         '''
          The Organization's public key PEM for encrypting remote logs.
+         Deprecated: use log_config.public_key instead
         '''
         self.require_secret_store = require_secret_store if require_secret_store is not None else False
         '''
@@ -20476,6 +20616,7 @@ class Organization:
             'idle_timeout: ' + repr(self.idle_timeout) + ' ' +\
             'idle_timeout_enabled: ' + repr(self.idle_timeout_enabled) + ' ' +\
             'kind: ' + repr(self.kind) + ' ' +\
+            'log_config: ' + repr(self.log_config) + ' ' +\
             'log_local_encoder: ' + repr(self.log_local_encoder) + ' ' +\
             'log_local_format: ' + repr(self.log_local_format) + ' ' +\
             'log_local_storage: ' + repr(self.log_local_storage) + ' ' +\
@@ -20510,6 +20651,7 @@ class Organization:
             'idle_timeout': self.idle_timeout,
             'idle_timeout_enabled': self.idle_timeout_enabled,
             'kind': self.kind,
+            'log_config': self.log_config,
             'log_local_encoder': self.log_local_encoder,
             'log_local_format': self.log_local_format,
             'log_local_storage': self.log_local_storage,
@@ -20547,6 +20689,7 @@ class Organization:
             idle_timeout=d.get('idle_timeout'),
             idle_timeout_enabled=d.get('idle_timeout_enabled'),
             kind=d.get('kind'),
+            log_config=d.get('log_config'),
             log_local_encoder=d.get('log_local_encoder'),
             log_local_format=d.get('log_local_format'),
             log_local_storage=d.get('log_local_storage'),
@@ -32171,4 +32314,8 @@ def _porcelain_zero_value_access_rules():
 
 
 def _porcelain_zero_value_access_rule():
+    return {}
+
+
+def _porcelain_zero_value_log_category_config_map():
     return {}

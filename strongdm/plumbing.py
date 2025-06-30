@@ -152,6 +152,26 @@ def convert_tags_to_plumbing(t):
     return tags
 
 
+def convert_log_category_config_map_to_porcelain(cfgMap):
+    res = {}
+    for entry in cfgMap.entries:
+        res[entry.name] = convert_log_category_config_to_porcelain(
+            entry.config)
+    return res
+
+
+def convert_log_category_config_map_to_plumbing(cfgMap):
+    res = LogCategoryConfigMap()
+    if cfgMap is None:
+        return res
+    for name, config in cfgMap.items():
+        entry = LogCategoryConfigMap.Entry()
+        entry.name = name
+        entry.config.CopyFrom(convert_log_category_config_to_plumbing(config))
+        res.entries.append(entry)
+    return res
+
+
 def convert_access_rules_to_porcelain(access_rules_json):
     if access_rules_json == "":
         return []
@@ -7552,6 +7572,80 @@ def convert_repeated_kubernetes_user_impersonation_to_porcelain(plumbings):
     ]
 
 
+def convert_log_category_config_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.LogCategoryConfig()
+    porcelain.remote_discard_replays = (plumbing.remote_discard_replays)
+    porcelain.remote_encoder = (plumbing.remote_encoder)
+    return porcelain
+
+
+def convert_log_category_config_to_plumbing(porcelain):
+    plumbing = LogCategoryConfig()
+    if porcelain is None:
+        return plumbing
+    plumbing.remote_discard_replays = (porcelain.remote_discard_replays)
+    plumbing.remote_encoder = (porcelain.remote_encoder)
+    return plumbing
+
+
+def convert_repeated_log_category_config_to_plumbing(porcelains):
+    return [
+        convert_log_category_config_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_log_category_config_to_porcelain(plumbings):
+    return [
+        convert_log_category_config_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_log_config_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.LogConfig()
+    porcelain.categories = convert_log_category_config_map_to_porcelain(
+        plumbing.categories)
+    porcelain.local_encoder = (plumbing.local_encoder)
+    porcelain.local_format = (plumbing.local_format)
+    porcelain.local_socket_path = (plumbing.local_socket_path)
+    porcelain.local_storage = (plumbing.local_storage)
+    porcelain.local_tcp_address = (plumbing.local_tcp_address)
+    porcelain.public_key = (plumbing.public_key)
+    return porcelain
+
+
+def convert_log_config_to_plumbing(porcelain):
+    plumbing = LogConfig()
+    if porcelain is None:
+        return plumbing
+    plumbing.categories.CopyFrom(
+        convert_log_category_config_map_to_plumbing(porcelain.categories))
+    plumbing.local_encoder = (porcelain.local_encoder)
+    plumbing.local_format = (porcelain.local_format)
+    plumbing.local_socket_path = (porcelain.local_socket_path)
+    plumbing.local_storage = (porcelain.local_storage)
+    plumbing.local_tcp_address = (porcelain.local_tcp_address)
+    plumbing.public_key = (porcelain.public_key)
+    return plumbing
+
+
+def convert_repeated_log_config_to_plumbing(porcelains):
+    return [
+        convert_log_config_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_log_config_to_porcelain(plumbings):
+    return [
+        convert_log_config_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_mtls_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -9505,6 +9599,7 @@ def convert_organization_to_porcelain(plumbing):
         plumbing.idle_timeout)
     porcelain.idle_timeout_enabled = (plumbing.idle_timeout_enabled)
     porcelain.kind = (plumbing.kind)
+    porcelain.log_config = convert_log_config_to_porcelain(plumbing.log_config)
     porcelain.log_local_encoder = (plumbing.log_local_encoder)
     porcelain.log_local_format = (plumbing.log_local_format)
     porcelain.log_local_storage = (plumbing.log_local_storage)
@@ -9547,6 +9642,8 @@ def convert_organization_to_plumbing(porcelain):
         convert_duration_to_plumbing(porcelain.idle_timeout))
     plumbing.idle_timeout_enabled = (porcelain.idle_timeout_enabled)
     plumbing.kind = (porcelain.kind)
+    plumbing.log_config.CopyFrom(
+        convert_log_config_to_plumbing(porcelain.log_config))
     plumbing.log_local_encoder = (porcelain.log_local_encoder)
     plumbing.log_local_format = (porcelain.log_local_format)
     plumbing.log_local_storage = (porcelain.log_local_storage)
