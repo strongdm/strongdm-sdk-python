@@ -66,6 +66,8 @@ from .approval_workflows_history_pb2 import *
 from .approval_workflows_history_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
+from .roles_pb2 import *
+from .roles_pb2_grpc import *
 from .health_checks_pb2 import *
 from .health_checks_pb2_grpc import *
 from .identity_aliases_pb2 import *
@@ -118,8 +120,6 @@ from .role_resources_pb2 import *
 from .role_resources_pb2_grpc import *
 from .role_resources_history_pb2 import *
 from .role_resources_history_pb2_grpc import *
-from .roles_pb2 import *
-from .roles_pb2_grpc import *
 from .roles_history_pb2 import *
 from .roles_history_pb2_grpc import *
 from .secret_engine_policy_pb2 import *
@@ -2179,6 +2179,214 @@ class ControlPanel:
             plumbing_response.rate_limit)
         resp.valid = (plumbing_response.valid)
         return resp
+
+
+class Roles:
+    '''
+     A Role has a list of access rules which determine which Resources the members
+     of the Role have access to. An Account can be a member of multiple Roles via
+     AccountAttachments.
+    See `strongdm.models.Role`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = RolesStub(channel)
+
+    def create(self, role, timeout=None):
+        '''
+         Create registers a new Role.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = RoleCreateRequest()
+
+        if role is not None:
+            req.role.CopyFrom(plumbing.convert_role_to_plumbing(role))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Create', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleCreateResponse()
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Role by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = RoleGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Get', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleGetResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
+        return resp
+
+    def update(self, role, timeout=None):
+        '''
+         Update replaces all the fields of a Role by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = RoleUpdateRequest()
+
+        if role is not None:
+            req.role.CopyFrom(plumbing.convert_role_to_plumbing(role))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Update', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleUpdateResponse()
+        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a Role by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = RoleDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Roles.Delete', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.RoleDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Roles matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = RoleListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Roles.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.roles:
+                    yield plumbing.convert_role_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotRoles:
+    '''
+    SnapshotRoles exposes the read only methods of the Roles
+    service for historical queries.
+    '''
+    def __init__(self, roles):
+        self.roles = roles
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Role by ID.
+        '''
+        return self.roles.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Roles matching a given set of criteria.
+        '''
+        return self.roles.list(filter, *args, timeout=timeout)
 
 
 class HealthChecks:
@@ -5096,6 +5304,7 @@ class Resources:
     `strongdm.models.AmazonES`
     `strongdm.models.AmazonESIAM`
     `strongdm.models.AmazonMQAMQP091`
+    `strongdm.models.AMQP`
     `strongdm.models.Athena`
     `strongdm.models.AthenaIAM`
     `strongdm.models.AuroraMysql`
@@ -5110,6 +5319,7 @@ class Resources:
     `strongdm.models.AzureCertificate`
     `strongdm.models.AzureConsole`
     `strongdm.models.AzureMysql`
+    `strongdm.models.AzureMysqlManagedIdentity`
     `strongdm.models.AzurePostgres`
     `strongdm.models.AzurePostgresManagedIdentity`
     `strongdm.models.BigQuery`
@@ -5640,214 +5850,6 @@ class RoleResourcesHistory:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
-
-
-class Roles:
-    '''
-     A Role has a list of access rules which determine which Resources the members
-     of the Role have access to. An Account can be a member of multiple Roles via
-     AccountAttachments.
-    See `strongdm.models.Role`.
-    '''
-    def __init__(self, channel, client):
-        self.parent = client
-        self.stub = RolesStub(channel)
-
-    def create(self, role, timeout=None):
-        '''
-         Create registers a new Role.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = RoleCreateRequest()
-
-        if role is not None:
-            req.role.CopyFrom(plumbing.convert_role_to_plumbing(role))
-        tries = 0
-        plumbing_response = None
-        while True:
-            t = None if deadline is None else deadline - time.time()
-            try:
-                plumbing_response = self.stub.Create(
-                    req,
-                    metadata=self.parent.get_metadata('Roles.Create', req),
-                    timeout=t)
-            except Exception as e:
-                if self.parent.shouldRetry(tries, e, deadline):
-                    tries += 1
-                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
-                    continue
-                raise plumbing.convert_error_to_porcelain(e) from e
-            break
-
-        resp = models.RoleCreateResponse()
-        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
-            plumbing_response.meta)
-        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
-            plumbing_response.rate_limit)
-        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
-        return resp
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads one Role by ID.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = RoleGetRequest()
-        if self.parent.snapshot_datetime is not None:
-            req.meta.CopyFrom(GetRequestMetadata())
-            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
-
-        req.id = (id)
-        tries = 0
-        plumbing_response = None
-        while True:
-            t = None if deadline is None else deadline - time.time()
-            try:
-                plumbing_response = self.stub.Get(
-                    req,
-                    metadata=self.parent.get_metadata('Roles.Get', req),
-                    timeout=t)
-            except Exception as e:
-                if self.parent.shouldRetry(tries, e, deadline):
-                    tries += 1
-                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
-                    continue
-                raise plumbing.convert_error_to_porcelain(e) from e
-            break
-
-        resp = models.RoleGetResponse()
-        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
-            plumbing_response.meta)
-        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
-            plumbing_response.rate_limit)
-        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
-        return resp
-
-    def update(self, role, timeout=None):
-        '''
-         Update replaces all the fields of a Role by ID.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = RoleUpdateRequest()
-
-        if role is not None:
-            req.role.CopyFrom(plumbing.convert_role_to_plumbing(role))
-        tries = 0
-        plumbing_response = None
-        while True:
-            t = None if deadline is None else deadline - time.time()
-            try:
-                plumbing_response = self.stub.Update(
-                    req,
-                    metadata=self.parent.get_metadata('Roles.Update', req),
-                    timeout=t)
-            except Exception as e:
-                if self.parent.shouldRetry(tries, e, deadline):
-                    tries += 1
-                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
-                    continue
-                raise plumbing.convert_error_to_porcelain(e) from e
-            break
-
-        resp = models.RoleUpdateResponse()
-        resp.meta = plumbing.convert_update_response_metadata_to_porcelain(
-            plumbing_response.meta)
-        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
-            plumbing_response.rate_limit)
-        resp.role = plumbing.convert_role_to_porcelain(plumbing_response.role)
-        return resp
-
-    def delete(self, id, timeout=None):
-        '''
-         Delete removes a Role by ID.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = RoleDeleteRequest()
-
-        req.id = (id)
-        tries = 0
-        plumbing_response = None
-        while True:
-            t = None if deadline is None else deadline - time.time()
-            try:
-                plumbing_response = self.stub.Delete(
-                    req,
-                    metadata=self.parent.get_metadata('Roles.Delete', req),
-                    timeout=t)
-            except Exception as e:
-                if self.parent.shouldRetry(tries, e, deadline):
-                    tries += 1
-                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
-                    continue
-                raise plumbing.convert_error_to_porcelain(e) from e
-            break
-
-        resp = models.RoleDeleteResponse()
-        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
-            plumbing_response.meta)
-        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
-            plumbing_response.rate_limit)
-        return resp
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of Roles matching a given set of criteria.
-        '''
-        deadline = None if timeout is None else time.time() + timeout
-        req = RoleListRequest()
-        req.meta.CopyFrom(ListRequestMetadata())
-        if self.parent.page_limit > 0:
-            req.meta.limit = self.parent.page_limit
-        if self.parent.snapshot_datetime is not None:
-            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
-
-        req.filter = plumbing.quote_filter_args(filter, *args)
-
-        def generator(svc, req):
-            tries = 0
-            while True:
-                t = None if deadline is None else deadline - time.time()
-                try:
-                    plumbing_response = svc.stub.List(
-                        req,
-                        metadata=svc.parent.get_metadata('Roles.List', req),
-                        timeout=t)
-                except Exception as e:
-                    if self.parent.shouldRetry(tries, e, deadline):
-                        tries += 1
-                        time.sleep(
-                            self.parent.exponentialBackoff(tries, deadline))
-                        continue
-                    raise plumbing.convert_error_to_porcelain(e) from e
-                tries = 0
-                for plumbing_item in plumbing_response.roles:
-                    yield plumbing.convert_role_to_porcelain(plumbing_item)
-                if plumbing_response.meta.next_cursor == '':
-                    break
-                req.meta.cursor = plumbing_response.meta.next_cursor
-
-        return generator(self, req)
-
-
-class SnapshotRoles:
-    '''
-    SnapshotRoles exposes the read only methods of the Roles
-    service for historical queries.
-    '''
-    def __init__(self, roles):
-        self.roles = roles
-
-    def get(self, id, timeout=None):
-        '''
-         Get reads one Role by ID.
-        '''
-        return self.roles.get(id, timeout=timeout)
-
-    def list(self, filter, *args, timeout=None):
-        '''
-         List gets a list of Roles matching a given set of criteria.
-        '''
-        return self.roles.list(filter, *args, timeout=timeout)
 
 
 class RolesHistory:

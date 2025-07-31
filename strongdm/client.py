@@ -34,7 +34,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/15.2.0'
+USER_AGENT = 'strongdm-sdk-python/15.4.0'
 
 
 class Client:
@@ -205,6 +205,14 @@ class Client:
          ControlPanel contains all administrative controls.
 
         See `strongdm.svc.ControlPanel`.
+        '''
+        self.roles = svc.Roles(channel, self)
+        '''
+         A Role has a list of access rules which determine which Resources the members
+         of the Role have access to. An Account can be a member of multiple Roles via
+         AccountAttachments.
+
+        See `strongdm.svc.Roles`.
         '''
         self.health_checks = svc.HealthChecks(channel, self)
         '''
@@ -381,14 +389,6 @@ class Client:
 
         See `strongdm.svc.RoleResourcesHistory`.
         '''
-        self.roles = svc.Roles(channel, self)
-        '''
-         A Role has a list of access rules which determine which Resources the members
-         of the Role have access to. An Account can be a member of multiple Roles via
-         AccountAttachments.
-
-        See `strongdm.svc.Roles`.
-        '''
         self.roles_history = svc.RolesHistory(channel, self)
         '''
          RolesHistory records all changes to the state of a Role.
@@ -562,6 +562,7 @@ class Client:
             client.channel, client)
         client.approval_workflows = svc.ApprovalWorkflows(
             client.channel, client)
+        client.roles = svc.Roles(client.channel, client)
         client.identity_aliases = svc.IdentityAliases(client.channel, client)
         client.identity_sets = svc.IdentitySets(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
@@ -573,7 +574,6 @@ class Client:
             client.channel, client)
         client.resources = svc.Resources(client.channel, client)
         client.role_resources = svc.RoleResources(client.channel, client)
-        client.roles = svc.Roles(client.channel, client)
         client.secret_stores = svc.SecretStores(client.channel, client)
         client.workflow_approvers = svc.WorkflowApprovers(
             client.channel, client)
@@ -652,6 +652,14 @@ class SnapshotClient:
 
         See `strongdm.svc.SnapshotApprovalWorkflows`.
         '''
+        self.roles = svc.SnapshotRoles(client.roles)
+        '''
+         A Role has a list of access rules which determine which Resources the members
+         of the Role have access to. An Account can be a member of multiple Roles via
+         AccountAttachments.
+
+        See `strongdm.svc.SnapshotRoles`.
+        '''
         self.identity_aliases = svc.SnapshotIdentityAliases(
             client.identity_aliases)
         '''
@@ -719,14 +727,6 @@ class SnapshotClient:
          The RoleResources service is read-only.
 
         See `strongdm.svc.SnapshotRoleResources`.
-        '''
-        self.roles = svc.SnapshotRoles(client.roles)
-        '''
-         A Role has a list of access rules which determine which Resources the members
-         of the Role have access to. An Account can be a member of multiple Roles via
-         AccountAttachments.
-
-        See `strongdm.svc.SnapshotRoles`.
         '''
         self.secret_stores = svc.SnapshotSecretStores(client.secret_stores)
         '''
