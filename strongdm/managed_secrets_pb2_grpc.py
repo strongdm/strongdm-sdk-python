@@ -61,6 +61,11 @@ class ManagedSecretsStub(object):
                 request_serializer=managed__secrets__pb2.ManagedSecretDeleteRequest.SerializeToString,
                 response_deserializer=managed__secrets__pb2.ManagedSecretDeleteResponse.FromString,
                 )
+        self.ForceDelete = channel.unary_unary(
+                '/v1.ManagedSecrets/ForceDelete',
+                request_serializer=managed__secrets__pb2.ManagedSecretDeleteRequest.SerializeToString,
+                response_deserializer=managed__secrets__pb2.ManagedSecretDeleteResponse.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/v1.ManagedSecrets/Get',
                 request_serializer=managed__secrets__pb2.ManagedSecretGetRequest.SerializeToString,
@@ -131,6 +136,13 @@ class ManagedSecretsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ForceDelete(self, request, context):
+        """ForceDelete deletes a Managed Secret regardless of errors on external system 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Get(self, request, context):
         """Get gets details of a Managed Secret without sensitive data
         """
@@ -191,6 +203,11 @@ def add_ManagedSecretsServicer_to_server(servicer, server):
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
+                    request_deserializer=managed__secrets__pb2.ManagedSecretDeleteRequest.FromString,
+                    response_serializer=managed__secrets__pb2.ManagedSecretDeleteResponse.SerializeToString,
+            ),
+            'ForceDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.ForceDelete,
                     request_deserializer=managed__secrets__pb2.ManagedSecretDeleteRequest.FromString,
                     response_serializer=managed__secrets__pb2.ManagedSecretDeleteResponse.SerializeToString,
             ),
@@ -324,6 +341,23 @@ class ManagedSecrets(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/v1.ManagedSecrets/Delete',
+            managed__secrets__pb2.ManagedSecretDeleteRequest.SerializeToString,
+            managed__secrets__pb2.ManagedSecretDeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ForceDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.ManagedSecrets/ForceDelete',
             managed__secrets__pb2.ManagedSecretDeleteRequest.SerializeToString,
             managed__secrets__pb2.ManagedSecretDeleteResponse.FromString,
             options, channel_credentials,

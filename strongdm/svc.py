@@ -3209,6 +3209,37 @@ class ManagedSecrets:
             plumbing_response.rate_limit)
         return resp
 
+    def force_delete(self, id, timeout=None):
+        '''
+         ForceDelete deletes a Managed Secret regardless of errors on external system
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ManagedSecretDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.ForceDelete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ManagedSecrets.ForceDelete', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ManagedSecretDeleteResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
     def get(self, id, timeout=None):
         '''
          Get gets details of a Managed Secret without sensitive data
