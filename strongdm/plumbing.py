@@ -3929,61 +3929,6 @@ def convert_repeated_azure_certificate_to_porcelain(plumbings):
     ]
 
 
-def convert_azure_console_to_porcelain(plumbing):
-    if plumbing is None:
-        return None
-    porcelain = models.AzureConsole()
-    porcelain.bind_interface = (plumbing.bind_interface)
-    porcelain.connector_id = (plumbing.connector_id)
-    porcelain.egress_filter = (plumbing.egress_filter)
-    porcelain.healthy = (plumbing.healthy)
-    porcelain.id = (plumbing.id)
-    porcelain.identity_set_id = (plumbing.identity_set_id)
-    porcelain.management_group_id = (plumbing.management_group_id)
-    porcelain.name = (plumbing.name)
-    porcelain.privilege_levels = (plumbing.privilege_levels)
-    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.secret_store_id = (plumbing.secret_store_id)
-    porcelain.subdomain = (plumbing.subdomain)
-    porcelain.subscription_id = (plumbing.subscription_id)
-    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
-    return porcelain
-
-
-def convert_azure_console_to_plumbing(porcelain):
-    plumbing = AzureConsole()
-    if porcelain is None:
-        return plumbing
-    plumbing.bind_interface = (porcelain.bind_interface)
-    plumbing.connector_id = (porcelain.connector_id)
-    plumbing.egress_filter = (porcelain.egress_filter)
-    plumbing.healthy = (porcelain.healthy)
-    plumbing.id = (porcelain.id)
-    plumbing.identity_set_id = (porcelain.identity_set_id)
-    plumbing.management_group_id = (porcelain.management_group_id)
-    plumbing.name = (porcelain.name)
-    plumbing.privilege_levels = (porcelain.privilege_levels)
-    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.secret_store_id = (porcelain.secret_store_id)
-    plumbing.subdomain = (porcelain.subdomain)
-    plumbing.subscription_id = (porcelain.subscription_id)
-    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
-    return plumbing
-
-
-def convert_repeated_azure_console_to_plumbing(porcelains):
-    return [
-        convert_azure_console_to_plumbing(porcelain)
-        for porcelain in porcelains
-    ]
-
-
-def convert_repeated_azure_console_to_porcelain(plumbings):
-    return [
-        convert_azure_console_to_porcelain(plumbing) for plumbing in plumbings
-    ]
-
-
 def convert_azure_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5747,6 +5692,64 @@ def convert_repeated_elasticache_redis_to_porcelain(plumbings):
         convert_elasticache_redis_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
+
+
+def convert_entra_id_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.EntraID()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.discovery_enabled = (plumbing.discovery_enabled)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.group_names = (plumbing.group_names)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.management_group_id = (plumbing.management_group_id)
+    porcelain.name = (plumbing.name)
+    porcelain.privilege_levels = (plumbing.privilege_levels)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.resource_group_id = (plumbing.resource_group_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.subscription_id = (plumbing.subscription_id)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tenant_id = (plumbing.tenant_id)
+    return porcelain
+
+
+def convert_entra_id_to_plumbing(porcelain):
+    plumbing = EntraID()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.discovery_enabled = (porcelain.discovery_enabled)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.group_names = (porcelain.group_names)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.management_group_id = (porcelain.management_group_id)
+    plumbing.name = (porcelain.name)
+    plumbing.privilege_levels = (porcelain.privilege_levels)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.resource_group_id = (porcelain.resource_group_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.subscription_id = (porcelain.subscription_id)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tenant_id = (porcelain.tenant_id)
+    return plumbing
+
+
+def convert_repeated_entra_id_to_plumbing(porcelains):
+    return [
+        convert_entra_id_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_entra_id_to_porcelain(plumbings):
+    return [convert_entra_id_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_gcp_to_porcelain(plumbing):
@@ -11208,6 +11211,7 @@ def convert_rdp_cert_to_porcelain(plumbing):
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.sid = (plumbing.sid)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     porcelain.username = (plumbing.username)
@@ -11232,6 +11236,7 @@ def convert_rdp_cert_to_plumbing(porcelain):
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.sid = (porcelain.sid)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     plumbing.username = (porcelain.username)
@@ -12313,9 +12318,6 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.AzureCertificate):
         plumbing.azure_certificate.CopyFrom(
             convert_azure_certificate_to_plumbing(porcelain))
-    if isinstance(porcelain, models.AzureConsole):
-        plumbing.azure_console.CopyFrom(
-            convert_azure_console_to_plumbing(porcelain))
     if isinstance(porcelain, models.AzureMysql):
         plumbing.azure_mysql.CopyFrom(
             convert_azure_mysql_to_plumbing(porcelain))
@@ -12381,6 +12383,8 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.ElasticacheRedis):
         plumbing.elasticache_redis.CopyFrom(
             convert_elasticache_redis_to_plumbing(porcelain))
+    if isinstance(porcelain, models.EntraID):
+        plumbing.entra_id.CopyFrom(convert_entra_id_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCP):
         plumbing.gcp.CopyFrom(convert_gcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPConsole):
@@ -12590,8 +12594,6 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('azure_certificate'):
         return convert_azure_certificate_to_porcelain(
             plumbing.azure_certificate)
-    if plumbing.HasField('azure_console'):
-        return convert_azure_console_to_porcelain(plumbing.azure_console)
     if plumbing.HasField('azure_mysql'):
         return convert_azure_mysql_to_porcelain(plumbing.azure_mysql)
     if plumbing.HasField('azure_mysql_managed_identity'):
@@ -12650,6 +12652,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('elasticache_redis'):
         return convert_elasticache_redis_to_porcelain(
             plumbing.elasticache_redis)
+    if plumbing.HasField('entra_id'):
+        return convert_entra_id_to_porcelain(plumbing.entra_id)
     if plumbing.HasField('gcp'):
         return convert_gcp_to_porcelain(plumbing.gcp)
     if plumbing.HasField('gcp_console'):

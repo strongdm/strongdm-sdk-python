@@ -5348,7 +5348,6 @@ class Resources:
     `strongdm.models.AWSInstanceProfile`
     `strongdm.models.Azure`
     `strongdm.models.AzureCertificate`
-    `strongdm.models.AzureConsole`
     `strongdm.models.AzureMysql`
     `strongdm.models.AzureMysqlManagedIdentity`
     `strongdm.models.AzurePostgres`
@@ -5374,6 +5373,7 @@ class Resources:
     `strongdm.models.DynamoDBIAM`
     `strongdm.models.Elastic`
     `strongdm.models.ElasticacheRedis`
+    `strongdm.models.EntraID`
     `strongdm.models.GCP`
     `strongdm.models.GCPConsole`
     `strongdm.models.GCPWIF`

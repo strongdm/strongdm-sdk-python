@@ -7844,158 +7844,6 @@ class AzureCertificate:
         )
 
 
-class AzureConsole:
-    '''
-    AzureConsole is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'bind_interface',
-        'connector_id',
-        'egress_filter',
-        'healthy',
-        'id',
-        'identity_set_id',
-        'management_group_id',
-        'name',
-        'privilege_levels',
-        'proxy_cluster_id',
-        'secret_store_id',
-        'subdomain',
-        'subscription_id',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        bind_interface=None,
-        connector_id=None,
-        egress_filter=None,
-        healthy=None,
-        id=None,
-        identity_set_id=None,
-        management_group_id=None,
-        name=None,
-        privilege_levels=None,
-        proxy_cluster_id=None,
-        secret_store_id=None,
-        subdomain=None,
-        subscription_id=None,
-        tags=None,
-    ):
-        self.bind_interface = bind_interface if bind_interface is not None else ''
-        '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
-        '''
-        self.connector_id = connector_id if connector_id is not None else ''
-        '''
-         The connector ID to authenticate through.
-        '''
-        self.egress_filter = egress_filter if egress_filter is not None else ''
-        '''
-         A filter applied to the routing logic to pin datasource to nodes.
-        '''
-        self.healthy = healthy if healthy is not None else False
-        '''
-         True if the datasource is reachable and the credentials are valid.
-        '''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the Resource.
-        '''
-        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
-        '''
-         The ID of the identity set to use for identity connections.
-        '''
-        self.management_group_id = management_group_id if management_group_id is not None else ''
-        '''
-         The management group ID to authenticate scope Privileges to.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the Resource.
-        '''
-        self.privilege_levels = privilege_levels if privilege_levels is not None else ''
-        '''
-         The privilege levels specify which Groups are managed externally
-        '''
-        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
-        '''
-         ID of the proxy cluster for this resource, if any.
-        '''
-        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
-        '''
-         ID of the secret store containing credentials for this resource, if any.
-        '''
-        self.subdomain = subdomain if subdomain is not None else ''
-        '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
-        '''
-        self.subscription_id = subscription_id if subscription_id is not None else ''
-        '''
-         The subscription ID to authenticate scope Privileges to.
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-
-    def __repr__(self):
-        return '<sdm.AzureConsole ' + \
-            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
-            'connector_id: ' + repr(self.connector_id) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
-            'management_group_id: ' + repr(self.management_group_id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'privilege_levels: ' + repr(self.privilege_levels) + ' ' +\
-            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            'subscription_id: ' + repr(self.subscription_id) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'bind_interface': self.bind_interface,
-            'connector_id': self.connector_id,
-            'egress_filter': self.egress_filter,
-            'healthy': self.healthy,
-            'id': self.id,
-            'identity_set_id': self.identity_set_id,
-            'management_group_id': self.management_group_id,
-            'name': self.name,
-            'privilege_levels': self.privilege_levels,
-            'proxy_cluster_id': self.proxy_cluster_id,
-            'secret_store_id': self.secret_store_id,
-            'subdomain': self.subdomain,
-            'subscription_id': self.subscription_id,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            bind_interface=d.get('bind_interface'),
-            connector_id=d.get('connector_id'),
-            egress_filter=d.get('egress_filter'),
-            healthy=d.get('healthy'),
-            id=d.get('id'),
-            identity_set_id=d.get('identity_set_id'),
-            management_group_id=d.get('management_group_id'),
-            name=d.get('name'),
-            privilege_levels=d.get('privilege_levels'),
-            proxy_cluster_id=d.get('proxy_cluster_id'),
-            secret_store_id=d.get('secret_store_id'),
-            subdomain=d.get('subdomain'),
-            subscription_id=d.get('subscription_id'),
-            tags=d.get('tags'),
-        )
-
-
 class AzureMysql:
     __slots__ = [
         'bind_interface',
@@ -12484,6 +12332,185 @@ class ElasticacheRedis:
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
             username=d.get('username'),
+        )
+
+
+class EntraID:
+    '''
+    EntraID is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'discovery_enabled',
+        'egress_filter',
+        'group_names',
+        'healthy',
+        'id',
+        'identity_set_id',
+        'management_group_id',
+        'name',
+        'privilege_levels',
+        'proxy_cluster_id',
+        'resource_group_id',
+        'secret_store_id',
+        'subdomain',
+        'subscription_id',
+        'tags',
+        'tenant_id',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        discovery_enabled=None,
+        egress_filter=None,
+        group_names=None,
+        healthy=None,
+        id=None,
+        identity_set_id=None,
+        management_group_id=None,
+        name=None,
+        privilege_levels=None,
+        proxy_cluster_id=None,
+        resource_group_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        subscription_id=None,
+        tags=None,
+        tenant_id=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of the tenant to be run from a node.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.group_names = group_names if group_names is not None else ''
+        '''
+         comma separated list of group names to filter by. Supports wildcards (*)
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
+        self.management_group_id = management_group_id if management_group_id is not None else ''
+        '''
+         The management group ID to authenticate scope Privileges to.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.privilege_levels = privilege_levels if privilege_levels is not None else ''
+        '''
+         The privilege levels specify which Groups are managed externally
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.resource_group_id = resource_group_id if resource_group_id is not None else ''
+        '''
+         filters discovered groups to the specified Resource Group
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+        '''
+        self.subscription_id = subscription_id if subscription_id is not None else ''
+        '''
+         The subscription ID to authenticate scope Privileges to.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tenant_id = tenant_id if tenant_id is not None else ''
+        '''
+         The connector ID to authenticate through.
+        '''
+
+    def __repr__(self):
+        return '<sdm.EntraID ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'group_names: ' + repr(self.group_names) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'management_group_id: ' + repr(self.management_group_id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'privilege_levels: ' + repr(self.privilege_levels) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'resource_group_id: ' + repr(self.resource_group_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'subscription_id: ' + repr(self.subscription_id) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tenant_id: ' + repr(self.tenant_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'discovery_enabled': self.discovery_enabled,
+            'egress_filter': self.egress_filter,
+            'group_names': self.group_names,
+            'healthy': self.healthy,
+            'id': self.id,
+            'identity_set_id': self.identity_set_id,
+            'management_group_id': self.management_group_id,
+            'name': self.name,
+            'privilege_levels': self.privilege_levels,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'resource_group_id': self.resource_group_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'subscription_id': self.subscription_id,
+            'tags': self.tags,
+            'tenant_id': self.tenant_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            discovery_enabled=d.get('discovery_enabled'),
+            egress_filter=d.get('egress_filter'),
+            group_names=d.get('group_names'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            identity_set_id=d.get('identity_set_id'),
+            management_group_id=d.get('management_group_id'),
+            name=d.get('name'),
+            privilege_levels=d.get('privilege_levels'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            resource_group_id=d.get('resource_group_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            subscription_id=d.get('subscription_id'),
+            tags=d.get('tags'),
+            tenant_id=d.get('tenant_id'),
         )
 
 
@@ -23534,6 +23561,7 @@ class RDPCert:
         'port_override',
         'proxy_cluster_id',
         'secret_store_id',
+        'sid',
         'subdomain',
         'tags',
         'username',
@@ -23554,6 +23582,7 @@ class RDPCert:
         port_override=None,
         proxy_cluster_id=None,
         secret_store_id=None,
+        sid=None,
         subdomain=None,
         tags=None,
         username=None,
@@ -23610,6 +23639,11 @@ class RDPCert:
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
+        self.sid = sid if sid is not None else ''
+        '''
+         The SID needed in leased credentials to generate a valid certificate.
+         Using extraplain3 here as 1 and 2 are used in cert generation and internal driver config
+        '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
          Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
@@ -23638,6 +23672,7 @@ class RDPCert:
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'sid: ' + repr(self.sid) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -23659,6 +23694,7 @@ class RDPCert:
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
+            'sid': self.sid,
             'subdomain': self.subdomain,
             'tags': self.tags,
             'username': self.username,
@@ -23681,6 +23717,7 @@ class RDPCert:
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
+            sid=d.get('sid'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             username=d.get('username'),
