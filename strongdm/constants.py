@@ -547,3 +547,11 @@ class ApproverReference:
     NONE = ""
     MANAGER_OF_REQUESTER = "manager-of-requester"
     MANAGER_OF_MANAGER_OF_REQUESTER = "manager-of-manager-of-requester"
+
+
+# ResourceIPAllocationMode defines how to allocate IP addresses on resource create and update.
+class ResourceIPAllocationMode:
+    UNSET = ""
+    DEFAULT = "default"
+    LOOPBACK = "loopback"
+    VNM = "vnm"

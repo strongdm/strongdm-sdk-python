@@ -74,7 +74,7 @@ class AKS:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -135,7 +135,7 @@ class AKS:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -276,7 +276,7 @@ class AKSBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -312,7 +312,7 @@ class AKSBasicAuth:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -446,7 +446,7 @@ class AKSServiceAccount:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
         '''
@@ -495,7 +495,7 @@ class AKSServiceAccount:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -631,7 +631,7 @@ class AKSServiceAccountUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -663,7 +663,7 @@ class AKSServiceAccountUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -786,7 +786,7 @@ class AKSUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -830,7 +830,7 @@ class AKSUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -954,7 +954,7 @@ class AMQP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -986,7 +986,7 @@ class AMQP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -1115,7 +1115,7 @@ class AWS:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1139,7 +1139,7 @@ class AWS:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -1366,7 +1366,7 @@ class AWSConsole:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1398,7 +1398,7 @@ class AWSConsole:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -1549,7 +1549,7 @@ class AWSConsoleStaticKeyPair:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1577,7 +1577,7 @@ class AWSConsoleStaticKeyPair:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -1723,7 +1723,7 @@ class AWSInstanceProfile:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -1747,7 +1747,7 @@ class AWSInstanceProfile:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -4052,7 +4052,7 @@ class Aerospike:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -4084,7 +4084,7 @@ class Aerospike:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -4236,7 +4236,7 @@ class AmazonEKS:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -4289,7 +4289,7 @@ class AmazonEKS:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -4470,7 +4470,7 @@ class AmazonEKSInstanceProfile:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -4523,7 +4523,7 @@ class AmazonEKSInstanceProfile:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -4682,7 +4682,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -4718,7 +4718,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -4868,7 +4868,7 @@ class AmazonEKSUserImpersonation:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -4904,7 +4904,7 @@ class AmazonEKSUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -5055,7 +5055,7 @@ class AmazonES:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5079,7 +5079,7 @@ class AmazonES:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -5215,7 +5215,7 @@ class AmazonESIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5239,7 +5239,7 @@ class AmazonESIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -5372,7 +5372,7 @@ class AmazonMQAMQP091:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -5404,7 +5404,7 @@ class AmazonMQAMQP091:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -6613,7 +6613,7 @@ class Athena:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6637,7 +6637,7 @@ class Athena:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -6771,7 +6771,7 @@ class AthenaIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -6795,7 +6795,7 @@ class AthenaIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -6925,7 +6925,7 @@ class AuroraMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -6961,7 +6961,7 @@ class AuroraMysql:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7100,7 +7100,7 @@ class AuroraMysqlIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -7132,7 +7132,7 @@ class AuroraMysqlIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7266,7 +7266,7 @@ class AuroraPostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -7306,7 +7306,7 @@ class AuroraPostgres:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7434,7 +7434,7 @@ class AuroraPostgresIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -7470,7 +7470,7 @@ class AuroraPostgresIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7605,7 +7605,7 @@ class Azure:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -7629,7 +7629,7 @@ class Azure:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7744,7 +7744,7 @@ class AzureCertificate:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.client_certificate = client_certificate if client_certificate is not None else ''
         '''
@@ -7768,7 +7768,7 @@ class AzureCertificate:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -7887,7 +7887,7 @@ class AzureMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -7923,7 +7923,7 @@ class AzureMysql:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -8066,7 +8066,7 @@ class AzureMysqlManagedIdentity:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -8102,7 +8102,7 @@ class AzureMysqlManagedIdentity:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -8234,7 +8234,7 @@ class AzurePostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -8274,7 +8274,7 @@ class AzurePostgres:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -8402,7 +8402,7 @@ class AzurePostgresManagedIdentity:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -8442,7 +8442,7 @@ class AzurePostgresManagedIdentity:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -8631,7 +8631,7 @@ class BigQuery:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -8655,7 +8655,7 @@ class BigQuery:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.private_key = private_key if private_key is not None else ''
         '''
@@ -8781,7 +8781,7 @@ class Cassandra:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -8813,7 +8813,7 @@ class Cassandra:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -8940,7 +8940,7 @@ class Citus:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -8980,7 +8980,7 @@ class Citus:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -9100,7 +9100,7 @@ class ClickHouseHTTP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -9128,7 +9128,7 @@ class ClickHouseHTTP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -9245,7 +9245,7 @@ class ClickHouseMySQL:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -9281,7 +9281,7 @@ class ClickHouseMySQL:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -9411,7 +9411,7 @@ class ClickHouseTCP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -9447,7 +9447,7 @@ class ClickHouseTCP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -9579,7 +9579,7 @@ class Clustrix:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -9615,7 +9615,7 @@ class Clustrix:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -9754,7 +9754,7 @@ class Cockroach:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -9794,7 +9794,7 @@ class Cockroach:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10080,7 +10080,7 @@ class CouchbaseDatabase:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10116,7 +10116,7 @@ class CouchbaseDatabase:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10240,7 +10240,7 @@ class CouchbaseWebUI:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10264,7 +10264,7 @@ class CouchbaseWebUI:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10582,7 +10582,7 @@ class DB2I:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -10614,7 +10614,7 @@ class DB2I:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10741,7 +10741,7 @@ class DB2LUW:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -10777,7 +10777,7 @@ class DB2LUW:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -10997,7 +10997,7 @@ class DocumentDBHost:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11029,7 +11029,7 @@ class DocumentDBHost:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11146,7 +11146,7 @@ class DocumentDBHostIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11174,7 +11174,7 @@ class DocumentDBHostIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11295,7 +11295,7 @@ class DocumentDBReplicaSet:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -11327,7 +11327,7 @@ class DocumentDBReplicaSet:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11455,7 +11455,7 @@ class DocumentDBReplicaSetIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -11483,7 +11483,7 @@ class DocumentDBReplicaSetIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11596,7 +11596,7 @@ class Druid:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11628,7 +11628,7 @@ class Druid:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11752,7 +11752,7 @@ class DynamoDB:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11776,7 +11776,7 @@ class DynamoDB:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -11910,7 +11910,7 @@ class DynamoDBIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -11934,7 +11934,7 @@ class DynamoDBIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -12060,7 +12060,7 @@ class Elastic:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -12092,7 +12092,7 @@ class Elastic:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -12217,7 +12217,7 @@ class ElasticacheRedis:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -12249,7 +12249,7 @@ class ElasticacheRedis:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -12382,7 +12382,7 @@ class EntraID:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
         '''
@@ -12547,7 +12547,7 @@ class GCP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -12571,7 +12571,7 @@ class GCP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -12777,7 +12777,7 @@ class GCPConsole:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -12805,7 +12805,7 @@ class GCPConsole:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -12998,7 +12998,7 @@ class GCPWIF:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -13026,7 +13026,7 @@ class GCPWIF:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.project_id = project_id if project_id is not None else ''
         '''
@@ -13426,7 +13426,7 @@ class GoogleGKE:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -13475,7 +13475,7 @@ class GoogleGKE:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -13611,7 +13611,7 @@ class GoogleGKEUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -13643,7 +13643,7 @@ class GoogleGKEUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -13763,7 +13763,7 @@ class Greenplum:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -13803,7 +13803,7 @@ class Greenplum:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -13933,7 +13933,7 @@ class HTTPAuth:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -13969,7 +13969,7 @@ class HTTPAuth:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -14097,7 +14097,7 @@ class HTTPBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -14137,7 +14137,7 @@ class HTTPBasicAuth:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -14268,7 +14268,7 @@ class HTTPNoAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -14304,7 +14304,7 @@ class HTTPNoAuth:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -15691,7 +15691,7 @@ class Kubernetes:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -15752,7 +15752,7 @@ class Kubernetes:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -15893,7 +15893,7 @@ class KubernetesBasicAuth:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -15929,7 +15929,7 @@ class KubernetesBasicAuth:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -16059,7 +16059,7 @@ class KubernetesPodIdentity:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -16104,7 +16104,7 @@ class KubernetesPodIdentity:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -16242,7 +16242,7 @@ class KubernetesServiceAccount:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
         '''
@@ -16291,7 +16291,7 @@ class KubernetesServiceAccount:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -16427,7 +16427,7 @@ class KubernetesServiceAccountUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -16459,7 +16459,7 @@ class KubernetesServiceAccountUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -16582,7 +16582,7 @@ class KubernetesUserImpersonation:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -16626,7 +16626,7 @@ class KubernetesUserImpersonation:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -16888,7 +16888,7 @@ class MTLSMysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -16936,7 +16936,7 @@ class MTLSMysql:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -17099,7 +17099,7 @@ class MTLSPostgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.certificate_authority = certificate_authority if certificate_authority is not None else ''
         '''
@@ -17151,7 +17151,7 @@ class MTLSPostgres:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -18352,7 +18352,7 @@ class Maria:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -18388,7 +18388,7 @@ class Maria:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -18519,7 +18519,7 @@ class Memcached:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -18547,7 +18547,7 @@ class Memcached:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -18659,7 +18659,7 @@ class Memsql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -18695,7 +18695,7 @@ class Memsql:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -18838,7 +18838,7 @@ class MongoHost:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -18870,7 +18870,7 @@ class MongoHost:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19008,7 +19008,7 @@ class MongoLegacyHost:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -19040,7 +19040,7 @@ class MongoLegacyHost:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19182,7 +19182,7 @@ class MongoLegacyReplicaset:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -19218,7 +19218,7 @@ class MongoLegacyReplicaset:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19366,7 +19366,7 @@ class MongoReplicaSet:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.connect_to_replica = connect_to_replica if connect_to_replica is not None else False
         '''
@@ -19402,7 +19402,7 @@ class MongoReplicaSet:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19544,7 +19544,7 @@ class MongoShardedCluster:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -19572,7 +19572,7 @@ class MongoShardedCluster:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19701,7 +19701,7 @@ class Mysql:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -19737,7 +19737,7 @@ class Mysql:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -19868,7 +19868,7 @@ class Neptune:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -19896,7 +19896,7 @@ class Neptune:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -20012,7 +20012,7 @@ class NeptuneIAM:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -20040,7 +20040,7 @@ class NeptuneIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -20504,7 +20504,7 @@ class Oracle:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -20540,7 +20540,7 @@ class Oracle:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -20668,7 +20668,7 @@ class OracleNNE:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -20704,7 +20704,7 @@ class OracleNNE:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -22312,7 +22312,7 @@ class Postgres:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -22352,7 +22352,7 @@ class Postgres:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -22478,7 +22478,7 @@ class Presto:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -22514,7 +22514,7 @@ class Presto:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -23421,7 +23421,7 @@ class RDP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.downgrade_nla_connections = downgrade_nla_connections if downgrade_nla_connections is not None else False
         '''
@@ -23461,7 +23461,7 @@ class RDP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -23589,7 +23589,7 @@ class RDPCert:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -23629,7 +23629,7 @@ class RDPCert:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -23641,8 +23641,7 @@ class RDPCert:
         '''
         self.sid = sid if sid is not None else ''
         '''
-         The SID needed in leased credentials to generate a valid certificate.
-         Using extraplain3 here as 1 and 2 are used in cert generation and internal driver config
+         Windows Security Identifier (SID) of the configured Username, required for strong certificate mapping in full enforcement mode.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
@@ -23767,7 +23766,7 @@ class RDSPostgresIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -23803,7 +23802,7 @@ class RDSPostgresIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -23938,7 +23937,7 @@ class RabbitMQAMQP091:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -23970,7 +23969,7 @@ class RabbitMQAMQP091:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24153,7 +24152,7 @@ class RawTCP:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -24181,7 +24180,7 @@ class RawTCP:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24289,7 +24288,7 @@ class Redis:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -24321,7 +24320,7 @@ class Redis:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24446,7 +24445,7 @@ class RedisCluster:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -24478,7 +24477,7 @@ class RedisCluster:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24605,7 +24604,7 @@ class Redshift:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -24645,7 +24644,7 @@ class Redshift:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24773,7 +24772,7 @@ class RedshiftIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.cluster_id = cluster_id if cluster_id is not None else ''
         '''
@@ -24813,7 +24812,7 @@ class RedshiftIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -24948,7 +24947,7 @@ class RedshiftServerlessIAM:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -24984,7 +24983,7 @@ class RedshiftServerlessIAM:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -26716,7 +26715,7 @@ class SQLServer:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -26756,7 +26755,7 @@ class SQLServer:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -26903,7 +26902,7 @@ class SQLServerAzureAD:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.client_id = client_id if client_id is not None else ''
         '''
@@ -26943,7 +26942,7 @@ class SQLServerAzureAD:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -27101,7 +27100,7 @@ class SQLServerKerberosAD:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -27145,7 +27144,7 @@ class SQLServerKerberosAD:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -27304,7 +27303,7 @@ class SSH:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -27340,7 +27339,7 @@ class SSH:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -27483,7 +27482,7 @@ class SSHCert:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -27527,7 +27526,7 @@ class SSHCert:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -27671,7 +27670,7 @@ class SSHCustomerKey:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -27711,7 +27710,7 @@ class SSHCustomerKey:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.private_key = private_key if private_key is not None else ''
         '''
@@ -27855,7 +27854,7 @@ class SSHPassword:
         '''
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -27891,7 +27890,7 @@ class SSHPassword:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -29059,7 +29058,7 @@ class SingleStore:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -29095,7 +29094,7 @@ class SingleStore:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -29234,7 +29233,7 @@ class Snowflake:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -29266,7 +29265,7 @@ class Snowflake:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.private_key = private_key if private_key is not None else ''
         '''
@@ -29392,7 +29391,7 @@ class Snowsight:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29416,7 +29415,7 @@ class Snowsight:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -29526,7 +29525,7 @@ class Sybase:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29558,7 +29557,7 @@ class Sybase:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -29674,7 +29673,7 @@ class SybaseIQ:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29706,7 +29705,7 @@ class SybaseIQ:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -29862,7 +29861,7 @@ class Teradata:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29894,7 +29893,7 @@ class Teradata:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -30119,7 +30118,7 @@ class Trino:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -30151,7 +30150,7 @@ class Trino:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
@@ -31423,7 +31422,7 @@ class Vertica:
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided.
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
         self.database = database if database is not None else ''
         '''
@@ -31459,7 +31458,7 @@ class Vertica:
         '''
         self.port_override = port_override if port_override is not None else 0
         '''
-         The local port used by clients to connect to this resource.
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
         '''
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
