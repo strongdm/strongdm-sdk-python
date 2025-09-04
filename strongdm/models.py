@@ -147,7 +147,7 @@ class AKS:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -324,7 +324,7 @@ class AKSBasicAuth:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -507,7 +507,7 @@ class AKSServiceAccount:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -675,7 +675,7 @@ class AKSServiceAccountUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -842,7 +842,7 @@ class AKSUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -998,7 +998,7 @@ class AMQP:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -1163,7 +1163,7 @@ class AWS:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -1771,7 +1771,7 @@ class AWSInstanceProfile:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -4096,7 +4096,7 @@ class Aerospike:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -4317,7 +4317,7 @@ class AmazonEKS:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -4547,7 +4547,7 @@ class AmazonEKSInstanceProfile:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -4742,7 +4742,7 @@ class AmazonEKSInstanceProfileUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -4932,7 +4932,7 @@ class AmazonEKSUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -5107,7 +5107,7 @@ class AmazonES:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -5263,7 +5263,7 @@ class AmazonESIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -5416,7 +5416,7 @@ class AmazonMQAMQP091:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -6665,7 +6665,7 @@ class Athena:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -6819,7 +6819,7 @@ class AthenaIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -6977,7 +6977,7 @@ class AuroraMysql:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7152,7 +7152,7 @@ class AuroraMysqlIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7318,7 +7318,7 @@ class AuroraPostgres:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7490,7 +7490,7 @@ class AuroraPostgresIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7641,7 +7641,7 @@ class Azure:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7780,7 +7780,7 @@ class AzureCertificate:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -7939,7 +7939,7 @@ class AzureMysql:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8110,7 +8110,7 @@ class AzureMysqlManagedIdentity:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8282,7 +8282,7 @@ class AzurePostgres:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8450,7 +8450,7 @@ class AzurePostgresManagedIdentity:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8671,7 +8671,7 @@ class BigQuery:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8821,7 +8821,7 @@ class Cassandra:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -8988,7 +8988,7 @@ class Citus:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -9293,7 +9293,7 @@ class ClickHouseMySQL:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -9455,7 +9455,7 @@ class ClickHouseTCP:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -9627,7 +9627,7 @@ class Clustrix:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -9802,7 +9802,7 @@ class Cockroach:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -10124,7 +10124,7 @@ class CouchbaseDatabase:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -10622,7 +10622,7 @@ class DB2I:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -10785,7 +10785,7 @@ class DB2LUW:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11037,7 +11037,7 @@ class DocumentDBHost:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11186,7 +11186,7 @@ class DocumentDBHostIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11339,7 +11339,7 @@ class DocumentDBReplicaSet:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11495,7 +11495,7 @@ class DocumentDBReplicaSetIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11636,7 +11636,7 @@ class Druid:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11800,7 +11800,7 @@ class DynamoDB:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -11954,7 +11954,7 @@ class DynamoDBIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -12100,7 +12100,7 @@ class Elastic:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -12257,7 +12257,7 @@ class ElasticacheRedis:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -12332,10 +12332,6 @@ class ElasticacheRedis:
 
 
 class EntraID:
-    '''
-    EntraID is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'discovery_enabled',
@@ -12430,7 +12426,7 @@ class EntraID:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.subscription_id = subscription_id if subscription_id is not None else ''
         '''
@@ -12583,7 +12579,7 @@ class GCP:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -13046,7 +13042,7 @@ class GCPWIF:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -13487,7 +13483,7 @@ class GoogleGKE:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -13655,7 +13651,7 @@ class GoogleGKEUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -13811,7 +13807,7 @@ class Greenplum:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -15760,7 +15756,7 @@ class Kubernetes:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -15937,7 +15933,7 @@ class KubernetesBasicAuth:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -16112,7 +16108,7 @@ class KubernetesPodIdentity:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -16299,7 +16295,7 @@ class KubernetesServiceAccount:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -16467,7 +16463,7 @@ class KubernetesServiceAccountUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -16634,7 +16630,7 @@ class KubernetesUserImpersonation:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -16952,7 +16948,7 @@ class MTLSMysql:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -17163,7 +17159,7 @@ class MTLSPostgres:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -18400,7 +18396,7 @@ class Maria:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -18555,7 +18551,7 @@ class Memcached:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -18707,7 +18703,7 @@ class Memsql:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -18878,7 +18874,7 @@ class MongoHost:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19048,7 +19044,7 @@ class MongoLegacyHost:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19230,7 +19226,7 @@ class MongoLegacyReplicaset:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19414,7 +19410,7 @@ class MongoReplicaSet:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19580,7 +19576,7 @@ class MongoShardedCluster:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19749,7 +19745,7 @@ class Mysql:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -19904,7 +19900,7 @@ class Neptune:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -20064,7 +20060,7 @@ class NeptuneIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -20548,7 +20544,7 @@ class Oracle:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -20712,7 +20708,7 @@ class OracleNNE:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -22360,7 +22356,7 @@ class Postgres:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -22522,7 +22518,7 @@ class Presto:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -23469,7 +23465,7 @@ class RDP:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -23641,7 +23637,7 @@ class RDPCert:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -23818,7 +23814,7 @@ class RDSPostgresIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -23977,7 +23973,7 @@ class RabbitMQAMQP091:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24188,7 +24184,7 @@ class RawTCP:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24328,7 +24324,7 @@ class Redis:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24485,7 +24481,7 @@ class RedisCluster:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24652,7 +24648,7 @@ class Redshift:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24828,7 +24824,7 @@ class RedshiftIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -24999,7 +24995,7 @@ class RedshiftServerlessIAM:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -26767,7 +26763,7 @@ class SQLServer:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -26958,7 +26954,7 @@ class SQLServerAzureAD:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -27164,7 +27160,7 @@ class SQLServerKerberosAD:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -27351,7 +27347,7 @@ class SSH:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -27534,7 +27530,7 @@ class SSHCert:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -27722,7 +27718,7 @@ class SSHCustomerKey:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -27898,7 +27894,7 @@ class SSHPassword:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -29106,7 +29102,7 @@ class SingleStore:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -29281,7 +29277,7 @@ class Snowflake:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -29565,7 +29561,7 @@ class Sybase:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -29713,7 +29709,7 @@ class SybaseIQ:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -29901,7 +29897,7 @@ class Teradata:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -30158,7 +30154,7 @@ class Trino:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
@@ -31466,7 +31462,7 @@ class Vertica:
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
-         Subdomain is the local DNS address.  (e.g. app-prod1 turns into app-prod1.your-org-name.sdm.network)
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
         '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
