@@ -14924,6 +14924,7 @@ def convert_snowsight_to_porcelain(plumbing):
         return None
     porcelain = models.Snowsight()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.connecttodefault = (plumbing.connectToDefault)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthcheck_username = (plumbing.healthcheck_username)
     porcelain.healthy = (plumbing.healthy)
@@ -14943,6 +14944,7 @@ def convert_snowsight_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.connectToDefault = (porcelain.connecttodefault)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthcheck_username = (porcelain.healthcheck_username)
     plumbing.healthy = (porcelain.healthy)

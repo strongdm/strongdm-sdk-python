@@ -29353,6 +29353,7 @@ class Snowflake:
 class Snowsight:
     __slots__ = [
         'bind_interface',
+        'connecttodefault',
         'egress_filter',
         'healthcheck_username',
         'healthy',
@@ -29369,6 +29370,7 @@ class Snowsight:
     def __init__(
         self,
         bind_interface=None,
+        connecttodefault=None,
         egress_filter=None,
         healthcheck_username=None,
         healthy=None,
@@ -29384,6 +29386,10 @@ class Snowsight:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.connecttodefault = connecttodefault if connecttodefault is not None else False
+        '''
+         If true, select the ACS with isDefault=true
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -29433,6 +29439,7 @@ class Snowsight:
     def __repr__(self):
         return '<sdm.Snowsight ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'connecttodefault: ' + repr(self.connecttodefault) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthcheck_username: ' + repr(self.healthcheck_username) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
@@ -29449,6 +29456,7 @@ class Snowsight:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'connecttodefault': self.connecttodefault,
             'egress_filter': self.egress_filter,
             'healthcheck_username': self.healthcheck_username,
             'healthy': self.healthy,
@@ -29466,6 +29474,7 @@ class Snowsight:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            connecttodefault=d.get('connecttodefault'),
             egress_filter=d.get('egress_filter'),
             healthcheck_username=d.get('healthcheck_username'),
             healthy=d.get('healthy'),
