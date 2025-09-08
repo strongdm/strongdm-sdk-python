@@ -11198,6 +11198,7 @@ def convert_rdp_cert_to_porcelain(plumbing):
         return None
     porcelain = models.RDPCert()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.dc_hostnames = (plumbing.dc_hostnames)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
@@ -11223,6 +11224,7 @@ def convert_rdp_cert_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.dc_hostnames = (porcelain.dc_hostnames)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
