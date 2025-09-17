@@ -9664,6 +9664,7 @@ def convert_oracle_nne_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -9686,6 +9687,7 @@ def convert_oracle_nne_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
     plumbing.username = (porcelain.username)
     return plumbing
 
