@@ -48,6 +48,10 @@ from .account_resources_history_pb2 import *
 from .account_resources_history_pb2_grpc import *
 from .accounts_pb2 import *
 from .accounts_pb2_grpc import *
+from .accounts_groups_pb2 import *
+from .accounts_groups_pb2_grpc import *
+from .accounts_groups_history_pb2 import *
+from .accounts_groups_history_pb2_grpc import *
 from .accounts_history_pb2 import *
 from .accounts_history_pb2_grpc import *
 from .activities_pb2 import *
@@ -68,6 +72,14 @@ from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
+from .groups_pb2 import *
+from .groups_pb2_grpc import *
+from .groups_history_pb2 import *
+from .groups_history_pb2_grpc import *
+from .groups_roles_pb2 import *
+from .groups_roles_pb2_grpc import *
+from .groups_roles_history_pb2 import *
+from .groups_roles_history_pb2_grpc import *
 from .health_checks_pb2 import *
 from .health_checks_pb2_grpc import *
 from .identity_aliases_pb2 import *
@@ -1199,6 +1211,235 @@ class SnapshotAccounts:
          List gets a list of Accounts matching a given set of criteria.
         '''
         return self.accounts.list(filter, *args, timeout=timeout)
+
+
+class AccountsGroups:
+    '''
+     An AccountGroup links an account and a group.
+    See `strongdm.models.AccountGroup`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountsGroupsStub(channel)
+
+    def create(self, account_group, timeout=None):
+        '''
+         Create create a new AccountGroup.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = AccountGroupCreateRequest()
+
+        if account_group is not None:
+            req.account_group.CopyFrom(
+                plumbing.convert_account_group_to_plumbing(account_group))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('AccountsGroups.Create',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountGroupCreateResponse()
+        resp.account_group = plumbing.convert_account_group_to_porcelain(
+            plumbing_response.account_group)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one AccountGroup by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = AccountGroupGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('AccountsGroups.Get',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountGroupGetResponse()
+        resp.account_group = plumbing.convert_account_group_to_porcelain(
+            plumbing_response.account_group)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes an AccountGroup by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = AccountGroupDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('AccountsGroups.Delete',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.AccountGroupDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountGroups matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = AccountGroupListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountsGroups.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.account_groups:
+                    yield plumbing.convert_account_group_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotAccountsGroups:
+    '''
+    SnapshotAccountsGroups exposes the read only methods of the AccountsGroups
+    service for historical queries.
+    '''
+    def __init__(self, accounts_groups):
+        self.accounts_groups = accounts_groups
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one AccountGroup by ID.
+        '''
+        return self.accounts_groups.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountGroups matching a given set of criteria.
+        '''
+        return self.accounts_groups.list(filter, *args, timeout=timeout)
+
+
+class AccountsGroupsHistory:
+    '''
+     AccountsGroupsHistory records all changes to the state of an AccountGroup.
+    See `strongdm.models.AccountGroupHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = AccountsGroupsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of AccountGroupHistory records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = AccountGroupHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'AccountsGroupsHistory.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_account_group_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class AccountsHistory:
@@ -2387,6 +2628,523 @@ class SnapshotRoles:
          List gets a list of Roles matching a given set of criteria.
         '''
         return self.roles.list(filter, *args, timeout=timeout)
+
+
+class Groups:
+    '''
+     A Group is a set of principals.
+    See `strongdm.models.Group`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GroupsStub(channel)
+
+    def create(self, group, timeout=None):
+        '''
+         Create registers a new Group.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupCreateRequest()
+
+        if group is not None:
+            req.group.CopyFrom(plumbing.convert_group_to_plumbing(group))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('Groups.Create', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupCreateResponse()
+        resp.group = plumbing.convert_group_to_porcelain(
+            plumbing_response.group)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def create_from_roles(self, role_ids, commit, timeout=None):
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupCreateFromRolesRequest()
+
+        req.role_ids.extend((role_ids))
+        req.commit = (commit)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.CreateFromRoles(
+                    req,
+                    metadata=self.parent.get_metadata('Groups.CreateFromRoles',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupCreateFromRolesResponse()
+        resp.group_from_role = plumbing.convert_repeated_group_from_role_to_porcelain(
+            plumbing_response.group_from_role)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Group by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('Groups.Get', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupGetResponse()
+        resp.group = plumbing.convert_group_to_porcelain(
+            plumbing_response.group)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, group, timeout=None):
+        '''
+         Update replaces all the fields of a Group by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupUpdateRequest()
+
+        if group is not None:
+            req.group.CopyFrom(plumbing.convert_group_to_plumbing(group))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata('Groups.Update', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupUpdateResponse()
+        resp.group = plumbing.convert_group_to_porcelain(
+            plumbing_response.group)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a Group by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('Groups.Delete', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Groups matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata('Groups.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.groups:
+                    yield plumbing.convert_group_to_porcelain(plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotGroups:
+    '''
+    SnapshotGroups exposes the read only methods of the Groups
+    service for historical queries.
+    '''
+    def __init__(self, groups):
+        self.groups = groups
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Group by ID.
+        '''
+        return self.groups.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Groups matching a given set of criteria.
+        '''
+        return self.groups.list(filter, *args, timeout=timeout)
+
+
+class GroupsHistory:
+    '''
+     GroupsHistory records all changes to the state of a Group.
+    See `strongdm.models.GroupHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GroupsHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of GroupHistory records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GroupsHistory.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_group_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class GroupsRoles:
+    '''
+     A GroupRole is an assignment of a Group to a Role.
+    See `strongdm.models.GroupRole`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GroupsRolesStub(channel)
+
+    def create(self, group_role, timeout=None):
+        '''
+         Create registers a new GroupRole.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupRoleCreateRequest()
+
+        if group_role is not None:
+            req.group_role.CopyFrom(
+                plumbing.convert_group_role_to_plumbing(group_role))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata('GroupsRoles.Create',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupRoleCreateResponse()
+        resp.group_role = plumbing.convert_group_role_to_porcelain(
+            plumbing_response.group_role)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one GroupRole by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupRoleGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata('GroupsRoles.Get', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupRoleGetResponse()
+        resp.group_role = plumbing.convert_group_role_to_porcelain(
+            plumbing_response.group_role)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a GroupRole by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupRoleDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata('GroupsRoles.Delete',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.GroupRoleDeleteResponse()
+        resp.group_role = plumbing.convert_group_role_to_porcelain(
+            plumbing_response.group_role)
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of GroupRoles matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupRoleListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GroupsRoles.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.groups_roles:
+                    yield plumbing.convert_group_role_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotGroupsRoles:
+    '''
+    SnapshotGroupsRoles exposes the read only methods of the GroupsRoles
+    service for historical queries.
+    '''
+    def __init__(self, groups_roles):
+        self.groups_roles = groups_roles
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one GroupRole by ID.
+        '''
+        return self.groups_roles.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of GroupRoles matching a given set of criteria.
+        '''
+        return self.groups_roles.list(filter, *args, timeout=timeout)
+
+
+class GroupsRolesHistory:
+    '''
+     GroupsRolesHistory records all changes to the state of a GroupRole.
+    See `strongdm.models.GroupRoleHistory`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GroupsRolesHistoryStub(channel)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of GroupRoleHistory records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GroupRoleHistoryListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GroupsRolesHistory.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.history:
+                    yield plumbing.convert_group_role_history_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
 
 
 class HealthChecks:
@@ -5390,6 +6148,7 @@ class Resources:
     `strongdm.models.KubernetesServiceAccountUserImpersonation`
     `strongdm.models.KubernetesUserImpersonation`
     `strongdm.models.Maria`
+    `strongdm.models.MCP`
     `strongdm.models.Memcached`
     `strongdm.models.Memsql`
     `strongdm.models.MongoHost`

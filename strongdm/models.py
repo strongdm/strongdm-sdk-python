@@ -3091,6 +3091,421 @@ class AccountGrantHistory:
         )
 
 
+class AccountGroup:
+    '''
+         An AccountGroup is a link between an Account and a Group.
+    '''
+    __slots__ = [
+        'account_id',
+        'group_id',
+        'id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        group_id=None,
+        id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         Unique identifier of the Account.
+        '''
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         Unique identifier of the Group.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the AccountGroup.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroup ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'group_id': self.group_id,
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            group_id=d.get('group_id'),
+            id=d.get('id'),
+        )
+
+
+class AccountGroupCreateRequest:
+    '''
+         AccountGroupCreateRequest specifies an AccountGroup to create.
+    '''
+    __slots__ = [
+        'account_group',
+    ]
+
+    def __init__(
+        self,
+        account_group=None,
+    ):
+        self.account_group = account_group if account_group is not None else None
+        '''
+         Parameters to define the new AccountGroup.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupCreateRequest ' + \
+            'account_group: ' + repr(self.account_group) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_group': self.account_group,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(account_group=d.get('account_group'), )
+
+
+class AccountGroupCreateResponse:
+    '''
+         AccountGroupCreateResponse reports the result of a create.
+    '''
+    __slots__ = [
+        'account_group',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        account_group=None,
+        rate_limit=None,
+    ):
+        self.account_group = account_group if account_group is not None else None
+        '''
+         The created AccountGroup.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupCreateResponse ' + \
+            'account_group: ' + repr(self.account_group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_group': self.account_group,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_group=d.get('account_group'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountGroupDeleteRequest:
+    '''
+         GroupDeleteRequest identifies an AccountGroup by ID to delete.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the group to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class AccountGroupDeleteResponse:
+    '''
+         GroupDeleteResponse returns information about an AccountGroup that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountGroupGetRequest:
+    '''
+         AccountGroupGetRequest specifies which AccountGroup to retrieve.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the AccountGroup to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class AccountGroupGetResponse:
+    '''
+         AccountGroupGetResponse returns a requested AccountGroup.
+    '''
+    __slots__ = [
+        'account_group',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        account_group=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.account_group = account_group if account_group is not None else None
+        '''
+         The requested AccountGroup.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupGetResponse ' + \
+            'account_group: ' + repr(self.account_group) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_group': self.account_group,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_group=d.get('account_group'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class AccountGroupHistory:
+    '''
+         AccountGroupHistory records the state of an AccountGroup at a given point in time,
+     where every change (create, update and delete) to an AccountGroup produces an
+     AccountGroupHistory record.
+    '''
+    __slots__ = [
+        'account_group',
+        'activity_id',
+        'deleted_at',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        account_group=None,
+        activity_id=None,
+        deleted_at=None,
+        timestamp=None,
+    ):
+        self.account_group = account_group if account_group is not None else None
+        '''
+         The complete AccountGroup state at this time.
+        '''
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the AccountGroup.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this AccountGroup was deleted, the time it was deleted.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the AccountGroup state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupHistory ' + \
+            'account_group: ' + repr(self.account_group) + ' ' +\
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_group': self.account_group,
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_group=d.get('account_group'),
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class AccountGroupListRequest:
+    '''
+         GroupListRequest specifies criteria for retrieving a list of groups.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class AccountGroupListResponse:
+    '''
+         GroupListResponse returns a list of groups that meet the criteria of a
+     GroupListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AccountGroupListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
 class AccountHistory:
     '''
          AccountHistory records the state of an Account at a given point in time,
@@ -5496,6 +5911,7 @@ class ApprovalFlowApprover:
     '''
     __slots__ = [
         'account_id',
+        'group_id',
         'reference',
         'role_id',
     ]
@@ -5503,12 +5919,17 @@ class ApprovalFlowApprover:
     def __init__(
         self,
         account_id=None,
+        group_id=None,
         reference=None,
         role_id=None,
     ):
         self.account_id = account_id if account_id is not None else ''
         '''
          The approver account id.
+        '''
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The approver group id
         '''
         self.reference = reference if reference is not None else ''
         '''
@@ -5523,6 +5944,7 @@ class ApprovalFlowApprover:
     def __repr__(self):
         return '<sdm.ApprovalFlowApprover ' + \
             'account_id: ' + repr(self.account_id) + ' ' +\
+            'group_id: ' + repr(self.group_id) + ' ' +\
             'reference: ' + repr(self.reference) + ' ' +\
             'role_id: ' + repr(self.role_id) + ' ' +\
             '>'
@@ -5530,6 +5952,7 @@ class ApprovalFlowApprover:
     def to_dict(self):
         return {
             'account_id': self.account_id,
+            'group_id': self.group_id,
             'reference': self.reference,
             'role_id': self.role_id,
         }
@@ -5538,6 +5961,7 @@ class ApprovalFlowApprover:
     def from_dict(cls, d):
         return cls(
             account_id=d.get('account_id'),
+            group_id=d.get('group_id'),
             reference=d.get('reference'),
             role_id=d.get('role_id'),
         )
@@ -13880,6 +14304,1086 @@ class Greenplum:
         )
 
 
+class Group:
+    '''
+         A Group is a named set of principals.
+    '''
+    __slots__ = [
+        'description',
+        'id',
+        'name',
+        'source',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        description=None,
+        id=None,
+        name=None,
+        source=None,
+        tags=None,
+    ):
+        self.description = description if description is not None else ''
+        '''
+         Description of the Group.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Group.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Group.
+        '''
+        self.source = source if source is not None else ''
+        '''
+         Source is a read only field for what service manages this group, e.g. StrongDM, Okta, Azure.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key/value pairs that can be attached to a Group.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Group ' + \
+            'description: ' + repr(self.description) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'source: ' + repr(self.source) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'description': self.description,
+            'id': self.id,
+            'name': self.name,
+            'source': self.source,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            description=d.get('description'),
+            id=d.get('id'),
+            name=d.get('name'),
+            source=d.get('source'),
+            tags=d.get('tags'),
+        )
+
+
+class GroupCreateFromRolesRequest:
+    __slots__ = [
+        'commit',
+        'role_ids',
+    ]
+
+    def __init__(
+        self,
+        commit=None,
+        role_ids=None,
+    ):
+        self.commit = commit if commit is not None else False
+        '''
+         Commit
+        '''
+        self.role_ids = role_ids if role_ids is not None else []
+        '''
+         The unique identifiers of the roles create groups from.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupCreateFromRolesRequest ' + \
+            'commit: ' + repr(self.commit) + ' ' +\
+            'role_ids: ' + repr(self.role_ids) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'commit': self.commit,
+            'role_ids': self.role_ids,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            commit=d.get('commit'),
+            role_ids=d.get('role_ids'),
+        )
+
+
+class GroupCreateFromRolesResponse:
+    __slots__ = [
+        'group_from_role',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group_from_role=None,
+        rate_limit=None,
+    ):
+        self.group_from_role = group_from_role if group_from_role is not None else []
+        '''
+         The created Group.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupCreateFromRolesResponse ' + \
+            'group_from_role: ' + repr(self.group_from_role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_from_role': self.group_from_role,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_from_role=d.get('group_from_role'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupCreateRequest:
+    '''
+         GroupCreateRequest specifies a group to create.
+    '''
+    __slots__ = [
+        'group',
+    ]
+
+    def __init__(
+        self,
+        group=None,
+    ):
+        self.group = group if group is not None else None
+        '''
+         Parameters to define the new Group.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupCreateRequest ' + \
+            'group: ' + repr(self.group) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group': self.group,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(group=d.get('group'), )
+
+
+class GroupCreateResponse:
+    '''
+         GroupCreateResponse reports the result of a create.
+    '''
+    __slots__ = [
+        'group',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group=None,
+        rate_limit=None,
+    ):
+        self.group = group if group is not None else None
+        '''
+         The created Group.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupCreateResponse ' + \
+            'group: ' + repr(self.group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group': self.group,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group=d.get('group'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupDeleteRequest:
+    '''
+         groupDeleteRequest identifies a group by ID to delete.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the group to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class GroupDeleteResponse:
+    '''
+         groupDeleteResponse returns information about a group that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupFromRole:
+    __slots__ = [
+        'accounts',
+        'approval_flows',
+        'group',
+        'rate_limit',
+        'role',
+    ]
+
+    def __init__(
+        self,
+        accounts=None,
+        approval_flows=None,
+        group=None,
+        rate_limit=None,
+        role=None,
+    ):
+        self.accounts = accounts if accounts is not None else []
+        '''
+         The migrated Accounts.
+        '''
+        self.approval_flows = approval_flows if approval_flows is not None else []
+        '''
+         The affected approval flows.
+        '''
+        self.group = group if group is not None else None
+        '''
+         The group created from the source role.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.role = role if role is not None else None
+        '''
+         The source role.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupFromRole ' + \
+            'accounts: ' + repr(self.accounts) + ' ' +\
+            'approval_flows: ' + repr(self.approval_flows) + ' ' +\
+            'group: ' + repr(self.group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'role: ' + repr(self.role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'accounts': self.accounts,
+            'approval_flows': self.approval_flows,
+            'group': self.group,
+            'rate_limit': self.rate_limit,
+            'role': self.role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            accounts=d.get('accounts'),
+            approval_flows=d.get('approval_flows'),
+            group=d.get('group'),
+            rate_limit=d.get('rate_limit'),
+            role=d.get('role'),
+        )
+
+
+class GroupGetRequest:
+    '''
+         GroupGetRequest specifies which Group to retrieve.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Group to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class GroupGetResponse:
+    '''
+         GroupGetResponse returns a requested Group.
+    '''
+    __slots__ = [
+        'group',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.group = group if group is not None else None
+        '''
+         The requested Group.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupGetResponse ' + \
+            'group: ' + repr(self.group) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group': self.group,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group=d.get('group'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupHistory:
+    '''
+         GroupHistory records the state of a Group at a given point in time,
+     where every change (create, update and delete) to a Group produces a
+     GroupHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'group',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        group=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the Group.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this Group was deleted, the time it was deleted.
+        '''
+        self.group = group if group is not None else None
+        '''
+         The complete Group state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the Group state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'group: ' + repr(self.group) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'group': self.group,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            group=d.get('group'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class GroupListRequest:
+    '''
+         groupListRequest specifies criteria for retrieving a list of groups.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class GroupListResponse:
+    '''
+         groupListResponse returns a list of groups that meet the criteria of a
+     groupListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class GroupRole:
+    '''
+         A GroupRole assigns a Group to a Role.
+    '''
+    __slots__ = [
+        'group_id',
+        'id',
+        'role_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        id=None,
+        role_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The assigned Group ID.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the GroupRole.
+        '''
+        self.role_id = role_id if role_id is not None else ''
+        '''
+         The assigned Role ID.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRole ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'role_id: ' + repr(self.role_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'id': self.id,
+            'role_id': self.role_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            id=d.get('id'),
+            role_id=d.get('role_id'),
+        )
+
+
+class GroupRoleCreateRequest:
+    '''
+         GroupRoleCreateRequest specifies a group role to create.
+    '''
+    __slots__ = [
+        'group_role',
+    ]
+
+    def __init__(
+        self,
+        group_role=None,
+    ):
+        self.group_role = group_role if group_role is not None else None
+        '''
+         Parameters to define the new GroupRole.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleCreateRequest ' + \
+            'group_role: ' + repr(self.group_role) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_role': self.group_role,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(group_role=d.get('group_role'), )
+
+
+class GroupRoleCreateResponse:
+    '''
+         GroupRoleCreateResponse reports the result of a create.
+    '''
+    __slots__ = [
+        'group_role',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group_role=None,
+        rate_limit=None,
+    ):
+        self.group_role = group_role if group_role is not None else None
+        '''
+         The created GroupRole.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleCreateResponse ' + \
+            'group_role: ' + repr(self.group_role) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_role': self.group_role,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_role=d.get('group_role'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupRoleDeleteRequest:
+    '''
+         GroupRoleDeleteRequest identifies a group role by ID to delete.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the group to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class GroupRoleDeleteResponse:
+    '''
+         GroupRoleDeleteResponse returns information about a group that was deleted.
+    '''
+    __slots__ = [
+        'group_role',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group_role=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.group_role = group_role if group_role is not None else None
+        '''
+         The deleted GroupRole.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleDeleteResponse ' + \
+            'group_role: ' + repr(self.group_role) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_role': self.group_role,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_role=d.get('group_role'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupRoleGetRequest:
+    '''
+         GroupRoleGetRequest specifies which GroupRole to retrieve.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the GroupRole to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class GroupRoleGetResponse:
+    '''
+         GroupRoleGetResponse returns a requested GroupRole.
+    '''
+    __slots__ = [
+        'group_role',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group_role=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.group_role = group_role if group_role is not None else None
+        '''
+         The requested GroupRole.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleGetResponse ' + \
+            'group_role: ' + repr(self.group_role) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_role': self.group_role,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_role=d.get('group_role'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class GroupRoleHistory:
+    '''
+         GroupRoleHistory records the state of a GroupRole at a given point in time,
+     where every change (create, update and delete) to a GroupRole produces a
+     GroupRoleHistory record.
+    '''
+    __slots__ = [
+        'activity_id',
+        'deleted_at',
+        'group_role',
+        'timestamp',
+    ]
+
+    def __init__(
+        self,
+        activity_id=None,
+        deleted_at=None,
+        group_role=None,
+        timestamp=None,
+    ):
+        self.activity_id = activity_id if activity_id is not None else ''
+        '''
+         The unique identifier of the Activity that produced this change to the GroupRole.
+         May be empty for some system-initiated updates.
+        '''
+        self.deleted_at = deleted_at if deleted_at is not None else None
+        '''
+         If this GroupRole was deleted, the time it was deleted.
+        '''
+        self.group_role = group_role if group_role is not None else None
+        '''
+         The complete GroupRole state at this time.
+        '''
+        self.timestamp = timestamp if timestamp is not None else None
+        '''
+         The time at which the GroupRole state was recorded.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleHistory ' + \
+            'activity_id: ' + repr(self.activity_id) + ' ' +\
+            'deleted_at: ' + repr(self.deleted_at) + ' ' +\
+            'group_role: ' + repr(self.group_role) + ' ' +\
+            'timestamp: ' + repr(self.timestamp) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'activity_id': self.activity_id,
+            'deleted_at': self.deleted_at,
+            'group_role': self.group_role,
+            'timestamp': self.timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            activity_id=d.get('activity_id'),
+            deleted_at=d.get('deleted_at'),
+            group_role=d.get('group_role'),
+            timestamp=d.get('timestamp'),
+        )
+
+
+class GroupRoleListRequest:
+    '''
+         GroupRoleListRequest specifies criteria for retrieving a list of groups.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class GroupRoleListResponse:
+    '''
+         GroupRoleListResponse returns a list of group roles that meet the criteria of a
+     GroupRoleListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupRoleListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class GroupUpdateRequest:
+    '''
+         GroupUpdateRequest updates a group.
+    '''
+    __slots__ = [
+        'group',
+    ]
+
+    def __init__(
+        self,
+        group=None,
+    ):
+        self.group = group if group is not None else None
+        '''
+         Parameters to overwrite the specified group.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupUpdateRequest ' + \
+            'group: ' + repr(self.group) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group': self.group,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(group=d.get('group'), )
+
+
+class GroupUpdateResponse:
+    '''
+         groupUpdateResponse returns the fields of a group after it has been updated by
+     a groupUpdateRequest.
+    '''
+    __slots__ = [
+        'group',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        group=None,
+        rate_limit=None,
+    ):
+        self.group = group if group is not None else None
+        '''
+         The updated group.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GroupUpdateResponse ' + \
+            'group: ' + repr(self.group) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group': self.group,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group=d.get('group'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class HTTPAuth:
     __slots__ = [
         'auth_header',
@@ -16822,6 +18326,158 @@ class LogConfig:
             local_storage=d.get('local_storage'),
             local_tcp_address=d.get('local_tcp_address'),
             public_key=d.get('public_key'),
+        )
+
+
+class MCP:
+    '''
+    MCP is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'password',
+        'port',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        password=None,
+        port=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.MCP ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 

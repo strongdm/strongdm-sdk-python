@@ -34,7 +34,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/15.14.0'
+USER_AGENT = 'strongdm-sdk-python/15.15.0'
 
 
 class Client:
@@ -145,6 +145,18 @@ class Client:
 
         See `strongdm.svc.Accounts`.
         '''
+        self.accounts_groups = svc.AccountsGroups(channel, self)
+        '''
+         An AccountGroup links an account and a group.
+
+        See `strongdm.svc.AccountsGroups`.
+        '''
+        self.accounts_groups_history = svc.AccountsGroupsHistory(channel, self)
+        '''
+         AccountsGroupsHistory records all changes to the state of an AccountGroup.
+
+        See `strongdm.svc.AccountsGroupsHistory`.
+        '''
         self.accounts_history = svc.AccountsHistory(channel, self)
         '''
          AccountsHistory records all changes to the state of an Account.
@@ -213,6 +225,30 @@ class Client:
          AccountAttachments.
 
         See `strongdm.svc.Roles`.
+        '''
+        self.groups = svc.Groups(channel, self)
+        '''
+         A Group is a set of principals.
+
+        See `strongdm.svc.Groups`.
+        '''
+        self.groups_history = svc.GroupsHistory(channel, self)
+        '''
+         GroupsHistory records all changes to the state of a Group.
+
+        See `strongdm.svc.GroupsHistory`.
+        '''
+        self.groups_roles = svc.GroupsRoles(channel, self)
+        '''
+         A GroupRole is an assignment of a Group to a Role.
+
+        See `strongdm.svc.GroupsRoles`.
+        '''
+        self.groups_roles_history = svc.GroupsRolesHistory(channel, self)
+        '''
+         GroupsRolesHistory records all changes to the state of a GroupRole.
+
+        See `strongdm.svc.GroupsRolesHistory`.
         '''
         self.health_checks = svc.HealthChecks(channel, self)
         '''
@@ -556,6 +592,7 @@ class Client:
             client.channel, client)
         client.account_resources = svc.AccountResources(client.channel, client)
         client.accounts = svc.Accounts(client.channel, client)
+        client.accounts_groups = svc.AccountsGroups(client.channel, client)
         client.approval_workflow_approvers = svc.ApprovalWorkflowApprovers(
             client.channel, client)
         client.approval_workflow_steps = svc.ApprovalWorkflowSteps(
@@ -563,6 +600,8 @@ class Client:
         client.approval_workflows = svc.ApprovalWorkflows(
             client.channel, client)
         client.roles = svc.Roles(client.channel, client)
+        client.groups = svc.Groups(client.channel, client)
+        client.groups_roles = svc.GroupsRoles(client.channel, client)
         client.identity_aliases = svc.IdentityAliases(client.channel, client)
         client.identity_sets = svc.IdentitySets(client.channel, client)
         client.nodes = svc.Nodes(client.channel, client)
@@ -630,6 +669,13 @@ class SnapshotClient:
 
         See `strongdm.svc.SnapshotAccounts`.
         '''
+        self.accounts_groups = svc.SnapshotAccountsGroups(
+            client.accounts_groups)
+        '''
+         An AccountGroup links an account and a group.
+
+        See `strongdm.svc.SnapshotAccountsGroups`.
+        '''
         self.approval_workflow_approvers = svc.SnapshotApprovalWorkflowApprovers(
             client.approval_workflow_approvers)
         '''
@@ -659,6 +705,18 @@ class SnapshotClient:
          AccountAttachments.
 
         See `strongdm.svc.SnapshotRoles`.
+        '''
+        self.groups = svc.SnapshotGroups(client.groups)
+        '''
+         A Group is a set of principals.
+
+        See `strongdm.svc.SnapshotGroups`.
+        '''
+        self.groups_roles = svc.SnapshotGroupsRoles(client.groups_roles)
+        '''
+         A GroupRole is an assignment of a Group to a Role.
+
+        See `strongdm.svc.SnapshotGroupsRoles`.
         '''
         self.identity_aliases = svc.SnapshotIdentityAliases(
             client.identity_aliases)

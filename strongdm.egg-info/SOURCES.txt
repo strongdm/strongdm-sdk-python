@@ -22,6 +22,10 @@ strongdm/account_resources_history_pb2.py
 strongdm/account_resources_history_pb2_grpc.py
 strongdm/account_resources_pb2.py
 strongdm/account_resources_pb2_grpc.py
+strongdm/accounts_groups_history_pb2.py
+strongdm/accounts_groups_history_pb2_grpc.py
+strongdm/accounts_groups_pb2.py
+strongdm/accounts_groups_pb2_grpc.py
 strongdm/accounts_history_pb2.py
 strongdm/accounts_history_pb2_grpc.py
 strongdm/accounts_pb2.py
@@ -47,6 +51,14 @@ strongdm/control_panel_pb2_grpc.py
 strongdm/drivers_pb2.py
 strongdm/drivers_pb2_grpc.py
 strongdm/errors.py
+strongdm/groups_history_pb2.py
+strongdm/groups_history_pb2_grpc.py
+strongdm/groups_pb2.py
+strongdm/groups_pb2_grpc.py
+strongdm/groups_roles_history_pb2.py
+strongdm/groups_roles_history_pb2_grpc.py
+strongdm/groups_roles_pb2.py
+strongdm/groups_roles_pb2_grpc.py
 strongdm/health_checks_pb2.py
 strongdm/health_checks_pb2_grpc.py
 strongdm/identity_aliases_history_pb2.py

@@ -39,6 +39,8 @@ from .account_permissions_pb2 import *
 from .account_resources_pb2 import *
 from .account_resources_history_pb2 import *
 from .accounts_pb2 import *
+from .accounts_groups_pb2 import *
+from .accounts_groups_history_pb2 import *
 from .accounts_history_pb2 import *
 from .activities_pb2 import *
 from .approval_workflow_approvers_pb2 import *
@@ -49,6 +51,10 @@ from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
 from .control_panel_pb2 import *
 from .roles_pb2 import *
+from .groups_pb2 import *
+from .groups_history_pb2 import *
+from .groups_roles_pb2 import *
+from .groups_roles_history_pb2 import *
 from .health_checks_pb2 import *
 from .identity_aliases_pb2 import *
 from .identity_aliases_history_pb2 import *
@@ -1691,6 +1697,344 @@ def convert_repeated_account_grant_history_to_porcelain(plumbings):
     ]
 
 
+def convert_account_group_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroup()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_account_group_to_plumbing(porcelain):
+    plumbing = AccountGroup()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_account_group_to_plumbing(porcelains):
+    return [
+        convert_account_group_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_to_porcelain(plumbings):
+    return [
+        convert_account_group_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_account_group_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupCreateRequest()
+    porcelain.account_group = convert_account_group_to_porcelain(
+        plumbing.account_group)
+    return porcelain
+
+
+def convert_account_group_create_request_to_plumbing(porcelain):
+    plumbing = AccountGroupCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_group.CopyFrom(
+        convert_account_group_to_plumbing(porcelain.account_group))
+    return plumbing
+
+
+def convert_repeated_account_group_create_request_to_plumbing(porcelains):
+    return [
+        convert_account_group_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_create_request_to_porcelain(plumbings):
+    return [
+        convert_account_group_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupCreateResponse()
+    porcelain.account_group = convert_account_group_to_porcelain(
+        plumbing.account_group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_account_group_create_response_to_plumbing(porcelain):
+    plumbing = AccountGroupCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_group.CopyFrom(
+        convert_account_group_to_plumbing(porcelain.account_group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_account_group_create_response_to_plumbing(porcelains):
+    return [
+        convert_account_group_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_create_response_to_porcelain(plumbings):
+    return [
+        convert_account_group_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_account_group_delete_request_to_plumbing(porcelain):
+    plumbing = AccountGroupDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_account_group_delete_request_to_plumbing(porcelains):
+    return [
+        convert_account_group_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_delete_request_to_porcelain(plumbings):
+    return [
+        convert_account_group_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_account_group_delete_response_to_plumbing(porcelain):
+    plumbing = AccountGroupDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_account_group_delete_response_to_plumbing(porcelains):
+    return [
+        convert_account_group_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_delete_response_to_porcelain(plumbings):
+    return [
+        convert_account_group_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_account_group_get_request_to_plumbing(porcelain):
+    plumbing = AccountGroupGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_account_group_get_request_to_plumbing(porcelains):
+    return [
+        convert_account_group_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_get_request_to_porcelain(plumbings):
+    return [
+        convert_account_group_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupGetResponse()
+    porcelain.account_group = convert_account_group_to_porcelain(
+        plumbing.account_group)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_account_group_get_response_to_plumbing(porcelain):
+    plumbing = AccountGroupGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_group.CopyFrom(
+        convert_account_group_to_plumbing(porcelain.account_group))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_account_group_get_response_to_plumbing(porcelains):
+    return [
+        convert_account_group_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_get_response_to_porcelain(plumbings):
+    return [
+        convert_account_group_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupHistory()
+    porcelain.account_group = convert_account_group_to_porcelain(
+        plumbing.account_group)
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_account_group_history_to_plumbing(porcelain):
+    plumbing = AccountGroupHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_group.CopyFrom(
+        convert_account_group_to_plumbing(porcelain.account_group))
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_account_group_history_to_plumbing(porcelains):
+    return [
+        convert_account_group_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_history_to_porcelain(plumbings):
+    return [
+        convert_account_group_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_account_group_list_request_to_plumbing(porcelain):
+    plumbing = AccountGroupListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_account_group_list_request_to_plumbing(porcelains):
+    return [
+        convert_account_group_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_list_request_to_porcelain(plumbings):
+    return [
+        convert_account_group_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_account_group_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AccountGroupListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_account_group_list_response_to_plumbing(porcelain):
+    plumbing = AccountGroupListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_account_group_list_response_to_plumbing(porcelains):
+    return [
+        convert_account_group_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_account_group_list_response_to_porcelain(plumbings):
+    return [
+        convert_account_group_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_account_history_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -2683,6 +3027,7 @@ def convert_approval_flow_approver_to_porcelain(plumbing):
         return None
     porcelain = models.ApprovalFlowApprover()
     porcelain.account_id = (plumbing.account_id)
+    porcelain.group_id = (plumbing.group_id)
     porcelain.reference = (plumbing.reference)
     porcelain.role_id = (plumbing.role_id)
     return porcelain
@@ -2693,6 +3038,7 @@ def convert_approval_flow_approver_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.account_id = (porcelain.account_id)
+    plumbing.group_id = (porcelain.group_id)
     plumbing.reference = (porcelain.reference)
     plumbing.role_id = (porcelain.role_id)
     return plumbing
@@ -6336,6 +6682,851 @@ def convert_repeated_greenplum_to_porcelain(plumbings):
     return [convert_greenplum_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_group_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Group()
+    porcelain.description = (plumbing.description)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.source = (plumbing.source)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_group_to_plumbing(porcelain):
+    plumbing = Group()
+    if porcelain is None:
+        return plumbing
+    plumbing.description = (porcelain.description)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.source = (porcelain.source)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_group_to_plumbing(porcelains):
+    return [convert_group_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_group_to_porcelain(plumbings):
+    return [convert_group_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_group_create_from_roles_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupCreateFromRolesRequest()
+    porcelain.commit = (plumbing.commit)
+    porcelain.role_ids = (plumbing.role_ids)
+    return porcelain
+
+
+def convert_group_create_from_roles_request_to_plumbing(porcelain):
+    plumbing = GroupCreateFromRolesRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.commit = (porcelain.commit)
+    del plumbing.role_ids[:]
+    plumbing.role_ids.extend((porcelain.role_ids))
+    return plumbing
+
+
+def convert_repeated_group_create_from_roles_request_to_plumbing(porcelains):
+    return [
+        convert_group_create_from_roles_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_create_from_roles_request_to_porcelain(plumbings):
+    return [
+        convert_group_create_from_roles_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_create_from_roles_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupCreateFromRolesResponse()
+    porcelain.group_from_role = convert_repeated_group_from_role_to_porcelain(
+        plumbing.group_from_role)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_create_from_roles_response_to_plumbing(porcelain):
+    plumbing = GroupCreateFromRolesResponse()
+    if porcelain is None:
+        return plumbing
+    del plumbing.group_from_role[:]
+    plumbing.group_from_role.extend(
+        convert_repeated_group_from_role_to_plumbing(
+            porcelain.group_from_role))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_create_from_roles_response_to_plumbing(porcelains):
+    return [
+        convert_group_create_from_roles_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_create_from_roles_response_to_porcelain(plumbings):
+    return [
+        convert_group_create_from_roles_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupCreateRequest()
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    return porcelain
+
+
+def convert_group_create_request_to_plumbing(porcelain):
+    plumbing = GroupCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    return plumbing
+
+
+def convert_repeated_group_create_request_to_plumbing(porcelains):
+    return [
+        convert_group_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_create_request_to_porcelain(plumbings):
+    return [
+        convert_group_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupCreateResponse()
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_create_response_to_plumbing(porcelain):
+    plumbing = GroupCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_create_response_to_plumbing(porcelains):
+    return [
+        convert_group_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_create_response_to_porcelain(plumbings):
+    return [
+        convert_group_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_group_delete_request_to_plumbing(porcelain):
+    plumbing = GroupDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_group_delete_request_to_plumbing(porcelains):
+    return [
+        convert_group_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_delete_request_to_porcelain(plumbings):
+    return [
+        convert_group_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_delete_response_to_plumbing(porcelain):
+    plumbing = GroupDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_delete_response_to_plumbing(porcelains):
+    return [
+        convert_group_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_delete_response_to_porcelain(plumbings):
+    return [
+        convert_group_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_from_role_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupFromRole()
+    porcelain.accounts = convert_repeated_user_to_porcelain(plumbing.accounts)
+    porcelain.approval_flows = convert_repeated_approval_workflow_to_porcelain(
+        plumbing.approval_flows)
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.role = convert_role_to_porcelain(plumbing.role)
+    return porcelain
+
+
+def convert_group_from_role_to_plumbing(porcelain):
+    plumbing = GroupFromRole()
+    if porcelain is None:
+        return plumbing
+    del plumbing.accounts[:]
+    plumbing.accounts.extend(
+        convert_repeated_user_to_plumbing(porcelain.accounts))
+    del plumbing.approval_flows[:]
+    plumbing.approval_flows.extend(
+        convert_repeated_approval_workflow_to_plumbing(
+            porcelain.approval_flows))
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.role.CopyFrom(convert_role_to_plumbing(porcelain.role))
+    return plumbing
+
+
+def convert_repeated_group_from_role_to_plumbing(porcelains):
+    return [
+        convert_group_from_role_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_from_role_to_porcelain(plumbings):
+    return [
+        convert_group_from_role_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_group_get_request_to_plumbing(porcelain):
+    plumbing = GroupGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_group_get_request_to_plumbing(porcelains):
+    return [
+        convert_group_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_get_request_to_porcelain(plumbings):
+    return [
+        convert_group_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupGetResponse()
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_get_response_to_plumbing(porcelain):
+    plumbing = GroupGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_get_response_to_plumbing(porcelains):
+    return [
+        convert_group_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_get_response_to_porcelain(plumbings):
+    return [
+        convert_group_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_group_history_to_plumbing(porcelain):
+    plumbing = GroupHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_group_history_to_plumbing(porcelains):
+    return [
+        convert_group_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_history_to_porcelain(plumbings):
+    return [
+        convert_group_history_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_group_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_group_list_request_to_plumbing(porcelain):
+    plumbing = GroupListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_group_list_request_to_plumbing(porcelains):
+    return [
+        convert_group_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_list_request_to_porcelain(plumbings):
+    return [
+        convert_group_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_list_response_to_plumbing(porcelain):
+    plumbing = GroupListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_list_response_to_plumbing(porcelains):
+    return [
+        convert_group_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_list_response_to_porcelain(plumbings):
+    return [
+        convert_group_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRole()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.id = (plumbing.id)
+    porcelain.role_id = (plumbing.role_id)
+    return porcelain
+
+
+def convert_group_role_to_plumbing(porcelain):
+    plumbing = GroupRole()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.id = (porcelain.id)
+    plumbing.role_id = (porcelain.role_id)
+    return plumbing
+
+
+def convert_repeated_group_role_to_plumbing(porcelains):
+    return [
+        convert_group_role_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_to_porcelain(plumbings):
+    return [
+        convert_group_role_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_group_role_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleCreateRequest()
+    porcelain.group_role = convert_group_role_to_porcelain(plumbing.group_role)
+    return porcelain
+
+
+def convert_group_role_create_request_to_plumbing(porcelain):
+    plumbing = GroupRoleCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_role.CopyFrom(
+        convert_group_role_to_plumbing(porcelain.group_role))
+    return plumbing
+
+
+def convert_repeated_group_role_create_request_to_plumbing(porcelains):
+    return [
+        convert_group_role_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_create_request_to_porcelain(plumbings):
+    return [
+        convert_group_role_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleCreateResponse()
+    porcelain.group_role = convert_group_role_to_porcelain(plumbing.group_role)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_role_create_response_to_plumbing(porcelain):
+    plumbing = GroupRoleCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_role.CopyFrom(
+        convert_group_role_to_plumbing(porcelain.group_role))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_role_create_response_to_plumbing(porcelains):
+    return [
+        convert_group_role_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_create_response_to_porcelain(plumbings):
+    return [
+        convert_group_role_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_group_role_delete_request_to_plumbing(porcelain):
+    plumbing = GroupRoleDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_group_role_delete_request_to_plumbing(porcelains):
+    return [
+        convert_group_role_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_delete_request_to_porcelain(plumbings):
+    return [
+        convert_group_role_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleDeleteResponse()
+    porcelain.group_role = convert_group_role_to_porcelain(plumbing.group_role)
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_role_delete_response_to_plumbing(porcelain):
+    plumbing = GroupRoleDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_role.CopyFrom(
+        convert_group_role_to_plumbing(porcelain.group_role))
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_role_delete_response_to_plumbing(porcelains):
+    return [
+        convert_group_role_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_delete_response_to_porcelain(plumbings):
+    return [
+        convert_group_role_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_group_role_get_request_to_plumbing(porcelain):
+    plumbing = GroupRoleGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_group_role_get_request_to_plumbing(porcelains):
+    return [
+        convert_group_role_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_get_request_to_porcelain(plumbings):
+    return [
+        convert_group_role_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleGetResponse()
+    porcelain.group_role = convert_group_role_to_porcelain(plumbing.group_role)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_role_get_response_to_plumbing(porcelain):
+    plumbing = GroupRoleGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_role.CopyFrom(
+        convert_group_role_to_plumbing(porcelain.group_role))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_role_get_response_to_plumbing(porcelains):
+    return [
+        convert_group_role_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_get_response_to_porcelain(plumbings):
+    return [
+        convert_group_role_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_history_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleHistory()
+    porcelain.activity_id = (plumbing.activity_id)
+    porcelain.deleted_at = convert_timestamp_to_porcelain(plumbing.deleted_at)
+    porcelain.group_role = convert_group_role_to_porcelain(plumbing.group_role)
+    porcelain.timestamp = convert_timestamp_to_porcelain(plumbing.timestamp)
+    return porcelain
+
+
+def convert_group_role_history_to_plumbing(porcelain):
+    plumbing = GroupRoleHistory()
+    if porcelain is None:
+        return plumbing
+    plumbing.activity_id = (porcelain.activity_id)
+    plumbing.deleted_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.deleted_at))
+    plumbing.group_role.CopyFrom(
+        convert_group_role_to_plumbing(porcelain.group_role))
+    plumbing.timestamp.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.timestamp))
+    return plumbing
+
+
+def convert_repeated_group_role_history_to_plumbing(porcelains):
+    return [
+        convert_group_role_history_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_history_to_porcelain(plumbings):
+    return [
+        convert_group_role_history_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_group_role_list_request_to_plumbing(porcelain):
+    plumbing = GroupRoleListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_group_role_list_request_to_plumbing(porcelains):
+    return [
+        convert_group_role_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_list_request_to_porcelain(plumbings):
+    return [
+        convert_group_role_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_role_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupRoleListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_role_list_response_to_plumbing(porcelain):
+    plumbing = GroupRoleListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_role_list_response_to_plumbing(porcelains):
+    return [
+        convert_group_role_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_role_list_response_to_porcelain(plumbings):
+    return [
+        convert_group_role_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_update_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupUpdateRequest()
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    return porcelain
+
+
+def convert_group_update_request_to_plumbing(porcelain):
+    plumbing = GroupUpdateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    return plumbing
+
+
+def convert_repeated_group_update_request_to_plumbing(porcelains):
+    return [
+        convert_group_update_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_update_request_to_porcelain(plumbings):
+    return [
+        convert_group_update_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_group_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GroupUpdateResponse()
+    porcelain.group = convert_group_to_porcelain(plumbing.group)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_group_update_response_to_plumbing(porcelain):
+    plumbing = GroupUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.group.CopyFrom(convert_group_to_plumbing(porcelain.group))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_group_update_response_to_plumbing(porcelains):
+    return [
+        convert_group_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_group_update_response_to_porcelain(plumbings):
+    return [
+        convert_group_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_http_auth_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -7761,6 +8952,56 @@ def convert_repeated_log_config_to_porcelain(plumbings):
     return [
         convert_log_config_to_porcelain(plumbing) for plumbing in plumbings
     ]
+
+
+def convert_mcp_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MCP()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_mcp_to_plumbing(porcelain):
+    plumbing = MCP()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_mcp_to_plumbing(porcelains):
+    return [convert_mcp_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_mcp_to_porcelain(plumbings):
+    return [convert_mcp_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_mtls_mysql_to_porcelain(plumbing):
@@ -12431,6 +13672,8 @@ def convert_resource_to_plumbing(porcelain):
             convert_kubernetes_user_impersonation_to_plumbing(porcelain))
     if isinstance(porcelain, models.Maria):
         plumbing.maria.CopyFrom(convert_maria_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MCP):
+        plumbing.mcp.CopyFrom(convert_mcp_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(convert_memcached_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memsql):
@@ -12696,6 +13939,8 @@ def convert_resource_to_porcelain(plumbing):
             plumbing.kubernetes_user_impersonation)
     if plumbing.HasField('maria'):
         return convert_maria_to_porcelain(plumbing.maria)
+    if plumbing.HasField('mcp'):
+        return convert_mcp_to_porcelain(plumbing.mcp)
     if plumbing.HasField('memcached'):
         return convert_memcached_to_porcelain(plumbing.memcached)
     if plumbing.HasField('memsql'):
