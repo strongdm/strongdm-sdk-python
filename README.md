@@ -3,7 +3,7 @@
 This is the official [strongDM](https://www.strongdm.com/) SDK for the Python
 programming language.
 
-Learn more with our [📚strongDM API docs](https://www.strongdm.com/docs/api/) or
+Learn more with our [📚strongDM API docs](https://docs.strongdm.com/references/api) or
 [📓browse the SDK
 reference](https://strongdm.github.io/strongdm-sdk-python-docs/).
 
@@ -21,7 +21,7 @@ your dependency to the desired major version of the strongDM SDK.
 
 If you don't already have them you will need to generate a set of API keys,
 instructions are here: [API
-Credentials](https://www.strongdm.com/docs/admin-guide/api-credentials/)
+Credentials](https://docs.strongdm.com/references/api/api-keys)
 
 Add the keys as environment variables; the SDK will need to access these keys
 for every request.

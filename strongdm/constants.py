@@ -357,6 +357,12 @@ class ActivityVerb:
 
 # Permissions, all permissions that may be granted to an account.
 class Permission:
+    GROUP_READ = "group:read"
+    GROUP_WRITE = "group:write"
+    GROUP_ROLE_READ = "grouprole:read"
+    GROUP_ROLE_WRITE = "grouprole:write"
+    ACCOUNT_GROUP_READ = "accountgroup:read"
+    ACCOUNT_GROUP_WRITE = "accountgroup:write"
     RELAY_LIST = "relay:list"
     RELAY_CREATE = "relay:create"
     DATASOURCE_LIST = "datasource:list"
@@ -420,6 +426,7 @@ class Permission:
     ORG_AUDIT_APPROVAL_FLOWS = "audit:approvalflows"
     ORG_AUDIT_ACCESS_REQUESTS = "audit:accessrequests"
     ORG_AUDIT_POLICIES = "audit:policies"
+    ORG_AUDIT_GROUPS = "audit:groups"
     WORKFLOW_LIST = "workflow:list"
     WORKFLOW_EDIT = "workflow:edit"
     ACCESS_REQUEST_LIST = "accessrequest:list"
