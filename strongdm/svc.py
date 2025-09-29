@@ -6935,6 +6935,7 @@ class SecretEngines:
     See:
     `strongdm.models.ActiveDirectoryEngine`
     `strongdm.models.KeyValueEngine`
+    `strongdm.models.PostgresEngine`
     '''
     def __init__(self, channel, client):
         self.parent = client

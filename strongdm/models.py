@@ -3856,10 +3856,6 @@ class AccountUpdateResponse:
 
 
 class ActiveDirectoryEngine:
-    '''
-    ActiveDirectoryEngine is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'after_read_ttl',
         'binddn',
@@ -16759,10 +16755,6 @@ class IdentitySetUpdateResponse:
 
 
 class KeyValueEngine:
-    '''
-    KeyValueEngine is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'key_rotation_interval_days',
@@ -24089,6 +24081,131 @@ class Postgres:
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class PostgresEngine:
+    '''
+    PostgresEngine is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'hostname',
+        'id',
+        'key_rotation_interval_days',
+        'name',
+        'password',
+        'port',
+        'public_key',
+        'secret_store_id',
+        'secret_store_root_path',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        hostname=None,
+        id=None,
+        key_rotation_interval_days=None,
+        name=None,
+        password=None,
+        port=None,
+        public_key=None,
+        secret_store_id=None,
+        secret_store_root_path=None,
+        tags=None,
+        username=None,
+    ):
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         Hostname is the hostname or IP address of the Postgres server.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Secret Engine.
+        '''
+        self.key_rotation_interval_days = key_rotation_interval_days if key_rotation_interval_days is not None else 0
+        '''
+         An interval of public/private key rotation for secret engine in days
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Secret Engine.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         Password is the password to connect to the Postgres server.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         Port is the port number of the Postgres server.
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key linked with a secret engine
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Backing secret store identifier
+        '''
+        self.secret_store_root_path = secret_store_root_path if secret_store_root_path is not None else ''
+        '''
+         Backing Secret Store root path where managed secrets are going to be stored
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         Username is the username to connect to the Postgres server.
+        '''
+
+    def __repr__(self):
+        return '<sdm.PostgresEngine ' + \
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'hostname': self.hostname,
+            'id': self.id,
+            'key_rotation_interval_days': self.key_rotation_interval_days,
+            'name': self.name,
+            'password': self.password,
+            'port': self.port,
+            'public_key': self.public_key,
+            'secret_store_id': self.secret_store_id,
+            'secret_store_root_path': self.secret_store_root_path,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            key_rotation_interval_days=d.get('key_rotation_interval_days'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port=d.get('port'),
+            public_key=d.get('public_key'),
+            secret_store_id=d.get('secret_store_id'),
+            secret_store_root_path=d.get('secret_store_root_path'),
             tags=d.get('tags'),
             username=d.get('username'),
         )

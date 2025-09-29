@@ -11983,6 +11983,58 @@ def convert_repeated_postgres_to_porcelain(plumbings):
     return [convert_postgres_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_postgres_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.PostgresEngine()
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.key_rotation_interval_days = (
+        plumbing.key_rotation_interval_days)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port = (plumbing.port)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_postgres_engine_to_plumbing(porcelain):
+    plumbing = PostgresEngine()
+    if porcelain is None:
+        return plumbing
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.key_rotation_interval_days = (
+        porcelain.key_rotation_interval_days)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port = (porcelain.port)
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_postgres_engine_to_plumbing(porcelains):
+    return [
+        convert_postgres_engine_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_postgres_engine_to_porcelain(plumbings):
+    return [
+        convert_postgres_engine_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_presto_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -15059,6 +15111,9 @@ def convert_secret_engine_to_plumbing(porcelain):
     if isinstance(porcelain, models.KeyValueEngine):
         plumbing.key_value.CopyFrom(
             convert_key_value_engine_to_plumbing(porcelain))
+    if isinstance(porcelain, models.PostgresEngine):
+        plumbing.postgres.CopyFrom(
+            convert_postgres_engine_to_plumbing(porcelain))
     return plumbing
 
 
@@ -15070,6 +15125,8 @@ def convert_secret_engine_to_porcelain(plumbing):
             plumbing.active_directory)
     if plumbing.HasField('key_value'):
         return convert_key_value_engine_to_porcelain(plumbing.key_value)
+    if plumbing.HasField('postgres'):
+        return convert_postgres_engine_to_porcelain(plumbing.postgres)
     raise errors.UnknownError(
         "unknown polymorphic type, please upgrade your SDK")
 
