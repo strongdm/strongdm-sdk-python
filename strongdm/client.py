@@ -34,7 +34,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/15.17.0'
+USER_AGENT = 'strongdm-sdk-python/15.20.0'
 
 
 class Client:

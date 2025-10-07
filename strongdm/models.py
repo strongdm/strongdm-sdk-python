@@ -18340,7 +18340,6 @@ class MCP:
         'secret_store_id',
         'subdomain',
         'tags',
-        'username',
     ]
 
     def __init__(
@@ -18358,7 +18357,6 @@ class MCP:
         secret_store_id=None,
         subdomain=None,
         tags=None,
-        username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -18412,10 +18410,6 @@ class MCP:
         '''
          Tags is a map of key, value pairs.
         '''
-        self.username = username if username is not None else ''
-        '''
-         The username to authenticate with.
-        '''
 
     def __repr__(self):
         return '<sdm.MCP ' + \
@@ -18432,7 +18426,6 @@ class MCP:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -18450,7 +18443,6 @@ class MCP:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
-            'username': self.username,
         }
 
     @classmethod
@@ -18469,7 +18461,6 @@ class MCP:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
-            username=d.get('username'),
         )
 
 
@@ -24092,33 +24083,51 @@ class PostgresEngine:
     without a major version bump.
     '''
     __slots__ = [
+        'after_read_ttl',
+        'database',
         'hostname',
         'id',
         'key_rotation_interval_days',
         'name',
         'password',
+        'policy',
         'port',
         'public_key',
         'secret_store_id',
         'secret_store_root_path',
         'tags',
+        'tls',
+        'ttl',
         'username',
     ]
 
     def __init__(
         self,
+        after_read_ttl=None,
+        database=None,
         hostname=None,
         id=None,
         key_rotation_interval_days=None,
         name=None,
         password=None,
+        policy=None,
         port=None,
         public_key=None,
         secret_store_id=None,
         secret_store_root_path=None,
         tags=None,
+        tls=None,
+        ttl=None,
         username=None,
     ):
+        self.after_read_ttl = after_read_ttl if after_read_ttl is not None else None
+        '''
+         The default time-to-live duration of the password after it's read. Once the ttl has passed, a password will be rotated.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         Database is the database to verify credential against.
+        '''
         self.hostname = hostname if hostname is not None else ''
         '''
          Hostname is the hostname or IP address of the Postgres server.
@@ -24138,6 +24147,10 @@ class PostgresEngine:
         self.password = password if password is not None else ''
         '''
          Password is the password to connect to the Postgres server.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         Policy for password creation
         '''
         self.port = port if port is not None else 0
         '''
@@ -24159,6 +24172,14 @@ class PostgresEngine:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls = tls if tls is not None else False
+        '''
+         TLS enables TLS/SSL when connecting to the Postgres server.
+        '''
+        self.ttl = ttl if ttl is not None else None
+        '''
+         The default password time-to-live duration. Once the ttl has passed, a password will be rotated the next time it's requested.
+        '''
         self.username = username if username is not None else ''
         '''
          Username is the username to connect to the Postgres server.
@@ -24166,47 +24187,62 @@ class PostgresEngine:
 
     def __repr__(self):
         return '<sdm.PostgresEngine ' + \
+            'after_read_ttl: ' + repr(self.after_read_ttl) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls: ' + repr(self.tls) + ' ' +\
+            'ttl: ' + repr(self.ttl) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
+            'after_read_ttl': self.after_read_ttl,
+            'database': self.database,
             'hostname': self.hostname,
             'id': self.id,
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'name': self.name,
             'password': self.password,
+            'policy': self.policy,
             'port': self.port,
             'public_key': self.public_key,
             'secret_store_id': self.secret_store_id,
             'secret_store_root_path': self.secret_store_root_path,
             'tags': self.tags,
+            'tls': self.tls,
+            'ttl': self.ttl,
             'username': self.username,
         }
 
     @classmethod
     def from_dict(cls, d):
         return cls(
+            after_read_ttl=d.get('after_read_ttl'),
+            database=d.get('database'),
             hostname=d.get('hostname'),
             id=d.get('id'),
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             name=d.get('name'),
             password=d.get('password'),
+            policy=d.get('policy'),
             port=d.get('port'),
             public_key=d.get('public_key'),
             secret_store_id=d.get('secret_store_id'),
             secret_store_root_path=d.get('secret_store_root_path'),
             tags=d.get('tags'),
+            tls=d.get('tls'),
+            ttl=d.get('ttl'),
             username=d.get('username'),
         )
 
