@@ -32227,6 +32227,202 @@ class User:
         )
 
 
+class VaultAWSEC2CertSSHStore:
+    '''
+    VaultAWSEC2CertSSHStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'issuedcertttlminutes',
+        'name',
+        'namespace',
+        'server_address',
+        'signing_role',
+        'ssh_mount_point',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        issuedcertttlminutes=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        signing_role=None,
+        ssh_mount_point=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA in minutes. Recommended value is 5.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.signing_role = signing_role if signing_role is not None else ''
+        '''
+         The signing role to be used for signing certificates
+        '''
+        self.ssh_mount_point = ssh_mount_point if ssh_mount_point is not None else ''
+        '''
+         The mount point of the SSH engine configured with the desired CA
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSEC2CertSSHStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'signing_role: ' + repr(self.signing_role) + ' ' +\
+            'ssh_mount_point: ' + repr(self.ssh_mount_point) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'signing_role': self.signing_role,
+            'ssh_mount_point': self.ssh_mount_point,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            signing_role=d.get('signing_role'),
+            ssh_mount_point=d.get('ssh_mount_point'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultAWSEC2CertX509Store:
+    '''
+    VaultAWSEC2CertX509Store is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'issuedcertttlminutes',
+        'name',
+        'namespace',
+        'pki_mount_point',
+        'server_address',
+        'signing_role',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        issuedcertttlminutes=None,
+        name=None,
+        namespace=None,
+        pki_mount_point=None,
+        server_address=None,
+        signing_role=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.pki_mount_point = pki_mount_point if pki_mount_point is not None else ''
+        '''
+         The mount point of the PKI engine configured with the desired CA
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.signing_role = signing_role if signing_role is not None else ''
+        '''
+         The signing role to be used for signing certificates
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSEC2CertX509Store ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'pki_mount_point: ' + repr(self.pki_mount_point) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'signing_role: ' + repr(self.signing_role) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
+            'name': self.name,
+            'namespace': self.namespace,
+            'pki_mount_point': self.pki_mount_point,
+            'server_address': self.server_address,
+            'signing_role': self.signing_role,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            pki_mount_point=d.get('pki_mount_point'),
+            server_address=d.get('server_address'),
+            signing_role=d.get('signing_role'),
+            tags=d.get('tags'),
+        )
+
+
 class VaultAWSEC2Store:
     __slots__ = [
         'id',
@@ -32290,6 +32486,202 @@ class VaultAWSEC2Store:
             name=d.get('name'),
             namespace=d.get('namespace'),
             server_address=d.get('server_address'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultAWSIAMCertSSHStore:
+    '''
+    VaultAWSIAMCertSSHStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'issuedcertttlminutes',
+        'name',
+        'namespace',
+        'server_address',
+        'signing_role',
+        'ssh_mount_point',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        issuedcertttlminutes=None,
+        name=None,
+        namespace=None,
+        server_address=None,
+        signing_role=None,
+        ssh_mount_point=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA in minutes. Recommended value is 5.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.signing_role = signing_role if signing_role is not None else ''
+        '''
+         The signing role to be used for signing certificates
+        '''
+        self.ssh_mount_point = ssh_mount_point if ssh_mount_point is not None else ''
+        '''
+         The mount point of the SSH engine configured with the desired CA
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSIAMCertSSHStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'signing_role: ' + repr(self.signing_role) + ' ' +\
+            'ssh_mount_point: ' + repr(self.ssh_mount_point) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
+            'name': self.name,
+            'namespace': self.namespace,
+            'server_address': self.server_address,
+            'signing_role': self.signing_role,
+            'ssh_mount_point': self.ssh_mount_point,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            server_address=d.get('server_address'),
+            signing_role=d.get('signing_role'),
+            ssh_mount_point=d.get('ssh_mount_point'),
+            tags=d.get('tags'),
+        )
+
+
+class VaultAWSIAMCertX509Store:
+    '''
+    VaultAWSIAMCertX509Store is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'issuedcertttlminutes',
+        'name',
+        'namespace',
+        'pki_mount_point',
+        'server_address',
+        'signing_role',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        issuedcertttlminutes=None,
+        name=None,
+        namespace=None,
+        pki_mount_point=None,
+        server_address=None,
+        signing_role=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.issuedcertttlminutes = issuedcertttlminutes if issuedcertttlminutes is not None else 0
+        '''
+         The lifetime of certificates issued by this CA represented in minutes.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.namespace = namespace if namespace is not None else ''
+        '''
+         The namespace to make requests within
+        '''
+        self.pki_mount_point = pki_mount_point if pki_mount_point is not None else ''
+        '''
+         The mount point of the PKI engine configured with the desired CA
+        '''
+        self.server_address = server_address if server_address is not None else ''
+        '''
+         The URL of the Vault to target
+        '''
+        self.signing_role = signing_role if signing_role is not None else ''
+        '''
+         The signing role to be used for signing certificates
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.VaultAWSIAMCertX509Store ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'issuedcertttlminutes: ' + repr(self.issuedcertttlminutes) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'namespace: ' + repr(self.namespace) + ' ' +\
+            'pki_mount_point: ' + repr(self.pki_mount_point) + ' ' +\
+            'server_address: ' + repr(self.server_address) + ' ' +\
+            'signing_role: ' + repr(self.signing_role) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'issuedcertttlminutes': self.issuedcertttlminutes,
+            'name': self.name,
+            'namespace': self.namespace,
+            'pki_mount_point': self.pki_mount_point,
+            'server_address': self.server_address,
+            'signing_role': self.signing_role,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            issuedcertttlminutes=d.get('issuedcertttlminutes'),
+            name=d.get('name'),
+            namespace=d.get('namespace'),
+            pki_mount_point=d.get('pki_mount_point'),
+            server_address=d.get('server_address'),
+            signing_role=d.get('signing_role'),
             tags=d.get('tags'),
         )
 

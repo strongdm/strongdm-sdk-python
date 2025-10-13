@@ -6713,7 +6713,11 @@ class SecretStores:
     `strongdm.models.VaultAppRoleCertSSHStore`
     `strongdm.models.VaultAppRoleCertX509Store`
     `strongdm.models.VaultAWSEC2Store`
+    `strongdm.models.VaultAWSEC2CertSSHStore`
+    `strongdm.models.VaultAWSEC2CertX509Store`
     `strongdm.models.VaultAWSIAMStore`
+    `strongdm.models.VaultAWSIAMCertSSHStore`
+    `strongdm.models.VaultAWSIAMCertX509Store`
     `strongdm.models.VaultTLSStore`
     `strongdm.models.VaultTLSCertSSHStore`
     `strongdm.models.VaultTLSCertX509Store`
