@@ -6709,6 +6709,7 @@ class SecretStores:
     `strongdm.models.GCPCertX509Store`
     `strongdm.models.KeyfactorSSHStore`
     `strongdm.models.KeyfactorX509Store`
+    `strongdm.models.StrongVaultStore`
     `strongdm.models.VaultAppRoleStore`
     `strongdm.models.VaultAppRoleCertSSHStore`
     `strongdm.models.VaultAppRoleCertX509Store`

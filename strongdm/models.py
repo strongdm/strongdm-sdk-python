@@ -1839,6 +1839,8 @@ class AWSStore:
         'id',
         'name',
         'region',
+        'role_arn',
+        'role_external_id',
         'tags',
     ]
 
@@ -1847,6 +1849,8 @@ class AWSStore:
         id=None,
         name=None,
         region=None,
+        role_arn=None,
+        role_external_id=None,
         tags=None,
     ):
         self.id = id if id is not None else ''
@@ -1861,6 +1865,14 @@ class AWSStore:
         '''
          The AWS region to target e.g. us-east-1
         '''
+        self.role_arn = role_arn if role_arn is not None else ''
+        '''
+         The role to assume after logging in.
+        '''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
         self.tags = tags if tags is not None else _porcelain_zero_value_tags()
         '''
          Tags is a map of key, value pairs.
@@ -1871,6 +1883,8 @@ class AWSStore:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'region: ' + repr(self.region) + ' ' +\
+            'role_arn: ' + repr(self.role_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
             '>'
 
@@ -1879,6 +1893,8 @@ class AWSStore:
             'id': self.id,
             'name': self.name,
             'region': self.region,
+            'role_arn': self.role_arn,
+            'role_external_id': self.role_external_id,
             'tags': self.tags,
         }
 
@@ -1888,6 +1904,8 @@ class AWSStore:
             id=d.get('id'),
             name=d.get('name'),
             region=d.get('region'),
+            role_arn=d.get('role_arn'),
+            role_external_id=d.get('role_external_id'),
             tags=d.get('tags'),
         )
 
@@ -31308,6 +31326,59 @@ class Snowsight:
             samlmetadata=d.get('samlmetadata'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
+class StrongVaultStore:
+    '''
+    StrongVaultStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        tags=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.StrongVaultStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
             tags=d.get('tags'),
         )
 

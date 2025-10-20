@@ -850,6 +850,8 @@ def convert_aws_store_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.region = (plumbing.region)
+    porcelain.role_arn = (plumbing.role_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
     return porcelain
 
@@ -861,6 +863,8 @@ def convert_aws_store_to_plumbing(porcelain):
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.region = (porcelain.region)
+    plumbing.role_arn = (porcelain.role_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
     return plumbing
 
@@ -15669,6 +15673,9 @@ def convert_secret_store_to_plumbing(porcelain):
     if isinstance(porcelain, models.KeyfactorX509Store):
         plumbing.keyfactor_x_509.CopyFrom(
             convert_keyfactor_x_509_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.StrongVaultStore):
+        plumbing.strong_vault.CopyFrom(
+            convert_strong_vault_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.VaultAppRoleStore):
         plumbing.vault_app_role.CopyFrom(
             convert_vault_app_role_store_to_plumbing(porcelain))
@@ -15750,6 +15757,8 @@ def convert_secret_store_to_porcelain(plumbing):
     if plumbing.HasField('keyfactor_x_509'):
         return convert_keyfactor_x_509_store_to_porcelain(
             plumbing.keyfactor_x_509)
+    if plumbing.HasField('strong_vault'):
+        return convert_strong_vault_store_to_porcelain(plumbing.strong_vault)
     if plumbing.HasField('vault_app_role'):
         return convert_vault_app_role_store_to_porcelain(
             plumbing.vault_app_role)
@@ -16309,6 +16318,40 @@ def convert_repeated_snowsight_to_plumbing(porcelains):
 
 def convert_repeated_snowsight_to_porcelain(plumbings):
     return [convert_snowsight_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_strong_vault_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.StrongVaultStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_strong_vault_store_to_plumbing(porcelain):
+    plumbing = StrongVaultStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_strong_vault_store_to_plumbing(porcelains):
+    return [
+        convert_strong_vault_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_strong_vault_store_to_porcelain(plumbings):
+    return [
+        convert_strong_vault_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_sybase_to_porcelain(plumbing):
