@@ -128,6 +128,7 @@ class ActivityEntityType:
     CERTIFICATE_AUTHORITY = "certificate_authority"
     POLICY = "policy"
     PROXY_CLUSTER_KEY = "proxy_cluster_key"
+    TRUST_DOMAIN = "trust_domain"
 
 
 # Activity Verbs, describe which kind of activity has taken place.
@@ -259,6 +260,9 @@ class ActivityVerb:
     SECRET_ENGINE_UPDATED = "secret engine updated"
     SECRET_ENGINE_ROTATED = "secret engine's credentials updated"
     SECRET_ENGINE_DELETED = "secret engine deleted"
+    TRUST_DOMAIN_CREATED = "trust domain created"
+    TRUST_DOMAIN_UPDATED = "trust domain updated"
+    TRUST_DOMAIN_DELETED = "trust domain deleted"
     REMOTE_IDENTITY_GROUP_CREATED = "remote identity group created"
     REMOTE_IDENTITY_GROUP_UPDATED = "remote identity group updated"
     REMOTE_IDENTITY_GROUP_DELETED = "remote identity group deleted"
