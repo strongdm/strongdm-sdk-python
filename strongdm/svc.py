@@ -6131,6 +6131,7 @@ class Resources:
     `strongdm.models.DynamoDBIAM`
     `strongdm.models.Elastic`
     `strongdm.models.ElasticacheRedis`
+    `strongdm.models.ElasticacheRedisIAM`
     `strongdm.models.EntraID`
     `strongdm.models.GCP`
     `strongdm.models.GCPConsole`

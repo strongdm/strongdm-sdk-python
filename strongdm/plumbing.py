@@ -6044,6 +6044,68 @@ def convert_repeated_elasticache_redis_to_porcelain(plumbings):
     ]
 
 
+def convert_elasticache_redis_iam_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ElasticacheRedisIAM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
+    porcelain.role_assumption_arn = (plumbing.role_assumption_arn)
+    porcelain.role_external_id = (plumbing.role_external_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_required = (plumbing.tls_required)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_elasticache_redis_iam_to_plumbing(porcelain):
+    plumbing = ElasticacheRedisIAM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
+    plumbing.role_assumption_arn = (porcelain.role_assumption_arn)
+    plumbing.role_external_id = (porcelain.role_external_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_required = (porcelain.tls_required)
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_elasticache_redis_iam_to_plumbing(porcelains):
+    return [
+        convert_elasticache_redis_iam_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_elasticache_redis_iam_to_porcelain(plumbings):
+    return [
+        convert_elasticache_redis_iam_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_entra_id_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -13696,6 +13758,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.ElasticacheRedis):
         plumbing.elasticache_redis.CopyFrom(
             convert_elasticache_redis_to_plumbing(porcelain))
+    if isinstance(porcelain, models.ElasticacheRedisIAM):
+        plumbing.elasticache_redis_iam.CopyFrom(
+            convert_elasticache_redis_iam_to_plumbing(porcelain))
     if isinstance(porcelain, models.EntraID):
         plumbing.entra_id.CopyFrom(convert_entra_id_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCP):
@@ -13967,6 +14032,9 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('elasticache_redis'):
         return convert_elasticache_redis_to_porcelain(
             plumbing.elasticache_redis)
+    if plumbing.HasField('elasticache_redis_iam'):
+        return convert_elasticache_redis_iam_to_porcelain(
+            plumbing.elasticache_redis_iam)
     if plumbing.HasField('entra_id'):
         return convert_entra_id_to_porcelain(plumbing.entra_id)
     if plumbing.HasField('gcp'):
