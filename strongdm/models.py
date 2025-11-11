@@ -12769,6 +12769,185 @@ class ElasticacheRedis:
         )
 
 
+class ElasticacheRedisIAM:
+    '''
+    ElasticacheRedisIAM is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'port',
+        'port_override',
+        'proxy_cluster_id',
+        'region',
+        'role_assumption_arn',
+        'role_external_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'tls_required',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        port=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        region=None,
+        role_assumption_arn=None,
+        role_external_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        tls_required=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.region = region if region is not None else ''
+        '''
+         AWS region is needed in addition to hostname to generate the IAM signature
+        '''
+        self.role_assumption_arn = role_assumption_arn if role_assumption_arn is not None else ''
+        '''
+         If provided, the gateway/relay will try to assume this role instead of the underlying compute's role.
+        '''
+        self.role_external_id = role_external_id if role_external_id is not None else ''
+        '''
+         The external ID to associate with assume role requests. Does nothing if a role ARN is not provided.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         If set, TLS must be used to connect to this resource.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         The username to authenticate with.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ElasticacheRedisIAM ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
+            'role_assumption_arn: ' + repr(self.role_assumption_arn) + ' ' +\
+            'role_external_id: ' + repr(self.role_external_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'port': self.port,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'region': self.region,
+            'role_assumption_arn': self.role_assumption_arn,
+            'role_external_id': self.role_external_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'tls_required': self.tls_required,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            region=d.get('region'),
+            role_assumption_arn=d.get('role_assumption_arn'),
+            role_external_id=d.get('role_external_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
+            username=d.get('username'),
+        )
+
+
 class EntraID:
     __slots__ = [
         'bind_interface',
@@ -22055,6 +22234,67 @@ class NodeMaintenanceWindow:
         )
 
 
+class NodeTCPProbeResponse:
+    '''
+         NodeTCPProbeResponse reports the result of a TCP probe.
+    '''
+    __slots__ = [
+        'error',
+        'meta',
+        'rate_limit',
+        'succeeded',
+    ]
+
+    def __init__(
+        self,
+        error=None,
+        meta=None,
+        rate_limit=None,
+        succeeded=None,
+    ):
+        self.error = error if error is not None else ''
+        '''
+         The connection error reported by the node, or the empty string if the probe succeeded.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.succeeded = succeeded if succeeded is not None else False
+        '''
+         True if the node was able to connect to the target address.
+        '''
+
+    def __repr__(self):
+        return '<sdm.NodeTCPProbeResponse ' + \
+            'error: ' + repr(self.error) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'succeeded: ' + repr(self.succeeded) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'error': self.error,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+            'succeeded': self.succeeded,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            error=d.get('error'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+            succeeded=d.get('succeeded'),
+        )
+
+
 class NodeUpdateResponse:
     '''
          NodeUpdateResponse returns the fields of a Node after it has been updated by
@@ -25212,6 +25452,8 @@ class RDP:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'lock_required',
         'name',
         'password',
@@ -25232,6 +25474,8 @@ class RDP:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         lock_required=None,
         name=None,
         password=None,
@@ -25266,6 +25510,14 @@ class RDP:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         if provided use identity_set to map username to secret store path
         '''
         self.lock_required = lock_required if lock_required is not None else False
         '''
@@ -25316,6 +25568,8 @@ class RDP:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -25336,6 +25590,9 @@ class RDP:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'lock_required': self.lock_required,
             'name': self.name,
             'password': self.password,
@@ -25357,6 +25614,9 @@ class RDP:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             lock_required=d.get('lock_required'),
             name=d.get('name'),
             password=d.get('password'),

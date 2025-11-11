@@ -4153,9 +4153,11 @@ class ManagedSecrets:
 
 class Nodes:
     '''
-     Nodes make up the strongDM network, and allow your users to connect securely to your resources. There are two types of nodes:
-     - **Gateways** are the entry points into network. They listen for connection from the strongDM client, and provide access to databases and servers.
-     - **Relays** are used to extend the strongDM network into segmented subnets. They provide access to databases and servers but do not listen for incoming connections.
+     Nodes make up the StrongDM network, and allow your users to connect securely to your resources.
+     There are three types of nodes:
+     1. **Relay:** creates connectivity to your datasources, while maintaining the egress-only nature of your firewall
+     2. **Gateway:** a relay that also listens for connections from StrongDM clients
+     3. **Proxy Cluster:** a cluster of workers that together mediate access from clients to resources
     See:
     `strongdm.models.Gateway`
     `strongdm.models.ProxyCluster`
@@ -4340,6 +4342,43 @@ class Nodes:
                 req.meta.cursor = plumbing_response.meta.next_cursor
 
         return generator(self, req)
+
+    def tcp_probe(self, node_id, host, port, timeout=None):
+        '''
+         TCPProbe instructs a Node to connect to an address via TCP and report the
+         result.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = NodeTCPProbeRequest()
+
+        req.node_id = (node_id)
+        req.host = (host)
+        req.port = (port)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.TCPProbe(
+                    req,
+                    metadata=self.parent.get_metadata('Nodes.TCPProbe', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.NodeTCPProbeResponse()
+        resp.error = (plumbing_response.error)
+        resp.meta = plumbing.convert_create_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.succeeded = (plumbing_response.succeeded)
+        return resp
 
 
 class SnapshotNodes:
@@ -6131,6 +6170,7 @@ class Resources:
     `strongdm.models.DynamoDBIAM`
     `strongdm.models.Elastic`
     `strongdm.models.ElasticacheRedis`
+    `strongdm.models.ElasticacheRedisIAM`
     `strongdm.models.EntraID`
     `strongdm.models.GCP`
     `strongdm.models.GCPConsole`
