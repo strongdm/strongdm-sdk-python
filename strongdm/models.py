@@ -32559,10 +32559,6 @@ class User:
 
 
 class VaultAWSEC2CertSSHStore:
-    '''
-    VaultAWSEC2CertSSHStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'issuedcertttlminutes',
@@ -32657,10 +32653,6 @@ class VaultAWSEC2CertSSHStore:
 
 
 class VaultAWSEC2CertX509Store:
-    '''
-    VaultAWSEC2CertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'issuedcertttlminutes',
@@ -32822,10 +32814,6 @@ class VaultAWSEC2Store:
 
 
 class VaultAWSIAMCertSSHStore:
-    '''
-    VaultAWSIAMCertSSHStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'issuedcertttlminutes',
@@ -32920,10 +32908,6 @@ class VaultAWSIAMCertSSHStore:
 
 
 class VaultAWSIAMCertX509Store:
-    '''
-    VaultAWSIAMCertX509Store is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'issuedcertttlminutes',
