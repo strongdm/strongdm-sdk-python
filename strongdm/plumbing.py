@@ -10537,6 +10537,72 @@ def convert_repeated_mysql_to_porcelain(plumbings):
     return [convert_mysql_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_mysql_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MysqlEngine()
+    porcelain.after_read_ttl = convert_duration_to_porcelain(
+        plumbing.after_read_ttl)
+    porcelain.database = (plumbing.database)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.key_rotation_interval_days = (
+        plumbing.key_rotation_interval_days)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.policy = convert_secret_engine_policy_to_porcelain(
+        plumbing.policy)
+    porcelain.port = (plumbing.port)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls = (plumbing.tls)
+    porcelain.tls_skip_verify = (plumbing.tls_skip_verify)
+    porcelain.ttl = convert_duration_to_porcelain(plumbing.ttl)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_mysql_engine_to_plumbing(porcelain):
+    plumbing = MysqlEngine()
+    if porcelain is None:
+        return plumbing
+    plumbing.after_read_ttl.CopyFrom(
+        convert_duration_to_plumbing(porcelain.after_read_ttl))
+    plumbing.database = (porcelain.database)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.key_rotation_interval_days = (
+        porcelain.key_rotation_interval_days)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.policy.CopyFrom(
+        convert_secret_engine_policy_to_plumbing(porcelain.policy))
+    plumbing.port = (porcelain.port)
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls = (porcelain.tls)
+    plumbing.tls_skip_verify = (porcelain.tls_skip_verify)
+    plumbing.ttl.CopyFrom(convert_duration_to_plumbing(porcelain.ttl))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_mysql_engine_to_plumbing(porcelains):
+    return [
+        convert_mysql_engine_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_mysql_engine_to_porcelain(plumbings):
+    return [
+        convert_mysql_engine_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_neptune_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -15241,6 +15307,8 @@ def convert_secret_engine_to_plumbing(porcelain):
     if isinstance(porcelain, models.KeyValueEngine):
         plumbing.key_value.CopyFrom(
             convert_key_value_engine_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MysqlEngine):
+        plumbing.mysql.CopyFrom(convert_mysql_engine_to_plumbing(porcelain))
     if isinstance(porcelain, models.PostgresEngine):
         plumbing.postgres.CopyFrom(
             convert_postgres_engine_to_plumbing(porcelain))
@@ -15255,6 +15323,8 @@ def convert_secret_engine_to_porcelain(plumbing):
             plumbing.active_directory)
     if plumbing.HasField('key_value'):
         return convert_key_value_engine_to_porcelain(plumbing.key_value)
+    if plumbing.HasField('mysql'):
+        return convert_mysql_engine_to_porcelain(plumbing.mysql)
     if plumbing.HasField('postgres'):
         return convert_postgres_engine_to_porcelain(plumbing.postgres)
     raise errors.UnknownError(
@@ -16240,6 +16310,7 @@ def convert_service_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.Service()
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.suspended = (plumbing.suspended)
@@ -16251,6 +16322,8 @@ def convert_service_to_plumbing(porcelain):
     plumbing = Service()
     if porcelain is None:
         return plumbing
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.suspended = (porcelain.suspended)
@@ -16653,6 +16726,7 @@ def convert_token_to_porcelain(plumbing):
         return None
     porcelain = models.Token()
     porcelain.account_type = (plumbing.account_type)
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.deadline = convert_timestamp_to_porcelain(plumbing.deadline)
     porcelain.duration = convert_duration_to_porcelain(plumbing.duration)
     porcelain.id = (plumbing.id)
@@ -16669,6 +16743,8 @@ def convert_token_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.account_type = (porcelain.account_type)
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.deadline.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.deadline))
     plumbing.duration.CopyFrom(convert_duration_to_plumbing(
@@ -16776,6 +16852,7 @@ def convert_user_to_porcelain(plumbing):
         return None
     porcelain = models.User()
     porcelain.scim = (plumbing.SCIM)
+    porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.email = (plumbing.email)
     porcelain.external_id = (plumbing.external_id)
     porcelain.first_name = (plumbing.first_name)
@@ -16796,6 +16873,8 @@ def convert_user_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.SCIM = (porcelain.scim)
+    plumbing.created_at.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.email = (porcelain.email)
     plumbing.external_id = (porcelain.external_id)
     plumbing.first_name = (porcelain.first_name)

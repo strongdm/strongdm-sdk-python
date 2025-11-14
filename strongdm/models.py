@@ -21659,6 +21659,185 @@ class Mysql:
         )
 
 
+class MysqlEngine:
+    '''
+    MysqlEngine is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'after_read_ttl',
+        'database',
+        'hostname',
+        'id',
+        'key_rotation_interval_days',
+        'name',
+        'password',
+        'policy',
+        'port',
+        'public_key',
+        'secret_store_id',
+        'secret_store_root_path',
+        'tags',
+        'tls',
+        'tls_skip_verify',
+        'ttl',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        after_read_ttl=None,
+        database=None,
+        hostname=None,
+        id=None,
+        key_rotation_interval_days=None,
+        name=None,
+        password=None,
+        policy=None,
+        port=None,
+        public_key=None,
+        secret_store_id=None,
+        secret_store_root_path=None,
+        tags=None,
+        tls=None,
+        tls_skip_verify=None,
+        ttl=None,
+        username=None,
+    ):
+        self.after_read_ttl = after_read_ttl if after_read_ttl is not None else None
+        '''
+         The default time-to-live duration of the password after it's read. Once the ttl has passed, a password will be rotated.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         Database is the database to verify credential against.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         Hostname is the hostname or IP address of the MySQL server.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Secret Engine.
+        '''
+        self.key_rotation_interval_days = key_rotation_interval_days if key_rotation_interval_days is not None else 0
+        '''
+         An interval of public/private key rotation for secret engine in days
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Secret Engine.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         Password is the password to connect to the MySQL server.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         Policy for password creation
+        '''
+        self.port = port if port is not None else 0
+        '''
+         Port is the port number of the MySQL server.
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key linked with a secret engine
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Backing secret store identifier
+        '''
+        self.secret_store_root_path = secret_store_root_path if secret_store_root_path is not None else ''
+        '''
+         Backing Secret Store root path where managed secrets are going to be stored
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tls = tls if tls is not None else False
+        '''
+         TLS enables TLS/SSL when connecting to the MySQL server.
+        '''
+        self.tls_skip_verify = tls_skip_verify if tls_skip_verify is not None else False
+        '''
+         TLS disable certificate verification
+        '''
+        self.ttl = ttl if ttl is not None else None
+        '''
+         The default password time-to-live duration. Once the ttl has passed, a password will be rotated the next time it's requested.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         Username is the username to connect to the MySQL server.
+        '''
+
+    def __repr__(self):
+        return '<sdm.MysqlEngine ' + \
+            'after_read_ttl: ' + repr(self.after_read_ttl) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls: ' + repr(self.tls) + ' ' +\
+            'tls_skip_verify: ' + repr(self.tls_skip_verify) + ' ' +\
+            'ttl: ' + repr(self.ttl) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'after_read_ttl': self.after_read_ttl,
+            'database': self.database,
+            'hostname': self.hostname,
+            'id': self.id,
+            'key_rotation_interval_days': self.key_rotation_interval_days,
+            'name': self.name,
+            'password': self.password,
+            'policy': self.policy,
+            'port': self.port,
+            'public_key': self.public_key,
+            'secret_store_id': self.secret_store_id,
+            'secret_store_root_path': self.secret_store_root_path,
+            'tags': self.tags,
+            'tls': self.tls,
+            'tls_skip_verify': self.tls_skip_verify,
+            'ttl': self.ttl,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            after_read_ttl=d.get('after_read_ttl'),
+            database=d.get('database'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            key_rotation_interval_days=d.get('key_rotation_interval_days'),
+            name=d.get('name'),
+            password=d.get('password'),
+            policy=d.get('policy'),
+            port=d.get('port'),
+            public_key=d.get('public_key'),
+            secret_store_id=d.get('secret_store_id'),
+            secret_store_root_path=d.get('secret_store_root_path'),
+            tags=d.get('tags'),
+            tls=d.get('tls'),
+            tls_skip_verify=d.get('tls_skip_verify'),
+            ttl=d.get('ttl'),
+            username=d.get('username'),
+        )
+
+
 class Neptune:
     __slots__ = [
         'bind_interface',
@@ -31052,6 +31231,7 @@ class Service:
      directly, or granted via roles. Services are typically automated jobs.
     '''
     __slots__ = [
+        'created_at',
         'id',
         'name',
         'suspended',
@@ -31060,11 +31240,16 @@ class Service:
 
     def __init__(
         self,
+        created_at=None,
         id=None,
         name=None,
         suspended=None,
         tags=None,
     ):
+        self.created_at = created_at if created_at is not None else None
+        '''
+         CreatedAt is the timestamp when the service was created
+        '''
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Service.
@@ -31084,6 +31269,7 @@ class Service:
 
     def __repr__(self):
         return '<sdm.Service ' + \
+            'created_at: ' + repr(self.created_at) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'suspended: ' + repr(self.suspended) + ' ' +\
@@ -31092,6 +31278,7 @@ class Service:
 
     def to_dict(self):
         return {
+            'created_at': self.created_at,
             'id': self.id,
             'name': self.name,
             'suspended': self.suspended,
@@ -31101,6 +31288,7 @@ class Service:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            created_at=d.get('created_at'),
             id=d.get('id'),
             name=d.get('name'),
             suspended=d.get('suspended'),
@@ -32134,6 +32322,7 @@ class Token:
     '''
     __slots__ = [
         'account_type',
+        'created_at',
         'deadline',
         'duration',
         'id',
@@ -32147,6 +32336,7 @@ class Token:
     def __init__(
         self,
         account_type=None,
+        created_at=None,
         deadline=None,
         duration=None,
         id=None,
@@ -32159,6 +32349,10 @@ class Token:
         self.account_type = account_type if account_type is not None else ''
         '''
          Corresponds to the type of token, e.g. api or admin-token.
+        '''
+        self.created_at = created_at if created_at is not None else None
+        '''
+         CreatedAt is the timestamp when the token was created
         '''
         self.deadline = deadline if deadline is not None else None
         '''
@@ -32196,6 +32390,7 @@ class Token:
     def __repr__(self):
         return '<sdm.Token ' + \
             'account_type: ' + repr(self.account_type) + ' ' +\
+            'created_at: ' + repr(self.created_at) + ' ' +\
             'deadline: ' + repr(self.deadline) + ' ' +\
             'duration: ' + repr(self.duration) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -32209,6 +32404,7 @@ class Token:
     def to_dict(self):
         return {
             'account_type': self.account_type,
+            'created_at': self.created_at,
             'deadline': self.deadline,
             'duration': self.duration,
             'id': self.id,
@@ -32223,6 +32419,7 @@ class Token:
     def from_dict(cls, d):
         return cls(
             account_type=d.get('account_type'),
+            created_at=d.get('created_at'),
             deadline=d.get('deadline'),
             duration=d.get('duration'),
             id=d.get('id'),
@@ -32419,6 +32616,7 @@ class User:
     '''
     __slots__ = [
         'scim',
+        'created_at',
         'email',
         'external_id',
         'first_name',
@@ -32436,6 +32634,7 @@ class User:
     def __init__(
         self,
         scim=None,
+        created_at=None,
         email=None,
         external_id=None,
         first_name=None,
@@ -32452,6 +32651,10 @@ class User:
         self.scim = scim if scim is not None else ''
         '''
          SCIM contains the raw SCIM metadata for the user. This is a read-only field.
+        '''
+        self.created_at = created_at if created_at is not None else None
+        '''
+         CreatedAt is the timestamp when the user was created
         '''
         self.email = email if email is not None else ''
         '''
@@ -32508,6 +32711,7 @@ class User:
     def __repr__(self):
         return '<sdm.User ' + \
             'scim: ' + repr(self.scim) + ' ' +\
+            'created_at: ' + repr(self.created_at) + ' ' +\
             'email: ' + repr(self.email) + ' ' +\
             'external_id: ' + repr(self.external_id) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
@@ -32525,6 +32729,7 @@ class User:
     def to_dict(self):
         return {
             'scim': self.scim,
+            'created_at': self.created_at,
             'email': self.email,
             'external_id': self.external_id,
             'first_name': self.first_name,
@@ -32543,6 +32748,7 @@ class User:
     def from_dict(cls, d):
         return cls(
             scim=d.get('scim'),
+            created_at=d.get('created_at'),
             email=d.get('email'),
             external_id=d.get('external_id'),
             first_name=d.get('first_name'),

@@ -6980,6 +6980,7 @@ class SecretEngines:
     See:
     `strongdm.models.ActiveDirectoryEngine`
     `strongdm.models.KeyValueEngine`
+    `strongdm.models.MysqlEngine`
     `strongdm.models.PostgresEngine`
     '''
     def __init__(self, channel, client):
