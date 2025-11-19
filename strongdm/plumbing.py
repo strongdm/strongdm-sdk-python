@@ -15312,6 +15312,9 @@ def convert_secret_engine_to_plumbing(porcelain):
     if isinstance(porcelain, models.PostgresEngine):
         plumbing.postgres.CopyFrom(
             convert_postgres_engine_to_plumbing(porcelain))
+    if isinstance(porcelain, models.SqlserverEngine):
+        plumbing.sqlserver.CopyFrom(
+            convert_sqlserver_engine_to_plumbing(porcelain))
     return plumbing
 
 
@@ -15327,6 +15330,8 @@ def convert_secret_engine_to_porcelain(plumbing):
         return convert_mysql_engine_to_porcelain(plumbing.mysql)
     if plumbing.HasField('postgres'):
         return convert_postgres_engine_to_porcelain(plumbing.postgres)
+    if plumbing.HasField('sqlserver'):
+        return convert_sqlserver_engine_to_porcelain(plumbing.sqlserver)
     raise errors.UnknownError(
         "unknown polymorphic type, please upgrade your SDK")
 
@@ -16505,6 +16510,74 @@ def convert_repeated_snowsight_to_plumbing(porcelains):
 
 def convert_repeated_snowsight_to_porcelain(plumbings):
     return [convert_snowsight_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_sqlserver_engine_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.SqlserverEngine()
+    porcelain.after_read_ttl = convert_duration_to_porcelain(
+        plumbing.after_read_ttl)
+    porcelain.database = (plumbing.database)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.key_rotation_interval_days = (
+        plumbing.key_rotation_interval_days)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.policy = convert_secret_engine_policy_to_porcelain(
+        plumbing.policy)
+    porcelain.port = (plumbing.port)
+    porcelain.public_key = (plumbing.public_key)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls = (plumbing.tls)
+    porcelain.tls_skip_verify = (plumbing.tls_skip_verify)
+    porcelain.ttl = convert_duration_to_porcelain(plumbing.ttl)
+    porcelain.username = (plumbing.username)
+    return porcelain
+
+
+def convert_sqlserver_engine_to_plumbing(porcelain):
+    plumbing = SqlserverEngine()
+    if porcelain is None:
+        return plumbing
+    plumbing.after_read_ttl.CopyFrom(
+        convert_duration_to_plumbing(porcelain.after_read_ttl))
+    plumbing.database = (porcelain.database)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.key_rotation_interval_days = (
+        porcelain.key_rotation_interval_days)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.policy.CopyFrom(
+        convert_secret_engine_policy_to_plumbing(porcelain.policy))
+    plumbing.port = (porcelain.port)
+    plumbing.public_key = (porcelain.public_key)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls = (porcelain.tls)
+    plumbing.tls_skip_verify = (porcelain.tls_skip_verify)
+    plumbing.ttl.CopyFrom(convert_duration_to_plumbing(porcelain.ttl))
+    plumbing.username = (porcelain.username)
+    return plumbing
+
+
+def convert_repeated_sqlserver_engine_to_plumbing(porcelains):
+    return [
+        convert_sqlserver_engine_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_sqlserver_engine_to_porcelain(plumbings):
+    return [
+        convert_sqlserver_engine_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_strong_vault_store_to_porcelain(plumbing):

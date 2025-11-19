@@ -21660,10 +21660,6 @@ class Mysql:
 
 
 class MysqlEngine:
-    '''
-    MysqlEngine is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'after_read_ttl',
         'database',
@@ -24511,10 +24507,6 @@ class Postgres:
 
 
 class PostgresEngine:
-    '''
-    PostgresEngine is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'after_read_ttl',
         'database',
@@ -31778,11 +31770,182 @@ class Snowsight:
         )
 
 
+class SqlserverEngine:
+    __slots__ = [
+        'after_read_ttl',
+        'database',
+        'hostname',
+        'id',
+        'key_rotation_interval_days',
+        'name',
+        'password',
+        'policy',
+        'port',
+        'public_key',
+        'secret_store_id',
+        'secret_store_root_path',
+        'tags',
+        'tls',
+        'tls_skip_verify',
+        'ttl',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        after_read_ttl=None,
+        database=None,
+        hostname=None,
+        id=None,
+        key_rotation_interval_days=None,
+        name=None,
+        password=None,
+        policy=None,
+        port=None,
+        public_key=None,
+        secret_store_id=None,
+        secret_store_root_path=None,
+        tags=None,
+        tls=None,
+        tls_skip_verify=None,
+        ttl=None,
+        username=None,
+    ):
+        self.after_read_ttl = after_read_ttl if after_read_ttl is not None else None
+        '''
+         The default time-to-live duration of the password after it's read. Once the ttl has passed, a password will be rotated.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         Database is the database to verify credential against.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         Hostname is the hostname or IP address of the SQL Server.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Secret Engine.
+        '''
+        self.key_rotation_interval_days = key_rotation_interval_days if key_rotation_interval_days is not None else 0
+        '''
+         An interval of public/private key rotation for secret engine in days
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Secret Engine.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         Password is the password to connect to the SQL Server server.
+        '''
+        self.policy = policy if policy is not None else None
+        '''
+         Policy for password creation
+        '''
+        self.port = port if port is not None else 0
+        '''
+         Port is the port number of the SQL Server server.
+        '''
+        self.public_key = public_key if public_key is not None else b''
+        '''
+         Public key linked with a secret engine
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         Backing secret store identifier
+        '''
+        self.secret_store_root_path = secret_store_root_path if secret_store_root_path is not None else ''
+        '''
+         Backing Secret Store root path where managed secrets are going to be stored
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tls = tls if tls is not None else False
+        '''
+         TLS enables TLS/SSL when connecting to the SQL Server server.
+        '''
+        self.tls_skip_verify = tls_skip_verify if tls_skip_verify is not None else False
+        '''
+         TLS disable certificate verification
+        '''
+        self.ttl = ttl if ttl is not None else None
+        '''
+         The default password time-to-live duration. Once the ttl has passed, a password will be rotated the next time it's requested.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         Username is the username to connect to the SQL Server.
+        '''
+
+    def __repr__(self):
+        return '<sdm.SqlserverEngine ' + \
+            'after_read_ttl: ' + repr(self.after_read_ttl) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'policy: ' + repr(self.policy) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'public_key: ' + repr(self.public_key) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tls: ' + repr(self.tls) + ' ' +\
+            'tls_skip_verify: ' + repr(self.tls_skip_verify) + ' ' +\
+            'ttl: ' + repr(self.ttl) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'after_read_ttl': self.after_read_ttl,
+            'database': self.database,
+            'hostname': self.hostname,
+            'id': self.id,
+            'key_rotation_interval_days': self.key_rotation_interval_days,
+            'name': self.name,
+            'password': self.password,
+            'policy': self.policy,
+            'port': self.port,
+            'public_key': self.public_key,
+            'secret_store_id': self.secret_store_id,
+            'secret_store_root_path': self.secret_store_root_path,
+            'tags': self.tags,
+            'tls': self.tls,
+            'tls_skip_verify': self.tls_skip_verify,
+            'ttl': self.ttl,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            after_read_ttl=d.get('after_read_ttl'),
+            database=d.get('database'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            key_rotation_interval_days=d.get('key_rotation_interval_days'),
+            name=d.get('name'),
+            password=d.get('password'),
+            policy=d.get('policy'),
+            port=d.get('port'),
+            public_key=d.get('public_key'),
+            secret_store_id=d.get('secret_store_id'),
+            secret_store_root_path=d.get('secret_store_root_path'),
+            tags=d.get('tags'),
+            tls=d.get('tls'),
+            tls_skip_verify=d.get('tls_skip_verify'),
+            ttl=d.get('ttl'),
+            username=d.get('username'),
+        )
+
+
 class StrongVaultStore:
-    '''
-    StrongVaultStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'name',

@@ -6982,6 +6982,7 @@ class SecretEngines:
     `strongdm.models.KeyValueEngine`
     `strongdm.models.MysqlEngine`
     `strongdm.models.PostgresEngine`
+    `strongdm.models.SqlserverEngine`
     '''
     def __init__(self, channel, client):
         self.parent = client
