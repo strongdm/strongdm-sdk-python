@@ -25817,6 +25817,7 @@ class RDPCert:
         'port_override',
         'proxy_cluster_id',
         'secret_store_id',
+        'server_fqdn',
         'sid',
         'subdomain',
         'tags',
@@ -25839,6 +25840,7 @@ class RDPCert:
         port_override=None,
         proxy_cluster_id=None,
         secret_store_id=None,
+        server_fqdn=None,
         sid=None,
         subdomain=None,
         tags=None,
@@ -25850,7 +25852,7 @@ class RDPCert:
         '''
         self.dc_hostnames = dc_hostnames if dc_hostnames is not None else ''
         '''
-         Comma-separated list of Active Directory Domain Controller hostnames for LDAPS SID resolution. Utilized for strong certificate mapping in full enforcement mode when the identity alias does not specify a SID.
+         Comma-separated list of Active Directory Domain Controller hostnames. Required in on-premises AD environments for Kerberos Network Level Authentication (NLA), and for LDAPS SID resolution for strong certificate mapping in full enforcement mode when the identity alias does not specify a SID. Unused for Entra ID.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
@@ -25870,7 +25872,7 @@ class RDPCert:
         '''
         self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
         '''
-         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+         Username of the AD service account for health checks, and LDAPS SID resolution if necessary. Required for on-premises AD environments, unused for Entra ID.
         '''
         self.identity_set_id = identity_set_id if identity_set_id is not None else ''
         '''
@@ -25900,9 +25902,13 @@ class RDPCert:
         '''
          ID of the secret store containing credentials for this resource, if any.
         '''
+        self.server_fqdn = server_fqdn if server_fqdn is not None else ''
+        '''
+         Fully-qualified DNS name of the target Windows server, including the AD domain. Must match the Service Principal Name (SPN) of the server in AD. Required in on-premises AD environments for Kerberos Network Level Authentication (NLA), unused for Entra ID.
+        '''
         self.sid = sid if sid is not None else ''
         '''
-         Windows Security Identifier (SID) of the configured Username, required for strong certificate mapping in full enforcement mode.
+         Windows Security Identifier (SID) of the configured Username, or AD service account if using LDAPS SID resolution. Required in on-premises AD environments for strong certificate mapping in full enforcement mode, unused for Entra ID.
         '''
         self.subdomain = subdomain if subdomain is not None else ''
         '''
@@ -25933,6 +25939,7 @@ class RDPCert:
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'server_fqdn: ' + repr(self.server_fqdn) + ' ' +\
             'sid: ' + repr(self.sid) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -25956,6 +25963,7 @@ class RDPCert:
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
+            'server_fqdn': self.server_fqdn,
             'sid': self.sid,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -25980,6 +25988,7 @@ class RDPCert:
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
+            server_fqdn=d.get('server_fqdn'),
             sid=d.get('sid'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
