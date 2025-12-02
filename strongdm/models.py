@@ -18537,6 +18537,7 @@ class MCP:
         'secret_store_id',
         'subdomain',
         'tags',
+        'username',
     ]
 
     def __init__(
@@ -18554,6 +18555,7 @@ class MCP:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -18581,7 +18583,7 @@ class MCP:
         '''
         self.password = password if password is not None else ''
         '''
-         The password to authenticate with.
+         OAuth App Client Secret
         '''
         self.port = port if port is not None else 0
         '''
@@ -18607,6 +18609,10 @@ class MCP:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.username = username if username is not None else ''
+        '''
+         OAuth App Client ID
+        '''
 
     def __repr__(self):
         return '<sdm.MCP ' + \
@@ -18623,6 +18629,7 @@ class MCP:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -18640,6 +18647,7 @@ class MCP:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'username': self.username,
         }
 
     @classmethod
@@ -18658,6 +18666,7 @@ class MCP:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            username=d.get('username'),
         )
 
 

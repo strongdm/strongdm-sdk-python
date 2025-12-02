@@ -9037,6 +9037,7 @@ def convert_mcp_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.username = (plumbing.username)
     return porcelain
 
 
@@ -9057,6 +9058,7 @@ def convert_mcp_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.username = (porcelain.username)
     return plumbing
 
 
