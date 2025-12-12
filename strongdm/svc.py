@@ -6201,6 +6201,7 @@ class Resources:
     `strongdm.models.Mysql`
     `strongdm.models.Neptune`
     `strongdm.models.NeptuneIAM`
+    `strongdm.models.OktaGroups`
     `strongdm.models.Oracle`
     `strongdm.models.OracleNNE`
     `strongdm.models.Postgres`

@@ -11005,6 +11005,56 @@ def convert_repeated_node_update_response_to_porcelain(plumbings):
     ]
 
 
+def convert_okta_groups_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OktaGroups()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.domain = (plumbing.domain)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.name = (plumbing.name)
+    porcelain.privilege_levels = (plumbing.privilege_levels)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_okta_groups_to_plumbing(porcelain):
+    plumbing = OktaGroups()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.domain = (porcelain.domain)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.name = (porcelain.name)
+    plumbing.privilege_levels = (porcelain.privilege_levels)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_okta_groups_to_plumbing(porcelains):
+    return [
+        convert_okta_groups_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_okta_groups_to_porcelain(plumbings):
+    return [
+        convert_okta_groups_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_oracle_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -13953,6 +14003,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.NeptuneIAM):
         plumbing.neptune_iam.CopyFrom(
             convert_neptune_iam_to_plumbing(porcelain))
+    if isinstance(porcelain, models.OktaGroups):
+        plumbing.okta_groups.CopyFrom(
+            convert_okta_groups_to_plumbing(porcelain))
     if isinstance(porcelain, models.Oracle):
         plumbing.oracle.CopyFrom(convert_oracle_to_plumbing(porcelain))
     if isinstance(porcelain, models.OracleNNE):
@@ -14221,6 +14274,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_neptune_to_porcelain(plumbing.neptune)
     if plumbing.HasField('neptune_iam'):
         return convert_neptune_iam_to_porcelain(plumbing.neptune_iam)
+    if plumbing.HasField('okta_groups'):
+        return convert_okta_groups_to_porcelain(plumbing.okta_groups)
     if plumbing.HasField('oracle'):
         return convert_oracle_to_porcelain(plumbing.oracle)
     if plumbing.HasField('oracle_nne'):
