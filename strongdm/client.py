@@ -34,7 +34,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/15.39.0'
+USER_AGENT = 'strongdm-sdk-python/15.40.0'
 
 
 class Client:
@@ -217,6 +217,13 @@ class Client:
          ControlPanel contains all administrative controls.
 
         See `strongdm.svc.ControlPanel`.
+        '''
+        self.discovery_connectors = svc.DiscoveryConnectors(channel, self)
+        '''
+         A Discovery Connector is a configuration object for performing Resource
+         Scans in remote systems such as AWS, GCP, Azure, and other systems.
+
+        See `strongdm.svc.DiscoveryConnectors`.
         '''
         self.roles = svc.Roles(channel, self)
         '''
@@ -601,6 +608,8 @@ class Client:
             client.channel, client)
         client.approval_workflows = svc.ApprovalWorkflows(
             client.channel, client)
+        client.discovery_connectors = svc.DiscoveryConnectors(
+            client.channel, client)
         client.roles = svc.Roles(client.channel, client)
         client.groups = svc.Groups(client.channel, client)
         client.groups_roles = svc.GroupsRoles(client.channel, client)
@@ -699,6 +708,14 @@ class SnapshotClient:
          approvers and be approved or denied.
 
         See `strongdm.svc.SnapshotApprovalWorkflows`.
+        '''
+        self.discovery_connectors = svc.SnapshotDiscoveryConnectors(
+            client.discovery_connectors)
+        '''
+         A Discovery Connector is a configuration object for performing Resource
+         Scans in remote systems such as AWS, GCP, Azure, and other systems.
+
+        See `strongdm.svc.SnapshotDiscoveryConnectors`.
         '''
         self.roles = svc.SnapshotRoles(client.roles)
         '''

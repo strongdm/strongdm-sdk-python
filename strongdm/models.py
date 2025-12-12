@@ -1324,6 +1324,111 @@ class AWSCertX509Store:
         )
 
 
+class AWSConnector:
+    __slots__ = [
+        'account_ids',
+        'description',
+        'exclude_tags',
+        'id',
+        'include_tags',
+        'name',
+        'role_name',
+        'scan_period',
+        'services',
+    ]
+
+    def __init__(
+        self,
+        account_ids=None,
+        description=None,
+        exclude_tags=None,
+        id=None,
+        include_tags=None,
+        name=None,
+        role_name=None,
+        scan_period=None,
+        services=None,
+    ):
+        self.account_ids = account_ids if account_ids is not None else []
+        '''
+         AccountIds is the list of AWS Accounts to scan
+        '''
+        self.description = description if description is not None else ''
+        '''
+         Description of the Connector.
+        '''
+        self.exclude_tags = exclude_tags if exclude_tags is not None else []
+        '''
+         ExcludeTags filters out discovered resources that have the tag and value.
+         We do allow duplicate tag names for ExcludeTags to support multiple excluded values for the tag.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Connector.
+        '''
+        self.include_tags = include_tags if include_tags is not None else []
+        '''
+         IncludeTags only discovers cloud resources that have one of the included tags.
+         We do not allow duplicate tag names for IncludeTags
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Connector.
+        '''
+        self.role_name = role_name if role_name is not None else ''
+        '''
+         RoleName is the Role we're assuming into for an account
+        '''
+        self.scan_period = scan_period if scan_period is not None else ''
+        '''
+         ScanPeriod identifies which remote system this Connector discovers
+        '''
+        self.services = services if services is not None else []
+        '''
+         Services is a list of services this connector should scan.
+        '''
+
+    def __repr__(self):
+        return '<sdm.AWSConnector ' + \
+            'account_ids: ' + repr(self.account_ids) + ' ' +\
+            'description: ' + repr(self.description) + ' ' +\
+            'exclude_tags: ' + repr(self.exclude_tags) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'include_tags: ' + repr(self.include_tags) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'role_name: ' + repr(self.role_name) + ' ' +\
+            'scan_period: ' + repr(self.scan_period) + ' ' +\
+            'services: ' + repr(self.services) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_ids': self.account_ids,
+            'description': self.description,
+            'exclude_tags': self.exclude_tags,
+            'id': self.id,
+            'include_tags': self.include_tags,
+            'name': self.name,
+            'role_name': self.role_name,
+            'scan_period': self.scan_period,
+            'services': self.services,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_ids=d.get('account_ids'),
+            description=d.get('description'),
+            exclude_tags=d.get('exclude_tags'),
+            id=d.get('id'),
+            include_tags=d.get('include_tags'),
+            name=d.get('name'),
+            role_name=d.get('role_name'),
+            scan_period=d.get('scan_period'),
+            services=d.get('services'),
+        )
+
+
 class AWSConsole:
     __slots__ = [
         'bind_interface',
@@ -8283,6 +8388,120 @@ class AzureCertificate:
         )
 
 
+class AzureConnector:
+    __slots__ = [
+        'client_id',
+        'description',
+        'exclude_tags',
+        'id',
+        'include_tags',
+        'name',
+        'scan_period',
+        'services',
+        'subscription_ids',
+        'tenant_id',
+    ]
+
+    def __init__(
+        self,
+        client_id=None,
+        description=None,
+        exclude_tags=None,
+        id=None,
+        include_tags=None,
+        name=None,
+        scan_period=None,
+        services=None,
+        subscription_ids=None,
+        tenant_id=None,
+    ):
+        self.client_id = client_id if client_id is not None else ''
+        '''
+         ClientId is the ID of the Application / Service Account we're acting as
+        '''
+        self.description = description if description is not None else ''
+        '''
+         Description of the Connector.
+        '''
+        self.exclude_tags = exclude_tags if exclude_tags is not None else []
+        '''
+         ExcludeTags filters out discovered resources that have the tag and value.
+         We do allow duplicate tag names for ExcludeTags to support multiple excluded values for the tag.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Connector.
+        '''
+        self.include_tags = include_tags if include_tags is not None else []
+        '''
+         IncludeTags only discovers cloud resources that have one of the included tags.
+         We do not allow duplicate tag names for IncludeTags
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Connector.
+        '''
+        self.scan_period = scan_period if scan_period is not None else ''
+        '''
+         ScanPeriod identifies which remote system this Connector discovers
+        '''
+        self.services = services if services is not None else []
+        '''
+         Services is a list of services this connector should scan.
+        '''
+        self.subscription_ids = subscription_ids if subscription_ids is not None else []
+        '''
+         SubscriptionIds are the targets of discovery.
+        '''
+        self.tenant_id = tenant_id if tenant_id is not None else ''
+        '''
+         TenantId is the Azure Tenant we're discovering in
+        '''
+
+    def __repr__(self):
+        return '<sdm.AzureConnector ' + \
+            'client_id: ' + repr(self.client_id) + ' ' +\
+            'description: ' + repr(self.description) + ' ' +\
+            'exclude_tags: ' + repr(self.exclude_tags) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'include_tags: ' + repr(self.include_tags) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'scan_period: ' + repr(self.scan_period) + ' ' +\
+            'services: ' + repr(self.services) + ' ' +\
+            'subscription_ids: ' + repr(self.subscription_ids) + ' ' +\
+            'tenant_id: ' + repr(self.tenant_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'client_id': self.client_id,
+            'description': self.description,
+            'exclude_tags': self.exclude_tags,
+            'id': self.id,
+            'include_tags': self.include_tags,
+            'name': self.name,
+            'scan_period': self.scan_period,
+            'services': self.services,
+            'subscription_ids': self.subscription_ids,
+            'tenant_id': self.tenant_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            client_id=d.get('client_id'),
+            description=d.get('description'),
+            exclude_tags=d.get('exclude_tags'),
+            id=d.get('id'),
+            include_tags=d.get('include_tags'),
+            name=d.get('name'),
+            scan_period=d.get('scan_period'),
+            services=d.get('services'),
+            subscription_ids=d.get('subscription_ids'),
+            tenant_id=d.get('tenant_id'),
+        )
+
+
 class AzureMysql:
     __slots__ = [
         'bind_interface',
@@ -10311,6 +10530,381 @@ class Cockroach:
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             username=d.get('username'),
+        )
+
+
+class ConnectorCreateRequest:
+    '''
+         ConnectorCreateRequest specifies a connector to create.
+    '''
+    __slots__ = [
+        'connector',
+    ]
+
+    def __init__(
+        self,
+        connector=None,
+    ):
+        self.connector = connector if connector is not None else None
+        '''
+         Parameters to define the new Connector.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorCreateRequest ' + \
+            'connector: ' + repr(self.connector) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'connector': self.connector,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(connector=d.get('connector'), )
+
+
+class ConnectorCreateResponse:
+    '''
+         ConnectorCreateResponse reports the result of a create.
+    '''
+    __slots__ = [
+        'connector',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        connector=None,
+        rate_limit=None,
+    ):
+        self.connector = connector if connector is not None else None
+        '''
+         The created Connector.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorCreateResponse ' + \
+            'connector: ' + repr(self.connector) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'connector': self.connector,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            connector=d.get('connector'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ConnectorDeleteRequest:
+    '''
+         ConnectorDeleteRequest identifies a connector by ID to delete.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the connector to delete.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorDeleteRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ConnectorDeleteResponse:
+    '''
+         ConnectorDeleteResponse returns information about a connector that was deleted.
+    '''
+    __slots__ = [
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorDeleteResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ConnectorGetRequest:
+    '''
+         ConnectorGetRequest specifies which Connector to retrieve.
+    '''
+    __slots__ = [
+        'id',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         The unique identifier of the Connector to retrieve.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorGetRequest ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(id=d.get('id'), )
+
+
+class ConnectorGetResponse:
+    '''
+         ConnectorGetResponse returns a requested Connector.
+    '''
+    __slots__ = [
+        'connector',
+        'meta',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        connector=None,
+        meta=None,
+        rate_limit=None,
+    ):
+        self.connector = connector if connector is not None else None
+        '''
+         The requested Connector.
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorGetResponse ' + \
+            'connector: ' + repr(self.connector) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'connector': self.connector,
+            'meta': self.meta,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            connector=d.get('connector'),
+            meta=d.get('meta'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
+class ConnectorListRequest:
+    '''
+         ConnectorListRequest specifies criteria for retrieving a list of connectors.
+    '''
+    __slots__ = [
+        'filter',
+    ]
+
+    def __init__(
+        self,
+        filter=None,
+    ):
+        self.filter = filter if filter is not None else ''
+        '''
+         A human-readable filter query string.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorListRequest ' + \
+            'filter: ' + repr(self.filter) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'filter': self.filter,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(filter=d.get('filter'), )
+
+
+class ConnectorListResponse:
+    '''
+         ConnectorListResponse returns a list of connectors that meet the criteria of a
+     ConnectorListRequest.
+    '''
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorListResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class ConnectorUpdateRequest:
+    '''
+         ConnectorUpdateRequest updates a connector.
+    '''
+    __slots__ = [
+        'connector',
+    ]
+
+    def __init__(
+        self,
+        connector=None,
+    ):
+        self.connector = connector if connector is not None else None
+        '''
+         Parameters to overwrite the specified connector.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorUpdateRequest ' + \
+            'connector: ' + repr(self.connector) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'connector': self.connector,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(connector=d.get('connector'), )
+
+
+class ConnectorUpdateResponse:
+    '''
+         ConnectorUpdateResponse returns the fields of a connector after it has been updated by
+     a connectorUpdateRequest.
+    '''
+    __slots__ = [
+        'connector',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        connector=None,
+        rate_limit=None,
+    ):
+        self.connector = connector if connector is not None else None
+        '''
+         The updated connector.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ConnectorUpdateResponse ' + \
+            'connector: ' + repr(self.connector) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'connector': self.connector,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            connector=d.get('connector'),
+            rate_limit=d.get('rate_limit'),
         )
 
 
@@ -13345,6 +13939,129 @@ class GCPCertX509Store:
             name=d.get('name'),
             projectid=d.get('projectid'),
             tags=d.get('tags'),
+        )
+
+
+class GCPConnector:
+    __slots__ = [
+        'description',
+        'exclude_tags',
+        'id',
+        'include_tags',
+        'name',
+        'pool_id',
+        'project_ids',
+        'project_number',
+        'provider_id',
+        'scan_period',
+        'services',
+    ]
+
+    def __init__(
+        self,
+        description=None,
+        exclude_tags=None,
+        id=None,
+        include_tags=None,
+        name=None,
+        pool_id=None,
+        project_ids=None,
+        project_number=None,
+        provider_id=None,
+        scan_period=None,
+        services=None,
+    ):
+        self.description = description if description is not None else ''
+        '''
+         Description of the Connector.
+        '''
+        self.exclude_tags = exclude_tags if exclude_tags is not None else []
+        '''
+         ExcludeTags filters out discovered resources that have the tag and value.
+         We do allow duplicate tag names for ExcludeTags to support multiple excluded values for the tag.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Connector.
+        '''
+        self.include_tags = include_tags if include_tags is not None else []
+        '''
+         IncludeTags only discovers cloud resources that have one of the included tags.
+         We do not allow duplicate tag names for IncludeTags
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Connector.
+        '''
+        self.pool_id = pool_id if pool_id is not None else ''
+        '''
+         PoolId is the GCP Workload Pool Identifier used to authenticate our JWT
+        '''
+        self.project_ids = project_ids if project_ids is not None else []
+        '''
+         ProjectIds is the list of GCP Projects the connector will scan
+        '''
+        self.project_number = project_number if project_number is not None else ''
+        '''
+         ProjectNumber is the GCP Project the Workload Pool is defined in
+        '''
+        self.provider_id = provider_id if provider_id is not None else ''
+        '''
+         ProviderId is the GCP Workload Provider Identifier used to authenticate our JWT
+        '''
+        self.scan_period = scan_period if scan_period is not None else ''
+        '''
+         ScanPeriod identifies which remote system this Connector discovers
+        '''
+        self.services = services if services is not None else []
+        '''
+         Services is a list of services this connector should scan.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GCPConnector ' + \
+            'description: ' + repr(self.description) + ' ' +\
+            'exclude_tags: ' + repr(self.exclude_tags) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'include_tags: ' + repr(self.include_tags) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'pool_id: ' + repr(self.pool_id) + ' ' +\
+            'project_ids: ' + repr(self.project_ids) + ' ' +\
+            'project_number: ' + repr(self.project_number) + ' ' +\
+            'provider_id: ' + repr(self.provider_id) + ' ' +\
+            'scan_period: ' + repr(self.scan_period) + ' ' +\
+            'services: ' + repr(self.services) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'description': self.description,
+            'exclude_tags': self.exclude_tags,
+            'id': self.id,
+            'include_tags': self.include_tags,
+            'name': self.name,
+            'pool_id': self.pool_id,
+            'project_ids': self.project_ids,
+            'project_number': self.project_number,
+            'provider_id': self.provider_id,
+            'scan_period': self.scan_period,
+            'services': self.services,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            description=d.get('description'),
+            exclude_tags=d.get('exclude_tags'),
+            id=d.get('id'),
+            include_tags=d.get('include_tags'),
+            name=d.get('name'),
+            pool_id=d.get('pool_id'),
+            project_ids=d.get('project_ids'),
+            project_number=d.get('project_number'),
+            provider_id=d.get('provider_id'),
+            scan_period=d.get('scan_period'),
+            services=d.get('services'),
         )
 
 

@@ -455,6 +455,8 @@ class Permission:
     CREDENTIAL_WRITE = "credential:write"
     POLICY_READ = "policy:read"
     POLICY_WRITE = "policy:write"
+    DISCOVERY_CONNECTOR_READ = "discoveryconnector:read"
+    DISCOVERY_CONNECTOR_WRITE = "discoveryconnector:write"
     MANAGED_SECRET_CREATE = "managedsecret:create"
     MANAGED_SECRET_LIST = "managedsecret:list"
     MANAGED_SECRET_DELETE = "managedsecret:delete"

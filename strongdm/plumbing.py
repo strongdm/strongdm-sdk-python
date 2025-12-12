@@ -50,6 +50,7 @@ from .approval_workflow_steps_history_pb2 import *
 from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
 from .control_panel_pb2 import *
+from .discovery_connectors_pb2 import *
 from .roles_pb2 import *
 from .groups_pb2 import *
 from .groups_history_pb2 import *
@@ -656,6 +657,59 @@ def convert_repeated_aws_cert_x_509_store_to_porcelain(plumbings):
     return [
         convert_aws_cert_x_509_store_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_aws_connector_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AWSConnector()
+    porcelain.account_ids = (plumbing.account_ids)
+    porcelain.description = (plumbing.description)
+    porcelain.exclude_tags = convert_repeated_tag_to_porcelain(
+        plumbing.exclude_tags)
+    porcelain.id = (plumbing.id)
+    porcelain.include_tags = convert_repeated_tag_to_porcelain(
+        plumbing.include_tags)
+    porcelain.name = (plumbing.name)
+    porcelain.role_name = (plumbing.role_name)
+    porcelain.scan_period = (plumbing.scan_period)
+    porcelain.services = (plumbing.services)
+    return porcelain
+
+
+def convert_aws_connector_to_plumbing(porcelain):
+    plumbing = AWSConnector()
+    if porcelain is None:
+        return plumbing
+    del plumbing.account_ids[:]
+    plumbing.account_ids.extend((porcelain.account_ids))
+    plumbing.description = (porcelain.description)
+    del plumbing.exclude_tags[:]
+    plumbing.exclude_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.exclude_tags))
+    plumbing.id = (porcelain.id)
+    del plumbing.include_tags[:]
+    plumbing.include_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.include_tags))
+    plumbing.name = (porcelain.name)
+    plumbing.role_name = (porcelain.role_name)
+    plumbing.scan_period = (porcelain.scan_period)
+    del plumbing.services[:]
+    plumbing.services.extend((porcelain.services))
+    return plumbing
+
+
+def convert_repeated_aws_connector_to_plumbing(porcelains):
+    return [
+        convert_aws_connector_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_aws_connector_to_porcelain(plumbings):
+    return [
+        convert_aws_connector_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
@@ -4279,6 +4333,62 @@ def convert_repeated_azure_certificate_to_porcelain(plumbings):
     ]
 
 
+def convert_azure_connector_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.AzureConnector()
+    porcelain.client_id = (plumbing.client_id)
+    porcelain.description = (plumbing.description)
+    porcelain.exclude_tags = convert_repeated_tag_to_porcelain(
+        plumbing.exclude_tags)
+    porcelain.id = (plumbing.id)
+    porcelain.include_tags = convert_repeated_tag_to_porcelain(
+        plumbing.include_tags)
+    porcelain.name = (plumbing.name)
+    porcelain.scan_period = (plumbing.scan_period)
+    porcelain.services = (plumbing.services)
+    porcelain.subscription_ids = (plumbing.subscription_ids)
+    porcelain.tenant_id = (plumbing.tenant_id)
+    return porcelain
+
+
+def convert_azure_connector_to_plumbing(porcelain):
+    plumbing = AzureConnector()
+    if porcelain is None:
+        return plumbing
+    plumbing.client_id = (porcelain.client_id)
+    plumbing.description = (porcelain.description)
+    del plumbing.exclude_tags[:]
+    plumbing.exclude_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.exclude_tags))
+    plumbing.id = (porcelain.id)
+    del plumbing.include_tags[:]
+    plumbing.include_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.include_tags))
+    plumbing.name = (porcelain.name)
+    plumbing.scan_period = (porcelain.scan_period)
+    del plumbing.services[:]
+    plumbing.services.extend((porcelain.services))
+    del plumbing.subscription_ids[:]
+    plumbing.subscription_ids.extend((porcelain.subscription_ids))
+    plumbing.tenant_id = (porcelain.tenant_id)
+    return plumbing
+
+
+def convert_repeated_azure_connector_to_plumbing(porcelains):
+    return [
+        convert_azure_connector_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_azure_connector_to_porcelain(plumbings):
+    return [
+        convert_azure_connector_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_azure_mysql_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -5008,6 +5118,370 @@ def convert_repeated_cockroach_to_plumbing(porcelains):
 
 def convert_repeated_cockroach_to_porcelain(plumbings):
     return [convert_cockroach_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_connector_to_plumbing(porcelain):
+    plumbing = Connector()
+    if porcelain is None:
+        return plumbing
+    if isinstance(porcelain, models.AWSConnector):
+        plumbing.aws.CopyFrom(convert_aws_connector_to_plumbing(porcelain))
+    if isinstance(porcelain, models.AzureConnector):
+        plumbing.azure.CopyFrom(convert_azure_connector_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GCPConnector):
+        plumbing.gcp.CopyFrom(convert_gcp_connector_to_plumbing(porcelain))
+    return plumbing
+
+
+def convert_connector_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    if plumbing.HasField('aws'):
+        return convert_aws_connector_to_porcelain(plumbing.aws)
+    if plumbing.HasField('azure'):
+        return convert_azure_connector_to_porcelain(plumbing.azure)
+    if plumbing.HasField('gcp'):
+        return convert_gcp_connector_to_porcelain(plumbing.gcp)
+    raise errors.UnknownError(
+        "unknown polymorphic type, please upgrade your SDK")
+
+
+def convert_repeated_connector_to_plumbing(porcelains):
+    return [
+        convert_connector_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_to_porcelain(plumbings):
+    return [convert_connector_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_connector_create_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorCreateRequest()
+    porcelain.connector = convert_connector_to_porcelain(plumbing.connector)
+    return porcelain
+
+
+def convert_connector_create_request_to_plumbing(porcelain):
+    plumbing = ConnectorCreateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.connector.CopyFrom(
+        convert_connector_to_plumbing(porcelain.connector))
+    return plumbing
+
+
+def convert_repeated_connector_create_request_to_plumbing(porcelains):
+    return [
+        convert_connector_create_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_create_request_to_porcelain(plumbings):
+    return [
+        convert_connector_create_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_create_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorCreateResponse()
+    porcelain.connector = convert_connector_to_porcelain(plumbing.connector)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_connector_create_response_to_plumbing(porcelain):
+    plumbing = ConnectorCreateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.connector.CopyFrom(
+        convert_connector_to_plumbing(porcelain.connector))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_connector_create_response_to_plumbing(porcelains):
+    return [
+        convert_connector_create_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_create_response_to_porcelain(plumbings):
+    return [
+        convert_connector_create_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_delete_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorDeleteRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_connector_delete_request_to_plumbing(porcelain):
+    plumbing = ConnectorDeleteRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_connector_delete_request_to_plumbing(porcelains):
+    return [
+        convert_connector_delete_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_delete_request_to_porcelain(plumbings):
+    return [
+        convert_connector_delete_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_delete_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorDeleteResponse()
+    porcelain.meta = convert_delete_response_metadata_to_porcelain(
+        plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_connector_delete_response_to_plumbing(porcelain):
+    plumbing = ConnectorDeleteResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_delete_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_connector_delete_response_to_plumbing(porcelains):
+    return [
+        convert_connector_delete_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_delete_response_to_porcelain(plumbings):
+    return [
+        convert_connector_delete_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_get_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorGetRequest()
+    porcelain.id = (plumbing.id)
+    return porcelain
+
+
+def convert_connector_get_request_to_plumbing(porcelain):
+    plumbing = ConnectorGetRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    return plumbing
+
+
+def convert_repeated_connector_get_request_to_plumbing(porcelains):
+    return [
+        convert_connector_get_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_get_request_to_porcelain(plumbings):
+    return [
+        convert_connector_get_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_get_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorGetResponse()
+    porcelain.connector = convert_connector_to_porcelain(plumbing.connector)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_connector_get_response_to_plumbing(porcelain):
+    plumbing = ConnectorGetResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.connector.CopyFrom(
+        convert_connector_to_plumbing(porcelain.connector))
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_connector_get_response_to_plumbing(porcelains):
+    return [
+        convert_connector_get_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_get_response_to_porcelain(plumbings):
+    return [
+        convert_connector_get_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_list_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorListRequest()
+    porcelain.filter = (plumbing.filter)
+    return porcelain
+
+
+def convert_connector_list_request_to_plumbing(porcelain):
+    plumbing = ConnectorListRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.filter = (porcelain.filter)
+    return plumbing
+
+
+def convert_repeated_connector_list_request_to_plumbing(porcelains):
+    return [
+        convert_connector_list_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_list_request_to_porcelain(plumbings):
+    return [
+        convert_connector_list_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_list_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorListResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_connector_list_response_to_plumbing(porcelain):
+    plumbing = ConnectorListResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_connector_list_response_to_plumbing(porcelains):
+    return [
+        convert_connector_list_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_list_response_to_porcelain(plumbings):
+    return [
+        convert_connector_list_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_update_request_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorUpdateRequest()
+    porcelain.connector = convert_connector_to_porcelain(plumbing.connector)
+    return porcelain
+
+
+def convert_connector_update_request_to_plumbing(porcelain):
+    plumbing = ConnectorUpdateRequest()
+    if porcelain is None:
+        return plumbing
+    plumbing.connector.CopyFrom(
+        convert_connector_to_plumbing(porcelain.connector))
+    return plumbing
+
+
+def convert_repeated_connector_update_request_to_plumbing(porcelains):
+    return [
+        convert_connector_update_request_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_update_request_to_porcelain(plumbings):
+    return [
+        convert_connector_update_request_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_connector_update_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ConnectorUpdateResponse()
+    porcelain.connector = convert_connector_to_porcelain(plumbing.connector)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_connector_update_response_to_plumbing(porcelain):
+    plumbing = ConnectorUpdateResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.connector.CopyFrom(
+        convert_connector_to_plumbing(porcelain.connector))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_connector_update_response_to_plumbing(porcelains):
+    return [
+        convert_connector_update_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_connector_update_response_to_porcelain(plumbings):
+    return [
+        convert_connector_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
 
 
 def convert_control_panel_get_rdpca_public_key_response_to_porcelain(plumbing):
@@ -6251,6 +6725,63 @@ def convert_repeated_gcp_cert_x_509_store_to_porcelain(plumbings):
     return [
         convert_gcp_cert_x_509_store_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_gcp_connector_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GCPConnector()
+    porcelain.description = (plumbing.description)
+    porcelain.exclude_tags = convert_repeated_tag_to_porcelain(
+        plumbing.exclude_tags)
+    porcelain.id = (plumbing.id)
+    porcelain.include_tags = convert_repeated_tag_to_porcelain(
+        plumbing.include_tags)
+    porcelain.name = (plumbing.name)
+    porcelain.pool_id = (plumbing.pool_id)
+    porcelain.project_ids = (plumbing.project_ids)
+    porcelain.project_number = (plumbing.project_number)
+    porcelain.provider_id = (plumbing.provider_id)
+    porcelain.scan_period = (plumbing.scan_period)
+    porcelain.services = (plumbing.services)
+    return porcelain
+
+
+def convert_gcp_connector_to_plumbing(porcelain):
+    plumbing = GCPConnector()
+    if porcelain is None:
+        return plumbing
+    plumbing.description = (porcelain.description)
+    del plumbing.exclude_tags[:]
+    plumbing.exclude_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.exclude_tags))
+    plumbing.id = (porcelain.id)
+    del plumbing.include_tags[:]
+    plumbing.include_tags.extend(
+        convert_repeated_tag_to_plumbing(porcelain.include_tags))
+    plumbing.name = (porcelain.name)
+    plumbing.pool_id = (porcelain.pool_id)
+    del plumbing.project_ids[:]
+    plumbing.project_ids.extend((porcelain.project_ids))
+    plumbing.project_number = (porcelain.project_number)
+    plumbing.provider_id = (porcelain.provider_id)
+    plumbing.scan_period = (porcelain.scan_period)
+    del plumbing.services[:]
+    plumbing.services.extend((porcelain.services))
+    return plumbing
+
+
+def convert_repeated_gcp_connector_to_plumbing(porcelains):
+    return [
+        convert_gcp_connector_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_gcp_connector_to_porcelain(plumbings):
+    return [
+        convert_gcp_connector_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 

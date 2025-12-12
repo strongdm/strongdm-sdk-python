@@ -70,6 +70,8 @@ from .approval_workflows_history_pb2 import *
 from .approval_workflows_history_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
+from .discovery_connectors_pb2 import *
+from .discovery_connectors_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
 from .groups_pb2 import *
@@ -2420,6 +2422,223 @@ class ControlPanel:
             plumbing_response.rate_limit)
         resp.valid = (plumbing_response.valid)
         return resp
+
+
+class DiscoveryConnectors:
+    '''
+     A Discovery Connector is a configuration object for performing Resource
+     Scans in remote systems such as AWS, GCP, Azure, and other systems.
+    See:
+    `strongdm.models.AWSConnector`
+    `strongdm.models.AzureConnector`
+    `strongdm.models.GCPConnector`
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = DiscoveryConnectorsStub(channel)
+
+    def create(self, connector, timeout=None):
+        '''
+         Create adds a new Connector.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ConnectorCreateRequest()
+
+        if connector is not None:
+            req.connector.CopyFrom(
+                plumbing.convert_connector_to_plumbing(connector))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Create(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'DiscoveryConnectors.Create', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ConnectorCreateResponse()
+        resp.connector = plumbing.convert_connector_to_porcelain(
+            plumbing_response.connector)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Connector by ID
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ConnectorGetRequest()
+        if self.parent.snapshot_datetime is not None:
+            req.meta.CopyFrom(GetRequestMetadata())
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Get(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'DiscoveryConnectors.Get', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ConnectorGetResponse()
+        resp.connector = plumbing.convert_connector_to_porcelain(
+            plumbing_response.connector)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update(self, connector, timeout=None):
+        '''
+         Update replaces all the fields of a Connector by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ConnectorUpdateRequest()
+
+        if connector is not None:
+            req.connector.CopyFrom(
+                plumbing.convert_connector_to_plumbing(connector))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Update(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'DiscoveryConnectors.Update', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ConnectorUpdateResponse()
+        resp.connector = plumbing.convert_connector_to_porcelain(
+            plumbing_response.connector)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def delete(self, id, timeout=None):
+        '''
+         Delete removes a Connector by ID.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ConnectorDeleteRequest()
+
+        req.id = (id)
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.Delete(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'DiscoveryConnectors.Delete', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ConnectorDeleteResponse()
+        resp.meta = plumbing.convert_delete_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Connectors matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ConnectorListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'DiscoveryConnectors.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.connectors:
+                    yield plumbing.convert_connector_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotDiscoveryConnectors:
+    '''
+    SnapshotDiscoveryConnectors exposes the read only methods of the DiscoveryConnectors
+    service for historical queries.
+    '''
+    def __init__(self, discovery_connectors):
+        self.discovery_connectors = discovery_connectors
+
+    def get(self, id, timeout=None):
+        '''
+         Get reads one Connector by ID
+        '''
+        return self.discovery_connectors.get(id, timeout=timeout)
+
+    def list(self, filter, *args, timeout=None):
+        '''
+         List gets a list of Connectors matching a given set of criteria.
+        '''
+        return self.discovery_connectors.list(filter, *args, timeout=timeout)
 
 
 class Roles:
