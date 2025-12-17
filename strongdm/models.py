@@ -30399,6 +30399,7 @@ class SSH:
         'hostname',
         'id',
         'key_type',
+        'lock_required',
         'name',
         'port',
         'port_forwarding',
@@ -30420,6 +30421,7 @@ class SSH:
         hostname=None,
         id=None,
         key_type=None,
+        lock_required=None,
         name=None,
         port=None,
         port_forwarding=None,
@@ -30458,6 +30460,10 @@ class SSH:
         self.key_type = key_type if key_type is not None else ''
         '''
          The key type to use e.g. rsa-2048 or ed25519
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -30509,6 +30515,7 @@ class SSH:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'key_type: ' + repr(self.key_type) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
@@ -30531,6 +30538,7 @@ class SSH:
             'hostname': self.hostname,
             'id': self.id,
             'key_type': self.key_type,
+            'lock_required': self.lock_required,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
@@ -30554,6 +30562,7 @@ class SSH:
             hostname=d.get('hostname'),
             id=d.get('id'),
             key_type=d.get('key_type'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
@@ -30578,6 +30587,7 @@ class SSHCert:
         'identity_alias_healthcheck_username',
         'identity_set_id',
         'key_type',
+        'lock_required',
         'name',
         'port',
         'port_forwarding',
@@ -30600,6 +30610,7 @@ class SSHCert:
         identity_alias_healthcheck_username=None,
         identity_set_id=None,
         key_type=None,
+        lock_required=None,
         name=None,
         port=None,
         port_forwarding=None,
@@ -30645,6 +30656,10 @@ class SSHCert:
         self.key_type = key_type if key_type is not None else ''
         '''
          The key type to use e.g. rsa-2048 or ed25519
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -30694,6 +30709,7 @@ class SSHCert:
             'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'key_type: ' + repr(self.key_type) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
@@ -30718,6 +30734,7 @@ class SSHCert:
             self.identity_alias_healthcheck_username,
             'identity_set_id': self.identity_set_id,
             'key_type': self.key_type,
+            'lock_required': self.lock_required,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
@@ -30743,6 +30760,7 @@ class SSHCert:
                 'identity_alias_healthcheck_username'),
             identity_set_id=d.get('identity_set_id'),
             key_type=d.get('key_type'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
@@ -30765,6 +30783,7 @@ class SSHCustomerKey:
         'id',
         'identity_alias_healthcheck_username',
         'identity_set_id',
+        'lock_required',
         'name',
         'port',
         'port_forwarding',
@@ -30787,6 +30806,7 @@ class SSHCustomerKey:
         id=None,
         identity_alias_healthcheck_username=None,
         identity_set_id=None,
+        lock_required=None,
         name=None,
         port=None,
         port_forwarding=None,
@@ -30829,6 +30849,10 @@ class SSHCustomerKey:
         self.identity_set_id = identity_set_id if identity_set_id is not None else ''
         '''
          The ID of the identity set to use for identity connections.
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -30881,6 +30905,7 @@ class SSHCustomerKey:
             'id: ' + repr(self.id) + ' ' +\
             'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_forwarding: ' + repr(self.port_forwarding) + ' ' +\
@@ -30905,6 +30930,7 @@ class SSHCustomerKey:
             'identity_alias_healthcheck_username':
             self.identity_alias_healthcheck_username,
             'identity_set_id': self.identity_set_id,
+            'lock_required': self.lock_required,
             'name': self.name,
             'port': self.port,
             'port_forwarding': self.port_forwarding,
@@ -30930,6 +30956,7 @@ class SSHCustomerKey:
             identity_alias_healthcheck_username=d.get(
                 'identity_alias_healthcheck_username'),
             identity_set_id=d.get('identity_set_id'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             port=d.get('port'),
             port_forwarding=d.get('port_forwarding'),
@@ -30951,6 +30978,7 @@ class SSHPassword:
         'healthy',
         'hostname',
         'id',
+        'lock_required',
         'name',
         'password',
         'port',
@@ -30971,6 +30999,7 @@ class SSHPassword:
         healthy=None,
         hostname=None,
         id=None,
+        lock_required=None,
         name=None,
         password=None,
         port=None,
@@ -31005,6 +31034,10 @@ class SSHPassword:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         When set, require a resource lock to access the resource to ensure it can only be used by one user at a time.
         '''
         self.name = name if name is not None else ''
         '''
@@ -31055,6 +31088,7 @@ class SSHPassword:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -31076,6 +31110,7 @@ class SSHPassword:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'lock_required': self.lock_required,
             'name': self.name,
             'password': self.password,
             'port': self.port,
@@ -31098,6 +31133,7 @@ class SSHPassword:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             password=d.get('password'),
             port=d.get('port'),
