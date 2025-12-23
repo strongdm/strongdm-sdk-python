@@ -332,6 +332,7 @@ class ActivityVerb:
     RESOURCE_LOCKED = "user locked a resource"
     RESOURCE_UNLOCKED = "user unlocked a resource"
     RESOURCE_FORCE_UNLOCKED = "admin force-unlocked a resource"
+    RESOURCE_LOCK_REJECTED = "user lock rejected for a resource"
     CONCURRENT_AUTHENTICATION_REVOKED_PER_ORG_SETTING = "concurrent authentications revoked per organization settings"
     PEERING_GROUP_TOGGLED = "peering group toggled"
     PEERING_GROUP_CREATED = "peering group created"
