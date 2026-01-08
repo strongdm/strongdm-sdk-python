@@ -13949,12 +13949,13 @@ class GCPConnector:
         'id',
         'include_tags',
         'name',
-        'pool_id',
         'project_ids',
-        'project_number',
-        'provider_id',
         'scan_period',
         'services',
+        'workload_pool_id',
+        'workload_project_id',
+        'workload_project_number',
+        'workload_provider_id',
     ]
 
     def __init__(
@@ -13964,12 +13965,13 @@ class GCPConnector:
         id=None,
         include_tags=None,
         name=None,
-        pool_id=None,
         project_ids=None,
-        project_number=None,
-        provider_id=None,
         scan_period=None,
         services=None,
+        workload_pool_id=None,
+        workload_project_id=None,
+        workload_project_number=None,
+        workload_provider_id=None,
     ):
         self.description = description if description is not None else ''
         '''
@@ -13993,21 +13995,9 @@ class GCPConnector:
         '''
          Unique human-readable name of the Connector.
         '''
-        self.pool_id = pool_id if pool_id is not None else ''
-        '''
-         PoolId is the GCP Workload Pool Identifier used to authenticate our JWT
-        '''
         self.project_ids = project_ids if project_ids is not None else []
         '''
          ProjectIds is the list of GCP Projects the connector will scan
-        '''
-        self.project_number = project_number if project_number is not None else ''
-        '''
-         ProjectNumber is the GCP Project the Workload Pool is defined in
-        '''
-        self.provider_id = provider_id if provider_id is not None else ''
-        '''
-         ProviderId is the GCP Workload Provider Identifier used to authenticate our JWT
         '''
         self.scan_period = scan_period if scan_period is not None else ''
         '''
@@ -14017,6 +14007,22 @@ class GCPConnector:
         '''
          Services is a list of services this connector should scan.
         '''
+        self.workload_pool_id = workload_pool_id if workload_pool_id is not None else ''
+        '''
+         WorkloadPoolId is the GCP Workload Pool Identifier used to authenticate our JWT
+        '''
+        self.workload_project_id = workload_project_id if workload_project_id is not None else ''
+        '''
+         WorkloadProjectId is the GCP Project ID where the Workload Pool is defined
+        '''
+        self.workload_project_number = workload_project_number if workload_project_number is not None else ''
+        '''
+         WorkloadProjectNumber is the GCP Project Number where the Workload Pool is defined
+        '''
+        self.workload_provider_id = workload_provider_id if workload_provider_id is not None else ''
+        '''
+         WorkloadProviderId is the GCP Workload Provider Identifier used to authenticate our JWT
+        '''
 
     def __repr__(self):
         return '<sdm.GCPConnector ' + \
@@ -14025,12 +14031,13 @@ class GCPConnector:
             'id: ' + repr(self.id) + ' ' +\
             'include_tags: ' + repr(self.include_tags) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
-            'pool_id: ' + repr(self.pool_id) + ' ' +\
             'project_ids: ' + repr(self.project_ids) + ' ' +\
-            'project_number: ' + repr(self.project_number) + ' ' +\
-            'provider_id: ' + repr(self.provider_id) + ' ' +\
             'scan_period: ' + repr(self.scan_period) + ' ' +\
             'services: ' + repr(self.services) + ' ' +\
+            'workload_pool_id: ' + repr(self.workload_pool_id) + ' ' +\
+            'workload_project_id: ' + repr(self.workload_project_id) + ' ' +\
+            'workload_project_number: ' + repr(self.workload_project_number) + ' ' +\
+            'workload_provider_id: ' + repr(self.workload_provider_id) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -14040,12 +14047,13 @@ class GCPConnector:
             'id': self.id,
             'include_tags': self.include_tags,
             'name': self.name,
-            'pool_id': self.pool_id,
             'project_ids': self.project_ids,
-            'project_number': self.project_number,
-            'provider_id': self.provider_id,
             'scan_period': self.scan_period,
             'services': self.services,
+            'workload_pool_id': self.workload_pool_id,
+            'workload_project_id': self.workload_project_id,
+            'workload_project_number': self.workload_project_number,
+            'workload_provider_id': self.workload_provider_id,
         }
 
     @classmethod
@@ -14056,12 +14064,13 @@ class GCPConnector:
             id=d.get('id'),
             include_tags=d.get('include_tags'),
             name=d.get('name'),
-            pool_id=d.get('pool_id'),
             project_ids=d.get('project_ids'),
-            project_number=d.get('project_number'),
-            provider_id=d.get('provider_id'),
             scan_period=d.get('scan_period'),
             services=d.get('services'),
+            workload_pool_id=d.get('workload_pool_id'),
+            workload_project_id=d.get('workload_project_id'),
+            workload_project_number=d.get('workload_project_number'),
+            workload_provider_id=d.get('workload_provider_id'),
         )
 
 
