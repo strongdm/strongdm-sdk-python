@@ -10245,7 +10245,6 @@ def convert_managed_secret_retrieve_request_to_porcelain(plumbing):
         return None
     porcelain = models.ManagedSecretRetrieveRequest()
     porcelain.id = (plumbing.id)
-    porcelain.public_key = (plumbing.public_key)
     return porcelain
 
 
@@ -10254,7 +10253,6 @@ def convert_managed_secret_retrieve_request_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.id = (porcelain.id)
-    plumbing.public_key = (porcelain.public_key)
     return plumbing
 
 

@@ -20506,41 +20506,30 @@ class ManagedSecretRetrieveRequest:
     '''
     __slots__ = [
         'id',
-        'public_key',
     ]
 
     def __init__(
         self,
         id=None,
-        public_key=None,
     ):
         self.id = id if id is not None else ''
         '''
          The unique identifier of the Managed Secret to retrieve.
         '''
-        self.public_key = public_key if public_key is not None else b''
-        '''
-         Public key to encrypt a sensitive value with
-        '''
 
     def __repr__(self):
         return '<sdm.ManagedSecretRetrieveRequest ' + \
             'id: ' + repr(self.id) + ' ' +\
-            'public_key: ' + repr(self.public_key) + ' ' +\
             '>'
 
     def to_dict(self):
         return {
             'id': self.id,
-            'public_key': self.public_key,
         }
 
     @classmethod
     def from_dict(cls, d):
-        return cls(
-            id=d.get('id'),
-            public_key=d.get('public_key'),
-        )
+        return cls(id=d.get('id'), )
 
 
 class ManagedSecretRetrieveResponse:

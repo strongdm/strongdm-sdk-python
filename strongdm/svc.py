@@ -4255,7 +4255,7 @@ class ManagedSecrets:
             plumbing_response.rate_limit)
         return resp
 
-    def retrieve(self, id, public_key, timeout=None):
+    def retrieve(self, id, timeout=None):
         '''
          Retrieve returns Managed Secret with sensitive data
         '''
@@ -4263,7 +4263,6 @@ class ManagedSecrets:
         req = ManagedSecretRetrieveRequest()
 
         req.id = (id)
-        req.public_key = (public_key)
         tries = 0
         plumbing_response = None
         while True:
