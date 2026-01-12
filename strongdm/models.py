@@ -19257,6 +19257,8 @@ class MCP:
         'hostname',
         'id',
         'name',
+        'oauth_auth_endpoint',
+        'oauth_token_endpoint',
         'password',
         'port',
         'port_override',
@@ -19275,6 +19277,8 @@ class MCP:
         hostname=None,
         id=None,
         name=None,
+        oauth_auth_endpoint=None,
+        oauth_token_endpoint=None,
         password=None,
         port=None,
         port_override=None,
@@ -19307,6 +19311,14 @@ class MCP:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Resource.
+        '''
+        self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
+        '''
+         The OAuth 2.0 authorization endpoint URL.
+        '''
+        self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
+        '''
+         The OAuth 2.0 token endpoint URL.
         '''
         self.password = password if password is not None else ''
         '''
@@ -19349,6 +19361,8 @@ class MCP:
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
+            'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -19367,6 +19381,8 @@ class MCP:
             'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
+            'oauth_auth_endpoint': self.oauth_auth_endpoint,
+            'oauth_token_endpoint': self.oauth_token_endpoint,
             'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
@@ -19386,6 +19402,8 @@ class MCP:
             hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
+            oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
+            oauth_token_endpoint=d.get('oauth_token_endpoint'),
             password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
