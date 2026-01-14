@@ -12292,7 +12292,6 @@ class DocumentDBReplicaSet:
         'password',
         'port_override',
         'proxy_cluster_id',
-        'replica_set',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -12312,7 +12311,6 @@ class DocumentDBReplicaSet:
         password=None,
         port_override=None,
         proxy_cluster_id=None,
-        replica_set=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -12362,10 +12360,6 @@ class DocumentDBReplicaSet:
         '''
          ID of the proxy cluster for this resource, if any.
         '''
-        self.replica_set = replica_set if replica_set is not None else ''
-        '''
-         The name of the mongo replicaset.
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -12396,7 +12390,6 @@ class DocumentDBReplicaSet:
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -12416,7 +12409,6 @@ class DocumentDBReplicaSet:
             'password': self.password,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
-            'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -12437,7 +12429,6 @@ class DocumentDBReplicaSet:
             password=d.get('password'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
-            replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -15053,6 +15044,181 @@ class GoogleGKEUserImpersonation:
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             service_account_key=d.get('service_account_key'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
+class GoogleSpanner:
+    '''
+    GoogleSpanner is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'database',
+        'egress_filter',
+        'endpoint',
+        'healthy',
+        'id',
+        'instance',
+        'name',
+        'port',
+        'port_override',
+        'project',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'service_account_to_impersonate',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        database=None,
+        egress_filter=None,
+        endpoint=None,
+        healthy=None,
+        id=None,
+        instance=None,
+        name=None,
+        port=None,
+        port_override=None,
+        project=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        service_account_to_impersonate=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.database = database if database is not None else ''
+        '''
+         The initial database to connect to. This setting does not by itself prevent switching to another database after connecting.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.endpoint = endpoint if endpoint is not None else ''
+        '''
+         The endpoint to dial e.g. spanner.googleapis.com
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.instance = instance if instance is not None else ''
+        '''
+         The Spanner instance ID within the GCP project.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port = port if port is not None else 0
+        '''
+         The port to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.project = project if project is not None else ''
+        '''
+         The GCP project ID containing the Spanner database.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.service_account_to_impersonate = service_account_to_impersonate if service_account_to_impersonate is not None else ''
+        '''
+         Optional service account email to impersonate. When set, the relay's
+         Application Default Credentials will impersonate this service account
+         to access Spanner. This allows role separation where the relay uses
+         one service account but operates as another.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GoogleSpanner ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'database: ' + repr(self.database) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'endpoint: ' + repr(self.endpoint) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'instance: ' + repr(self.instance) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port: ' + repr(self.port) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'project: ' + repr(self.project) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'service_account_to_impersonate: ' + repr(self.service_account_to_impersonate) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'database': self.database,
+            'egress_filter': self.egress_filter,
+            'endpoint': self.endpoint,
+            'healthy': self.healthy,
+            'id': self.id,
+            'instance': self.instance,
+            'name': self.name,
+            'port': self.port,
+            'port_override': self.port_override,
+            'project': self.project,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'service_account_to_impersonate':
+            self.service_account_to_impersonate,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            database=d.get('database'),
+            egress_filter=d.get('egress_filter'),
+            endpoint=d.get('endpoint'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            instance=d.get('instance'),
+            name=d.get('name'),
+            port=d.get('port'),
+            port_override=d.get('port_override'),
+            project=d.get('project'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            service_account_to_impersonate=d.get(
+                'service_account_to_impersonate'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
         )
@@ -21714,7 +21880,6 @@ class MongoLegacyReplicaset:
         'port',
         'port_override',
         'proxy_cluster_id',
-        'replica_set',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -21736,7 +21901,6 @@ class MongoLegacyReplicaset:
         port=None,
         port_override=None,
         proxy_cluster_id=None,
-        replica_set=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -21790,10 +21954,6 @@ class MongoLegacyReplicaset:
         self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
         '''
          ID of the proxy cluster for this resource, if any.
-        '''
-        self.replica_set = replica_set if replica_set is not None else ''
-        '''
-         The name of the mongo replicaset.
         '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
@@ -21830,7 +21990,6 @@ class MongoLegacyReplicaset:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -21852,7 +22011,6 @@ class MongoLegacyReplicaset:
             'port': self.port,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
-            'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -21875,7 +22033,6 @@ class MongoLegacyReplicaset:
             port=d.get('port'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
-            replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -21898,7 +22055,6 @@ class MongoReplicaSet:
         'port',
         'port_override',
         'proxy_cluster_id',
-        'replica_set',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -21920,7 +22076,6 @@ class MongoReplicaSet:
         port=None,
         port_override=None,
         proxy_cluster_id=None,
-        replica_set=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -21975,10 +22130,6 @@ class MongoReplicaSet:
         '''
          ID of the proxy cluster for this resource, if any.
         '''
-        self.replica_set = replica_set if replica_set is not None else ''
-        '''
-         The name of the mongo replicaset.
-        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -22014,7 +22165,6 @@ class MongoReplicaSet:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'replica_set: ' + repr(self.replica_set) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -22036,7 +22186,6 @@ class MongoReplicaSet:
             'port': self.port,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
-            'replica_set': self.replica_set,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -22059,7 +22208,6 @@ class MongoReplicaSet:
             port=d.get('port'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
-            replica_set=d.get('replica_set'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),

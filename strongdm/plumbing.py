@@ -6149,7 +6149,6 @@ def convert_document_db_replica_set_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.replica_set = (plumbing.replica_set)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -6172,7 +6171,6 @@ def convert_document_db_replica_set_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.replica_set = (porcelain.replica_set)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -7222,6 +7220,67 @@ def convert_repeated_google_gke_user_impersonation_to_porcelain(plumbings):
     return [
         convert_google_gke_user_impersonation_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_google_spanner_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GoogleSpanner()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.database = (plumbing.database)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.endpoint = (plumbing.endpoint)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.instance = (plumbing.instance)
+    porcelain.name = (plumbing.name)
+    porcelain.port = (plumbing.port)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.project = (plumbing.project)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.service_account_to_impersonate = (
+        plumbing.service_account_to_impersonate)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_google_spanner_to_plumbing(porcelain):
+    plumbing = GoogleSpanner()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.database = (porcelain.database)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.endpoint = (porcelain.endpoint)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.instance = (porcelain.instance)
+    plumbing.name = (porcelain.name)
+    plumbing.port = (porcelain.port)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.project = (porcelain.project)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.service_account_to_impersonate = (
+        porcelain.service_account_to_impersonate)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_google_spanner_to_plumbing(porcelains):
+    return [
+        convert_google_spanner_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_google_spanner_to_porcelain(plumbings):
+    return [
+        convert_google_spanner_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
@@ -10846,7 +10905,6 @@ def convert_mongo_legacy_replicaset_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.replica_set = (plumbing.replica_set)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -10871,7 +10929,6 @@ def convert_mongo_legacy_replicaset_to_plumbing(porcelain):
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.replica_set = (porcelain.replica_set)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -10910,7 +10967,6 @@ def convert_mongo_replica_set_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
-    porcelain.replica_set = (plumbing.replica_set)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -10935,7 +10991,6 @@ def convert_mongo_replica_set_to_plumbing(porcelain):
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
-    plumbing.replica_set = (porcelain.replica_set)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -14476,6 +14531,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.GoogleGKEUserImpersonation):
         plumbing.google_gke_user_impersonation.CopyFrom(
             convert_google_gke_user_impersonation_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GoogleSpanner):
+        plumbing.google_spanner.CopyFrom(
+            convert_google_spanner_to_plumbing(porcelain))
     if isinstance(porcelain, models.Greenplum):
         plumbing.greenplum.CopyFrom(convert_greenplum_to_plumbing(porcelain))
     if isinstance(porcelain, models.HTTPAuth):
@@ -14752,6 +14810,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('google_gke_user_impersonation'):
         return convert_google_gke_user_impersonation_to_porcelain(
             plumbing.google_gke_user_impersonation)
+    if plumbing.HasField('google_spanner'):
+        return convert_google_spanner_to_porcelain(plumbing.google_spanner)
     if plumbing.HasField('greenplum'):
         return convert_greenplum_to_porcelain(plumbing.greenplum)
     if plumbing.HasField('http_auth'):

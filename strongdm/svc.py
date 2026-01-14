@@ -6395,6 +6395,7 @@ class Resources:
     `strongdm.models.GCPWIF`
     `strongdm.models.GoogleGKE`
     `strongdm.models.GoogleGKEUserImpersonation`
+    `strongdm.models.GoogleSpanner`
     `strongdm.models.Greenplum`
     `strongdm.models.HTTPAuth`
     `strongdm.models.HTTPBasicAuth`
