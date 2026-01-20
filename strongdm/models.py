@@ -19424,6 +19424,7 @@ class MCP:
         'id',
         'name',
         'oauth_auth_endpoint',
+        'oauth_register_endpoint',
         'oauth_token_endpoint',
         'password',
         'port',
@@ -19444,6 +19445,7 @@ class MCP:
         id=None,
         name=None,
         oauth_auth_endpoint=None,
+        oauth_register_endpoint=None,
         oauth_token_endpoint=None,
         password=None,
         port=None,
@@ -19481,6 +19483,10 @@ class MCP:
         self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
         '''
          The OAuth 2.0 authorization endpoint URL.
+        '''
+        self.oauth_register_endpoint = oauth_register_endpoint if oauth_register_endpoint is not None else ''
+        '''
+         The OAuth 2.0 dynamic client registration endpoint URL.
         '''
         self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
         '''
@@ -19528,6 +19534,7 @@ class MCP:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
+            'oauth_register_endpoint: ' + repr(self.oauth_register_endpoint) + ' ' +\
             'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -19548,6 +19555,7 @@ class MCP:
             'id': self.id,
             'name': self.name,
             'oauth_auth_endpoint': self.oauth_auth_endpoint,
+            'oauth_register_endpoint': self.oauth_register_endpoint,
             'oauth_token_endpoint': self.oauth_token_endpoint,
             'password': self.password,
             'port': self.port,
@@ -19569,6 +19577,7 @@ class MCP:
             id=d.get('id'),
             name=d.get('name'),
             oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
+            oauth_register_endpoint=d.get('oauth_register_endpoint'),
             oauth_token_endpoint=d.get('oauth_token_endpoint'),
             password=d.get('password'),
             port=d.get('port'),
