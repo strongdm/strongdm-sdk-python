@@ -30,6 +30,8 @@ from .access_request_events_history_pb2 import *
 from .access_request_events_history_pb2_grpc import *
 from .access_requests_history_pb2 import *
 from .access_requests_history_pb2_grpc import *
+from .custom_headers_pb2 import *
+from .custom_headers_pb2_grpc import *
 from .drivers_pb2 import *
 from .drivers_pb2_grpc import *
 from .account_attachments_pb2 import *

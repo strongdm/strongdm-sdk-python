@@ -11394,6 +11394,90 @@ class CreateResponseMetadata:
         return cls()
 
 
+class CustomHeader:
+    '''
+         CustomHeader describes a single HTTP header
+    '''
+    __slots__ = [
+        'name',
+        'secret',
+        'value',
+    ]
+
+    def __init__(
+        self,
+        name=None,
+        secret=None,
+        value=None,
+    ):
+        self.name = name if name is not None else ''
+        '''
+         The name of this header.
+        '''
+        self.secret = secret if secret is not None else False
+        '''
+         Headers containing sensitive values must be stored encrypted and redacted from logs.
+        '''
+        self.value = value if value is not None else ''
+        '''
+         The value of this header.
+        '''
+
+    def __repr__(self):
+        return '<sdm.CustomHeader ' + \
+            'name: ' + repr(self.name) + ' ' +\
+            'secret: ' + repr(self.secret) + ' ' +\
+            'value: ' + repr(self.value) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'secret': self.secret,
+            'value': self.value,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            name=d.get('name'),
+            secret=d.get('secret'),
+            value=d.get('value'),
+        )
+
+
+class CustomHeaders:
+    '''
+         CustomHeaders holds an array of HTTP headers to be injected into requests by the driver
+    '''
+    __slots__ = [
+        'custom_headers',
+    ]
+
+    def __init__(
+        self,
+        custom_headers=None,
+    ):
+        self.custom_headers = custom_headers if custom_headers is not None else []
+        '''
+         Entries, each describing a single header
+        '''
+
+    def __repr__(self):
+        return '<sdm.CustomHeaders ' + \
+            'custom_headers: ' + repr(self.custom_headers) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'custom_headers': self.custom_headers,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(custom_headers=d.get('custom_headers'), )
+
+
 class CyberarkConjurStore:
     __slots__ = [
         'appurl',
@@ -16474,6 +16558,7 @@ class HTTPAuth:
     __slots__ = [
         'auth_header',
         'bind_interface',
+        'custom_headers',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -16494,6 +16579,7 @@ class HTTPAuth:
         self,
         auth_header=None,
         bind_interface=None,
+        custom_headers=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -16516,6 +16602,10 @@ class HTTPAuth:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.custom_headers = custom_headers if custom_headers is not None else None
+        '''
+         Additional HTTP headers to include in requests.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -16578,6 +16668,7 @@ class HTTPAuth:
         return '<sdm.HTTPAuth ' + \
             'auth_header: ' + repr(self.auth_header) + ' ' +\
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'custom_headers: ' + repr(self.custom_headers) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -16598,6 +16689,7 @@ class HTTPAuth:
         return {
             'auth_header': self.auth_header,
             'bind_interface': self.bind_interface,
+            'custom_headers': self.custom_headers,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -16619,6 +16711,7 @@ class HTTPAuth:
         return cls(
             auth_header=d.get('auth_header'),
             bind_interface=d.get('bind_interface'),
+            custom_headers=d.get('custom_headers'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -16639,6 +16732,7 @@ class HTTPAuth:
 class HTTPBasicAuth:
     __slots__ = [
         'bind_interface',
+        'custom_headers',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -16660,6 +16754,7 @@ class HTTPBasicAuth:
     def __init__(
         self,
         bind_interface=None,
+        custom_headers=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -16680,6 +16775,10 @@ class HTTPBasicAuth:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.custom_headers = custom_headers if custom_headers is not None else None
+        '''
+         Additional HTTP headers to include in requests.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -16749,6 +16848,7 @@ class HTTPBasicAuth:
     def __repr__(self):
         return '<sdm.HTTPBasicAuth ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'custom_headers: ' + repr(self.custom_headers) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -16770,6 +16870,7 @@ class HTTPBasicAuth:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'custom_headers': self.custom_headers,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -16792,6 +16893,7 @@ class HTTPBasicAuth:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            custom_headers=d.get('custom_headers'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -16814,6 +16916,7 @@ class HTTPBasicAuth:
 class HTTPNoAuth:
     __slots__ = [
         'bind_interface',
+        'custom_headers',
         'default_path',
         'egress_filter',
         'headers_blacklist',
@@ -16833,6 +16936,7 @@ class HTTPNoAuth:
     def __init__(
         self,
         bind_interface=None,
+        custom_headers=None,
         default_path=None,
         egress_filter=None,
         headers_blacklist=None,
@@ -16851,6 +16955,10 @@ class HTTPNoAuth:
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.custom_headers = custom_headers if custom_headers is not None else None
+        '''
+         Additional HTTP headers to include in requests.
         '''
         self.default_path = default_path if default_path is not None else ''
         '''
@@ -16912,6 +17020,7 @@ class HTTPNoAuth:
     def __repr__(self):
         return '<sdm.HTTPNoAuth ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'custom_headers: ' + repr(self.custom_headers) + ' ' +\
             'default_path: ' + repr(self.default_path) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'headers_blacklist: ' + repr(self.headers_blacklist) + ' ' +\
@@ -16931,6 +17040,7 @@ class HTTPNoAuth:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'custom_headers': self.custom_headers,
             'default_path': self.default_path,
             'egress_filter': self.egress_filter,
             'headers_blacklist': self.headers_blacklist,
@@ -16951,6 +17061,7 @@ class HTTPNoAuth:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            custom_headers=d.get('custom_headers'),
             default_path=d.get('default_path'),
             egress_filter=d.get('egress_filter'),
             headers_blacklist=d.get('headers_blacklist'),
@@ -23430,8 +23541,10 @@ class OktaGroups:
     '''
     __slots__ = [
         'bind_interface',
+        'discovery_enabled',
         'domain',
         'egress_filter',
+        'group_names',
         'healthy',
         'id',
         'identity_set_id',
@@ -23446,8 +23559,10 @@ class OktaGroups:
     def __init__(
         self,
         bind_interface=None,
+        discovery_enabled=None,
         domain=None,
         egress_filter=None,
+        group_names=None,
         healthy=None,
         id=None,
         identity_set_id=None,
@@ -23462,6 +23577,10 @@ class OktaGroups:
         '''
          The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
         '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of the Okta org to be run from a node.
+        '''
         self.domain = domain if domain is not None else ''
         '''
          Represents the Okta Org Client URL
@@ -23469,6 +23588,10 @@ class OktaGroups:
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
          A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.group_names = group_names if group_names is not None else ''
+        '''
+         comma separated list of group names to filter by. Supports wildcards (*)
         '''
         self.healthy = healthy if healthy is not None else False
         '''
@@ -23510,8 +23633,10 @@ class OktaGroups:
     def __repr__(self):
         return '<sdm.OktaGroups ' + \
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
             'domain: ' + repr(self.domain) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'group_names: ' + repr(self.group_names) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
@@ -23526,8 +23651,10 @@ class OktaGroups:
     def to_dict(self):
         return {
             'bind_interface': self.bind_interface,
+            'discovery_enabled': self.discovery_enabled,
             'domain': self.domain,
             'egress_filter': self.egress_filter,
+            'group_names': self.group_names,
             'healthy': self.healthy,
             'id': self.id,
             'identity_set_id': self.identity_set_id,
@@ -23543,8 +23670,10 @@ class OktaGroups:
     def from_dict(cls, d):
         return cls(
             bind_interface=d.get('bind_interface'),
+            discovery_enabled=d.get('discovery_enabled'),
             domain=d.get('domain'),
             egress_filter=d.get('egress_filter'),
+            group_names=d.get('group_names'),
             healthy=d.get('healthy'),
             id=d.get('id'),
             identity_set_id=d.get('identity_set_id'),
@@ -33860,6 +33989,7 @@ class User:
         'scim',
         'created_at',
         'email',
+        'employee_number',
         'external_id',
         'first_name',
         'id',
@@ -33878,6 +34008,7 @@ class User:
         scim=None,
         created_at=None,
         email=None,
+        employee_number=None,
         external_id=None,
         first_name=None,
         id=None,
@@ -33901,6 +34032,10 @@ class User:
         self.email = email if email is not None else ''
         '''
          The User's email address. Must be unique.
+        '''
+        self.employee_number = employee_number if employee_number is not None else ''
+        '''
+         Internal employee ID used to identify the user.
         '''
         self.external_id = external_id if external_id is not None else ''
         '''
@@ -33955,6 +34090,7 @@ class User:
             'scim: ' + repr(self.scim) + ' ' +\
             'created_at: ' + repr(self.created_at) + ' ' +\
             'email: ' + repr(self.email) + ' ' +\
+            'employee_number: ' + repr(self.employee_number) + ' ' +\
             'external_id: ' + repr(self.external_id) + ' ' +\
             'first_name: ' + repr(self.first_name) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -33973,6 +34109,7 @@ class User:
             'scim': self.scim,
             'created_at': self.created_at,
             'email': self.email,
+            'employee_number': self.employee_number,
             'external_id': self.external_id,
             'first_name': self.first_name,
             'id': self.id,
@@ -33992,6 +34129,7 @@ class User:
             scim=d.get('scim'),
             created_at=d.get('created_at'),
             email=d.get('email'),
+            employee_number=d.get('employee_number'),
             external_id=d.get('external_id'),
             first_name=d.get('first_name'),
             id=d.get('id'),

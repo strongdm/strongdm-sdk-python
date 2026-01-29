@@ -49,6 +49,8 @@ strongdm/client.py
 strongdm/constants.py
 strongdm/control_panel_pb2.py
 strongdm/control_panel_pb2_grpc.py
+strongdm/custom_headers_pb2.py
+strongdm/custom_headers_pb2_grpc.py
 strongdm/discovery_connectors_pb2.py
 strongdm/discovery_connectors_pb2_grpc.py
 strongdm/drivers_pb2.py

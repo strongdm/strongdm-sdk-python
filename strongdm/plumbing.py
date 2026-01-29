@@ -30,6 +30,7 @@ from .tags_pb2 import *
 from .access_requests_pb2 import *
 from .access_request_events_history_pb2 import *
 from .access_requests_history_pb2 import *
+from .custom_headers_pb2 import *
 from .drivers_pb2 import *
 from .account_attachments_pb2 import *
 from .account_attachments_history_pb2 import *
@@ -5741,6 +5742,71 @@ def convert_repeated_create_response_metadata_to_porcelain(plumbings):
     ]
 
 
+def convert_custom_header_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CustomHeader()
+    porcelain.name = (plumbing.name)
+    porcelain.secret = (plumbing.secret)
+    porcelain.value = (plumbing.value)
+    return porcelain
+
+
+def convert_custom_header_to_plumbing(porcelain):
+    plumbing = CustomHeader()
+    if porcelain is None:
+        return plumbing
+    plumbing.name = (porcelain.name)
+    plumbing.secret = (porcelain.secret)
+    plumbing.value = (porcelain.value)
+    return plumbing
+
+
+def convert_repeated_custom_header_to_plumbing(porcelains):
+    return [
+        convert_custom_header_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_custom_header_to_porcelain(plumbings):
+    return [
+        convert_custom_header_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_custom_headers_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.CustomHeaders()
+    porcelain.custom_headers = convert_repeated_custom_header_to_porcelain(
+        plumbing.custom_headers)
+    return porcelain
+
+
+def convert_custom_headers_to_plumbing(porcelain):
+    plumbing = CustomHeaders()
+    if porcelain is None:
+        return plumbing
+    del plumbing.custom_headers[:]
+    plumbing.custom_headers.extend(
+        convert_repeated_custom_header_to_plumbing(porcelain.custom_headers))
+    return plumbing
+
+
+def convert_repeated_custom_headers_to_plumbing(porcelains):
+    return [
+        convert_custom_headers_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_custom_headers_to_porcelain(plumbings):
+    return [
+        convert_custom_headers_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_cyberark_conjur_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -8191,6 +8257,8 @@ def convert_http_auth_to_porcelain(plumbing):
     porcelain = models.HTTPAuth()
     porcelain.auth_header = (plumbing.auth_header)
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.custom_headers = convert_custom_headers_to_porcelain(
+        plumbing.custom_headers)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -8214,6 +8282,8 @@ def convert_http_auth_to_plumbing(porcelain):
         return plumbing
     plumbing.auth_header = (porcelain.auth_header)
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.custom_headers.CopyFrom(
+        convert_custom_headers_to_plumbing(porcelain.custom_headers))
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -8246,6 +8316,8 @@ def convert_http_basic_auth_to_porcelain(plumbing):
         return None
     porcelain = models.HTTPBasicAuth()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.custom_headers = convert_custom_headers_to_porcelain(
+        plumbing.custom_headers)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -8270,6 +8342,8 @@ def convert_http_basic_auth_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.custom_headers.CopyFrom(
+        convert_custom_headers_to_plumbing(porcelain.custom_headers))
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -8308,6 +8382,8 @@ def convert_http_no_auth_to_porcelain(plumbing):
         return None
     porcelain = models.HTTPNoAuth()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.custom_headers = convert_custom_headers_to_porcelain(
+        plumbing.custom_headers)
     porcelain.default_path = (plumbing.default_path)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.headers_blacklist = (plumbing.headers_blacklist)
@@ -8330,6 +8406,8 @@ def convert_http_no_auth_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.custom_headers.CopyFrom(
+        convert_custom_headers_to_plumbing(porcelain.custom_headers))
     plumbing.default_path = (porcelain.default_path)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.headers_blacklist = (porcelain.headers_blacklist)
@@ -11602,8 +11680,10 @@ def convert_okta_groups_to_porcelain(plumbing):
         return None
     porcelain = models.OktaGroups()
     porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.discovery_enabled = (plumbing.discovery_enabled)
     porcelain.domain = (plumbing.domain)
     porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.group_names = (plumbing.group_names)
     porcelain.healthy = (plumbing.healthy)
     porcelain.id = (plumbing.id)
     porcelain.identity_set_id = (plumbing.identity_set_id)
@@ -11621,8 +11701,10 @@ def convert_okta_groups_to_plumbing(porcelain):
     if porcelain is None:
         return plumbing
     plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.discovery_enabled = (porcelain.discovery_enabled)
     plumbing.domain = (porcelain.domain)
     plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.group_names = (porcelain.group_names)
     plumbing.healthy = (porcelain.healthy)
     plumbing.id = (porcelain.id)
     plumbing.identity_set_id = (porcelain.identity_set_id)
@@ -17591,6 +17673,7 @@ def convert_user_to_porcelain(plumbing):
     porcelain.scim = (plumbing.SCIM)
     porcelain.created_at = convert_timestamp_to_porcelain(plumbing.created_at)
     porcelain.email = (plumbing.email)
+    porcelain.employee_number = (plumbing.employee_number)
     porcelain.external_id = (plumbing.external_id)
     porcelain.first_name = (plumbing.first_name)
     porcelain.id = (plumbing.id)
@@ -17613,6 +17696,7 @@ def convert_user_to_plumbing(porcelain):
     plumbing.created_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.created_at))
     plumbing.email = (porcelain.email)
+    plumbing.employee_number = (porcelain.employee_number)
     plumbing.external_id = (porcelain.external_id)
     plumbing.first_name = (porcelain.first_name)
     plumbing.id = (porcelain.id)
