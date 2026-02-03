@@ -6410,6 +6410,7 @@ class Resources:
     `strongdm.models.KubernetesUserImpersonation`
     `strongdm.models.Maria`
     `strongdm.models.MCP`
+    `strongdm.models.MCPDCR`
     `strongdm.models.Memcached`
     `strongdm.models.Memsql`
     `strongdm.models.MongoHost`

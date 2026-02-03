@@ -9701,10 +9701,8 @@ def convert_mcp_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.oauth_auth_endpoint = (plumbing.oauth_auth_endpoint)
-    porcelain.oauth_register_endpoint = (plumbing.oauth_register_endpoint)
     porcelain.oauth_token_endpoint = (plumbing.oauth_token_endpoint)
     porcelain.password = (plumbing.password)
-    porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
@@ -9725,10 +9723,8 @@ def convert_mcp_to_plumbing(porcelain):
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.oauth_auth_endpoint = (porcelain.oauth_auth_endpoint)
-    plumbing.oauth_register_endpoint = (porcelain.oauth_register_endpoint)
     plumbing.oauth_token_endpoint = (porcelain.oauth_token_endpoint)
     plumbing.password = (porcelain.password)
-    plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
@@ -9744,6 +9740,56 @@ def convert_repeated_mcp_to_plumbing(porcelains):
 
 def convert_repeated_mcp_to_porcelain(plumbings):
     return [convert_mcp_to_porcelain(plumbing) for plumbing in plumbings]
+
+
+def convert_mcpdcr_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MCPDCR()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.oauth_auth_endpoint = (plumbing.oauth_auth_endpoint)
+    porcelain.oauth_register_endpoint = (plumbing.oauth_register_endpoint)
+    porcelain.oauth_token_endpoint = (plumbing.oauth_token_endpoint)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_mcpdcr_to_plumbing(porcelain):
+    plumbing = MCPDCR()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.oauth_auth_endpoint = (porcelain.oauth_auth_endpoint)
+    plumbing.oauth_register_endpoint = (porcelain.oauth_register_endpoint)
+    plumbing.oauth_token_endpoint = (porcelain.oauth_token_endpoint)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_mcpdcr_to_plumbing(porcelains):
+    return [convert_mcpdcr_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_mcpdcr_to_porcelain(plumbings):
+    return [convert_mcpdcr_to_porcelain(plumbing) for plumbing in plumbings]
 
 
 def convert_mtls_mysql_to_porcelain(plumbing):
@@ -14650,6 +14696,8 @@ def convert_resource_to_plumbing(porcelain):
         plumbing.maria.CopyFrom(convert_maria_to_plumbing(porcelain))
     if isinstance(porcelain, models.MCP):
         plumbing.mcp.CopyFrom(convert_mcp_to_plumbing(porcelain))
+    if isinstance(porcelain, models.MCPDCR):
+        plumbing.mcpdcr.CopyFrom(convert_mcpdcr_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memcached):
         plumbing.memcached.CopyFrom(convert_memcached_to_plumbing(porcelain))
     if isinstance(porcelain, models.Memsql):
@@ -14925,6 +14973,8 @@ def convert_resource_to_porcelain(plumbing):
         return convert_maria_to_porcelain(plumbing.maria)
     if plumbing.HasField('mcp'):
         return convert_mcp_to_porcelain(plumbing.mcp)
+    if plumbing.HasField('mcpdcr'):
+        return convert_mcpdcr_to_porcelain(plumbing.mcpdcr)
     if plumbing.HasField('memcached'):
         return convert_memcached_to_porcelain(plumbing.memcached)
     if plumbing.HasField('memsql'):
