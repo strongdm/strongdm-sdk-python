@@ -50,6 +50,7 @@ from .approval_workflow_steps_pb2 import *
 from .approval_workflow_steps_history_pb2 import *
 from .approval_workflows_pb2 import *
 from .approval_workflows_history_pb2 import *
+from .authorization_policies_pb2 import *
 from .control_panel_pb2 import *
 from .discovery_connectors_pb2 import *
 from .roles_pb2 import *
@@ -81,6 +82,7 @@ from .remote_identity_groups_history_pb2 import *
 from .replays_pb2 import *
 from .resources_pb2 import *
 from .resources_history_pb2 import *
+from .resourcetypes_pb2 import *
 from .role_resources_pb2 import *
 from .role_resources_history_pb2 import *
 from .roles_history_pb2 import *
@@ -198,6 +200,37 @@ def convert_access_rule_to_porcelain(access_rule_json):
 
 def convert_access_rule_to_plumbing(access_rule):
     return json.dumps(access_rule)
+
+
+def convert_resource_type_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    try:
+        name = ResourceType.Name(plumbing)
+        return models.ResourceType(name)
+    except ValueError:
+        return models.ResourceType(plumbing)
+
+
+def convert_resource_type_to_plumbing(porcelain):
+    if porcelain is None:
+        return ResourceType.Value("RESOURCE_TYPE_UNSPECIFIED")
+    try:
+        return ResourceType.Value(str(porcelain))
+    except ValueError:
+        return ResourceType.Value("RESOURCE_TYPE_UNSPECIFIED")
+
+
+def convert_repeated_resource_type_to_porcelain(plumbings):
+    if plumbings is None:
+        return []
+    return [convert_resource_type_to_porcelain(p) for p in plumbings]
+
+
+def convert_repeated_resource_type_to_plumbing(porcelains):
+    if porcelains is None:
+        return []
+    return [convert_resource_type_to_plumbing(p) for p in porcelains]
 
 
 def convert_aks_to_porcelain(plumbing):
@@ -5481,6 +5514,51 @@ def convert_repeated_connector_update_response_to_plumbing(porcelains):
 def convert_repeated_connector_update_response_to_porcelain(plumbings):
     return [
         convert_connector_update_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_control_panel_get_org_url_info_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.ControlPanelGetOrgURLInfoResponse()
+    porcelain.base_url = (plumbing.base_url)
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.oidc_issuer_url = (plumbing.oidc_issuer_url)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    porcelain.saml_metadata_url = (plumbing.saml_metadata_url)
+    porcelain.websites_subdomain = (plumbing.websites_subdomain)
+    return porcelain
+
+
+def convert_control_panel_get_org_url_info_response_to_plumbing(porcelain):
+    plumbing = ControlPanelGetOrgURLInfoResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.base_url = (porcelain.base_url)
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.oidc_issuer_url = (porcelain.oidc_issuer_url)
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    plumbing.saml_metadata_url = (porcelain.saml_metadata_url)
+    plumbing.websites_subdomain = (porcelain.websites_subdomain)
+    return plumbing
+
+
+def convert_repeated_control_panel_get_org_url_info_response_to_plumbing(
+        porcelains):
+    return [
+        convert_control_panel_get_org_url_info_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_control_panel_get_org_url_info_response_to_porcelain(
+        plumbings):
+    return [
+        convert_control_panel_get_org_url_info_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

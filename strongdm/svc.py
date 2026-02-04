@@ -70,6 +70,8 @@ from .approval_workflows_pb2 import *
 from .approval_workflows_pb2_grpc import *
 from .approval_workflows_history_pb2 import *
 from .approval_workflows_history_pb2_grpc import *
+from .authorization_policies_pb2 import *
+from .authorization_policies_pb2_grpc import *
 from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .discovery_connectors_pb2 import *
@@ -132,6 +134,8 @@ from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .resources_history_pb2 import *
 from .resources_history_pb2_grpc import *
+from .resourcetypes_pb2 import *
+from .resourcetypes_pb2_grpc import *
 from .role_resources_pb2 import *
 from .role_resources_pb2_grpc import *
 from .role_resources_history_pb2 import *
@@ -2389,6 +2393,43 @@ class ControlPanel:
         resp.public_key = (plumbing_response.public_key)
         resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
             plumbing_response.rate_limit)
+        return resp
+
+    def get_org_url_info(self, timeout=None):
+        '''
+         GetOrgURLInfo retrieves URL configuration for the organization.
+         This includes the base URL, website subdomain, OIDC issuer URL, and SAML metadata URL.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = ControlPanelGetOrgURLInfoRequest()
+
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.GetOrgURLInfo(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'ControlPanel.GetOrgURLInfo', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.ControlPanelGetOrgURLInfoResponse()
+        resp.base_url = (plumbing_response.base_url)
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.oidc_issuer_url = (plumbing_response.oidc_issuer_url)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        resp.saml_metadata_url = (plumbing_response.saml_metadata_url)
+        resp.websites_subdomain = (plumbing_response.websites_subdomain)
         return resp
 
     def verify_jwt(self, token, timeout=None):

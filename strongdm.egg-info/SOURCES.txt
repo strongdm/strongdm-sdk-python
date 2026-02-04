@@ -44,6 +44,8 @@ strongdm/approval_workflows_history_pb2.py
 strongdm/approval_workflows_history_pb2_grpc.py
 strongdm/approval_workflows_pb2.py
 strongdm/approval_workflows_pb2_grpc.py
+strongdm/authorization_policies_pb2.py
+strongdm/authorization_policies_pb2_grpc.py
 strongdm/client.py
 strongdm/constants.py
 strongdm/control_panel_pb2.py
@@ -115,6 +117,8 @@ strongdm/resources_history_pb2.py
 strongdm/resources_history_pb2_grpc.py
 strongdm/resources_pb2.py
 strongdm/resources_pb2_grpc.py
+strongdm/resourcetypes_pb2.py
+strongdm/resourcetypes_pb2_grpc.py
 strongdm/role_resources_history_pb2.py
 strongdm/role_resources_history_pb2_grpc.py
 strongdm/role_resources_pb2.py

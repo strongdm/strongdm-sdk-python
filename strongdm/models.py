@@ -19,6 +19,130 @@ import collections
 from enum import Enum
 
 
+class ResourceType(str, Enum):
+    UNSPECIFIED = "RESOURCE_TYPE_UNSPECIFIED"
+    AKS = "RESOURCE_TYPE_AKS"
+    AKS_BASIC_AUTH = "RESOURCE_TYPE_AKS_BASIC_AUTH"
+    AKS_SERVICE_ACCOUNT = "RESOURCE_TYPE_AKS_SERVICE_ACCOUNT"
+    AKS_SERVICE_ACCOUNT_USER_IMPERSONATION = "RESOURCE_TYPE_AKS_SERVICE_ACCOUNT_USER_IMPERSONATION"
+    AKS_USER_IMPERSONATION = "RESOURCE_TYPE_AKS_USER_IMPERSONATION"
+    AMAZON_MQAMQP = "RESOURCE_TYPE_AMAZON_MQAMQP"
+    AWS = "RESOURCE_TYPE_AWS"
+    AWS_CONSOLE = "RESOURCE_TYPE_AWS_CONSOLE"
+    AWS_CONSOLE_STATIC_KEY_PAIR = "RESOURCE_TYPE_AWS_CONSOLE_STATIC_KEY_PAIR"
+    AWS_INSTANCE_PROFILE = "RESOURCE_TYPE_AWS_INSTANCE_PROFILE"
+    AEROSPIKE = "RESOURCE_TYPE_AEROSPIKE"
+    AMAZON_EKS = "RESOURCE_TYPE_AMAZON_EKS"
+    AMAZON_EKS_INSTANCE_PROFILE = "RESOURCE_TYPE_AMAZON_EKS_INSTANCE_PROFILE"
+    AMAZON_EKS_INSTANCE_PROFILE_USER_IMPERSONATION = "RESOURCE_TYPE_AMAZON_EKS_INSTANCE_PROFILE_USER_IMPERSONATION"
+    AMAZON_EKS_USER_IMPERSONATION = "RESOURCE_TYPE_AMAZON_EKS_USER_IMPERSONATION"
+    AMAZON_ES = "RESOURCE_TYPE_AMAZON_ES"
+    AMAZON_ESIAM = "RESOURCE_TYPE_AMAZON_ESIAM"
+    AMAZON_MQAMQP_091 = "RESOURCE_TYPE_AMAZON_MQAMQP_091"
+    ATHENA = "RESOURCE_TYPE_ATHENA"
+    ATHENA_IAM = "RESOURCE_TYPE_ATHENA_IAM"
+    AURORA_MY_SQL = "RESOURCE_TYPE_AURORA_MY_SQL"
+    AURORA_MY_SQLIAM = "RESOURCE_TYPE_AURORA_MY_SQLIAM"
+    AURORA_POSTGRES = "RESOURCE_TYPE_AURORA_POSTGRES"
+    AURORA_POSTGRES_IAM = "RESOURCE_TYPE_AURORA_POSTGRES_IAM"
+    AZURE = "RESOURCE_TYPE_AZURE"
+    AZURE_CERT = "RESOURCE_TYPE_AZURE_CERT"
+    AZURE_MY_SQL = "RESOURCE_TYPE_AZURE_MY_SQL"
+    AZURE_MY_SQL_MANAGED_IDENTITY = "RESOURCE_TYPE_AZURE_MY_SQL_MANAGED_IDENTITY"
+    AZURE_POSTGRES = "RESOURCE_TYPE_AZURE_POSTGRES"
+    AZURE_POSTGRES_MANAGED_IDENTITY = "RESOURCE_TYPE_AZURE_POSTGRES_MANAGED_IDENTITY"
+    BIGQUERY = "RESOURCE_TYPE_BIGQUERY"
+    CASSANDRA = "RESOURCE_TYPE_CASSANDRA"
+    CITUS = "RESOURCE_TYPE_CITUS"
+    CLICK_HOUSE_HTTP = "RESOURCE_TYPE_CLICK_HOUSE_HTTP"
+    CLICK_HOUSE_MY_SQL = "RESOURCE_TYPE_CLICK_HOUSE_MY_SQL"
+    CLICK_HOUSE_TCP = "RESOURCE_TYPE_CLICK_HOUSE_TCP"
+    CLUSTRIX = "RESOURCE_TYPE_CLUSTRIX"
+    COCKROACH = "RESOURCE_TYPE_COCKROACH"
+    COUCHBASE_DATABASE = "RESOURCE_TYPE_COUCHBASE_DATABASE"
+    COUCHBASE_WEB_UI = "RESOURCE_TYPE_COUCHBASE_WEB_UI"
+    DB_2_I = "RESOURCE_TYPE_DB_2_I"
+    DB_2_LUW = "RESOURCE_TYPE_DB_2_LUW"
+    DOCUMENT_DB_HOST = "RESOURCE_TYPE_DOCUMENT_DB_HOST"
+    DOCUMENT_DB_HOST_IAM = "RESOURCE_TYPE_DOCUMENT_DB_HOST_IAM"
+    DOCUMENT_DB_REPLICA_SET = "RESOURCE_TYPE_DOCUMENT_DB_REPLICA_SET"
+    DOCUMENT_DB_REPLICA_SET_IAM = "RESOURCE_TYPE_DOCUMENT_DB_REPLICA_SET_IAM"
+    DRUID = "RESOURCE_TYPE_DRUID"
+    DYNAMO_DB = "RESOURCE_TYPE_DYNAMO_DB"
+    DYNAMO_DBIAM = "RESOURCE_TYPE_DYNAMO_DBIAM"
+    ELASTIC = "RESOURCE_TYPE_ELASTIC"
+    ELASTI_CACHE_REDIS = "RESOURCE_TYPE_ELASTI_CACHE_REDIS"
+    ELASTI_CACHE_REDIS_IAM = "RESOURCE_TYPE_ELASTI_CACHE_REDIS_IAM"
+    ENTRA_ID = "RESOURCE_TYPE_ENTRA_ID"
+    GCP = "RESOURCE_TYPE_GCP"
+    GCP_CONSOLE = "RESOURCE_TYPE_GCP_CONSOLE"
+    GCPWIF = "RESOURCE_TYPE_GCPWIF"
+    GIT_HUB = "RESOURCE_TYPE_GIT_HUB"
+    GOOGLE_ADMIN = "RESOURCE_TYPE_GOOGLE_ADMIN"
+    GOOGLE_GKE = "RESOURCE_TYPE_GOOGLE_GKE"
+    GOOGLE_GKE_USER_IMPERSONATION = "RESOURCE_TYPE_GOOGLE_GKE_USER_IMPERSONATION"
+    GOOGLE_SPANNER = "RESOURCE_TYPE_GOOGLE_SPANNER"
+    GREENPLUM = "RESOURCE_TYPE_GREENPLUM"
+    HTTP_AUTH = "RESOURCE_TYPE_HTTP_AUTH"
+    HTTP_BASIC = "RESOURCE_TYPE_HTTP_BASIC"
+    HTTP_NO_AUTH = "RESOURCE_TYPE_HTTP_NO_AUTH"
+    KUBERNETES = "RESOURCE_TYPE_KUBERNETES"
+    KUBERNETES_BASIC_AUTH = "RESOURCE_TYPE_KUBERNETES_BASIC_AUTH"
+    KUBERNETES_POD_IDENTITY = "RESOURCE_TYPE_KUBERNETES_POD_IDENTITY"
+    KUBERNETES_SERVICE_ACCOUNT = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT"
+    KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION"
+    KUBERNETES_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_USER_IMPERSONATION"
+    MCP = "RESOURCE_TYPE_MCP"
+    MCPDCR = "RESOURCE_TYPE_MCPDCR"
+    MTLS_MY_SQL = "RESOURCE_TYPE_MTLS_MY_SQL"
+    MTLS_POSTGRES = "RESOURCE_TYPE_MTLS_POSTGRES"
+    MARIA = "RESOURCE_TYPE_MARIA"
+    MEMCACHED = "RESOURCE_TYPE_MEMCACHED"
+    MEM_SQL = "RESOURCE_TYPE_MEM_SQL"
+    MICROSOFT_365 = "RESOURCE_TYPE_MICROSOFT_365"
+    MONGO_DB_HOST = "RESOURCE_TYPE_MONGO_DB_HOST"
+    MONGO_DB = "RESOURCE_TYPE_MONGO_DB"
+    MONGO_DB_LEGACY_REPLICA_SET = "RESOURCE_TYPE_MONGO_DB_LEGACY_REPLICA_SET"
+    MONGO_DB_REPLICA_SET = "RESOURCE_TYPE_MONGO_DB_REPLICA_SET"
+    MONGO_DB_SHARDED_CLUSTER = "RESOURCE_TYPE_MONGO_DB_SHARDED_CLUSTER"
+    MY_SQL = "RESOURCE_TYPE_MY_SQL"
+    NEPTUNE = "RESOURCE_TYPE_NEPTUNE"
+    NEPTUNE_IAM = "RESOURCE_TYPE_NEPTUNE_IAM"
+    OKTA_ADMIN = "RESOURCE_TYPE_OKTA_ADMIN"
+    OKTA_GROUPS = "RESOURCE_TYPE_OKTA_GROUPS"
+    ORACLE = "RESOURCE_TYPE_ORACLE"
+    ORACLE_NNE = "RESOURCE_TYPE_ORACLE_NNE"
+    POSTGRES = "RESOURCE_TYPE_POSTGRES"
+    PRESTO = "RESOURCE_TYPE_PRESTO"
+    RDP = "RESOURCE_TYPE_RDP"
+    RDP_CERT = "RESOURCE_TYPE_RDP_CERT"
+    RDS_POSTGRES_IAM = "RESOURCE_TYPE_RDS_POSTGRES_IAM"
+    RABBIT_MQAMQP_091 = "RESOURCE_TYPE_RABBIT_MQAMQP_091"
+    TCP = "RESOURCE_TYPE_TCP"
+    REDIS = "RESOURCE_TYPE_REDIS"
+    REDIS_CLUSTER = "RESOURCE_TYPE_REDIS_CLUSTER"
+    REDSHIFT = "RESOURCE_TYPE_REDSHIFT"
+    REDSHIFT_IAM = "RESOURCE_TYPE_REDSHIFT_IAM"
+    REDSHIFT_SERVERLESS_IAM = "RESOURCE_TYPE_REDSHIFT_SERVERLESS_IAM"
+    SQL_SERVER = "RESOURCE_TYPE_SQL_SERVER"
+    SQL_SERVER_AZURE_AD = "RESOURCE_TYPE_SQL_SERVER_AZURE_AD"
+    SQL_SERVER_KERBEROS = "RESOURCE_TYPE_SQL_SERVER_KERBEROS"
+    SSH = "RESOURCE_TYPE_SSH"
+    SSH_CERT = "RESOURCE_TYPE_SSH_CERT"
+    SSH_CERT_USER_PROVISION = "RESOURCE_TYPE_SSH_CERT_USER_PROVISION"
+    SSH_CUSTOMER_KEY = "RESOURCE_TYPE_SSH_CUSTOMER_KEY"
+    SSH_PASSWORD = "RESOURCE_TYPE_SSH_PASSWORD"
+    SALESFORCE = "RESOURCE_TYPE_SALESFORCE"
+    SINGLE_STORE = "RESOURCE_TYPE_SINGLE_STORE"
+    SNOWFLAKE = "RESOURCE_TYPE_SNOWFLAKE"
+    SNOWSIGHT = "RESOURCE_TYPE_SNOWSIGHT"
+    SYBASE_ASE = "RESOURCE_TYPE_SYBASE_ASE"
+    SYBASE_IQ = "RESOURCE_TYPE_SYBASE_IQ"
+    TERADATA = "RESOURCE_TYPE_TERADATA"
+    TRINO = "RESOURCE_TYPE_TRINO"
+    VERTICA = "RESOURCE_TYPE_VERTICA"
+
+
 class AKS:
     __slots__ = [
         'allow_resource_role_bypass',
@@ -10905,6 +11029,87 @@ class ConnectorUpdateResponse:
         return cls(
             connector=d.get('connector'),
             rate_limit=d.get('rate_limit'),
+        )
+
+
+class ControlPanelGetOrgURLInfoResponse:
+    '''
+         ControlPanelGetOrgURLInfoResponse represents the response containing
+     organization URL configuration.
+    '''
+    __slots__ = [
+        'base_url',
+        'meta',
+        'oidc_issuer_url',
+        'rate_limit',
+        'saml_metadata_url',
+        'websites_subdomain',
+    ]
+
+    def __init__(
+        self,
+        base_url=None,
+        meta=None,
+        oidc_issuer_url=None,
+        rate_limit=None,
+        saml_metadata_url=None,
+        websites_subdomain=None,
+    ):
+        self.base_url = base_url if base_url is not None else ''
+        '''
+         The base URL of the organization, e.g. https://app.strongdm.com
+        '''
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.oidc_issuer_url = oidc_issuer_url if oidc_issuer_url is not None else ''
+        '''
+         The OIDC issuer URL for the organization, used for OIDC federation
+         with cloud providers
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+        self.saml_metadata_url = saml_metadata_url if saml_metadata_url is not None else ''
+        '''
+         The SAML metadata URL for the organization, used for SAML SSO configuration.
+        '''
+        self.websites_subdomain = websites_subdomain if websites_subdomain is not None else ''
+        '''
+         The organization's website subdomain, used to construct URLs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.ControlPanelGetOrgURLInfoResponse ' + \
+            'base_url: ' + repr(self.base_url) + ' ' +\
+            'meta: ' + repr(self.meta) + ' ' +\
+            'oidc_issuer_url: ' + repr(self.oidc_issuer_url) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            'saml_metadata_url: ' + repr(self.saml_metadata_url) + ' ' +\
+            'websites_subdomain: ' + repr(self.websites_subdomain) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'base_url': self.base_url,
+            'meta': self.meta,
+            'oidc_issuer_url': self.oidc_issuer_url,
+            'rate_limit': self.rate_limit,
+            'saml_metadata_url': self.saml_metadata_url,
+            'websites_subdomain': self.websites_subdomain,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            base_url=d.get('base_url'),
+            meta=d.get('meta'),
+            oidc_issuer_url=d.get('oidc_issuer_url'),
+            rate_limit=d.get('rate_limit'),
+            saml_metadata_url=d.get('saml_metadata_url'),
+            websites_subdomain=d.get('websites_subdomain'),
         )
 
 

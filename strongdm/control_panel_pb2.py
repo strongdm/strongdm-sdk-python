@@ -30,7 +30,7 @@ from . import options_pb2 as options__pb2
 from . import spec_pb2 as spec__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xdf\x01\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"L\n$ControlPanelGetRDPCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xdf\x01\n%ControlPanelGetRDPCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd2\x01\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xd0\x03\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x99\x01\n\x11GetRDPCAPublicKey\x12(.v1.ControlPanelGetRDPCAPublicKeyRequest\x1a).v1.ControlPanelGetRDPCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/rdp/ca\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBh\n\x19\x63om.strongdm.api.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ontrol_panel.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\"L\n$ControlPanelGetSSHCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xdf\x01\n%ControlPanelGetSSHCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"L\n$ControlPanelGetRDPCAPublicKeyRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xdf\x01\n%ControlPanelGetRDPCAPublicKeyResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\npublic_key\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"_\n\x1c\x43ontrolPanelVerifyJWTRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x19\n\x05token\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\"\xd2\x01\n\x1d\x43ontrolPanelVerifyJWTResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x19\n\x05valid\x18\x02 \x01(\x08\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\"H\n ControlPanelGetOrgURLInfoRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\"\xcd\x02\n!ControlPanelGetOrgURLInfoResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x62\x61se_url\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12&\n\x12websites_subdomain\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12#\n\x0foidc_issuer_url\x18\x04 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11saml_metadata_url\x18\x05 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12W\n\nrate_limit\x18\x06 \x01(\x0b\x32\x15.v1.RateLimitMetadataB,\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\xf2\xf8\xb3\x07\x06\xb2\xf4\xb3\x07\x01*\xf2\xf8\xb3\x07\x12\xb2\xf4\xb3\x07\r!json_gateway:\n\xfa\xf8\xb3\x07\x05\xa8\xf3\xb3\x07\x01\x32\xe6\x04\n\x0c\x43ontrolPanel\x12\x99\x01\n\x11GetSSHCAPublicKey\x12(.v1.ControlPanelGetSSHCAPublicKeyRequest\x1a).v1.ControlPanelGetSSHCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/ssh/ca\x12\x99\x01\n\x11GetRDPCAPublicKey\x12(.v1.ControlPanelGetRDPCAPublicKeyRequest\x1a).v1.ControlPanelGetRDPCAPublicKeyResponse\"/\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1d\xaa\xf3\xb3\x07\x18/v1/control-panel/rdp/ca\x12\x93\x01\n\rGetOrgURLInfo\x12$.v1.ControlPanelGetOrgURLInfoRequest\x1a%.v1.ControlPanelGetOrgURLInfoResponse\"5\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07#\xaa\xf3\xb3\x07\x1e/v1/control-panel/org-url-info\x12\x87\x01\n\tVerifyJWT\x12 .v1.ControlPanelVerifyJWTRequest\x1a!.v1.ControlPanelVerifyJWTResponse\"5\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\"\xaa\xf3\xb3\x07\x1d/v1/control-panel/http/verifyBh\n\x19\x63om.strongdm.api.plumbingB\x14\x43ontrolPanelPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 
 
@@ -40,6 +40,8 @@ _CONTROLPANELGETRDPCAPUBLICKEYREQUEST = DESCRIPTOR.message_types_by_name['Contro
 _CONTROLPANELGETRDPCAPUBLICKEYRESPONSE = DESCRIPTOR.message_types_by_name['ControlPanelGetRDPCAPublicKeyResponse']
 _CONTROLPANELVERIFYJWTREQUEST = DESCRIPTOR.message_types_by_name['ControlPanelVerifyJWTRequest']
 _CONTROLPANELVERIFYJWTRESPONSE = DESCRIPTOR.message_types_by_name['ControlPanelVerifyJWTResponse']
+_CONTROLPANELGETORGURLINFOREQUEST = DESCRIPTOR.message_types_by_name['ControlPanelGetOrgURLInfoRequest']
+_CONTROLPANELGETORGURLINFORESPONSE = DESCRIPTOR.message_types_by_name['ControlPanelGetOrgURLInfoResponse']
 ControlPanelGetSSHCAPublicKeyRequest = _reflection.GeneratedProtocolMessageType('ControlPanelGetSSHCAPublicKeyRequest', (_message.Message,), {
   'DESCRIPTOR' : _CONTROLPANELGETSSHCAPUBLICKEYREQUEST,
   '__module__' : 'control_panel_pb2'
@@ -82,6 +84,20 @@ ControlPanelVerifyJWTResponse = _reflection.GeneratedProtocolMessageType('Contro
   })
 _sym_db.RegisterMessage(ControlPanelVerifyJWTResponse)
 
+ControlPanelGetOrgURLInfoRequest = _reflection.GeneratedProtocolMessageType('ControlPanelGetOrgURLInfoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CONTROLPANELGETORGURLINFOREQUEST,
+  '__module__' : 'control_panel_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ControlPanelGetOrgURLInfoRequest)
+  })
+_sym_db.RegisterMessage(ControlPanelGetOrgURLInfoRequest)
+
+ControlPanelGetOrgURLInfoResponse = _reflection.GeneratedProtocolMessageType('ControlPanelGetOrgURLInfoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CONTROLPANELGETORGURLINFORESPONSE,
+  '__module__' : 'control_panel_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ControlPanelGetOrgURLInfoResponse)
+  })
+_sym_db.RegisterMessage(ControlPanelGetOrgURLInfoResponse)
+
 _CONTROLPANEL = DESCRIPTOR.services_by_name['ControlPanel']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -113,10 +129,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONTROLPANELVERIFYJWTRESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
   _CONTROLPANELVERIFYJWTRESPONSE._options = None
   _CONTROLPANELVERIFYJWTRESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['meta']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['meta']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['base_url']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['base_url']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['websites_subdomain']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['websites_subdomain']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['oidc_issuer_url']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['oidc_issuer_url']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['saml_metadata_url']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['saml_metadata_url']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['rate_limit']._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE.fields_by_name['rate_limit']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001\362\370\263\007\006\262\364\263\007\001*\362\370\263\007\022\262\364\263\007\r!json_gateway'
+  _CONTROLPANELGETORGURLINFORESPONSE._options = None
+  _CONTROLPANELGETORGURLINFORESPONSE._serialized_options = b'\372\370\263\007\005\250\363\263\007\001'
   _CONTROLPANEL.methods_by_name['GetSSHCAPublicKey']._options = None
   _CONTROLPANEL.methods_by_name['GetSSHCAPublicKey']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\035\252\363\263\007\030/v1/control-panel/ssh/ca'
   _CONTROLPANEL.methods_by_name['GetRDPCAPublicKey']._options = None
   _CONTROLPANEL.methods_by_name['GetRDPCAPublicKey']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007\035\252\363\263\007\030/v1/control-panel/rdp/ca'
+  _CONTROLPANEL.methods_by_name['GetOrgURLInfo']._options = None
+  _CONTROLPANEL.methods_by_name['GetOrgURLInfo']._serialized_options = b'\202\371\263\007\010\242\363\263\007\003get\202\371\263\007#\252\363\263\007\036/v1/control-panel/org-url-info'
   _CONTROLPANEL.methods_by_name['VerifyJWT']._options = None
   _CONTROLPANEL.methods_by_name['VerifyJWT']._serialized_options = b'\202\371\263\007\t\242\363\263\007\004post\202\371\263\007\"\252\363\263\007\035/v1/control-panel/http/verify'
   _CONTROLPANELGETSSHCAPUBLICKEYREQUEST._serialized_start=54
@@ -131,6 +163,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONTROLPANELVERIFYJWTREQUEST._serialized_end=757
   _CONTROLPANELVERIFYJWTRESPONSE._serialized_start=760
   _CONTROLPANELVERIFYJWTRESPONSE._serialized_end=970
-  _CONTROLPANEL._serialized_start=973
-  _CONTROLPANEL._serialized_end=1437
+  _CONTROLPANELGETORGURLINFOREQUEST._serialized_start=972
+  _CONTROLPANELGETORGURLINFOREQUEST._serialized_end=1044
+  _CONTROLPANELGETORGURLINFORESPONSE._serialized_start=1047
+  _CONTROLPANELGETORGURLINFORESPONSE._serialized_end=1380
+  _CONTROLPANEL._serialized_start=1383
+  _CONTROLPANEL._serialized_end=1997
 # @@protoc_insertion_point(module_scope)
