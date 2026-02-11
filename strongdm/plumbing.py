@@ -2346,6 +2346,7 @@ def convert_active_directory_engine_to_porcelain(plumbing):
     porcelain.max_backoff_duration = convert_duration_to_porcelain(
         plumbing.max_backoff_duration)
     porcelain.name = (plumbing.name)
+    porcelain.node_selector = (plumbing.node_selector)
     porcelain.policy = convert_secret_engine_policy_to_porcelain(
         plumbing.policy)
     porcelain.public_key = (plumbing.public_key)
@@ -2380,6 +2381,7 @@ def convert_active_directory_engine_to_plumbing(porcelain):
     plumbing.max_backoff_duration.CopyFrom(
         convert_duration_to_plumbing(porcelain.max_backoff_duration))
     plumbing.name = (porcelain.name)
+    plumbing.node_selector = (porcelain.node_selector)
     plumbing.policy.CopyFrom(
         convert_secret_engine_policy_to_plumbing(porcelain.policy))
     plumbing.public_key = (porcelain.public_key)
@@ -9152,6 +9154,7 @@ def convert_key_value_engine_to_porcelain(plumbing):
     porcelain.key_rotation_interval_days = (
         plumbing.key_rotation_interval_days)
     porcelain.name = (plumbing.name)
+    porcelain.node_selector = (plumbing.node_selector)
     porcelain.public_key = (plumbing.public_key)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.secret_store_root_path = (plumbing.secret_store_root_path)
@@ -9167,6 +9170,7 @@ def convert_key_value_engine_to_plumbing(porcelain):
     plumbing.key_rotation_interval_days = (
         porcelain.key_rotation_interval_days)
     plumbing.name = (porcelain.name)
+    plumbing.node_selector = (porcelain.node_selector)
     plumbing.public_key = (porcelain.public_key)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.secret_store_root_path = (porcelain.secret_store_root_path)
@@ -11345,6 +11349,7 @@ def convert_mysql_engine_to_porcelain(plumbing):
     porcelain.key_rotation_interval_days = (
         plumbing.key_rotation_interval_days)
     porcelain.name = (plumbing.name)
+    porcelain.node_selector = (plumbing.node_selector)
     porcelain.password = (plumbing.password)
     porcelain.policy = convert_secret_engine_policy_to_porcelain(
         plumbing.policy)
@@ -11372,6 +11377,7 @@ def convert_mysql_engine_to_plumbing(porcelain):
     plumbing.key_rotation_interval_days = (
         porcelain.key_rotation_interval_days)
     plumbing.name = (porcelain.name)
+    plumbing.node_selector = (porcelain.node_selector)
     plumbing.password = (porcelain.password)
     plumbing.policy.CopyFrom(
         convert_secret_engine_policy_to_plumbing(porcelain.policy))
@@ -13015,6 +13021,7 @@ def convert_postgres_engine_to_porcelain(plumbing):
     porcelain.key_rotation_interval_days = (
         plumbing.key_rotation_interval_days)
     porcelain.name = (plumbing.name)
+    porcelain.node_selector = (plumbing.node_selector)
     porcelain.password = (plumbing.password)
     porcelain.policy = convert_secret_engine_policy_to_porcelain(
         plumbing.policy)
@@ -13041,6 +13048,7 @@ def convert_postgres_engine_to_plumbing(porcelain):
     plumbing.key_rotation_interval_days = (
         porcelain.key_rotation_interval_days)
     plumbing.name = (porcelain.name)
+    plumbing.node_selector = (porcelain.node_selector)
     plumbing.password = (porcelain.password)
     plumbing.policy.CopyFrom(
         convert_secret_engine_policy_to_plumbing(porcelain.policy))
@@ -17398,6 +17406,7 @@ def convert_sqlserver_engine_to_porcelain(plumbing):
     porcelain.key_rotation_interval_days = (
         plumbing.key_rotation_interval_days)
     porcelain.name = (plumbing.name)
+    porcelain.node_selector = (plumbing.node_selector)
     porcelain.password = (plumbing.password)
     porcelain.policy = convert_secret_engine_policy_to_porcelain(
         plumbing.policy)
@@ -17425,6 +17434,7 @@ def convert_sqlserver_engine_to_plumbing(porcelain):
     plumbing.key_rotation_interval_days = (
         porcelain.key_rotation_interval_days)
     plumbing.name = (porcelain.name)
+    plumbing.node_selector = (porcelain.node_selector)
     plumbing.password = (porcelain.password)
     plumbing.policy.CopyFrom(
         convert_secret_engine_policy_to_plumbing(porcelain.policy))

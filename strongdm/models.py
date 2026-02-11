@@ -4116,6 +4116,7 @@ class ActiveDirectoryEngine:
         'key_rotation_interval_days',
         'max_backoff_duration',
         'name',
+        'node_selector',
         'policy',
         'public_key',
         'request_timeout',
@@ -4142,6 +4143,7 @@ class ActiveDirectoryEngine:
         key_rotation_interval_days=None,
         max_backoff_duration=None,
         name=None,
+        node_selector=None,
         policy=None,
         public_key=None,
         request_timeout=None,
@@ -4198,6 +4200,10 @@ class ActiveDirectoryEngine:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Secret Engine.
+        '''
+        self.node_selector = node_selector if node_selector is not None else ''
+        '''
+         node selector is used to narrow down the nodes used to communicate with with secret engine
         '''
         self.policy = policy if policy is not None else None
         '''
@@ -4257,6 +4263,7 @@ class ActiveDirectoryEngine:
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'max_backoff_duration: ' + repr(self.max_backoff_duration) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'node_selector: ' + repr(self.node_selector) + ' ' +\
             'policy: ' + repr(self.policy) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'request_timeout: ' + repr(self.request_timeout) + ' ' +\
@@ -4283,6 +4290,7 @@ class ActiveDirectoryEngine:
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'max_backoff_duration': self.max_backoff_duration,
             'name': self.name,
+            'node_selector': self.node_selector,
             'policy': self.policy,
             'public_key': self.public_key,
             'request_timeout': self.request_timeout,
@@ -4310,6 +4318,7 @@ class ActiveDirectoryEngine:
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             max_backoff_duration=d.get('max_backoff_duration'),
             name=d.get('name'),
+            node_selector=d.get('node_selector'),
             policy=d.get('policy'),
             public_key=d.get('public_key'),
             request_timeout=d.get('request_timeout'),
@@ -18165,6 +18174,7 @@ class KeyValueEngine:
         'id',
         'key_rotation_interval_days',
         'name',
+        'node_selector',
         'public_key',
         'secret_store_id',
         'secret_store_root_path',
@@ -18176,6 +18186,7 @@ class KeyValueEngine:
         id=None,
         key_rotation_interval_days=None,
         name=None,
+        node_selector=None,
         public_key=None,
         secret_store_id=None,
         secret_store_root_path=None,
@@ -18192,6 +18203,10 @@ class KeyValueEngine:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Secret Engine.
+        '''
+        self.node_selector = node_selector if node_selector is not None else ''
+        '''
+         node selector is used to narrow down the nodes used to communicate with with secret engine
         '''
         self.public_key = public_key if public_key is not None else b''
         '''
@@ -18215,6 +18230,7 @@ class KeyValueEngine:
             'id: ' + repr(self.id) + ' ' +\
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'node_selector: ' + repr(self.node_selector) + ' ' +\
             'public_key: ' + repr(self.public_key) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'secret_store_root_path: ' + repr(self.secret_store_root_path) + ' ' +\
@@ -18226,6 +18242,7 @@ class KeyValueEngine:
             'id': self.id,
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'name': self.name,
+            'node_selector': self.node_selector,
             'public_key': self.public_key,
             'secret_store_id': self.secret_store_id,
             'secret_store_root_path': self.secret_store_root_path,
@@ -18238,6 +18255,7 @@ class KeyValueEngine:
             id=d.get('id'),
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             name=d.get('name'),
+            node_selector=d.get('node_selector'),
             public_key=d.get('public_key'),
             secret_store_id=d.get('secret_store_id'),
             secret_store_root_path=d.get('secret_store_root_path'),
@@ -23017,6 +23035,7 @@ class MysqlEngine:
         'id',
         'key_rotation_interval_days',
         'name',
+        'node_selector',
         'password',
         'policy',
         'port',
@@ -23038,6 +23057,7 @@ class MysqlEngine:
         id=None,
         key_rotation_interval_days=None,
         name=None,
+        node_selector=None,
         password=None,
         policy=None,
         port=None,
@@ -23073,6 +23093,10 @@ class MysqlEngine:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Secret Engine.
+        '''
+        self.node_selector = node_selector if node_selector is not None else ''
+        '''
+         node selector is used to narrow down the nodes used to communicate with with secret engine
         '''
         self.password = password if password is not None else ''
         '''
@@ -23127,6 +23151,7 @@ class MysqlEngine:
             'id: ' + repr(self.id) + ' ' +\
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'node_selector: ' + repr(self.node_selector) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'policy: ' + repr(self.policy) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -23148,6 +23173,7 @@ class MysqlEngine:
             'id': self.id,
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'name': self.name,
+            'node_selector': self.node_selector,
             'password': self.password,
             'policy': self.policy,
             'port': self.port,
@@ -23170,6 +23196,7 @@ class MysqlEngine:
             id=d.get('id'),
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             name=d.get('name'),
+            node_selector=d.get('node_selector'),
             password=d.get('password'),
             policy=d.get('policy'),
             port=d.get('port'),
@@ -26016,6 +26043,7 @@ class PostgresEngine:
         'id',
         'key_rotation_interval_days',
         'name',
+        'node_selector',
         'password',
         'policy',
         'port',
@@ -26036,6 +26064,7 @@ class PostgresEngine:
         id=None,
         key_rotation_interval_days=None,
         name=None,
+        node_selector=None,
         password=None,
         policy=None,
         port=None,
@@ -26070,6 +26099,10 @@ class PostgresEngine:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Secret Engine.
+        '''
+        self.node_selector = node_selector if node_selector is not None else ''
+        '''
+         node selector is used to narrow down the nodes used to communicate with with secret engine
         '''
         self.password = password if password is not None else ''
         '''
@@ -26120,6 +26153,7 @@ class PostgresEngine:
             'id: ' + repr(self.id) + ' ' +\
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'node_selector: ' + repr(self.node_selector) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'policy: ' + repr(self.policy) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -26140,6 +26174,7 @@ class PostgresEngine:
             'id': self.id,
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'name': self.name,
+            'node_selector': self.node_selector,
             'password': self.password,
             'policy': self.policy,
             'port': self.port,
@@ -26161,6 +26196,7 @@ class PostgresEngine:
             id=d.get('id'),
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             name=d.get('name'),
+            node_selector=d.get('node_selector'),
             password=d.get('password'),
             policy=d.get('policy'),
             port=d.get('port'),
@@ -33325,6 +33361,7 @@ class SqlserverEngine:
         'id',
         'key_rotation_interval_days',
         'name',
+        'node_selector',
         'password',
         'policy',
         'port',
@@ -33346,6 +33383,7 @@ class SqlserverEngine:
         id=None,
         key_rotation_interval_days=None,
         name=None,
+        node_selector=None,
         password=None,
         policy=None,
         port=None,
@@ -33381,6 +33419,10 @@ class SqlserverEngine:
         self.name = name if name is not None else ''
         '''
          Unique human-readable name of the Secret Engine.
+        '''
+        self.node_selector = node_selector if node_selector is not None else ''
+        '''
+         node selector is used to narrow down the nodes used to communicate with with secret engine
         '''
         self.password = password if password is not None else ''
         '''
@@ -33435,6 +33477,7 @@ class SqlserverEngine:
             'id: ' + repr(self.id) + ' ' +\
             'key_rotation_interval_days: ' + repr(self.key_rotation_interval_days) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
+            'node_selector: ' + repr(self.node_selector) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'policy: ' + repr(self.policy) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
@@ -33456,6 +33499,7 @@ class SqlserverEngine:
             'id': self.id,
             'key_rotation_interval_days': self.key_rotation_interval_days,
             'name': self.name,
+            'node_selector': self.node_selector,
             'password': self.password,
             'policy': self.policy,
             'port': self.port,
@@ -33478,6 +33522,7 @@ class SqlserverEngine:
             id=d.get('id'),
             key_rotation_interval_days=d.get('key_rotation_interval_days'),
             name=d.get('name'),
+            node_selector=d.get('node_selector'),
             password=d.get('password'),
             policy=d.get('policy'),
             port=d.get('port'),
