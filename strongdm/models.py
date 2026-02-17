@@ -63,6 +63,7 @@ class ResourceType(str, Enum):
     COUCHBASE_WEB_UI = "RESOURCE_TYPE_COUCHBASE_WEB_UI"
     DB_2_I = "RESOURCE_TYPE_DB_2_I"
     DB_2_LUW = "RESOURCE_TYPE_DB_2_LUW"
+    DATABRICKS = "RESOURCE_TYPE_DATABRICKS"
     DOCUMENT_DB_HOST = "RESOURCE_TYPE_DOCUMENT_DB_HOST"
     DOCUMENT_DB_HOST_IAM = "RESOURCE_TYPE_DOCUMENT_DB_HOST_IAM"
     DOCUMENT_DB_REPLICA_SET = "RESOURCE_TYPE_DOCUMENT_DB_REPLICA_SET"
@@ -12190,6 +12191,158 @@ class DB2LUW:
             tags=d.get('tags'),
             tls_required=d.get('tls_required'),
             username=d.get('username'),
+        )
+
+
+class Databricks:
+    '''
+    Databricks is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'access_token',
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'http_path',
+        'id',
+        'name',
+        'port_override',
+        'proxy_cluster_id',
+        'schema',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        access_token=None,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        http_path=None,
+        id=None,
+        name=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        schema=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.access_token = access_token if access_token is not None else ''
+        '''
+         Databricks Personal Access Token (PAT)
+        '''
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The Databricks workspace hostname (e.g., dbc-xxx.cloud.databricks.com)
+        '''
+        self.http_path = http_path if http_path is not None else ''
+        '''
+         The HTTP path to the SQL warehouse or cluster (e.g., /sql/1.0/warehouses/xxx)
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.schema = schema if schema is not None else ''
+        '''
+         The Schema to use to direct initial requests.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Databricks ' + \
+            'access_token: ' + repr(self.access_token) + ' ' +\
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'http_path: ' + repr(self.http_path) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'schema: ' + repr(self.schema) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'access_token': self.access_token,
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'http_path': self.http_path,
+            'id': self.id,
+            'name': self.name,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'schema': self.schema,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            access_token=d.get('access_token'),
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            http_path=d.get('http_path'),
+            id=d.get('id'),
+            name=d.get('name'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            schema=d.get('schema'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
         )
 
 

@@ -6420,6 +6420,7 @@ class Resources:
     `strongdm.models.Cockroach`
     `strongdm.models.CouchbaseDatabase`
     `strongdm.models.CouchbaseWebUI`
+    `strongdm.models.Databricks`
     `strongdm.models.DB2I`
     `strongdm.models.DB2LUW`
     `strongdm.models.DocumentDBHost`

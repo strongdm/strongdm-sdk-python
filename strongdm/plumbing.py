@@ -6103,6 +6103,60 @@ def convert_repeated_db_2_luw_to_porcelain(plumbings):
     return [convert_db_2_luw_to_porcelain(plumbing) for plumbing in plumbings]
 
 
+def convert_databricks_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Databricks()
+    porcelain.access_token = (plumbing.access_token)
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.hostname = (plumbing.hostname)
+    porcelain.http_path = (plumbing.http_path)
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.schema = (plumbing.schema)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_databricks_to_plumbing(porcelain):
+    plumbing = Databricks()
+    if porcelain is None:
+        return plumbing
+    plumbing.access_token = (porcelain.access_token)
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.hostname = (porcelain.hostname)
+    plumbing.http_path = (porcelain.http_path)
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.schema = (porcelain.schema)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_databricks_to_plumbing(porcelains):
+    return [
+        convert_databricks_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_databricks_to_porcelain(plumbings):
+    return [
+        convert_databricks_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_delete_response_metadata_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -14702,6 +14756,8 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.CouchbaseWebUI):
         plumbing.couchbase_web_ui.CopyFrom(
             convert_couchbase_web_ui_to_plumbing(porcelain))
+    if isinstance(porcelain, models.Databricks):
+        plumbing.databricks.CopyFrom(convert_databricks_to_plumbing(porcelain))
     if isinstance(porcelain, models.DB2I):
         plumbing.db_2_i.CopyFrom(convert_db_2_i_to_plumbing(porcelain))
     if isinstance(porcelain, models.DB2LUW):
@@ -14986,6 +15042,8 @@ def convert_resource_to_porcelain(plumbing):
             plumbing.couchbase_database)
     if plumbing.HasField('couchbase_web_ui'):
         return convert_couchbase_web_ui_to_porcelain(plumbing.couchbase_web_ui)
+    if plumbing.HasField('databricks'):
+        return convert_databricks_to_porcelain(plumbing.databricks)
     if plumbing.HasField('db_2_i'):
         return convert_db_2_i_to_porcelain(plumbing.db_2_i)
     if plumbing.HasField('db_2_luw'):
