@@ -369,6 +369,8 @@ class Permission:
     ACCESS_REQUEST_REQUESTER = "accessrequest:requester"
     ACCOUNT_GROUP_READ = "accountgroup:read"
     ACCOUNT_GROUP_WRITE = "accountgroup:write"
+    ADMIN_ROLE_READ = "adminrole:read"
+    ADMIN_ROLE_WRITE = "adminrole:write"
     APPROVAL_FLOW_EDIT = "approvalflow:edit"
     APPROVAL_FLOW_LIST = "approvalflow:list"
     BILLING_READ = "billing:read"
