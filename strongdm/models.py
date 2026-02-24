@@ -19907,6 +19907,7 @@ class MCP:
         'id',
         'name',
         'oauth_auth_endpoint',
+        'oauth_scopes',
         'oauth_token_endpoint',
         'password',
         'port_override',
@@ -19926,6 +19927,7 @@ class MCP:
         id=None,
         name=None,
         oauth_auth_endpoint=None,
+        oauth_scopes=None,
         oauth_token_endpoint=None,
         password=None,
         port_override=None,
@@ -19962,6 +19964,10 @@ class MCP:
         self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
         '''
          The OAuth 2.0 authorization endpoint URL.
+        '''
+        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
+        '''
+         Space-separated list of OAuth scopes to request.
         '''
         self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
         '''
@@ -20005,6 +20011,7 @@ class MCP:
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
+            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
             'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -20024,6 +20031,7 @@ class MCP:
             'id': self.id,
             'name': self.name,
             'oauth_auth_endpoint': self.oauth_auth_endpoint,
+            'oauth_scopes': self.oauth_scopes,
             'oauth_token_endpoint': self.oauth_token_endpoint,
             'password': self.password,
             'port_override': self.port_override,
@@ -20044,6 +20052,7 @@ class MCP:
             id=d.get('id'),
             name=d.get('name'),
             oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
+            oauth_scopes=d.get('oauth_scopes'),
             oauth_token_endpoint=d.get('oauth_token_endpoint'),
             password=d.get('password'),
             port_override=d.get('port_override'),
@@ -20069,6 +20078,7 @@ class MCPDCR:
         'name',
         'oauth_auth_endpoint',
         'oauth_register_endpoint',
+        'oauth_scopes',
         'oauth_token_endpoint',
         'port_override',
         'proxy_cluster_id',
@@ -20087,6 +20097,7 @@ class MCPDCR:
         name=None,
         oauth_auth_endpoint=None,
         oauth_register_endpoint=None,
+        oauth_scopes=None,
         oauth_token_endpoint=None,
         port_override=None,
         proxy_cluster_id=None,
@@ -20126,6 +20137,10 @@ class MCPDCR:
         '''
          The OAuth 2.0 dynamic client registration endpoint URL.
         '''
+        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
+        '''
+         Space-separated list of OAuth scopes to request.
+        '''
         self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
         '''
          The OAuth 2.0 token endpoint URL.
@@ -20161,6 +20176,7 @@ class MCPDCR:
             'name: ' + repr(self.name) + ' ' +\
             'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
             'oauth_register_endpoint: ' + repr(self.oauth_register_endpoint) + ' ' +\
+            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
             'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
@@ -20179,6 +20195,7 @@ class MCPDCR:
             'name': self.name,
             'oauth_auth_endpoint': self.oauth_auth_endpoint,
             'oauth_register_endpoint': self.oauth_register_endpoint,
+            'oauth_scopes': self.oauth_scopes,
             'oauth_token_endpoint': self.oauth_token_endpoint,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
@@ -20198,6 +20215,7 @@ class MCPDCR:
             name=d.get('name'),
             oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
             oauth_register_endpoint=d.get('oauth_register_endpoint'),
+            oauth_scopes=d.get('oauth_scopes'),
             oauth_token_endpoint=d.get('oauth_token_endpoint'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
