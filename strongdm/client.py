@@ -40,7 +40,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/16.12.0'
+USER_AGENT = 'strongdm-sdk-python/16.13.0'
 
 method_regexp = re.compile(r'\W+')
 
@@ -355,6 +355,30 @@ class Client:
          Scans in remote systems such as AWS, GCP, Azure, and other systems.
 
         See `strongdm.svc.DiscoveryConnectors`.
+        '''
+        self.granted_account_entitlements = svc.GrantedAccountEntitlements(
+            channel, self)
+        '''
+         GrantedAccountEntitlements enumerates the resources to which an account has been granted access.
+         The GrantedAccountEntitlements service is read-only.
+
+        See `strongdm.svc.GrantedAccountEntitlements`.
+        '''
+        self.granted_resource_entitlements = svc.GrantedResourceEntitlements(
+            channel, self)
+        '''
+         GrantedResourceEntitlements enumerates the accounts that have been granted access to a given resource.
+         The GrantedResourceEntitlements service is read-only.
+
+        See `strongdm.svc.GrantedResourceEntitlements`.
+        '''
+        self.granted_role_entitlements = svc.GrantedRoleEntitlements(
+            channel, self)
+        '''
+         GrantedRoleEntitlements enumerates the resources to which a role grants access.
+         The GrantedRoleEntitlements service is read-only.
+
+        See `strongdm.svc.GrantedRoleEntitlements`.
         '''
         self.roles = svc.Roles(channel, self)
         '''
@@ -741,6 +765,12 @@ class Client:
             client.channel, client)
         client.discovery_connectors = svc.DiscoveryConnectors(
             client.channel, client)
+        client.granted_account_entitlements = svc.GrantedAccountEntitlements(
+            client.channel, client)
+        client.granted_resource_entitlements = svc.GrantedResourceEntitlements(
+            client.channel, client)
+        client.granted_role_entitlements = svc.GrantedRoleEntitlements(
+            client.channel, client)
         client.roles = svc.Roles(client.channel, client)
         client.groups = svc.Groups(client.channel, client)
         client.groups_roles = svc.GroupsRoles(client.channel, client)
@@ -847,6 +877,30 @@ class SnapshotClient:
          Scans in remote systems such as AWS, GCP, Azure, and other systems.
 
         See `strongdm.svc.SnapshotDiscoveryConnectors`.
+        '''
+        self.granted_account_entitlements = svc.SnapshotGrantedAccountEntitlements(
+            client.granted_account_entitlements)
+        '''
+         GrantedAccountEntitlements enumerates the resources to which an account has been granted access.
+         The GrantedAccountEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotGrantedAccountEntitlements`.
+        '''
+        self.granted_resource_entitlements = svc.SnapshotGrantedResourceEntitlements(
+            client.granted_resource_entitlements)
+        '''
+         GrantedResourceEntitlements enumerates the accounts that have been granted access to a given resource.
+         The GrantedResourceEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotGrantedResourceEntitlements`.
+        '''
+        self.granted_role_entitlements = svc.SnapshotGrantedRoleEntitlements(
+            client.granted_role_entitlements)
+        '''
+         GrantedRoleEntitlements enumerates the resources to which a role grants access.
+         The GrantedRoleEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotGrantedRoleEntitlements`.
         '''
         self.roles = svc.SnapshotRoles(client.roles)
         '''

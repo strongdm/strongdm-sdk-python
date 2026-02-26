@@ -58,6 +58,12 @@ strongdm/discovery_connectors_pb2_grpc.py
 strongdm/drivers_pb2.py
 strongdm/drivers_pb2_grpc.py
 strongdm/errors.py
+strongdm/granted_account_entitlements_pb2.py
+strongdm/granted_account_entitlements_pb2_grpc.py
+strongdm/granted_resource_entitlements_pb2.py
+strongdm/granted_resource_entitlements_pb2_grpc.py
+strongdm/granted_role_entitlements_pb2.py
+strongdm/granted_role_entitlements_pb2_grpc.py
 strongdm/groups_history_pb2.py
 strongdm/groups_history_pb2_grpc.py
 strongdm/groups_pb2.py

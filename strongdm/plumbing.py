@@ -53,6 +53,9 @@ from .approval_workflows_history_pb2 import *
 from .authorization_policies_pb2 import *
 from .control_panel_pb2 import *
 from .discovery_connectors_pb2 import *
+from .granted_account_entitlements_pb2 import *
+from .granted_resource_entitlements_pb2 import *
+from .granted_role_entitlements_pb2 import *
 from .roles_pb2 import *
 from .groups_pb2 import *
 from .groups_history_pb2 import *
@@ -7484,6 +7487,163 @@ def convert_repeated_google_spanner_to_porcelain(plumbings):
     ]
 
 
+def convert_granted_account_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GrantedAccountEntitlement()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.last_accessed = convert_timestamp_to_porcelain(
+        plumbing.last_accessed)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.origin_id = (plumbing.origin_id)
+    porcelain.resource_id = (plumbing.resource_id)
+    return porcelain
+
+
+def convert_granted_account_entitlement_to_plumbing(porcelain):
+    plumbing = GrantedAccountEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.last_accessed.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.last_accessed))
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.origin_id = (porcelain.origin_id)
+    plumbing.resource_id = (porcelain.resource_id)
+    return plumbing
+
+
+def convert_repeated_granted_account_entitlement_to_plumbing(porcelains):
+    return [
+        convert_granted_account_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_granted_account_entitlement_to_porcelain(plumbings):
+    return [
+        convert_granted_account_entitlement_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_granted_entitlement_kubernetes_privileges_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GrantedEntitlementKubernetesPrivileges()
+    porcelain.groups = (plumbing.groups)
+    return porcelain
+
+
+def convert_granted_entitlement_kubernetes_privileges_to_plumbing(porcelain):
+    plumbing = GrantedEntitlementKubernetesPrivileges()
+    if porcelain is None:
+        return plumbing
+    del plumbing.groups[:]
+    plumbing.groups.extend((porcelain.groups))
+    return plumbing
+
+
+def convert_repeated_granted_entitlement_kubernetes_privileges_to_plumbing(
+        porcelains):
+    return [
+        convert_granted_entitlement_kubernetes_privileges_to_plumbing(
+            porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_granted_entitlement_kubernetes_privileges_to_porcelain(
+        plumbings):
+    return [
+        convert_granted_entitlement_kubernetes_privileges_to_porcelain(
+            plumbing) for plumbing in plumbings
+    ]
+
+
+def convert_granted_resource_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GrantedResourceEntitlement()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.last_accessed = convert_timestamp_to_porcelain(
+        plumbing.last_accessed)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.origin_id = (plumbing.origin_id)
+    return porcelain
+
+
+def convert_granted_resource_entitlement_to_plumbing(porcelain):
+    plumbing = GrantedResourceEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.last_accessed.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.last_accessed))
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.origin_id = (porcelain.origin_id)
+    return plumbing
+
+
+def convert_repeated_granted_resource_entitlement_to_plumbing(porcelains):
+    return [
+        convert_granted_resource_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_granted_resource_entitlement_to_porcelain(plumbings):
+    return [
+        convert_granted_resource_entitlement_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_granted_role_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GrantedRoleEntitlement()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.last_accessed = convert_timestamp_to_porcelain(
+        plumbing.last_accessed)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.resource_id = (plumbing.resource_id)
+    return porcelain
+
+
+def convert_granted_role_entitlement_to_plumbing(porcelain):
+    plumbing = GrantedRoleEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.last_accessed.CopyFrom(
+        convert_timestamp_to_plumbing(porcelain.last_accessed))
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.resource_id = (porcelain.resource_id)
+    return plumbing
+
+
+def convert_repeated_granted_role_entitlement_to_plumbing(porcelains):
+    return [
+        convert_granted_role_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_granted_role_entitlement_to_porcelain(plumbings):
+    return [
+        convert_granted_role_entitlement_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_greenplum_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10869,6 +11029,39 @@ def convert_repeated_managed_secret_validate_response_to_plumbing(porcelains):
 def convert_repeated_managed_secret_validate_response_to_porcelain(plumbings):
     return [
         convert_managed_secret_validate_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_mapped_identities_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MappedIdentities()
+    porcelain.kubernetes = convert_granted_entitlement_kubernetes_privileges_to_porcelain(
+        plumbing.kubernetes)
+    return porcelain
+
+
+def convert_mapped_identities_to_plumbing(porcelain):
+    plumbing = MappedIdentities()
+    if porcelain is None:
+        return plumbing
+    plumbing.kubernetes.CopyFrom(
+        convert_granted_entitlement_kubernetes_privileges_to_plumbing(
+            porcelain.kubernetes))
+    return plumbing
+
+
+def convert_repeated_mapped_identities_to_plumbing(porcelains):
+    return [
+        convert_mapped_identities_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_mapped_identities_to_porcelain(plumbings):
+    return [
+        convert_mapped_identities_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

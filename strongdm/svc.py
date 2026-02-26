@@ -76,6 +76,12 @@ from .control_panel_pb2 import *
 from .control_panel_pb2_grpc import *
 from .discovery_connectors_pb2 import *
 from .discovery_connectors_pb2_grpc import *
+from .granted_account_entitlements_pb2 import *
+from .granted_account_entitlements_pb2_grpc import *
+from .granted_resource_entitlements_pb2 import *
+from .granted_resource_entitlements_pb2_grpc import *
+from .granted_role_entitlements_pb2 import *
+from .granted_role_entitlements_pb2_grpc import *
 from .roles_pb2 import *
 from .roles_pb2_grpc import *
 from .groups_pb2 import *
@@ -2682,6 +2688,219 @@ class SnapshotDiscoveryConnectors:
          List gets a list of Connectors matching a given set of criteria.
         '''
         return self.discovery_connectors.list(filter, *args, timeout=timeout)
+
+
+class GrantedAccountEntitlements:
+    '''
+     GrantedAccountEntitlements enumerates the resources to which an account has been granted access.
+     The GrantedAccountEntitlements service is read-only.
+    See `strongdm.models.GrantedAccountEntitlement`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GrantedAccountEntitlementsStub(channel)
+
+    def list(self, account_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedAccountEntitlement records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GrantedAccountEntitlementListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.account_id = (account_id)
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GrantedAccountEntitlements.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.granted_account_entitlements:
+                    yield plumbing.convert_granted_account_entitlement_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotGrantedAccountEntitlements:
+    '''
+    SnapshotGrantedAccountEntitlements exposes the read only methods of the GrantedAccountEntitlements
+    service for historical queries.
+    '''
+    def __init__(self, granted_account_entitlements):
+        self.granted_account_entitlements = granted_account_entitlements
+
+    def list(self, account_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedAccountEntitlement records matching a given set of criteria.
+        '''
+        return self.granted_account_entitlements.list(account_id,
+                                                      filter,
+                                                      *args,
+                                                      timeout=timeout)
+
+
+class GrantedResourceEntitlements:
+    '''
+     GrantedResourceEntitlements enumerates the accounts that have been granted access to a given resource.
+     The GrantedResourceEntitlements service is read-only.
+    See `strongdm.models.GrantedResourceEntitlement`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GrantedResourceEntitlementsStub(channel)
+
+    def list(self, resource_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedResourceEntitlement records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GrantedResourceEntitlementListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.resource_id = (resource_id)
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GrantedResourceEntitlements.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.granted_resource_entitlements:
+                    yield plumbing.convert_granted_resource_entitlement_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotGrantedResourceEntitlements:
+    '''
+    SnapshotGrantedResourceEntitlements exposes the read only methods of the GrantedResourceEntitlements
+    service for historical queries.
+    '''
+    def __init__(self, granted_resource_entitlements):
+        self.granted_resource_entitlements = granted_resource_entitlements
+
+    def list(self, resource_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedResourceEntitlement records matching a given set of criteria.
+        '''
+        return self.granted_resource_entitlements.list(resource_id,
+                                                       filter,
+                                                       *args,
+                                                       timeout=timeout)
+
+
+class GrantedRoleEntitlements:
+    '''
+     GrantedRoleEntitlements enumerates the resources to which a role grants access.
+     The GrantedRoleEntitlements service is read-only.
+    See `strongdm.models.GrantedRoleEntitlement`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = GrantedRoleEntitlementsStub(channel)
+
+    def list(self, role_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedRoleEntitlement records matching a given set of criteria.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = GrantedRoleEntitlementListRequest()
+        req.meta.CopyFrom(ListRequestMetadata())
+        if self.parent.page_limit > 0:
+            req.meta.limit = self.parent.page_limit
+        if self.parent.snapshot_datetime is not None:
+            req.meta.snapshot_at.FromDatetime(self.parent.snapshot_datetime)
+
+        req.role_id = (role_id)
+        req.filter = plumbing.quote_filter_args(filter, *args)
+
+        def generator(svc, req):
+            tries = 0
+            while True:
+                t = None if deadline is None else deadline - time.time()
+                try:
+                    plumbing_response = svc.stub.List(
+                        req,
+                        metadata=svc.parent.get_metadata(
+                            'GrantedRoleEntitlements.List', req),
+                        timeout=t)
+                except Exception as e:
+                    if self.parent.shouldRetry(tries, e, deadline):
+                        tries += 1
+                        time.sleep(
+                            self.parent.exponentialBackoff(tries, deadline))
+                        continue
+                    raise plumbing.convert_error_to_porcelain(e) from e
+                tries = 0
+                for plumbing_item in plumbing_response.granted_role_entitlements:
+                    yield plumbing.convert_granted_role_entitlement_to_porcelain(
+                        plumbing_item)
+                if plumbing_response.meta.next_cursor == '':
+                    break
+                req.meta.cursor = plumbing_response.meta.next_cursor
+
+        return generator(self, req)
+
+
+class SnapshotGrantedRoleEntitlements:
+    '''
+    SnapshotGrantedRoleEntitlements exposes the read only methods of the GrantedRoleEntitlements
+    service for historical queries.
+    '''
+    def __init__(self, granted_role_entitlements):
+        self.granted_role_entitlements = granted_role_entitlements
+
+    def list(self, role_id, filter, *args, timeout=None):
+        '''
+         List gets a list of GrantedRoleEntitlement records matching a given set of criteria.
+        '''
+        return self.granted_role_entitlements.list(role_id,
+                                                   filter,
+                                                   *args,
+                                                   timeout=timeout)
 
 
 class Roles:

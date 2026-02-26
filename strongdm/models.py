@@ -15667,6 +15667,241 @@ class GoogleSpanner:
         )
 
 
+class GrantedAccountEntitlement:
+    '''
+         GrantedAccountEntitlement represents an individual entitlement of an Account to a Resource that has been granted.
+    '''
+    __slots__ = [
+        'group_id',
+        'last_accessed',
+        'mapped_identities',
+        'origin_id',
+        'resource_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        last_accessed=None,
+        mapped_identities=None,
+        origin_id=None,
+        resource_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.last_accessed = last_accessed if last_accessed is not None else None
+        '''
+         The most recent time at which the account accessed this resource. Empty if the resource has never been accessed.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.origin_id = origin_id if origin_id is not None else ''
+        '''
+         The unique identifier of the origin of this entitlement (e.g., a Role or AccountGrant ID).
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which access is granted.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GrantedAccountEntitlement ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'last_accessed: ' + repr(self.last_accessed) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'origin_id: ' + repr(self.origin_id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'last_accessed': self.last_accessed,
+            'mapped_identities': self.mapped_identities,
+            'origin_id': self.origin_id,
+            'resource_id': self.resource_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            last_accessed=d.get('last_accessed'),
+            mapped_identities=d.get('mapped_identities'),
+            origin_id=d.get('origin_id'),
+            resource_id=d.get('resource_id'),
+        )
+
+
+class GrantedEntitlementKubernetesPrivileges:
+    '''
+         GrantedEntitlementKubernetesPrivileges holds Kubernetes group memberships for a granted entitlement.
+    '''
+    __slots__ = [
+        'groups',
+    ]
+
+    def __init__(
+        self,
+        groups=None,
+    ):
+        self.groups = groups if groups is not None else []
+        '''
+         The Kubernetes groups granted to this principal for this resource.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GrantedEntitlementKubernetesPrivileges ' + \
+            'groups: ' + repr(self.groups) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'groups': self.groups,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(groups=d.get('groups'), )
+
+
+class GrantedResourceEntitlement:
+    '''
+         GrantedResourceEntitlement represents an individual entitlement of an Account to a Resource,
+     viewed from the resource's perspective.
+    '''
+    __slots__ = [
+        'account_id',
+        'group_id',
+        'last_accessed',
+        'mapped_identities',
+        'origin_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        group_id=None,
+        last_accessed=None,
+        mapped_identities=None,
+        origin_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The unique identifier of the Account that has access to this resource.
+        '''
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.last_accessed = last_accessed if last_accessed is not None else None
+        '''
+         The most recent time at which the account accessed this resource. Empty if the resource has never been accessed.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.origin_id = origin_id if origin_id is not None else ''
+        '''
+         The unique identifier of the origin of this entitlement (e.g., a Role or AccountGrant ID).
+        '''
+
+    def __repr__(self):
+        return '<sdm.GrantedResourceEntitlement ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'last_accessed: ' + repr(self.last_accessed) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'origin_id: ' + repr(self.origin_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'group_id': self.group_id,
+            'last_accessed': self.last_accessed,
+            'mapped_identities': self.mapped_identities,
+            'origin_id': self.origin_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            group_id=d.get('group_id'),
+            last_accessed=d.get('last_accessed'),
+            mapped_identities=d.get('mapped_identities'),
+            origin_id=d.get('origin_id'),
+        )
+
+
+class GrantedRoleEntitlement:
+    '''
+         GrantedRoleEntitlement represents an individual resource entitlement granted through a Role.
+    '''
+    __slots__ = [
+        'group_id',
+        'last_accessed',
+        'mapped_identities',
+        'resource_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        last_accessed=None,
+        mapped_identities=None,
+        resource_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.last_accessed = last_accessed if last_accessed is not None else None
+        '''
+         The most recent time at which any account in the organization accessed this resource.
+         Empty if the resource has never been accessed.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which the role grants access.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GrantedRoleEntitlement ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'last_accessed: ' + repr(self.last_accessed) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'last_accessed': self.last_accessed,
+            'mapped_identities': self.mapped_identities,
+            'resource_id': self.resource_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            last_accessed=d.get('last_accessed'),
+            mapped_identities=d.get('mapped_identities'),
+            resource_id=d.get('resource_id'),
+        )
+
+
 class Greenplum:
     __slots__ = [
         'bind_interface',
@@ -21680,6 +21915,38 @@ class ManagedSecretValidateResponse:
             rate_limit=d.get('rate_limit'),
             valid=d.get('valid'),
         )
+
+
+class MappedIdentities:
+    '''
+         MappedIdentities represents the mapped identity privileges granted alongside an entitlement.
+    '''
+    __slots__ = [
+        'kubernetes',
+    ]
+
+    def __init__(
+        self,
+        kubernetes=None,
+    ):
+        self.kubernetes = kubernetes if kubernetes is not None else None
+        '''
+         Kubernetes group memberships.
+        '''
+
+    def __repr__(self):
+        return '<sdm.MappedIdentities ' + \
+            'kubernetes: ' + repr(self.kubernetes) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'kubernetes': self.kubernetes,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(kubernetes=d.get('kubernetes'), )
 
 
 class Maria:
