@@ -330,6 +330,7 @@ class ActivityVerb:
     TOTP_ENROLLMENT_DELETED = "user reset their totp enrollment"
     SUSPENDED_USER_ENROLL_ATTEMPT_FROM_THE_UI = "attempt to enroll by a suspended user from the Admin UI"
     RESOURCE_LOCKED = "user locked a resource"
+    RESOURCE_LOCK_EXTENDED = "user extended a resource lock"
     RESOURCE_UNLOCKED = "user unlocked a resource"
     RESOURCE_FORCE_UNLOCKED = "admin force-unlocked a resource"
     RESOURCE_LOCK_REJECTED = "user lock rejected for a resource"
