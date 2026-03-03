@@ -12191,10 +12191,6 @@ class DB2LUW:
 
 
 class Databricks:
-    '''
-    Databricks is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'access_token',
         'bind_interface',
