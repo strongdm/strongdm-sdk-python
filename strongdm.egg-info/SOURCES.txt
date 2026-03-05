@@ -81,6 +81,8 @@ strongdm/identity_sets_history_pb2.py
 strongdm/identity_sets_history_pb2_grpc.py
 strongdm/identity_sets_pb2.py
 strongdm/identity_sets_pb2_grpc.py
+strongdm/location_enums_pb2.py
+strongdm/location_enums_pb2_grpc.py
 strongdm/managed_secrets_pb2.py
 strongdm/managed_secrets_pb2_grpc.py
 strongdm/models.py

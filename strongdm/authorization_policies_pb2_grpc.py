@@ -16,3 +16,217 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from . import authorization_policies_pb2 as authorization__policies__pb2
+
+
+class AuthorizationPoliciesStub(object):
+    """───────────────────────────────────────────────────────────────────
+    Service
+    ───────────────────────────────────────────────────────────────────
+
+    AuthorizationPolicies provides CRUD operations for authorization policies.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Create = channel.unary_unary(
+                '/v1.AuthorizationPolicies/Create',
+                request_serializer=authorization__policies__pb2.AuthorizationPolicyCreateRequest.SerializeToString,
+                response_deserializer=authorization__policies__pb2.AuthorizationPolicyCreateResponse.FromString,
+                )
+        self.Get = channel.unary_unary(
+                '/v1.AuthorizationPolicies/Get',
+                request_serializer=authorization__policies__pb2.AuthorizationPolicyGetRequest.SerializeToString,
+                response_deserializer=authorization__policies__pb2.AuthorizationPolicyGetResponse.FromString,
+                )
+        self.Update = channel.unary_unary(
+                '/v1.AuthorizationPolicies/Update',
+                request_serializer=authorization__policies__pb2.AuthorizationPolicyUpdateRequest.SerializeToString,
+                response_deserializer=authorization__policies__pb2.AuthorizationPolicyUpdateResponse.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/v1.AuthorizationPolicies/Delete',
+                request_serializer=authorization__policies__pb2.AuthorizationPolicyDeleteRequest.SerializeToString,
+                response_deserializer=authorization__policies__pb2.AuthorizationPolicyDeleteResponse.FromString,
+                )
+        self.List = channel.unary_unary(
+                '/v1.AuthorizationPolicies/List',
+                request_serializer=authorization__policies__pb2.AuthorizationPolicyListRequest.SerializeToString,
+                response_deserializer=authorization__policies__pb2.AuthorizationPolicyListResponse.FromString,
+                )
+
+
+class AuthorizationPoliciesServicer(object):
+    """───────────────────────────────────────────────────────────────────
+    Service
+    ───────────────────────────────────────────────────────────────────
+
+    AuthorizationPolicies provides CRUD operations for authorization policies.
+    """
+
+    def Create(self, request, context):
+        """Create creates a new AuthorizationPolicy.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Get(self, request, context):
+        """Get reads one AuthorizationPolicy by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Update replaces all fields of an existing AuthorizationPolicy.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Delete removes an existing AuthorizationPolicy by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """List gets a list of AuthorizationPolicies matching a given set of criteria.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_AuthorizationPoliciesServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=authorization__policies__pb2.AuthorizationPolicyCreateRequest.FromString,
+                    response_serializer=authorization__policies__pb2.AuthorizationPolicyCreateResponse.SerializeToString,
+            ),
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=authorization__policies__pb2.AuthorizationPolicyGetRequest.FromString,
+                    response_serializer=authorization__policies__pb2.AuthorizationPolicyGetResponse.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=authorization__policies__pb2.AuthorizationPolicyUpdateRequest.FromString,
+                    response_serializer=authorization__policies__pb2.AuthorizationPolicyUpdateResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=authorization__policies__pb2.AuthorizationPolicyDeleteRequest.FromString,
+                    response_serializer=authorization__policies__pb2.AuthorizationPolicyDeleteResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=authorization__policies__pb2.AuthorizationPolicyListRequest.FromString,
+                    response_serializer=authorization__policies__pb2.AuthorizationPolicyListResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'v1.AuthorizationPolicies', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class AuthorizationPolicies(object):
+    """───────────────────────────────────────────────────────────────────
+    Service
+    ───────────────────────────────────────────────────────────────────
+
+    AuthorizationPolicies provides CRUD operations for authorization policies.
+    """
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AuthorizationPolicies/Create',
+            authorization__policies__pb2.AuthorizationPolicyCreateRequest.SerializeToString,
+            authorization__policies__pb2.AuthorizationPolicyCreateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AuthorizationPolicies/Get',
+            authorization__policies__pb2.AuthorizationPolicyGetRequest.SerializeToString,
+            authorization__policies__pb2.AuthorizationPolicyGetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AuthorizationPolicies/Update',
+            authorization__policies__pb2.AuthorizationPolicyUpdateRequest.SerializeToString,
+            authorization__policies__pb2.AuthorizationPolicyUpdateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AuthorizationPolicies/Delete',
+            authorization__policies__pb2.AuthorizationPolicyDeleteRequest.SerializeToString,
+            authorization__policies__pb2.AuthorizationPolicyDeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/v1.AuthorizationPolicies/List',
+            authorization__policies__pb2.AuthorizationPolicyListRequest.SerializeToString,
+            authorization__policies__pb2.AuthorizationPolicyListResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
