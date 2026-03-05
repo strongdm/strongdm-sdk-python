@@ -70,10 +70,6 @@ from .approval_workflows_pb2 import *
 from .approval_workflows_pb2_grpc import *
 from .approval_workflows_history_pb2 import *
 from .approval_workflows_history_pb2_grpc import *
-from .resourcetypes_pb2 import *
-from .resourcetypes_pb2_grpc import *
-from .location_enums_pb2 import *
-from .location_enums_pb2_grpc import *
 from .authorization_policies_pb2 import *
 from .authorization_policies_pb2_grpc import *
 from .control_panel_pb2 import *
@@ -144,6 +140,8 @@ from .resources_pb2 import *
 from .resources_pb2_grpc import *
 from .resources_history_pb2 import *
 from .resources_history_pb2_grpc import *
+from .resourcetypes_pb2 import *
+from .resourcetypes_pb2_grpc import *
 from .role_resources_pb2 import *
 from .role_resources_pb2_grpc import *
 from .role_resources_history_pb2 import *
@@ -6673,8 +6671,6 @@ class Resources:
     `strongdm.models.KubernetesUserImpersonation`
     `strongdm.models.Maria`
     `strongdm.models.MCP`
-    `strongdm.models.MCPGatewayNoAuth`
-    `strongdm.models.MCPGatewayPAT`
     `strongdm.models.MCPDCR`
     `strongdm.models.Memcached`
     `strongdm.models.Memsql`
