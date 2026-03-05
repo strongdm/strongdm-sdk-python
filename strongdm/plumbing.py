@@ -1598,6 +1598,7 @@ def convert_account_grant_to_porcelain(plumbing):
     if plumbing is None:
         return None
     porcelain = models.AccountGrant()
+    porcelain.access_request_id = (plumbing.access_request_id)
     porcelain.access_rule = convert_access_rule_to_porcelain(
         plumbing.access_rule)
     porcelain.account_id = (plumbing.account_id)
@@ -1613,6 +1614,7 @@ def convert_account_grant_to_plumbing(porcelain):
     plumbing = AccountGrant()
     if porcelain is None:
         return plumbing
+    plumbing.access_request_id = (porcelain.access_request_id)
     plumbing.access_rule = convert_access_rule_to_plumbing(
         porcelain.access_rule)
     plumbing.account_id = (porcelain.account_id)

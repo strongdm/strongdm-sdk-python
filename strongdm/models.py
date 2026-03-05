@@ -3052,6 +3052,7 @@ class AccountGrant:
          AccountGrants connect a resource directly to an account, giving the account the permission to connect to that resource.
     '''
     __slots__ = [
+        'access_request_id',
         'access_rule',
         'account_id',
         'id',
@@ -3062,6 +3063,7 @@ class AccountGrant:
 
     def __init__(
         self,
+        access_request_id=None,
         access_rule=None,
         account_id=None,
         id=None,
@@ -3069,6 +3071,10 @@ class AccountGrant:
         start_from=None,
         valid_until=None,
     ):
+        self.access_request_id = access_request_id if access_request_id is not None else ''
+        '''
+         The access request ID that created this AccountGrant, if any.
+        '''
         self.access_rule = access_rule if access_rule is not None else _porcelain_zero_value_access_rule(
         )
         '''
@@ -3097,6 +3103,7 @@ class AccountGrant:
 
     def __repr__(self):
         return '<sdm.AccountGrant ' + \
+            'access_request_id: ' + repr(self.access_request_id) + ' ' +\
             'access_rule: ' + repr(self.access_rule) + ' ' +\
             'account_id: ' + repr(self.account_id) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
@@ -3107,6 +3114,7 @@ class AccountGrant:
 
     def to_dict(self):
         return {
+            'access_request_id': self.access_request_id,
             'access_rule': self.access_rule,
             'account_id': self.account_id,
             'id': self.id,
@@ -3118,6 +3126,7 @@ class AccountGrant:
     @classmethod
     def from_dict(cls, d):
         return cls(
+            access_request_id=d.get('access_request_id'),
             access_rule=d.get('access_rule'),
             account_id=d.get('account_id'),
             id=d.get('id'),
