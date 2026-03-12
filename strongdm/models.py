@@ -93,9 +93,9 @@ class ResourceType(str, Enum):
     KUBERNETES_SERVICE_ACCOUNT = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT"
     KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION"
     KUBERNETES_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_USER_IMPERSONATION"
+    MCP_NO_AUTH = "RESOURCE_TYPE_MCP_NO_AUTH"
     MCP = "RESOURCE_TYPE_MCP"
     MCPDCR = "RESOURCE_TYPE_MCPDCR"
-    MCP_NO_AUTH = "RESOURCE_TYPE_MCP_NO_AUTH"
     MCPPAT = "RESOURCE_TYPE_MCPPAT"
     MTLS_MY_SQL = "RESOURCE_TYPE_MTLS_MY_SQL"
     MTLS_POSTGRES = "RESOURCE_TYPE_MTLS_POSTGRES"
@@ -1571,6 +1571,7 @@ class AWSConsole:
         'session_expiry',
         'subdomain',
         'tags',
+        'use_https',
     ]
 
     def __init__(
@@ -1592,6 +1593,7 @@ class AWSConsole:
         session_expiry=None,
         subdomain=None,
         tags=None,
+        use_https=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -1661,6 +1663,10 @@ class AWSConsole:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_https = use_https if use_https is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection.
+        '''
 
     def __repr__(self):
         return '<sdm.AWSConsole ' + \
@@ -1681,6 +1687,7 @@ class AWSConsole:
             'session_expiry: ' + repr(self.session_expiry) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_https: ' + repr(self.use_https) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1703,6 +1710,7 @@ class AWSConsole:
             'session_expiry': self.session_expiry,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_https': self.use_https,
         }
 
     @classmethod
@@ -1726,6 +1734,7 @@ class AWSConsole:
             session_expiry=d.get('session_expiry'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_https=d.get('use_https'),
         )
 
 
@@ -1749,6 +1758,7 @@ class AWSConsoleStaticKeyPair:
         'session_expiry',
         'subdomain',
         'tags',
+        'use_https',
     ]
 
     def __init__(
@@ -1771,6 +1781,7 @@ class AWSConsoleStaticKeyPair:
         session_expiry=None,
         subdomain=None,
         tags=None,
+        use_https=None,
     ):
         self.access_key = access_key if access_key is not None else ''
         '''
@@ -1844,6 +1855,10 @@ class AWSConsoleStaticKeyPair:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_https = use_https if use_https is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection
+        '''
 
     def __repr__(self):
         return '<sdm.AWSConsoleStaticKeyPair ' + \
@@ -1865,6 +1880,7 @@ class AWSConsoleStaticKeyPair:
             'session_expiry: ' + repr(self.session_expiry) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_https: ' + repr(self.use_https) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -1888,6 +1904,7 @@ class AWSConsoleStaticKeyPair:
             'session_expiry': self.session_expiry,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_https': self.use_https,
         }
 
     @classmethod
@@ -1912,6 +1929,7 @@ class AWSConsoleStaticKeyPair:
             session_expiry=d.get('session_expiry'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_https=d.get('use_https'),
         )
 
 
@@ -17173,6 +17191,7 @@ class HTTPAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_required',
         'url',
     ]
 
@@ -17194,6 +17213,7 @@ class HTTPAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_required=None,
         url=None,
     ):
         self.auth_header = auth_header if auth_header is not None else ''
@@ -17260,6 +17280,10 @@ class HTTPAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The base address of your website without the path.
@@ -17283,6 +17307,7 @@ class HTTPAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
 
@@ -17304,6 +17329,7 @@ class HTTPAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_required': self.tls_required,
             'url': self.url,
         }
 
@@ -17326,6 +17352,7 @@ class HTTPAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
             url=d.get('url'),
         )
 
@@ -17348,6 +17375,7 @@ class HTTPBasicAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_required',
         'url',
         'username',
     ]
@@ -17370,6 +17398,7 @@ class HTTPBasicAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_required=None,
         url=None,
         username=None,
     ):
@@ -17437,6 +17466,10 @@ class HTTPBasicAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The base address of your website without the path.
@@ -17464,6 +17497,7 @@ class HTTPBasicAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
@@ -17486,6 +17520,7 @@ class HTTPBasicAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_required': self.tls_required,
             'url': self.url,
             'username': self.username,
         }
@@ -17509,6 +17544,7 @@ class HTTPBasicAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
             url=d.get('url'),
             username=d.get('username'),
         )
@@ -17531,6 +17567,7 @@ class HTTPNoAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_required',
         'url',
     ]
 
@@ -17551,6 +17588,7 @@ class HTTPNoAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_required=None,
         url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -17613,6 +17651,10 @@ class HTTPNoAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_required = tls_required if tls_required is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The base address of your website without the path.
@@ -17635,6 +17677,7 @@ class HTTPNoAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
 
@@ -17655,6 +17698,7 @@ class HTTPNoAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_required': self.tls_required,
             'url': self.url,
         }
 
@@ -17676,6 +17720,7 @@ class HTTPNoAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_required=d.get('tls_required'),
             url=d.get('url'),
         )
 
@@ -20132,342 +20177,7 @@ class LogConfig:
         )
 
 
-class MCP:
-    '''
-    MCP is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'bind_interface',
-        'egress_filter',
-        'healthy',
-        'hostname',
-        'id',
-        'name',
-        'oauth_auth_endpoint',
-        'oauth_scopes',
-        'oauth_token_endpoint',
-        'password',
-        'port_override',
-        'proxy_cluster_id',
-        'secret_store_id',
-        'subdomain',
-        'tags',
-        'username',
-    ]
-
-    def __init__(
-        self,
-        bind_interface=None,
-        egress_filter=None,
-        healthy=None,
-        hostname=None,
-        id=None,
-        name=None,
-        oauth_auth_endpoint=None,
-        oauth_scopes=None,
-        oauth_token_endpoint=None,
-        password=None,
-        port_override=None,
-        proxy_cluster_id=None,
-        secret_store_id=None,
-        subdomain=None,
-        tags=None,
-        username=None,
-    ):
-        self.bind_interface = bind_interface if bind_interface is not None else ''
-        '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
-        '''
-        self.egress_filter = egress_filter if egress_filter is not None else ''
-        '''
-         A filter applied to the routing logic to pin datasource to nodes.
-        '''
-        self.healthy = healthy if healthy is not None else False
-        '''
-         True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
-        '''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the Resource.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the Resource.
-        '''
-        self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
-        '''
-         The OAuth 2.0 authorization endpoint URL.
-        '''
-        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
-        '''
-         Space-separated list of OAuth scopes to request.
-        '''
-        self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
-        '''
-         The OAuth 2.0 token endpoint URL.
-        '''
-        self.password = password if password is not None else ''
-        '''
-         OAuth App Client Secret
-        '''
-        self.port_override = port_override if port_override is not None else 0
-        '''
-         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
-        '''
-        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
-        '''
-         ID of the proxy cluster for this resource, if any.
-        '''
-        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
-        '''
-         ID of the secret store containing credentials for this resource, if any.
-        '''
-        self.subdomain = subdomain if subdomain is not None else ''
-        '''
-         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-        self.username = username if username is not None else ''
-        '''
-         OAuth App Client ID
-        '''
-
-    def __repr__(self):
-        return '<sdm.MCP ' + \
-            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
-            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
-            'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
-            'password: ' + repr(self.password) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            'username: ' + repr(self.username) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'bind_interface': self.bind_interface,
-            'egress_filter': self.egress_filter,
-            'healthy': self.healthy,
-            'hostname': self.hostname,
-            'id': self.id,
-            'name': self.name,
-            'oauth_auth_endpoint': self.oauth_auth_endpoint,
-            'oauth_scopes': self.oauth_scopes,
-            'oauth_token_endpoint': self.oauth_token_endpoint,
-            'password': self.password,
-            'port_override': self.port_override,
-            'proxy_cluster_id': self.proxy_cluster_id,
-            'secret_store_id': self.secret_store_id,
-            'subdomain': self.subdomain,
-            'tags': self.tags,
-            'username': self.username,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            bind_interface=d.get('bind_interface'),
-            egress_filter=d.get('egress_filter'),
-            healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
-            id=d.get('id'),
-            name=d.get('name'),
-            oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
-            oauth_scopes=d.get('oauth_scopes'),
-            oauth_token_endpoint=d.get('oauth_token_endpoint'),
-            password=d.get('password'),
-            port_override=d.get('port_override'),
-            proxy_cluster_id=d.get('proxy_cluster_id'),
-            secret_store_id=d.get('secret_store_id'),
-            subdomain=d.get('subdomain'),
-            tags=d.get('tags'),
-            username=d.get('username'),
-        )
-
-
-class MCPDCR:
-    '''
-    MCPDCR is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
-    __slots__ = [
-        'bind_interface',
-        'egress_filter',
-        'healthy',
-        'hostname',
-        'id',
-        'name',
-        'oauth_auth_endpoint',
-        'oauth_register_endpoint',
-        'oauth_scopes',
-        'oauth_token_endpoint',
-        'port_override',
-        'proxy_cluster_id',
-        'secret_store_id',
-        'subdomain',
-        'tags',
-    ]
-
-    def __init__(
-        self,
-        bind_interface=None,
-        egress_filter=None,
-        healthy=None,
-        hostname=None,
-        id=None,
-        name=None,
-        oauth_auth_endpoint=None,
-        oauth_register_endpoint=None,
-        oauth_scopes=None,
-        oauth_token_endpoint=None,
-        port_override=None,
-        proxy_cluster_id=None,
-        secret_store_id=None,
-        subdomain=None,
-        tags=None,
-    ):
-        self.bind_interface = bind_interface if bind_interface is not None else ''
-        '''
-         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
-        '''
-        self.egress_filter = egress_filter if egress_filter is not None else ''
-        '''
-         A filter applied to the routing logic to pin datasource to nodes.
-        '''
-        self.healthy = healthy if healthy is not None else False
-        '''
-         True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
-        '''
-        self.id = id if id is not None else ''
-        '''
-         Unique identifier of the Resource.
-        '''
-        self.name = name if name is not None else ''
-        '''
-         Unique human-readable name of the Resource.
-        '''
-        self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
-        '''
-         The OAuth 2.0 authorization endpoint URL.
-        '''
-        self.oauth_register_endpoint = oauth_register_endpoint if oauth_register_endpoint is not None else ''
-        '''
-         The OAuth 2.0 dynamic client registration endpoint URL.
-        '''
-        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
-        '''
-         Space-separated list of OAuth scopes to request.
-        '''
-        self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
-        '''
-         The OAuth 2.0 token endpoint URL.
-        '''
-        self.port_override = port_override if port_override is not None else 0
-        '''
-         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
-        '''
-        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
-        '''
-         ID of the proxy cluster for this resource, if any.
-        '''
-        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
-        '''
-         ID of the secret store containing credentials for this resource, if any.
-        '''
-        self.subdomain = subdomain if subdomain is not None else ''
-        '''
-         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
-        '''
-        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
-        '''
-         Tags is a map of key, value pairs.
-        '''
-
-    def __repr__(self):
-        return '<sdm.MCPDCR ' + \
-            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
-            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
-            'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
-            'id: ' + repr(self.id) + ' ' +\
-            'name: ' + repr(self.name) + ' ' +\
-            'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
-            'oauth_register_endpoint: ' + repr(self.oauth_register_endpoint) + ' ' +\
-            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
-            'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
-            'port_override: ' + repr(self.port_override) + ' ' +\
-            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
-            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
-            'subdomain: ' + repr(self.subdomain) + ' ' +\
-            'tags: ' + repr(self.tags) + ' ' +\
-            '>'
-
-    def to_dict(self):
-        return {
-            'bind_interface': self.bind_interface,
-            'egress_filter': self.egress_filter,
-            'healthy': self.healthy,
-            'hostname': self.hostname,
-            'id': self.id,
-            'name': self.name,
-            'oauth_auth_endpoint': self.oauth_auth_endpoint,
-            'oauth_register_endpoint': self.oauth_register_endpoint,
-            'oauth_scopes': self.oauth_scopes,
-            'oauth_token_endpoint': self.oauth_token_endpoint,
-            'port_override': self.port_override,
-            'proxy_cluster_id': self.proxy_cluster_id,
-            'secret_store_id': self.secret_store_id,
-            'subdomain': self.subdomain,
-            'tags': self.tags,
-        }
-
-    @classmethod
-    def from_dict(cls, d):
-        return cls(
-            bind_interface=d.get('bind_interface'),
-            egress_filter=d.get('egress_filter'),
-            healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
-            id=d.get('id'),
-            name=d.get('name'),
-            oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
-            oauth_register_endpoint=d.get('oauth_register_endpoint'),
-            oauth_scopes=d.get('oauth_scopes'),
-            oauth_token_endpoint=d.get('oauth_token_endpoint'),
-            port_override=d.get('port_override'),
-            proxy_cluster_id=d.get('proxy_cluster_id'),
-            secret_store_id=d.get('secret_store_id'),
-            subdomain=d.get('subdomain'),
-            tags=d.get('tags'),
-        )
-
-
 class MCPGatewayNoAuth:
-    '''
-    MCPGatewayNoAuth is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -20588,11 +20298,334 @@ class MCPGatewayNoAuth:
         )
 
 
-class MCPGatewayPAT:
+class MCPGatewayOAuth:
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'oauth_auth_endpoint',
+        'oauth_scopes',
+        'oauth_token_endpoint',
+        'password',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'username',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        oauth_auth_endpoint=None,
+        oauth_scopes=None,
+        oauth_token_endpoint=None,
+        password=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        username=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
+        '''
+         The OAuth 2.0 authorization endpoint URL.
+        '''
+        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
+        '''
+         Space-separated list of OAuth scopes to request.
+        '''
+        self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
+        '''
+         The OAuth 2.0 token endpoint URL.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         OAuth App Client Secret
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.username = username if username is not None else ''
+        '''
+         OAuth App Client ID
+        '''
+
+    def __repr__(self):
+        return '<sdm.MCPGatewayOAuth ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
+            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
+            'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'username: ' + repr(self.username) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'oauth_auth_endpoint': self.oauth_auth_endpoint,
+            'oauth_scopes': self.oauth_scopes,
+            'oauth_token_endpoint': self.oauth_token_endpoint,
+            'password': self.password,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'username': self.username,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
+            oauth_scopes=d.get('oauth_scopes'),
+            oauth_token_endpoint=d.get('oauth_token_endpoint'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            username=d.get('username'),
+        )
+
+
+class MCPGatewayOAuthDCR:
     '''
-    MCPGatewayPAT is currently unstable, and its API may change, or it may be removed,
+    MCPGatewayOAuthDCR is currently unstable, and its API may change, or it may be removed,
     without a major version bump.
     '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'hostname',
+        'id',
+        'name',
+        'oauth_auth_endpoint',
+        'oauth_register_endpoint',
+        'oauth_scopes',
+        'oauth_token_endpoint',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        hostname=None,
+        id=None,
+        name=None,
+        oauth_auth_endpoint=None,
+        oauth_register_endpoint=None,
+        oauth_scopes=None,
+        oauth_token_endpoint=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.hostname = hostname if hostname is not None else ''
+        '''
+         The host to dial to initiate a connection from the egress node to this resource.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.oauth_auth_endpoint = oauth_auth_endpoint if oauth_auth_endpoint is not None else ''
+        '''
+         The OAuth 2.0 authorization endpoint URL.
+        '''
+        self.oauth_register_endpoint = oauth_register_endpoint if oauth_register_endpoint is not None else ''
+        '''
+         The OAuth 2.0 dynamic client registration endpoint URL.
+        '''
+        self.oauth_scopes = oauth_scopes if oauth_scopes is not None else ''
+        '''
+         Space-separated list of OAuth scopes to request.
+        '''
+        self.oauth_token_endpoint = oauth_token_endpoint if oauth_token_endpoint is not None else ''
+        '''
+         The OAuth 2.0 token endpoint URL.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.MCPGatewayOAuthDCR ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'hostname: ' + repr(self.hostname) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
+            'oauth_register_endpoint: ' + repr(self.oauth_register_endpoint) + ' ' +\
+            'oauth_scopes: ' + repr(self.oauth_scopes) + ' ' +\
+            'oauth_token_endpoint: ' + repr(self.oauth_token_endpoint) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'hostname': self.hostname,
+            'id': self.id,
+            'name': self.name,
+            'oauth_auth_endpoint': self.oauth_auth_endpoint,
+            'oauth_register_endpoint': self.oauth_register_endpoint,
+            'oauth_scopes': self.oauth_scopes,
+            'oauth_token_endpoint': self.oauth_token_endpoint,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            hostname=d.get('hostname'),
+            id=d.get('id'),
+            name=d.get('name'),
+            oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
+            oauth_register_endpoint=d.get('oauth_register_endpoint'),
+            oauth_scopes=d.get('oauth_scopes'),
+            oauth_token_endpoint=d.get('oauth_token_endpoint'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
+class MCPGatewayPAT:
     __slots__ = [
         'bind_interface',
         'egress_filter',
@@ -33921,6 +33954,7 @@ class Snowsight:
         'secret_store_id',
         'subdomain',
         'tags',
+        'use_https',
     ]
 
     def __init__(
@@ -33938,6 +33972,7 @@ class Snowsight:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        use_https=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -33991,6 +34026,10 @@ class Snowsight:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.use_https = use_https if use_https is not None else False
+        '''
+         This option enforces HTTPS on the client, not resource connection.
+        '''
 
     def __repr__(self):
         return '<sdm.Snowsight ' + \
@@ -34007,6 +34046,7 @@ class Snowsight:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'use_https: ' + repr(self.use_https) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -34024,6 +34064,7 @@ class Snowsight:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'use_https': self.use_https,
         }
 
     @classmethod
@@ -34042,6 +34083,7 @@ class Snowsight:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            use_https=d.get('use_https'),
         )
 
 

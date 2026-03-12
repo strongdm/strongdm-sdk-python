@@ -6672,10 +6672,10 @@ class Resources:
     `strongdm.models.KubernetesServiceAccountUserImpersonation`
     `strongdm.models.KubernetesUserImpersonation`
     `strongdm.models.Maria`
-    `strongdm.models.MCP`
     `strongdm.models.MCPGatewayNoAuth`
+    `strongdm.models.MCPGatewayOAuth`
+    `strongdm.models.MCPGatewayOAuthDCR`
     `strongdm.models.MCPGatewayPAT`
-    `strongdm.models.MCPDCR`
     `strongdm.models.Memcached`
     `strongdm.models.Memsql`
     `strongdm.models.MongoHost`
