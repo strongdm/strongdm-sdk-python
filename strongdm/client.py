@@ -40,7 +40,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/16.20.0'
+USER_AGENT = 'strongdm-sdk-python/16.21.0'
 
 method_regexp = re.compile(r'\W+')
 
@@ -563,6 +563,30 @@ class Client:
 
         See `strongdm.svc.Replays`.
         '''
+        self.requestable_account_entitlements = svc.RequestableAccountEntitlements(
+            channel, self)
+        '''
+         RequestableAccountEntitlements enumerates the resources that an account is permitted to request access to.
+         The RequestableAccountEntitlements service is read-only.
+
+        See `strongdm.svc.RequestableAccountEntitlements`.
+        '''
+        self.requestable_resource_entitlements = svc.RequestableResourceEntitlements(
+            channel, self)
+        '''
+         RequestableResourceEntitlements enumerates the accounts that are permitted to request access to a given resource.
+         The RequestableResourceEntitlements service is read-only.
+
+        See `strongdm.svc.RequestableResourceEntitlements`.
+        '''
+        self.requestable_role_entitlements = svc.RequestableRoleEntitlements(
+            channel, self)
+        '''
+         RequestableRoleEntitlements enumerates the resources that a role permits its members to request access to.
+         The RequestableRoleEntitlements service is read-only.
+
+        See `strongdm.svc.RequestableRoleEntitlements`.
+        '''
         self.resources = svc.Resources(channel, self)
         '''
          Resources are databases, servers, clusters, websites, or clouds that strongDM
@@ -783,6 +807,12 @@ class Client:
         client.remote_identities = svc.RemoteIdentities(client.channel, client)
         client.remote_identity_groups = svc.RemoteIdentityGroups(
             client.channel, client)
+        client.requestable_account_entitlements = svc.RequestableAccountEntitlements(
+            client.channel, client)
+        client.requestable_resource_entitlements = svc.RequestableResourceEntitlements(
+            client.channel, client)
+        client.requestable_role_entitlements = svc.RequestableRoleEntitlements(
+            client.channel, client)
         client.resources = svc.Resources(client.channel, client)
         client.role_resources = svc.RoleResources(client.channel, client)
         client.secret_stores = svc.SecretStores(client.channel, client)
@@ -977,6 +1007,30 @@ class SnapshotClient:
          An Account's relationship to a RemoteIdentityGroup is defined via RemoteIdentity objects.
 
         See `strongdm.svc.SnapshotRemoteIdentityGroups`.
+        '''
+        self.requestable_account_entitlements = svc.SnapshotRequestableAccountEntitlements(
+            client.requestable_account_entitlements)
+        '''
+         RequestableAccountEntitlements enumerates the resources that an account is permitted to request access to.
+         The RequestableAccountEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotRequestableAccountEntitlements`.
+        '''
+        self.requestable_resource_entitlements = svc.SnapshotRequestableResourceEntitlements(
+            client.requestable_resource_entitlements)
+        '''
+         RequestableResourceEntitlements enumerates the accounts that are permitted to request access to a given resource.
+         The RequestableResourceEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotRequestableResourceEntitlements`.
+        '''
+        self.requestable_role_entitlements = svc.SnapshotRequestableRoleEntitlements(
+            client.requestable_role_entitlements)
+        '''
+         RequestableRoleEntitlements enumerates the resources that a role permits its members to request access to.
+         The RequestableRoleEntitlements service is read-only.
+
+        See `strongdm.svc.SnapshotRequestableRoleEntitlements`.
         '''
         self.resources = svc.SnapshotResources(client.resources)
         '''

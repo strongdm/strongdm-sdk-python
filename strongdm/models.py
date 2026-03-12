@@ -30318,6 +30318,67 @@ class ReplayChunkEvent:
         )
 
 
+class RequestableAccountEntitlement:
+    '''
+         RequestableAccountEntitlement represents an individual resource that an Account is permitted to request access to.
+    '''
+    __slots__ = [
+        'group_id',
+        'mapped_identities',
+        'origin_id',
+        'resource_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        mapped_identities=None,
+        origin_id=None,
+        resource_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.origin_id = origin_id if origin_id is not None else ''
+        '''
+         The unique identifier of the origin of this entitlement (e.g., an Access Workflow ID).
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which access can be requested.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RequestableAccountEntitlement ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'origin_id: ' + repr(self.origin_id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'mapped_identities': self.mapped_identities,
+            'origin_id': self.origin_id,
+            'resource_id': self.resource_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            mapped_identities=d.get('mapped_identities'),
+            origin_id=d.get('origin_id'),
+            resource_id=d.get('resource_id'),
+        )
+
+
 class RequestableResource:
     '''
          RequestableResource is a resource that can be requested via an AccessRequestConfig
@@ -30403,6 +30464,128 @@ class RequestableResource:
             name=d.get('name'),
             tags=d.get('tags'),
             type=d.get('type'),
+        )
+
+
+class RequestableResourceEntitlement:
+    '''
+         RequestableResourceEntitlement represents an individual account that is permitted to request access to a Resource.
+    '''
+    __slots__ = [
+        'account_id',
+        'group_id',
+        'mapped_identities',
+        'origin_id',
+    ]
+
+    def __init__(
+        self,
+        account_id=None,
+        group_id=None,
+        mapped_identities=None,
+        origin_id=None,
+    ):
+        self.account_id = account_id if account_id is not None else ''
+        '''
+         The unique identifier of the Account that can request access to this resource.
+        '''
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.origin_id = origin_id if origin_id is not None else ''
+        '''
+         The unique identifier of the origin of this entitlement (e.g., an Access Workflow ID).
+        '''
+
+    def __repr__(self):
+        return '<sdm.RequestableResourceEntitlement ' + \
+            'account_id: ' + repr(self.account_id) + ' ' +\
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'origin_id: ' + repr(self.origin_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'account_id': self.account_id,
+            'group_id': self.group_id,
+            'mapped_identities': self.mapped_identities,
+            'origin_id': self.origin_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            account_id=d.get('account_id'),
+            group_id=d.get('group_id'),
+            mapped_identities=d.get('mapped_identities'),
+            origin_id=d.get('origin_id'),
+        )
+
+
+class RequestableRoleEntitlement:
+    '''
+         RequestableRoleEntitlement represents an individual resource that a Role permits its members to request access to.
+    '''
+    __slots__ = [
+        'group_id',
+        'mapped_identities',
+        'origin_id',
+        'resource_id',
+    ]
+
+    def __init__(
+        self,
+        group_id=None,
+        mapped_identities=None,
+        origin_id=None,
+        resource_id=None,
+    ):
+        self.group_id = group_id if group_id is not None else ''
+        '''
+         The unique identifier of the group associated with this entitlement, if any.
+        '''
+        self.mapped_identities = mapped_identities if mapped_identities is not None else None
+        '''
+         The mapped identity privileges for this entitlement, such as Kubernetes group memberships.
+        '''
+        self.origin_id = origin_id if origin_id is not None else ''
+        '''
+         The unique identifier of the origin of this entitlement (e.g., an Access Workflow ID).
+        '''
+        self.resource_id = resource_id if resource_id is not None else ''
+        '''
+         The unique identifier of the Resource to which access can be requested through this role.
+        '''
+
+    def __repr__(self):
+        return '<sdm.RequestableRoleEntitlement ' + \
+            'group_id: ' + repr(self.group_id) + ' ' +\
+            'mapped_identities: ' + repr(self.mapped_identities) + ' ' +\
+            'origin_id: ' + repr(self.origin_id) + ' ' +\
+            'resource_id: ' + repr(self.resource_id) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'group_id': self.group_id,
+            'mapped_identities': self.mapped_identities,
+            'origin_id': self.origin_id,
+            'resource_id': self.resource_id,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            group_id=d.get('group_id'),
+            mapped_identities=d.get('mapped_identities'),
+            origin_id=d.get('origin_id'),
+            resource_id=d.get('resource_id'),
         )
 
 

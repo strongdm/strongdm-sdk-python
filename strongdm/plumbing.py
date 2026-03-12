@@ -85,6 +85,9 @@ from .remote_identities_history_pb2 import *
 from .remote_identity_groups_pb2 import *
 from .remote_identity_groups_history_pb2 import *
 from .replays_pb2 import *
+from .requestable_account_entitlements_pb2 import *
+from .requestable_resource_entitlements_pb2 import *
+from .requestable_role_entitlements_pb2 import *
 from .resources_pb2 import *
 from .resources_history_pb2 import *
 from .role_resources_pb2 import *
@@ -14926,6 +14929,44 @@ def convert_repeated_replay_chunk_event_to_porcelain(plumbings):
     ]
 
 
+def convert_requestable_account_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RequestableAccountEntitlement()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.origin_id = (plumbing.origin_id)
+    porcelain.resource_id = (plumbing.resource_id)
+    return porcelain
+
+
+def convert_requestable_account_entitlement_to_plumbing(porcelain):
+    plumbing = RequestableAccountEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.origin_id = (porcelain.origin_id)
+    plumbing.resource_id = (porcelain.resource_id)
+    return plumbing
+
+
+def convert_repeated_requestable_account_entitlement_to_plumbing(porcelains):
+    return [
+        convert_requestable_account_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_requestable_account_entitlement_to_porcelain(plumbings):
+    return [
+        convert_requestable_account_entitlement_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_requestable_resource_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -14964,6 +15005,82 @@ def convert_repeated_requestable_resource_to_plumbing(porcelains):
 def convert_repeated_requestable_resource_to_porcelain(plumbings):
     return [
         convert_requestable_resource_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_requestable_resource_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RequestableResourceEntitlement()
+    porcelain.account_id = (plumbing.account_id)
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.origin_id = (plumbing.origin_id)
+    return porcelain
+
+
+def convert_requestable_resource_entitlement_to_plumbing(porcelain):
+    plumbing = RequestableResourceEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.account_id = (porcelain.account_id)
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.origin_id = (porcelain.origin_id)
+    return plumbing
+
+
+def convert_repeated_requestable_resource_entitlement_to_plumbing(porcelains):
+    return [
+        convert_requestable_resource_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_requestable_resource_entitlement_to_porcelain(plumbings):
+    return [
+        convert_requestable_resource_entitlement_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_requestable_role_entitlement_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.RequestableRoleEntitlement()
+    porcelain.group_id = (plumbing.group_id)
+    porcelain.mapped_identities = convert_mapped_identities_to_porcelain(
+        plumbing.mapped_identities)
+    porcelain.origin_id = (plumbing.origin_id)
+    porcelain.resource_id = (plumbing.resource_id)
+    return porcelain
+
+
+def convert_requestable_role_entitlement_to_plumbing(porcelain):
+    plumbing = RequestableRoleEntitlement()
+    if porcelain is None:
+        return plumbing
+    plumbing.group_id = (porcelain.group_id)
+    plumbing.mapped_identities.CopyFrom(
+        convert_mapped_identities_to_plumbing(porcelain.mapped_identities))
+    plumbing.origin_id = (porcelain.origin_id)
+    plumbing.resource_id = (porcelain.resource_id)
+    return plumbing
+
+
+def convert_repeated_requestable_role_entitlement_to_plumbing(porcelains):
+    return [
+        convert_requestable_role_entitlement_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_requestable_role_entitlement_to_porcelain(plumbings):
+    return [
+        convert_requestable_role_entitlement_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 

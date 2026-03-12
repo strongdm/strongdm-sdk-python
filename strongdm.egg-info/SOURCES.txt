@@ -121,6 +121,12 @@ strongdm/remote_identity_groups_pb2.py
 strongdm/remote_identity_groups_pb2_grpc.py
 strongdm/replays_pb2.py
 strongdm/replays_pb2_grpc.py
+strongdm/requestable_account_entitlements_pb2.py
+strongdm/requestable_account_entitlements_pb2_grpc.py
+strongdm/requestable_resource_entitlements_pb2.py
+strongdm/requestable_resource_entitlements_pb2_grpc.py
+strongdm/requestable_role_entitlements_pb2.py
+strongdm/requestable_role_entitlements_pb2_grpc.py
 strongdm/resources_history_pb2.py
 strongdm/resources_history_pb2_grpc.py
 strongdm/resources_pb2.py
