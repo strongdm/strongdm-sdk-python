@@ -10368,6 +10368,7 @@ def convert_managed_secret_to_porcelain(plumbing):
     porcelain.id = (plumbing.id)
     porcelain.last_rotated_at = convert_timestamp_to_porcelain(
         plumbing.last_rotated_at)
+    porcelain.lock_required = (plumbing.lock_required)
     porcelain.name = (plumbing.name)
     porcelain.policy = convert_managed_secret_policy_to_porcelain(
         plumbing.policy)
@@ -10388,6 +10389,7 @@ def convert_managed_secret_to_plumbing(porcelain):
     plumbing.id = (porcelain.id)
     plumbing.last_rotated_at.CopyFrom(
         convert_timestamp_to_plumbing(porcelain.last_rotated_at))
+    plumbing.lock_required = (porcelain.lock_required)
     plumbing.name = (porcelain.name)
     plumbing.policy.CopyFrom(
         convert_managed_secret_policy_to_plumbing(porcelain.policy))

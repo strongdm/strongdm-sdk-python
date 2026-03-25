@@ -21179,6 +21179,7 @@ class ManagedSecret:
         'expires_at',
         'id',
         'last_rotated_at',
+        'lock_required',
         'name',
         'policy',
         'secret_engine_id',
@@ -21193,6 +21194,7 @@ class ManagedSecret:
         expires_at=None,
         id=None,
         last_rotated_at=None,
+        lock_required=None,
         name=None,
         policy=None,
         secret_engine_id=None,
@@ -21215,6 +21217,10 @@ class ManagedSecret:
         self.last_rotated_at = last_rotated_at if last_rotated_at is not None else None
         '''
          Timestamp of when secret was last rotated
+        '''
+        self.lock_required = lock_required if lock_required is not None else False
+        '''
+         Whether the secret requires a lock to access
         '''
         self.name = name if name is not None else ''
         '''
@@ -21247,6 +21253,7 @@ class ManagedSecret:
             'expires_at: ' + repr(self.expires_at) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'last_rotated_at: ' + repr(self.last_rotated_at) + ' ' +\
+            'lock_required: ' + repr(self.lock_required) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'policy: ' + repr(self.policy) + ' ' +\
             'secret_engine_id: ' + repr(self.secret_engine_id) + ' ' +\
@@ -21261,6 +21268,7 @@ class ManagedSecret:
             'expires_at': self.expires_at,
             'id': self.id,
             'last_rotated_at': self.last_rotated_at,
+            'lock_required': self.lock_required,
             'name': self.name,
             'policy': self.policy,
             'secret_engine_id': self.secret_engine_id,
@@ -21276,6 +21284,7 @@ class ManagedSecret:
             expires_at=d.get('expires_at'),
             id=d.get('id'),
             last_rotated_at=d.get('last_rotated_at'),
+            lock_required=d.get('lock_required'),
             name=d.get('name'),
             policy=d.get('policy'),
             secret_engine_id=d.get('secret_engine_id'),
