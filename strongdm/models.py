@@ -20190,6 +20190,7 @@ class MCPGatewayNoAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'url',
     ]
 
     def __init__(
@@ -20205,6 +20206,7 @@ class MCPGatewayNoAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -20250,6 +20252,10 @@ class MCPGatewayNoAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.url = url if url is not None else ''
+        '''
+         The URL to dial to initiate a connection from the egress node to this resource.
+        '''
 
     def __repr__(self):
         return '<sdm.MCPGatewayNoAuth ' + \
@@ -20264,6 +20270,7 @@ class MCPGatewayNoAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -20279,6 +20286,7 @@ class MCPGatewayNoAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'url': self.url,
         }
 
     @classmethod
@@ -20295,6 +20303,7 @@ class MCPGatewayNoAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            url=d.get('url'),
         )
 
 
@@ -20315,6 +20324,7 @@ class MCPGatewayOAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'url',
         'username',
     ]
 
@@ -20335,6 +20345,7 @@ class MCPGatewayOAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        url=None,
         username=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -20397,6 +20408,10 @@ class MCPGatewayOAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.url = url if url is not None else ''
+        '''
+         The URL to dial to initiate a connection from the egress node to this resource.
+        '''
         self.username = username if username is not None else ''
         '''
          OAuth App Client ID
@@ -20419,6 +20434,7 @@ class MCPGatewayOAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
 
@@ -20439,6 +20455,7 @@ class MCPGatewayOAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'url': self.url,
             'username': self.username,
         }
 
@@ -20460,6 +20477,7 @@ class MCPGatewayOAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            url=d.get('url'),
             username=d.get('username'),
         )
 
@@ -20485,6 +20503,7 @@ class MCPGatewayOAuthDCR:
         'secret_store_id',
         'subdomain',
         'tags',
+        'url',
     ]
 
     def __init__(
@@ -20504,6 +20523,7 @@ class MCPGatewayOAuthDCR:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -20565,6 +20585,10 @@ class MCPGatewayOAuthDCR:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.url = url if url is not None else ''
+        '''
+         The URL to dial to initiate a connection from the egress node to this resource.
+        '''
 
     def __repr__(self):
         return '<sdm.MCPGatewayOAuthDCR ' + \
@@ -20583,6 +20607,7 @@ class MCPGatewayOAuthDCR:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -20602,6 +20627,7 @@ class MCPGatewayOAuthDCR:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'url': self.url,
         }
 
     @classmethod
@@ -20622,6 +20648,7 @@ class MCPGatewayOAuthDCR:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            url=d.get('url'),
         )
 
 
@@ -20639,6 +20666,7 @@ class MCPGatewayPAT:
         'secret_store_id',
         'subdomain',
         'tags',
+        'url',
     ]
 
     def __init__(
@@ -20655,6 +20683,7 @@ class MCPGatewayPAT:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
         '''
@@ -20704,6 +20733,10 @@ class MCPGatewayPAT:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.url = url if url is not None else ''
+        '''
+         The URL to dial to initiate a connection from the egress node to this resource.
+        '''
 
     def __repr__(self):
         return '<sdm.MCPGatewayPAT ' + \
@@ -20719,6 +20752,7 @@ class MCPGatewayPAT:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
             '>'
 
     def to_dict(self):
@@ -20735,6 +20769,7 @@ class MCPGatewayPAT:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'url': self.url,
         }
 
     @classmethod
@@ -20752,6 +20787,7 @@ class MCPGatewayPAT:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            url=d.get('url'),
         )
 
 

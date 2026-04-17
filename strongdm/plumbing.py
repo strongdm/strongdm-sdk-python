@@ -10017,6 +10017,7 @@ def convert_mcp_gateway_no_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
     return porcelain
 
 
@@ -10035,6 +10036,7 @@ def convert_mcp_gateway_no_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
     return plumbing
 
 
@@ -10071,6 +10073,7 @@ def convert_mcp_gateway_o_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
     porcelain.username = (plumbing.username)
     return porcelain
 
@@ -10094,6 +10097,7 @@ def convert_mcp_gateway_o_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
     plumbing.username = (porcelain.username)
     return plumbing
 
@@ -10131,6 +10135,7 @@ def convert_mcp_gateway_o_auth_dcr_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
     return porcelain
 
 
@@ -10153,6 +10158,7 @@ def convert_mcp_gateway_o_auth_dcr_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
     return plumbing
 
 
@@ -10186,6 +10192,7 @@ def convert_mcp_gateway_pat_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
     return porcelain
 
 
@@ -10205,6 +10212,7 @@ def convert_mcp_gateway_pat_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
     return plumbing
 
 

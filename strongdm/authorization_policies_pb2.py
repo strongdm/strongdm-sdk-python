@@ -34,7 +34,7 @@ from . import resourcetypes_pb2 as resourcetypes__pb2
 from . import location_enums_pb2 as location__enums__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x61uthorization_policies.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\x1a\x13resourcetypes.proto\x1a\x14location_enums.proto\"\xa9\x01\n AuthorizationPolicyCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe2\x01\n!AuthorizationPolicyCreateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"x\n\x1d\x41uthorizationPolicyGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe8\x01\n\x1e\x41uthorizationPolicyGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xb5\x01\n AuthorizationPolicyUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x41\n\x14\x61uthorization_policy\x18\x03 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe2\x01\n!AuthorizationPolicyUpdateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"~\n AuthorizationPolicyDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xab\x01\n!AuthorizationPolicyDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"~\n\x1e\x41uthorizationPolicyListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe0\x01\n\x1f\x41uthorizationPolicyListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x43\n\x16\x61uthorization_policies\x18\x02 \x03(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xf9\x01\n\x13\x41uthorizationPolicy\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x36\n\x05items\x18\x04 \x03(\x0b\x32\x1b.v1.AuthorizationPolicyItemB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x05state\x18\x05 \x01(\x0e\x32\x1c.v1.AuthorizationPolicyStateB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x92\t\n\x17\x41uthorizationPolicyItem\x12@\n\rprincipal_all\x18\x01 \x01(\x0b\x32\'.v1.AuthorizationPolicyItemPrincipalAllH\x00\x12\x45\n\x10principal_by_ids\x18\x02 \x01(\x0b\x32).v1.AuthorizationPolicyItemPrincipalByIdsH\x00\x12@\n\rresources_all\x18\x03 \x01(\x0b\x32\'.v1.AuthorizationPolicyItemResourcesAllH\x00\x12\x43\n\x0fresource_by_ids\x18\x04 \x01(\x0b\x32(.v1.AuthorizationPolicyItemResourceByIdsH\x00\x12U\n\x19resource_by_type_and_tags\x18\x05 \x01(\x0b\x32\x30.v1.AuthorizationPolicyItemResourceByTypeAndTagsH\x00\x12w\n+resource_by_type_tags_and_kubernetes_groups\x18\x06 \x01(\x0b\x32@.v1.AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroupsH\x00\x12[\n\x1cresource_by_okta_with_groups\x18\x07 \x01(\x0b\x32\x33.v1.AuthorizationPolicyItemResourceByOktaWithGroupsH\x00\x12]\n\x1dresource_by_entra_with_groups\x18\x08 \x01(\x0b\x32\x34.v1.AuthorizationPolicyItemResourceByEntraWithGroupsH\x00\x12@\n\rcondition_mfa\x18\t \x01(\x0b\x32\'.v1.AuthorizationPolicyItemConditionMFAH\x00\x12Q\n\x16\x63ondition_device_trust\x18\n \x01(\x0b\x32/.v1.AuthorizationPolicyItemConditionDeviceTrustH\x00\x12J\n\x12\x63ondition_location\x18\x0b \x01(\x0b\x32,.v1.AuthorizationPolicyItemConditionLocationH\x00\x12>\n\x0c\x63ondition_ip\x18\x0c \x01(\x0b\x32&.v1.AuthorizationPolicyItemConditionIPH\x00\x12\x42\n\x0e\x63ondition_time\x18\r \x01(\x0b\x32(.v1.AuthorizationPolicyItemConditionTimeH\x00\x12S\n\x17\x63ondition_approval_flow\x18\x0e \x01(\x0b\x32\x30.v1.AuthorizationPolicyItemConditionApprovalFlowH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04kind\"@\n#AuthorizationPolicyItemPrincipalAll:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"[\n%AuthorizationPolicyItemPrincipalByIds\x12\x17\n\x03ids\x18\x01 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"@\n#AuthorizationPolicyItemResourcesAll:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"Z\n$AuthorizationPolicyItemResourceByIds\x12\x17\n\x03ids\x18\x01 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x98\x01\n,AuthorizationPolicyItemResourceByTypeAndTags\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x10.v1.ResourceTypeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04tags\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xcf\x01\n<AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x10.v1.ResourceTypeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04tags\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11kubernetes_groups\x18\x03 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x89\x01\n/AuthorizationPolicyItemResourceByOktaWithGroups\x12\x1f\n\x0bresource_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06groups\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x8a\x01\n0AuthorizationPolicyItemResourceByEntraWithGroups\x12\x1f\n\x0bresource_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06groups\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x87\x01\n#AuthorizationPolicyItemConditionMFA\x12\x1a\n\x06reason\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x61\x63he_timeout_seconds\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd6\x01\n+AuthorizationPolicyItemConditionDeviceTrust\x12H\n\x08operator\x18\x01 \x01(\x0e\x32*.v1.AuthorizationPolicyDeviceTrustOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x42\n\x05level\x18\x02 \x01(\x0e\x32\'.v1.AuthorizationPolicyDeviceTrustLevelB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x85\x01\n(AuthorizationPolicyItemConditionLocation\x12>\n\x05rules\x18\x01 \x03(\x0b\x32#.v1.AuthorizationPolicyLocationRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xf5\x01\n\x1f\x41uthorizationPolicyLocationRule\x12\x39\n\tcontinent\x18\x01 \x01(\x0b\x32$.v1.AuthorizationPolicyContinentRuleH\x00\x12\x35\n\x07\x63ountry\x18\x02 \x01(\x0b\x32\".v1.AuthorizationPolicyCountryRuleH\x00\x12=\n\x0bsubdivision\x18\x03 \x01(\x0b\x32&.v1.AuthorizationPolicySubdivisionRuleH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04rule\"\xa8\x01\n AuthorizationPolicyContinentRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\ncontinents\x18\x02 \x03(\x0e\x32\x15.v1.LocationContinentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xa3\x01\n\x1e\x41uthorizationPolicyCountryRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x32\n\tcountries\x18\x02 \x03(\x0e\x32\x13.v1.LocationCountryB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x95\x01\n\"AuthorizationPolicySubdivisionRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0csubdivisions\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"y\n\"AuthorizationPolicyItemConditionIP\x12\x38\n\x05rules\x18\x01 \x03(\x0b\x32\x1d.v1.AuthorizationPolicyIPRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd0\x01\n\x19\x41uthorizationPolicyIPRule\x12?\n\x08operator\x18\x01 \x01(\x0e\x32!.v1.AuthorizationPolicyIPOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x07network\x18\x02 \x01(\x0e\x32 .v1.AuthorizationPolicyIPNetworkB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04\x63idr\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"}\n$AuthorizationPolicyItemConditionTime\x12:\n\x05rules\x18\x01 \x03(\x0b\x32\x1f.v1.AuthorizationPolicyTimeRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xee\x03\n\x1b\x41uthorizationPolicyTimeRule\x12?\n\x0b\x64\x61y_of_week\x18\x01 \x01(\x0b\x32(.v1.AuthorizationPolicyTimeRuleDayOfWeekH\x00\x12\x45\n\x0btime_of_day\x18\x02 \x01(\x0b\x32..v1.LegacyAuthorizationPolicyTimeRuleTimeOfDayH\x00\x12\x35\n\x05month\x18\x03 \x01(\x0b\x32$.v1.AuthorizationPolicyTimeRuleMonthH\x00\x12\x43\n\rdays_of_month\x18\x04 \x01(\x0b\x32*.v1.AuthorizationPolicyTimeRuleDaysOfMonthH\x00\x12Y\n\x16time_of_day_outside_of\x18\x05 \x01(\x0b\x32\x37.v1.LegacyAuthorizationPolicyTimeRuleTimeOfDayOutsideOfH\x00\x12M\n\x19time_of_day_with_operator\x18\x06 \x01(\x0b\x32(.v1.AuthorizationPolicyTimeRuleTimeOfDayH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04rule\"\xc0\x01\n$AuthorizationPolicyTimeRuleDayOfWeek\x12\x41\n\x08operator\x18\x01 \x01(\x0e\x32#.v1.AuthorizationPolicyTimeOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\x04\x64\x61ys\x18\x02 \x03(\x0e\x32 .v1.AuthorizationPolicyDayOfWeekB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xc9\x01\n*LegacyAuthorizationPolicyTimeRuleTimeOfDay\x12\x1e\n\nstart_hour\x18\x01 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd2\x01\n3LegacyAuthorizationPolicyTimeRuleTimeOfDayOutsideOf\x12\x1e\n\nstart_hour\x18\x01 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x86\x02\n$AuthorizationPolicyTimeRuleTimeOfDay\x12\x41\n\x08operator\x18\x01 \x01(\x0e\x32#.v1.AuthorizationPolicyTimeOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nstart_hour\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"Y\n AuthorizationPolicyTimeRuleMonth\x12\x1a\n\x06months\x18\x01 \x03(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"]\n&AuthorizationPolicyTimeRuleDaysOfMonth\x12\x18\n\x04\x64\x61ys\x18\x01 \x03(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"o\n,AuthorizationPolicyItemConditionApprovalFlow\x12$\n\x10\x61pproval_flow_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private*\xac\x01\n\x18\x41uthorizationPolicyState\x12*\n&AUTHORIZATION_POLICY_STATE_UNSPECIFIED\x10\x00\x12%\n!AUTHORIZATION_POLICY_STATE_ACTIVE\x10\x01\x12\'\n#AUTHORIZATION_POLICY_STATE_INACTIVE\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xe4\x01\n&AuthorizationPolicyDeviceTrustOperator\x12:\n6AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_UNSPECIFIED\x10\x00\x12\x31\n-AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_IS\x10\x01\x12\x35\n1AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_IS_NOT\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xc0\x02\n#AuthorizationPolicyDeviceTrustLevel\x12\x37\n3AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_UNSPECIFIED\x10\x00\x12\x30\n,AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_HIGH\x10\x01\x12/\n+AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_LOW\x10\x02\x12\x32\n.AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_EXEMPT\x10\x03\x12\x33\n/AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_UNKNOWN\x10\x04\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\x83\x01\n\x10LocationOperator\x12!\n\x1dLOCATION_OPERATOR_UNSPECIFIED\x10\x00\x12\x18\n\x14LOCATION_OPERATOR_IN\x10\x01\x12\x1c\n\x18LOCATION_OPERATOR_NOT_IN\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xea\x01\n\x1d\x41uthorizationPolicyIPOperator\x12\x30\n,AUTHORIZATION_POLICY_IP_OPERATOR_UNSPECIFIED\x10\x00\x12\'\n#AUTHORIZATION_POLICY_IP_OPERATOR_IN\x10\x01\x12+\n\'AUTHORIZATION_POLICY_IP_OPERATOR_NOT_IN\x10\x02\x12+\n\'AUTHORIZATION_POLICY_IP_OPERATOR_EQUALS\x10\x03\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xf8\x01\n\x1c\x41uthorizationPolicyIPNetwork\x12/\n+AUTHORIZATION_POLICY_IP_NETWORK_UNSPECIFIED\x10\x00\x12-\n)AUTHORIZATION_POLICY_IP_NETWORK_CLIENT_IP\x10\x01\x12.\n*AUTHORIZATION_POLICY_IP_NETWORK_REQUEST_IP\x10\x02\x12\x32\n.AUTHORIZATION_POLICY_IP_NETWORK_DESTINATION_IP\x10\x03\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xc5\x01\n\x1f\x41uthorizationPolicyTimeOperator\x12\x32\n.AUTHORIZATION_POLICY_TIME_OPERATOR_UNSPECIFIED\x10\x00\x12)\n%AUTHORIZATION_POLICY_TIME_OPERATOR_IS\x10\x01\x12-\n)AUTHORIZATION_POLICY_TIME_OPERATOR_IS_NOT\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xa9\x03\n\x1c\x41uthorizationPolicyDayOfWeek\x12\x30\n,AUTHORIZATION_POLICY_DAY_OF_WEEK_UNSPECIFIED\x10\x00\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_SUNDAY\x10\x01\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_MONDAY\x10\x02\x12,\n(AUTHORIZATION_POLICY_DAY_OF_WEEK_TUESDAY\x10\x03\x12.\n*AUTHORIZATION_POLICY_DAY_OF_WEEK_WEDNESDAY\x10\x04\x12-\n)AUTHORIZATION_POLICY_DAY_OF_WEEK_THURSDAY\x10\x05\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_FRIDAY\x10\x06\x12-\n)AUTHORIZATION_POLICY_DAY_OF_WEEK_SATURDAY\x10\x07\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private2\x9d\x06\n\x15\x41uthorizationPolicies\x12\x89\x01\n\x06\x43reate\x12$.v1.AuthorizationPolicyCreateRequest\x1a%.v1.AuthorizationPolicyCreateResponse\"2\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/authorization-policies\x12\x84\x01\n\x03Get\x12!.v1.AuthorizationPolicyGetRequest\x1a\".v1.AuthorizationPolicyGetResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x8d\x01\n\x06Update\x12$.v1.AuthorizationPolicyUpdateRequest\x1a%.v1.AuthorizationPolicyUpdateResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x90\x01\n\x06\x44\x65lete\x12$.v1.AuthorizationPolicyDeleteRequest\x1a%.v1.AuthorizationPolicyDeleteResponse\"9\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x82\x01\n\x04List\x12\".v1.AuthorizationPolicyListRequest\x1a#.v1.AuthorizationPolicyListResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/authorization-policies\x1aI\xca\xf9\xb3\x07\x18\xc2\xf9\xb3\x07\x13\x41uthorizationPolicy\xca\xf9\xb3\x07\t\xd2\xf9\xb3\x07\x04\x61py-\xca\xf9\xb3\x07\x0f\xca\xf9\xb3\x07\ngo_private\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42q\n\x19\x63om.strongdm.api.plumbingB\x1d\x41uthorizationPoliciesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x61uthorization_policies.proto\x12\x02v1\x1a\roptions.proto\x1a\nspec.proto\x1a\ntags.proto\x1a\x13resourcetypes.proto\x1a\x14location_enums.proto\"\xa9\x01\n AuthorizationPolicyCreateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.CreateRequestMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe2\x01\n!AuthorizationPolicyCreateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.CreateResponseMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"x\n\x1d\x41uthorizationPolicyGetRequest\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.v1.GetRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe8\x01\n\x1e\x41uthorizationPolicyGetResponse\x12\x31\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.GetResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xb5\x01\n AuthorizationPolicyUpdateRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.UpdateRequestMetadata\x12\n\n\x02id\x18\x02 \x01(\t\x12\x41\n\x14\x61uthorization_policy\x18\x03 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe2\x01\n!AuthorizationPolicyUpdateResponse\x12(\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.UpdateResponseMetadata\x12\x41\n\x14\x61uthorization_policy\x18\x02 \x01(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"~\n AuthorizationPolicyDeleteRequest\x12\'\n\x04meta\x18\x01 \x01(\x0b\x32\x19.v1.DeleteRequestMetadata\x12\x16\n\x02id\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xab\x01\n!AuthorizationPolicyDeleteResponse\x12\x34\n\x04meta\x18\x01 \x01(\x0b\x32\x1a.v1.DeleteResponseMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x02 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"~\n\x1e\x41uthorizationPolicyListRequest\x12%\n\x04meta\x18\x01 \x01(\x0b\x32\x17.v1.ListRequestMetadata\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xe0\x01\n\x1f\x41uthorizationPolicyListResponse\x12&\n\x04meta\x18\x01 \x01(\x0b\x32\x18.v1.ListResponseMetadata\x12\x43\n\x16\x61uthorization_policies\x18\x02 \x03(\x0b\x32\x17.v1.AuthorizationPolicyB\n\xf2\xf8\xb3\x07\x05\xb8\xf3\xb3\x07\x01\x12\x35\n\nrate_limit\x18\x03 \x01(\x0b\x32\x15.v1.RateLimitMetadataB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xf9\x01\n\x13\x41uthorizationPolicy\x12\x16\n\x02id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xf2\xf8\xb3\x07\n\xb0\xf3\xb3\x07\x01\xc0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x36\n\x05rules\x18\x04 \x03(\x0b\x32\x1b.v1.AuthorizationPolicyRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x37\n\x05state\x18\x05 \x01(\x0e\x32\x1c.v1.AuthorizationPolicyStateB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x92\t\n\x17\x41uthorizationPolicyRule\x12@\n\rprincipal_all\x18\x01 \x01(\x0b\x32\'.v1.AuthorizationPolicyRulePrincipalAllH\x00\x12\x45\n\x10principal_by_ids\x18\x02 \x01(\x0b\x32).v1.AuthorizationPolicyRulePrincipalByIdsH\x00\x12@\n\rresources_all\x18\x03 \x01(\x0b\x32\'.v1.AuthorizationPolicyRuleResourcesAllH\x00\x12\x43\n\x0fresource_by_ids\x18\x04 \x01(\x0b\x32(.v1.AuthorizationPolicyRuleResourceByIdsH\x00\x12U\n\x19resource_by_type_and_tags\x18\x05 \x01(\x0b\x32\x30.v1.AuthorizationPolicyRuleResourceByTypeAndTagsH\x00\x12w\n+resource_by_type_tags_and_kubernetes_groups\x18\x06 \x01(\x0b\x32@.v1.AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroupsH\x00\x12[\n\x1cresource_by_okta_with_groups\x18\x07 \x01(\x0b\x32\x33.v1.AuthorizationPolicyRuleResourceByOktaWithGroupsH\x00\x12]\n\x1dresource_by_entra_with_groups\x18\x08 \x01(\x0b\x32\x34.v1.AuthorizationPolicyRuleResourceByEntraWithGroupsH\x00\x12@\n\rcondition_mfa\x18\t \x01(\x0b\x32\'.v1.AuthorizationPolicyRuleConditionMFAH\x00\x12Q\n\x16\x63ondition_device_trust\x18\n \x01(\x0b\x32/.v1.AuthorizationPolicyRuleConditionDeviceTrustH\x00\x12J\n\x12\x63ondition_location\x18\x0b \x01(\x0b\x32,.v1.AuthorizationPolicyRuleConditionLocationH\x00\x12>\n\x0c\x63ondition_ip\x18\x0c \x01(\x0b\x32&.v1.AuthorizationPolicyRuleConditionIPH\x00\x12\x42\n\x0e\x63ondition_time\x18\r \x01(\x0b\x32(.v1.AuthorizationPolicyRuleConditionTimeH\x00\x12S\n\x17\x63ondition_approval_flow\x18\x0e \x01(\x0b\x32\x30.v1.AuthorizationPolicyRuleConditionApprovalFlowH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04kind\"@\n#AuthorizationPolicyRulePrincipalAll:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"[\n%AuthorizationPolicyRulePrincipalByIds\x12\x17\n\x03ids\x18\x01 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"@\n#AuthorizationPolicyRuleResourcesAll:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"Z\n$AuthorizationPolicyRuleResourceByIds\x12\x17\n\x03ids\x18\x01 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x98\x01\n,AuthorizationPolicyRuleResourceByTypeAndTags\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x10.v1.ResourceTypeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04tags\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xcf\x01\n<AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups\x12*\n\x04type\x18\x01 \x01(\x0e\x32\x10.v1.ResourceTypeB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\x04tags\x18\x02 \x03(\x0b\x32\x07.v1.TagB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12%\n\x11kubernetes_groups\x18\x03 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x89\x01\n/AuthorizationPolicyRuleResourceByOktaWithGroups\x12\x1f\n\x0bresource_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06groups\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x8a\x01\n0AuthorizationPolicyRuleResourceByEntraWithGroups\x12\x1f\n\x0bresource_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1a\n\x06groups\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x87\x01\n#AuthorizationPolicyRuleConditionMFA\x12\x1a\n\x06reason\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12)\n\x15\x63\x61\x63he_timeout_seconds\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd6\x01\n+AuthorizationPolicyRuleConditionDeviceTrust\x12H\n\x08operator\x18\x01 \x01(\x0e\x32*.v1.AuthorizationPolicyDeviceTrustOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x42\n\x05level\x18\x02 \x01(\x0e\x32\'.v1.AuthorizationPolicyDeviceTrustLevelB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x85\x01\n(AuthorizationPolicyRuleConditionLocation\x12>\n\x05rules\x18\x01 \x03(\x0b\x32#.v1.AuthorizationPolicyLocationRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xf5\x01\n\x1f\x41uthorizationPolicyLocationRule\x12\x39\n\tcontinent\x18\x01 \x01(\x0b\x32$.v1.AuthorizationPolicyContinentRuleH\x00\x12\x35\n\x07\x63ountry\x18\x02 \x01(\x0b\x32\".v1.AuthorizationPolicyCountryRuleH\x00\x12=\n\x0bsubdivision\x18\x03 \x01(\x0b\x32&.v1.AuthorizationPolicySubdivisionRuleH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04rule\"\xa8\x01\n AuthorizationPolicyContinentRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x35\n\ncontinents\x18\x02 \x03(\x0e\x32\x15.v1.LocationContinentB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xa3\x01\n\x1e\x41uthorizationPolicyCountryRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x32\n\tcountries\x18\x02 \x03(\x0e\x32\x13.v1.LocationCountryB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x95\x01\n\"AuthorizationPolicySubdivisionRule\x12\x32\n\x08operator\x18\x01 \x01(\x0e\x32\x14.v1.LocationOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12 \n\x0csubdivisions\x18\x02 \x03(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"y\n\"AuthorizationPolicyRuleConditionIP\x12\x38\n\x05rules\x18\x01 \x03(\x0b\x32\x1d.v1.AuthorizationPolicyIPRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd0\x01\n\x19\x41uthorizationPolicyIPRule\x12?\n\x08operator\x18\x01 \x01(\x0e\x32!.v1.AuthorizationPolicyIPOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12=\n\x07network\x18\x02 \x01(\x0e\x32 .v1.AuthorizationPolicyIPNetworkB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x18\n\x04\x63idr\x18\x03 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"}\n$AuthorizationPolicyRuleConditionTime\x12:\n\x05rules\x18\x01 \x03(\x0b\x32\x1f.v1.AuthorizationPolicyTimeRuleB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xee\x03\n\x1b\x41uthorizationPolicyTimeRule\x12?\n\x0b\x64\x61y_of_week\x18\x01 \x01(\x0b\x32(.v1.AuthorizationPolicyTimeRuleDayOfWeekH\x00\x12\x45\n\x0btime_of_day\x18\x02 \x01(\x0b\x32..v1.LegacyAuthorizationPolicyTimeRuleTimeOfDayH\x00\x12\x35\n\x05month\x18\x03 \x01(\x0b\x32$.v1.AuthorizationPolicyTimeRuleMonthH\x00\x12\x43\n\rdays_of_month\x18\x04 \x01(\x0b\x32*.v1.AuthorizationPolicyTimeRuleDaysOfMonthH\x00\x12Y\n\x16time_of_day_outside_of\x18\x05 \x01(\x0b\x32\x37.v1.LegacyAuthorizationPolicyTimeRuleTimeOfDayOutsideOfH\x00\x12M\n\x19time_of_day_with_operator\x18\x06 \x01(\x0b\x32(.v1.AuthorizationPolicyTimeRuleTimeOfDayH\x00:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_privateB\x06\n\x04rule\"\xc0\x01\n$AuthorizationPolicyTimeRuleDayOfWeek\x12\x41\n\x08operator\x18\x01 \x01(\x0e\x32#.v1.AuthorizationPolicyTimeOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12:\n\x04\x64\x61ys\x18\x02 \x03(\x0e\x32 .v1.AuthorizationPolicyDayOfWeekB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xc9\x01\n*LegacyAuthorizationPolicyTimeRuleTimeOfDay\x12\x1e\n\nstart_hour\x18\x01 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\xd2\x01\n3LegacyAuthorizationPolicyTimeRuleTimeOfDayOutsideOf\x12\x1e\n\nstart_hour\x18\x01 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"\x86\x02\n$AuthorizationPolicyTimeRuleTimeOfDay\x12\x41\n\x08operator\x18\x01 \x01(\x0e\x32#.v1.AuthorizationPolicyTimeOperatorB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1e\n\nstart_hour\x18\x02 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12!\n\rstart_minutes\x18\x03 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1c\n\x08\x65nd_hour\x18\x04 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01\x12\x1f\n\x0b\x65nd_minutes\x18\x05 \x01(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"Y\n AuthorizationPolicyTimeRuleMonth\x12\x1a\n\x06months\x18\x01 \x03(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"]\n&AuthorizationPolicyTimeRuleDaysOfMonth\x12\x18\n\x04\x64\x61ys\x18\x01 \x03(\x05\x42\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private\"o\n,AuthorizationPolicyRuleConditionApprovalFlow\x12$\n\x10\x61pproval_flow_id\x18\x01 \x01(\tB\n\xf2\xf8\xb3\x07\x05\xb0\xf3\xb3\x07\x01:\x19\xfa\xf8\xb3\x07\x14\xa8\xf3\xb3\x07\x01\xd2\xf3\xb3\x07\ngo_private*\xac\x01\n\x18\x41uthorizationPolicyState\x12*\n&AUTHORIZATION_POLICY_STATE_UNSPECIFIED\x10\x00\x12%\n!AUTHORIZATION_POLICY_STATE_ACTIVE\x10\x01\x12\'\n#AUTHORIZATION_POLICY_STATE_INACTIVE\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xe4\x01\n&AuthorizationPolicyDeviceTrustOperator\x12:\n6AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_UNSPECIFIED\x10\x00\x12\x31\n-AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_IS\x10\x01\x12\x35\n1AUTHORIZATION_POLICY_DEVICE_TRUST_OPERATOR_IS_NOT\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xc0\x02\n#AuthorizationPolicyDeviceTrustLevel\x12\x37\n3AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_UNSPECIFIED\x10\x00\x12\x30\n,AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_HIGH\x10\x01\x12/\n+AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_LOW\x10\x02\x12\x32\n.AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_EXEMPT\x10\x03\x12\x33\n/AUTHORIZATION_POLICY_DEVICE_TRUST_LEVEL_UNKNOWN\x10\x04\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\x83\x01\n\x10LocationOperator\x12!\n\x1dLOCATION_OPERATOR_UNSPECIFIED\x10\x00\x12\x18\n\x14LOCATION_OPERATOR_IN\x10\x01\x12\x1c\n\x18LOCATION_OPERATOR_NOT_IN\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xea\x01\n\x1d\x41uthorizationPolicyIPOperator\x12\x30\n,AUTHORIZATION_POLICY_IP_OPERATOR_UNSPECIFIED\x10\x00\x12\'\n#AUTHORIZATION_POLICY_IP_OPERATOR_IN\x10\x01\x12+\n\'AUTHORIZATION_POLICY_IP_OPERATOR_NOT_IN\x10\x02\x12+\n\'AUTHORIZATION_POLICY_IP_OPERATOR_EQUALS\x10\x03\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xf8\x01\n\x1c\x41uthorizationPolicyIPNetwork\x12/\n+AUTHORIZATION_POLICY_IP_NETWORK_UNSPECIFIED\x10\x00\x12-\n)AUTHORIZATION_POLICY_IP_NETWORK_CLIENT_IP\x10\x01\x12.\n*AUTHORIZATION_POLICY_IP_NETWORK_REQUEST_IP\x10\x02\x12\x32\n.AUTHORIZATION_POLICY_IP_NETWORK_DESTINATION_IP\x10\x03\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xc5\x01\n\x1f\x41uthorizationPolicyTimeOperator\x12\x32\n.AUTHORIZATION_POLICY_TIME_OPERATOR_UNSPECIFIED\x10\x00\x12)\n%AUTHORIZATION_POLICY_TIME_OPERATOR_IS\x10\x01\x12-\n)AUTHORIZATION_POLICY_TIME_OPERATOR_IS_NOT\x10\x02\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private*\xa9\x03\n\x1c\x41uthorizationPolicyDayOfWeek\x12\x30\n,AUTHORIZATION_POLICY_DAY_OF_WEEK_UNSPECIFIED\x10\x00\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_SUNDAY\x10\x01\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_MONDAY\x10\x02\x12,\n(AUTHORIZATION_POLICY_DAY_OF_WEEK_TUESDAY\x10\x03\x12.\n*AUTHORIZATION_POLICY_DAY_OF_WEEK_WEDNESDAY\x10\x04\x12-\n)AUTHORIZATION_POLICY_DAY_OF_WEEK_THURSDAY\x10\x05\x12+\n\'AUTHORIZATION_POLICY_DAY_OF_WEEK_FRIDAY\x10\x06\x12-\n)AUTHORIZATION_POLICY_DAY_OF_WEEK_SATURDAY\x10\x07\x1a\x14\xb2\xf8\xb3\x07\x0f\x92\xf5\xb3\x07\ngo_private2\x9d\x06\n\x15\x41uthorizationPolicies\x12\x89\x01\n\x06\x43reate\x12$.v1.AuthorizationPolicyCreateRequest\x1a%.v1.AuthorizationPolicyCreateResponse\"2\x82\xf9\xb3\x07\t\xa2\xf3\xb3\x07\x04post\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/authorization-policies\x12\x84\x01\n\x03Get\x12!.v1.AuthorizationPolicyGetRequest\x1a\".v1.AuthorizationPolicyGetResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x8d\x01\n\x06Update\x12$.v1.AuthorizationPolicyUpdateRequest\x1a%.v1.AuthorizationPolicyUpdateResponse\"6\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03put\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x90\x01\n\x06\x44\x65lete\x12$.v1.AuthorizationPolicyDeleteRequest\x1a%.v1.AuthorizationPolicyDeleteResponse\"9\x82\xf9\xb3\x07\x0b\xa2\xf3\xb3\x07\x06\x64\x65lete\x82\xf9\xb3\x07$\xaa\xf3\xb3\x07\x1f/v1/authorization-policies/{id}\x12\x82\x01\n\x04List\x12\".v1.AuthorizationPolicyListRequest\x1a#.v1.AuthorizationPolicyListResponse\"1\x82\xf9\xb3\x07\x08\xa2\xf3\xb3\x07\x03get\x82\xf9\xb3\x07\x1f\xaa\xf3\xb3\x07\x1a/v1/authorization-policies\x1aI\xca\xf9\xb3\x07\x18\xc2\xf9\xb3\x07\x13\x41uthorizationPolicy\xca\xf9\xb3\x07\t\xd2\xf9\xb3\x07\x04\x61py-\xca\xf9\xb3\x07\x0f\xca\xf9\xb3\x07\ngo_private\xca\xf9\xb3\x07\x05\xd8\xf9\xb3\x07\x01\x42q\n\x19\x63om.strongdm.api.plumbingB\x1d\x41uthorizationPoliciesPlumbingZ5github.com/strongdm/strongdm-sdk-go/v3/internal/v1;v1b\x06proto3')
 
 _AUTHORIZATIONPOLICYSTATE = DESCRIPTOR.enum_types_by_name['AuthorizationPolicyState']
 AuthorizationPolicyState = enum_type_wrapper.EnumTypeWrapper(_AUTHORIZATIONPOLICYSTATE)
@@ -98,25 +98,25 @@ _AUTHORIZATIONPOLICYDELETERESPONSE = DESCRIPTOR.message_types_by_name['Authoriza
 _AUTHORIZATIONPOLICYLISTREQUEST = DESCRIPTOR.message_types_by_name['AuthorizationPolicyListRequest']
 _AUTHORIZATIONPOLICYLISTRESPONSE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyListResponse']
 _AUTHORIZATIONPOLICY = DESCRIPTOR.message_types_by_name['AuthorizationPolicy']
-_AUTHORIZATIONPOLICYITEM = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItem']
-_AUTHORIZATIONPOLICYITEMPRINCIPALALL = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemPrincipalAll']
-_AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemPrincipalByIds']
-_AUTHORIZATIONPOLICYITEMRESOURCESALL = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourcesAll']
-_AUTHORIZATIONPOLICYITEMRESOURCEBYIDS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourceByIds']
-_AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourceByTypeAndTags']
-_AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups']
-_AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourceByOktaWithGroups']
-_AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemResourceByEntraWithGroups']
-_AUTHORIZATIONPOLICYITEMCONDITIONMFA = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionMFA']
-_AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionDeviceTrust']
-_AUTHORIZATIONPOLICYITEMCONDITIONLOCATION = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionLocation']
+_AUTHORIZATIONPOLICYRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRule']
+_AUTHORIZATIONPOLICYRULEPRINCIPALALL = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRulePrincipalAll']
+_AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRulePrincipalByIds']
+_AUTHORIZATIONPOLICYRULERESOURCESALL = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourcesAll']
+_AUTHORIZATIONPOLICYRULERESOURCEBYIDS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourceByIds']
+_AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourceByTypeAndTags']
+_AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups']
+_AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourceByOktaWithGroups']
+_AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleResourceByEntraWithGroups']
+_AUTHORIZATIONPOLICYRULECONDITIONMFA = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionMFA']
+_AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionDeviceTrust']
+_AUTHORIZATIONPOLICYRULECONDITIONLOCATION = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionLocation']
 _AUTHORIZATIONPOLICYLOCATIONRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyLocationRule']
 _AUTHORIZATIONPOLICYCONTINENTRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyContinentRule']
 _AUTHORIZATIONPOLICYCOUNTRYRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyCountryRule']
 _AUTHORIZATIONPOLICYSUBDIVISIONRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicySubdivisionRule']
-_AUTHORIZATIONPOLICYITEMCONDITIONIP = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionIP']
+_AUTHORIZATIONPOLICYRULECONDITIONIP = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionIP']
 _AUTHORIZATIONPOLICYIPRULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyIPRule']
-_AUTHORIZATIONPOLICYITEMCONDITIONTIME = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionTime']
+_AUTHORIZATIONPOLICYRULECONDITIONTIME = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionTime']
 _AUTHORIZATIONPOLICYTIMERULE = DESCRIPTOR.message_types_by_name['AuthorizationPolicyTimeRule']
 _AUTHORIZATIONPOLICYTIMERULEDAYOFWEEK = DESCRIPTOR.message_types_by_name['AuthorizationPolicyTimeRuleDayOfWeek']
 _LEGACYAUTHORIZATIONPOLICYTIMERULETIMEOFDAY = DESCRIPTOR.message_types_by_name['LegacyAuthorizationPolicyTimeRuleTimeOfDay']
@@ -124,7 +124,7 @@ _LEGACYAUTHORIZATIONPOLICYTIMERULETIMEOFDAYOUTSIDEOF = DESCRIPTOR.message_types_
 _AUTHORIZATIONPOLICYTIMERULETIMEOFDAY = DESCRIPTOR.message_types_by_name['AuthorizationPolicyTimeRuleTimeOfDay']
 _AUTHORIZATIONPOLICYTIMERULEMONTH = DESCRIPTOR.message_types_by_name['AuthorizationPolicyTimeRuleMonth']
 _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH = DESCRIPTOR.message_types_by_name['AuthorizationPolicyTimeRuleDaysOfMonth']
-_AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW = DESCRIPTOR.message_types_by_name['AuthorizationPolicyItemConditionApprovalFlow']
+_AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW = DESCRIPTOR.message_types_by_name['AuthorizationPolicyRuleConditionApprovalFlow']
 AuthorizationPolicyCreateRequest = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyCreateRequest', (_message.Message,), {
   'DESCRIPTOR' : _AUTHORIZATIONPOLICYCREATEREQUEST,
   '__module__' : 'authorization_policies_pb2'
@@ -202,89 +202,89 @@ AuthorizationPolicy = _reflection.GeneratedProtocolMessageType('AuthorizationPol
   })
 _sym_db.RegisterMessage(AuthorizationPolicy)
 
-AuthorizationPolicyItem = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItem', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEM,
+AuthorizationPolicyRule = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRule', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULE,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItem)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRule)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItem)
+_sym_db.RegisterMessage(AuthorizationPolicyRule)
 
-AuthorizationPolicyItemPrincipalAll = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemPrincipalAll', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMPRINCIPALALL,
+AuthorizationPolicyRulePrincipalAll = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRulePrincipalAll', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULEPRINCIPALALL,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemPrincipalAll)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRulePrincipalAll)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemPrincipalAll)
+_sym_db.RegisterMessage(AuthorizationPolicyRulePrincipalAll)
 
-AuthorizationPolicyItemPrincipalByIds = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemPrincipalByIds', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS,
+AuthorizationPolicyRulePrincipalByIds = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRulePrincipalByIds', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemPrincipalByIds)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRulePrincipalByIds)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemPrincipalByIds)
+_sym_db.RegisterMessage(AuthorizationPolicyRulePrincipalByIds)
 
-AuthorizationPolicyItemResourcesAll = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourcesAll', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCESALL,
+AuthorizationPolicyRuleResourcesAll = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourcesAll', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCESALL,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourcesAll)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourcesAll)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourcesAll)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourcesAll)
 
-AuthorizationPolicyItemResourceByIds = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourceByIds', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS,
+AuthorizationPolicyRuleResourceByIds = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourceByIds', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCEBYIDS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourceByIds)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourceByIds)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourceByIds)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourceByIds)
 
-AuthorizationPolicyItemResourceByTypeAndTags = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourceByTypeAndTags', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS,
+AuthorizationPolicyRuleResourceByTypeAndTags = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourceByTypeAndTags', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourceByTypeAndTags)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourceByTypeAndTags)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourceByTypeAndTags)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourceByTypeAndTags)
 
-AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS,
+AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourceByTypeTagsAndKubernetesGroups)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourceByTypeTagsAndKubernetesGroups)
 
-AuthorizationPolicyItemResourceByOktaWithGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourceByOktaWithGroups', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS,
+AuthorizationPolicyRuleResourceByOktaWithGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourceByOktaWithGroups', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourceByOktaWithGroups)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourceByOktaWithGroups)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourceByOktaWithGroups)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourceByOktaWithGroups)
 
-AuthorizationPolicyItemResourceByEntraWithGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemResourceByEntraWithGroups', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS,
+AuthorizationPolicyRuleResourceByEntraWithGroups = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleResourceByEntraWithGroups', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemResourceByEntraWithGroups)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleResourceByEntraWithGroups)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemResourceByEntraWithGroups)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleResourceByEntraWithGroups)
 
-AuthorizationPolicyItemConditionMFA = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionMFA', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONMFA,
+AuthorizationPolicyRuleConditionMFA = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionMFA', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONMFA,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionMFA)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionMFA)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionMFA)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionMFA)
 
-AuthorizationPolicyItemConditionDeviceTrust = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionDeviceTrust', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST,
+AuthorizationPolicyRuleConditionDeviceTrust = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionDeviceTrust', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionDeviceTrust)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionDeviceTrust)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionDeviceTrust)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionDeviceTrust)
 
-AuthorizationPolicyItemConditionLocation = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionLocation', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION,
+AuthorizationPolicyRuleConditionLocation = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionLocation', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONLOCATION,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionLocation)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionLocation)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionLocation)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionLocation)
 
 AuthorizationPolicyLocationRule = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyLocationRule', (_message.Message,), {
   'DESCRIPTOR' : _AUTHORIZATIONPOLICYLOCATIONRULE,
@@ -314,12 +314,12 @@ AuthorizationPolicySubdivisionRule = _reflection.GeneratedProtocolMessageType('A
   })
 _sym_db.RegisterMessage(AuthorizationPolicySubdivisionRule)
 
-AuthorizationPolicyItemConditionIP = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionIP', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONIP,
+AuthorizationPolicyRuleConditionIP = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionIP', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONIP,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionIP)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionIP)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionIP)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionIP)
 
 AuthorizationPolicyIPRule = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyIPRule', (_message.Message,), {
   'DESCRIPTOR' : _AUTHORIZATIONPOLICYIPRULE,
@@ -328,12 +328,12 @@ AuthorizationPolicyIPRule = _reflection.GeneratedProtocolMessageType('Authorizat
   })
 _sym_db.RegisterMessage(AuthorizationPolicyIPRule)
 
-AuthorizationPolicyItemConditionTime = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionTime', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONTIME,
+AuthorizationPolicyRuleConditionTime = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionTime', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONTIME,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionTime)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionTime)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionTime)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionTime)
 
 AuthorizationPolicyTimeRule = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyTimeRule', (_message.Message,), {
   'DESCRIPTOR' : _AUTHORIZATIONPOLICYTIMERULE,
@@ -384,12 +384,12 @@ AuthorizationPolicyTimeRuleDaysOfMonth = _reflection.GeneratedProtocolMessageTyp
   })
 _sym_db.RegisterMessage(AuthorizationPolicyTimeRuleDaysOfMonth)
 
-AuthorizationPolicyItemConditionApprovalFlow = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyItemConditionApprovalFlow', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW,
+AuthorizationPolicyRuleConditionApprovalFlow = _reflection.GeneratedProtocolMessageType('AuthorizationPolicyRuleConditionApprovalFlow', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW,
   '__module__' : 'authorization_policies_pb2'
-  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyItemConditionApprovalFlow)
+  # @@protoc_insertion_point(class_scope:v1.AuthorizationPolicyRuleConditionApprovalFlow)
   })
-_sym_db.RegisterMessage(AuthorizationPolicyItemConditionApprovalFlow)
+_sym_db.RegisterMessage(AuthorizationPolicyRuleConditionApprovalFlow)
 
 _AUTHORIZATIONPOLICIES = DESCRIPTOR.services_by_name['AuthorizationPolicies']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -470,68 +470,68 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICY.fields_by_name['name']._serialized_options = b'\362\370\263\007\n\260\363\263\007\001\300\363\263\007\001'
   _AUTHORIZATIONPOLICY.fields_by_name['description']._options = None
   _AUTHORIZATIONPOLICY.fields_by_name['description']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICY.fields_by_name['items']._options = None
-  _AUTHORIZATIONPOLICY.fields_by_name['items']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICY.fields_by_name['rules']._options = None
+  _AUTHORIZATIONPOLICY.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICY.fields_by_name['state']._options = None
   _AUTHORIZATIONPOLICY.fields_by_name['state']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICY._options = None
   _AUTHORIZATIONPOLICY._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEM._options = None
-  _AUTHORIZATIONPOLICYITEM._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMPRINCIPALALL._options = None
-  _AUTHORIZATIONPOLICYITEMPRINCIPALALL._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS.fields_by_name['ids']._options = None
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS.fields_by_name['ids']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS._options = None
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCESALL._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCESALL._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS.fields_by_name['ids']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS.fields_by_name['ids']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS.fields_by_name['type']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS.fields_by_name['type']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS.fields_by_name['tags']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['type']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['type']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['tags']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['kubernetes_groups']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['kubernetes_groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS.fields_by_name['resource_id']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS.fields_by_name['resource_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS.fields_by_name['groups']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS.fields_by_name['groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS.fields_by_name['resource_id']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS.fields_by_name['resource_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS.fields_by_name['groups']._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS.fields_by_name['groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS._options = None
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA.fields_by_name['reason']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA.fields_by_name['reason']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA.fields_by_name['cache_timeout_seconds']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA.fields_by_name['cache_timeout_seconds']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST.fields_by_name['operator']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST.fields_by_name['operator']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST.fields_by_name['level']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST.fields_by_name['level']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION.fields_by_name['rules']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULE._options = None
+  _AUTHORIZATIONPOLICYRULE._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULEPRINCIPALALL._options = None
+  _AUTHORIZATIONPOLICYRULEPRINCIPALALL._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS.fields_by_name['ids']._options = None
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS.fields_by_name['ids']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS._options = None
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCESALL._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCESALL._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS.fields_by_name['ids']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS.fields_by_name['ids']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS.fields_by_name['type']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS.fields_by_name['type']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS.fields_by_name['tags']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['type']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['type']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['tags']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['tags']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['kubernetes_groups']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS.fields_by_name['kubernetes_groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS.fields_by_name['resource_id']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS.fields_by_name['resource_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS.fields_by_name['groups']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS.fields_by_name['groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS.fields_by_name['resource_id']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS.fields_by_name['resource_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS.fields_by_name['groups']._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS.fields_by_name['groups']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS._options = None
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA.fields_by_name['reason']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA.fields_by_name['reason']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA.fields_by_name['cache_timeout_seconds']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA.fields_by_name['cache_timeout_seconds']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST.fields_by_name['operator']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST.fields_by_name['operator']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST.fields_by_name['level']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST.fields_by_name['level']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION.fields_by_name['rules']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICYLOCATIONRULE._options = None
   _AUTHORIZATIONPOLICYLOCATIONRULE._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICYCONTINENTRULE.fields_by_name['operator']._options = None
@@ -552,10 +552,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYSUBDIVISIONRULE.fields_by_name['subdivisions']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICYSUBDIVISIONRULE._options = None
   _AUTHORIZATIONPOLICYSUBDIVISIONRULE._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP.fields_by_name['rules']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONIP.fields_by_name['rules']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONIP.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONIP._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONIP._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICYIPRULE.fields_by_name['operator']._options = None
   _AUTHORIZATIONPOLICYIPRULE.fields_by_name['operator']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICYIPRULE.fields_by_name['network']._options = None
@@ -564,10 +564,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYIPRULE.fields_by_name['cidr']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICYIPRULE._options = None
   _AUTHORIZATIONPOLICYIPRULE._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME.fields_by_name['rules']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME.fields_by_name['rules']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME.fields_by_name['rules']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICYTIMERULE._options = None
   _AUTHORIZATIONPOLICYTIMERULE._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICYTIMERULEDAYOFWEEK.fields_by_name['operator']._options = None
@@ -616,10 +616,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH.fields_by_name['days']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
   _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH._options = None
   _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW.fields_by_name['approval_flow_id']._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW.fields_by_name['approval_flow_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW._options = None
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW.fields_by_name['approval_flow_id']._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW.fields_by_name['approval_flow_id']._serialized_options = b'\362\370\263\007\005\260\363\263\007\001'
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW._options = None
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW._serialized_options = b'\372\370\263\007\024\250\363\263\007\001\322\363\263\007\ngo_private'
   _AUTHORIZATIONPOLICIES._options = None
   _AUTHORIZATIONPOLICIES._serialized_options = b'\312\371\263\007\030\302\371\263\007\023AuthorizationPolicy\312\371\263\007\t\322\371\263\007\004apy-\312\371\263\007\017\312\371\263\007\ngo_private\312\371\263\007\005\330\371\263\007\001'
   _AUTHORIZATIONPOLICIES.methods_by_name['Create']._options = None
@@ -670,30 +670,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYLISTRESPONSE._serialized_end=1944
   _AUTHORIZATIONPOLICY._serialized_start=1947
   _AUTHORIZATIONPOLICY._serialized_end=2196
-  _AUTHORIZATIONPOLICYITEM._serialized_start=2199
-  _AUTHORIZATIONPOLICYITEM._serialized_end=3369
-  _AUTHORIZATIONPOLICYITEMPRINCIPALALL._serialized_start=3371
-  _AUTHORIZATIONPOLICYITEMPRINCIPALALL._serialized_end=3435
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS._serialized_start=3437
-  _AUTHORIZATIONPOLICYITEMPRINCIPALBYIDS._serialized_end=3528
-  _AUTHORIZATIONPOLICYITEMRESOURCESALL._serialized_start=3530
-  _AUTHORIZATIONPOLICYITEMRESOURCESALL._serialized_end=3594
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS._serialized_start=3596
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYIDS._serialized_end=3686
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS._serialized_start=3689
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPEANDTAGS._serialized_end=3841
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_start=3844
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_end=4051
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS._serialized_start=4054
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYOKTAWITHGROUPS._serialized_end=4191
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS._serialized_start=4194
-  _AUTHORIZATIONPOLICYITEMRESOURCEBYENTRAWITHGROUPS._serialized_end=4332
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA._serialized_start=4335
-  _AUTHORIZATIONPOLICYITEMCONDITIONMFA._serialized_end=4470
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST._serialized_start=4473
-  _AUTHORIZATIONPOLICYITEMCONDITIONDEVICETRUST._serialized_end=4687
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION._serialized_start=4690
-  _AUTHORIZATIONPOLICYITEMCONDITIONLOCATION._serialized_end=4823
+  _AUTHORIZATIONPOLICYRULE._serialized_start=2199
+  _AUTHORIZATIONPOLICYRULE._serialized_end=3369
+  _AUTHORIZATIONPOLICYRULEPRINCIPALALL._serialized_start=3371
+  _AUTHORIZATIONPOLICYRULEPRINCIPALALL._serialized_end=3435
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS._serialized_start=3437
+  _AUTHORIZATIONPOLICYRULEPRINCIPALBYIDS._serialized_end=3528
+  _AUTHORIZATIONPOLICYRULERESOURCESALL._serialized_start=3530
+  _AUTHORIZATIONPOLICYRULERESOURCESALL._serialized_end=3594
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS._serialized_start=3596
+  _AUTHORIZATIONPOLICYRULERESOURCEBYIDS._serialized_end=3686
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS._serialized_start=3689
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPEANDTAGS._serialized_end=3841
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_start=3844
+  _AUTHORIZATIONPOLICYRULERESOURCEBYTYPETAGSANDKUBERNETESGROUPS._serialized_end=4051
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS._serialized_start=4054
+  _AUTHORIZATIONPOLICYRULERESOURCEBYOKTAWITHGROUPS._serialized_end=4191
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS._serialized_start=4194
+  _AUTHORIZATIONPOLICYRULERESOURCEBYENTRAWITHGROUPS._serialized_end=4332
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA._serialized_start=4335
+  _AUTHORIZATIONPOLICYRULECONDITIONMFA._serialized_end=4470
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST._serialized_start=4473
+  _AUTHORIZATIONPOLICYRULECONDITIONDEVICETRUST._serialized_end=4687
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION._serialized_start=4690
+  _AUTHORIZATIONPOLICYRULECONDITIONLOCATION._serialized_end=4823
   _AUTHORIZATIONPOLICYLOCATIONRULE._serialized_start=4826
   _AUTHORIZATIONPOLICYLOCATIONRULE._serialized_end=5071
   _AUTHORIZATIONPOLICYCONTINENTRULE._serialized_start=5074
@@ -702,12 +702,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYCOUNTRYRULE._serialized_end=5408
   _AUTHORIZATIONPOLICYSUBDIVISIONRULE._serialized_start=5411
   _AUTHORIZATIONPOLICYSUBDIVISIONRULE._serialized_end=5560
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP._serialized_start=5562
-  _AUTHORIZATIONPOLICYITEMCONDITIONIP._serialized_end=5683
+  _AUTHORIZATIONPOLICYRULECONDITIONIP._serialized_start=5562
+  _AUTHORIZATIONPOLICYRULECONDITIONIP._serialized_end=5683
   _AUTHORIZATIONPOLICYIPRULE._serialized_start=5686
   _AUTHORIZATIONPOLICYIPRULE._serialized_end=5894
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME._serialized_start=5896
-  _AUTHORIZATIONPOLICYITEMCONDITIONTIME._serialized_end=6021
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME._serialized_start=5896
+  _AUTHORIZATIONPOLICYRULECONDITIONTIME._serialized_end=6021
   _AUTHORIZATIONPOLICYTIMERULE._serialized_start=6024
   _AUTHORIZATIONPOLICYTIMERULE._serialized_end=6518
   _AUTHORIZATIONPOLICYTIMERULEDAYOFWEEK._serialized_start=6521
@@ -722,8 +722,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AUTHORIZATIONPOLICYTIMERULEMONTH._serialized_end=7486
   _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH._serialized_start=7488
   _AUTHORIZATIONPOLICYTIMERULEDAYSOFMONTH._serialized_end=7581
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW._serialized_start=7583
-  _AUTHORIZATIONPOLICYITEMCONDITIONAPPROVALFLOW._serialized_end=7694
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW._serialized_start=7583
+  _AUTHORIZATIONPOLICYRULECONDITIONAPPROVALFLOW._serialized_end=7694
   _AUTHORIZATIONPOLICIES._serialized_start=9676
   _AUTHORIZATIONPOLICIES._serialized_end=10473
 # @@protoc_insertion_point(module_scope)
