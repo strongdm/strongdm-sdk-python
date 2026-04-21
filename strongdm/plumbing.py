@@ -16385,6 +16385,9 @@ def convert_sql_server_kerberos_ad_to_porcelain(plumbing):
     porcelain.healthy = (plumbing.healthy)
     porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
+    porcelain.identity_alias_healthcheck_username = (
+        plumbing.identity_alias_healthcheck_username)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
     porcelain.keytab = (plumbing.keytab)
     porcelain.krb_config = (plumbing.krb_config)
     porcelain.name = (plumbing.name)
@@ -16414,6 +16417,9 @@ def convert_sql_server_kerberos_ad_to_plumbing(porcelain):
     plumbing.healthy = (porcelain.healthy)
     plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
+    plumbing.identity_alias_healthcheck_username = (
+        porcelain.identity_alias_healthcheck_username)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
     plumbing.keytab = (porcelain.keytab)
     plumbing.krb_config = (porcelain.krb_config)
     plumbing.name = (porcelain.name)

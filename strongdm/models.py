@@ -31817,6 +31817,8 @@ class SQLServerKerberosAD:
         'healthy',
         'hostname',
         'id',
+        'identity_alias_healthcheck_username',
+        'identity_set_id',
         'keytab',
         'krb_config',
         'name',
@@ -31842,6 +31844,8 @@ class SQLServerKerberosAD:
         healthy=None,
         hostname=None,
         id=None,
+        identity_alias_healthcheck_username=None,
+        identity_set_id=None,
         keytab=None,
         krb_config=None,
         name=None,
@@ -31885,6 +31889,14 @@ class SQLServerKerberosAD:
         self.id = id if id is not None else ''
         '''
          Unique identifier of the Resource.
+        '''
+        self.identity_alias_healthcheck_username = identity_alias_healthcheck_username if identity_alias_healthcheck_username is not None else ''
+        '''
+         The username to use for healthchecks, when clients otherwise connect with their own identity alias username.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
         '''
         self.keytab = keytab if keytab is not None else ''
         '''
@@ -31952,6 +31964,8 @@ class SQLServerKerberosAD:
             'healthy: ' + repr(self.healthy) + ' ' +\
             'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
+            'identity_alias_healthcheck_username: ' + repr(self.identity_alias_healthcheck_username) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
             'keytab: ' + repr(self.keytab) + ' ' +\
             'krb_config: ' + repr(self.krb_config) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
@@ -31977,6 +31991,9 @@ class SQLServerKerberosAD:
             'healthy': self.healthy,
             'hostname': self.hostname,
             'id': self.id,
+            'identity_alias_healthcheck_username':
+            self.identity_alias_healthcheck_username,
+            'identity_set_id': self.identity_set_id,
             'keytab': self.keytab,
             'krb_config': self.krb_config,
             'name': self.name,
@@ -32003,6 +32020,9 @@ class SQLServerKerberosAD:
             healthy=d.get('healthy'),
             hostname=d.get('hostname'),
             id=d.get('id'),
+            identity_alias_healthcheck_username=d.get(
+                'identity_alias_healthcheck_username'),
+            identity_set_id=d.get('identity_set_id'),
             keytab=d.get('keytab'),
             krb_config=d.get('krb_config'),
             name=d.get('name'),
