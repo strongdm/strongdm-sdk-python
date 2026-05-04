@@ -93,6 +93,7 @@ class ResourceType(str, Enum):
     KUBERNETES_SERVICE_ACCOUNT = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT"
     KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_SERVICE_ACCOUNT_USER_IMPERSONATION"
     KUBERNETES_USER_IMPERSONATION = "RESOURCE_TYPE_KUBERNETES_USER_IMPERSONATION"
+    LLM = "RESOURCE_TYPE_LLM"
     MCP_NO_AUTH = "RESOURCE_TYPE_MCP_NO_AUTH"
     MCP = "RESOURCE_TYPE_MCP"
     MCPDCR = "RESOURCE_TYPE_MCPDCR"
@@ -20051,6 +20052,149 @@ class KubernetesUserImpersonation:
         )
 
 
+class LLM:
+    '''
+    LLM is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'egress_filter',
+        'healthy',
+        'id',
+        'models',
+        'name',
+        'password',
+        'port_override',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+        'url',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        egress_filter=None,
+        healthy=None,
+        id=None,
+        models=None,
+        name=None,
+        password=None,
+        port_override=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+        url=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.models = models if models is not None else ''
+        '''
+         Space-separated list of model names this resource accepts. Requests for unlisted models are rejected. Leave empty to allow all models.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
+        self.port_override = port_override if port_override is not None else 0
+        '''
+         The local port used by clients to connect to this resource. It is automatically generated if not provided on create and may be re-generated on update by specifying a value of -1.
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.url = url if url is not None else ''
+        '''
+         The URL to dial to initiate a connection from the egress node to this resource.
+        '''
+
+    def __repr__(self):
+        return '<sdm.LLM ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'models: ' + repr(self.models) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
+            'port_override: ' + repr(self.port_override) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'url: ' + repr(self.url) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'egress_filter': self.egress_filter,
+            'healthy': self.healthy,
+            'id': self.id,
+            'models': self.models,
+            'name': self.name,
+            'password': self.password,
+            'port_override': self.port_override,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+            'url': self.url,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            egress_filter=d.get('egress_filter'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            models=d.get('models'),
+            name=d.get('name'),
+            password=d.get('password'),
+            port_override=d.get('port_override'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+            url=d.get('url'),
+        )
+
+
 class LogCategoryConfig:
     __slots__ = [
         'remote_discard_replays',
@@ -20784,6 +20928,55 @@ class MCPGatewayPAT:
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
             url=d.get('url'),
+        )
+
+
+class MFAConfig:
+    __slots__ = [
+        'enabled',
+        'okta',
+        'provider',
+    ]
+
+    def __init__(
+        self,
+        enabled=None,
+        okta=None,
+        provider=None,
+    ):
+        self.enabled = enabled if enabled is not None else False
+        '''
+         Indicates if MFA is enabled for the organization.
+        '''
+        self.okta = okta if okta is not None else None
+        '''
+         Okta MFA configuration. Future providers will be added to this wrapper.
+        '''
+        self.provider = provider if provider is not None else ''
+        '''
+         The MFA provider, one of the MFAProvider constants.
+        '''
+
+    def __repr__(self):
+        return '<sdm.MFAConfig ' + \
+            'enabled: ' + repr(self.enabled) + ' ' +\
+            'okta: ' + repr(self.okta) + ' ' +\
+            'provider: ' + repr(self.provider) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'enabled': self.enabled,
+            'okta': self.okta,
+            'provider': self.provider,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            enabled=d.get('enabled'),
+            okta=d.get('okta'),
+            provider=d.get('provider'),
         )
 
 
@@ -24818,6 +25011,129 @@ class OktaGroups:
         )
 
 
+class OktaMFAConfig:
+    __slots__ = [
+        'api_token',
+        'api_token_set',
+        'auth_mode',
+        'client_id',
+        'multidevice_push_enabled',
+        'organization_url',
+        'private_key_id',
+        'private_key_id_set',
+        'private_key_pem',
+        'private_key_pem_set',
+        'user_lookup',
+    ]
+
+    def __init__(
+        self,
+        api_token=None,
+        api_token_set=None,
+        auth_mode=None,
+        client_id=None,
+        multidevice_push_enabled=None,
+        organization_url=None,
+        private_key_id=None,
+        private_key_id_set=None,
+        private_key_pem=None,
+        private_key_pem_set=None,
+        user_lookup=None,
+    ):
+        self.api_token = api_token if api_token is not None else ''
+        '''
+         The API token to authenticate with when auth_mode is api_token.
+        '''
+        self.api_token_set = api_token_set if api_token_set is not None else False
+        '''
+         Indicates if an API token is already stored.
+        '''
+        self.auth_mode = auth_mode if auth_mode is not None else ''
+        '''
+         The Okta auth mode, one of the OktaAuthMode constants.
+        '''
+        self.client_id = client_id if client_id is not None else ''
+        '''
+         The Okta client ID to authenticate with when auth_mode is client_credentials.
+        '''
+        self.multidevice_push_enabled = multidevice_push_enabled if multidevice_push_enabled is not None else False
+        '''
+         Indicates if multidevice push is enabled.
+        '''
+        self.organization_url = organization_url if organization_url is not None else ''
+        '''
+         The Okta organization URL.
+        '''
+        self.private_key_id = private_key_id if private_key_id is not None else ''
+        '''
+         The key ID (kid) assigned by Okta to the registered public key.
+        '''
+        self.private_key_id_set = private_key_id_set if private_key_id_set is not None else False
+        '''
+         Indicates if a key ID is already stored or explicitly supplied. This allows
+         callers to preserve the existing value when omitted or clear it by
+         sending an empty string with private_key_id_set=true.
+        '''
+        self.private_key_pem = private_key_pem if private_key_pem is not None else ''
+        '''
+         The PEM encoded private key to authenticate with when auth_mode is client_credentials.
+        '''
+        self.private_key_pem_set = private_key_pem_set if private_key_pem_set is not None else False
+        '''
+         Indicates if a PEM encoded private key is already stored.
+        '''
+        self.user_lookup = user_lookup if user_lookup is not None else ''
+        '''
+         The Okta user lookup strategy, one of the OktaUserLookup constants.
+        '''
+
+    def __repr__(self):
+        return '<sdm.OktaMFAConfig ' + \
+            'api_token: ' + repr(self.api_token) + ' ' +\
+            'api_token_set: ' + repr(self.api_token_set) + ' ' +\
+            'auth_mode: ' + repr(self.auth_mode) + ' ' +\
+            'client_id: ' + repr(self.client_id) + ' ' +\
+            'multidevice_push_enabled: ' + repr(self.multidevice_push_enabled) + ' ' +\
+            'organization_url: ' + repr(self.organization_url) + ' ' +\
+            'private_key_id: ' + repr(self.private_key_id) + ' ' +\
+            'private_key_id_set: ' + repr(self.private_key_id_set) + ' ' +\
+            'private_key_pem: ' + repr(self.private_key_pem) + ' ' +\
+            'private_key_pem_set: ' + repr(self.private_key_pem_set) + ' ' +\
+            'user_lookup: ' + repr(self.user_lookup) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'api_token': self.api_token,
+            'api_token_set': self.api_token_set,
+            'auth_mode': self.auth_mode,
+            'client_id': self.client_id,
+            'multidevice_push_enabled': self.multidevice_push_enabled,
+            'organization_url': self.organization_url,
+            'private_key_id': self.private_key_id,
+            'private_key_id_set': self.private_key_id_set,
+            'private_key_pem': self.private_key_pem,
+            'private_key_pem_set': self.private_key_pem_set,
+            'user_lookup': self.user_lookup,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            api_token=d.get('api_token'),
+            api_token_set=d.get('api_token_set'),
+            auth_mode=d.get('auth_mode'),
+            client_id=d.get('client_id'),
+            multidevice_push_enabled=d.get('multidevice_push_enabled'),
+            organization_url=d.get('organization_url'),
+            private_key_id=d.get('private_key_id'),
+            private_key_id_set=d.get('private_key_id_set'),
+            private_key_pem=d.get('private_key_pem'),
+            private_key_pem_set=d.get('private_key_pem_set'),
+            user_lookup=d.get('user_lookup'),
+        )
+
+
 class Oracle:
     __slots__ = [
         'bind_interface',
@@ -25463,6 +25779,55 @@ class Organization:
         )
 
 
+class OrganizationGetMFAResponse:
+    __slots__ = [
+        'meta',
+        'mfa',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        meta=None,
+        mfa=None,
+        rate_limit=None,
+    ):
+        self.meta = meta if meta is not None else None
+        '''
+         Reserved for future use.
+        '''
+        self.mfa = mfa if mfa is not None else None
+        '''
+         The current MFA configuration.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.OrganizationGetMFAResponse ' + \
+            'meta: ' + repr(self.meta) + ' ' +\
+            'mfa: ' + repr(self.mfa) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'meta': self.meta,
+            'mfa': self.mfa,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            meta=d.get('meta'),
+            mfa=d.get('mfa'),
+            rate_limit=d.get('rate_limit'),
+        )
+
+
 class OrganizationHistoryRecord:
     '''
          OrganizationHistoryRecord records the state of an Organization at a given point in time,
@@ -25514,6 +25879,75 @@ class OrganizationHistoryRecord:
             activity_id=d.get('activity_id'),
             organization=d.get('organization'),
             timestamp=d.get('timestamp'),
+        )
+
+
+class OrganizationTestMFAResponse:
+    __slots__ = [
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        rate_limit=None,
+    ):
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.OrganizationTestMFAResponse ' + \
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(rate_limit=d.get('rate_limit'), )
+
+
+class OrganizationUpdateMFAResponse:
+    __slots__ = [
+        'mfa',
+        'rate_limit',
+    ]
+
+    def __init__(
+        self,
+        mfa=None,
+        rate_limit=None,
+    ):
+        self.mfa = mfa if mfa is not None else None
+        '''
+         The updated MFA configuration.
+        '''
+        self.rate_limit = rate_limit if rate_limit is not None else None
+        '''
+         Rate limit information.
+        '''
+
+    def __repr__(self):
+        return '<sdm.OrganizationUpdateMFAResponse ' + \
+            'mfa: ' + repr(self.mfa) + ' ' +\
+            'rate_limit: ' + repr(self.rate_limit) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'mfa': self.mfa,
+            'rate_limit': self.rate_limit,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            mfa=d.get('mfa'),
+            rate_limit=d.get('rate_limit'),
         )
 
 

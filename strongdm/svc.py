@@ -114,6 +114,8 @@ from .nodes_history_pb2 import *
 from .nodes_history_pb2_grpc import *
 from .organization_history_pb2 import *
 from .organization_history_pb2_grpc import *
+from .organizations_pb2 import *
+from .organizations_pb2_grpc import *
 from .peering_group_nodes_pb2 import *
 from .peering_group_nodes_pb2_grpc import *
 from .peering_group_peers_pb2 import *
@@ -4992,6 +4994,120 @@ class OrganizationHistory:
         return generator(self, req)
 
 
+class Organizations:
+    '''
+     Organizations exposes organization configuration. Most RPCs remain private to the
+     go_private SDK; public MFA management is exposed to all public SDK targets.
+     The terraform-provider target is opted out at the service level because the
+     provider's data-source generator assumes every service has a List RPC; MFA is
+     instead surfaced via a hand-written resource template.
+    See `strongdm.models.Organization`.
+    '''
+    def __init__(self, channel, client):
+        self.parent = client
+        self.stub = OrganizationsStub(channel)
+
+    def get_mfa(self, timeout=None):
+        '''
+         GetMFA gets the organization's MFA configuration.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = OrganizationGetMFARequest()
+
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.GetMFA(
+                    req,
+                    metadata=self.parent.get_metadata('Organizations.GetMFA',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.OrganizationGetMFAResponse()
+        resp.meta = plumbing.convert_get_response_metadata_to_porcelain(
+            plumbing_response.meta)
+        resp.mfa = plumbing.convert_mfa_config_to_porcelain(
+            plumbing_response.mfa)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def update_mfa(self, mfa, timeout=None):
+        '''
+         UpdateMFA updates the organization's MFA configuration.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = OrganizationUpdateMFARequest()
+
+        if mfa is not None:
+            req.mfa.CopyFrom(plumbing.convert_mfa_config_to_plumbing(mfa))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.UpdateMFA(
+                    req,
+                    metadata=self.parent.get_metadata(
+                        'Organizations.UpdateMFA', req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.OrganizationUpdateMFAResponse()
+        resp.mfa = plumbing.convert_mfa_config_to_porcelain(
+            plumbing_response.mfa)
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+    def test_mfa(self, mfa, timeout=None):
+        '''
+         TestMFA validates MFA connectivity without persisting changes.
+        '''
+        deadline = None if timeout is None else time.time() + timeout
+        req = OrganizationTestMFARequest()
+
+        if mfa is not None:
+            req.mfa.CopyFrom(plumbing.convert_mfa_config_to_plumbing(mfa))
+        tries = 0
+        plumbing_response = None
+        while True:
+            t = None if deadline is None else deadline - time.time()
+            try:
+                plumbing_response = self.stub.TestMFA(
+                    req,
+                    metadata=self.parent.get_metadata('Organizations.TestMFA',
+                                                      req),
+                    timeout=t)
+            except Exception as e:
+                if self.parent.shouldRetry(tries, e, deadline):
+                    tries += 1
+                    time.sleep(self.parent.exponentialBackoff(tries, deadline))
+                    continue
+                raise plumbing.convert_error_to_porcelain(e) from e
+            break
+
+        resp = models.OrganizationTestMFAResponse()
+        resp.rate_limit = plumbing.convert_rate_limit_metadata_to_porcelain(
+            plumbing_response.rate_limit)
+        return resp
+
+
 class PeeringGroupNodes:
     '''
      PeeringGroupNodes provides the building blocks necessary to obtain attach a node to a peering group.
@@ -6890,6 +7006,7 @@ class Resources:
     `strongdm.models.KubernetesServiceAccount`
     `strongdm.models.KubernetesServiceAccountUserImpersonation`
     `strongdm.models.KubernetesUserImpersonation`
+    `strongdm.models.LLM`
     `strongdm.models.Maria`
     `strongdm.models.MCPGatewayNoAuth`
     `strongdm.models.MCPGatewayOAuth`

@@ -72,6 +72,7 @@ from .managed_secrets_pb2 import *
 from .nodes_pb2 import *
 from .nodes_history_pb2 import *
 from .organization_history_pb2 import *
+from .organizations_pb2 import *
 from .peering_group_nodes_pb2 import *
 from .peering_group_peers_pb2 import *
 from .peering_group_resources_pb2 import *
@@ -9928,6 +9929,54 @@ def convert_repeated_kubernetes_user_impersonation_to_porcelain(plumbings):
     ]
 
 
+def convert_llm_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.LLM()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.models = (plumbing.models)
+    porcelain.name = (plumbing.name)
+    porcelain.password = (plumbing.password)
+    porcelain.port_override = (plumbing.port_override)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.url = (plumbing.url)
+    return porcelain
+
+
+def convert_llm_to_plumbing(porcelain):
+    plumbing = LLM()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.models = (porcelain.models)
+    plumbing.name = (porcelain.name)
+    plumbing.password = (porcelain.password)
+    plumbing.port_override = (porcelain.port_override)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.url = (porcelain.url)
+    return plumbing
+
+
+def convert_repeated_llm_to_plumbing(porcelains):
+    return [convert_llm_to_plumbing(porcelain) for porcelain in porcelains]
+
+
+def convert_repeated_llm_to_porcelain(plumbings):
+    return [convert_llm_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_log_category_config_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10227,6 +10276,38 @@ def convert_repeated_mcp_gateway_pat_to_porcelain(plumbings):
     return [
         convert_mcp_gateway_pat_to_porcelain(plumbing)
         for plumbing in plumbings
+    ]
+
+
+def convert_mfa_config_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.MFAConfig()
+    porcelain.enabled = (plumbing.enabled)
+    porcelain.okta = convert_okta_mfa_config_to_porcelain(plumbing.okta)
+    porcelain.provider = (plumbing.provider)
+    return porcelain
+
+
+def convert_mfa_config_to_plumbing(porcelain):
+    plumbing = MFAConfig()
+    if porcelain is None:
+        return plumbing
+    plumbing.enabled = (porcelain.enabled)
+    plumbing.okta.CopyFrom(convert_okta_mfa_config_to_plumbing(porcelain.okta))
+    plumbing.provider = (porcelain.provider)
+    return plumbing
+
+
+def convert_repeated_mfa_config_to_plumbing(porcelains):
+    return [
+        convert_mfa_config_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_mfa_config_to_porcelain(plumbings):
+    return [
+        convert_mfa_config_to_porcelain(plumbing) for plumbing in plumbings
     ]
 
 
@@ -12250,6 +12331,56 @@ def convert_repeated_okta_groups_to_porcelain(plumbings):
     ]
 
 
+def convert_okta_mfa_config_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OktaMFAConfig()
+    porcelain.api_token = (plumbing.api_token)
+    porcelain.api_token_set = (plumbing.api_token_set)
+    porcelain.auth_mode = (plumbing.auth_mode)
+    porcelain.client_id = (plumbing.client_id)
+    porcelain.multidevice_push_enabled = (plumbing.multidevice_push_enabled)
+    porcelain.organization_url = (plumbing.organization_url)
+    porcelain.private_key_id = (plumbing.private_key_id)
+    porcelain.private_key_id_set = (plumbing.private_key_id_set)
+    porcelain.private_key_pem = (plumbing.private_key_pem)
+    porcelain.private_key_pem_set = (plumbing.private_key_pem_set)
+    porcelain.user_lookup = (plumbing.user_lookup)
+    return porcelain
+
+
+def convert_okta_mfa_config_to_plumbing(porcelain):
+    plumbing = OktaMFAConfig()
+    if porcelain is None:
+        return plumbing
+    plumbing.api_token = (porcelain.api_token)
+    plumbing.api_token_set = (porcelain.api_token_set)
+    plumbing.auth_mode = (porcelain.auth_mode)
+    plumbing.client_id = (porcelain.client_id)
+    plumbing.multidevice_push_enabled = (porcelain.multidevice_push_enabled)
+    plumbing.organization_url = (porcelain.organization_url)
+    plumbing.private_key_id = (porcelain.private_key_id)
+    plumbing.private_key_id_set = (porcelain.private_key_id_set)
+    plumbing.private_key_pem = (porcelain.private_key_pem)
+    plumbing.private_key_pem_set = (porcelain.private_key_pem_set)
+    plumbing.user_lookup = (porcelain.user_lookup)
+    return plumbing
+
+
+def convert_repeated_okta_mfa_config_to_plumbing(porcelains):
+    return [
+        convert_okta_mfa_config_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_okta_mfa_config_to_porcelain(plumbings):
+    return [
+        convert_okta_mfa_config_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_oracle_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -12462,6 +12593,43 @@ def convert_repeated_organization_to_porcelain(plumbings):
     ]
 
 
+def convert_organization_get_mfa_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OrganizationGetMFAResponse()
+    porcelain.meta = convert_get_response_metadata_to_porcelain(plumbing.meta)
+    porcelain.mfa = convert_mfa_config_to_porcelain(plumbing.mfa)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_organization_get_mfa_response_to_plumbing(porcelain):
+    plumbing = OrganizationGetMFAResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.meta.CopyFrom(
+        convert_get_response_metadata_to_plumbing(porcelain.meta))
+    plumbing.mfa.CopyFrom(convert_mfa_config_to_plumbing(porcelain.mfa))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_organization_get_mfa_response_to_plumbing(porcelains):
+    return [
+        convert_organization_get_mfa_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_organization_get_mfa_response_to_porcelain(plumbings):
+    return [
+        convert_organization_get_mfa_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_organization_history_record_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -12495,6 +12663,72 @@ def convert_repeated_organization_history_record_to_plumbing(porcelains):
 def convert_repeated_organization_history_record_to_porcelain(plumbings):
     return [
         convert_organization_history_record_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_organization_test_mfa_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OrganizationTestMFAResponse()
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_organization_test_mfa_response_to_plumbing(porcelain):
+    plumbing = OrganizationTestMFAResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_organization_test_mfa_response_to_plumbing(porcelains):
+    return [
+        convert_organization_test_mfa_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_organization_test_mfa_response_to_porcelain(plumbings):
+    return [
+        convert_organization_test_mfa_response_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
+def convert_organization_update_mfa_response_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.OrganizationUpdateMFAResponse()
+    porcelain.mfa = convert_mfa_config_to_porcelain(plumbing.mfa)
+    porcelain.rate_limit = convert_rate_limit_metadata_to_porcelain(
+        plumbing.rate_limit)
+    return porcelain
+
+
+def convert_organization_update_mfa_response_to_plumbing(porcelain):
+    plumbing = OrganizationUpdateMFAResponse()
+    if porcelain is None:
+        return plumbing
+    plumbing.mfa.CopyFrom(convert_mfa_config_to_plumbing(porcelain.mfa))
+    plumbing.rate_limit.CopyFrom(
+        convert_rate_limit_metadata_to_plumbing(porcelain.rate_limit))
+    return plumbing
+
+
+def convert_repeated_organization_update_mfa_response_to_plumbing(porcelains):
+    return [
+        convert_organization_update_mfa_response_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_organization_update_mfa_response_to_porcelain(plumbings):
+    return [
+        convert_organization_update_mfa_response_to_porcelain(plumbing)
         for plumbing in plumbings
     ]
 
@@ -15285,6 +15519,8 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.KubernetesUserImpersonation):
         plumbing.kubernetes_user_impersonation.CopyFrom(
             convert_kubernetes_user_impersonation_to_plumbing(porcelain))
+    if isinstance(porcelain, models.LLM):
+        plumbing.llm.CopyFrom(convert_llm_to_plumbing(porcelain))
     if isinstance(porcelain, models.Maria):
         plumbing.maria.CopyFrom(convert_maria_to_plumbing(porcelain))
     if isinstance(porcelain, models.MCPGatewayNoAuth):
@@ -15572,6 +15808,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('kubernetes_user_impersonation'):
         return convert_kubernetes_user_impersonation_to_porcelain(
             plumbing.kubernetes_user_impersonation)
+    if plumbing.HasField('llm'):
+        return convert_llm_to_porcelain(plumbing.llm)
     if plumbing.HasField('maria'):
         return convert_maria_to_porcelain(plumbing.maria)
     if plumbing.HasField('mcp_gateway_no_auth'):

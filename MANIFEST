@@ -95,6 +95,8 @@ strongdm/options_pb2.py
 strongdm/options_pb2_grpc.py
 strongdm/organization_history_pb2.py
 strongdm/organization_history_pb2_grpc.py
+strongdm/organizations_pb2.py
+strongdm/organizations_pb2_grpc.py
 strongdm/peering_group_nodes_pb2.py
 strongdm/peering_group_nodes_pb2_grpc.py
 strongdm/peering_group_peers_pb2.py

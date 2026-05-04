@@ -40,7 +40,7 @@ DEFAULT_MAX_RETRY_DELAY = 120  # 120 seconds
 DEFAULT_RETRY_FACTOR = 1.6
 DEFAULT_RETRY_JITTER = 0.2
 API_VERSION = '2025-04-14'
-USER_AGENT = 'strongdm-sdk-python/17.2.0'
+USER_AGENT = 'strongdm-sdk-python/17.4.0'
 
 method_regexp = re.compile(r'\W+')
 
@@ -475,6 +475,16 @@ class Client:
          OrganizationHistory records all changes to the state of an Organization.
 
         See `strongdm.svc.OrganizationHistory`.
+        '''
+        self.organizations = svc.Organizations(channel, self)
+        '''
+         Organizations exposes organization configuration. Most RPCs remain private to the
+         go_private SDK; public MFA management is exposed to all public SDK targets.
+         The terraform-provider target is opted out at the service level because the
+         provider's data-source generator assumes every service has a List RPC; MFA is
+         instead surfaced via a hand-written resource template.
+
+        See `strongdm.svc.Organizations`.
         '''
         self.peering_group_nodes = svc.PeeringGroupNodes(channel, self)
         '''
