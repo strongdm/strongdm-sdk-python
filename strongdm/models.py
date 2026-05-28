@@ -32253,6 +32253,7 @@ class SQLServerKerberosAD:
         'krb_config',
         'name',
         'override_database',
+        'password',
         'port',
         'port_override',
         'proxy_cluster_id',
@@ -32280,6 +32281,7 @@ class SQLServerKerberosAD:
         krb_config=None,
         name=None,
         override_database=None,
+        password=None,
         port=None,
         port_override=None,
         proxy_cluster_id=None,
@@ -32344,6 +32346,10 @@ class SQLServerKerberosAD:
         '''
          If set, the database configured cannot be changed by users. This setting is not recommended for most use cases, as some clients will insist their database has changed when it has not, leading to user confusion.
         '''
+        self.password = password if password is not None else ''
+        '''
+         The password to authenticate with.
+        '''
         self.port = port if port is not None else 0
         '''
          The port to dial to initiate a connection from the egress node to this resource.
@@ -32400,6 +32406,7 @@ class SQLServerKerberosAD:
             'krb_config: ' + repr(self.krb_config) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'override_database: ' + repr(self.override_database) + ' ' +\
+            'password: ' + repr(self.password) + ' ' +\
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
@@ -32428,6 +32435,7 @@ class SQLServerKerberosAD:
             'krb_config': self.krb_config,
             'name': self.name,
             'override_database': self.override_database,
+            'password': self.password,
             'port': self.port,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
@@ -32457,6 +32465,7 @@ class SQLServerKerberosAD:
             krb_config=d.get('krb_config'),
             name=d.get('name'),
             override_database=d.get('override_database'),
+            password=d.get('password'),
             port=d.get('port'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
