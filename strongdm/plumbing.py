@@ -4895,6 +4895,8 @@ def convert_click_house_http_to_porcelain(plumbing):
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     porcelain.username = (plumbing.username)
     return porcelain
@@ -4915,6 +4917,8 @@ def convert_click_house_http_to_plumbing(porcelain):
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     plumbing.username = (porcelain.username)
     return plumbing
@@ -5712,6 +5716,8 @@ def convert_couchbase_database_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.tls_required = (plumbing.tls_required)
     porcelain.username = (plumbing.username)
     return porcelain
@@ -5735,6 +5741,8 @@ def convert_couchbase_database_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.tls_required = (porcelain.tls_required)
     plumbing.username = (porcelain.username)
     return plumbing
@@ -5769,6 +5777,8 @@ def convert_couchbase_web_ui_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     porcelain.username = (plumbing.username)
     return porcelain
@@ -5789,6 +5799,8 @@ def convert_couchbase_web_ui_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     plumbing.username = (porcelain.username)
     return plumbing
@@ -8577,6 +8589,8 @@ def convert_http_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.tls_required = (plumbing.tls_required)
     porcelain.url = (plumbing.url)
     return porcelain
@@ -8603,6 +8617,8 @@ def convert_http_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.tls_required = (porcelain.tls_required)
     plumbing.url = (porcelain.url)
     return plumbing
@@ -8639,6 +8655,8 @@ def convert_http_basic_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.tls_required = (plumbing.tls_required)
     porcelain.url = (plumbing.url)
     porcelain.username = (plumbing.username)
@@ -8666,6 +8684,8 @@ def convert_http_basic_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.tls_required = (porcelain.tls_required)
     plumbing.url = (porcelain.url)
     plumbing.username = (porcelain.username)
@@ -8706,6 +8726,8 @@ def convert_http_no_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.tls_required = (plumbing.tls_required)
     porcelain.url = (plumbing.url)
     return porcelain
@@ -8731,6 +8753,8 @@ def convert_http_no_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.tls_required = (porcelain.tls_required)
     plumbing.url = (porcelain.url)
     return plumbing
@@ -10066,6 +10090,8 @@ def convert_mcp_gateway_no_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     return porcelain
 
@@ -10085,6 +10111,8 @@ def convert_mcp_gateway_no_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     return plumbing
 
@@ -10122,6 +10150,8 @@ def convert_mcp_gateway_o_auth_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     porcelain.username = (plumbing.username)
     return porcelain
@@ -10146,6 +10176,8 @@ def convert_mcp_gateway_o_auth_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     plumbing.username = (porcelain.username)
     return plumbing
@@ -10184,6 +10216,8 @@ def convert_mcp_gateway_o_auth_dcr_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     return porcelain
 
@@ -10207,6 +10241,8 @@ def convert_mcp_gateway_o_auth_dcr_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     return plumbing
 
@@ -10241,6 +10277,8 @@ def convert_mcp_gateway_pat_to_porcelain(plumbing):
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tls_cert = (plumbing.tls_cert)
+    porcelain.tls_insecure = (plumbing.tls_insecure)
     porcelain.url = (plumbing.url)
     return porcelain
 
@@ -10261,6 +10299,8 @@ def convert_mcp_gateway_pat_to_plumbing(porcelain):
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tls_cert = (porcelain.tls_cert)
+    plumbing.tls_insecure = (porcelain.tls_insecure)
     plumbing.url = (porcelain.url)
     return plumbing
 

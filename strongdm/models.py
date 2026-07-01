@@ -9892,6 +9892,8 @@ class ClickHouseHTTP:
         'proxy_cluster_id',
         'secret_store_id',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
         'username',
     ]
@@ -9909,6 +9911,8 @@ class ClickHouseHTTP:
         proxy_cluster_id=None,
         secret_store_id=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
         username=None,
     ):
@@ -9956,6 +9960,14 @@ class ClickHouseHTTP:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The URL to dial to initiate a connection from the egress node to this resource.
@@ -9978,6 +9990,8 @@ class ClickHouseHTTP:
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
@@ -9995,6 +10009,8 @@ class ClickHouseHTTP:
             'proxy_cluster_id': self.proxy_cluster_id,
             'secret_store_id': self.secret_store_id,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
             'username': self.username,
         }
@@ -10013,6 +10029,8 @@ class ClickHouseHTTP:
             proxy_cluster_id=d.get('proxy_cluster_id'),
             secret_store_id=d.get('secret_store_id'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
             username=d.get('username'),
         )
@@ -11325,6 +11343,8 @@ class CouchbaseDatabase:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'tls_required',
         'username',
     ]
@@ -11345,6 +11365,8 @@ class CouchbaseDatabase:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         tls_required=None,
         username=None,
     ):
@@ -11404,6 +11426,14 @@ class CouchbaseDatabase:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.tls_required = tls_required if tls_required is not None else False
         '''
          If set, TLS must be used to connect to this resource.
@@ -11429,6 +11459,8 @@ class CouchbaseDatabase:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
@@ -11449,6 +11481,8 @@ class CouchbaseDatabase:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'tls_required': self.tls_required,
             'username': self.username,
         }
@@ -11470,6 +11504,8 @@ class CouchbaseDatabase:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             tls_required=d.get('tls_required'),
             username=d.get('username'),
         )
@@ -11488,6 +11524,8 @@ class CouchbaseWebUI:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
         'username',
     ]
@@ -11505,6 +11543,8 @@ class CouchbaseWebUI:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
         username=None,
     ):
@@ -11552,6 +11592,14 @@ class CouchbaseWebUI:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The base address of your website without the path.
@@ -11574,6 +11622,8 @@ class CouchbaseWebUI:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
@@ -11591,6 +11641,8 @@ class CouchbaseWebUI:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
             'username': self.username,
         }
@@ -11609,6 +11661,8 @@ class CouchbaseWebUI:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
             username=d.get('username'),
         )
@@ -17192,6 +17246,8 @@ class HTTPAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'tls_required',
         'url',
     ]
@@ -17214,6 +17270,8 @@ class HTTPAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         tls_required=None,
         url=None,
     ):
@@ -17281,6 +17339,14 @@ class HTTPAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.tls_required = tls_required if tls_required is not None else False
         '''
          This option enforces HTTPS on the client, not resource connection.
@@ -17308,6 +17374,8 @@ class HTTPAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
@@ -17330,6 +17398,8 @@ class HTTPAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'tls_required': self.tls_required,
             'url': self.url,
         }
@@ -17353,6 +17423,8 @@ class HTTPAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             tls_required=d.get('tls_required'),
             url=d.get('url'),
         )
@@ -17376,6 +17448,8 @@ class HTTPBasicAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'tls_required',
         'url',
         'username',
@@ -17399,6 +17473,8 @@ class HTTPBasicAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         tls_required=None,
         url=None,
         username=None,
@@ -17467,6 +17543,14 @@ class HTTPBasicAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.tls_required = tls_required if tls_required is not None else False
         '''
          This option enforces HTTPS on the client, not resource connection.
@@ -17498,6 +17582,8 @@ class HTTPBasicAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
@@ -17521,6 +17607,8 @@ class HTTPBasicAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'tls_required': self.tls_required,
             'url': self.url,
             'username': self.username,
@@ -17545,6 +17633,8 @@ class HTTPBasicAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             tls_required=d.get('tls_required'),
             url=d.get('url'),
             username=d.get('username'),
@@ -17568,6 +17658,8 @@ class HTTPNoAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'tls_required',
         'url',
     ]
@@ -17589,6 +17681,8 @@ class HTTPNoAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         tls_required=None,
         url=None,
     ):
@@ -17652,6 +17746,14 @@ class HTTPNoAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.tls_required = tls_required if tls_required is not None else False
         '''
          This option enforces HTTPS on the client, not resource connection.
@@ -17678,6 +17780,8 @@ class HTTPNoAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'tls_required: ' + repr(self.tls_required) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
@@ -17699,6 +17803,8 @@ class HTTPNoAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'tls_required': self.tls_required,
             'url': self.url,
         }
@@ -17721,6 +17827,8 @@ class HTTPNoAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             tls_required=d.get('tls_required'),
             url=d.get('url'),
         )
@@ -20334,6 +20442,8 @@ class MCPGatewayNoAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
     ]
 
@@ -20350,6 +20460,8 @@ class MCPGatewayNoAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -20396,6 +20508,14 @@ class MCPGatewayNoAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The URL to dial to initiate a connection from the egress node to this resource.
@@ -20414,6 +20534,8 @@ class MCPGatewayNoAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
 
@@ -20430,6 +20552,8 @@ class MCPGatewayNoAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
         }
 
@@ -20447,6 +20571,8 @@ class MCPGatewayNoAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
         )
 
@@ -20468,6 +20594,8 @@ class MCPGatewayOAuth:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
         'username',
     ]
@@ -20489,6 +20617,8 @@ class MCPGatewayOAuth:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
         username=None,
     ):
@@ -20552,6 +20682,14 @@ class MCPGatewayOAuth:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The URL to dial to initiate a connection from the egress node to this resource.
@@ -20578,6 +20716,8 @@ class MCPGatewayOAuth:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             'username: ' + repr(self.username) + ' ' +\
             '>'
@@ -20599,6 +20739,8 @@ class MCPGatewayOAuth:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
             'username': self.username,
         }
@@ -20621,6 +20763,8 @@ class MCPGatewayOAuth:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
             username=d.get('username'),
         )
@@ -20643,6 +20787,8 @@ class MCPGatewayOAuthDCR:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
     ]
 
@@ -20663,6 +20809,8 @@ class MCPGatewayOAuthDCR:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -20725,6 +20873,14 @@ class MCPGatewayOAuthDCR:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The URL to dial to initiate a connection from the egress node to this resource.
@@ -20747,6 +20903,8 @@ class MCPGatewayOAuthDCR:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
 
@@ -20767,6 +20925,8 @@ class MCPGatewayOAuthDCR:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
         }
 
@@ -20788,6 +20948,8 @@ class MCPGatewayOAuthDCR:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
         )
 
@@ -20806,6 +20968,8 @@ class MCPGatewayPAT:
         'secret_store_id',
         'subdomain',
         'tags',
+        'tls_cert',
+        'tls_insecure',
         'url',
     ]
 
@@ -20823,6 +20987,8 @@ class MCPGatewayPAT:
         secret_store_id=None,
         subdomain=None,
         tags=None,
+        tls_cert=None,
+        tls_insecure=None,
         url=None,
     ):
         self.bind_interface = bind_interface if bind_interface is not None else ''
@@ -20873,6 +21039,14 @@ class MCPGatewayPAT:
         '''
          Tags is a map of key, value pairs.
         '''
+        self.tls_cert = tls_cert if tls_cert is not None else ''
+        '''
+         Custom TLS certificate for upstream connection.
+        '''
+        self.tls_insecure = tls_insecure if tls_insecure is not None else False
+        '''
+         Skip TLS certificate verification for the upstream connection.
+        '''
         self.url = url if url is not None else ''
         '''
          The URL to dial to initiate a connection from the egress node to this resource.
@@ -20892,6 +21066,8 @@ class MCPGatewayPAT:
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
+            'tls_cert: ' + repr(self.tls_cert) + ' ' +\
+            'tls_insecure: ' + repr(self.tls_insecure) + ' ' +\
             'url: ' + repr(self.url) + ' ' +\
             '>'
 
@@ -20909,6 +21085,8 @@ class MCPGatewayPAT:
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
+            'tls_cert': self.tls_cert,
+            'tls_insecure': self.tls_insecure,
             'url': self.url,
         }
 
@@ -20927,6 +21105,8 @@ class MCPGatewayPAT:
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
+            tls_cert=d.get('tls_cert'),
+            tls_insecure=d.get('tls_insecure'),
             url=d.get('url'),
         )
 
