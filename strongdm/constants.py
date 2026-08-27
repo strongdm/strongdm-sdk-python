@@ -350,6 +350,7 @@ class ActivityVerb:
     ORG_INTEGRATION_INSTALLED = "org integration installed"
     USER_INTEGRATION_AUTHORIZED = "user authorized integration"
     ORG_INTEGRATION_UNINSTALLED = "org integration uninstalled"
+    ORG_INTEGRATION_API_KEY_REVEALED = "org integration API key revealed"
     USER_INTEGRATION_DEAUTHORIZED = "user deauthorized integration"
     SERVICE_NOW_TOKEN_ADDED = "ServiceNow token created"
     SERVICE_NOW_TOKEN_DELETED = "ServiceNow token deleted"

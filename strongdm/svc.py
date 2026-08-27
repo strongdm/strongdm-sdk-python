@@ -7569,6 +7569,7 @@ class SecretStores:
     `strongdm.models.CyberarkPAMStore`
     `strongdm.models.CyberarkPAMExperimentalStore`
     `strongdm.models.DelineaStore`
+    `strongdm.models.DelineaDSVStore`
     `strongdm.models.GCPStore`
     `strongdm.models.GCPCertX509Store`
     `strongdm.models.KeyfactorSSHStore`

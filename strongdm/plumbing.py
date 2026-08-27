@@ -6211,6 +6211,44 @@ def convert_repeated_delete_response_metadata_to_porcelain(plumbings):
     ]
 
 
+def convert_delinea_dsv_store_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.DelineaDSVStore()
+    porcelain.id = (plumbing.id)
+    porcelain.name = (plumbing.name)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    porcelain.tenant = (plumbing.tenant)
+    porcelain.tld = (plumbing.tld)
+    return porcelain
+
+
+def convert_delinea_dsv_store_to_plumbing(porcelain):
+    plumbing = DelineaDSVStore()
+    if porcelain is None:
+        return plumbing
+    plumbing.id = (porcelain.id)
+    plumbing.name = (porcelain.name)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    plumbing.tenant = (porcelain.tenant)
+    plumbing.tld = (porcelain.tld)
+    return plumbing
+
+
+def convert_repeated_delinea_dsv_store_to_plumbing(porcelains):
+    return [
+        convert_delinea_dsv_store_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_delinea_dsv_store_to_porcelain(plumbings):
+    return [
+        convert_delinea_dsv_store_to_porcelain(plumbing)
+        for plumbing in plumbings
+    ]
+
+
 def convert_delinea_store_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -11506,6 +11544,7 @@ def convert_mongo_host_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -11529,6 +11568,7 @@ def convert_mongo_host_to_plumbing(porcelain):
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -11687,6 +11727,7 @@ def convert_mongo_replica_set_to_porcelain(plumbing):
     porcelain.port = (plumbing.port)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -11711,6 +11752,7 @@ def convert_mongo_replica_set_to_plumbing(porcelain):
     plumbing.port = (porcelain.port)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -11747,6 +11789,7 @@ def convert_mongo_sharded_cluster_to_porcelain(plumbing):
     porcelain.password = (plumbing.password)
     porcelain.port_override = (plumbing.port_override)
     porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.region = (plumbing.region)
     porcelain.secret_store_id = (plumbing.secret_store_id)
     porcelain.subdomain = (plumbing.subdomain)
     porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
@@ -11769,6 +11812,7 @@ def convert_mongo_sharded_cluster_to_plumbing(porcelain):
     plumbing.password = (porcelain.password)
     plumbing.port_override = (porcelain.port_override)
     plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.region = (porcelain.region)
     plumbing.secret_store_id = (porcelain.secret_store_id)
     plumbing.subdomain = (porcelain.subdomain)
     plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
@@ -17543,6 +17587,9 @@ def convert_secret_store_to_plumbing(porcelain):
             convert_cyberark_pam_experimental_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.DelineaStore):
         plumbing.delinea.CopyFrom(convert_delinea_store_to_plumbing(porcelain))
+    if isinstance(porcelain, models.DelineaDSVStore):
+        plumbing.delinea_dsv.CopyFrom(
+            convert_delinea_dsv_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPStore):
         plumbing.gcp.CopyFrom(convert_gcp_store_to_plumbing(porcelain))
     if isinstance(porcelain, models.GCPCertX509Store):
@@ -17628,6 +17675,8 @@ def convert_secret_store_to_porcelain(plumbing):
             plumbing.cyberark_pam_experimental)
     if plumbing.HasField('delinea'):
         return convert_delinea_store_to_porcelain(plumbing.delinea)
+    if plumbing.HasField('delinea_dsv'):
+        return convert_delinea_dsv_store_to_porcelain(plumbing.delinea_dsv)
     if plumbing.HasField('gcp'):
         return convert_gcp_store_to_porcelain(plumbing.gcp)
     if plumbing.HasField('gcp_cert_x_509'):

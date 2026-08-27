@@ -12443,6 +12443,77 @@ class DeleteResponseMetadata:
         return cls()
 
 
+class DelineaDSVStore:
+    '''
+    DelineaDSVStore is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'id',
+        'name',
+        'tags',
+        'tenant',
+        'tld',
+    ]
+
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        tags=None,
+        tenant=None,
+        tld=None,
+    ):
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the SecretStore.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the SecretStore.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+        self.tenant = tenant if tenant is not None else ''
+        '''
+         The tenant name to target, e.g. "acme" for acme.secretsvaultcloud.com
+        '''
+        self.tld = tld if tld is not None else ''
+        '''
+         The top level domain of the DSV instance, e.g. "com". Defaults to "com".
+        '''
+
+    def __repr__(self):
+        return '<sdm.DelineaDSVStore ' + \
+            'id: ' + repr(self.id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            'tenant: ' + repr(self.tenant) + ' ' +\
+            'tld: ' + repr(self.tld) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'tags': self.tags,
+            'tenant': self.tenant,
+            'tld': self.tld,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            id=d.get('id'),
+            name=d.get('name'),
+            tags=d.get('tags'),
+            tenant=d.get('tenant'),
+            tld=d.get('tld'),
+        )
+
+
 class DelineaStore:
     __slots__ = [
         'id',
@@ -23159,6 +23230,7 @@ class MongoHost:
         'port',
         'port_override',
         'proxy_cluster_id',
+        'region',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -23179,6 +23251,7 @@ class MongoHost:
         port=None,
         port_override=None,
         proxy_cluster_id=None,
+        region=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -23229,6 +23302,10 @@ class MongoHost:
         '''
          ID of the proxy cluster for this resource, if any.
         '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to use for IAM (MONGODB-AWS) authentication.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -23263,6 +23340,7 @@ class MongoHost:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23283,6 +23361,7 @@ class MongoHost:
             'port': self.port,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
+            'region': self.region,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -23304,6 +23383,7 @@ class MongoHost:
             port=d.get('port'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
+            region=d.get('region'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -23675,6 +23755,7 @@ class MongoReplicaSet:
         'port',
         'port_override',
         'proxy_cluster_id',
+        'region',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -23696,6 +23777,7 @@ class MongoReplicaSet:
         port=None,
         port_override=None,
         proxy_cluster_id=None,
+        region=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -23750,6 +23832,10 @@ class MongoReplicaSet:
         '''
          ID of the proxy cluster for this resource, if any.
         '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to use for IAM (MONGODB-AWS) authentication.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -23785,6 +23871,7 @@ class MongoReplicaSet:
             'port: ' + repr(self.port) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23806,6 +23893,7 @@ class MongoReplicaSet:
             'port': self.port,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
+            'region': self.region,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -23828,6 +23916,7 @@ class MongoReplicaSet:
             port=d.get('port'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
+            region=d.get('region'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
@@ -23848,6 +23937,7 @@ class MongoShardedCluster:
         'password',
         'port_override',
         'proxy_cluster_id',
+        'region',
         'secret_store_id',
         'subdomain',
         'tags',
@@ -23867,6 +23957,7 @@ class MongoShardedCluster:
         password=None,
         port_override=None,
         proxy_cluster_id=None,
+        region=None,
         secret_store_id=None,
         subdomain=None,
         tags=None,
@@ -23913,6 +24004,10 @@ class MongoShardedCluster:
         '''
          ID of the proxy cluster for this resource, if any.
         '''
+        self.region = region if region is not None else ''
+        '''
+         The AWS region to use for IAM (MONGODB-AWS) authentication.
+        '''
         self.secret_store_id = secret_store_id if secret_store_id is not None else ''
         '''
          ID of the secret store containing credentials for this resource, if any.
@@ -23946,6 +24041,7 @@ class MongoShardedCluster:
             'password: ' + repr(self.password) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
             'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'region: ' + repr(self.region) + ' ' +\
             'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
             'subdomain: ' + repr(self.subdomain) + ' ' +\
             'tags: ' + repr(self.tags) + ' ' +\
@@ -23965,6 +24061,7 @@ class MongoShardedCluster:
             'password': self.password,
             'port_override': self.port_override,
             'proxy_cluster_id': self.proxy_cluster_id,
+            'region': self.region,
             'secret_store_id': self.secret_store_id,
             'subdomain': self.subdomain,
             'tags': self.tags,
@@ -23985,6 +24082,7 @@ class MongoShardedCluster:
             password=d.get('password'),
             port_override=d.get('port_override'),
             proxy_cluster_id=d.get('proxy_cluster_id'),
+            region=d.get('region'),
             secret_store_id=d.get('secret_store_id'),
             subdomain=d.get('subdomain'),
             tags=d.get('tags'),
