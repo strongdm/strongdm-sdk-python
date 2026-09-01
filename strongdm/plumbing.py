@@ -7487,6 +7487,61 @@ def convert_repeated_google_gke_user_impersonation_to_porcelain(plumbings):
     ]
 
 
+def convert_google_groups_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.GoogleGroups()
+    porcelain.bind_interface = (plumbing.bind_interface)
+    porcelain.discovery_enabled = (plumbing.discovery_enabled)
+    porcelain.domain = (plumbing.domain)
+    porcelain.egress_filter = (plumbing.egress_filter)
+    porcelain.group_emails = (plumbing.group_emails)
+    porcelain.healthy = (plumbing.healthy)
+    porcelain.id = (plumbing.id)
+    porcelain.identity_set_id = (plumbing.identity_set_id)
+    porcelain.name = (plumbing.name)
+    porcelain.privilege_levels = (plumbing.privilege_levels)
+    porcelain.proxy_cluster_id = (plumbing.proxy_cluster_id)
+    porcelain.secret_store_id = (plumbing.secret_store_id)
+    porcelain.subdomain = (plumbing.subdomain)
+    porcelain.tags = convert_tags_to_porcelain(plumbing.tags)
+    return porcelain
+
+
+def convert_google_groups_to_plumbing(porcelain):
+    plumbing = GoogleGroups()
+    if porcelain is None:
+        return plumbing
+    plumbing.bind_interface = (porcelain.bind_interface)
+    plumbing.discovery_enabled = (porcelain.discovery_enabled)
+    plumbing.domain = (porcelain.domain)
+    plumbing.egress_filter = (porcelain.egress_filter)
+    plumbing.group_emails = (porcelain.group_emails)
+    plumbing.healthy = (porcelain.healthy)
+    plumbing.id = (porcelain.id)
+    plumbing.identity_set_id = (porcelain.identity_set_id)
+    plumbing.name = (porcelain.name)
+    plumbing.privilege_levels = (porcelain.privilege_levels)
+    plumbing.proxy_cluster_id = (porcelain.proxy_cluster_id)
+    plumbing.secret_store_id = (porcelain.secret_store_id)
+    plumbing.subdomain = (porcelain.subdomain)
+    plumbing.tags.CopyFrom(convert_tags_to_plumbing(porcelain.tags))
+    return plumbing
+
+
+def convert_repeated_google_groups_to_plumbing(porcelains):
+    return [
+        convert_google_groups_to_plumbing(porcelain)
+        for porcelain in porcelains
+    ]
+
+
+def convert_repeated_google_groups_to_porcelain(plumbings):
+    return [
+        convert_google_groups_to_porcelain(plumbing) for plumbing in plumbings
+    ]
+
+
 def convert_google_spanner_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -10120,7 +10175,6 @@ def convert_mcp_gateway_no_auth_to_porcelain(plumbing):
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.port_override = (plumbing.port_override)
@@ -10141,7 +10195,6 @@ def convert_mcp_gateway_no_auth_to_plumbing(porcelain):
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.port_override = (porcelain.port_override)
@@ -10176,7 +10229,6 @@ def convert_mcp_gateway_o_auth_to_porcelain(plumbing):
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.oauth_auth_endpoint = (plumbing.oauth_auth_endpoint)
@@ -10202,7 +10254,6 @@ def convert_mcp_gateway_o_auth_to_plumbing(porcelain):
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.oauth_auth_endpoint = (porcelain.oauth_auth_endpoint)
@@ -10242,7 +10293,6 @@ def convert_mcp_gateway_o_auth_dcr_to_porcelain(plumbing):
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.oauth_auth_endpoint = (plumbing.oauth_auth_endpoint)
@@ -10267,7 +10317,6 @@ def convert_mcp_gateway_o_auth_dcr_to_plumbing(porcelain):
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.oauth_auth_endpoint = (porcelain.oauth_auth_endpoint)
@@ -10306,7 +10355,6 @@ def convert_mcp_gateway_pat_to_porcelain(plumbing):
     porcelain.bind_interface = (plumbing.bind_interface)
     porcelain.egress_filter = (plumbing.egress_filter)
     porcelain.healthy = (plumbing.healthy)
-    porcelain.hostname = (plumbing.hostname)
     porcelain.id = (plumbing.id)
     porcelain.name = (plumbing.name)
     porcelain.password = (plumbing.password)
@@ -10328,7 +10376,6 @@ def convert_mcp_gateway_pat_to_plumbing(porcelain):
     plumbing.bind_interface = (porcelain.bind_interface)
     plumbing.egress_filter = (porcelain.egress_filter)
     plumbing.healthy = (porcelain.healthy)
-    plumbing.hostname = (porcelain.hostname)
     plumbing.id = (porcelain.id)
     plumbing.name = (porcelain.name)
     plumbing.password = (porcelain.password)
@@ -15572,6 +15619,9 @@ def convert_resource_to_plumbing(porcelain):
     if isinstance(porcelain, models.GoogleGKEUserImpersonation):
         plumbing.google_gke_user_impersonation.CopyFrom(
             convert_google_gke_user_impersonation_to_plumbing(porcelain))
+    if isinstance(porcelain, models.GoogleGroups):
+        plumbing.google_groups.CopyFrom(
+            convert_google_groups_to_plumbing(porcelain))
     if isinstance(porcelain, models.GoogleSpanner):
         plumbing.google_spanner.CopyFrom(
             convert_google_spanner_to_plumbing(porcelain))
@@ -15865,6 +15915,8 @@ def convert_resource_to_porcelain(plumbing):
     if plumbing.HasField('google_gke_user_impersonation'):
         return convert_google_gke_user_impersonation_to_porcelain(
             plumbing.google_gke_user_impersonation)
+    if plumbing.HasField('google_groups'):
+        return convert_google_groups_to_porcelain(plumbing.google_groups)
     if plumbing.HasField('google_spanner'):
         return convert_google_spanner_to_porcelain(plumbing.google_spanner)
     if plumbing.HasField('greenplum'):

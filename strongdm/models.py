@@ -82,6 +82,7 @@ class ResourceType(str, Enum):
     GOOGLE_ADMIN = "RESOURCE_TYPE_GOOGLE_ADMIN"
     GOOGLE_GKE = "RESOURCE_TYPE_GOOGLE_GKE"
     GOOGLE_GKE_USER_IMPERSONATION = "RESOURCE_TYPE_GOOGLE_GKE_USER_IMPERSONATION"
+    GOOGLE_GROUPS = "RESOURCE_TYPE_GOOGLE_GROUPS"
     GOOGLE_SPANNER = "RESOURCE_TYPE_GOOGLE_SPANNER"
     GREENPLUM = "RESOURCE_TYPE_GREENPLUM"
     HTTP_AUTH = "RESOURCE_TYPE_HTTP_AUTH"
@@ -15647,6 +15648,160 @@ class GoogleGKEUserImpersonation:
         )
 
 
+class GoogleGroups:
+    '''
+    GoogleGroups is currently unstable, and its API may change, or it may be removed,
+    without a major version bump.
+    '''
+    __slots__ = [
+        'bind_interface',
+        'discovery_enabled',
+        'domain',
+        'egress_filter',
+        'group_emails',
+        'healthy',
+        'id',
+        'identity_set_id',
+        'name',
+        'privilege_levels',
+        'proxy_cluster_id',
+        'secret_store_id',
+        'subdomain',
+        'tags',
+    ]
+
+    def __init__(
+        self,
+        bind_interface=None,
+        discovery_enabled=None,
+        domain=None,
+        egress_filter=None,
+        group_emails=None,
+        healthy=None,
+        id=None,
+        identity_set_id=None,
+        name=None,
+        privilege_levels=None,
+        proxy_cluster_id=None,
+        secret_store_id=None,
+        subdomain=None,
+        tags=None,
+    ):
+        self.bind_interface = bind_interface if bind_interface is not None else ''
+        '''
+         The bind interface is the IP address to which the port override of a resource is bound (for example, 127.0.0.1). It is automatically generated if not provided and may also be set to one of the ResourceIPAllocationMode constants to select between VNM, loopback, or default allocation.
+        '''
+        self.discovery_enabled = discovery_enabled if discovery_enabled is not None else False
+        '''
+         If true, configures discovery of the Google Workspace account to be run
+         from a node.
+        '''
+        self.domain = domain if domain is not None else ''
+        '''
+         The primary domain of the Google Workspace account that owns the groups.
+        '''
+        self.egress_filter = egress_filter if egress_filter is not None else ''
+        '''
+         A filter applied to the routing logic to pin datasource to nodes.
+        '''
+        self.group_emails = group_emails if group_emails is not None else ''
+        '''
+         comma separated list of group email addresses to filter by. Supports
+         wildcards (*)
+        '''
+        self.healthy = healthy if healthy is not None else False
+        '''
+         True if the datasource is reachable and the credentials are valid.
+        '''
+        self.id = id if id is not None else ''
+        '''
+         Unique identifier of the Resource.
+        '''
+        self.identity_set_id = identity_set_id if identity_set_id is not None else ''
+        '''
+         The ID of the identity set to use for identity connections.
+        '''
+        self.name = name if name is not None else ''
+        '''
+         Unique human-readable name of the Resource.
+        '''
+        self.privilege_levels = privilege_levels if privilege_levels is not None else ''
+        '''
+         The privilege levels specify which Groups are managed externally
+        '''
+        self.proxy_cluster_id = proxy_cluster_id if proxy_cluster_id is not None else ''
+        '''
+         ID of the proxy cluster for this resource, if any.
+        '''
+        self.secret_store_id = secret_store_id if secret_store_id is not None else ''
+        '''
+         ID of the secret store containing credentials for this resource, if any.
+        '''
+        self.subdomain = subdomain if subdomain is not None else ''
+        '''
+         DNS subdomain through which this resource may be accessed on clients.  (e.g. "app-prod1" allows the resource to be accessed at "app-prod1.your-org-name.sdm-proxy-domain"). Only applicable to HTTP-based resources or resources using virtual networking mode.
+        '''
+        self.tags = tags if tags is not None else _porcelain_zero_value_tags()
+        '''
+         Tags is a map of key, value pairs.
+        '''
+
+    def __repr__(self):
+        return '<sdm.GoogleGroups ' + \
+            'bind_interface: ' + repr(self.bind_interface) + ' ' +\
+            'discovery_enabled: ' + repr(self.discovery_enabled) + ' ' +\
+            'domain: ' + repr(self.domain) + ' ' +\
+            'egress_filter: ' + repr(self.egress_filter) + ' ' +\
+            'group_emails: ' + repr(self.group_emails) + ' ' +\
+            'healthy: ' + repr(self.healthy) + ' ' +\
+            'id: ' + repr(self.id) + ' ' +\
+            'identity_set_id: ' + repr(self.identity_set_id) + ' ' +\
+            'name: ' + repr(self.name) + ' ' +\
+            'privilege_levels: ' + repr(self.privilege_levels) + ' ' +\
+            'proxy_cluster_id: ' + repr(self.proxy_cluster_id) + ' ' +\
+            'secret_store_id: ' + repr(self.secret_store_id) + ' ' +\
+            'subdomain: ' + repr(self.subdomain) + ' ' +\
+            'tags: ' + repr(self.tags) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'bind_interface': self.bind_interface,
+            'discovery_enabled': self.discovery_enabled,
+            'domain': self.domain,
+            'egress_filter': self.egress_filter,
+            'group_emails': self.group_emails,
+            'healthy': self.healthy,
+            'id': self.id,
+            'identity_set_id': self.identity_set_id,
+            'name': self.name,
+            'privilege_levels': self.privilege_levels,
+            'proxy_cluster_id': self.proxy_cluster_id,
+            'secret_store_id': self.secret_store_id,
+            'subdomain': self.subdomain,
+            'tags': self.tags,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            bind_interface=d.get('bind_interface'),
+            discovery_enabled=d.get('discovery_enabled'),
+            domain=d.get('domain'),
+            egress_filter=d.get('egress_filter'),
+            group_emails=d.get('group_emails'),
+            healthy=d.get('healthy'),
+            id=d.get('id'),
+            identity_set_id=d.get('identity_set_id'),
+            name=d.get('name'),
+            privilege_levels=d.get('privilege_levels'),
+            proxy_cluster_id=d.get('proxy_cluster_id'),
+            secret_store_id=d.get('secret_store_id'),
+            subdomain=d.get('subdomain'),
+            tags=d.get('tags'),
+        )
+
+
 class GoogleSpanner:
     __slots__ = [
         'bind_interface',
@@ -20505,7 +20660,6 @@ class MCPGatewayNoAuth:
         'bind_interface',
         'egress_filter',
         'healthy',
-        'hostname',
         'id',
         'name',
         'port_override',
@@ -20523,7 +20677,6 @@ class MCPGatewayNoAuth:
         bind_interface=None,
         egress_filter=None,
         healthy=None,
-        hostname=None,
         id=None,
         name=None,
         port_override=None,
@@ -20546,10 +20699,6 @@ class MCPGatewayNoAuth:
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
         '''
         self.id = id if id is not None else ''
         '''
@@ -20597,7 +20746,6 @@ class MCPGatewayNoAuth:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'port_override: ' + repr(self.port_override) + ' ' +\
@@ -20615,7 +20763,6 @@ class MCPGatewayNoAuth:
             'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
-            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
             'port_override': self.port_override,
@@ -20634,7 +20781,6 @@ class MCPGatewayNoAuth:
             bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
             port_override=d.get('port_override'),
@@ -20653,7 +20799,6 @@ class MCPGatewayOAuth:
         'bind_interface',
         'egress_filter',
         'healthy',
-        'hostname',
         'id',
         'name',
         'oauth_auth_endpoint',
@@ -20676,7 +20821,6 @@ class MCPGatewayOAuth:
         bind_interface=None,
         egress_filter=None,
         healthy=None,
-        hostname=None,
         id=None,
         name=None,
         oauth_auth_endpoint=None,
@@ -20704,10 +20848,6 @@ class MCPGatewayOAuth:
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
         '''
         self.id = id if id is not None else ''
         '''
@@ -20775,7 +20915,6 @@ class MCPGatewayOAuth:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
@@ -20798,7 +20937,6 @@ class MCPGatewayOAuth:
             'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
-            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
             'oauth_auth_endpoint': self.oauth_auth_endpoint,
@@ -20822,7 +20960,6 @@ class MCPGatewayOAuth:
             bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
             oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
@@ -20846,7 +20983,6 @@ class MCPGatewayOAuthDCR:
         'bind_interface',
         'egress_filter',
         'healthy',
-        'hostname',
         'id',
         'name',
         'oauth_auth_endpoint',
@@ -20868,7 +21004,6 @@ class MCPGatewayOAuthDCR:
         bind_interface=None,
         egress_filter=None,
         healthy=None,
-        hostname=None,
         id=None,
         name=None,
         oauth_auth_endpoint=None,
@@ -20895,10 +21030,6 @@ class MCPGatewayOAuthDCR:
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
         '''
         self.id = id if id is not None else ''
         '''
@@ -20962,7 +21093,6 @@ class MCPGatewayOAuthDCR:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'oauth_auth_endpoint: ' + repr(self.oauth_auth_endpoint) + ' ' +\
@@ -20984,7 +21114,6 @@ class MCPGatewayOAuthDCR:
             'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
-            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
             'oauth_auth_endpoint': self.oauth_auth_endpoint,
@@ -21007,7 +21136,6 @@ class MCPGatewayOAuthDCR:
             bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
             oauth_auth_endpoint=d.get('oauth_auth_endpoint'),
@@ -21030,7 +21158,6 @@ class MCPGatewayPAT:
         'bind_interface',
         'egress_filter',
         'healthy',
-        'hostname',
         'id',
         'name',
         'password',
@@ -21049,7 +21176,6 @@ class MCPGatewayPAT:
         bind_interface=None,
         egress_filter=None,
         healthy=None,
-        hostname=None,
         id=None,
         name=None,
         password=None,
@@ -21073,10 +21199,6 @@ class MCPGatewayPAT:
         self.healthy = healthy if healthy is not None else False
         '''
          True if the datasource is reachable and the credentials are valid.
-        '''
-        self.hostname = hostname if hostname is not None else ''
-        '''
-         The host to dial to initiate a connection from the egress node to this resource.
         '''
         self.id = id if id is not None else ''
         '''
@@ -21128,7 +21250,6 @@ class MCPGatewayPAT:
             'bind_interface: ' + repr(self.bind_interface) + ' ' +\
             'egress_filter: ' + repr(self.egress_filter) + ' ' +\
             'healthy: ' + repr(self.healthy) + ' ' +\
-            'hostname: ' + repr(self.hostname) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'name: ' + repr(self.name) + ' ' +\
             'password: ' + repr(self.password) + ' ' +\
@@ -21147,7 +21268,6 @@ class MCPGatewayPAT:
             'bind_interface': self.bind_interface,
             'egress_filter': self.egress_filter,
             'healthy': self.healthy,
-            'hostname': self.hostname,
             'id': self.id,
             'name': self.name,
             'password': self.password,
@@ -21167,7 +21287,6 @@ class MCPGatewayPAT:
             bind_interface=d.get('bind_interface'),
             egress_filter=d.get('egress_filter'),
             healthy=d.get('healthy'),
-            hostname=d.get('hostname'),
             id=d.get('id'),
             name=d.get('name'),
             password=d.get('password'),
