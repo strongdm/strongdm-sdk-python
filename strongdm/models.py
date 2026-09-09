@@ -12445,10 +12445,6 @@ class DeleteResponseMetadata:
 
 
 class DelineaDSVStore:
-    '''
-    DelineaDSVStore is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'id',
         'name',
