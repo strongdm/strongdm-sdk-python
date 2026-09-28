@@ -15645,10 +15645,6 @@ class GoogleGKEUserImpersonation:
 
 
 class GoogleGroups:
-    '''
-    GoogleGroups is currently unstable, and its API may change, or it may be removed,
-    without a major version bump.
-    '''
     __slots__ = [
         'bind_interface',
         'discovery_enabled',
@@ -15694,7 +15690,9 @@ class GoogleGroups:
         '''
         self.domain = domain if domain is not None else ''
         '''
-         The primary domain of the Google Workspace account that owns the groups.
+         The Google Workspace domain that owns the groups. Only groups whose email
+         address is at this exact domain are discovered; add one resource per
+         secondary domain.
         '''
         self.egress_filter = egress_filter if egress_filter is not None else ''
         '''
