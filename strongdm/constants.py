@@ -572,6 +572,13 @@ class APIHost:
     EU = "app.eu.strongdm.com:443"
 
 
+# InitiatorType defines who established a connection to a resource, as classified by the local StrongDM client.
+class InitiatorType:
+    AI_AGENT = "ai_agent"
+    HUMAN = "human"
+    UNKNOWN = "unknown"
+
+
 # ApproverReference defines the type for approver references.
 class ApproverReference:
     NONE = ""

@@ -9494,6 +9494,38 @@ def convert_repeated_identity_set_update_response_to_porcelain(plumbings):
     ]
 
 
+def convert_initiator_to_porcelain(plumbing):
+    if plumbing is None:
+        return None
+    porcelain = models.Initiator()
+    porcelain.ai_agent = (plumbing.ai_agent)
+    porcelain.trusted = (plumbing.trusted)
+    porcelain.type = (plumbing.type)
+    porcelain.version = (plumbing.version)
+    return porcelain
+
+
+def convert_initiator_to_plumbing(porcelain):
+    plumbing = Initiator()
+    if porcelain is None:
+        return plumbing
+    plumbing.ai_agent = (porcelain.ai_agent)
+    plumbing.trusted = (porcelain.trusted)
+    plumbing.type = (porcelain.type)
+    plumbing.version = (porcelain.version)
+    return plumbing
+
+
+def convert_repeated_initiator_to_plumbing(porcelains):
+    return [
+        convert_initiator_to_plumbing(porcelain) for porcelain in porcelains
+    ]
+
+
+def convert_repeated_initiator_to_porcelain(plumbings):
+    return [convert_initiator_to_porcelain(plumbing) for plumbing in plumbings]
+
+
 def convert_key_value_engine_to_porcelain(plumbing):
     if plumbing is None:
         return None
@@ -14103,6 +14135,8 @@ def convert_query_to_porcelain(plumbing):
     porcelain.encrypted = (plumbing.encrypted)
     porcelain.id = (plumbing.id)
     porcelain.identity_alias_username = (plumbing.identity_alias_username)
+    porcelain.initiator = convert_initiator_to_porcelain(
+        plumbing.initiator) if plumbing.HasField('initiator') else None
     porcelain.metadata_json = (plumbing.metadata_json)
     porcelain.query_body = (plumbing.query_body)
     porcelain.query_category = (plumbing.query_category)
@@ -14143,6 +14177,9 @@ def convert_query_to_plumbing(porcelain):
     plumbing.encrypted = (porcelain.encrypted)
     plumbing.id = (porcelain.id)
     plumbing.identity_alias_username = (porcelain.identity_alias_username)
+    if porcelain.initiator is not None:
+        plumbing.initiator.CopyFrom(
+            convert_initiator_to_plumbing(porcelain.initiator))
     plumbing.metadata_json = (porcelain.metadata_json)
     plumbing.query_body = (porcelain.query_body)
     plumbing.query_category = (porcelain.query_category)

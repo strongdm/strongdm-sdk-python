@@ -18930,6 +18930,71 @@ class IdentitySetUpdateResponse:
         )
 
 
+class Initiator:
+    '''
+         An Initiator describes who established the connection to the resource, as classified by
+     the local StrongDM client.
+    '''
+    __slots__ = [
+        'ai_agent',
+        'trusted',
+        'type',
+        'version',
+    ]
+
+    def __init__(
+        self,
+        ai_agent=None,
+        trusted=None,
+        type=None,
+        version=None,
+    ):
+        self.ai_agent = ai_agent if ai_agent is not None else ''
+        '''
+         A stable identifier of the AI Agent that established the connection, e.g. "claude-code".
+         Empty unless type is "ai_agent".
+        '''
+        self.trusted = trusted if trusted is not None else False
+        '''
+         Indicates whether the initiator detection is trusted, meaning it cannot be spoofed by the end user.
+        '''
+        self.type = type if type is not None else ''
+        '''
+         The kind of initiator, one of the InitiatorType constants: "ai_agent" when a supported AI
+         Agent was detected, "human" when no supported AI Agent was detected, or "unknown" when the
+         client could not determine the initiator.
+        '''
+        self.version = version if version is not None else ''
+        '''
+         The version of the AI Agent, when it could be determined.
+        '''
+
+    def __repr__(self):
+        return '<sdm.Initiator ' + \
+            'ai_agent: ' + repr(self.ai_agent) + ' ' +\
+            'trusted: ' + repr(self.trusted) + ' ' +\
+            'type: ' + repr(self.type) + ' ' +\
+            'version: ' + repr(self.version) + ' ' +\
+            '>'
+
+    def to_dict(self):
+        return {
+            'ai_agent': self.ai_agent,
+            'trusted': self.trusted,
+            'type': self.type,
+            'version': self.version,
+        }
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(
+            ai_agent=d.get('ai_agent'),
+            trusted=d.get('trusted'),
+            type=d.get('type'),
+            version=d.get('version'),
+        )
+
+
 class KeyValueEngine:
     __slots__ = [
         'id',
@@ -28294,6 +28359,7 @@ class Query:
         'encrypted',
         'id',
         'identity_alias_username',
+        'initiator',
         'metadata_json',
         'query_body',
         'query_category',
@@ -28327,6 +28393,7 @@ class Query:
         encrypted=None,
         id=None,
         identity_alias_username=None,
+        initiator=None,
         metadata_json=None,
         query_body=None,
         query_category=None,
@@ -28405,6 +28472,11 @@ class Query:
         self.identity_alias_username = identity_alias_username if identity_alias_username is not None else ''
         '''
          The username of the IdentityAlias used to access the Resource.
+        '''
+        self.initiator = initiator if initiator is not None else None
+        '''
+         Who established the connection to the resource, as classified by the local StrongDM client.
+         Absent when the initiator was not recorded or the organization does not have AI Agent controls.
         '''
         self.metadata_json = metadata_json if metadata_json is not None else ''
         '''
@@ -28490,6 +28562,7 @@ class Query:
             'encrypted: ' + repr(self.encrypted) + ' ' +\
             'id: ' + repr(self.id) + ' ' +\
             'identity_alias_username: ' + repr(self.identity_alias_username) + ' ' +\
+            'initiator: ' + repr(self.initiator) + ' ' +\
             'metadata_json: ' + repr(self.metadata_json) + ' ' +\
             'query_body: ' + repr(self.query_body) + ' ' +\
             'query_category: ' + repr(self.query_category) + ' ' +\
@@ -28523,6 +28596,7 @@ class Query:
             'encrypted': self.encrypted,
             'id': self.id,
             'identity_alias_username': self.identity_alias_username,
+            'initiator': self.initiator,
             'metadata_json': self.metadata_json,
             'query_body': self.query_body,
             'query_category': self.query_category,
@@ -28557,6 +28631,7 @@ class Query:
             encrypted=d.get('encrypted'),
             id=d.get('id'),
             identity_alias_username=d.get('identity_alias_username'),
+            initiator=d.get('initiator'),
             metadata_json=d.get('metadata_json'),
             query_body=d.get('query_body'),
             query_category=d.get('query_category'),
